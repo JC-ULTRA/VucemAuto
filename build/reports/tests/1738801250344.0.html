@@ -1,0 +1,1053 @@
+<html xmlns="http://www.w3.org/1999/xhtml" class=" js svg"><head>
+            <title>Consulta de trámites</title>
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta http-equiv="pragma" content="no-cache">
+            <meta http-equiv="cache-control" content="no-cache">
+            <meta http-equiv="expires" content="-1">
+            <script async="" src="//www.google-analytics.com/analytics.js"></script><script type="text/javascript">
+                
+            </script>
+        
+
+        <!--cache:cache scope="application"-->
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">                
+        <meta name="description" content="VUCEM">
+        <meta name="keywords" content="VUCEM">
+        <meta name="author" content="Softtek">  
+        <link rel="shortcut icon" type="image/x-icon" media="screen" href="/ventanilla-HA/images/main/favicon.ico">
+        <link rel="icon" type="image/x-icon" media="screen" href="/ventanilla-HA/images/main/favicon.ico">         
+        
+        <script type="text/javascript">var contextPath = '/ventanilla-HA';</script>
+                
+        <link rel="stylesheet" type="text/css" media="screen" href="/ventanilla-HA/css/main/main.css">
+        <link rel="stylesheet" type="text/css" media="screen" href="/ventanilla-HA/css/formato_unico/formato_unico.css">
+        
+        
+        <!--link rel="stylesheet" type="text/css" media="screen" href="/ventanilla-HA/js/jquery/ui-1.11.4/jquery-ui.min.css" /-->
+        
+        <!--link rel="stylesheet" type="text/css" media="screen" href="/ventanilla-HA/css/jquery/redmond/jquery-ui-1.8.6.custom.css" /-->        
+        <!--script type="text/javascript" language="javascript" src="/ventanilla-HA/js/jquery/jquery-1.4.4.min.js"></script-->
+        <script type="text/javascript" language="javascript" src="/ventanilla-HA/js/jquery/jquery-1.11.2.min.js"></script>
+        <script type="text/javascript" language="javascript" src="/ventanilla-HA/js/jquery/jsrsasign-4.7.0-all-min_sat-fix.js"></script>
+        
+        
+        <!-- TODO: Eliminar e implementar -->
+        <!--script type="text/javascript" language="javascript" src="/ventanilla-HA/js/jquery/jquery.timers-1.2.js"></script-->
+        <script type="text/javascript" language="javascript" src="/ventanilla-HA/js/jquery/ui-1.11.4/jquery-ui.min.js"></script>
+        <script type="text/javascript" language="javascript" src="/ventanilla-HA/js/jquery/ui/i18n/jquery-ui-i18n.js"></script>
+        
+        <!--script type="text/javascript" language="javascript" src="/ventanilla-HA/js/jquery/jquery-ui-1.8.6.custom.min.js"></script>        
+        <script type="text/javascript" language="javascript" src="/ventanilla-HA/js/jquery/ui/i18n/jquery-ui-i18n.js"></script>            
+        <script type="text/javascript" language="javascript" src="/ventanilla-HA/js/jquery/ui/external/jquery.bgiframe-2.1.2.js"></script>
+        <script type="text/javascript" language="javascript" src="/ventanilla-HA/js/jquery/ui/external/jquery.cookie.js"></script-->
+        
+        
+        
+        <script type="text/javascript" language="javascript" src="/ventanilla-HA/js/jquery/jquery.filestyle.js"></script>
+        <script type="text/javascript" language="javascript" src="/ventanilla-HA/js/jquery/jquery-ui-init.js"></script>
+             
+        <script type="text/javascript" language="javascript" src="/ventanilla-HA/js/main/ajaxfileupload.js"></script>
+        
+        <script type="text/javascript" language="javascript" src="/ventanilla-HA/js/jquery/jquery.sticky.js"></script>
+		
+        <script type="text/javascript" language="javascript" src="/ventanilla-HA/js/jquery/combo/jquery.selectbox-0.1.3.js"></script>
+        <link href="/ventanilla-HA/css/combo/jquery.selectbox.css" type="text/css" rel="stylesheet">
+        
+        <link rel="stylesheet" type="text/css" media="screen" href="/ventanilla-HA/css/jqgrid/ui.jqgrid.css">            
+        <script type="text/javascript" language="javascript" src="/ventanilla-HA/js/jqgrid/i18n/grid.locale-es.js"></script>
+        <script type="text/javascript" language="javascript" src="/ventanilla-HA/js/jqgrid/jquery.jqGrid.src.js"></script>            
+        
+        <script type="text/javascript" language="javascript" src="/ventanilla-HA/js/jquery/validation/jquery.validate.min.js"></script>
+        <script type="text/javascript" language="javascript" src="/ventanilla-HA/js/jquery/validation/stripes.jquery.validation.js"></script>
+<!--cache:cache scope="session"-->
+        <script type="text/javascript" language="javascript" src="/ventanilla-HA/js/jquery/validation/localization/messages_es.js"></script>
+<!--/cache:cache-->        
+        
+        <!--script type="text/javascript" language="javascript" src="/ventanilla-HA/js/blockUI/jquery.blockUI.js"></script-->
+        <script type="text/javascript" language="javascript" src="/ventanilla-HA/js/jquery/jquery.blockUI-2.70.0.js"></script>
+        
+        <script language="javascript" type="text/javascript" src="/ventanilla-HA/js/qtip/jquery.qtip-2.2.1.min.js"></script>
+        
+        <link rel="stylesheet" type="text/css" media="screen" href="/ventanilla-HA/css/tooltip/jquery.tooltip.css">
+        <link type="text/css" rel="stylesheet" href="/ventanilla-HA/css/modulos/aga/common/justificaciones.css">
+        
+        <script type="text/javascript" src="/ventanilla-HA/js/stk/stk-framework.js"></script>
+        <script type="text/javascript" src="/ventanilla-HA/js/stk/stk-common.js"></script>
+        <script type="text/javascript" src="/ventanilla-HA/js/stk/catalog.js"></script>
+        <script type="text/javascript" src="/ventanilla-HA/js/stk/stk-grid.js"></script>
+        
+        <script type="text/javascript" language="javascript" src="/ventanilla-HA/js/main/adminDocuments.js"></script>
+        <script type="text/javascript" language="javascript" src="/ventanilla-HA/js/main/fiel.js"></script>   
+		<script type="text/javascript" language="javascript" src="/ventanilla-HA/js/main/FielUtil-1.5.js"></script>      
+        <script type="text/javascript" language="javascript" src="/ventanilla-HA/js/main/main.js?version=1.1.1"></script> 
+        <script type="text/javascript" language="javascript" src="/ventanilla-HA/js/jquery/jstree_pre1.0_fix_1/jquery.jstree.js"></script>
+        <link type="text/css" rel="stylesheet" href="/ventanilla-HA/css/jquery/jquery.alerts.css">
+        <script type="text/javascript" language="javascript" src="/ventanilla-HA/js/jquery/jquery.alerts.js"></script>        
+        
+        <link rel="stylesheet" type="text/css" href="/ventanilla-HA/css/menu/menu_servs.css">
+        <script type="text/javascript" language="javascript" src="/ventanilla-HA/js/jquery/scriptbreaker-multiple-accordion-1.js"></script>
+        
+        <link rel="stylesheet" type="text/css" href="/ventanilla-HA/css/bootstrap/bootstrap-combined.min.css">
+        <script src="/ventanilla-HA/js/bootstrap/bootstrap-paginator.js"></script> 
+        
+     
+      
+    <!-- CSS -->
+    
+<!--/cache:cache-->
+  
+ <!-- <link href="https://framework-gb-ssl.cdn.gob.mx/assets/styles/main.css" rel="stylesheet">-->
+  <link rel="stylesheet" type="text/css" media="screen" href="/ventanilla-HA/css/jquery/jquery-ui-1.10.0.custom.css">
+  <link href="https://framework-gb.cdn.gob.mx/assets/styles/main.css" rel="stylesheet">
+    <script type="text/javascript" src="https://framework-gb.cdn.gob.mx/assets/scripts/vendor/modernizr.js"></script><script type="text/javascript" src="https://framework-gb.cdn.gob.mx/assets/scripts/vendor/pace.min.js"></script><script type="text/javascript" src="https://framework-gb.cdn.gob.mx/assets/scripts/vendor/analitycs.js"></script><style type="text/css" id="vakata-stylesheet">#vakata-dragged { display:block; margin:0 0 0 0; padding:4px 4px 4px 24px; position:absolute; top:-2000px; line-height:16px; z-index:10000; } #vakata-contextmenu { display:block; visibility:hidden; left:0; top:-200px; position:absolute; margin:0; padding:0; min-width:180px; background:#ebebeb; border:1px solid silver; z-index:10000; *width:180px; } #vakata-contextmenu ul { min-width:180px; *width:180px; } #vakata-contextmenu ul, #vakata-contextmenu li { margin:0; padding:0; list-style-type:none; display:block; } #vakata-contextmenu li { line-height:20px; min-height:20px; position:relative; padding:0px; } #vakata-contextmenu li a { padding:1px 6px; line-height:17px; display:block; text-decoration:none; margin:1px 1px 0 1px; } #vakata-contextmenu li ins { float:left; width:16px; height:16px; text-decoration:none; margin-right:2px; } #vakata-contextmenu li a:hover, #vakata-contextmenu li.vakata-hover > a { background:gray; color:white; } #vakata-contextmenu li ul { display:none; position:absolute; top:-2px; left:100%; background:#ebebeb; border:1px solid gray; } #vakata-contextmenu .right { right:100%; left:auto; } #vakata-contextmenu .bottom { bottom:-1px; top:auto; } #vakata-contextmenu li.vakata-separator { min-height:0; height:1px; line-height:1px; font-size:1px; overflow:hidden; margin:0 2px; background:silver; /* border-top:1px solid #fefefe; */ padding:0; } </style><style type="text/css" id="jstree-stylesheet">.jstree ul, .jstree li { display:block; margin:0 0 0 0; padding:0 0 0 0; list-style-type:none; } .jstree li { display:block; min-height:18px; line-height:18px; white-space:nowrap; margin-left:18px; min-width:18px; } .jstree-rtl li { margin-left:0; margin-right:18px; } .jstree > ul > li { margin-left:0px; } .jstree-rtl > ul > li { margin-right:0px; } .jstree ins { display:inline-block; text-decoration:none; width:18px; height:18px; margin:0 0 0 0; padding:0; } .jstree a { display:inline-block; line-height:16px; height:16px; color:black; white-space:nowrap; text-decoration:none; padding:1px 2px; margin:0; } .jstree a:focus { outline: none; } .jstree a > ins { height:16px; width:16px; } .jstree a > .jstree-icon { margin-right:3px; } .jstree-rtl a > .jstree-icon { margin-left:3px; margin-right:0; } li.jstree-open > ul { display:block; } li.jstree-closed > ul { display:none; } #vakata-dragged ins { display:block; text-decoration:none; width:16px; height:16px; margin:0 0 0 0; padding:0; position:absolute; top:4px; left:4px;  -moz-border-radius:4px; border-radius:4px; -webkit-border-radius:4px; } #vakata-dragged .jstree-ok { background:green; } #vakata-dragged .jstree-invalid { background:red; } #jstree-marker { padding:0; margin:0; font-size:12px; overflow:hidden; height:12px; width:8px; position:absolute; top:-30px; z-index:10001; background-repeat:no-repeat; display:none; background-color:transparent; text-shadow:1px 1px 1px white; color:black; line-height:10px; } #jstree-marker-line { padding:0; margin:0; line-height:0%; font-size:1px; overflow:hidden; height:1px; width:100px; position:absolute; top:-30px; z-index:10000; background-repeat:no-repeat; display:none; background-color:#456c43;  cursor:pointer; border:1px solid #eeeeee; border-left:0; -moz-box-shadow: 0px 0px 2px #666; -webkit-box-shadow: 0px 0px 2px #666; box-shadow: 0px 0px 2px #666;  -moz-border-radius:1px; border-radius:1px; -webkit-border-radius:1px; }.jstree .jstree-real-checkbox { display:none; } .jstree-themeroller .ui-icon { overflow:visible; } .jstree-themeroller a { padding:0 2px; } .jstree-themeroller .jstree-no-icon { display:none; }.jstree .jstree-wholerow-real { position:relative; z-index:1; } .jstree .jstree-wholerow-real li { cursor:pointer; } .jstree .jstree-wholerow-real a { border-left-color:transparent !important; border-right-color:transparent !important; } .jstree .jstree-wholerow { position:relative; z-index:0; height:0; } .jstree .jstree-wholerow ul, .jstree .jstree-wholerow li { width:100%; } .jstree .jstree-wholerow, .jstree .jstree-wholerow ul, .jstree .jstree-wholerow li, .jstree .jstree-wholerow a { margin:0 !important; padding:0 !important; } .jstree .jstree-wholerow, .jstree .jstree-wholerow ul, .jstree .jstree-wholerow li { background:transparent !important; }.jstree .jstree-wholerow ins, .jstree .jstree-wholerow span, .jstree .jstree-wholerow input { display:none !important; }.jstree .jstree-wholerow a, .jstree .jstree-wholerow a:hover { text-indent:-9999px; !important; width:100%; padding:0 !important; border-right-width:0px !important; border-left-width:0px !important; } .jstree .jstree-wholerow-span { position:absolute; left:0; margin:0px; padding:0; height:18px; border-width:0; padding:0; z-index:0; }</style></head>
+    <body class="  pace-done"><div class="pace  pace-inactive"><div class="pace-progress" data-progress-text="100%" data-progress="99" style="transform: translate3d(100%, 0px, 0px);">
+  <div class="pace-progress-inner"></div>
+</div>
+<div class="pace-activity"></div></div>
+        <noscript>
+            <div id="main">
+                <br />
+                <div id="noscript">
+                    <div style="margin-left:9em; height:35px;"><h2>Atenci&oacute;n</h2></div>
+                    <p>Para utilizar la Ventana &Uacute;nica de Comercio Exterior, la configuraci&oacute;n del explorador debe permitir la ejecuci&oacute;n de scripts. Para obtener informaci&oacute;n sobre c&oacute;mo permitir scripts, consulte el enlace siguiente. <br /><br />
+                    <a href="http://www.google.com/support/bin/answer.py?answer=23852" target="_blank">http://www.google.com/support/bin/answer.py?answer=23852</a><br /><br />
+                    Si el navegador no admite scripts, puede descargar una versi&oacute;n mas reciente del navegador de su elecci&oacute;n.</p>
+                </div>
+                <br/>
+            </div>
+        </noscript>
+      
+      
+    <main class="page">
+        <div class="container">           
+        
+	<div class="row">
+		<br>
+		<div class="col-md-8">
+			
+
+<span id="breadcrumbTramite" style="display: none;">
+	<ol class="breadcrumb">
+		<li><a href="https://www.gob.mx/"><i class="icon icon-home"></i></a></li>
+		<li><a href="/ventanilla-HA/ingreso.action?">Selección de rol</a></li>
+		
+         		<li class="active">Consulta de trámites</li>
+         	
+	</ol>
+</span>
+			<div id="logoHeader"></div>
+		</div>
+	   	<div class="col-md-4 pull-right" id="boxSolicitanteLargo">
+			
+				<table class="table table-bordered" style="font-size:10pt">
+						<tbody><tr>
+						  <td>ERNESTO HERNANDEZ URIBE &nbsp; &nbsp; &nbsp; &nbsp;
+						  <a href="#" onclick="logout()">Cerrar la sesión</a></td>
+						</tr>
+						<tr>
+						   <td><span class="icon-user" aria-hidden="true"></span> <span class="campos">HEUE780514BVA</span></td>
+						</tr>
+						<tr>
+							<td><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>  <span class="etiqueta">Administrador de Dependencia</span>
+								 
+								 <span class="glyphicon glyphicon-credit-card" aria-hidden="true"></span> <span class="etiqueta">FIEL</span>
+							</td>
+						</tr>
+				</tbody></table>
+			
+	   	</div>
+	</div>
+	
+		<div id="menuSuperior-sticky-wrapper" class="sticky-wrapper" style="height: 175px;"><div class="row" id="menuSuperior">
+ <nav class="navbar navbar-inverse sub-navbar navbar-fixed-left">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#subenlaces">
+        <span class="sr-only">Interruptor de Navegación</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">VUCEM</a>
+    </div>
+    <div class="collapse navbar-collapse" id="subenlaces">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a id="bandejaSol" href="javascript:ejecutarOpcion('/ventanilla-HA/bandeja.action?mostrarTareasSolicitanteJQuery=','/ventanilla-HA/invocarModulo.action?init')" data-hasqtip="0" oldtitle="Bandeja Solicitante" title="" aria-describedby="qtip-0">Inicio</a></li>
+      <li>
+        <a href="#" onclick="javascript:showSubOptions(50); return false;">Consultas</a>
+      </li>
+      	<li><a href="javascript:ejecutarOpcion('/ventanilla-tableros-HA/tableros/tableros/registrarSolicitud.action','/ventanilla-tableros-HA/invocarModulo.action?init') ">Tablero de Seguimiento</a></li>
+	<li><a href="javascript:ejecutarOpcion('/ventanilla-HA/bandejaSolicitudes.action','/ventanilla-HA/invocarModulo.action?init')" data-hasqtip="2" oldtitle="Solicitudes" title="" aria-describedby="qtip-2">Solicitudes</a></li>
+
+        <li class="dropdown">    
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Trámites <span class="caret"></span></a>
+			<ul class="dropdown-menu" role="menu">
+        
+            <li>
+              <a href="javascript:ejecutarOpcion('/ventanilla-HA/innovacion/favoritos/favoritosCommon.action?mostrarFavoritos','/ventanilla-HA/invocarModulo.action?init') ">Favoritos y frecuentes</a>
+            </li>
+        
+				<li><a href="javascript:ejecutarOpcion('/ventanilla-HA/tramitesDisponibles.action?mostrarDependenciasDisponiblesUsuarios','/ventanilla-HA/invocarModulo.action?init') ">Solicitudes nuevas</a></li>
+				<li><a href="javascript:ejecutarOpcion('/ventanilla-HA/consulta/consulta.action?acuseResolucion','/ventanilla-HA/invocarModulo.action?init') ">Solicitudes subsecuentes</a></li>
+			</ul>
+	</li>
+	<li><a href="javascript:ejecutarOpcion('/ventanilla-HA/general.action','/ventanilla-HA/invocarModulo.action?init') " onclick="javascript:showSubOptions(60); return false;" data-hasqtip="4" oldtitle="Usuarios" title="" aria-describedby="qtip-4">Usuarios</a></li>
+	
+     
+      <li>
+        <a href="javascript:ejecutarOpcion('/ventanilla-HA/general.action','/ventanilla-HA/invocarModulo.action?init') " onclick="javascript:showSubOptions(40); return false;" data-hasqtip="4" oldtitle="Usuarios" title="" aria-describedby="qtip-4">Configuración</a>
+      </li>
+		<li><a href="javascript:ejecutarOpcion('/ventanilla-HA/general.action','/ventanilla-HA/invocarModulo.action?init') " onclick="javascript:showSubOptions(40); return false;" data-hasqtip="4" oldtitle="Usuarios" title="" aria-describedby="qtip-4">Configuración</a></li>
+		<li><a href="javascript:ejecutarOpcion('/ventanilla-HA/general.action','/ventanilla-HA/invocarModulo.action?init') " onclick="javascript:showSubOptions(70); return false;" data-hasqtip="4" oldtitle="Usuarios" title="" aria-describedby="qtip-4">Otras tareas</a></li>
+	
+      </ul>
+    </div>
+  </div>
+</nav>
+</div></div>
+	
+
+	<div id="menu_lateral" class="notrigger" style="display: none;">
+        <table id="tablaMenuLateral" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td>Menú</td>
+        </tr>
+        <tr>
+            <td>
+                <a href="javascript:ejecutarOpcion('/ventanilla-HA/bandeja.action?mostrarTareasFuncionarioJQuery=','/ventanilla-HA/invocarModulo.action?init')" data-hasqtip="0" oldtitle="       Inicio" title="">
+                    <img alt="       Inicio" border="0" src="/ventanilla-HA/images/menu/icoInicio.png">
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="#" onclick="javascript:showSubOptions(50); return false;" data-hasqtip="1" oldtitle="      Consultas" title="">
+                    <img alt="      Consultas" border="0" src="/ventanilla-HA/images/menu/icoConsultas.png">
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="javascript:ejecutarOpcion('/ventanilla-HA/bandejaSolicitudes.action','/ventanilla-HA/invocarModulo.action?init')" data-hasqtip="2" oldtitle="    Solicitudes" title="">
+                    <img alt="    Solicitudes" border="0" src="/ventanilla-HA/images/menu/icoPendientes.png">
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="javascript:ejecutarOpcion('/ventanilla-HA/tramitesDisponibles.action','/ventanilla-HA/invocarModulo.action?init')" data-hasqtip="3" oldtitle="   Trámites" title="">
+                    <img alt="   Trámites" border="0" src="/ventanilla-HA/images/menu/IcoTramites.png">
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="#" onclick="javascript:showSubOptions(60); return false;" data-hasqtip="4" oldtitle="  Usuarios" title="">
+                    <img alt="  Usuarios" border="0" src="/ventanilla-HA/images/menu/icoUsuarios.png">
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="#" onclick="javascript:showSubOptions(70); return false;" data-hasqtip="5" oldtitle=" Otras tareas" title="">
+                    <img alt=" Otras tareas" border="0" src="/ventanilla-HA/images/menu/icoOtrasTareas.png">
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="#" onclick="javascript:showSubOptions(40); return false;" data-hasqtip="6" oldtitle="Configuración" title="">
+                    <img alt="Configuración" border="0" src="/ventanilla-HA/images/menu/icoConfiguracion.png">
+                </a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<div style="display:none;">
+<ul id="15" class="topnav">
+    <li>
+        <a href="#" id="       Inicio">       Inicio</a>
+        <ul>
+        </ul>
+    </li>
+</ul>
+<ul id="50" class="topnav">
+    <li>
+        <a href="#" id="      Consultas">      Consultas</a>
+        <ul>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cp-HA/consejoReguladorTequila/consulta.action?mostrarConsultaFiguraAduanal','/ventanilla-cp-HA/invocarModulo.action?init') ">Consulta Certificado de Consejo Regulador del Tequila</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-declaracionAduanera-HA/declaracionAduanera/consultas/consultaFuncionario.action','/ventanilla-declaracionAduanera-HA/invocarModulo.action?init') ">Consulta Declaración Aduanera</a>
+</li>
+<li>
+<a href="# ">Consulta Información AGACE/ACAJA</a>
+<ul>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-aviso-HA/AvisoUnico/IndustriaAutomotriz/consultaFuncionariosInformacionIndustriaAutomotriz.action','/ventanilla-aviso-HA/invocarModulo.action?init') ">Consultar de Información Industria Automotriz</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cove-HA/cove/cove.action?consultarCove','/ventanilla-cove-HA/invocarModulo.action?init') ">Consulta Información de Valor y de Comercialización</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cuentasbancarias-HA/aga/consultaFuncionarioCuentas.action','/ventanilla-cuentasbancarias-HA/invocarModulo.action?init') ">Consulta de Cuentas Bancarias</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-gafetes-HA/aaa/consulta/consultaGafetesVu.action','/ventanilla-gafetes-HA/invocarModulo.action?init') ">Consulta de gafetes</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-aga2-HA/aga/servicios/consultaDetallada/ConsultaServex.action?','/ventanilla-aga2-HA/invocarModulo.action?init') ">Consulta detallada de SERVEX</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-sagarpa-HA/gubernamentales2/sagarpa/consultasTramitesFuncionarioSagarpa.action','/ventanilla-sagarpa-HA/invocarModulo.action?init') ">Consulta trámites de AGRICULTURA</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-gubernamentales-HA/gubernamentales2/cofepris/consultaTramitesFuncionarioCofepris.action','/ventanilla-gubernamentales-HA/invocarModulo.action?init') ">Consulta trámites de COFEPRIS</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-gubernamentales-HA/gubernamentales2/profepa/consultasFuncionarioProfepa.action','/ventanilla-gubernamentales-HA/invocarModulo.action?init') ">Consulta trámites de PROFEPA</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-se-HA/pexim/consultasFuncionarioPexim.action','/ventanilla-se-HA/invocarModulo.action?init') ">Consulta trámites de SE</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-gubernamentales-HA/gubernamentales2/semarnat/consultasFuncionarioSemarnat.action','/ventanilla-gubernamentales-HA/invocarModulo.action?init') ">Consulta trámites de SEMARNAT</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-digitalizacion-HA/aga/consultaDigitalizarDocumentosController.action?consultarDocumentosDigitalizados','/ventanilla-digitalizacion-HA/invocarModulo.action?init') ">Consultar  Documentos Digitalizados</a>
+</li>
+<li>
+<a href="# ">Consultar CAAT</a>
+<ul>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-consultas-Aereos-HA/aga/consultas/ConsultaCaatAereo.action?','/ventanilla-consultas-Aereos-HA/invocarModulo.action?init') ">Consultar CAAT Aéreo</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-aga-HA/aga/consultas/ConsultaCaatMaritimo.action?','/ventanilla-aga-HA/invocarModulo.action?init') ">Consultar CAAT Marítimo</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-aga-HA/aga/consultas/ConsultaCaatTerrestre.action?','/ventanilla-aga-HA/invocarModulo.action?init') ">Consultar CAAT Terrestre</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-aga-HA/aga/consultas/ConsultaCaatNaviero.action?','/ventanilla-aga-HA/invocarModulo.action?init') ">Consultar CAAT de Agentes y Consignatarios</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-HA/bandejaConsultas.action','/ventanilla-HA/invocarModulo.action?init') ">Consultar estado del trámite</a>
+</li>
+<li>
+<a href="# ">Consultas de Manifiesto Ferroviario</a>
+<ul>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-consultas-HA/ferroviarios/consultarDespachoElectronico.action','/ventanilla-consultas-HA/invocarModulo.action?init') ">Consulta Despacho electrónico</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-consultas-HA/ferroviarios/consultarDocumentodeTransporte.action','/ventanilla-consultas-HA/invocarModulo.action?init') ">Consulta Documento de transporte</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-consultas-HA/ferroviarios/consultarConsist.action','/ventanilla-consultas-HA/invocarModulo.action?init') ">Consulta Lista de intercambio (Consist)/Aviso de arribo (Consist preliminar)</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="# ">Cuaderno ATA</a>
+<ul>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cuadernoATA-HA/consulta/consultaCuaderno.action','/ventanilla-cuadernoATA-HA/invocarModulo.action?init') ">Consulta cuaderno</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cuadernoATA-HA/consulta/consultaCuaderno.action?extemporaneo=true','/ventanilla-cuadernoATA-HA/invocarModulo.action?init') ">Consulta cuaderno extemporáneo</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cuadernoATA-HA/consultaHistorico/consultaHistoricoCuaderno.action','/ventanilla-cuadernoATA-HA/invocarModulo.action?init') ">Consulta histórico cuaderno ATA</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cuadernoATA-HA/registro/registrarCuadernoATA.action','/ventanilla-cuadernoATA-HA/invocarModulo.action?init') ">Registro operación</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="# ">Manifiesto Aéreo</a>
+<ul>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-aereos-HA/consulta3/ConsultaMensajes.action','/ventanilla-aereos-HA/invocarModulo.action?init') ">Consulta de Manifiestos de Carga y Guías Aéreas</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-aereos-HA/consulta3/ConsultaMensajes.action','/ventanilla-aereos-HA/invocarModulo.action?init') ">Consulta de Manifiestos de Carga y Guías Aéreas  (AGA)</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-consultas-Aereos-HA/consulta/consultaProceso06.action?iniciar','/ventanilla-consultas-Aereos-HA/invocarModulo.action?init') ">Consulta de guías aéreas</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-aereos-HA/incidencias/RegistroSolicitudIncidencias.action','/ventanilla-aereos-HA/invocarModulo.action?init') ">Consultar Incidencia</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="# ">Manifiesto Marítimo</a>
+<ul>
+<li>
+<a href="javascript:ejecutarOpcion('/consultasMaritimos/consulta/ConsultaBitacora.action?iniciar','/consultasMaritimos/invocarModulo.action?init') ">Consulta portal bitácora</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/consultasMaritimos/consulta/ConsultaContenedores.action?iniciar','/consultasMaritimos/invocarModulo.action?init') ">Consulta portal contenedores</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/consultasMaritimos/consulta/ConsultaHouse.action?iniciar','/consultasMaritimos/invocarModulo.action?init') ">Consulta portal house</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/consultasMaritimos/consulta/ConsultaManifiesto.action?iniciar','/consultasMaritimos/invocarModulo.action?init') ">Consulta portal manifiesto</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/consultasMaritimos/consulta/ConsultaMaster.action?iniciar','/consultasMaritimos/invocarModulo.action?init') ">Consulta portal master</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/consultasMaritimos/consulta/ConsultaMovimientoManifiesto.action?iniciar','/consultasMaritimos/invocarModulo.action?init') ">Consulta portal movimientos manifiesto</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="# ">Proceso de revisión de pedimentos</a>
+<ul>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-pedimentos-HA/pedimentos/consultaPedimentos.action','/ventanilla-pedimentos-HA/invocarModulo.action?init') ">Proceso de revisión de pedimento específico vía portal</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-pedimentos-HA/pedimentos/consultaListaPedimentos.action','/ventanilla-pedimentos-HA/invocarModulo.action?init') ">Proceso de revisión del listado de pedimentos vía portal</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cat-HA/reportesPredefinidos.action','/ventanilla-cat-HA/invocarModulo.action?init') ">Programación de reportes predefinidos</a>
+</li>
+        </ul>
+    </li>
+</ul>
+<ul id="30" class="topnav">
+    <li>
+        <a href="#" id="    Solicitudes">    Solicitudes</a>
+        <ul>
+        </ul>
+    </li>
+</ul>
+<ul id="20" class="topnav">
+    <li>
+        <a href="#" id="   Trámites">   Trámites</a>
+        <ul>
+        </ul>
+    </li>
+</ul>
+<ul id="60" class="topnav">
+    <li>
+        <a href="#" id="  Usuarios">  Usuarios</a>
+        <ul>
+<li>
+<a href="# ">Administración de los usuarios</a>
+<ul>
+<li>
+<a href="# ">Administración de funcionarios</a>
+<ul>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-HA/admon/usuarios/verificaTramite.action','/ventanilla-HA/invocarModulo.action?init') ">Configurar los trámites los cuales requieren de verificación</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-HA/admon/usuarios/tramitesUnidadAdministrativa.action','/ventanilla-HA/invocarModulo.action?init') ">Configurar los trámites para la Unidad Administrativa</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-HA/admon/usuarios/tramitesEmisorAUnidadAdministrativa.action','/ventanilla-HA/invocarModulo.action?init') ">Configurar los trámites que requieren emisión de opinión</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-HA/admon/usuarios/asignarRoles.action','/ventanilla-HA/invocarModulo.action?init') ">Creación de funcionarios y asignación de roles</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-HA/admon/usuarios/desasignarRoles.action','/ventanilla-HA/invocarModulo.action?init') ">Desasignar roles asignados a los funcionarios</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-HA/admon/usuarios/modificarDatosFuncionarios.action','/ventanilla-HA/invocarModulo.action?init') ">Modificación de datos de funcionarios</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-HA/admon/usuarios/modificarTramites.action','/ventanilla-HA/invocarModulo.action?init') ">Modificar los trámites asociados a los funcionarios</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="# ">Datos generales</a>
+<ul>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-HA/admon/usuarios/cambioCorreo.action','/ventanilla-HA/invocarModulo.action?init') ">Cambiar la cuenta de correo electrónico</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+        </ul>
+    </li>
+</ul>
+<ul id="70" class="topnav">
+    <li>
+        <a href="#" id=" Otras tareas"> Otras tareas</a>
+        <ul>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-aaa-HA/patentesAutorizaciones/CatalogoPatentes.action?','/ventanilla-aaa-HA/invocarModulo.action?init') ">Administrador de Patentes</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-HA/reasignarTareas.action','/ventanilla-HA/invocarModulo.action?init') ">Administrar bandejas</a>
+</li>
+<li>
+<a href="# ">CUPOS </a>
+<ul>
+<li>
+<a href="# ">Cancelación</a>
+<ul>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-se-HA/se/cupos/solicitudCancelacionCertificadosPorFacultadWizard.action?solicitud.discriminatorValue=140205\&amp;iniciar','/ventanilla-se-HA/invocarModulo.action?init') ">Certificados de CUPO por Facultad</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-se-HA/se/cupos/consultarCertificadoAsignacion.action','/ventanilla-se-HA/invocarModulo.action?init') ">Generar Certificado de cupo</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-ippchub-HA/ippchub/consultas/consultaFuncionario.action','/ventanilla-ippchub-HA/invocarModulo.action?init') ">Certificados IPPC ePhyto HUB</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-aga2-HA-Gamma/aga/consultaCopiasCertificadas/consultaSolicitud.action?iniciar','/ventanilla-aga2-HA-Gamma/invocarModulo.action?init') ">Consulta de certificación electrónica de pedimentos</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-sagarpa-HA/consultarEstadisticasTramites.action','/ventanilla-sagarpa-HA/invocarModulo.action?init') ">Consulta de estadísticas</a>
+</li>
+<li>
+<a href="# ">Descarga Masiva E-Document</a>
+<ul>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-descargaedocument-HA/aga/descargarEDocument.action?descargarEDocument.action','/ventanilla-descargaedocument-HA/invocarModulo.action?init') ">Descargar archivo de Masiva E-Document</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-descargaedocument-HA/aga/solicitudDescargaEDocument.action?solicitudDescargaEDocument.action','/ventanilla-descargaedocument-HA/invocarModulo.action?init') ">Solicitar Descarga Masiva E-Document</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="# ">Despacho a domicilio a la exportación</a>
+<ul>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-aga2-HA-Gammaaga/terminacionDDE/registrarSolicitud.action','/ventanilla-aga2-HA-Gamma/invocarModulo.action?init') ">Terminación a la autorización de despacho a domicilio a la exportación</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="# ">Devolución de gafete</a>
+<ul>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-aaa-HA/aaa/devoluciones/registroDevolucion.action','/ventanilla-aaa-HA/invocarModulo.action?init') ">Devolución de gafete GUIAAA</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-gafetes-HA/aaa/devolucionGestorGT/devolverGestorGT.action','/ventanilla-gafetes-HA/invocarModulo.action?init') ">Devolución de gafete transportista</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="# ">Firmas masivas</a>
+<ul>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-firmasMasivas-HA/common/firmasMasivas/autorizarDictamen.action?iniciar','/ventanilla-firmasMasivas-HA/invocarModulo.action?init') ">Autorización masiva</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-gafetes-HA/aaa/firmasMasivasGT/firmasMasivasDesistimientoGT.action?','/ventanilla-gafetes-HA/invocarModulo.action?init') ">Firma masiva de desistimiento de gafete transportista</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-aga2-HA/aga/servicios/firmasMasivas/evaluarSolicitud.action?iniciar','/ventanilla-aga2-HA/invocarModulo.action?init') ">Firma masiva de servicios extraordinarios</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-se-HA/se/cer_ori/registro/generarCertificadoOrigenWizard.action?solicitud.discriminatorValue=110220\&amp;iniciar','/ventanilla-se-HA/invocarModulo.action?init') ">Generar certificado de origen</a>
+</li>
+<li>
+<a href="# ">IPC</a>
+<ul>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-se-HA/se/cancelaciones/atenderRequerimientoIPC.action','/ventanilla-se-HA/invocarModulo.action?init') ">Atender requerimientos</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="# ">LDA</a>
+<ul>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-aga2-HA/aga/lugarDistintoAutorizado/procedimientosAutoridad.action','/ventanilla-aga2-HA/invocarModulo.action?init') ">Autorización por lugar distinto al autorizado</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-aga2-HA/aga/lugarDistintoAutorizado/pagoDerechos/consultarPagos.action','/ventanilla-aga2-HA/invocarModulo.action?init') ">Consulta cumplimiento de pago de derecho anual</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-aga2-HA/aga/lugarDistintoAutorizado/consultas/consultaAutoridad.action','/ventanilla-aga2-HA/invocarModulo.action?init') ">Consultar autorizaciones LDA por autoridad</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-aga2-HA/aga/lugarDistintoAutorizado/pagoDerechos/registrarPago.action','/ventanilla-aga2-HA/invocarModulo.action?init') ">Registrar cuota de pago de derecho anual</a>
+</li>
+<li>
+<a href="# ">Reportes</a>
+<ul>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-aga2-HA/aga/lugarDistintoAutorizado/consultas/reporteConsulta.action?mostrarReporteDetalle','/ventanilla-aga2-HA/invocarModulo.action?init') ">Consultar detalle de autorizaciones</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-aga2-HA/aga/lugarDistintoAutorizado/consultas/reporteConsulta.action?mostrarReporteTotal','/ventanilla-aga2-HA/invocarModulo.action?init') ">Consultar totales de autorizaciones</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-aga2-HA/aga/lugarDistintoAutorizado/consultas/reporteConsulta.action?mostrarReporteUbicacion','/ventanilla-aga2-HA/invocarModulo.action?init') ">Consultar ubicación de autorizaciones</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<a href="# ">Modificar Programa</a>
+<ul>
+<li>
+<a href="# ">IMMEX</a>
+</li>
+<li>
+<a href="# ">PROSEC</a>
+<ul>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-se-HA/se/modificacionesImmexProsec/solicitudModificaciones.action?solicitud.discriminatorValue=90307\&amp;iniciar','/ventanilla-se-HA/invocarModulo.action?init') ">Modificar Reactivación de Programa</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<a href="# ">PEXIM </a>
+<ul>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-se-HA/se/pexim/solicitudFacultadPermisos.action?solicitud.discriminatorValue=140212\&amp;iniciar','/ventanilla-se-HA/invocarModulo.action?init') ">Cancelación de Permiso por Facultad</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-se-HA/se/pexim/reactivarPermisosSuspendidos.action?solicitud.discriminatorValue=140211\&amp;iniciar','/ventanilla-se-HA/invocarModulo.action?init') ">Reactivación de Permiso por Facultad</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-se-HA/se/pexim/solicitudFacultadPermisos.action?solicitud.discriminatorValue=140206\&amp;iniciar','/ventanilla-se-HA/invocarModulo.action?init') ">Suspensión de Permiso por Facultad</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="# ">SENER</a>
+<ul>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-sener-HA/sener/pexim/reactivacionPermisoFacultadSener.action?solicitud.discriminatorValue=140217&amp;iniciar','/ventanilla-sener-HA/invocarModulo.action?init') ">Reactivación de Permiso por Facultad</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-sener-HA/sener/pexim/cancelacionPermisoSener.action?solicitud.discriminatorValue=140218&amp;iniciar','/ventanilla-sener-HA/invocarModulo.action?init') ">Revocación de Permiso por Facultad</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-sener-HA/sener/pexim/suspensionPermisoSener.action?solicitud.discriminatorValue=140216&amp;iniciar','/ventanilla-sener-HA/invocarModulo.action?init') ">Suspensión de Permiso por Facultad</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-aga2-HA/aga/seguimiento/bandejaSeguimientoSvex.action','/ventanilla-aga2-HA/invocarModulo.action?init') ">Seguimiento al servicio extraordinario</a>
+</li>
+<li>
+<a href="# ">Tareas Masivas</a>
+<ul>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-se-HA/se/autorizacionmasiva/autorizarDictamenBloques.action','/ventanilla-se-HA/invocarModulo.action?init') ">Autorización Masiva</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-se-HA/se/autorizacionmasiva/generarDictamenConAutorizacionMasivo.action','/ventanilla-se-HA/invocarModulo.action?init') ">Dictaminación Masiva Con Autorización</a>
+</li>
+</ul>
+</li>
+        </ul>
+    </li>
+</ul>
+<ul id="40" class="topnav">
+    <li>
+        <a href="#" id="Configuración">Configuración</a>
+        <ul>
+<li>
+<a href="# ">Administración de Catálogos</a>
+<ul>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cat-HA/admin/catalogos/adminRepositorioFirmas.action','/ventanilla-cat-HA/invocarModulo.action?init') ">Administración Repositorio de Firmas</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cat-HA/admin/catalogos/combinacionRequerida.action','/ventanilla-cat-HA/invocarModulo.action?init') ">Catálogo Combinación Requerida</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cat-HA/admin/catalogos/patenteAduanal.action','/ventanilla-cat-HA/invocarModulo.action?init') ">Catálogo Patente Aduanal</a>
+</li>
+</ul>
+</li>
+        </ul>
+    </li>
+</ul>
+</div>
+
+
+    </div>
+    <div id="servicios"></div>
+    <script type="text/javascript">      
+        function showSubOptions(id){
+        	//$('#workingArea').empty();
+        	//('#servicios').empty();        	
+        	
+        	$('.mnu').remove();
+            $('#workingArea').html($('#servicios').empty().html($('ul[id=' + id + ']').clone().addClass('mnu')));
+            $('.mnu').accordion({
+                accordion : false,
+                speed : 500,
+                closedSign : '[+]',
+                openedSign : '[-]'
+            });           
+        }
+	  
+	  $("#menu_lateral").hide();
+	  $(document).ready(function(){
+		$("#menuSuperior").sticky({topSpacing:0, zIndex:99});
+		$("#menu_lateral").hide();
+	  });
+		
+    </script>
+
+
+                <div id="content_tramite">
+                    <div id="workingArea">
+                        <!-- Comienza favoritos iniciales -->
+                        
+                              <img id="idImagen" src="/ventanilla-HA/images/innovacion/estrella.png" onmouseover="bigImg(this)" onmouseout="normalImg(this)" width="30" height="30" align="right">
+                                    <span id="nfav" style=" display:none; float: right; z-index: 1; left: 76%; position:absolute;">No hay favoritos</span>
+                                <div class="row" id="idFavoritoinicial" style=" display:none; float: right; z-index: 1; position:absolute;  ">
+                                <div class="col-md-12"> 
+                                        <table id="datosFrecuente" width="100" align="right" style=" border-collapse: separate; border-spacing: 10px 5px;">
+                                        </table>
+                                </div>
+								<hr>
+                                <div class="col-md-12"> 
+                                        <table id="datosFrecuente1" width="100" align="right" style=" border-collapse: separate; border-spacing: 10px 5px;">
+                                        </table>
+                                </div>
+                            </div>
+                        
+                        <!--Termina favoritos iniciales-->
+            
+                            <div class="row" id="tituloTramite">
+                                <div class="col-md-8">
+                                        
+                                            <h1 id="h1_title" style="margin-bottom:0px">Consulta de trámites</h1>
+                                        
+                                </div>
+                            </div>
+                                <br>                              
+                            
+            
+                    <div class="alert alert-warning" id="businessWarnings" style="display:none; margin-bottom:15px; margin-top:64px;"></div>
+                                <div class="alert alert-danger" id="errorCampos" style="display:none; margin-bottom:15px; margin-top:64px;"></div>
+                        
+    <form action="/ventanilla-sagarpa-HA/invocarModulo.action?init" id="consultarEstadoSSO" method="post">
+	  <input type="hidden" name="xCNR6ScKme71prPYNXUAT_ITBm5BP4PVscFjSYt6joA=" value="8IzSf1nbJYj5YiR2Syjjlh18F-GYfeKyD8s_xPWU1SlR0CHEdygyycLTTse2L50aoTOTQq_BZHdxX2MOPgmusZTo4gzD03JOBuVoYqkYfqdwCZtDcihj1R60NJwBRUQ4GNYxo2isC19Bw0KwuA8Z-QlLdQ2MouitU6PCSqscr121-XRDHmhAEfKVxj5G0DmiohF4QPKy1E2l_ukfgF1mqfGUPifTaNu1e8ab803gRo2TlWhZt7CjlOrX9iIVoSusAwa69c4V6GjD_776J9EzdllXnwb3GfTkmn71krLxfhDI2tTihKkt5c3uHI-gDY_t6doE-Gn7DHdZq7MstKRmKF0pkGziMHhorORsxRvFkN8HERpbESTt45ordVijtIQ9n5HQl-Bd988P97fZLOG3pr8WRZu1QVdTN7pUxYW-1ULT5r-bAgJlzy2cUo88EEFwvfPPqT2DH7poK5Jcb93nE0Ji4lKP11vj53RdPiH9Wa8DaYRXH4MNvycayEeq6Rmf2FnLOFUS-sZsySqInf29OzCyTj9bfGGZi8wRahFtEJqnG0Xmj-VHAsv96zLgo7Zfc3zXzvnrULaTIs8z4hbmZZfteJ80Vm9uVSRDylbQwK3fJK2D76lurEMqk1XHRZbMTQcur0h1ogLLE0n0SetLeZwQb6p_09jgoW953jpVE5IhwXiD_aOKraIpgSupXMlgno8GxJZSktmTmUGSH6don-DTOMRsJ6FfTiIG6eGRfsYft7bvqAiUDapRrqoEhCg2eVoqlcnmoZZWAgc2hxYEBqlKNYPHRq4wreiBQSlcmDInD43wQMAELQTItmvOsvHtClF55vcI69P_vmA2-gEjQKaUJhGPxEKFnisCx0OP5DuNh67eY5ZqL9Gcy4dzUaX53IvaOtLfQDdhSDTxYYpH7P0ZopUYt_RAmvK7inWlJwyOzjuGQFlFBR7eYBS8H-zq59vjRttVdT961316wpp0ehDVgmE15YnZ05h9kdOLSAU-3vi7jp6ekWuojNFJj3ZwFpOLvxhUKJahVaIM6-3JYKT59q7Z6QZbed9fKD4BcNmDSzVRXm-pfxE3y9irKueaYorySl7lhlD3xi2nPtGNy72GLWys5Wc7osFSFQIZYI6nCOS21JaqUbeBIuH43OS8ekpJ8cXaAbH3GD2av73Nzg8XmbeRkkxm6cAS5995ATGNarPB_GMi5vPg5dCb-Ejr0G0dLrIiuQam2aS8c8SCcf1fkpjMCi4e4puuoe8g-RpkOUerkTTq2UVsqt7gPPXM2V7sgOJ2AtRZK3abt2S7MSz4gIvxWFq9ZLgJxGL4_fRcwjy8gDLxQFW3I-dorY9y7Y-GCUSOb47WLVKWzKICK7fX8NMVY5xm0flJofkph2XrbDgnhH8DXGuojNFJj3Zwy540WjqUz3-OzjuGQFlFBRi7tmJIJonKdYzE2wAvIykLiHbHhRgTAGxTEbGlrIF641d6avCQCzbWG1tg49X1PeeDb1vRVCU7yRh_KrdHZ0mUm4i3OdWMBKhjkr-fGqJDtQ_xpXBYjs85KcDUY_RFRoNeR5V_tLaIxB1s7G9iUgqdm4nZxSBUqG1e6pjQ_D4XqOhIDqm4taIiAfv1-TQ23WSsflFTWfA0cYt5qhxuUsyxwdcj7IQvu8VgRY5-lk2PirTly82bfHW_lsv7jt48m7RZXlbf8YyfvFRcCvTLUS9HjJfr7hpLDkqxKP1DMqSbXYmv2qQ9FCueOj9cgqxB5qSGOkYC6jwKBq6a24Yy4x0uFscxdEimfQDttzwCfplB0VmVelLG9PnE0vh5RfM8u5-i8vBxCftnnI_ipYOjmTd3Idpt2FGTNSHfkusqWoQUw3NKs1G_FMgjTnoBLojSeO4ZJwLIPJZvWarBpyPurBCIomGXdAOvSZdd0Dm6JSNW4ji-75rdGrNq9FEYvqXVbqatReznOb7Mw8GYWapkmHydsgsbozpZb0_5Uy2VSONtKHU1kQ4X5q8MX0GVj8Tz9J1w-VegI8yjscIEQZAsiJRoenrhXn1A4_N-sJQ9NAYYLUw0mKxb7uzyDod2AV7tQggPGHXnmPrE3jdQbTHuZL4jAsKiifKQ01tAmw3SpBqDZNT-KXgi4llL_iPJvl9zfMu-pd6a3xtvakaRfcTqXPsHOIFyKPGl_NizyhUsJvfes1enhehefF-lMts6D4NepwaUyDVV_pnXTZ9qJ6iwIva4UZsi84lr3_iF-HfZRDExqQe0fp77kETwNHnNDNk77TO1M5fBr9Xcb8IR9rfXgBRY8c_6oGeAOAixNY4yBFMo_8Zd4mQHs2zf2MfyO5z0bC-8KbyoCoPRp9elH1wkm3PvzSi1jISpNh9va4mqVJ8KgOEmblTxaaHhLkKsK-qBu1dbFf1TyXK8k7lTSFN37m80hCIGsi6_KRpyow-684Ami_UJ2s76ZT_pQQLRv8eHNLSxjB4z0hi0xNUO2uvZUdVlHX3VLFk734pmLpbhquZQMgunkg366lLB_yxCg3ngJRT24HrjZcVv7NUna_zMOZ5TrksmiTswqV72GyR5xOpu6grAsR94o5XaHMxPZqkTwB0D-NjMothABVSktteXCd06VTu_PokOyucoa0gC5_R9oj60W2Xzg52DJVtBJhE63dAK57g6hCMnBVSktteXCd1y9EQ9ywP93R1btjQ7XTNlXTArE92eA9pGTwZ3ngaXrw_2GmyOS5MzNNZ9rXTwHj0R-ypaz5JZpiTAvOTnWRHoxsqq_P7jiCYnyMZ5vMhwbYy7IbTw9KIjgDbbn_h_VQSSblLThWzUQ6wRnbFogowU_mvW-ILJMAr_0uanweazn5CONmqVOOnJsuHeg7KTTyeiLcBBo8d0iIfLgOxfhEyAD1X9Bar_9xE4N1eLXVkDDozJYrQifC2LPlXhUdgSnXvWI0DLGmuJ3nlWkUdc2tXzM-47X9hWmBfIitkJk98JiEHtrNfxNP6YHEuLGvz_30vM8mzDAG7mwdBxF04kK3lX8nP8NNqiW0i6pf_bEWHSo2EtE6BsbTlucSb7yelKl02Il0XQvygIQJ35FWlWhTjWHU0gpYQm5NAM3VwGD7EthEe1H_16DMSo_L2evyf1qDptcQfiCij-Lf1jboY2qj-kJ4HwKC7ZKWyxQ9SdEyn2UbcWOoX0snZK58TIY1Lu5os3NHcEkrdCDCUFbwYyOJt4zGqGrRONv_o49GwaL3eHoIA225_4f1UEkm5S04Vs1EOsEZ2xaIKMFP5r1viCyTAK_9Lmp8Hms5-QjjZqlTjpyUJaV9eDzmmlW5y_M-DuFz6EBDArECC5Zbo5y7PNlDZ7JfxG8_1js2he1UNyQBsAdzg3V4tdWQMOf5MmF2HD32IfUZHKvBHEe-Vm9av6UVMkAr6ncEc4FX4v7aYysnwimLB7N6buC51TEIuzlwF58CQZlReFF37oQpAoob6FRKNl2Wiv5TAzC0dkt5o8S-gCCY6CzGSPOTccLvCad-Rg3M23FjqF9LJ2SucBty6DERwJAT_fbFrFITGH2L36I-at1KhbEDMPyNudxFuuqGx0UqLeNpsh997ngfuGMsVDokJoRk8Gd54Gl6_h5nTaFqQIOzYKBfM9xgcAGRWHMB4_KUkHgmaXs6Z_McM3EfEOAyBh-0FHFzbx_59dSLSCdGqV4ETcKiWHPJTYROAeBPd0TZFI0A2PmDyzlndF1JKFfaA1W5y_M-DuFz5SoNL3Sxe8l7ic1YkvW0GEl_u_Rkjsyu4xCXbf3uStkdYh6E6hYbsDBuRY4PRsi_X7kLsgxHwET4GIicahKJ5Mwffgh4gCqIsa-ps8F8ZPa5QGUKkTnSONQkAoU3lwI4tKLjT3FJkutDcLS1IlBbMoQIv0Vo0q0n5iaL5cQe04eMPKR7CbHCRDOM__6lOee0qREP9b1IjDZAqUvKlKt8gyp7_cD3PzNDQYd6b3IKamEUYsV_TBfgliNNbNNnmYqxUnyMZ5vMhwbd7zfscjcgOcwu6-qFxm9P_QiB6_JXDHO9ifswaI0rrCjHt7DLGHDxel-k-hlpIeFo8m9GYHyXbVkIRn3HIPifnmj6oZ-pB9gPApAapsUQGFBMwZ4Zzcg0tby0yIEgyZ_uLERqz5BbubL0lfe5qMV1I9YMhFdCwRR-WLG0nefdPEytD9F5xLXFUsjjo6dpVxgtcLHtYFj-_ZODdXi11ZAw5LOw8uazxKf8ckcQ_I7gAZ_bSTYC2PPdcF1qrOIaoEFbB7N6buC51TEIuzlwF58CRfNyuce3PYgpB_7e_Wvmcf4cJJVKcXv0kCs4mRiS0H5g7Nk3dKhQhZQubv2rTYDPEwMOArf78uKvK3c4kgLGliJ8jGebzIcG06DqrIEfrl34EoyS_HpiLt61ipW82N7hx7gDJNOLSK_pPxdLHXctSdgB-rB6F-gVeQjjZqlTjpybLh3oOyk08nNgoF8z3GBwAZFYcwHj8pSQeCZpezpn8xwzcR8Q4DIGH7QUcXNvH_n11ItIJ0apXg5mjtfLrNlYgOTdpC_3sB7NP9q_nKNdoVjiJN6nfNxQnmRoDiDwCj9HlWkUdc2tXzM-47X9hWmBf1TX1214CKsDG-rnaTMkqvv_iH6cttYmBiSiuM_wmDIu8PAav6siWkf9Fjoocrvu06FUwxy0MEzC_tpjKyfCKYEK1VXm8hmYEQi7OXAXnwJCHK-9ZB8-5eWyqsx8lhyus7YOOOZiEHvz19qbkgC_4vsG0XI5qaHezCOAtckfB6kdbpXQWWjPB9OKk5mESXpk8nyMZ5vMhwbToOqsgR-uXfgSjJL8emIu3rWKlbzY3uHGGX2ePnblos_mvW-ILJMAr_0uanweazn5CONmqVOOnJsuHeg7KTTyc2CgXzPcYHABkVhzAePylJB4Jml7OmfzHDNxHxDgMgYftBRxc28f-fHUjBXPS5e9peJCZlKl-jWlGixYzXR_nK1N7bjSOTfEKdqKFdwg6HQBrt5iEIUOrhRYop2jsO2JkVGmEkGFtRB_hGFmOjRJWSTS4MA3UI627HJHEPyO4AGYg56CvSuAPp1lez4IDs32GRutAt5up1IGJ4VGsrjPxXIRXw-MPh_YvFMN09LP7Iu11SNDxjA7D2jEDNbFzC9LMOzZN3SoUIWZdXJL5xwy3XEy7Ue8UvHtp66F01lrjQ2YNQqjhVucLEdaXB-upqd3XuaahWk-t_Zvg_dKM2V2qFnsNn5xXCU4cVM5d-nt9p849OJp5n9NQt3AAoML43NnifpvgXVhVC7wnSxPWVEkH7Bc_bEQLED8SXB8nYT15V8NCIHr8lcMc72J-zBojSusKMe3sMsYcPF4vCg42uVpU9xIWAoDuiytM995NKioPdpc3k-1fximouHHYhnl6a1WGx052wYYReZDg3V4tdWQMO9yUVaDO7J6LpCvb7R5lmNd4DMuvNvaGjkmXsWxJi7X0bC5nzDvKcqcs2RJPgI5w-RRC9-oNhaEmDJVtBJhE63ewzZMa-kVj93lS-tud7hMnB9-CHiAKoixr6mzwXxk9rlAZQqROdI42X74ljdTB8HzLoq6K-BM5IhP_nWwgdtdGMKpQPCMjyNcJJVXymhDNnG9awJDjUNze3FjqF9LJ2Siw5d4RlppBXIs1SUx_BVsr0SEL1atUgFUrFft-JaflGjoznHblNrSMEFhwU0UQ7Cl1ItIJ0apXgRNwqJYc8lNjNSKSf5k4nXxYp_q0edLl1JQVvBjI4m3jMaoatE42_-unPRouLoBepM-47X9hWmBchvwZgee0LGGvLIpcAC9gP9KmRnhbJ4sdfdT-ozj3ZwVrP-TtkFloNsHdDCqE9o5V-R0QYfiJvujiNklpDu0b-7yiK9aiTEzJh6SBxM-1uUWHwbww2pkrz8nP8NNqiW0i6pf_bEWHSo2dWKRM-nrBYSQeqqcQt0QftvsLddzjzxkJAKFN5cCOL1M0cC0jalYgo1vyS0c4jLGCVk9bjq96QrtZVUE7AhFuaduZee_IuHhlw0Y_e4thXsG0XI5qaHexlgDCyQYySWmlkOE10791p_7SdId2eKjp3cw3Yb9C4hgQWHBTRRDsKXUi0gnRqleBE3ColhzyU2M1IpJ_mTidfFin-rR50uXUlBW8GMjibeMxqhq0Tjb_6OPRsGi93h6D9smHUVyZSgciK2QmT3wmIQe2s1_E0_pjxZNmGmr0ZjvfwbD1CU8L0_RsNPyxyoiK-uZewb_utA1ucvzPg7hc-ncAkZcr7fl-sEciVMgvyrtytVx7tHkJpYZ6fh89xJa3kItFpgNhTJWEMjPXrlC7xZFfbciSHx27ht3M4obB0KvrQVfkz2yY3yzZEk-AjnD5FEL36g2FoSYMlW0EmETrd6cw5t6Eo0Mbc1a07ux3Y5MbKqvz-44gmJ8jGebzIcG06DqrIEfrl34EoyS_HpiLt9tDh0xLocTAIgmFeOoeUQzZRQ-acRAb3yciB2WKSBUUNyvlIZeafBry6xn1lb5kcEmiEW6K9kUlDVywxfVNwdH_sypDAM4pUxRMU0L0vgANFbnAD0zuV5dNq6zptQyvpsuHeg7KTTyf6Z85qfkA-rEBt3hTgHiAczmz3b5Pu01ONdifhqbneIC1PdoR3ukVLkQOlwR5ukQpeJCZlKl-jWs6yfuYz7xXdtIjdXrQdxIxc1zxLh9HiUmLdxCSmJSrK5Ekik5IzxyFAdmDoGAQkALkRZjgeSRPCYQyM9euULvER8-nsxw40E0q2SHFTJ2HN7pKyosxxOnxeylVPJnv_VNZWEPPZp5JTD_YabI5LkzM01n2tdPAePb7Q-SzYE-xZj4WUe84QnPIaSfeDHMFoHyeB8Cgu2SlssUPUnRMp9lG3FjqF9LJ2ShQFjxsSOX2-bNMr_OHdY1zYGsC1jkkqKkctibNTEDS1tO7wMDTpQmXhy_4KQ9hkDpCEZ9xyD4n5Opc4_osr9VI01Z_iWgcufzgXB9N8dMWAn3hStT3SaOa10o8srr7EMjPuO1_YVpgXyIrZCZPfCYhB7azX8TT-mPFk2YaavRmO9_BsPUJTwvT9Gw0_LHKiIr65l7Bv-60DW5y_M-DuFz5ZfUTw40kFrEkHqqnELdEH7b7C3Xc488ZCQChTeXAji4g56CvSuAPp1lez4IDs32GjriEwmaT2yBDvaKqMSUaZmul6vAG9G9zTusqTpHLE2VM0QG1cBpWarVCW_wdLGriCR702mwZ1vtrcbIdaj7WwD_YabI5LkzM01n2tdPAePb7Q-SzYE-xZj4WUe84QnPIaSfeDHMFoH7ihy0rsRoxUXUi0gnRqleBE3ColhzyU2KwAqrKAArvonUdvXJlt5ZTaUcbJZkVwS3edmUOAx1B2WydvGc7BqgT9u_CfF0HaaHWTKvkQ8CJz1prGwn7qLRUHyW05rQBE3wUtQmPUhmQkvrmXsG_7rQNbnL8z4O4XPkBt3hTgHiAczmz3b5Pu01ONdifhqbneIC1PdoR3ukVLkQOlwR5ukQqV8_sVSvwgBa8N-Pc0iKwz1A_mOG-FbXKZuwxR-XArFYCeY-5zBk6r9jeGL_YX56s1PwkcI9jmQegND_3Z88rNktwInadPuCH1hcjXkYwcB3YSDlDolBfUAdAsAj0oaRDPuEpCLQY4vXZmA_-vR14gQTLeR7E1ed5fjuSU0l_3mGdZ9VeoL0DFT_8xvvl1_CdGLFf0wX4JYn4fVuJkQCJ1CdLE9ZUSQfsFz9sRAsQPxJcHydhPXlXw0IgevyVwxzvYn7MGiNK6wox7ewyxhw8XpfpPoZaSHhbl4L_93jAfRpWVQcVF8AzMaNL4lPcw3YGU5OxubJT2u9IocoULMgRDvdhzBhYbLX44N1eLXVkDDhnp9gkEr_BTszYHiONOGDrJr5wqOPSTojGue7zUyQxUsQJq_ME6DhvLNkST4COcPkUQvfqDYWhJgyVbQSYROt3sM2TGvpFY_d5Uvrbne4TJwffgh4gCqIsa-ps8F8ZPa5QGUKkTnSONQkAoU3lwI4tiHGNNceVVfjbzhuUvR8U7vjPsEIV7MxgXqUj84HbnF7cWOoX0snZKHQrpsPHMFtjO8suZaIIy_oBX8Pjw-Nc49b6sZAmi4HfD5vfvjWM4Fp-m-BdWFULvCdLE9ZUSQfsFz9sRAsQPxJcHydhPXlXw0IgevyVwxzvYn7MGiNK6wox7ewyxhw8XpfpPoZaSHhaD-OiYR5JLve5kTAQ3-gIT7NKI0sfxbIDdB2rLSr7AFitiegwKV3m_hzwx86qIxOeAB91UBFrdLVZgKsBrq3-RnBvpk14c6vEz9JDu1pnOZpJ8GDU5ZdHyxyRxD8juABmIOegr0rgD6dZXs-CA7N9hkbrQLebqdSBieFRrK4z8VyEV8PjD4f2LxTDdPSz-yLtdUjQ8YwOw9oxAzWxcwvSzHex837pjelRfjuSU0l_3mGdZ9VeoL0DFT_8xvvl1_CdGLFf0wX4JYjTWzTZ5mKsVJ8jGebzIcG3nsDYlkx6jpeFb6x5Ex8LOX934pb5lsMw7C5sIgZvENxr_BI5FFVQyIjuN5CLF5_Q2wqw1i0AUYkk1AfzhChzDTZ2KO0GZN681Axszu7DDqoA225_4f1UEkm5S04Vs1ENmhYEahBmJwfFk2YaavRmO9_BsPUJTwvS4EaRoFRHEWAuK9Gyr2pYvNdeGRth3zDbQCqs4W_VfnWa9uph3fM0eqZfIRty5uknoQs_4-i-bfNHxQ-y81_Vp5MPbPLGbFp3mSxRRe2mdhFwuSxYxWj43OGF55CgeGlk2XJEhSxVZy8cI-SlhCm411aZiedNjN8NSzaJMG6-ofk8AhYuDiq8Ozhkye1OvAO7NAWxvx3bqW1H-OaODvJi8Zy8Mga8PhZIvsL8x5pdITWpvK9hNlfIUWvGwdk3jCmV-B6-FzqzkoHmgeDYgOXKFj-t3NLJPoctwSoSbzZBa3SEzC1MLVWkWK3tEho-Ck4Dj-YdDEaqBM6ZRU17uWZbZp-VFZXDmRg197bL5QnnVApiSe3r4G-ea7bxIjJCDePBU4HkWVwzdVgXHmWY-9ZF8m30rRJ6Dap5kLwCLrD0cKEcoPzy9kFSuNfiosnWDO6R8JRnekHhEv6y7S2mauqvfzsErfD2v4bzl7moFnexi_AxiWPTiHKUQzkC0sglxqgrtj4YJRI5vjuBWRiWVYcnM6OWGZaUPDdSYhgyrLVimgu_5HZxuwJBeBU6hh70gLVyJb5W7YY-Ca9eNeOzHs2ltUKuAXPXX_h-XhD1lUGDwmZbJiEjaEkbw9oV3-wCchFUAIzTWyOr45eK7rcXaKqJPlsmISNoSRvDIifMsp__oKoTc6aa5-7g4nybeN2vJrZG0kOGb3yeNbinAiS96gsEx1C9smG-zSiYNwj5jGJWPPT8bUW4splxSnwhh-bhvhkunpxiBN7qmDMpO0gaat7CBaNxqQx7QJJCoE_G-FO7DQZthm8nBcCyQquDRUdr_wmv1yhkSnlMilNfjujlVfAo7YXt0zvBsDl_PGfISMNCHdqQ8z8ztfVB0cJhiv_7wZ9DWOgHoeuLABVoxbb8jWteicds6lRXi_JD3hSBsl0A0Uyml3wQIZIeadWJ1wx1--fBmjYbczb3-0ysW5d5Wya4Qog6Aednl63G-adj6ciC7YfCH44xMkwCz4619InHRwNqWvq7uJB5XZcf1kMEIdQa_vp49y5XfC6y9AWap53AI-R62cvHN9hinIN1goHWi5QZs-YZ8-kWZ8BUd6Yj-kpp5gOPvALi7NbqbJ6Udh-dP3gUZNVQ_9-SfHKpU551hd9ETqADYcgkS3BlmgAIFTQ-_TD32A2rVF6gj7aBr9miakKaGZ9a8KSAC0g_-CslzOW3bYpMKy2PQm62ej_fHDzE8xJxT-B_YrgSFGzPBlPbnlAmlE7fUPZwfNcfcLnRdjxng_32X5d2BkuV7jGf8sqo3LjMwghweyIio3NlDgCs6E7g-QztlEbURgTIq_pVejL3OOhbDcD_mZ8RfDnfgwWVlLnXymvS32_HusWd7CUOfWk6K66TB37dNvmj9UhoGLpFWfOsjT82ZTnG6zHTt-Fdu_afsz_bRD99P9Pg8zL8n6bcFbBjPoLRjMbP0XYsf3_Dz47-V8xtBBLhyvW1GUBGRgF3ENe9zpZcwhWgkcEXDTjCspLE3a1UMG_OEGGHqW42-EyOydIBA_rUWVzjUhDYEmFPS6XmDqxPTA4r6Qrx8wpat0ck1i9t6DqQpl2gc42xphBHfRwiMWiMa1EtSZuIGODKVa2eDH3ljsbVs7VRhQZ4OdoP7vb9cl0owNfVrWglon7jSvN9vMcCo-qh6tBBXgCnjev0UmqlEm5PlUXhxV_R-YBlATni-9XDFXl8Os8SZVkWJq7w6n_SkRrpRyr1GDTzXuZ5eOdae71AdyKFbfj9m1b6bS8uRj--0SC-vPIVZxLg8ECbDCZCzREYOW3V0MZ3mh6ykad446hRZUo97Xddgr54chwDEBh9Eywurb74sN9tKMhGhDV8g2gN6FxXMFNb_W2VSgCEhybGfGnM81pmVjPuj6hF33o2SAblQH4c305d0WcHaCYdWKiDcUhiwCglZXPy6mnUZisS7KVYgGuImHOjFQMvAVyn89eAzGXd9jMK-0fXREos2HNntbL_YJmnJpM3FkYb_SieF-84RRY6nZ78Ab5Utw0T7WM72mEE1x9wudF2PGWkNhPtOLBtOThXtugq9kjtsjtMHPKHnq_acItnqvnCBTgj_E71dnwLT-RL7sobpOjXH3C50XY8ZmfiAymdqsp4jwWOByTImcwQvW1DcKB-zFMGSR9tc66Jb0sEjzeVjcund4QWsxkPqasseBSOedHx84Kh4th_5Z3xEmJxxRqDZQvZshULdVG-WFmTREazcRavotOkOeAWZxTLPwGs8DxFGGGPJmlsYO80qZEzs2bkr6QMFXYKgQV-LNjk-D-HFk8CsR0mt9wGurdMD_OazGVX336-ruX0RS210ygcXIvzR5kt0j1gqTuBq9v0EI4dW9Wpdfjc7jSQ6B_ODV7erCrabpEYj_s4DhN7hyiLCHPryTP1a63LdTQdDqzGA0TKkbd9G1htx9aJaakpUPL0lLV98_-XZIRI_IYc7qkIJF0DrGidv-XhKmYxb0_eF6FBWm5ddBmuRfMB-ppsRkG55XZrflaFva_h_SEylH89qYTNOJEJr6qPdvTCyA8xKN3-VAV5SJJ8aDzmGBInTRsYZvP99K0jHyOKGriRCa-qj3b0wsgPMSjd_lQHCG7byPGjaNG-U7D4MeX6UFC5zwvNvg2iSc3fh0dAbbBNsX2ih9E2WV0iVNSzQbYh-BJQSKL_M2C81mcdA9UFRPgXIRHSyDiAoWZhbAkhUq3mmsMIVKjieThXvprRpVwHe_nKpsuPe0vdWMYCOKRLPJ-uoJydwA1zGyfg7-3EkRRmKxLspViAaRLL-fkCEbIls1rj7DKjWJJpZ7MkGMmvwyHxi_RXwkJT9ZoQVhi4kwlz7EKeMtx77rxsOZ3D-FPeV8d-IleZLNORuYBhP6i7PE13pwRBsZIFKVCdbZafcOosxx4t4AHW9vGGqKUfafPYUnwFvAqY927fvYhtsvCdxq6aqyDLqXlEVDAdxI2Q7g25AA6gCeMqo8Oon2Ld0v8wBRqMOzapyoys7W0kIdRsZYAuJfxhhzZ5uhNrogKTFY8TbLTflsa-ArOBeTm6QkioLoFhjh4CFt9t5F9_T_8ukbpZXUrLJirTOlq29bXihwTlw4VZX7GHjbJe6jKidklonGlv1WMZ2ZS0kZOJqHoQv7Rn6ILYFF_8SOWI98BQDlqxZuIydYZZHrq3oREW1zmcIRE9PdPGQ1_2-QMWPtBTKdomCCuqouLpOsjVLJrhRwpLfWTj_VaXF9UGz1-WMU2PWUP48Ajakro7a2BhRRV3jrPc0iERg8XCxQ80KsmidP5roXUqvumEdELCri2Y32rG7U5QZYboTpv65FTJq_MY_1lD-PAI2pK4o5rF5wynkFbvzgqhBImET3abyPo6OCngLDwr_IHwOdglxtR0tYIhF6pI_O2OX1aweR921H1IPwXN-RsmUo0RSuXg4S1UyDIv3DcRSUxnR9WuEDYklXpBzMXHXUmWnzBY0fFM2Pimiw5XxbKzK_Q1V0fZsEa2yxnj8TP2TuQ23QpyRUtf2ExTNyHrOjRZYNkv517Seu6fjyvYs3SACrynQOwIlrmo5EAp6XAkakDcaEQZL56IJL0cSQYAO6Nlq44d3h7ZGaDRJcBbKUsh1el2Yi2Nd3Mc04POsGoDZsklpMjnv_YVuKMu1TmfX08Wv5Y3JhBJpwiYkW_wnGAxNSNwi2JFvdCrfUOdtb9SnKugv6KvQWHX05ylRO1G-56gLVeGeRKkGpL3Q6Vrs3StOPj9KhYs15KCAg0xJQ6P-ykwsJ7MsbfAtwGoqvDY5vAcpF5XwuVYuM9SoNbFkmOfONrtAb8JHJkUqmdViZVY6aSvyi4cJGg2gMo-Dxr8nRKtVz-s3nx58OV7uevNONe9auoFYtPaMifiLfVkrC44odPuwcpGi8PT_pHY8fy9tc5-jCVR05BkSnZruWj5HWCb82iatyjbIsBQereGGC3351oLBa7Tct8lVsD52ZYHzSa4rVtDzfuDUR_4wPuyVw-c6RJi_u4sJey8izTdVQDJqnWDgNI6-TYd0_ovPU568S8CVnUY9UKdtgfCtl-gntCxsq9nOJf6x8jCfZ8jHtV2JOGTfSHXdMH6LBlUDkAXNKYelSOx4IABXBFkbQ_25n8hzrEQVwKjwSi_-81xFYPgwr-Zv2dexkZAbegnVJt_zfprmm4tw20LtDWsTEpRfCpBejlprb-qyTrpiVwzEpbX8SC3MiAn5fWMkc1LllpaFFK2dtKDTC383pp3qAlrHf-q-lzfClNljPURtvAU9YmmU_2n9q_gY9JWfr8yP_xKF4crnuhjA_wqo7OVxeUJrwwylYm3B9KmjS18QZ3Jljp7xoGE6WHxkgMsKJ0W59rhxE1UNo7xQWG44R49cxFvwkJY5QBUnbA3nSp4R9NT80jotheiRFUjcBN5x2J80D7oYgpStPWs_VTH-ObkonfVFtMuBWAYgyH2E3KHvCF2W0XVsuis2adRmIrA8OQO9n4XqFjXE-WoJpIza3GDltrN00bbK_YmqSlQnW2Wn3DrMcN9HJiselrMBwvF2RaKmD9X6Iokxml-7lvT4ZE3_bOpbWotILoJnq5HWNkInijYk0YBCGusD5hkiREilDrdPRB8CEPKYxK49Ty9SoDSKI7YrJuS7PTdtcqNvKYBGfxM-JBwsa2heEhJpYwaUF2ghXzpJc3rwImc23FX68l08t0GQyOTMhgePuwdPa1KM4KHydQKo_fJDWJjtSMl2PYwmgLKKKqSuwtaOGEjb8GpeBa79osslpVaG4RU9v2PNixorcML4UaBwTEZUThlFLFOD4_V-nVMu8_ukwgr26xzniKBWh1N0vpQfS1l20BP6_w-VH7wYmaRW7TMArN9aDf4gSq_av3WDCXn3s9Qx8YC82mT1vh9r7qDxszVTy4m4AjK6J463Qv7kg3hwSMbjuOR6E-b4-rOCMHDX6bWlid7TNhgZGYg2ZglosvUPe-KuEP9LjobstUUyA7b1-DnaCht--NysmnmOk0Dz6BdSYhmh_9o8bpX6bhQ8WUr80eCSWkjyUqUo9yGuDGs8ZnhjkmXgChVdFuWf2WI6a_mGuoTNKnnOE4lSZxn6fqIUKSOF6H9SkCQKRXOHyOh5cvvpeZkcU9o4iwm2qz_ggYYh-xsK5Nxgc4cOOc6i6VVfqZS_eiqeitCyPMe1TqZfZNhFZ6uZ031UTz69AalXjnzcLZFTO7CDCaOe037xDOYFbsN6ZjNLCxYR6BWPV796lR85WgoRNB-EhYZswhy8RYh9PD6-OrOn03Zo0gsNM3rMXRj3BevVsv05VEAKNz42ET0gROTLSlwj48M1ExyCb-9lNO1_3Ec3xTPUtr2vXB-qGrdRFAH3uE-lPEN5yq61XneDrfas0-wt0uaXz3YLmxcJolAorOr2tG8IF6tmRnc5wPI5xhZAQF04kI8u9PNLqdhYlnARdY_sNIl3F9cBGr-78Jew6jtydf71Q8Oxt88ie4Fi6BkSUDZAYPTUz8lfFRRDbLnGv3-2scwRg-F6s-TGj68f1Raiq3xIxR8WRVI24Vh-H0ald3Jc38RqkBlNzhNAgpECTxvBGGqa_rPT4NzA_m5mwuCkQbuuqJH6QED7gZ8UpBcDvFCpD-M0FQaIp63J5UoBvIRrL1m9a9_rSOqUv60KJrqxvdc_qvX6AHawS3KqsjgnguUu7NYQCd7up6CLXmlHDU7MWS5QZsZAhk9WsVVVCW4hr0DTSdUjD3UpSBGM7mmw8dlNWneUQbBqr9LRB4138Vsr0xnd6PjHVFzXVDvDc4kl1Lp-zGeOC0hcUvd-KZi_B79sOMwSwLB7aGFdAsqPKgETbPU28w-hA0fK1ZMDtLYXqsayYgP1LBdonqpuYYRTw0QwV0hb72ixoWIchWrMHZ6aySEMQxuXUKnyXLpr9yt2UOfcwAD3MXdD4tM1s1anC-MCy4-ujw5-DnnNCcyi_gXtwQx7HHckO3OLSZo6VI9Xn60_U_PXDeFVre2maPO3AwnTLSoROL35w7qFXTaUzZ7EnnN6D98o4JbbAeL3jeRiIWEK7DlJOxSf1-w1XuQNLh5l5K75VDixjO4uKQlusc0Wd4tM-6L0mfLOLBJqNQSbI7cVTMljLR4F3FpEtip1VPSa_zKPq7YrD0WY6EAnB_AlFMNnto4TU1qyi9RSqiwhW_mrd8l-iTy_boyk0MG5kFBLpKBGc9N2BkEXOsYhbvD6c4FAO5fX86zurJGdzVQl9nMkOUz51JmJCjQVjafRKNbSV89xeSOO9LxXjXtOjSodPXW-USIT_MzeL6JGBo0fYbng4h7C6b4XQMbZpKHW0KKft3eddPW6whJektGz4sdr0U9B_esmbkXBEd-DLkDrr-EnBt7SUCoZ1jDBpACRPK8dWbKZDeFLb0K1OM01gLvQg9pNLZotrwfjvX_fKucj_hz5hHqkltuy91b9LHNWkpwUr7Kq_ekFrGyMmtJDCYtXe1VJOZt_XWFE7R7fE4ja3WepAqEG3tdLXwPch_Hr69g4S9sPKKMR3dpwOG5tv5SBS9uGVDZt-EaWDOoLwz1hBh0H1z-mdZPcRJeJa-Ijm_JmeWJUuXftjlxUw-Fl1OqdueZJoG3whFNxN-EQDK8aAZesBxfP5SUm3bA_s1z0qsfSIrNSAUUbXCGGIdoK9-lnQJRokE8u7obNTwhWYxgbNvE7MrvL8ixhDh8-p_gFhuI60JAGb0xXN-Hwn222_D7E_RHthqGaNjTRiz5DYRoYA2rda2pN102rg4ugDOWTlWhZt7CjlAE2RVvM9m7mcDnogCPs_DmyzrJugjVZib5hPRaPZYWZ1Cgalq-56HHvCoQDt-Vv1LYoDpP39GLE2bb12pOMkizZGZqRiSeCAC4lV5swQFQAE9RJW_s7tVPoTLahWVPl2bDEkyDP5hyXQmxKOibBQwyDAyVZW5Il45odTGHMEPMYx8ppokwQru4gQJxaGzU1ihVvSHsXhNzC1asb95-slz6qwfVdFQIOKOAL44XuaPWV3q_avejuHLNs86uMeXgkB7_aK4AjxePygkTrrXN6s80ra8YgY8MlD191OL-jeDjmrc71lskxKNBbNdJbkb3FQsFaVqO8Xm3-OMBgr73CU54mY4OpQ-Qb93gTB6ylTZ_ysnx6ZP8L3-wG1Aaz4G6KXRJdBjdGFg7qMen45VhCIiB4eiQ-qzE2GIoL4c6N90IAH5IwEHexsM5Dn-3SJ23-cxnddrtthkZnxIUR_5AdOsTs64vyxriA7phyhagWI15Fc2B7KBbeTEnUt9tf31bMPsEadF73ibq1mbBJavMBjJIrX36ZMTdZTJDI4tqw-PZ1A6x1pSxQ2D3dYrVhue4RXa-hKtf5FuKP3iO1-q6FMEvlBCfmUsir5t4jtfquhTBLGKk5btQyyuYolYqEHsTHplyxsijTw1edA3cdECXQh-j1T3cXrK-IlKsuVMS9joXiZpng2g5dbemeyfagMv7f4V91OL-jeDjmrc71lskxKNDPqjf7UzUDrtY74CYUnHoAOMBgr73CU54l_1WyY38HFrGss3eesNTzFb5pEE2whJxOj8Udwj59csH73F8TZvBY2Gb5j-ziju_izJtDTD2FJObVnuP0A_jVUIfR7xc51GhM3e1w7Skh5bc8XQL5jZ3y6YAJrP_EhoAbunOEYs16MPB0CcFTKnsGqE_70jpq5XhnWiW-EHrnGDQoY10qIN-OQ4tXW-URciM9FjaiBkC3hSlPo8UFpJPEdcHOV7czZM-mQpLeAceufN8nAFG_dU_R6oDDDMCrSAZP_jsNmjjdSs-TEn7-9ZE6VZRBG0uBhMAiy_pVIwOKiToNVlWspCx5nJPlDVewXAf7CvOnpRb3YJHUw_WjKf1Aru0m45OI21ha4aqOJdERTS5A_TGzbz_0yHeM7hk5Y6ZtTlejWIDzlmxpc5PHqvZ_Cl3JIylikQdLRMSS_3YlbV2ozU2YnVWx-dq0NvVlATf989qv-6j9s7BRUwM60Ykk40s1Ahin0vth1MpFwD7SlabLSyVQR4soKibyjCH9OheJ3u7hqjj3jKIpgSupXMlgfzVeCEgZ5jdW7m48Z2Lb-XPMNrBn2gzD4zz56PTg1takXYZRyN0lo9g_JAnujyOtSlnqq-xSUWfaLDP5ezJ8dk4xInAdX3HPeyrsSTtXaOJBDpHZ-i9vte2pqIvAmdXUMBzoicZcs1mqNVTo_S3ME3Fma2W_Jr1zbHI9XNYr1aTDC8FBjf-hCWWaIPnznEfNC2yUcwNez2FJ9sYZLUdfG6eO78x8gxEMni4xTIB1xkPKcnkvgYaldIWkUPVh00r6TVkJ73ojffgT69ymjT4VpXz-pLXQapyfIojeLe_Z9CnJGhv0FxuVbiJyouQsEgnJEFLuKZ6w7k5YBbTIFsKZ0vegD4NMlO4el6u2Fjw907H31XwBM53s99VW_SEnoPLiWHo27I1odphGtrLw9eTMkqxP4NUSEAGG3Jyp0yJnjidgw7ih0hL2Exij4wPq4QiUTe3JXQVcB5L9GJXySHSqfO5msS7V-vLnFUok7vu-_cu3TSuPhUUea_lS3dBN6J_DLBfZRowwMfWnvcThKwyhi5eDRk_DVfyUJzTeFRQvyjCGpd4t9BXgBh_hkLVG7g7Axt6jUm7a_IPObPdvk-7TUzAc6InGXLNZqjVU6P0tzBOmGzUqMzB0-qu5hPVgMZntE1_cBBK4cM06qxTTHfbHhHF6W9tugsCHTl6rshj_4-rQCue4OoQjJwVUpLbXlwndhbWvIoW1JQcAq82b7h8K9_Xe55_qXA-vV-07wo71Ri3g2rXbErIObQ==">
+
+	  <input type="hidden" name="urlRedirect" value="/ventanilla-sagarpa-HA/bandejaConsultas.action?buscarConsultaTramite=">
+	  <input type="hidden" name="folioTramite" value="1502200500220255903001104">
+	</form>
+  
+                    </div>
+                </div>
+                <div id="footer">
+
+<input type="hidden" id="idTramite" value="">
+
+
+<br>
+
+  <div id="divNavegador" style="text-align:center;display: none;">
+	    <h5 style="display: inline;"> <span class="icon-infocircle" aria-hidden="true"></span> Para utilizar la Ventanilla Única de Comercio Exterior, deberá registrarse previamente en dicho portal.</h5><br>
+  		<br>Se recomienda para navegar en la Ventana Única de Comercio Exterior, los siguientes navegadores:
+ 		<h6><span class="icon-world" aria-hidden="true"></span> Internet Explorer, 
+		<span class="icon-world" aria-hidden="true"></span>	Mozilla Firefox <br></h6>
+		Usted esta navegando en: <h6 style="display: inline;"><p id="navegador" style="display: inline;"></p></h6>
+ </div>
+ 
+<p>Av. Hidalgo No. 77, Col. Guerrero, Deleg. Cuauhtémoc, C.P. 06300, México, D.F. <br> Call Center: 800 2863133 desde Mexico &amp; +1 844 549 7885 desde USA y Canada <br>Ventanilla Digital Mexicana de Comercio Exterior · Derechos Reservados © 2011· <a href="javascript:muestraPoliticas();">Políticas de Privacidad</a><br>
+		<a target="_new" href="https://www.ventanillaunica.gob.mx/cs/groups/public/documents/contenidovu/dwnt/mde0/~edisp/ucm014810.pdf">Configuración
+		de JAVA </a>	
+</p>
+
+
+<script type="text/javascript">
+
+	function parseEncuestaFromJS(){
+		$("#modEncuestaSatisfaccion").remove();
+		var refreshId = setInterval(function() {
+	  	if ($("#modEncuestaSatisfaccion").html() != undefined) {
+	  		$("#modEncuestaSatisfaccion").html(changeStringUTF8TOISO($("#modEncuestaSatisfaccion").html()));
+	    	clearInterval(refreshId);
+	  	}
+	}, 50);
+	}
+	
+	function parserContentFromJS(){
+
+	var refreshId = setInterval(function() {
+	  	if ($(".main-footer").html() != undefined) {
+	  		$(".main-footer").html(changeStringUTF8TOISO($(".main-footer").html()));
+	    	clearInterval(refreshId);
+	  	}
+	}, 50);
+
+	}
+
+	String.prototype.replaceAll = function(search, replacement) {
+	    var target = this;
+	    return target.replace(new RegExp(search, 'g'), replacement);
+	};
+
+
+ function changeStringUTF8TOISO(stringUTF8){
+ 	//var arrayUTF8 = ["Ã¡",'Ã©','Ã*','Ã³','Ãº','Ã','Ã‰','Ã','Ã“','Ãš','Ã±','Ã‘','Â¿'];
+ 	var arrayUTF8 = ['á','é','í','ó','ú','Á','É','Í','Ó','Ú','ñ','Ñ','¿'];
+    var arrayISO = ['\u00E1','\u00E9','\u00ED','\u00F3','\u00FA','Á','É','Í','Ó','Ú','ñ','Ñ','¿'];
+ 	for(i=0;i<arrayUTF8.length;i++){
+ 		//alert("includes? "+arrayUTF8[i]+" = "+stringUTF8.includes(arrayUTF8[i])+" replace with: "+ arrayISO[i]);
+ 		stringUTF8=stringUTF8.replaceAll(arrayUTF8[i], arrayISO[i]); 
+ 	}
+
+ 	return stringUTF8;
+ }
+
+</script>
+
+<script src="https://framework-gb.cdn.gob.mx/gobmx.js" onload="parserContentFromJS()"></script>
+<script src="https://framework-gb.cdn.gob.mx/qa/assets/scripts/jquery-ui-datepicker.js"></script>
+
+<script src="https://framework-gb.cdn.gob.mx/data/encuesta_v1.0/encuestas.js"></script>
+
+
+<script>
+	var validacionTablas = true;
+
+    $(document).ready(function(){
+
+
+    	if(false){
+    	if(document.getElementById('ingresoFiel') || document.getElementById('appletContainer')){
+    		if(navigator.userAgent.toLowerCase().indexOf("msie") >= 0 || navigator.userAgent.toLowerCase().indexOf("trident") >= 0)
+			{
+			$('#divNavegador').show();
+			document.getElementById("navegador").innerHTML='Internet Explorer';
+			}
+		  else if(navigator.userAgent.toLowerCase().indexOf("opera") >= 0 || navigator.userAgent.toLowerCase().indexOf("presto") >= 0)
+		    {
+			  $('#divNavegador').show();
+			  document.getElementById("navegador").innerHTML='Opera';
+		    }
+		  else if(navigator.userAgent.toLowerCase().indexOf("safari") >= 0 || navigator.userAgent.toLowerCase().indexOf("chrome") > 0)
+		    {
+			  $('#divNavegador').show();
+			  document.getElementById("navegador").innerHTML='Chrome';
+		    }
+		  else if(navigator.userAgent.toLowerCase().indexOf("firefox") >= 0)
+		    {
+			  $('#divNavegador').show();
+			  document.getElementById("navegador").innerHTML='Mozilla Firefox'; 
+		    }
+		  else{
+			  $('#divNavegador').show();
+			  document.getElementById("navegador").innerHTML='Nestcape';
+		  }
+    		}else{
+    			$('#divNavegador').hide();
+
+		   }
+    	}else{
+    		$('#divNavegador').hide();
+    	}
+    });
+	
+	$(document).ready(function(){
+
+	$('[data-toggle="tooltip"]').tooltip();
+});
+
+</script>
+<!-- <iframe id="iframeaux" class="disNone" frameborder="0"></iframe> -->
+
+<form id="frmAutenticar" action="" method="post"><input type="hidden" name="urlRedirect" id="urlRedirectSSO"><input type="hidden" name="parametrosBP.idTramite" id="idTramiteSSO"><input type="hidden" name="parametrosBP.mensaje" id="mensajeSSO"><input type="hidden" name="parametrosBP.servicio" id="servicioSSO"><input type="hidden" name="parametrosBP.idSolicitud" id="idSolicitudSSO"><input type="hidden" name="solicitud.idSolicitud" id="idSolSSO"><input type="hidden" name="MNorXmdrk-j1prPYNXUAT_ITBm5BP4PVscFjSYt6joA=" value="o8BM8Vm2l2n5YiR2Syjjlh18F-GYfeKyD8s_xPWU1SlR0CHEdygyycLTTse2L50aoTOTQq_BZHdxX2MOPgmusZTo4gzD03JOBuVoYqkYfqdwCZtDcihj1R60NJwBRUQ4GNYxo2isC19Bw0KwuA8Z-QlLdQ2MouitU6PCSqscr121-XRDHmhAEfKVxj5G0DmiohF4QPKy1E2l_ukfgF1mqfGUPifTaNu1e8ab803gRo2TlWhZt7CjlOrX9iIVoSusAwa69c4V6GjD_776J9EzdllXnwb3GfTkmn71krLxfhDI2tTihKkt5c3uHI-gDY_t6doE-Gn7DHdZq7MstKRmKF0pkGziMHhorORsxRvFkN8HERpbESTt45ordVijtIQ9n5HQl-Bd988P97fZLOG3pr8WRZu1QVdTN7pUxYW-1ULT5r-bAgJlzy2cUo88EEFwvfPPqT2DH7poK5Jcb93nE0Ji4lKP11vj53RdPiH9Wa8DaYRXH4MNvycayEeq6Rmf2FnLOFUS-sZsySqInf29OzCyTj9bfGGZi8wRahFtEJqnG0Xmj-VHAsv96zLgo7Zfc3zXzvnrULaTIs8z4hbmZZfteJ80Vm9uVSRDylbQwK3fJK2D76lurEMqk1XHRZbMTQcur0h1ogLLE0n0SetLeZwQb6p_09jgoW953jpVE5IhwXiD_aOKraIpgSupXMlgno8GxJZSktmTmUGSH6don-DTOMRsJ6FfTiIG6eGRfsYft7bvqAiUDapRrqoEhCg2eVoqlcnmoZZWAgc2hxYEBqlKNYPHRq4wreiBQSlcmDInD43wQMAELQTItmvOsvHtClF55vcI69P_vmA2-gEjQKaUJhGPxEKFnisCx0OP5DuNh67eY5ZqL9Gcy4dzUaX53IvaOtLfQDdhSDTxYYpH7P0ZopUYt_RAmvK7inWlJwyOzjuGQFlFBR7eYBS8H-zq59vjRttVdT961316wpp0ehDVgmE15YnZ05h9kdOLSAU-3vi7jp6ekWuojNFJj3ZwFpOLvxhUKJahVaIM6-3JYKT59q7Z6QZbed9fKD4BcNmDSzVRXm-pfxE3y9irKueaYorySl7lhlD3xi2nPtGNy72GLWys5Wc7osFSFQIZYI6nCOS21JaqUbeBIuH43OS8ekpJ8cXaAbH3GD2av73Nzg8XmbeRkkxm6cAS5995ATGNarPB_GMi5vPg5dCb-Ejr0G0dLrIiuQam2aS8c8SCcf1fkpjMCi4e4puuoe8g-RpkOUerkTTq2UVsqt7gPPXM2V7sgOJ2AtRZK3abt2S7MSz4gIvxWFq9ZLgJxGL4_fRcwjy8gDLxQFW3I-dorY9y7Y-GCUSOb47WLVKWzKICK7fX8NMVY5xm0flJofkph2XrbDgnhH8DXGuojNFJj3Zwy540WjqUz3-OzjuGQFlFBRi7tmJIJonKdYzE2wAvIykLiHbHhRgTAGxTEbGlrIF641d6avCQCzbWG1tg49X1PeeDb1vRVCU7yRh_KrdHZ0mUm4i3OdWMBKhjkr-fGqJDtQ_xpXBYjs85KcDUY_RFRoNeR5V_tLaIxB1s7G9iUgqdm4nZxSBUqG1e6pjQ_D4XqOhIDqm4taIiAfv1-TQ23WSsflFTWfA0cYt5qhxuUsyxwdcj7IQvu8VgRY5-lk2PirTly82bfHW_lsv7jt48m7RZXlbf8YyfvFRcCvTLUS9HjJfr7hpLDkqxKP1DMqSbXYmv2qQ9FCueOj9cgqxB5qSGOkYC6jwKBq6a24Yy4x0uFscxdEimfQDttzwCfplB0VmVelLG9PnE0vh5RfM8u5-i8vBxCftnnI_ipYOjmTd3Idpt2FGTNSHfkusqWoQUw3NKs1G_FMgjTnoBLojSeO4ZJwLIPJZvWarBpyPurBCIomGXdAOvSZdd0Dm6JSNW4ji-75rdGrNq9FEYvqXVbqatReznOb7Mw8GYWapkmHydsgsbozpZb0_5Uy2VSONtKHU1kQ4X5q8MX0GVj8Tz9J1w-VegI8yjscIEQZAsiJRoenrhXn1A4_N-sJQ9NAYYLUw0mKxb7uzyDod2AV7tQggPGHXnmPrE3jdQbTHuZL4jAsKiifKQ01tAmw3SpBqDZNT-KXgi4llL_iPJvl9zfMu-pd6a3xtvakaRfcTqXPsHOIFyKPGl_NizyhUsJvfes1enhehefF-lMts6D4NepwaUyDVV_pnXTZ9qJ6iwIva4UZsi84lr3_iF-HfZRDExqQe0fp77kETwNHnNDNk77TO1M5fBr9Xcb8IR9rfXgBRY8c_6oGeAOAixNY4yBFMo_8Zd4mQHs2zf2MfyO5z0bC-8KbyoCoPRp9elH1wkm3PvzSi1jISpNh9va4mqVJ8KgOEmblTxaaHhLkKsK-qBu1dbFf1TyXK8k7lTSFN37m80hCIGsi6_KRpyow-684Ami_UJ2s76ZT_pQQLRv8eHNLSxjB4z0hi0xNUO2uvZUdVlHX3VLFk734pmLpbhquZQMgunkg366lLB_yxCg3ngJRT24HrjZcVv7NUna_zMOZ5TrksmiTswqV72GyR5xOpu6grAsR94o5XaHMxPZqkTwB0D-NjMothABVSktteXCd06VTu_PokOyucoa0gC5_R9oj60W2Xzg52DJVtBJhE63dAK57g6hCMnBVSktteXCd1y9EQ9ywP93R1btjQ7XTNlXTArE92eA9pGTwZ3ngaXrw_2GmyOS5MzNNZ9rXTwHj0R-ypaz5JZpiTAvOTnWRHoxsqq_P7jiCYnyMZ5vMhwbYy7IbTw9KIjgDbbn_h_VQSSblLThWzUQ6wRnbFogowU_mvW-ILJMAr_0uanweazn5CONmqVOOnJsuHeg7KTTyeiLcBBo8d0iIfLgOxfhEyAD1X9Bar_9xE4N1eLXVkDDozJYrQifC2LPlXhUdgSnXvWI0DLGmuJ3nlWkUdc2tXzM-47X9hWmBfIitkJk98JiEHtrNfxNP6YHEuLGvz_30vM8mzDAG7mwdBxF04kK3lX8nP8NNqiW0i6pf_bEWHSo2EtE6BsbTlucSb7yelKl02Il0XQvygIQJ35FWlWhTjWHU0gpYQm5NAM3VwGD7EthEe1H_16DMSo_L2evyf1qDptcQfiCij-Lf1jboY2qj-kJ4HwKC7ZKWyxQ9SdEyn2UbcWOoX0snZK58TIY1Lu5os3NHcEkrdCDCUFbwYyOJt4zGqGrRONv_o49GwaL3eHoIA225_4f1UEkm5S04Vs1EOsEZ2xaIKMFP5r1viCyTAK_9Lmp8Hms5-QjjZqlTjpyUJaV9eDzmmlW5y_M-DuFz6EBDArECC5Zbo5y7PNlDZ7JfxG8_1js2he1UNyQBsAdzg3V4tdWQMOf5MmF2HD32IfUZHKvBHEe-Vm9av6UVMkAr6ncEc4FX4v7aYysnwimLB7N6buC51TEIuzlwF58CQZlReFF37oQpAoob6FRKNl2Wiv5TAzC0dkt5o8S-gCCY6CzGSPOTccLvCad-Rg3M23FjqF9LJ2SucBty6DERwJAT_fbFrFITGH2L36I-at1KhbEDMPyNudxFuuqGx0UqLeNpsh997ngfuGMsVDokJoRk8Gd54Gl6_h5nTaFqQIOzYKBfM9xgcAGRWHMB4_KUkHgmaXs6Z_McM3EfEOAyBh-0FHFzbx_59dSLSCdGqV4ETcKiWHPJTYROAeBPd0TZFI0A2PmDyzlndF1JKFfaA1W5y_M-DuFz5SoNL3Sxe8l7ic1YkvW0GEl_u_Rkjsyu4xCXbf3uStkdYh6E6hYbsDBuRY4PRsi_X7kLsgxHwET4GIicahKJ5Mwffgh4gCqIsa-ps8F8ZPa5QGUKkTnSONQkAoU3lwI4tKLjT3FJkutDcLS1IlBbMoQIv0Vo0q0n5iaL5cQe04eMPKR7CbHCRDOM__6lOee0qREP9b1IjDZAqUvKlKt8gyp7_cD3PzNDQYd6b3IKamEUYsV_TBfgliNNbNNnmYqxUnyMZ5vMhwbd7zfscjcgOcwu6-qFxm9P_QiB6_JXDHO9ifswaI0rrCjHt7DLGHDxel-k-hlpIeFo8m9GYHyXbVkIRn3HIPifnmj6oZ-pB9gPApAapsUQGFBMwZ4Zzcg0tby0yIEgyZ_uLERqz5BbubL0lfe5qMV1I9YMhFdCwRR-WLG0nefdPEytD9F5xLXFUsjjo6dpVxgtcLHtYFj-_ZODdXi11ZAw5LOw8uazxKf8ckcQ_I7gAZ_bSTYC2PPdcF1qrOIaoEFbB7N6buC51TEIuzlwF58CRfNyuce3PYgpB_7e_Wvmcf4cJJVKcXv0kCs4mRiS0H5g7Nk3dKhQhZQubv2rTYDPEwMOArf78uKvK3c4kgLGliJ8jGebzIcG06DqrIEfrl34EoyS_HpiLt61ipW82N7hx7gDJNOLSK_pPxdLHXctSdgB-rB6F-gVeQjjZqlTjpybLh3oOyk08nNgoF8z3GBwAZFYcwHj8pSQeCZpezpn8xwzcR8Q4DIGH7QUcXNvH_n11ItIJ0apXg5mjtfLrNlYgOTdpC_3sB7NP9q_nKNdoVjiJN6nfNxQnmRoDiDwCj9HlWkUdc2tXzM-47X9hWmBf1TX1214CKsDG-rnaTMkqvv_iH6cttYmBiSiuM_wmDIu8PAav6siWkf9Fjoocrvu06FUwxy0MEzC_tpjKyfCKYEK1VXm8hmYEQi7OXAXnwJCHK-9ZB8-5eWyqsx8lhyus7YOOOZiEHvz19qbkgC_4vsG0XI5qaHezCOAtckfB6kdbpXQWWjPB9OKk5mESXpk8nyMZ5vMhwbToOqsgR-uXfgSjJL8emIu3rWKlbzY3uHGGX2ePnblos_mvW-ILJMAr_0uanweazn5CONmqVOOnJsuHeg7KTTyc2CgXzPcYHABkVhzAePylJB4Jml7OmfzHDNxHxDgMgYftBRxc28f-fHUjBXPS5e9peJCZlKl-jWlGixYzXR_nK1N7bjSOTfEKdqKFdwg6HQBrt5iEIUOrhRYop2jsO2JkVGmEkGFtRB_hGFmOjRJWSTS4MA3UI627HJHEPyO4AGYg56CvSuAPp1lez4IDs32GRutAt5up1IGJ4VGsrjPxXIRXw-MPh_YvFMN09LP7Iu11SNDxjA7D2jEDNbFzC9LMOzZN3SoUIWZdXJL5xwy3XEy7Ue8UvHtp66F01lrjQ2YNQqjhVucLEdaXB-upqd3XuaahWk-t_Zvg_dKM2V2qFnsNn5xXCU4cVM5d-nt9p849OJp5n9NQt3AAoML43NnifpvgXVhVC7wnSxPWVEkH7Bc_bEQLED8SXB8nYT15V8NCIHr8lcMc72J-zBojSusKMe3sMsYcPF4vCg42uVpU9xIWAoDuiytM995NKioPdpc3k-1fximouHHYhnl6a1WGx052wYYReZDg3V4tdWQMO9yUVaDO7J6LpCvb7R5lmNd4DMuvNvaGjkmXsWxJi7X0bC5nzDvKcqcs2RJPgI5w-RRC9-oNhaEmDJVtBJhE63ewzZMa-kVj93lS-tud7hMnB9-CHiAKoixr6mzwXxk9rlAZQqROdI42X74ljdTB8HzLoq6K-BM5IhP_nWwgdtdGMKpQPCMjyNcJJVXymhDNnG9awJDjUNze3FjqF9LJ2Siw5d4RlppBXIs1SUx_BVsr0SEL1atUgFUrFft-JaflGjoznHblNrSMEFhwU0UQ7Cl1ItIJ0apXgRNwqJYc8lNjNSKSf5k4nXxYp_q0edLl1JQVvBjI4m3jMaoatE42_-unPRouLoBepM-47X9hWmBchvwZgee0LGGvLIpcAC9gP9KmRnhbJ4sdfdT-ozj3ZwVrP-TtkFloNsHdDCqE9o5V-R0QYfiJvujiNklpDu0b-7yiK9aiTEzJh6SBxM-1uUWHwbww2pkrz8nP8NNqiW0i6pf_bEWHSo2dWKRM-nrBYSQeqqcQt0QftvsLddzjzxkJAKFN5cCOL1M0cC0jalYgo1vyS0c4jLGCVk9bjq96QrtZVUE7AhFuaduZee_IuHhlw0Y_e4thXsG0XI5qaHexlgDCyQYySWmlkOE10791p_7SdId2eKjp3cw3Yb9C4hgQWHBTRRDsKXUi0gnRqleBE3ColhzyU2M1IpJ_mTidfFin-rR50uXUlBW8GMjibeMxqhq0Tjb_6OPRsGi93h6D9smHUVyZSgciK2QmT3wmIQe2s1_E0_pjxZNmGmr0ZjvfwbD1CU8L0_RsNPyxyoiK-uZewb_utA1ucvzPg7hc-ncAkZcr7fl-sEciVMgvyrtytVx7tHkJpYZ6fh89xJa3kItFpgNhTJWEMjPXrlC7xZFfbciSHx27ht3M4obB0KvrQVfkz2yY3yzZEk-AjnD5FEL36g2FoSYMlW0EmETrd6cw5t6Eo0Mbc1a07ux3Y5MbKqvz-44gmJ8jGebzIcG06DqrIEfrl34EoyS_HpiLt9tDh0xLocTAIgmFeOoeUQzZRQ-acRAb3yciB2WKSBUUNyvlIZeafBry6xn1lb5kcEmiEW6K9kUlDVywxfVNwdH_sypDAM4pUxRMU0L0vgANFbnAD0zuV5dNq6zptQyvpsuHeg7KTTyf6Z85qfkA-rEBt3hTgHiAczmz3b5Pu01ONdifhqbneIC1PdoR3ukVLkQOlwR5ukQpeJCZlKl-jWs6yfuYz7xXdtIjdXrQdxIxc1zxLh9HiUmLdxCSmJSrK5Ekik5IzxyFAdmDoGAQkALkRZjgeSRPCYQyM9euULvER8-nsxw40E0q2SHFTJ2HN7pKyosxxOnxeylVPJnv_VNZWEPPZp5JTD_YabI5LkzM01n2tdPAePb7Q-SzYE-xZj4WUe84QnPIaSfeDHMFoHyeB8Cgu2SlssUPUnRMp9lG3FjqF9LJ2ShQFjxsSOX2-bNMr_OHdY1zYGsC1jkkqKkctibNTEDS1tO7wMDTpQmXhy_4KQ9hkDpCEZ9xyD4n5Opc4_osr9VI01Z_iWgcufzgXB9N8dMWAn3hStT3SaOa10o8srr7EMjPuO1_YVpgXyIrZCZPfCYhB7azX8TT-mPFk2YaavRmO9_BsPUJTwvT9Gw0_LHKiIr65l7Bv-60DW5y_M-DuFz5ZfUTw40kFrEkHqqnELdEH7b7C3Xc488ZCQChTeXAji4g56CvSuAPp1lez4IDs32GjriEwmaT2yBDvaKqMSUaZmul6vAG9G9zTusqTpHLE2VM0QG1cBpWarVCW_wdLGriCR702mwZ1vtrcbIdaj7WwD_YabI5LkzM01n2tdPAePb7Q-SzYE-xZj4WUe84QnPIaSfeDHMFoH7ihy0rsRoxUXUi0gnRqleBE3ColhzyU2KwAqrKAArvonUdvXJlt5ZTaUcbJZkVwS3edmUOAx1B2WydvGc7BqgT9u_CfF0HaaHWTKvkQ8CJz1prGwn7qLRUHyW05rQBE3wUtQmPUhmQkvrmXsG_7rQNbnL8z4O4XPkBt3hTgHiAczmz3b5Pu01ONdifhqbneIC1PdoR3ukVLkQOlwR5ukQqV8_sVSvwgBa8N-Pc0iKwz1A_mOG-FbXKZuwxR-XArFYCeY-5zBk6r9jeGL_YX56s1PwkcI9jmQegND_3Z88rNktwInadPuCH1hcjXkYwcB3YSDlDolBfUAdAsAj0oaRDPuEpCLQY4vXZmA_-vR14gQTLeR7E1ed5fjuSU0l_3mGdZ9VeoL0DFT_8xvvl1_CdGLFf0wX4JYn4fVuJkQCJ1CdLE9ZUSQfsFz9sRAsQPxJcHydhPXlXw0IgevyVwxzvYn7MGiNK6wox7ewyxhw8XpfpPoZaSHhbl4L_93jAfRpWVQcVF8AzMaNL4lPcw3YGU5OxubJT2u9IocoULMgRDvdhzBhYbLX44N1eLXVkDDhnp9gkEr_BTszYHiONOGDrJr5wqOPSTojGue7zUyQxUsQJq_ME6DhvLNkST4COcPkUQvfqDYWhJgyVbQSYROt3sM2TGvpFY_d5Uvrbne4TJwffgh4gCqIsa-ps8F8ZPa5QGUKkTnSONQkAoU3lwI4tiHGNNceVVfjbzhuUvR8U7vjPsEIV7MxgXqUj84HbnF7cWOoX0snZKHQrpsPHMFtjO8suZaIIy_oBX8Pjw-Nc49b6sZAmi4HfD5vfvjWM4Fp-m-BdWFULvCdLE9ZUSQfsFz9sRAsQPxJcHydhPXlXw0IgevyVwxzvYn7MGiNK6wox7ewyxhw8XpfpPoZaSHhaD-OiYR5JLve5kTAQ3-gIT7NKI0sfxbIDdB2rLSr7AFitiegwKV3m_hzwx86qIxOeAB91UBFrdLVZgKsBrq3-RnBvpk14c6vEz9JDu1pnOZpJ8GDU5ZdHyxyRxD8juABmIOegr0rgD6dZXs-CA7N9hkbrQLebqdSBieFRrK4z8VyEV8PjD4f2LxTDdPSz-yLtdUjQ8YwOw9oxAzWxcwvSzHex837pjelRfjuSU0l_3mGdZ9VeoL0DFT_8xvvl1_CdGLFf0wX4JYjTWzTZ5mKsVJ8jGebzIcG3nsDYlkx6jpeFb6x5Ex8LOX934pb5lsMw7C5sIgZvENxr_BI5FFVQyIjuN5CLF5_Q2wqw1i0AUYkk1AfzhChzDTZ2KO0GZN681Axszu7DDqoA225_4f1UEkm5S04Vs1ENmhYEahBmJwfFk2YaavRmO9_BsPUJTwvS4EaRoFRHEWAuK9Gyr2pYvNdeGRth3zDbQCqs4W_VfnWa9uph3fM0eqZfIRty5uknoQs_4-i-bfNHxQ-y81_Vp5MPbPLGbFp3mSxRRe2mdhFwuSxYxWj43OGF55CgeGlk2XJEhSxVZy8cI-SlhCm411aZiedNjN8NSzaJMG6-ofk8AhYuDiq8Ozhkye1OvAO7NAWxvx3bqW1H-OaODvJi8Zy8Mga8PhZIvsL8x5pdITWpvK9hNlfIUWvGwdk3jCmV-B6-FzqzkoHmgeDYgOXKFj-t3NLJPoctwSoSbzZBa3SEzC1MLVWkWK3tEho-Ck4Dj-YdDEaqBM6ZRU17uWZbZp-VFZXDmRg197bL5QnnVApiSe3r4G-ea7bxIjJCDePBU4HkWVwzdVgXHmWY-9ZF8m30rRJ6Dap5kLwCLrD0cKEcoPzy9kFSuNfiosnWDO6R8JRnekHhEv6y7S2mauqvfzsErfD2v4bzl7moFnexi_AxiWPTiHKUQzkC0sglxqgrtj4YJRI5vjuBWRiWVYcnM6OWGZaUPDdSYhgyrLVimgu_5HZxuwJBeBU6hh70gLVyJb5W7YY-Ca9eNeOzHs2ltUKuAXPXX_h-XhD1lUGDwmZbJiEjaEkbw9oV3-wCchFUAIzTWyOr45eK7rcXaKqJPlsmISNoSRvDIifMsp__oKoTc6aa5-7g4nybeN2vJrZG0kOGb3yeNbinAiS96gsEx1C9smG-zSiYNwj5jGJWPPT8bUW4splxSnwhh-bhvhkunpxiBN7qmDMpO0gaat7CBaNxqQx7QJJCoE_G-FO7DQZthm8nBcCyQquDRUdr_wmv1yhkSnlMilNfjujlVfAo7YXt0zvBsDl_PGfISMNCHdqQ8z8ztfVB0cJhiv_7wZ9DWOgHoeuLABVoxbb8jWteicds6lRXi_JD3hSBsl0A0Uyml3wQIZIeadWJ1wx1--fBmjYbczb3-0ysW5d5Wya4Qog6Aednl63G-adj6ciC7YfCH44xMkwCz4619InHRwNqWvq7uJB5XZcf1kMEIdQa_vp49y5XfC6y9AWap53AI-R62cvHN9hinIN1goHWi5QZs-YZ8-kWZ8BUd6Yj-kpp5gOPvALi7NbqbJ6Udh-dP3gUZNVQ_9-SfHKpU551hd9ETqADYcgkS3BlmgAIFTQ-_TD32A2rVF6gj7aBr9miakKaGZ9a8KSAC0g_-CslzOW3bYpMKy2PQm62ej_fHDzE8xJxT-B_YrgSFGzPBlPbnlAmlE7fUPZwfNcfcLnRdjxng_32X5d2BkuV7jGf8sqo3LjMwghweyIio3NlDgCs6E7g-QztlEbURgTIq_pVejL3OOhbDcD_mZ8RfDnfgwWVlLnXymvS32_HusWd7CUOfWk6K66TB37dNvmj9UhoGLpFWfOsjT82ZTnG6zHTt-Fdu_afsz_bRD99P9Pg8zL8n6bcFbBjPoLRjMbP0XYsf3_Dz47-V8xtBBLhyvW1GUBGRgF3ENe9zpZcwhWgkcEXDTjCspLE3a1UMG_OEGGHqW42-EyOydIBA_rUWVzjUhDYEmFPS6XmDqxPTA4r6Qrx8wpat0ck1i9t6DqQpl2gc42xphBHfRwiMWiMa1EtSZuIGODKVa2eDH3ljsbVs7VRhQZ4OdoP7vb9cl0owNfVrWglon7jSvN9vMcCo-qh6tBBXgCnjev0UmqlEm5PlUXhxV_R-YBlATni-9XDFXl8Os8SZVkWJq7w6n_SkRrpRyr1GDTzXuZ5eOdae71AdyKFbfj9m1b6bS8uRj--0SC-vPIVZxLg8ECbDCZCzREYOW3V0MZ3mh6ykad446hRZUo97Xddgr54chwDEBh9Eywurb74sN9tKMhGhDV8g2gN6FxXMFNb_W2VSgCEhybGfGnM81pmVjPuj6hF33o2SAblQH4c305d0WcHaCYdWKiDcUhiwCglZXPy6mnUZisS7KVYgGuImHOjFQMvAVyn89eAzGXd9jMK-0fXREos2HNntbL_YJmnJpM3FkYb_SieF-84RRY6nZ78Ab5Utw0T7WM72mEE1x9wudF2PGWkNhPtOLBtOThXtugq9kjtsjtMHPKHnq_acItnqvnCBTgj_E71dnwLT-RL7sobpOjXH3C50XY8ZmfiAymdqsp4jwWOByTImcwQvW1DcKB-zFMGSR9tc66Jb0sEjzeVjcund4QWsxkPqasseBSOedHx84Kh4th_5Z3xEmJxxRqDZQvZshULdVG-WFmTREazcRavotOkOeAWZxTLPwGs8DxFGGGPJmlsYO80qZEzs2bkr6QMFXYKgQV-LNjk-D-HFk8CsR0mt9wGurdMD_OazGVX336-ruX0RS210ygcXIvzR5kt0j1gqTuBq9v0EI4dW9Wpdfjc7jSQ6B_ODV7erCrabpEYj_s4DhN7hyiLCHPryTP1a63LdTQdDqzGA0TKkbd9G1htx9aJaakpUPL0lLV98_-XZIRI_IYc7qkIJF0DrGidv-XhKmYxb0_eF6FBWm5ddBmuRfMB-ppsRkG55XZrflaFva_h_SEylH89qYTNOJEJr6qPdvTCyA8xKN3-VAV5SJJ8aDzmGBInTRsYZvP99K0jHyOKGriRCa-qj3b0wsgPMSjd_lQHCG7byPGjaNG-U7D4MeX6UFC5zwvNvg2iSc3fh0dAbbBNsX2ih9E2WV0iVNSzQbYh-BJQSKL_M2C81mcdA9UFRPgXIRHSyDiAoWZhbAkhUq3mmsMIVKjieThXvprRpVwHe_nKpsuPe0vdWMYCOKRLPJ-uoJydwA1zGyfg7-3EkRRmKxLspViAaRLL-fkCEbIls1rj7DKjWJJpZ7MkGMmvwyHxi_RXwkJT9ZoQVhi4kwlz7EKeMtx77rxsOZ3D-FPeV8d-IleZLNORuYBhP6i7PE13pwRBsZIFKVCdbZafcOosxx4t4AHW9vGGqKUfafPYUnwFvAqY927fvYhtsvCdxq6aqyDLqXlEVDAdxI2Q7g25AA6gCeMqo8Oon2Ld0v8wBRqMOzapyoys7W0kIdRsZYAuJfxhhzZ5uhNrogKTFY8TbLTflsa-ArOBeTm6QkioLoFhjh4CFt9t5F9_T_8ukbpZXUrLJirTOlq29bXihwTlw4VZX7GHjbJe6jKidklonGlv1WMZ2ZS0kZOJqHoQv7Rn6ILYFF_8SOWI98BQDlqxZuIydYZZHrq3oREW1zmcIRE9PdPGQ1_2-QMWPtBTKdomCCuqouLpOsjVLJrhRwpLfWTj_VaXF9UGz1-WMU2PWUP48Ajakro7a2BhRRV3jrPc0iERg8XCxQ80KsmidP5roXUqvumEdELCri2Y32rG7U5QZYboTpv65FTJq_MY_1lD-PAI2pK4o5rF5wynkFbvzgqhBImET3abyPo6OCngLDwr_IHwOdglxtR0tYIhF6pI_O2OX1aweR921H1IPwXN-RsmUo0RSuXg4S1UyDIv3DcRSUxnR9WuEDYklXpBzMXHXUmWnzBY0fFM2Pimiw5XxbKzK_Q1V0fZsEa2yxnj8TP2TuQ23QpyRUtf2ExTNyHrOjRZYNkv517Seu6fjyvYs3SACrynQOwIlrmo5EAp6XAkakDcaEQZL56IJL0cSQYAO6Nlq44d3h7ZGaDRJcBbKUsh1el2Yi2Nd3Mc04POsGoDZsklpMjnv_YVuKMu1TmfX08Wv5Y3JhBJpwiYkW_wnGAxNSNwi2JFvdCrfUOdtb9SnKugv6KvQWHX05ylRO1G-56gLVeGeRKkGpL3Q6Vrs3StOPj9KhYs15KCAg0xJQ6P-ykwsJ7MsbfAtwGoqvDY5vAcpF5XwuVYuM9SoNbFkmOfONrtAb8JHJkUqmdViZVY6aSvyi4cJGg2gMo-Dxr8nRKtVz-s3nx58OV7uevNONe9auoFYtPaMifiLfVkrC44odPuwcpGi8PT_pHY8fy9tc5-jCVR05BkSnZruWj5HWCb82iatyjbIsBQereGGC3351oLBa7Tct8lVsD52ZYHzSa4rVtDzfuDUR_4wPuyVw-c6RJi_u4sJey8izTdVQDJqnWDgNI6-TYd0_ovPU568S8CVnUY9UKdtgfCtl-gntCxsq9nOJf6x8jCfZ8jHtV2JOGTfSHXdMH6LBlUDkAXNKYelSOx4IABXBFkbQ_25n8hzrEQVwKjwSi_-81xFYPgwr-Zv2dexkZAbegnVJt_zfprmm4tw20LtDWsTEpRfCpBejlprb-qyTrpiVwzEpbX8SC3MiAn5fWMkc1LllpaFFK2dtKDTC383pp3qAlrHf-q-lzfClNljPURtvAU9YmmU_2n9q_gY9JWfr8yP_xKF4crnuhjA_wqo7OVxeUJrwwylYm3B9KmjS18QZ3Jljp7xoGE6WHxkgMsKJ0W59rhxE1UNo7xQWG44R49cxFvwkJY5QBUnbA3nSp4R9NT80jotheiRFUjcBN5x2J80D7oYgpStPWs_VTH-ObkonfVFtMuBWAYgyH2E3KHvCF2W0XVsuis2adRmIrA8OQO9n4XqFjXE-WoJpIza3GDltrN00bbK_YmqSlQnW2Wn3DrMcN9HJiselrMBwvF2RaKmD9X6Iokxml-7lvT4ZE3_bOpbWotILoJnq5HWNkInijYk0YBCGusD5hkiREilDrdPRB8CEPKYxK49Ty9SoDSKI7YrJuS7PTdtcqNvKYBGfxM-JBwsa2heEhJpYwaUF2ghXzpJc3rwImc23FX68l08t0GQyOTMhgePuwdPa1KM4KHydQKo_fJDWJjtSMl2PYwmgLKKKqSuwtaOGEjb8GpeBa79osslpVaG4RU9v2PNixorcML4UaBwTEZUThlFLFOD4_V-nVMu8_ukwgr26xzniKBWh1N0vpQfS1l20BP6_w-VH7wYmaRW7TMArN9aDf4gSq_av3WDCXn3s9Qx8YC82mT1vh9r7qDxszVTy4m4AjK6J463Qv7kg3hwSMbjuOR6E-b4-rOCMHDX6bWlid7TNhgZGYg2ZglosvUPe-KuEP9LjobstUUyA7b1-DnaCht--NysmnmOk0Dz6BdSYhmh_9o8bpX6bhQ8WUr80eCSWkjyUqUo9yGuDGs8ZnhjkmXgChVdFuWf2WI6a_mGuoTNKnnOE4lSZxn6fqIUKSOF6H9SkCQKRXOHyOh5cvvpeZkcU9o4iwm2qz_ggYYh-xsK5Nxgc4cOOc6i6VVfqZS_eiqeitCyPMe1TqZfZNhFZ6uZ031UTz69AalXjnzcLZFTO7CDCaOe037xDOYFbsN6ZjNLCxYR6BWPV796lR85WgoRNB-EhYZswhy8RYh9PD6-OrOn03Zo0gsNM3rMXRj3BevVsv05VEAKNz42ET0gROTLSlwj48M1ExyCb-9lNO1_3Ec3xTPUtr2vXB-qGrdRFAH3uE-lPEN5yq61XneDrfas0-wt0uaXz3YLmxcJolAorOr2tG8IF6tmRnc5wPI5xhZAQF04kI8u9PNLqdhYlnARdY_sNIl3F9cBGr-78Jew6jtydf71Q8Oxt88ie4Fi6BkSUDZAYPTUz8lfFRRDbLnGv3-2scwRg-F6s-TGj68f1Raiq3xIxR8WRVI24Vh-H0ald3Jc38RqkBlNzhNAgpECTxvBGGqa_rPT4NzA_m5mwuCkQbuuqJH6QED7gZ8UpBcDvFCpD-M0FQaIp63J5UoBvIRrL1m9a9_rSOqUv60KJrqxvdc_qvX6AHawS3KqsjgnguUu7NYQCd7up6CLXmlHDU7MWS5QZsZAhk9WsVVVCW4hr0DTSdUjD3UpSBGM7mmw8dlNWneUQbBqr9LRB4138Vsr0xnd6PjHVFzXVDvDc4kl1Lp-zGeOC0hcUvd-KZi_B79sOMwSwLB7aGFdAsqPKgETbPU28w-hA0fK1ZMDtLYXqsayYgP1LBdonqpuYYRTw0QwV0hb72ixoWIchWrMHZ6aySEMQxuXUKnyXLpr9yt2UOfcwAD3MXdD4tM1s1anC-MCy4-ujw5-DnnNCcyi_gXtwQx7HHckO3OLSZo6VI9Xn60_U_PXDeFVre2maPO3AwnTLSoROL35w7qFXTaUzZ7EnnN6D98o4JbbAeL3jeRiIWEK7DlJOxSf1-w1XuQNLh5l5K75VDixjO4uKQlusc0Wd4tM-6L0mfLOLBJqNQSbI7cVTMljLR4F3FpEtip1VPSa_zKPq7YrD0WY6EAnB_AlFMNnto4TU1qyi9RSqiwhW_mrd8l-iTy_boyk0MG5kFBLpKBGc9N2BkEXOsYhbvD6c4FAO5fX86zurJGdzVQl9nMkOUz51JmJCjQVjafRKNbSV89xeSOO9LxXjXtOjSodPXW-USIT_MzeL6JGBo0fYbng4h7C6b4XQMbZpKHW0KKft3eddPW6whJektGz4sdr0U9B_esmbkXBEd-DLkDrr-EnBt7SUCoZ1jDBpACRPK8dWbKZDeFLb0K1OM01gLvQg9pNLZotrwfjvX_fKucj_hz5hHqkltuy91b9LHNWkpwUr7Kq_ekFrGyMmtJDCYtXe1VJOZt_XWFE7R7fE4ja3WepAqEG3tdLXwPch_Hr69g4S9sPKKMR3dpwOG5tv5SBS9uGVDZt-EaWDOoLwz1hBh0H1z-mdZPcRJeJa-Ijm_JmeWJUuXftjlxUw-Fl1OqdueZJoG3whFNxN-EQDK8aAZesBxfP5SUm3bA_s1z0qsfSIrNSAUUbXCGGIdoK9-lnQJRokE8u7obNTwhWYxgbNvE7MrvL8ixhDh8-p_gFhuI60JAGb0xXN-Hwn222_D7E_RHthqGaNjTRiz5DYRoYA2rda2pN102rg4ugDOWTlWhZt7CjlAE2RVvM9m7mcDnogCPs_DmyzrJugjVZib5hPRaPZYWZ1Cgalq-56HHvCoQDt-Vv1LYoDpP39GLE2bb12pOMkizZGZqRiSeCAC4lV5swQFQAE9RJW_s7tVPqh0UAf5FrILDEkyDP5hyXQmxKOibBQwyDAyVZW5Il45odTGHMEPMYx8ppokwQru4gQJxaGzU1ihVvSHsXhNzC1asb95-slz6qwfVdFQIOKOAL44XuaPWV3q_avejuHLNs86uMeXgkB7_aK4AjxePygkTrrXN6s80ra8YgY8MlD191OL-jeDjmrc71lskxKNBbNdJbkb3FQsFaVqO8Xm3-OMBgr73CU54mY4OpQ-Qb93gTB6ylTZ_ysnx6ZP8L3-wG1Aaz4G6KXRJdBjdGFg7qMen45VhCIiB4eiQ-qzE2GIoL4c6N90IAH5IwEHexsM5Dn-3SJ23-cxnddrtthkZnxIUR_5AdOsTs64vyxriA7phyhagWI15Fc2B7KBbeTEnUt9tf31bMPsEadF73ibq1mbBJavMBjJIrX36ZMTdZTJDI4tqw-PZ1A6x1pSxQ2D3dYrVhue4RXa-hKtf5FuKP3iO1-q6FMEvlBCfmUsir5t4jtfquhTBLGKk5btQyyuYolYqEHsTHplyxsijTw1edA3cdECXQh-j1T3cXrK-IlKsuVMS9joXiZpng2g5dbemeyfagMv7f4V91OL-jeDjmrc71lskxKNDPqjf7UzUDrtY74CYUnHoAOMBgr73CU54l_1WyY38HFrGss3eesNTzFb5pEE2whJxOj8Udwj59csH73F8TZvBY2Gb5j-ziju_izJtDTD2FJObVnuP0A_jVUIfR7xc51GhM3e1w7Skh5bc8XQL5jZ3y6YAJrP_EhoAbunOEYs16MPB0CcFTKnsGqE_70jpq5XhnWiW-EHrnGDQoY10qIN-OQ4tXW-URciM9FjaiBkC3hSlPo8UFpJPEdcHOV7czZM-mQpLeAceufN8nAFG_dU_R6oDDDMCrSAZP_jsNmjjdSs-TEn7-9ZE6VZRBG0uBhMAiy_pVIwOKiToNVlWspCx5nJPlDVewXAf7CvOnpRb3YJHUw_WjKf1Aru0m45OI21ha4aqOJdERTS5A_TGzbz_0yHeM7hk5Y6ZtTlejWIDzlmxpc5PHqvZ_Cl3JIylikQdLRMSS_3YlbV2ozU2YnVWx-dq0NvVlATf989qv-6j9s7BRUwM60Ykk40s1Ahin0vth1MpFwD7SlabLSyVQR4soKibyjCH9OheJ3u7hqjj3jKIpgSupXMlgfzVeCEgZ5jdW7m48Z2Lb-XPMNrBn2gzD4zz56PTg1takXYZRyN0lo9g_JAnujyOtSlnqq-xSUWfaLDP5ezJ8dk4xInAdX3HPeyrsSTtXaOJBDpHZ-i9vte2pqIvAmdXUMBzoicZcs1mqNVTo_S3ME3Fma2W_Jr1zbHI9XNYr1aTDC8FBjf-hCWWaIPnznEfNC2yUcwNez2FJ9sYZLUdfG6eO78x8gxEMni4xTIB1xkPKcnkvgYaldIWkUPVh00r6TVkJ73ojffgT69ymjT4VpXz-pLXQapyfIojeLe_Z9CnJGhv0FxuVbiJyouQsEgnJEFLuKZ6w7k5YBbTIFsKZ0vegD4NMlO4el6u2Fjw907H31XwBM53s99VW_SEnoPLiWHo27I1odphGtrLw9eTMkqxP4NUSEAGG3Jyp0yJnjidgw7ih0hL2Exij4wPq4QiUTe3JXQVcB5L9GJXySHSqfO5msS7V-vLnFUok7vu-_cu3TSuPhUUea_lS3dBN6J_DLBfZRowwMfWnvcThKwyhi5eDRk_DVfyUJzTeFRQvyjCGpd4t9BXgBh_hkLVG7g7Axt6jUm7a_IPObPdvk-7TUzAc6InGXLNZqjVU6P0tzBOmGzUqMzB0-qu5hPVgMZntE1_cBBK4cM06qxTTHfbHhHF6W9tugsCHTl6rshj_4-rQCue4OoQjJwVUpLbXlwndhbWvIoW1JQcAq82b7h8K9_Xe55_qXA-vV-07wo71Ri3g2rXbErIObQ=="></form>
+
+<!-- <script src="https://framework-gb-ssl.cdn.gob.mx/gobmx.js"></script> -->
+
+<!-- <script src="https://framework-gb-ssl.cdn.gob.mx/qa/assets/scripts/jquery-ui-datepicker.js"></script> -->
+<!--script src="http://framework-gb.cdn.gob.mx/assets/scripts/vendor/modernizr.js"></script>
+
+
+<script src="http://framework-gb.cdn.gob.mx/assets/scripts/main.js"></script>
+<script src="http://framework-gb.cdn.gob.mx/assets/scripts/plugins.js"></script-->
+</div>
+            </div>
+    </main>
+<script type="text/javascript">
+                $(document).ready(function () {
+                    if ($('#breadcrumbTramiteSteps').is(":visible") || $('#breadcrumbTramite').is(":visible")) {
+                        $('#breadcrumbTramite').hide();
+                        $('#boxSolicitanteLargo').show()
+                    } else {
+                        $('#boxSolicitante').css('margin-top', '-116px');
+                    }
+
+                    $( "#idImagen" ).mouseenter(function() {
+                      $( "#idFavoritoinicial" ).toggle( "slow", function() {
+                            $('#datosFrecuente').html('');
+                            $('#datosFrecuente1').html('');
+                            obtenerFavoritosIniciales();
+
+                      });
+                    });
+                     $("#idFavoritoinicial").mouseleave(function(){
+                        $( "#idFavoritoinicial" ).toggle( "slow", function() {
+                        $( "#idFavoritoinicial" ).css('display','none');
+                        });             
+                    });
+                });
+    reset('es');
+    
+            function bigImg(x) {
+                x.style.height = "32px";
+                x.style.width = "32px";
+            }
+
+            function normalImg(x) {
+                x.style.height = "30px";
+                x.style.width = "30px";
+                $('#nfav').css('display','none');
+            }
+
+            function obtenerFavoritosIniciales(){
+                    $.ajax({
+                        url : contextPath + "/innovacion/favoritos/favoritosCommon.action?obtenerFavoritosIniciales",
+                        async : false,
+                        type : 'POST',
+                        success : function(result) {
+                            var data = eval(result);    
+                        if(data!=null && data.length > 0){
+				if(data[0].contexto!=null && data[0].contexto!=''){
+					//en caso de que no haya frecuentes
+					if(data[0].tramitesFrecuentes==null){
+						if (data.length == 1 ){
+							$('#idFavoritoinicial').css({'left': '69%'});
+						}
+						else if (data.length == 2 ){
+							$('#idFavoritoinicial').css({'left': '54%'});
+						}
+						else if (data.length == 3 ){
+							$('#idFavoritoinicial').css({'left': '36%'});
+						}
+					}else{
+						if (data.length == 1 && data[0].tramitesFrecuentes.length ==0){
+							$('#idFavoritoinicial').css({'left': '69%'});
+						}
+						else if (data.length == 2 && data[0].tramitesFrecuentes.length ==0){
+							$('#idFavoritoinicial').css({'left': '54%'});
+						}
+						else if (data.length == 3 && data[0].tramitesFrecuentes.length ==0){
+							$('#idFavoritoinicial').css({'left': '36%'});
+						}
+						else if (data.length == 1 && data[0].tramitesFrecuentes.length ==3){
+							$('#idFavoritoinicial').css({'left': '36%'});
+						}
+						else if (data.length == 2 && data[0].tramitesFrecuentes.length ==3){
+							$('#idFavoritoinicial').css({'left': '36%'});
+						}
+						else if (data.length == 3 && data[0].tramitesFrecuentes.length ==3){
+							$('#idFavoritoinicial').css({'left': '36%'});
+						}
+						else if (data.length == 1 && data[0].tramitesFrecuentes.length ==2){
+							$('#idFavoritoinicial').css({'left': '54%'});
+						}
+						else if (data.length == 2 && data[0].tramitesFrecuentes.length ==2){
+							$('#idFavoritoinicial').css({'left': '54%'});
+						}
+						else if (data.length == 3 && data[0].tramitesFrecuentes.length ==2){
+							$('#idFavoritoinicial').css({'left': '36%'});
+						}
+						else if (data.length == 1 && data[0].tramitesFrecuentes.length ==1){
+							$('#idFavoritoinicial').css({'left': '69%'});
+						}
+						else if (data.length == 2 && data[0].tramitesFrecuentes.length ==1){
+							$('#idFavoritoinicial').css({'left': '54%'});
+						}
+						else if (data.length == 3 && data[0].tramitesFrecuentes.length ==1){
+							$('#idFavoritoinicial').css({'left': '36%'});
+						}
+					}
+					$('#datosFrecuente').append('<tr align="right">');
+					$.each(data, function (i, item) {
+						var param1 = '/'+item.contexto+'/invocarModulo.action?init';
+						var param2 = '/'+item.contexto+item.tipoTramite.urlAxway;
+						var param3 = item.tipoTramite.idTipoTramite;
+						var param4 = '';
+						$('#datosFrecuente').append('<td><table style="border: 1px solid #CBC2C2;" border="1" background-color : #FFFFFF;> <tr><td for="Imagen"><a href="#" onclick="javascript:callMenuTramite(\''+param1+'\',\''+param2+'\',\''+param3+'\',\''+param4+'\',\''+param4+'\')"><img height="120" width="222" border="0" src="'+ contextPath + item.imagenDependencia + '"></img></a></td></tr><tr><td for="Descripcion" style="background-color : #FFFFFF; font-size:14px;">' + item.nombre 
+						+ '</td></tr> </table><td>');
+					});
+					$('#datosFrecuente').append('</tr>');
+				}
+				else{
+					if (data[0].tramitesFrecuentes.length ==1){
+						$('#idFavoritoinicial').css({'left': '69%'});
+					}
+					else if (data[0].tramitesFrecuentes.length ==2){
+						$('#idFavoritoinicial').css({'left': '54%'});
+					}
+					else if (data[0].tramitesFrecuentes.length ==3){
+						$('#idFavoritoinicial').css({'left': '36%'});
+					}
+				}
+					var frecuentes = data[0].tramitesFrecuentes;
+					if(frecuentes!=null && frecuentes.length>0){
+						$('#datosFrecuente1').append('<tr align="right">');
+						$.each(frecuentes, function (i, item) {
+							var param1 = item.contexto+'/invocarModulo.action?init';
+							var param2 = item.contexto+item.urlAxway;
+							var param3 = item.idTipoTramite;
+							var param4 = '';
+							$('#datosFrecuente1').append('<td><table style="border: 1px solid #CBC2C2;" border="1" background-color : #FFFFFF;> <tr><td for="Imagen"><a href="#" onclick="javascript:callMenuTramite(\''+param1+'\',\''+param2+'\',\''+param3+'\',\''+param4+'\',\''+param4+'\')"><img height="120" width="222" border="0" src="'+ contextPath + item.imagenDependencia + '"></img></a></td></tr><tr><td for="Descripcion" style="background-color : #FFFFFF; font-size:14px;">' + item.descripcion 
+							+ '</td></tr> </table><td>');
+						});
+						$('#datosFrecuente1').append('</tr>');
+					}
+                                return;
+                        }
+                        else{
+                        //alert('No hay Favoritos');
+                        $('#nfav').css('display','block');
+                        }
+                        },
+                        error: function(xhr,status,error){
+                            alert("error: " + error);
+                        }
+                    });
+            }
+</script>
+    
+
+
+<script>$(document).ready(function(){$("#consultarEstadoSSO").submit();});</script><div class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-front" tabindex="-1" role="dialog" aria-describedby="politicas" aria-labelledby="ui-id-1" style="display: none;"><div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix"><span id="ui-id-1" class="ui-dialog-title">&nbsp;</span><button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only ui-dialog-titlebar-close" role="button" title="Close"><span class="ui-button-icon-primary ui-icon ui-icon-closethick"></span><span class="ui-button-text">Close</span></button></div><div id="politicas" class="ui-dialog-content ui-widget-content">
+
+<p><strong>Ventanilla  Digital Mexicana de Comercio Exterior </strong></p>
+<p><strong>Política  de privacidad y manejo de datos personales</strong></p>
+    <br>
+  <p style="text-align:justify;">Le informamos que los datos personales suministrados a través de sus  solicitudes, promociones, trámites, consultas y pagos, hechas por medios  electrónicos e impresos serán protegidos, incorporados y tratados en el sistema  de datos personales de la Ventanilla Digital, cuyo objeto es permitir a los  agentes de comercio exterior realizar, a través de un solo punto de entrada  electrónico, todos los trámites de importación, exportación y tránsito de  mercancías, con fundamento en las disposiciones aplicables a cada uno de ellos,  el cual fue registrado en el listado de sistemas de datos personales ante el Instituto Nacional de Transparencia, Acceso a la Información y Protección de Datos Personales (<a href="http://www.inai.org.mx">www.inai.org.mx</a>) y podrán ser transmitidos a las autoridades competentes previstas en el  Decreto por el que se establece la Ventanilla Digital Mexicana de Comercio  Exterior publicado en el Diario Oficial de la Federación el 14 de enero de  2011, así como al propio titular de la información, además de las transmisiones  previstas en los ordenamientos legales aplicables. Corresponde al Servicio de  Administración Tributaria, una vez implementada, la administración de la citada  Ventanilla Digital. Se podrá modificar o corregir sus datos personales a través  de la misma Ventanilla.</p>
+<p style="text-align:justify;">Lo  anterior se informa en cumplimiento del Lineamiento Decimoséptimo de los  Lineamientos de Protección de Datos Personales, publicados en el Diario Oficial  de la Federación el 30 de septiembre de 2005.</p>
+
+ <div>
+        <button type="button" onclick="cierraPoliticas();" class="btn btn-primary pull-right">Cerrar</button>
+ </div></div></div><div id="jstree-marker" style="display: none;">»</div><div id="jstree-marker-line" style="display: none;"></div><div id="vakata-contextmenu"></div></body></html>
