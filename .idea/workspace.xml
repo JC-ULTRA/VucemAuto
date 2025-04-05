@@ -1,0 +1,557 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="10771f47-38f0-46d3-8418-2a2f81594e21" name="Changes" comment="tramites">
+      <change afterPath="$PROJECT_DIR$/src/test/java/AGRICULTURA/Tramite220201/MainPage220201.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/AGRICULTURA/Tramite220201/MainPage220201Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/AGRICULTURA/Tramite220201Exc/ExcelReader220201.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/AGRICULTURA/Tramite220201Exc/MainPage220201.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/AGRICULTURA/Tramite220201Exc/MainPage220201Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/AGRICULTURA/Tramite220203/MainPage220203.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/AGRICULTURA/Tramite220203/MainPage220203Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/AGRICULTURA/Tramite220203v2/MainPage220203.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/AGRICULTURA/Tramite220203v2/MainPage220203Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/Economia/Tramite110102/MainPage110102.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/Economia/Tramite110102/MainPage110102Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/Economia/Tramite110222/MainPage110222.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/Economia/Tramite110222/MainPage110222Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/Economia/Tramite120402/MainPage120402.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/Economia/Tramite120402/MainPage120402Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/Economia/Tramite120404/MainPage120404.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/Economia/Tramite120404/MainPage120404Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/Economia/Tramite120602/MainPage120602.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/Economia/Tramite120602/MainPage120602Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/Economia/Tramite130106/MainPage130106.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/Economia/Tramite130106/MainPage130106Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/Economia/Tramite80102/MainPage80102.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/Economia/Tramite80102/MainPage80102Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/Economia/Tramite80205/MainPage80205.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/Economia/Tramite80205/MainPage80205Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/Economia/Tramite80207/MainPage80207.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/Economia/Tramite80207/MainPage80207Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/Economia/Tramite80208/MainPage80208.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/Economia/Tramite80208/MainPage80208Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/Economia/Tramite80308/MainPage80308.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/Economia/Tramite80308/MainPage80308Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/Economia/Tramite90101/MainPage90101.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/Economia/Tramite90101/MainPage90101Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/Economia/Tramite90201/MainPage90201.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/Economia/Tramite90201/MainPage90201Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/Economia/Tramite90305/MainPage90305.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/Economia/Tramite90305/MainPage90305Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/Firmas/FirmaProdNet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/Firmas/TramitesFirmasLG.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/HACIENDA/Tramit40101/MainPage40101.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/HACIENDA/Tramit40101/MainPage40101Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/HACIENDA/Tramite103/MainPage103.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/HACIENDA/Tramite103/MainPage103Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/HACIENDA/Tramite10301/MainPage10301.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/HACIENDA/Tramite10301/MainPage10301Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/HACIENDA/Tramite10303/MainPage10303.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/HACIENDA/Tramite10303/MainPage10303Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/HACIENDA/Tramite11201/MainPage11201.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/HACIENDA/Tramite11201/MainPage11201Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/HACIENDA/Tramite11204/MainPage11204.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/HACIENDA/Tramite11204/MainPage11204Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/HACIENDA/Tramite303PENDIENTE/MainPage303.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/HACIENDA/Tramite303PENDIENTE/MainPage303Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/HACIENDA/Tramite31601/MainPage31601.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/HACIENDA/Tramite31601/Tramite31601Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/HACIENDA/Tramite31602/MainPage31602.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/HACIENDA/Tramite31602/MainPage31602Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/HACIENDA/Tramite31701/MainPage31701.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/HACIENDA/Tramite31701/MainPage31701Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/HACIENDA/Tramite32502/MainPage32502.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/HACIENDA/Tramite32502/MainPage32502Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/HACIENDA/Tramite32511/MainPage32511.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/HACIENDA/Tramite32511/MainPage32511Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/HACIENDA/Tramite32512/MainPage32512.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/HACIENDA/Tramite32512/MainPage32512Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/HACIENDA/Tramite32513/MainPage32513.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/HACIENDA/Tramite32513/MainPage32513Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/HACIENDA/Tramite32604/MainPage32604.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/HACIENDA/Tramite32604/MainPage32604Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/HACIENDA/Tramite40102/MainPage40102.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/HACIENDA/Tramite40102/MainPage40102Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/HACIENDA/Tramite40103/MainPage40103.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/HACIENDA/Tramite40103/MainPage40103Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/HACIENDA/Tramite701/MainPage701.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/HACIENDA/Tramite701/MainPage701Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/MedioAmbiente/Tramite230101/MainPage230101.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/MedioAmbiente/Tramite230101/MainPage230101Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/MedioAmbiente/Tramite230401/MainPage230401.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/MedioAmbiente/Tramite230401/MainPage230401Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/MedioAmbiente/Tramite231001/MainPage231001.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/MedioAmbiente/Tramite231001/MainPage231001Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/TestProd/ConexionBD.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/TestProd/MainPageProd.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/TestProd/MainPageProdTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/TestProd/Respaldo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/Doc31601/carga_proveedoresExtranjerosIC (1).xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/Doc31601/carga_proveedoresNacionesIC (1).xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_07_01_2025_01_21_p__m___Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_07_01_2025_01_21_p_ m__[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_07_01_2025_01_26_p__m___Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_07_01_2025_01_26_p_ m__[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/AGRICULTURA/Tramite220403/MainPage220403Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/AGRICULTURA/Tramite220403/MainPage220403Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/COFEPRIS/Tramite260104/MainPage260104.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/COFEPRIS/Tramite260104/MainPage260104.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/COFEPRIS/Tramite260104/MainPage260104Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/COFEPRIS/Tramite260104/MainPage260104Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Economia/Tramite130118/MainPage130118Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Economia/Tramite130118/MainPage130118Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Economia/Tramite130120/MainPage130120Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Economia/Tramite130120/MainPage130120Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Economia/Tramite80101/MainPage80101Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Economia/Tramite80101/MainPage80101Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Firmas/FirmaFun.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Firmas/FirmaFun.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Firmas/FirmaSoli.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Firmas/FirmaSoli.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Firmas/LoginFun.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Firmas/LoginFun.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Firmas/LoginSoli.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Firmas/LoginFirmSoli.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/HACIENDA/RubroAAA/MainPageAAATest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/HACIENDA/RubroAAA/MainPageAAATest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/HACIENDA/Tramite301/MainPage301Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/HACIENDA/Tramite301/MainPage301Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/HACIENDA/Tramite5701/MainPage5701.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/HACIENDA/Tramite5701/MainPage5701.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/HACIENDA/Tramite5701/MainPage5701Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/HACIENDA/Tramite5701/MainPage5701Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/HACIENDA/Tramite6001/MainPage6001Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/HACIENDA/Tramite6001/MainPage6001Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/HACIENDA/TramiteB1/MainPageB1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/HACIENDA/TramiteB1/MainPageB1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/HACIENDA/TramiteB1/MainPageB1Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/HACIENDA/TramiteB1/MainPageB1Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/HACIENDA/TramiteB20/FirmaSoliB20.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/HACIENDA/TramiteB20/LoginSoliB20.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/HACIENDA/TramiteB20/MainPageB20Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/HACIENDA/TramiteB20/MainPageB20Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/HACIENDA/TramiteB4/MainPageB4Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/HACIENDA/TramiteB4/MainPageB4Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/HACIENDA/TramiteB8/MainPageB8Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/HACIENDA/TramiteB8/MainPageB8Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/HACIENDA/TramiteB9/MainPageB9Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/HACIENDA/TramiteB9/MainPageB9Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/HACIENDA/TramiteC2/FirmaSoliC2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/HACIENDA/TramiteC2/LoginSoliC2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/HACIENDA/TramiteC2/MainPageC2Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/HACIENDA/TramiteC2/MainPageC2Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/HACIENDA/TramiteR15/FirmaSoliR15.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/HACIENDA/TramiteR15/LoginSoliR15.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/HACIENDA/TramiteR15/MainPageR15Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/HACIENDA/TramiteR15/MainPageR15Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/AGRICULTURA/Tramite220403/MainPage220403Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/AGRICULTURA/Tramite220403/MainPage220403Test.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/COFEPRIS/Tramite260104/MainPage260104Test.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/CredSoli/desktop.ini" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/CredSoli/desktop.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/Economia/Tramite130118/MainPage130118Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Economia/Tramite130118/MainPage130118Test.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/Economia/Tramite130120/MainPage130120Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Economia/Tramite130120/MainPage130120Test.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/Economia/Tramite80101/MainPage80101Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Economia/Tramite80101/MainPage80101Test.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/Firmas/FirmaFun.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/Firmas/FirmaSoli.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/Firmas/LoginFun.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/Firmas/LoginSoli.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/HACIENDA/RubroAAA/MainPageAAATest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/HACIENDA/RubroAAA/MainPageAAATest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/HACIENDA/Tramite301/MainPage301Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/HACIENDA/Tramite301/MainPage301Test.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/HACIENDA/Tramite5701/MainPage5701.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/HACIENDA/Tramite5701/MainPage5701.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/HACIENDA/Tramite5701/MainPage5701Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/HACIENDA/Tramite5701/MainPage5701Test.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/HACIENDA/Tramite6001/MainPage6001Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/HACIENDA/Tramite6001/MainPage6001Test.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/HACIENDA/TramiteB1/MainPageB1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/HACIENDA/TramiteB1/MainPageB1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/HACIENDA/TramiteB1/MainPageB1Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/HACIENDA/TramiteB1/MainPageB1Test.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/HACIENDA/TramiteB20/FirmaSoliB20.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/HACIENDA/TramiteB20/LoginSoliB20.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/HACIENDA/TramiteB20/MainPageB20Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/HACIENDA/TramiteB20/MainPageB20Test.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/HACIENDA/TramiteB4/MainPageB4Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/HACIENDA/TramiteB4/MainPageB4Test.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/HACIENDA/TramiteB8/MainPageB8Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/HACIENDA/TramiteB8/MainPageB8Test.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/HACIENDA/TramiteB9/MainPageB9Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/HACIENDA/TramiteB9/MainPageB9Test.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/HACIENDA/TramiteC2/FirmaSoliC2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/HACIENDA/TramiteC2/LoginSoliC2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/HACIENDA/TramiteC2/MainPageC2Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/HACIENDA/TramiteC2/MainPageC2Test.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/HACIENDA/TramiteR15/FirmaSoliR15.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/HACIENDA/TramiteR15/LoginSoliR15.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/HACIENDA/TramiteR15/MainPageR15Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/HACIENDA/TramiteR15/MainPageR15Test.class" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <excluded-from-favorite>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="master" />
+                <branch-info repo="$PROJECT_DIR$/.." source="master" />
+              </list>
+            </value>
+          </entry>
+          <entry type="REMOTE">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="origin/master" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </excluded-from-favorite>
+    <favorite-branches>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="PauR" />
+                <branch-info repo="$PROJECT_DIR$/.." source="JnoeMC" />
+              </list>
+            </value>
+          </entry>
+          <entry type="REMOTE">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="origin/PauR" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </favorite-branches>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="Jnoe-MC" />
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="SYNC" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;AdrianPaulino28&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/UltraBecario/TramitesVucemGn.git&quot;,
+    &quot;accountId&quot;: &quot;d585d396-3f40-4568-99a3-4c6c8d23dc38&quot;
+  },
+  &quot;recentNewPullRequestHead&quot;: {
+    &quot;server&quot;: {
+      &quot;useHttp&quot;: false,
+      &quot;host&quot;: &quot;github.com&quot;,
+      &quot;port&quot;: null,
+      &quot;suffix&quot;: null
+    },
+    &quot;owner&quot;: &quot;UltraBecario&quot;,
+    &quot;repository&quot;: &quot;TramitesVucemGn&quot;
+  }
+}</component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="2nrAJtcwaQoreqsDkThVZIAitrJ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.ConexionBD.executor": "Run",
+    "Application.PRUEBA.executor": "Run",
+    "JUnit.MainPage103Test.Proceso103.executor": "Run",
+    "JUnit.MainPage103Test.executor": "Run",
+    "JUnit.MainPage110102Test.Proceso110102.executor": "Run",
+    "JUnit.MainPage110222Test.Proceso110222.executor": "Run",
+    "JUnit.MainPage120602Test.Proceso120602.executor": "Run",
+    "JUnit.MainPage130118Test.Proceso130118.executor": "Run",
+    "JUnit.MainPage130118Test.executor": "Run",
+    "JUnit.MainPage220203Test.Proceso220203.executor": "Debug",
+    "JUnit.MainPage220203Test.executor": "Debug",
+    "JUnit.MainPage220403Test.Proceso220403.executor": "Run",
+    "JUnit.MainPage220403Test.executor": "Run",
+    "JUnit.MainPage230101Test.Proceso230101.executor": "Run",
+    "JUnit.MainPage230401Test.Proceso230401.executor": "Run",
+    "JUnit.MainPage231001Test.Proceso231001.executor": "Run",
+    "JUnit.MainPage301Test.Procesob301.executor": "Run",
+    "JUnit.MainPage301Test.executor": "Run",
+    "JUnit.MainPage31602Test.Proceso31602.executor": "Run",
+    "JUnit.MainPage32511Test.Proceso32511.executor": "Run",
+    "JUnit.MainPage40102Test.executor": "Debug",
+    "JUnit.MainPage5701Test.Proceso5701.executor": "Run",
+    "JUnit.MainPage5701Test.executor": "Run",
+    "JUnit.MainPage6001Test.Procesob1.executor": "Run",
+    "JUnit.MainPage701Test.Proceso701.executor": "Run",
+    "JUnit.MainPage701Test.executor": "Run",
+    "JUnit.MainPage80101Test.Proceso80101.executor": "Debug",
+    "JUnit.MainPage80101Test.executor": "Run",
+    "JUnit.MainPage80205Test.Proceso80205.executor": "Run",
+    "JUnit.MainPage80205Test.executor": "Run",
+    "JUnit.MainPage90201Test.Proceso90201.executor": "Run",
+    "JUnit.MainPage90201Test.executor": "Run",
+    "JUnit.MainPage90305Test.Proceso90305.executor": "Run",
+    "JUnit.MainPageB1Test.Procesob1.executor": "Run",
+    "JUnit.MainPageB1Test.executor": "Run",
+    "JUnit.MainPageB20Test.executor": "Run",
+    "JUnit.MainPageB4Test.Procesob4.executor": "Run",
+    "JUnit.MainPageB4Test.executor": "Run",
+    "JUnit.MainPageB8Test.ProcesoAutorizacionB8.executor": "Run",
+    "JUnit.MainPageB8Test.ProcesoB8.executor": "Run",
+    "JUnit.MainPageB8Test.ProcesoConfirmarNotificaciónResolucionB8.executor": "Run",
+    "JUnit.MainPageB8Test.ProcesoDictamen.executor": "Run",
+    "JUnit.MainPageB8Test.ProcesoDictamenB8.executor": "Debug",
+    "JUnit.MainPageB8Test.Procesob8.executor": "Run",
+    "JUnit.MainPageB8Test.Procesob8Dictamen.executor": "Run",
+    "JUnit.MainPageB8Test.executor": "Run",
+    "JUnit.MainPageB9Test.Procesob1.executor": "Run",
+    "JUnit.MainPageB9Test.executor": "Run",
+    "JUnit.MainPageC2Test.ProcesoC2.executor": "Run",
+    "JUnit.MainPageProdTest.TestProd.executor": "Run",
+    "JUnit.MainPageProdTest.executor": "Run",
+    "JUnit.MainPageR15Test.executor": "Run",
+    "JUnit.Tramite31601Test.Proceso31601.executor": "Run",
+    "JUnit.Tramite31601Test.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "JnoeMC",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/VucemAuto/automations/src/test/java/HACIENDA",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "editor.preferences.tabs"
+  }
+}]]></component>
+  <component name="Push.Settings">
+    <force-push-targets>
+      <force-push-target remote-path="origin" branch="JnoeMC" />
+    </force-push-targets>
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\VucemAuto\automations\src\test\java\HACIENDA" />
+      <recent name="C:\VucemAuto\automations\src\test\java" />
+      <recent name="C:\VucemAuto\automations\src\test\java\Economia" />
+      <recent name="C:\VucemAuto\automations\src\test\java\AGRICULTURA" />
+      <recent name="C:\VucemAuto\automations\src\test\resources\Doc31601" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\VucemAuto\automations\src\test\java\HACIENDA" />
+      <recent name="C:\VucemAuto\automations\src\test\java\Economia" />
+      <recent name="C:\VucemAuto\automations\src\test\java\AGRICULTURA" />
+      <recent name="C:\VucemAuto\automations\src\test\java\HACIENDA\Tramite10301" />
+      <recent name="C:\VucemAuto\automations\src\test\java\HACIENDA\Tramite10303" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.MainPage32511Test.Proceso32511">
+    <configuration name="MainPage103Test.Proceso103" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TramitesVucemGn" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="HACIENDA.Tramite103.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="HACIENDA.Tramite103" />
+      <option name="MAIN_CLASS_NAME" value="HACIENDA.Tramite103.MainPage103Test" />
+      <option name="METHOD_NAME" value="Proceso103" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainPage32511Test.Proceso32511" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TramitesVucemGn" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="HACIENDA.Tramite32511.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="HACIENDA.Tramite32511" />
+      <option name="MAIN_CLASS_NAME" value="HACIENDA.Tramite32511.MainPage32511Test" />
+      <option name="METHOD_NAME" value="Proceso32511" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainPage80205Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TramitesVucemGn" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Economia.Tramite80205.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Economia.Tramite80205" />
+      <option name="MAIN_CLASS_NAME" value="Economia.Tramite80205.MainPage80205Test" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainPage80205Test.Proceso80205" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TramitesVucemGn" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Economia.Tramite80205.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Economia.Tramite80205" />
+      <option name="MAIN_CLASS_NAME" value="Economia.Tramite80205.MainPage80205Test" />
+      <option name="METHOD_NAME" value="Proceso80205" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainPage90305Test.Proceso90305" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TramitesVucemGn" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Economia.Tramite90305.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Economia.Tramite90305" />
+      <option name="MAIN_CLASS_NAME" value="Economia.Tramite90305.MainPage90305Test" />
+      <option name="METHOD_NAME" value="Proceso90305" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="JUnit.MainPage103Test.Proceso103" />
+      <item itemvalue="JUnit.MainPage32511Test.Proceso32511" />
+      <item itemvalue="JUnit.MainPage80205Test" />
+      <item itemvalue="JUnit.MainPage80205Test.Proceso80205" />
+      <item itemvalue="JUnit.MainPage90305Test.Proceso90305" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.MainPage32511Test.Proceso32511" />
+        <item itemvalue="JUnit.MainPage103Test.Proceso103" />
+        <item itemvalue="JUnit.MainPage80205Test.Proceso80205" />
+        <item itemvalue="JUnit.MainPage80205Test" />
+        <item itemvalue="JUnit.MainPage90305Test.Proceso90305" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SeleniumInternalSettingsState">
+    <option name="lastUrl" value="https://wwwqa.ventanillaunica.gob.mx/ventanilla-AvisosAgace-HA/authentication.action;jsessionid=sYQZnK8Yx2xHmJBx1WGHCPd01nJG7RB0QRdcGDGbxlrsS7wlyyRy!-1880203378?showLogin=" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="10771f47-38f0-46d3-8418-2a2f81594e21" name="Changes" comment="" />
+      <created>1729720752636</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1729720752636</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Dictamen B8">
+      <option name="closed" value="true" />
+      <created>1729736195670</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1729736195670</updated>
+    </task>
+    <task id="LOCAL-00002" summary="cambios">
+      <option name="closed" value="true" />
+      <created>1729817722507</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1729817722507</updated>
+    </task>
+    <task id="LOCAL-00003" summary="B9">
+      <option name="closed" value="true" />
+      <created>1729899536267</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1729899536267</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Merge remote-tracking branch 'origin/master'">
+      <option name="closed" value="true" />
+      <created>1730164118241</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1730164118242</updated>
+    </task>
+    <task id="LOCAL-00005" summary="prueba B9">
+      <option name="closed" value="true" />
+      <created>1730164762269</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1730164762269</updated>
+    </task>
+    <task id="LOCAL-00006" summary="tramites">
+      <option name="closed" value="true" />
+      <created>1736350743082</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1736350743082</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$" />
+    </ignored-roots>
+    <MESSAGE value="Dictamen B8" />
+    <MESSAGE value="cambios" />
+    <MESSAGE value="B9" />
+    <MESSAGE value="X" />
+    <MESSAGE value="Merge remote-tracking branch 'origin/master'" />
+    <MESSAGE value="prueba B9" />
+    <MESSAGE value="tramites" />
+    <option name="LAST_COMMIT_MESSAGE" value="tramites" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/HACIENDA/Tramite103/MainPage103Test.java</url>
+          <line>78</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
