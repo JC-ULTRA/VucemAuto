@@ -29,7 +29,6 @@ public class MainPage32511 {
     public SelenideElement Col = $x("//*[@id=\"solicitud.direccionStOrigen.colonia.clave\"]");
     public SelenideElement FechaFinEvent = $x("//*[@id=\"fechaFinEvento\"]");
     public SelenideElement Competencia = $x("//*[@id=\"descEvento\"]");
-
     public SelenideElement Calle2 = $x("//*[@id=\"calleDes\"]");
     public SelenideElement NnumExt2 = $x("//*[@id=\"numeroExteriorDes\"]");
     public SelenideElement NumInt2 = $x("//*[@id=\"numeroInteriorDes\"]");
@@ -43,5 +42,12 @@ public class MainPage32511 {
     public SelenideElement HoraDestruc = $x("//*[@id=\"hora\"]");
     public SelenideElement btnContinuar2 = $x("//*[@id=\"guardarSolicitud\"]");
 
-//    public SelenideElement Calle2 = $x("");
+    public SelenideElement btnContinuarDigi = $x("/html/body/main/div/div[4]/div/form/div[4]/div/div/input[2]");
+    public SelenideElement btnAdjuntarDoc = $x("/html/body/main/div/div[4]/div/form[1]/table/tbody/tr[7]/td[2]/div/input[2]");
+    public SelenideElement CargaArch1 = $x("/html/body/main/div/div[4]/div[2]/div/form[2]/table/tbody/tr[1]/td[4]/input");
+    public SelenideElement CargaArch2 = $x("");
+    public SelenideElement CargaArch3 = $x("");
+    public SelenideElement CargaArch4 = $x("");
+    public SelenideElement Calle2 = $x("");
+
 }

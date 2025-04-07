@@ -4,6 +4,7 @@ import DBYFOLIO.ObtenerFolio;
 import Firmas.LoginFirmSoli;
 import Firmas.TramitesFirmasLG;
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.BeforeAll;
@@ -94,13 +95,11 @@ public class MainPage32511Test {
             mainPage32511.AgaceRegComExt.click();
             mainPage32511.EnvioAvisos.click();
             mainPage32511.Tramite32511.click();
-
             mainPage32511.TipoAviso.click();
             mainPage32511.Deport.click();
             mainPage32511.ImportMercancia.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\plantilla_Mercancias_32511.xlsx");
             mainPage32511.btnCargarArchivo.click();
-
-            mainPage32511.FechaEvento.sendKeys("04/04/2025");
+            Selenide.executeJavaScript("arguments[0].value = '07/04/2025';", mainPage32511.FechaEvento); sleep(1000);
             mainPage32511.Calle.sendKeys("calle");
             mainPage32511.NumExt.sendKeys("02");
             mainPage32511.NumInt.sendKeys("23");
@@ -108,8 +107,8 @@ public class MainPage32511Test {
             mainPage32511.EntidadFed.sendKeys("SINALOA");
             mainPage32511.AlcaldiaMun.sendKeys("SINALOA");
             mainPage32511.Col.sendKeys("CENTRO - CP 81900");
-            mainPage32511.FechaFinEvent.sendKeys("01/02/2025");
-            mainPage32511.Competencia.setValue("06/04/2025");
+            Selenide.executeJavaScript("arguments[0].value = '07/04/2025';", mainPage32511.FechaFinEvent); sleep(1000);
+            Selenide.executeJavaScript("arguments[0].value = '07/04/2025';", mainPage32511.Competencia); sleep(1000);
 
             mainPage32511.Calle2.sendKeys("calle2");
             mainPage32511.NnumExt2.sendKeys("12");
@@ -120,7 +119,7 @@ public class MainPage32511Test {
             mainPage32511.Col2.sendKeys("CENTRO - CP 81900");
             mainPage32511.CargaDestruc.sendKeys("C:\\VucemAuto\\automations\\src\\test\\resources\\plantilla_Destruccion_93_32511.xlsx");
             mainPage32511.btnCargarDestruc.click();
-            mainPage32511.FechaDestrucMerc.setValue("06/04/2025");
+            Selenide.executeJavaScript("arguments[0].value = '07/04/2025';", mainPage32511.FechaDestrucMerc); sleep(1000);
             mainPage32511.HoraDestruc.sendKeys("02:23");
             mainPage32511.btnContinuar2.click();
 

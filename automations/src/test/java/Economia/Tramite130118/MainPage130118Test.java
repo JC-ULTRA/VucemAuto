@@ -135,7 +135,7 @@ public class MainPage130118Test {
             mainPage130118.inputGuardarSolicitud.click();
             mainPage130118.inputContinuar.click();
             mainPage130118.inputAdjuntarDocumentos.click();
-            mainPage130118.inputDocumentosFile.setValue("C:\\VucemAuto\\RepoN\\src\\test\\resources\\Lorem_ipsum.pdf");
+            mainPage130118.inputDocumentosFile.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
             mainPage130118.inputAnexar.click();sleep(3000);
             mainPage130118.inputCerrar.click();sleep(2000);
             mainPage130118.inputSiguienteButton.click(); sleep(1000);

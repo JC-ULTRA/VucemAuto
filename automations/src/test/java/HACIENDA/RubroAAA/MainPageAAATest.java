@@ -173,15 +173,15 @@ public class MainPageAAATest {
             //ConDBReasigSolFun.processFolio(folioNumber, FunRFC);
 
             // Ejecutar métodos seleccionados
-            if (selectedMethods.contains("ProcesoDictamenB8")) {
-                //ProcesoDictamenB8(folioNumber);
-            }
-            if (selectedMethods.contains("ProcesoAutorizacionB8")) {
-               // ProcesoAutorizacionB8(folioNumber);
-            }
-            if (selectedMethods.contains("ProcesoConfirmarNotificaciónResolucionB8")) {
-                //ProcesoConfirmarNotificaciónResolucionB8(folioNumber);
-            }
+//            if (selectedMethods.contains("ProcesoDictamenB8")) {
+//                //ProcesoDictamenB8(folioNumber);
+//            }
+//            if (selectedMethods.contains("ProcesoAutorizacionB8")) {
+//               // ProcesoAutorizacionB8(folioNumber);
+//            }
+//            if (selectedMethods.contains("ProcesoConfirmarNotificaciónResolucionB8")) {
+//                //ProcesoConfirmarNotificaciónResolucionB8(folioNumber);
+//            }
 
         }, repeticiones);
 
