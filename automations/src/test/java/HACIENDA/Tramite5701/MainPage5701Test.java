@@ -12,6 +12,10 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import javax.swing.*;
 
 //import static com.codeborne.selenide.Condition.visible;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -318,30 +322,30 @@ public class MainPage5701Test {
 //        }
 //    }
 //
-//    public void desactivarPago() {
-//        String url = "jdbc:oracle:thin:@//172.31.240.63:1521/vucprod1";
-//        String user = "vucem_app_p01";
-//        String password = "Mfk22nvW6na71DgBXi5R";
-//
-//        String query = "UPDATE vuc_pago_sea SET BLN_ACTIVO = 0 WHERE linea_de_captura = '032000Q0GHM128445291'";
-//
-//        try (Connection connection = DriverManager.getConnection(url, user, password);
-//             PreparedStatement statement = connection.prepareStatement(query)) {
-//
-//            // Ejecuta el query
-//            int filasActualizadas = statement.executeUpdate();
-//
-//            // Comprueba si la actualización fue exitosa
-//            if (filasActualizadas > 0) {
-//                System.out.println("El registro ha sido actualizado correctamente.");
-//            } else {
-//                System.out.println("No se encontró el registro con la línea de captura proporcionada.");
-//            }
-//
-//        } catch (SQLException e) {
-//            System.err.println("Error al ejecutar el query: " + e.getMessage());
-//        }
-//    }
+    public void desactivarPago() {
+        String url = "jdbc:oracle:thin:@10.181.233.245:1521/vucprod1";
+        String user = "vucem_app_p01";
+        String password = "Mfk22nvW6na71DgBXi5R";
+
+        String query = "UPDATE vuc_pago_sea SET BLN_ACTIVO = 0 WHERE linea_de_captura = '032000Q0GHM128445291'";
+
+        try (Connection connection = DriverManager.getConnection(url, user, password);
+             PreparedStatement statement = connection.prepareStatement(query)) {
+
+            // Ejecuta el query
+            int filasActualizadas = statement.executeUpdate();
+
+            // Comprueba si la actualización fue exitosa
+            if (filasActualizadas > 0) {
+                System.out.println("El registro ha sido actualizado correctamente.");
+            } else {
+                System.out.println("No se encontró el registro con la línea de captura proporcionada.");
+            }
+
+        } catch (SQLException e) {
+            System.err.println("Error al ejecutar el query: " + e.getMessage());
+        }
+    }
 
     //Metodo que ejecuta n veces una clase que implementa Runnable
     public void ejecutarProcesoNRunnable(Runnable proceso, int n) {

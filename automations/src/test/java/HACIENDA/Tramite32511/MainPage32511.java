@@ -45,9 +45,13 @@ public class MainPage32511 {
     public SelenideElement btnContinuarDigi = $x("/html/body/main/div/div[4]/div/form/div[4]/div/div/input[2]");
     public SelenideElement btnAdjuntarDoc = $x("/html/body/main/div/div[4]/div/form[1]/table/tbody/tr[7]/td[2]/div/input[2]");
     public SelenideElement CargaArch1 = $x("/html/body/main/div/div[4]/div[2]/div/form[2]/table/tbody/tr[1]/td[4]/input");
-    public SelenideElement CargaArch2 = $x("");
-    public SelenideElement CargaArch3 = $x("");
-    public SelenideElement CargaArch4 = $x("");
-    public SelenideElement Calle2 = $x("");
+    public SelenideElement CargaArch2 = $x("/html/body/main/div/div[4]/div[2]/div/form[3]/table/tbody/tr[1]/td[4]/input");
+    public SelenideElement CargaArch3 = $x("/html/body/main/div/div[4]/div[2]/div/form[4]/table/tbody/tr[1]/td[4]/input");
+    public SelenideElement CargaArch4 = $x("/html/body/main/div/div[4]/div[2]/div/form[5]/table/tbody/tr[1]/td[4]/input");
+    public SelenideElement btnAdjunDocAF = $x("//*[@id=\"btnAnexar\"]");
+
+    public SelenideElement btnCerrar = $x("/html/body/main/div/div[4]/div[2]/form/div[3]/div/input");
+    public SelenideElement btnContinuarAFirma = $x("//*[@id=\"siguienteButton\"]");
+
 
 }

@@ -1,5 +1,6 @@
 package HACIENDA.Tramite32511;
 
+import DBYFOLIO.ConDBReasigSolFun;
 import DBYFOLIO.ObtenerFolio;
 import Firmas.LoginFirmSoli;
 import Firmas.TramitesFirmasLG;
@@ -121,18 +122,22 @@ public class MainPage32511Test {
             mainPage32511.btnCargarDestruc.click();
             Selenide.executeJavaScript("arguments[0].value = '07/04/2025';", mainPage32511.FechaDestrucMerc); sleep(1000);
             mainPage32511.HoraDestruc.sendKeys("02:23");
-            mainPage32511.btnContinuar2.click();
+            mainPage32511.btnContinuar2.click();sleep(1000);
+            mainPage32511.btnContinuarDigi.click();sleep(1000);
+            mainPage32511.btnAdjuntarDoc.click();sleep(1000);
+            mainPage32511.CargaArch1.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");sleep(1000);
+            mainPage32511.CargaArch2.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");sleep(1000);
+            mainPage32511.CargaArch3.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");sleep(1000);
+            mainPage32511.CargaArch4.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");sleep(1000);
+            mainPage32511.btnAdjunDocAF.click();sleep(2000);
+            mainPage32511.btnCerrar.click();sleep(2000);
+            mainPage32511.btnContinuarAFirma.click();sleep(1000);
 
-
-
-
-
-//            loginFirmSoli.firma(tramite5701);
-//            // Obtener el texto del folio desde mainPageB8
-//            String folioText = mainPage5701.folio.getText();
-//            // Llamar al metodo para obtener el folio
-//            String folioNumber = obtenerFolio.obtenerFolio(folioText);
-//            ConDBReasigSolFun.processFolio(folioNumber, FunRFC);
+            loginFirmSoli.firma(tramite32511);
+            // Obtener el texto del folio desde mainPageB8
+            String folioText = mainPage32511.folio.getText();
+            // Llamar al metodo para obtener el folio
+            String folioNumber = obtenerFolio.obtenerFolio(folioText);
 
 //            Ejecutar métodos seleccionados
 //            if (selectedMethods.contains("ProcesoDictamen5701")) {
