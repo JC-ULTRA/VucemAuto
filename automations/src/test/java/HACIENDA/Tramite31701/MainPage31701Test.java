@@ -26,8 +26,8 @@ public class MainPage31701Test {
     LoginFirmSoli loginFirmSoli = new LoginFirmSoli();
     ObtenerFolio obtenerFolio = new ObtenerFolio();
     TramitesFirmasLG tramite32512  = new TramitesFirmasLG(
-            "C:\\Users\\ErickALD\\Desktop\\Aqua\\automations\\src\\test\\resources\\CredSoli\\aal0409235e6.cer",
-            "C:\\Users\\ErickALD\\Desktop\\Aqua\\automations\\src\\test\\resources\\CredSoli\\AAL0409235E6_1012231310.key"
+            "C:\\VucemAuto\\automations\\src\\test\\resources\\CredSoli\\aal0409235e6.cer",
+            "C:\\VucemAuto\\automations\\src\\test\\resources\\CredSoli\\AAL0409235E6_1012231310.key"
     );
 
 
