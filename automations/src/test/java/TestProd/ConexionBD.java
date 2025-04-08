@@ -89,7 +89,7 @@ public class ConexionBD {
                 e.printStackTrace();
             }
         }
-        //esto es un retunr
+        //esto es un retunr prueba
         return maxFolio;  // Devolvemos el valor obtenido
     }
 }
