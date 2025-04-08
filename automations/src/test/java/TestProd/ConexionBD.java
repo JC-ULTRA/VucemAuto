@@ -90,6 +90,6 @@ public class ConexionBD {
             }
         }
         //esto es un retunr
-        return maxFolio;  // Devolvemos el valor obtenido  (Prueba)
+        return maxFolio;  // Devolvemos el valor obtenido
     }
 }
