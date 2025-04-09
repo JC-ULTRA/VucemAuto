@@ -18,7 +18,9 @@ public class MainPage32610 {
     public SelenideElement hacienda = $x("//img[contains(@alt, 'General')]");
     public SelenideElement registrosComercioExt = $x("/html/body/main/div/div[3]/div/div[8]/ul/li/a");
     public SelenideElement solicitudRegistro = $x("/html/body/main/div/div[3]/div/div[8]/ul/li/ul/li[7]/a");
-    public SelenideElement rubroImportadorExportador = $x("/html/body/main/div/div[3]/div/div[8]/ul/li/ul/li[7]/ul/li[2]/a");
+    public SelenideElement rubroImportadorExportador = $x("//a[contains(@onclick, 'strategico')]");
+
+
     /// datos comunes
     public SelenideElement datosComunes = $x("/html/body/div[1]/div[3]/div[3]/div/form/div[2]/ul/li[2]/a/label");
     public SelenideElement sectorProductivo = $x("//*[@id=\"solicitud.listaCatalogoSolicitud[0].catalogo\"]");
@@ -114,5 +116,14 @@ public class MainPage32610 {
     public SelenideElement btnAceptarTransportista = $x("/html/body/div[41]/div[3]/div/button");
     public SelenideElement autorizoReconocimientoMutuo = $x("//*[@id=\"si4010Importador\"]");
     public SelenideElement informacionPublica = $x("//*[@id=\"si404ImpoExpo\"]");
+
+    /// CTPAT
+    public SelenideElement CTPAT = $x("/html/body/div[1]/div[3]/div[3]/div/form/div[2]/ul/li[5]/a");
+    public SelenideElement autorizoCBPSi = $x("//*[@id=\"si2089\"]");
+    public SelenideElement materiaSeguridadSi = $x("//*[@id=\"si2090\"]");
+    public SelenideElement cancelacionNo = $x("//*[@id=\"no2091\"]");
+
+
+
 
 }
