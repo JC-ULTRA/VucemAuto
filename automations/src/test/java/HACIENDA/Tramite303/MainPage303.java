@@ -1,4 +1,4 @@
-package HACIENDA.Tramite303PENDIENTE;
+package HACIENDA.Tramite303;
 
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
@@ -90,9 +90,9 @@ public class MainPage303 {
     public SelenideElement selectDoc2 = $x("/html/body/main/div/div[4]/div[2]/div/form[3]/table/tbody/tr[1]/td[4]/input");
     public SelenideElement selectDoc3 = $x("/html/body/main/div/div[4]/div[2]/div/form[4]/table/tbody/tr[1]/td[4]/input");
     public SelenideElement btnAdjuntar = $x("//*[@id=\"btnAnexar\"]");
-    public SelenideElement inputGuardarButton = $x("//*[@id='guardarButton']");
+    public SelenideElement btnCerrar = $x("//*[@id=\"btnCerrar\"]");
     // lorem
-    public SelenideElement inputSiguienteButton = $x("//*[@id='siguienteButton']");
+    public SelenideElement inputSiguienteButton = $x("//*[@id=\"siguienteButton\"]");
 
 
 }
