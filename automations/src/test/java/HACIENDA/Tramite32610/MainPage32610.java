@@ -113,9 +113,21 @@ public class MainPage32610 {
     public SelenideElement rfcTransportista = $x("//*[@id=\"trRfc\"]");
     public SelenideElement btnBuscarTransportista = $x("//*[@id=\"btnBuscarEmpresa\"]");
     public SelenideElement btnAgregarTransportista = $x("//*[@id=\"btnGuardarTransportista\"]");
-    public SelenideElement btnAceptarTransportista = $x("/html/body/div[41]/div[3]/div/button");
-    public SelenideElement autorizoReconocimientoMutuo = $x("//*[@id=\"si4010Importador\"]");
-    public SelenideElement informacionPublica = $x("//*[@id=\"si404ImpoExpo\"]");
+
+    public SelenideElement Perfil = $x("//*[@id=\"perfilRFESi\"]");
+    public SelenideElement RecintoFiscalizadoEstrategico = $x("//*[@id=\"autoRFESi\"]");
+    public SelenideElement FechaFin = $x("/html/body/div[1]/div[3]/div[3]/div/form/div[2]/div[4]/div[2]/table[3]/tbody/tr[2]/td[2]/img");
+    public SelenideElement SelectFechaFin = $x("/html/body/div[2]/table/tbody/tr[1]/td[2]/a");
+    public SelenideElement NumFolioOficio = $x("//*[@id=\"rfeOficio\"]");
+    public SelenideElement RegistroEsquema = $x("//*[@id=\"operaRFESi\"]");
+    public SelenideElement Rubro = $x("//*[@id=\"rfeRubro\"]");
+    public SelenideElement FecFicRubro = $x("//*[@id=\"fechaRegRFE\"]");
+    public SelenideElement NumOfiAuto = $x("//*[@id=\"rfeOficioIva\"]");
+    public SelenideElement SujetoProCance = $x("//*[@id=\"cancelRFENo\"]");
+
+
+    public SelenideElement autorizoReconocimientoMutuo = $x("//*[@id=\"si4060Recinto\"]");
+    public SelenideElement informacionPublica = $x("//*[@id=\"si1091Recinto\"]");
 
     /// CTPAT
     public SelenideElement CTPAT = $x("/html/body/div[1]/div[3]/div[3]/div/form/div[2]/ul/li[5]/a");
@@ -123,6 +135,23 @@ public class MainPage32610 {
     public SelenideElement materiaSeguridadSi = $x("//*[@id=\"si2090\"]");
     public SelenideElement cancelacionNo = $x("//*[@id=\"no2091\"]");
 
+    public SelenideElement btnGuardarSoli = $x("//*[@id=\"guardarSolicitud\"]");
+    public SelenideElement btnContinuar = $x("/html/body/div[1]/div[3]/div[3]/div/form/table/tbody/tr/td/input[2]");
+    public SelenideElement btnAdjuntarDoc = $x("/html/body/div[1]/div[3]/div[3]/div/form[1]/table[3]/tbody/tr[14]/td[2]/input");
+    public SelenideElement archivo1 = $x("/html/body/div[7]/div[2]/div/form[2]/table/tbody/tr[1]/td[4]/input");
+    public SelenideElement archivo2 = $x("/html/body/div[7]/div[2]/div/form[3]/table/tbody/tr[1]/td[4]/input");
+    public SelenideElement archivo3 = $x("/html/body/div[7]/div[2]/div/form[4]/table/tbody/tr[1]/td[4]/input");
+    public SelenideElement archivo4 = $x("/html/body/div[7]/div[2]/div/form[5]/table/tbody/tr[1]/td[4]/input");
+    public SelenideElement archivo5 = $x("/html/body/div[7]/div[2]/div/form[6]/table/tbody/tr[1]/td[4]/input");
+    public SelenideElement archivo6 = $x("/html/body/div[7]/div[2]/div/form[7]/table/tbody/tr[1]/td[4]/input");
+    public SelenideElement archivo7 = $x("/html/body/div[7]/div[2]/div/form[8]/table/tbody/tr[1]/td[4]/input");
+    public SelenideElement archivo8 = $x("/html/body/div[7]/div[2]/div/form[9]/table/tbody/tr[1]/td[4]/input");
+    public SelenideElement archivo9 = $x("/html/body/div[7]/div[2]/div/form[10]/table/tbody/tr[1]/td[4]/input");
+    public SelenideElement archivo10 = $x("/html/body/div[7]/div[2]/div/form[11]/table/tbody/tr[1]/td[4]/input");
+    public SelenideElement archivo11 = $x("/html/body/div[7]/div[2]/div/form[12]/table/tbody/tr[1]/td[4]/input");
+    public SelenideElement btnAdjuntar = $x("//*[@id=\"btnAnexar\"]");
+    public SelenideElement btnCerrar = $x("//*[@id=\"btnCerrar\"]");
+    public SelenideElement btnSiguiente = $x("//*[@id=\"siguienteButton\"]");
 
 
 
