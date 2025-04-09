@@ -1,4 +1,4 @@
-package HACIENDA.Tramite303PENDIENTE;
+package HACIENDA.Tramite303;
 
 import DBYFOLIO.ObtenerFolio;
 import Firmas.LoginFirmSoli;
@@ -18,7 +18,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
@@ -188,10 +187,11 @@ public class MainPage303Test {
             mainPage303.selectDoc2.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
             mainPage303.selectDoc3.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
             mainPage303.btnAdjuntar.click();
-            mainPage303.inputGuardarButton.click();
+            mainPage303.btnCerrar.click();
             // SIGUIENTE
             mainPage303.inputSiguienteButton.click();
-
+            //FIRMAR SOLICITUD
+            //loginFirmSoli.firma(tramite303);
         }, repeticiones);
     }
 
