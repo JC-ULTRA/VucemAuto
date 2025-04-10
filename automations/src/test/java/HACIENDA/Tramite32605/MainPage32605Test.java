@@ -38,7 +38,7 @@ public class MainPage32605Test {
     @BeforeAll
     public static void setUpAll() {
         Configuration.browser = Browsers.CHROME; //FIREFOX;
-        Configuration.browserCapabilities = new ChromeOptions().addArguments("--incognito").addArguments("--remote-allow-origins=*");
+        Configuration.browserCapabilities = new ChromeOptions().addArguments("--incognito").addArguments("--remote-allow-origins=*").addArguments("--force-device-scale-factor=1.25");
         open();
         getWebDriver().manage().window().maximize();
         Configuration.timeout = 120000; // tiempo de espera
