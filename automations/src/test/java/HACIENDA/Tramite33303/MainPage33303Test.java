@@ -9,6 +9,7 @@ import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 import javax.swing.*;
@@ -17,8 +18,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
-import static com.codeborne.selenide.Selenide.open;
-import static com.codeborne.selenide.Selenide.sleep;
+import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Condition.visible;
+import static com.codeborne.selenide.Selectors.byText;
+import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 public class MainPage33303Test {
@@ -89,45 +92,44 @@ public class MainPage33303Test {
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////-
 // Crear checkboxes para los nuevos tipos de aviso
-        JCheckBox usoYGoceCheckBox = new JCheckBox("Aviso Uso y Goce");
-        JCheckBox fusionEscisionCheckBox = new JCheckBox("Aviso Fusión o Escisión");
-        JCheckBox solventarObservacionesCheckBox = new JCheckBox("Aviso Para Solventar Observaciones");
-        JCheckBox incidentesSeguridadCheckBox = new JCheckBox("Aviso Incidentes de Seguridad");
-        JCheckBox circunstanciasCheckBox = new JCheckBox("Aviso de Circunstancias");
-        JCheckBox adicionRevocacionCheckBox = new JCheckBox("Aviso de Adición o Revocación");
-        JCheckBox registroSECIITCheckBox = new JCheckBox("Aviso Registro SECIIT");
-        JCheckBox pagoDerechosCheckBox = new JCheckBox("Aviso Pago Derechos");
-        JCheckBox altaBajaTercerosCheckBox = new JCheckBox("Avisos Alta o Baja Terceros");
-        JCheckBox bajaCertificacionAltaTercerizacionCheckBox = new JCheckBox("Aviso Baja Tercero Certificación / Alta Tercero Tercerización");
+        JCheckBox avisoCambioSituacionFiscal = new JCheckBox("Aviso cuando cambie la situación, respecto del documento con el que se haya acreditado el legal uso y goce del inmueble o inmuebles en donde se lleven a cabo los procesos productivos o la prestación del servicio, según se trate, referente a la vigencia, las partes y el domicilio.");
+        JCheckBox avisoFusionEscisiondeEmpresas = new JCheckBox("Aviso de fusión o escisión de empresas que cuenten con el Registro en el Esquema de Certificación de Empresas, cuando resulte una nueva sociedad, extinguiéndose una o más empresas con Registro en el Esquema de Certificación de Empresas vigente");
+        JCheckBox solventarObservaciones = new JCheckBox("Aviso para solventar las observaciones respecto a los estándares mínimos de seguridad, que deriven de cualquier inspección de supervisión de cumplimiento.");
+        JCheckBox avisoRelacionadoIncidentesSeguridad = new JCheckBox("Aviso relacionado a incidentes de seguridad. (creación de vista gráfica captura, consultas funcionario y solicitante, documentos , para los avisos de SCC y OEA)");
+        JCheckBox realicenModificacion = new JCheckBox("Aviso cuando se realicen modificaciones a lo establecido en el E4 \"Perfil del Agente Aduanal\"; E5 \"Perfil de Auto Transportista Terrestre\"; E6 \"Perfil de Mensajería y Paquetería\"; E7 \"Perfil de Recinto Fiscalizado\"; E9 \"Perfil del Transportista Ferroviario\"; E10 \"Perfil de Parques Industriales\"; E11 Perfil de \"Almacén General de Depósito\" , contenidos en el Anexo 1, por cada instalación que corresponda.");
+        JCheckBox parquesIndustriales = new JCheckBox("Aviso de adición de Parques Industriales, cuando las instalaciones pertenezcan al misma RFC de la persona moral con Registro en el Esquema de Certificación de Empresas en la modalidad de Socio Comercial Certificado, rubro Parque Industrial.");
+        JCheckBox modificacionMandatarios = new JCheckBox("Aviso adición o modificación de mandatarios, aduana de adscripción o adicionales y/o sociedades a las que pertenece, bajo la patente aduanal con la que se haya obtenido su registro en la modalidad de Socio Comercial Certificado.");
+        JCheckBox pagoDerechos = new JCheckBox("resentación de pago de derechos anual, 7.2.1 primer párrafo fracción 10, para el 2do. Año de la renovación");
+
 
 // Crear un panel para mostrar los checkboxes
         JPanel avisoPanel = new JPanel();
         avisoPanel.setLayout(new BoxLayout(avisoPanel, BoxLayout.Y_AXIS));
-        avisoPanel.add(usoYGoceCheckBox);
-        avisoPanel.add(fusionEscisionCheckBox);
-        avisoPanel.add(solventarObservacionesCheckBox);
-        avisoPanel.add(incidentesSeguridadCheckBox);
-        avisoPanel.add(circunstanciasCheckBox);
-        avisoPanel.add(adicionRevocacionCheckBox);
-        avisoPanel.add(registroSECIITCheckBox);
-        avisoPanel.add(pagoDerechosCheckBox);
-        avisoPanel.add(altaBajaTercerosCheckBox);
-        avisoPanel.add(bajaCertificacionAltaTercerizacionCheckBox);
+
+        avisoPanel.add(avisoCambioSituacionFiscal);
+        avisoPanel.add(avisoFusionEscisiondeEmpresas);
+        avisoPanel.add(solventarObservaciones);
+        avisoPanel.add(avisoRelacionadoIncidentesSeguridad);
+        avisoPanel.add(realicenModificacion);
+        avisoPanel.add(parquesIndustriales);
+        avisoPanel.add(modificacionMandatarios);
+        avisoPanel.add(pagoDerechos);
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////-
 // Lógica para habilitar o deshabilitar checkboxes según el `FolioRubro`
 
 // Activar/desactivar checkboxes basados en condiciones específicas
-        usoYGoceCheckBox.setEnabled(FolioRubro.startsWith("25003026"));
-        fusionEscisionCheckBox.setEnabled(FolioRubro.startsWith("25003026"));
-        solventarObservacionesCheckBox.setEnabled(FolioRubro.startsWith("25003026"));
-        incidentesSeguridadCheckBox.setEnabled(FolioRubro.startsWith("25003026"));
-        circunstanciasCheckBox.setEnabled(FolioRubro.startsWith("25003026"));
-        adicionRevocacionCheckBox.setEnabled(FolioRubro.startsWith("25003026"));
-        registroSECIITCheckBox.setEnabled(FolioRubro.startsWith("25003026008"));
-        pagoDerechosCheckBox.setEnabled(false);
-        altaBajaTercerosCheckBox.setEnabled(FolioRubro.startsWith("25003026017"));
-        bajaCertificacionAltaTercerizacionCheckBox.setEnabled(FolioRubro.startsWith("25003026017"));
+        avisoCambioSituacionFiscal.setEnabled(true);
+        avisoFusionEscisiondeEmpresas.setEnabled(true);
+        solventarObservaciones.setEnabled(true);
+        avisoRelacionadoIncidentesSeguridad.setEnabled(true);
+        realicenModificacion.setEnabled(true);
+        parquesIndustriales.setEnabled(true);
+        modificacionMandatarios.setEnabled(true);
+        pagoDerechos.setEnabled(true);
+
+//        pagoDerechos.setEnabled(FolioRubro.startsWith("false"));
+
 
 // Mostrar diálogo con los checkboxes
         int avisoOption = JOptionPane.showConfirmDialog(
@@ -142,16 +144,8 @@ public class MainPage33303Test {
 
 // Recoger las selecciones realizadas por el usuario
         List<String> avisosSeleccionados = new ArrayList<>();
-        if (usoYGoceCheckBox.isSelected()) avisosSeleccionados.add(usoYGoceCheckBox.getText());
-        if (fusionEscisionCheckBox.isSelected()) avisosSeleccionados.add(fusionEscisionCheckBox.getText());
-        if (solventarObservacionesCheckBox.isSelected()) avisosSeleccionados.add(solventarObservacionesCheckBox.getText());
-        if (incidentesSeguridadCheckBox.isSelected()) avisosSeleccionados.add(incidentesSeguridadCheckBox.getText());
-        if (circunstanciasCheckBox.isSelected()) avisosSeleccionados.add(circunstanciasCheckBox.getText());
-        if (adicionRevocacionCheckBox.isSelected()) avisosSeleccionados.add(adicionRevocacionCheckBox.getText());
-        if (registroSECIITCheckBox.isSelected()) avisosSeleccionados.add(registroSECIITCheckBox.getText());
-        if (pagoDerechosCheckBox.isSelected()) avisosSeleccionados.add(pagoDerechosCheckBox.getText());
-        if (altaBajaTercerosCheckBox.isSelected()) avisosSeleccionados.add(altaBajaTercerosCheckBox.getText());
-        if (bajaCertificacionAltaTercerizacionCheckBox.isSelected()) avisosSeleccionados.add(bajaCertificacionAltaTercerizacionCheckBox.getText());
+        if (avisoCambioSituacionFiscal.isSelected()) avisosSeleccionados.add(avisoCambioSituacionFiscal.getText());
+        if (avisoFusionEscisiondeEmpresas.isSelected()) avisosSeleccionados.add(avisoFusionEscisiondeEmpresas.getText());
 
 // Validar que al menos un aviso haya sido seleccionado
         if (avisosSeleccionados.isEmpty()) {
@@ -178,51 +172,54 @@ public class MainPage33303Test {
             mainPage33303.folioTramite.sendKeys(FolioRubro);
             mainPage33303.btnBuscarFolio.click();sleep(1000);
             mainPage33303.tablaFolios.doubleClick();
-//            mainPage33303.btnModificar.click();
-//            mainPage33303.tipoAvisos.click();
-//
-//            // Ejecutar procesos según selección
-//            for (String aviso : avisosSeleccionados) {
-//                switch (aviso) {
-//                    case "Aviso Uso y Goce":
-//                        ejecutarAvisoUsoGoce();
-//                        break;
-//                    case "Aviso Para Solventar Observaciones":
+            mainPage33303.btnModificar.click();
+            mainPage33303.tipoAvisos.click();
+
+            // Ejecutar procesos según selección
+            for (String aviso : avisosSeleccionados) {
+                switch (aviso) {
+                    case "Aviso cuando cambie la situación, respecto del documento con el que se haya acreditado el legal uso y goce del inmueble o inmuebles en donde se lleven a cabo los procesos productivos o la prestación del servicio, según se trate, referente a la vigencia, las partes y el domicilio.":
+                        ejecutarAvisoUsoGoce();
+                        break;
+                    case "Aviso de fusión o escisión de empresas que cuenten con el Registro en el Esquema de Certificación de Empresas, cuando resulte una nueva sociedad, extinguiéndose una o más empresas con Registro en el Esquema de Certificación de Empresas vigente":
 //                        ejecutarAvisoObservaciones();
-//                        break;
-//                    case "Aviso Incidentes de Seguridad":
-//                        ejecutarAvisoSeguridad();
-//                        break;
-//                    case "Aviso de Circunstancias":
-//                        ejecutarAvisoCircunstancias();
-//                        break;
-//                    case "Aviso de Adición o Revocación":1
-//                        ejecutarAvisoAdicionRevocacio();
-//                        break;
-//                    case "Aviso Registro SECIIT":
-//                        ejecutarAvisoSeciit();
-//                        break;
-//                    case "Aviso Pago Derechos":
-//                        ejecutarAvisoPago();
-//                        break;
-//                    default:
-//                        JOptionPane.showMessageDialog(null, "Aviso no válido seleccionado: " + aviso);
-//                        break;
-//                }
-//                scrollDecremento();
-//                mainPage33303.tipoAvisos.click();
-//            }
-//
+                        break;
+                    case "Aviso para solventar las observaciones respecto a los estándares mínimos de seguridad, que deriven de cualquier inspección de supervisión de cumplimiento.":
+//                        ejecutarAvisoObservaciones();
+                        break;
+                    case "Aviso relacionado a incidentes de seguridad. (creación de vista gráfica captura, consultas funcionario y solicitante, documentos , para los avisos de SCC y OEA)":
+//                        ejecutarAvisoObservaciones();
+                        break;
+                    case "Aviso cuando se realicen modificaciones a lo establecido en el E4 \"Perfil del Agente Aduanal\"; E5 \"Perfil de Auto Transportista Terrestre\"; E6 \"Perfil de Mensajería y Paquetería\"; E7 \"Perfil de Recinto Fiscalizado\"; E9 \"Perfil del Transportista Ferroviario\"; E10 \"Perfil de Parques Industriales\"; E11 Perfil de \"Almacén General de Depósito\" , contenidos en el Anexo 1, por cada instalación que corresponda.":
+//                        ejecutarAvisoObservaciones();
+                        break;
+                    case "Aviso de adición de Parques Industriales, cuando las instalaciones pertenezcan al misma RFC de la persona moral con Registro en el Esquema de Certificación de Empresas en la modalidad de Socio Comercial Certificado, rubro Parque Industrial.":
+//                        ejecutarAvisoObservaciones();
+                        break;
+                    case "Aviso adición o modificación de mandatarios, aduana de adscripción o adicionales y/o sociedades a las que pertenece, bajo la patente aduanal con la que se haya obtenido su registro en la modalidad de Socio Comercial Certificado.":
+//                        ejecutarAvisoObservaciones();
+                        break;
+                    case "resentación de pago de derechos anual, 7.2.1 primer párrafo fracción 10, para el 2do. Año de la renovación":
+//                        ejecutarAvisoObservaciones();
+                        break;
+                    default:
+                        JOptionPane.showMessageDialog(null, "Aviso no válido seleccionado: " + aviso);
+                        break;
+                }
+                scrollDecremento();
+                mainPage33303.tipoAvisos.click();
+            }
+
 //            mainPage33303.btnGuardarSoli.click();
 //            mainPage33303.btnContinuar.click();
 ////            verificarSeleccion(aduanalCheckBox, fusionEscisionCheckBox, articulo99CheckBox);
 //
 //            mainPage33303.btnSiguiente.click();
-//            loginFirmSoli.firma(tramite33302);
-//
-//            // Obtener el texto del folio desde mainPage33303
-//            String folioText = mainPage33303.folio.getText();
-//            String folioNumber = obtenerFolio.obtenerFolio(folioText);
+//            loginFirmSoli.firma(tramite33303);
+
+            // Obtener el texto del folio desde mainPage33303
+            String folioText = mainPage33303.folio.getText();
+            String folioNumber = obtenerFolio.obtenerFolio(folioText);
 
         }, repeticiones);
     }
@@ -236,5 +233,51 @@ public class MainPage33303Test {
             proceso.run();  // Ejecuta el proceso de la clase
         }
     }
+    private void ejecutarAvisoUsoGoce() {
+        scrollDecremento();
+        mainPage33303.avisoUsoGoce.click();
+        mainPage33303.usoGoce.click();
+        mainPage33303.domicilio.sendKeys("CAMINO VIEJO 1353 MIGUEL HIDALGO");
+        mainPage33303.codigoPostal.sendKeys("81210");
+        mainPage33303.entidadFederativa.sendKeys("SINALOA");
+        mainPage33303.municipio.sendKeys("AHOME");
+        mainPage33303.documentoUsoGoce.sendKeys("Donación");
+        mainPage33303.fechaInicioUsoGoce.click();
+        mainPage33303.selecFecha.click();
+        mainPage33303.fechaFin.click();
+        mainPage33303.selecFechaFin.click();
+        mainPage33303.rfcPartes.sendKeys("AAL0409235E6");
+        mainPage33303.buscarRfcPartes.click();
+        mainPage33303.caracterDePartes.sendKeys("jefe");
+        mainPage33303.btnAgregar.click();
+        clickAceptarButton();
+        mainPage33303.observacionesPartes.sendKeys("QA");
+
+    }
+
+    public void clickOkButton() {
+        // Localiza el botón "Ok" por el texto dentro del <span> y realiza el click
+        $(byText("Ok")).shouldBe(visible).shouldHave(text("Ok")).click();
+    }
+
+    public void clickAceptarButton() {
+        // Localiza el botón "Ok" por el texto dentro del <span> y realiza el click
+        $(byText("Aceptar")).shouldBe(visible).shouldHave(text("Aceptar")).click();
+    }
+    public void scrollIncremento() {
+        JavascriptExecutor js = (JavascriptExecutor) getWebDriver();
+        for (int i = 0; i < 1; i++){
+            js.executeScript("window.scrollBy(0,500);");
+            sleep(500);
+        }
+    }
+    public void scrollDecremento() {
+        JavascriptExecutor js = (JavascriptExecutor) getWebDriver();
+        for (int i = 0; i < 3; i++){
+            js.executeScript("window.scrollBy(0,-500);");
+            sleep(500);
+        }
+    }
 
 }
+//2500302601120259912000001
