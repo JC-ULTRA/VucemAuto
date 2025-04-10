@@ -191,6 +191,9 @@ public class MainPage33302Test  {
                     case "Aviso Uso y Goce":
                         ejecutarAvisoUsoGoce();
                         break;
+                    case "Aviso Fusión o Escisión":
+                        ejecutarAvisoFusionEscision();
+                        break;
                     case "Aviso Para Solventar Observaciones":
                         ejecutarAvisoObservaciones();
                         break;
@@ -206,6 +209,12 @@ public class MainPage33302Test  {
                     case "Aviso Registro SECIIT":
                         ejecutarAvisoSeciit();
                         break;
+                    case "Avisos Alta o Baja Terceros":
+                        ejecutarAvisoAltaTercerizacion();
+                        break;
+                    case "Aviso Baja Tercero Certificación / Alta Tercero Tercerización":
+                        ejecutarAvisoBajaTercerizacion();
+                        break;
                     case "Aviso Pago Derechos":
                         ejecutarAvisoPago();
                         break;
@@ -213,13 +222,14 @@ public class MainPage33302Test  {
                         JOptionPane.showMessageDialog(null, "Aviso no válido seleccionado: " + aviso);
                         break;
                 }
-                scrollDecremento();
+                scrollDecremento();scrollDecremento();
                 mainPage33302.tipoAvisos.click();
             }
 
+            mainPage33302.manifiestoAvisos.click();
             mainPage33302.btnGuardarSoli.click();
             mainPage33302.btnContinuar.click();
-//            verificarSeleccion(aduanalCheckBox, fusionEscisionCheckBox, articulo99CheckBox);
+            verificarSeleccion(usoYGoceCheckBox, fusionEscisionCheckBox, solventarObservacionesCheckBox, circunstanciasCheckBox, incidentesSeguridadCheckBox, registroSECIITCheckBox);
 
             mainPage33302.btnSiguiente.click();
             loginFirmSoli.firma(tramite33302);
@@ -230,23 +240,45 @@ public class MainPage33302Test  {
 
         }, repeticiones);
     }
-    private void verificarSeleccion(JCheckBox aduanalCheckBox, JCheckBox fusionEscisionCheckBox, JCheckBox articulo99CheckBox) {
-        boolean aduanalSelected = aduanalCheckBox.isSelected();
-        boolean fusionSelected = fusionEscisionCheckBox.isSelected();
-        boolean articulo99Selected = articulo99CheckBox.isSelected();
 
-        // Verifica si alguno está seleccionado
-        if (aduanalSelected && articulo99Selected) {
-            ejecutarCodigoAdjuntar2();
-        } else if (aduanalSelected || fusionSelected || articulo99Selected) {
-            ejecutarCodigoAdjuntar();
-        } else {
-            System.out.println("No Hay Archivos Por Cargar");
+    private void verificarSeleccion(JCheckBox usoYGoceCheckBox, JCheckBox fusionEscisionCheckBox, JCheckBox registroSECIITCheckBox,
+                                    JCheckBox solventarObservacionesCheckBox, JCheckBox circunstanciasCheckBox, JCheckBox incidentesSeguridadCheckBox) {
+
+        int totalDocumentos = 0;
+
+        // Calculamos el valor total según los checkboxes seleccionados
+        if (usoYGoceCheckBox.isSelected()) totalDocumentos += 1;
+        if (fusionEscisionCheckBox.isSelected()) totalDocumentos += 1;
+        if (solventarObservacionesCheckBox.isSelected()) totalDocumentos += 1;
+        if (circunstanciasCheckBox.isSelected()) totalDocumentos += 2;
+        if (incidentesSeguridadCheckBox.isSelected()) totalDocumentos += 1;
+        if (registroSECIITCheckBox.isSelected()) totalDocumentos += 6;
+
+        // Evaluamos el total de documentos y ejecutamos las acciones correspondientes
+        switch (totalDocumentos) {
+            case 6:
+                ejecutarCodigoAdjuntar6();
+                break;
+            case 5:
+                ejecutarCodigoAdjuntar5();
+                break;
+            case 4:
+                ejecutarCodigoAdjuntar4();
+                break;
+            case 3:
+                ejecutarCodigoAdjuntar3();
+                break;
+            case 2:
+                ejecutarCodigoAdjuntar2();
+                break;
+            case 1:
+                ejecutarCodigoAdjuntar();
+                break;
         }
     }
 
     private void ejecutarCodigoAdjuntar() {
-        mainPage33302.btnAdjuntarDoc.click();
+        mainPage33302.btnAdjuntar1Doc.click();
         mainPage33302.archivo1.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
         mainPage33302.btnAdjuntar.click(); sleep(1000);
         mainPage33302.btnCerrar.click();
@@ -256,6 +288,44 @@ public class MainPage33302Test  {
         mainPage33302.segArchivo1.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
         mainPage33302.segArchivo2.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
         mainPage33302.btnAdjuntar.click(); sleep(1000);
+        mainPage33302.btnCerrar.click();
+    }
+    private void ejecutarCodigoAdjuntar3() {
+        mainPage33302.btnAdjuntar3Doc.click();
+        mainPage33302.archivo31.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
+        mainPage33302.archivo32.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
+        mainPage33302.archivo33.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
+        mainPage33302.btnAdjuntar.click(); sleep(3000);
+        mainPage33302.btnCerrar.click();
+    }
+    private void ejecutarCodigoAdjuntar4() {
+        mainPage33302.btnAdjuntar4Doc.click();
+        mainPage33302.archivo41.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
+        mainPage33302.archivo42.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
+        mainPage33302.archivo43.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
+        mainPage33302.archivo44.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
+        mainPage33302.btnAdjuntar.click(); sleep(4000);
+        mainPage33302.btnCerrar.click();
+    }
+    private void ejecutarCodigoAdjuntar5() {
+        mainPage33302.btnAdjuntar5Doc.click();
+        mainPage33302.archivo51.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
+        mainPage33302.archivo52.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
+        mainPage33302.archivo53.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
+        mainPage33302.archivo54.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
+        mainPage33302.archivo55.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
+        mainPage33302.btnAdjuntar.click(); sleep(5000);
+        mainPage33302.btnCerrar.click();
+    }
+    private void ejecutarCodigoAdjuntar6() {
+        mainPage33302.btnAdjuntar6Doc.click();
+        mainPage33302.archivo61.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
+        mainPage33302.archivo62.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
+        mainPage33302.archivo63.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
+        mainPage33302.archivo64.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
+        mainPage33302.archivo65.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
+        mainPage33302.archivo66.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
+        mainPage33302.btnAdjuntar.click(); sleep(6000);
         mainPage33302.btnCerrar.click();
     }
 
@@ -270,7 +340,6 @@ public class MainPage33302Test  {
     }
 
     private void ejecutarAvisoUsoGoce() {
-        scrollDecremento();
         mainPage33302.avisoUsoGoce.click();
         mainPage33302.usoGoce.click();
         mainPage33302.domicilio.sendKeys("CAMINO VIEJO 1353 MIGUEL HIDALGO");
@@ -283,33 +352,302 @@ public class MainPage33302Test  {
         mainPage33302.fechaFin.click();
         mainPage33302.selecFechaFin.click();
         mainPage33302.rfcPartes.sendKeys("AAL0409235E6");
+        mainPage33302.buscarRfcPartes.click();
+        mainPage33302.caracterDePartes.sendKeys("MORAL");
+        mainPage33302.btnAgregarPartes.click();sleep(1000);
+        JavascriptExecutor js = (JavascriptExecutor) getWebDriver();
+        js.executeScript("function clickEnPosicion(x, y) {" +
+                "const evento = new MouseEvent('click', {" +
+                "view: window," +
+                "bubbles: true," +
+                "cancelable: true," +
+                "clientX: x," +
+                "clientY: y" +
+                "});" +
+                "const elemento = document.elementFromPoint(x, y);" +
+                "if (elemento) {" +
+                "elemento.dispatchEvent(evento);" +
+                "}" +
+                "}" +
+                "clickEnPosicion(755.9000015258789, 349.79374504089355);");
+        sleep(1000);
+        mainPage33302.observacionesPartes.sendKeys("PRUEBAS");
+        mainPage33302.mismoDomicilio.click();
+        mainPage33302.domicilioNuevo.sendKeys("CAMINO VIEJO 1350 MIGUEL HIDALGO");
+        mainPage33302.codigoPostalNuevo.sendKeys("81210");
+        mainPage33302.estadoNuevo.sendKeys("SINALOA");
+        mainPage33302.municipioNuevo.sendKeys("AHOME");
+        mainPage33302.documentoNuevo.sendKeys("Escritura pública");
+        mainPage33302.fechaInicioNueva.click();
+        mainPage33302.selecFechaNuevo.click();
+        mainPage33302.fechaFinNuevo.click();
+        mainPage33302.selecFechaFinNuevo.click();
+        mainPage33302.rfcPartesNuevo.sendKeys("LEQI8101314S7");sleep(500);
+        mainPage33302.buscarRfcPartesNuevo.doubleClick();
+        mainPage33302.caracterDePartesNuevas.sendKeys("FISICA");
+        mainPage33302.btnAgregarPartesNuevo.click();sleep(1000);
+        js.executeScript("function clickEnPosicion(x, y) {" +
+                "const evento = new MouseEvent('click', {" +
+                "view: window," +
+                "bubbles: true," +
+                "cancelable: true," +
+                "clientX: x," +
+                "clientY: y" +
+                "});" +
+                "const elemento = document.elementFromPoint(x, y);" +
+                "if (elemento) {" +
+                "elemento.dispatchEvent(evento);" +
+                "}" +
+                "}" +
+                "clickEnPosicion(755.9000015258789, 349.79374504089355);");
+        sleep(1000);
+        mainPage33302.observacionesPartesNuevo.sendKeys("PRUEBAS");
+    }
 
+    private void ejecutarAvisoFusionEscision() {
+        mainPage33302.avisoFusionEscision.click();
+        mainPage33302.fusionEscision.click();
+        mainPage33302.fusion1.click();
+        mainPage33302.fusionEmpresa.click();
+        mainPage33302.certificacionSi.click();
+        mainPage33302.rfcFusion.sendKeys("AAL0409235E6");
+        mainPage33302.busquedaRfcFusion.click();
+        mainPage33302.fechaFusion.click();
+        mainPage33302.selecFechaFusion.click();
+        mainPage33302.folioFusion.sendKeys("12345");
+        mainPage33302.agregarEmpresaFusionada.click();
+        mainPage33302.certificacionFusionSi.click();
+        mainPage33302.rfcFusionada.sendKeys("AAL0409235E6");
+        mainPage33302.buscarRfcFusionada.click();
+        mainPage33302.btnAgregarFusionada.click();sleep(1000);
+        JavascriptExecutor js = (JavascriptExecutor) getWebDriver();
+        js.executeScript("function clickEnPosicion(x, y) {" +
+                "const evento = new MouseEvent('click', {" +
+                "view: window," +
+                "bubbles: true," +
+                "cancelable: true," +
+                "clientX: x," +
+                "clientY: y" +
+                "});" +
+                "const elemento = document.elementFromPoint(x, y);" +
+                "if (elemento) {" +
+                "elemento.dispatchEvent(evento);" +
+                "}" +
+                "}" +
+                "clickEnPosicion(756.9000015258789, 349.79374504089355);");
+        sleep(1000);
     }
 
     private void ejecutarAvisoObservaciones() {
-        scrollDecremento();
-
+        mainPage33302.avisoObservaciones.click();
+        mainPage33302.observaciones.click();
+        mainPage33302.agregarObservaciones.click();
+        mainPage33302.entidadObservaciones.sendKeys("SINALOA");
+        mainPage33302.selecDomicilioObservacion.click();
+        mainPage33302.aceptarDomicilioObservacion.click();
+        mainPage33302.selecDomicilioModificarOb.click();
+        mainPage33302.modificarDomicilioOb.click();
+        mainPage33302.tipoDomicilio.sendKeys("Planta productiva");
+        mainPage33302.numActaVisita.sendKeys("1");
+        mainPage33302.fechaVisita.click();
+        mainPage33302.selecFechaVisita.click();
+        mainPage33302.subestandaresVisita.sendKeys("PRUEBAS");
+        mainPage33302.btnAceptarObservaciones.click();sleep(1000);
+        JavascriptExecutor js = (JavascriptExecutor) getWebDriver();
+        js.executeScript("function clickEnPosicion(x, y) {" +
+                "const evento = new MouseEvent('click', {" +
+                "view: window," +
+                "bubbles: true," +
+                "cancelable: true," +
+                "clientX: x," +
+                "clientY: y" +
+                "});" +
+                "const elemento = document.elementFromPoint(x, y);" +
+                "if (elemento) {" +
+                "elemento.dispatchEvent(evento);" +
+                "}" +
+                "}" +
+                "clickEnPosicion(756.9000015258789, 349.79374504089355);");
+        sleep(1000);
     }
 
     private void ejecutarAvisoSeguridad() {
-        scrollDecremento();
+        mainPage33302.avisoSeguridad.click();
+        mainPage33302.seguridad.click();
+        mainPage33302.agregarDomiciliosIncidencias.click();
+        mainPage33302.entidadFederativaIncidencias.sendKeys("SINALOA");
+        mainPage33302.selecPlantaAgregar.click();
+        mainPage33302.btnAgregarDomicilio.click();
+        mainPage33302.selecPlantaModificarIncidencias.click();
+        mainPage33302.modificarPlantaIncidencias.click();
+        mainPage33302.tipoInstalacionIncidencias.sendKeys("Planta productiva");
+        mainPage33302.cambiosSubestandares.sendKeys("PRUEBAS");
+        mainPage33302.btnAceptarModificacionIncidencis.click();sleep(1000);
+        JavascriptExecutor js = (JavascriptExecutor) getWebDriver();
+        js.executeScript("function clickEnPosicion(x, y) {" +
+                "const evento = new MouseEvent('click', {" +
+                "view: window," +
+                "bubbles: true," +
+                "cancelable: true," +
+                "clientX: x," +
+                "clientY: y" +
+                "});" +
+                "const elemento = document.elementFromPoint(x, y);" +
+                "if (elemento) {" +
+                "elemento.dispatchEvent(evento);" +
+                "}" +
+                "}" +
+                "clickEnPosicion(756.9000015258789, 349.79374504089355);");
+        sleep(1000);
+
 
     }
 
     private void ejecutarAvisoCircunstancias() {
-        scrollDecremento();
-
+        mainPage33302.avisoCircunstancias.click();
+        mainPage33302.circunstancias.click();
+        mainPage33302.agregarDomiciliosCircunstancias.click();
+        mainPage33302.entidadFederativaCircunstancias.sendKeys("SINALOA");
+        mainPage33302.selecPlantaAgregarCircunstancias.click();
+        mainPage33302.btnAgregarPlantaCircunstancias.click();
+        mainPage33302.selecPlantaModificar.click();
+        mainPage33302.modificarPlantaCircunstancias.click();
+        mainPage33302.tipoPlantaCircunstancias.sendKeys("Planta productiva");
+        mainPage33302.folioAltaInstalacion.sendKeys("123");
+        mainPage33302.fechaCircunstancias.click();
+        mainPage33302.selecFechaCircunstancias.click();
+        mainPage33302.cambioEstandaresCircunstancias.sendKeys("PRUEBAS");
+        mainPage33302.btnAceptarModificacionCircunstancias.click();sleep(1000);
+        JavascriptExecutor js = (JavascriptExecutor) getWebDriver();
+        js.executeScript("function clickEnPosicion(x, y) {" +
+                "const evento = new MouseEvent('click', {" +
+                "view: window," +
+                "bubbles: true," +
+                "cancelable: true," +
+                "clientX: x," +
+                "clientY: y" +
+                "});" +
+                "const elemento = document.elementFromPoint(x, y);" +
+                "if (elemento) {" +
+                "elemento.dispatchEvent(evento);" +
+                "}" +
+                "}" +
+                "clickEnPosicion(756.9000015258789, 349.79374504089355);");
+        sleep(1000);
     }
 
     private void ejecutarAvisoAdicionRevocacio() {
-        scrollDecremento();
-
+        mainPage33302.avisoAdicionRevocacion.click();
+        mainPage33302.adicionRevocacion.click();
+        mainPage33302.selecTransportistaModificar.click();
+        mainPage33302.modificarTransportista.click();
+        mainPage33302.estatusTransportista.sendKeys("Ratificado");
+        mainPage33302.btnModificarTransportista.click();sleep(1000);
+        JavascriptExecutor js = (JavascriptExecutor) getWebDriver();
+        js.executeScript("function clickEnPosicion(x, y) {" +
+                "const evento = new MouseEvent('click', {" +
+                "view: window," +
+                "bubbles: true," +
+                "cancelable: true," +
+                "clientX: x," +
+                "clientY: y" +
+                "});" +
+                "const elemento = document.elementFromPoint(x, y);" +
+                "if (elemento) {" +
+                "elemento.dispatchEvent(evento);" +
+                "}" +
+                "}" +
+                "clickEnPosicion(756.9000015258789, 349.79374504089355);");
+        sleep(1000);
+        mainPage33302.agregarTransportista.click();
+        mainPage33302.rfcNuevoTransportista.sendKeys("TSD931210493");
+        mainPage33302.btnBuscarRfcTransportista.click();
+        mainPage33302.btnAgregarTransportista.click();sleep(1000);
+        js.executeScript("function clickEnPosicion(x, y) {" +
+                "const evento = new MouseEvent('click', {" +
+                "view: window," +
+                "bubbles: true," +
+                "cancelable: true," +
+                "clientX: x," +
+                "clientY: y" +
+                "});" +
+                "const elemento = document.elementFromPoint(x, y);" +
+                "if (elemento) {" +
+                "elemento.dispatchEvent(evento);" +
+                "}" +
+                "}" +
+                "clickEnPosicion(756.9000015258789, 349.79374504089355);");
+        sleep(1000);
     }
 
     private void ejecutarAvisoSeciit() {
+        mainPage33302.avisoSeciit.click();
         scrollDecremento();
+        mainPage33302.seciit.click();
+        mainPage33302.modifFusionEscisionSeciit.click();
+        mainPage33302.modifSistemaControl.click();
+        mainPage33302.modifProvedores.click();
+        mainPage33302.modifSistemaPropios.click();
+        mainPage33302.modifOtro.click();
+        mainPage33302.descripcionOtros.sendKeys("PRUEBAS");
 
     }
+
+    private void ejecutarAvisoAltaTercerizacion() {
+        mainPage33302.avisoAltaTercerizacion.click();
+        scrollDecremento();
+        mainPage33302.altaTercerizacion.click();
+        mainPage33302.agregarTerceroAlta.click();
+        mainPage33302.rfcTerceroAlta.sendKeys("MAVL621207C95");;
+        mainPage33302.btnBuscarRfcTerceroAlta.click();
+        mainPage33302.tipoRegistroTerceroAlta.sendKeys("ALTA");
+        mainPage33302.btnGuardarTerceroAlta.click();sleep(1000);
+        JavascriptExecutor js = (JavascriptExecutor) getWebDriver();
+        js.executeScript("function clickEnPosicion(x, y) {" +
+                "const evento = new MouseEvent('click', {" +
+                "view: window," +
+                "bubbles: true," +
+                "cancelable: true," +
+                "clientX: x," +
+                "clientY: y" +
+                "});" +
+                "const elemento = document.elementFromPoint(x, y);" +
+                "if (elemento) {" +
+                "elemento.dispatchEvent(evento);" +
+                "}" +
+                "}" +
+                "clickEnPosicion(756.9000015258789, 349.79374504089355);");
+        sleep(1000);
+    }
+
+    private void ejecutarAvisoBajaTercerizacion() {
+        mainPage33302.avisoBajaTercerizacion.click();
+        scrollDecremento();
+        mainPage33302.bajaTercerizacion.click();
+        mainPage33302.agregarTerceroBaja.click();
+        mainPage33302.rfcTerceroBaja.sendKeys("LEQI8101314S7");;
+        mainPage33302.btnBuscarRfcTerceroBaja.click();
+        mainPage33302.tipoRegistroTerceroBaja.sendKeys("BAJA");
+        mainPage33302.btnGuardarTerceroBaja.click();sleep(1000);
+        JavascriptExecutor js = (JavascriptExecutor) getWebDriver();
+        js.executeScript("function clickEnPosicion(x, y) {" +
+                "const evento = new MouseEvent('click', {" +
+                "view: window," +
+                "bubbles: true," +
+                "cancelable: true," +
+                "clientX: x," +
+                "clientY: y" +
+                "});" +
+                "const elemento = document.elementFromPoint(x, y);" +
+                "if (elemento) {" +
+                "elemento.dispatchEvent(evento);" +
+                "}" +
+                "}" +
+                "clickEnPosicion(756.9000015258789, 349.79374504089355);");
+        sleep(1000);
+    }
+
+
 
     private void ejecutarAvisoPago() {
         scrollDecremento();
