@@ -30,8 +30,8 @@ public class MainPage32605Test {
     LoginFirmSoli loginFirmSoli = new LoginFirmSoli();
     ObtenerFolio obtenerFolio = new ObtenerFolio();
     TramitesFirmasLG tramite32605  = new TramitesFirmasLG(
-            "C:\\VucemAuto\\automations\\src\\test\\resources\\CredSoli\\tsd931210493.cer",
-            "C:\\VucemAuto\\automations\\src\\test\\resources\\CredSoli\\TSD931210493_1012231144.key"
+            "C:\\VucemAuto\\automations\\src\\test\\resources\\CredSoli\\aal0409235e6.cer",
+            "C:\\VucemAuto\\automations\\src\\test\\resources\\CredSoli\\AAL0409235E6_1012231310.key"
     );
 
 
@@ -112,8 +112,8 @@ public class MainPage32605Test {
             String llavePago = uuid.replace("-", "").substring(0, longitudDeseada);
             // Ingreso y selección de trámite
             loginFirmSoli.login(tramite32605);
-//            mainPage32605.selecRol.sendKeys("Persona Moral");
-//            mainPage32605.btnacep.click();
+            mainPage32605.selecRol.sendKeys("Persona Moral");
+            mainPage32605.btnacep.click();
             mainPage32605.Tramites.sendKeys("Solicitudes nuevas");
             mainPage32605.SoliNew.click();
             mainPage32605.hacienda.click();
@@ -309,7 +309,7 @@ public class MainPage32605Test {
             mainPage32605.archivo9.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
             mainPage32605.archivo10.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
             mainPage32605.archivo11.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
-            mainPage32605.btnAdjuntar.click();sleep(3500);
+            mainPage32605.btnAdjuntar.click();sleep(4500);
             mainPage32605.btnCerrar.click();
             mainPage32605.btnSiguiente.click();
 
