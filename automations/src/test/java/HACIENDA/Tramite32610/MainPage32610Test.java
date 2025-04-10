@@ -168,7 +168,7 @@ public class MainPage32610Test { MainPage32610 mainPage32610 = new MainPage32610
                     "elemento.dispatchEvent(evento);" +
                     "}" +
                     "}" +
-                    "clickEnPosicion(972, 507.1000061035156);");
+                    "clickEnPosicion(874.7604370117188 , 476.94793701171875);");
             sleep(1000);
             mainPage32610.btnAceptarModificacion.click();
             mainPage32610.articulo17KSi.click();
@@ -198,7 +198,7 @@ public class MainPage32610Test { MainPage32610 mainPage32610 = new MainPage32610
                     "elemento.dispatchEvent(evento);" +
                     "}" +
                     "}" +
-                    "clickEnPosicion(844.6000366210938, 420.300012588501);");
+                    "clickEnPosicion(715.46875 , 385.13543701171875);");
             sleep(1000);
             mainPage32610.rmfSi.click();
             mainPage32610.agregarSocio.click();
@@ -222,7 +222,7 @@ public class MainPage32610Test { MainPage32610 mainPage32610 = new MainPage32610
                     "elemento.dispatchEvent(evento);" +
                     "}" +
                     "}" +
-                    "clickEnPosicion(844.6000366210938, 420.9000186920166);");
+                    "clickEnPosicion(715.46875 , 384.8020935058594);");
             sleep(1000);
             mainPage32610.sociosAccionistasNo.click();
             mainPage32610.manifiesto1.click();
@@ -245,7 +245,7 @@ public class MainPage32610Test { MainPage32610 mainPage32610 = new MainPage32610
                     "elemento.dispatchEvent(evento);" +
                     "}" +
                     "}" +
-                    "clickEnPosicion(844.6000366210938, 420.4999942779541);");
+                    "clickEnPosicion(715.46875 , 384.8020935058594);");
             sleep(1000);
             mainPage32610.btnAgregarEnlaceOperativo.click();
             mainPage32610.rfcEnlaceO.sendKeys("LEQI8101314S7");
@@ -281,38 +281,44 @@ public class MainPage32610Test { MainPage32610 mainPage32610 = new MainPage32610
                     "elemento.dispatchEvent(evento);" +
                     "}" +
                     "}" +
-                    "clickEnPosicion(844.6000366210938, 420.300012588501);");
+                    "clickEnPosicion(715.46875 , 384.8020935058594);");
             sleep(1000);
+
+            mainPage32610.Perfil.click();
+            mainPage32610.RecintoFiscalizadoEstrategico.click();
+            mainPage32610.FechaFin.click();
+            mainPage32610.SelectFechaFin.click();
+            mainPage32610.NumFolioOficio.sendKeys("2837438237782");
+            mainPage32610.RegistroEsquema.click();
+            mainPage32610.SujetoProCance.click();
+
             mainPage32610.autorizoReconocimientoMutuo.click();
             mainPage32610.informacionPublica.click();
 
+            /// CTPAT
+            scrollDecremento();
+            mainPage32610.CTPAT.click();
+            mainPage32610.autorizoCBPSi.click();
+            mainPage32610.materiaSeguridadSi.click();
+            mainPage32610.cancelacionNo.click();
 
-
-
-//            /// CTPAT
-//            scrollDecremento();
-//            mainPage32610.CTPAT.click();
-//            mainPage32610.autorizoCBPSi.click();
-//            mainPage32610.materiaSeguridadSi.click();
-//            mainPage32610.cancelacionNo.click();
-//
-//            mainPage32610.btnGuardarSoli.click();
-//            mainPage32610.btnContinuar.click();
-//            mainPage32610.btnAdjuntarDoc.click();
-//            mainPage32610.archivo1.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
-//            mainPage32610.archivo2.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
-//            mainPage32610.archivo3.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
-//            mainPage32610.archivo4.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
-//            mainPage32610.archivo5.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
-//            mainPage32610.archivo6.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
-//            mainPage32610.archivo7.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
-//            mainPage32610.archivo8.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
-//            mainPage32610.archivo9.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
-//            mainPage32610.archivo10.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
-//            mainPage32610.archivo11.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
-//            mainPage32610.btnAdjuntar.click();sleep(3500);
-//            mainPage32610.btnCerrar.click();
-//            mainPage32610.btnSiguiente.click();
+            mainPage32610.btnGuardarSoli.click();
+            mainPage32610.btnContinuar.click();
+            mainPage32610.btnAdjuntarDoc.click();
+            mainPage32610.archivo1.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
+            mainPage32610.archivo2.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
+            mainPage32610.archivo3.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
+            mainPage32610.archivo4.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
+            mainPage32610.archivo5.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
+            mainPage32610.archivo6.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
+            mainPage32610.archivo7.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
+            mainPage32610.archivo8.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
+            mainPage32610.archivo9.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
+            mainPage32610.archivo10.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
+            mainPage32610.archivo11.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
+            mainPage32610.btnAdjuntar.click();sleep(3500);
+            mainPage32610.btnCerrar.click();
+            mainPage32610.btnSiguiente.click();
 
             loginFirmSoli.firma(tramite32610);
 
