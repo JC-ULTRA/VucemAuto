@@ -126,7 +126,6 @@ public class MainPage32610 {
     public SelenideElement NumOfiAuto = $x("//*[@id=\"rfeOficioIva\"]");
     public SelenideElement SujetoProCance = $x("//*[@id=\"cancelRFENo\"]");
 
-
     public SelenideElement autorizoReconocimientoMutuo = $x("//*[@id=\"si4060Recinto\"]");
     public SelenideElement informacionPublica = $x("//*[@id=\"si1091Recinto\"]");
 

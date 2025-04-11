@@ -157,7 +157,6 @@ public class Tramite31601Test {
             mainPage31601.nombreEmpresa.sendKeys("egwgwegwg"); sleep(1000);
             mainPage31601.nacionalidad.sendKeys("ANTARTIDA"); sleep(1000);
             mainPage31601.btnAceptalEmpresa.click(); sleep(1500);
-            // Simular click en pantalla
             mainPage31601.btnAceptalEmpresa2.click();
             sleep(1000);
             mainPage31601.manif1Check.click(); sleep(1000);

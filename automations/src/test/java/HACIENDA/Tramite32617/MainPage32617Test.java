@@ -230,7 +230,7 @@ public class MainPage32617Test {
             mainPage32617.cbpSi.click();
             mainPage32617.cbp2Si.click();
             mainPage32617.cbp3No.click();
-
+            /// Guardar y Firmar
             mainPage32617.btnGuardarSoli.click();
             mainPage32617.btnContinuar.click();
             mainPage32617.btnAdjuntarDoc.click();

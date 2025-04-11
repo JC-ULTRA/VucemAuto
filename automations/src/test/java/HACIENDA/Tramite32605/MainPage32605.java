@@ -121,7 +121,6 @@ public class MainPage32605 {
     public SelenideElement materiaSeguridadSi = $x("//*[@id=\"si2090\"]");
     public SelenideElement cancelacionNo = $x("//*[@id=\"no2091\"]");
 
-
     public SelenideElement btnGuardarSoli = $x("//*[@id=\"guardarSolicitud\"]");
     public SelenideElement btnContinuar = $x("/html/body/div[1]/div[3]/div[3]/div/form/table/tbody/tr/td/input[2]");
     public SelenideElement btnAdjuntarDoc = $x("/html/body/div[1]/div[3]/div[3]/div/form[1]/table[3]/tbody/tr[14]/td[2]/input");

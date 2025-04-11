@@ -220,7 +220,6 @@ public class MainPage32610Test { MainPage32610 mainPage32610 = new MainPage32610
             mainPage32610.NumFolioOficio.sendKeys("2837438237782");
             mainPage32610.RegistroEsquema.click();
             mainPage32610.SujetoProCance.click();
-
             mainPage32610.autorizoReconocimientoMutuo.click();
             mainPage32610.informacionPublica.click();
 

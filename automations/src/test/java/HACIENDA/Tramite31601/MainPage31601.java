@@ -61,7 +61,6 @@ public class MainPage31601 {
     public SelenideElement nacionalidad = $x("//*[@id=\"socio.nacionalidad\"]");
     public SelenideElement btnAceptalEmpresa = $x("//*[@id=\"btnSocioAgregarModal\"]");
     public SelenideElement btnAceptalEmpresa2 = $x("/html/body/div[19]/div[3]/div/button");
-
     public SelenideElement manif1Check = $x("/html/body/div[1]/div[3]/div[3]/div/form/div[2]/div[2]/table[12]/tbody/tr[1]/td/input");
     public SelenideElement manif2Check = $x("//*[@id=\"acepto253\"]");
 

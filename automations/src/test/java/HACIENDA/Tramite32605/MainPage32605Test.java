@@ -105,7 +105,6 @@ public class MainPage32605Test {
 
         // Ejecutar el proceso con las repeticiones y los métodos seleccionados
         ejecutarProcesoNRunnable(() -> {
-
             //llave de pago
             String uuid = UUID.randomUUID().toString();
             int longitudDeseada = 16;

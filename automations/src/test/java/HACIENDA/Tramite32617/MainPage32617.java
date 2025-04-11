@@ -99,7 +99,7 @@ public class MainPage32617 {
     public SelenideElement btnBuscarEnlaceO = $x("//*[@id=\"buscarEnlaceOperativo\"]");
     public SelenideElement cargoEnlaceO = $x("//*[@id=\"terceroEnlaceOperativo.puesto\"]");
     public SelenideElement btnAgregarEnlaceO = $x("//*[@id=\"btnAceptarEnlace\"]");
-    /// Tercerizacion y Logística
+    /// Tercerizacion y Logístic
     public SelenideElement tercerizacionLogistica = $x("/html/body/div[1]/div[3]/div[3]/div/form/div[2]/ul/li[4]/a/label");
     public SelenideElement comercioExteriorNo = $x("//*[@id=\"comExtNoTerc\"]");
     public SelenideElement mismoGrupo = $x("//*[@id=\"grupEmpNo\"]");
