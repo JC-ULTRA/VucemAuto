@@ -59,7 +59,7 @@ public class MainPage32610 {
     public SelenideElement comercioExteriorSi = $x("//*[@id=\"siOperacionesCExt\"]");
     public SelenideElement reconocimientoMutuoSi = $x("//*[@id=\"siInstalacionCtpat\"]");
     public SelenideElement perfilEmpresaNo = $x("//*[@id=\"noPerfil\"]");
-    public SelenideElement btnHacerModificacion = $x("/html/body/div[25]/div[2]/table/tbody/tr[15]/td/input[1]");
+    public SelenideElement btnHacerModificacion = $x("/html/body/div[14]/div[2]/table/tbody/tr[15]/td/input[1]");
     public SelenideElement btnAceptarModificacion = $x("/html/body/div[15]/div[3]/div/button");
     public SelenideElement articulo17KSi = $x("//*[@id=\"si243\"]");
     public SelenideElement suspesionPadronNo = $x("//*[@id=\"no244\"]");
@@ -75,7 +75,7 @@ public class MainPage32610 {
     public SelenideElement lugarInventarios = $x("//*[@id=\"lugarR.inventario\"]");
     public SelenideElement anexo24InventariosOk = $x("//*[@id=\"anexo.inventario\"]");
     public SelenideElement btnAgregarInventario = $x("//*[@id=\"btnAgregar.inventario\"]");
-    public SelenideElement btnAceptarInventario = $x("/html/body/div[19]/div[1]/a");
+    public SelenideElement btnAceptarInventario = $x("/html/body/div[19]/div[3]/div/button");
     public SelenideElement rmfSi = $x("//*[@id=\"si251\"]");
     public SelenideElement agregarSocio = $x("//*[@id=\"agregarSocio\"]");
     public SelenideElement caracterSocio = $x("//*[@id=\"socio.caracterDe\"]");
@@ -84,7 +84,7 @@ public class MainPage32610 {
     public SelenideElement nacionalidadSocio = $x("//*[@id=\"socio.nacionalidad\"]");
     public SelenideElement nombreEmpresaSocio = $x("//*[@id=\"socio.nombreEmpresa\"]");
     public SelenideElement btnAgregarSocio = $x("//*[@id=\"btnSocioAgregarModal\"]");
-    public SelenideElement btnAceptarSocio = $x("/html/body/div[37]/div[3]/div/button");
+    public SelenideElement btnAceptarSocio = $x("/html/body/div[20]/div[3]/div/button");
     public SelenideElement sociosAccionistasNo = $x("//*[@id=\"no463\"]");
     public SelenideElement manifiesto1 = $x("//*[@id=\"acepto252\"]");
     public SelenideElement manifiesto2 = $x("//*[@id=\"acepto253\"]");
@@ -92,7 +92,7 @@ public class MainPage32610 {
     public SelenideElement tercerosRelacionados = $x("/html/body/div[1]/div[3]/div[3]/div/form/div[2]/ul/li[3]/a");
     public SelenideElement rfcRepresentanteLegal = $x("//*[@id=\"rfcTercero\"]");
     public SelenideElement btnBuscarRfcRepresentanteL = $x("//*[@id=\"buscar\"]");
-    public SelenideElement btnAceptarRepresentanteL = $x("/html/body/div[39]/div[3]/div/button");
+    public SelenideElement btnAceptarRepresentanteL = $x("/html/body/div[21]/div[3]/div/button");
     public SelenideElement btnAgregarEnlaceOperativo = $x("//*[@id=\"btnAgregarEnlaceOperativo\"]");
     public SelenideElement rfcEnlaceO = $x("//*[@id=\"rfc\"]");
     public SelenideElement btnBuscarEnlaceO = $x("//*[@id=\"buscarEnlaceOperativo\"]");
@@ -113,6 +113,7 @@ public class MainPage32610 {
     public SelenideElement rfcTransportista = $x("//*[@id=\"trRfc\"]");
     public SelenideElement btnBuscarTransportista = $x("//*[@id=\"btnBuscarEmpresa\"]");
     public SelenideElement btnAgregarTransportista = $x("//*[@id=\"btnGuardarTransportista\"]");
+    public SelenideElement btnAceptarTransportista = $x("/html/body/div[23]/div[3]/div/button");
 
     public SelenideElement Perfil = $x("//*[@id=\"perfilRFESi\"]");
     public SelenideElement RecintoFiscalizadoEstrategico = $x("//*[@id=\"autoRFESi\"]");

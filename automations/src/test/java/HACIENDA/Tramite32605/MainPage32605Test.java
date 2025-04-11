@@ -144,7 +144,7 @@ public class MainPage32605Test {
             mainPage32605.sellosVigentes.click();
             mainPage32605.articulo17HBis.click();
             mainPage32605.AgregarInstalaciones.click();
-            mainPage32605.entidadInstalacion.sendKeys("QUERETARO");
+            mainPage32605.entidadInstalacion.sendKeys("SINALOA");
             mainPage32605.seleccionarInstalacion.click();
             mainPage32605.btnAgregarInstalaciones.click();
             mainPage32605.selecInstalacionAModificar.click();
@@ -156,23 +156,7 @@ public class MainPage32605Test {
             mainPage32605.comercioExteriorSi.click();
             mainPage32605.reconocimientoMutuoSi.click();
             mainPage32605.perfilEmpresaNo.click();
-//            mainPage32605.btnHacerModificacion.click();
-            JavascriptExecutor js = (JavascriptExecutor) getWebDriver();
-            js.executeScript("function clickEnPosicion(x, y) {" +
-                    "const evento = new MouseEvent('click', {" +
-                    "view: window," +
-                    "bubbles: true," +
-                    "cancelable: true," +
-                    "clientX: x," +
-                    "clientY: y" +
-                    "});" +
-                    "const elemento = document.elementFromPoint(x, y);" +
-                    "if (elemento) {" +
-                    "elemento.dispatchEvent(evento);" +
-                    "}" +
-                    "}" +
-                    "clickEnPosicion(972, 507.1000061035156);");
-            sleep(1000);
+            mainPage32605.btnHacerModificacion.click();
             mainPage32605.btnAceptarModificacion.click();
             mainPage32605.articulo17KSi.click();
             mainPage32605.suspesionPadronNo.click();
@@ -188,21 +172,7 @@ public class MainPage32605Test {
             mainPage32605.lugarInventarios.sendKeys("QA");
             mainPage32605.anexo24InventariosOk.click();
             mainPage32605.btnAgregarInventario.click();sleep(1000);
-            js.executeScript("function clickEnPosicion(x, y) {" +
-                    "const evento = new MouseEvent('click', {" +
-                    "view: window," +
-                    "bubbles: true," +
-                    "cancelable: true," +
-                    "clientX: x," +
-                    "clientY: y" +
-                    "});" +
-                    "const elemento = document.elementFromPoint(x, y);" +
-                    "if (elemento) {" +
-                    "elemento.dispatchEvent(evento);" +
-                    "}" +
-                    "}" +
-                    "clickEnPosicion(844.6000366210938, 420.300012588501);");
-            sleep(1000);
+            mainPage32605.btnAceptarInventario.click();
             mainPage32605.rmfSi.click();
             mainPage32605.agregarSocio.click();
             mainPage32605.caracterSocio.sendKeys("administrador unico");
@@ -212,21 +182,7 @@ public class MainPage32605Test {
             mainPage32605.nacionalidadSocio.sendKeys("ANGUILA");
             mainPage32605.nombreEmpresaSocio.sendKeys("PRUEBAS");
             mainPage32605.btnAgregarSocio.click();sleep(1000);
-            js.executeScript("function clickEnPosicion(x, y) {" +
-                    "const evento = new MouseEvent('click', {" +
-                    "view: window," +
-                    "bubbles: true," +
-                    "cancelable: true," +
-                    "clientX: x," +
-                    "clientY: y" +
-                    "});" +
-                    "const elemento = document.elementFromPoint(x, y);" +
-                    "if (elemento) {" +
-                    "elemento.dispatchEvent(evento);" +
-                    "}" +
-                    "}" +
-                    "clickEnPosicion(844.6000366210938, 420.9000186920166);");
-            sleep(1000);
+            mainPage32605.btnAceptarSocio.click();
             mainPage32605.sociosAccionistasNo.click();
             mainPage32605.manifiesto1.click();
             mainPage32605.manifiesto2.click();
@@ -235,21 +191,7 @@ public class MainPage32605Test {
             mainPage32605.tercerosRelacionados.click();
             mainPage32605.rfcRepresentanteLegal.sendKeys("MAVL621207C95");
             mainPage32605.btnBuscarRfcRepresentanteL.click();sleep(1000);
-            js.executeScript("function clickEnPosicion(x, y) {" +
-                    "const evento = new MouseEvent('click', {" +
-                    "view: window," +
-                    "bubbles: true," +
-                    "cancelable: true," +
-                    "clientX: x," +
-                    "clientY: y" +
-                    "});" +
-                    "const elemento = document.elementFromPoint(x, y);" +
-                    "if (elemento) {" +
-                    "elemento.dispatchEvent(evento);" +
-                    "}" +
-                    "}" +
-                    "clickEnPosicion(844.6000366210938, 420.4999942779541);");
-            sleep(1000);
+            mainPage32605.btnAceptarRepresentanteL.click();
             mainPage32605.btnAgregarEnlaceOperativo.click();
             mainPage32605.rfcEnlaceO.sendKeys("LEQI8101314S7");
             mainPage32605.btnBuscarEnlaceO.click();
@@ -271,21 +213,7 @@ public class MainPage32605Test {
             mainPage32605.rfcTransportista.sendKeys("LEQI8101314S7");
             mainPage32605.btnBuscarTransportista.click();
             mainPage32605.btnAgregarTransportista.click();sleep(1000);
-            js.executeScript("function clickEnPosicion(x, y) {" +
-                    "const evento = new MouseEvent('click', {" +
-                    "view: window," +
-                    "bubbles: true," +
-                    "cancelable: true," +
-                    "clientX: x," +
-                    "clientY: y" +
-                    "});" +
-                    "const elemento = document.elementFromPoint(x, y);" +
-                    "if (elemento) {" +
-                    "elemento.dispatchEvent(evento);" +
-                    "}" +
-                    "}" +
-                    "clickEnPosicion(844.6000366210938, 420.300012588501);");
-            sleep(1000);
+            mainPage32605.btnAceptarTransportista.click();
             mainPage32605.autorizoReconocimientoMutuo.click();
             mainPage32605.informacionPublica.click();
             /// CTPAT

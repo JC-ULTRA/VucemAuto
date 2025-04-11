@@ -153,23 +153,9 @@ public class MainPage32610Test { MainPage32610 mainPage32610 = new MainPage32610
             mainPage32610.usoGoceInmuebleSi.click();
             mainPage32610.comercioExteriorSi.click();
             mainPage32610.reconocimientoMutuoSi.click();
-//            mainPage32610.btnHacerModificacion.click();
-            JavascriptExecutor js = (JavascriptExecutor) getWebDriver();
-            js.executeScript("function clickEnPosicion(x, y) {" +
-                    "const evento = new MouseEvent('click', {" +
-                    "view: window," +
-                    "bubbles: true," +
-                    "cancelable: true," +
-                    "clientX: x," +
-                    "clientY: y" +
-                    "});" +
-                    "const elemento = document.elementFromPoint(x, y);" +
-                    "if (elemento) {" +
-                    "elemento.dispatchEvent(evento);" +
-                    "}" +
-                    "}" +
-                    "clickEnPosicion(874.7604370117188 , 476.94793701171875);");
-            sleep(1000);
+            mainPage32610.perfilEmpresaNo.click();
+            mainPage32610.btnHacerModificacion.click();
+            mainPage32610.btnAceptarModificacion.click();
             mainPage32610.btnAceptarModificacion.click();
             mainPage32610.articulo17KSi.click();
             mainPage32610.suspesionPadronNo.click();
@@ -185,21 +171,7 @@ public class MainPage32610Test { MainPage32610 mainPage32610 = new MainPage32610
             mainPage32610.lugarInventarios.sendKeys("QA");
             mainPage32610.anexo24InventariosOk.click();
             mainPage32610.btnAgregarInventario.click();sleep(1000);
-            js.executeScript("function clickEnPosicion(x, y) {" +
-                    "const evento = new MouseEvent('click', {" +
-                    "view: window," +
-                    "bubbles: true," +
-                    "cancelable: true," +
-                    "clientX: x," +
-                    "clientY: y" +
-                    "});" +
-                    "const elemento = document.elementFromPoint(x, y);" +
-                    "if (elemento) {" +
-                    "elemento.dispatchEvent(evento);" +
-                    "}" +
-                    "}" +
-                    "clickEnPosicion(715.46875 , 385.13543701171875);");
-            sleep(1000);
+            mainPage32610.btnAceptarInventario.click();
             mainPage32610.rmfSi.click();
             mainPage32610.agregarSocio.click();
             mainPage32610.caracterSocio.sendKeys("administrador unico");
@@ -209,21 +181,7 @@ public class MainPage32610Test { MainPage32610 mainPage32610 = new MainPage32610
             mainPage32610.nacionalidadSocio.sendKeys("ANGUILA");
             mainPage32610.nombreEmpresaSocio.sendKeys("PRUEBAS");
             mainPage32610.btnAgregarSocio.click();sleep(1000);
-            js.executeScript("function clickEnPosicion(x, y) {" +
-                    "const evento = new MouseEvent('click', {" +
-                    "view: window," +
-                    "bubbles: true," +
-                    "cancelable: true," +
-                    "clientX: x," +
-                    "clientY: y" +
-                    "});" +
-                    "const elemento = document.elementFromPoint(x, y);" +
-                    "if (elemento) {" +
-                    "elemento.dispatchEvent(evento);" +
-                    "}" +
-                    "}" +
-                    "clickEnPosicion(715.46875 , 384.8020935058594);");
-            sleep(1000);
+            mainPage32610.btnAceptarSocio.click();
             mainPage32610.sociosAccionistasNo.click();
             mainPage32610.manifiesto1.click();
             mainPage32610.manifiesto2.click();
@@ -232,21 +190,7 @@ public class MainPage32610Test { MainPage32610 mainPage32610 = new MainPage32610
             mainPage32610.tercerosRelacionados.click();
             mainPage32610.rfcRepresentanteLegal.sendKeys("MAVL621207C95");
             mainPage32610.btnBuscarRfcRepresentanteL.click();sleep(1000);
-            js.executeScript("function clickEnPosicion(x, y) {" +
-                    "const evento = new MouseEvent('click', {" +
-                    "view: window," +
-                    "bubbles: true," +
-                    "cancelable: true," +
-                    "clientX: x," +
-                    "clientY: y" +
-                    "});" +
-                    "const elemento = document.elementFromPoint(x, y);" +
-                    "if (elemento) {" +
-                    "elemento.dispatchEvent(evento);" +
-                    "}" +
-                    "}" +
-                    "clickEnPosicion(715.46875 , 384.8020935058594);");
-            sleep(1000);
+            mainPage32610.btnAceptarRepresentanteL.click();
             mainPage32610.btnAgregarEnlaceOperativo.click();
             mainPage32610.rfcEnlaceO.sendKeys("LEQI8101314S7");
             mainPage32610.btnBuscarEnlaceO.click();
@@ -268,22 +212,7 @@ public class MainPage32610Test { MainPage32610 mainPage32610 = new MainPage32610
             mainPage32610.rfcTransportista.sendKeys("LEQI8101314S7");
             mainPage32610.btnBuscarTransportista.click();
             mainPage32610.btnAgregarTransportista.click();sleep(1000);
-            js.executeScript("function clickEnPosicion(x, y) {" +
-                    "const evento = new MouseEvent('click', {" +
-                    "view: window," +
-                    "bubbles: true," +
-                    "cancelable: true," +
-                    "clientX: x," +
-                    "clientY: y" +
-                    "});" +
-                    "const elemento = document.elementFromPoint(x, y);" +
-                    "if (elemento) {" +
-                    "elemento.dispatchEvent(evento);" +
-                    "}" +
-                    "}" +
-                    "clickEnPosicion(715.46875 , 384.8020935058594);");
-            sleep(1000);
-
+            mainPage32610.btnAceptarTransportista.click();
             mainPage32610.Perfil.click();
             mainPage32610.RecintoFiscalizadoEstrategico.click();
             mainPage32610.FechaFin.click();
