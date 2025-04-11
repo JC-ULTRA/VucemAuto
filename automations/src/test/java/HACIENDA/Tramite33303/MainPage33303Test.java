@@ -4,6 +4,7 @@ import Firmas.LoginFirmSoli;
 import Firmas.TramitesFirmasLG;
 import com.codeborne.selenide.Browsers;
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.BeforeAll;
@@ -18,8 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
-import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Condition.visible;
+import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
@@ -28,11 +28,19 @@ public class MainPage33303Test {
     MainPage33303 mainPage33303 = new MainPage33303();
     LoginFirmSoli loginFirmSoli = new LoginFirmSoli();
     ObtenerFolio obtenerFolio = new ObtenerFolio();
-    TramitesFirmasLG tramite33303  = new TramitesFirmasLG(
-            "C:\\VucemAuto\\automations\\src\\test\\resources\\CredSoli\\aal0409235e6.cer",
-            "C:\\VucemAuto\\automations\\src\\test\\resources\\CredSoli\\AAL0409235E6_1012231310.key"
+//    TramitesFirmasLG tramite33303  = new TramitesFirmasLG(
+//            "C:\\VucemAuto\\automations\\src\\test\\resources\\CredSoli\\aal0409235e6.cer",
+//            "C:\\VucemAuto\\automations\\src\\test\\resources\\CredSoli\\AAL0409235E6_1012231310.key"
+//    );
+
+        TramitesFirmasLG tramite33303  = new TramitesFirmasLG(
+            "C:\\VucemAuto\\automations\\src\\test\\resources\\CredSoli\\leqi8101314s7.cer",
+            "C:\\VucemAuto\\automations\\src\\test\\resources\\CredSoli\\LEQI8101314S7_1012231707.key"
     );
 
+    String uuid = UUID.randomUUID().toString();
+    int longitudDeseada = 16;
+    String llavePago = uuid.replace("-", "").substring(0, longitudDeseada);
 
     @BeforeAll
     public static void setUpAll() {
@@ -79,8 +87,16 @@ public class MainPage33303Test {
 
         /////////////////////////////////////////////////////////////////////////////////////////////////////////-
 // Solicitar el folio al usuario
-        String FolioRubro = JOptionPane.showInputDialog(null, "Ingrese el número de folio de 25 dígitos:", "Número de Folio", JOptionPane.QUESTION_MESSAGE);
+       // String FolioRubro2 = JOptionPane.showInputDialog(null, "Ingrese el número de folio de 25 dígitos:", "Número de Folio", JOptionPane.QUESTION_MESSAGE);
 
+        //folio para primeros Avisos
+//        String FolioRubro = "2500302601320259912000001";
+
+        //para aviso de pago de derechos
+//        String FolioRubro = "2500301800320259911000003";
+
+        //para hacer los de agente aduanal
+        String FolioRubro = "2500301800320259911000006";
 // Validar que el usuario haya ingresado un folio válido de 25 dígitos
         if (FolioRubro == null || FolioRubro.length() != 25 || !FolioRubro.matches("\\d+")) {
             JOptionPane.showMessageDialog(null, "El número de folio ingresado no es válido. La operación será cancelada.");
@@ -88,7 +104,7 @@ public class MainPage33303Test {
         }
 
 // Confirmar el folio ingresado
-        JOptionPane.showMessageDialog(null, "Folio válido ingresado: " + FolioRubro);
+//        JOptionPane.showMessageDialog(null, "Folio válido ingresado: " + FolioRubro);
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////-
 // Crear checkboxes para los nuevos tipos de aviso
@@ -96,7 +112,7 @@ public class MainPage33303Test {
         JCheckBox avisoFusionEscisiondeEmpresas = new JCheckBox("Aviso de fusión o escisión de empresas que cuenten con el Registro en el Esquema de Certificación de Empresas, cuando resulte una nueva sociedad, extinguiéndose una o más empresas con Registro en el Esquema de Certificación de Empresas vigente");
         JCheckBox solventarObservaciones = new JCheckBox("Aviso para solventar las observaciones respecto a los estándares mínimos de seguridad, que deriven de cualquier inspección de supervisión de cumplimiento.");
         JCheckBox avisoRelacionadoIncidentesSeguridad = new JCheckBox("Aviso relacionado a incidentes de seguridad. (creación de vista gráfica captura, consultas funcionario y solicitante, documentos , para los avisos de SCC y OEA)");
-        JCheckBox realicenModificacion = new JCheckBox("Aviso cuando se realicen modificaciones a lo establecido en el E4 \"Perfil del Agente Aduanal\"; E5 \"Perfil de Auto Transportista Terrestre\"; E6 \"Perfil de Mensajería y Paquetería\"; E7 \"Perfil de Recinto Fiscalizado\"; E9 \"Perfil del Transportista Ferroviario\"; E10 \"Perfil de Parques Industriales\"; E11 Perfil de \"Almacén General de Depósito\" , contenidos en el Anexo 1, por cada instalación que corresponda.");
+        JCheckBox realicenModificacion = new JCheckBox("Aviso cuando se realicen modificaciones a lo establecido en el E4 \"Perfil del Agente Aduanal\"; E5 \"Perfil de Auto Transportista Terrestre\"; E6 \"Perfil de Mensajería y Paquetería\"; E7 \"Perfil de Recinto Fiscalizado\"; E9 \"Perfil del Transportista Ferroviario....");
         JCheckBox parquesIndustriales = new JCheckBox("Aviso de adición de Parques Industriales, cuando las instalaciones pertenezcan al misma RFC de la persona moral con Registro en el Esquema de Certificación de Empresas en la modalidad de Socio Comercial Certificado, rubro Parque Industrial.");
         JCheckBox modificacionMandatarios = new JCheckBox("Aviso adición o modificación de mandatarios, aduana de adscripción o adicionales y/o sociedades a las que pertenece, bajo la patente aduanal con la que se haya obtenido su registro en la modalidad de Socio Comercial Certificado.");
         JCheckBox pagoDerechos = new JCheckBox("resentación de pago de derechos anual, 7.2.1 primer párrafo fracción 10, para el 2do. Año de la renovación");
@@ -146,6 +162,12 @@ public class MainPage33303Test {
         List<String> avisosSeleccionados = new ArrayList<>();
         if (avisoCambioSituacionFiscal.isSelected()) avisosSeleccionados.add(avisoCambioSituacionFiscal.getText());
         if (avisoFusionEscisiondeEmpresas.isSelected()) avisosSeleccionados.add(avisoFusionEscisiondeEmpresas.getText());
+        if (solventarObservaciones.isSelected()) avisosSeleccionados.add(solventarObservaciones.getText());
+        if (avisoRelacionadoIncidentesSeguridad.isSelected()) avisosSeleccionados.add(avisoRelacionadoIncidentesSeguridad.getText());
+        if (realicenModificacion.isSelected()) avisosSeleccionados.add(realicenModificacion.getText());
+        if (parquesIndustriales.isSelected()) avisosSeleccionados.add(parquesIndustriales.getText());
+        if (modificacionMandatarios.isSelected()) avisosSeleccionados.add(modificacionMandatarios.getText());
+        if (pagoDerechos.isSelected()) avisosSeleccionados.add(pagoDerechos.getText());
 
 // Validar que al menos un aviso haya sido seleccionado
         if (avisosSeleccionados.isEmpty()) {
@@ -154,7 +176,7 @@ public class MainPage33303Test {
         }
 
 // Confirmación y manejo de selecciones
-        JOptionPane.showMessageDialog(null, "Procesos ejecutados para: " + String.join(", ", avisosSeleccionados));
+//        JOptionPane.showMessageDialog(null, "Procesos ejecutados para: " + String.join(", ", avisosSeleccionados));
 
         // Ejecutar el proceso con el folio válido
         ejecutarProcesoNRunnable(() -> {
@@ -182,34 +204,36 @@ public class MainPage33303Test {
                         ejecutarAvisoUsoGoce();
                         break;
                     case "Aviso de fusión o escisión de empresas que cuenten con el Registro en el Esquema de Certificación de Empresas, cuando resulte una nueva sociedad, extinguiéndose una o más empresas con Registro en el Esquema de Certificación de Empresas vigente":
-//                        ejecutarAvisoObservaciones();
+                        ejecutarAvisoFusionEscision();
                         break;
                     case "Aviso para solventar las observaciones respecto a los estándares mínimos de seguridad, que deriven de cualquier inspección de supervisión de cumplimiento.":
-//                        ejecutarAvisoObservaciones();
+                        ejecutarAvisoObservaciones();
                         break;
                     case "Aviso relacionado a incidentes de seguridad. (creación de vista gráfica captura, consultas funcionario y solicitante, documentos , para los avisos de SCC y OEA)":
-//                        ejecutarAvisoObservaciones();
+                        ejecutarAvisoSeguridad();
                         break;
-                    case "Aviso cuando se realicen modificaciones a lo establecido en el E4 \"Perfil del Agente Aduanal\"; E5 \"Perfil de Auto Transportista Terrestre\"; E6 \"Perfil de Mensajería y Paquetería\"; E7 \"Perfil de Recinto Fiscalizado\"; E9 \"Perfil del Transportista Ferroviario\"; E10 \"Perfil de Parques Industriales\"; E11 Perfil de \"Almacén General de Depósito\" , contenidos en el Anexo 1, por cada instalación que corresponda.":
-//                        ejecutarAvisoObservaciones();
+                    case "Aviso cuando se realicen modificaciones a lo establecido en el E4 \"Perfil del Agente Aduanal\"; E5 \"Perfil de Auto Transportista Terrestre\"; E6 \"Perfil de Mensajería y Paquetería\"; E7 \"Perfil de Recinto Fiscalizado\"; E9 \"Perfil del Transportista Ferroviario\";...":
+                        ejecutarAvisoCuandoHayModificacion();
                         break;
                     case "Aviso de adición de Parques Industriales, cuando las instalaciones pertenezcan al misma RFC de la persona moral con Registro en el Esquema de Certificación de Empresas en la modalidad de Socio Comercial Certificado, rubro Parque Industrial.":
 //                        ejecutarAvisoObservaciones();
                         break;
                     case "Aviso adición o modificación de mandatarios, aduana de adscripción o adicionales y/o sociedades a las que pertenece, bajo la patente aduanal con la que se haya obtenido su registro en la modalidad de Socio Comercial Certificado.":
-//                        ejecutarAvisoObservaciones();
+                        ejecutarAvisoAdiciónModificación();
                         break;
                     case "resentación de pago de derechos anual, 7.2.1 primer párrafo fracción 10, para el 2do. Año de la renovación":
-//                        ejecutarAvisoObservaciones();
+                        ejecutarAvisoPagoDeDerecho();
                         break;
                     default:
                         JOptionPane.showMessageDialog(null, "Aviso no válido seleccionado: " + aviso);
                         break;
                 }
                 scrollDecremento();
+                scrollDecremento();
                 mainPage33303.tipoAvisos.click();
             }
 
+//            mainPage33303.manifiestoAcepto.click();
 //            mainPage33303.btnGuardarSoli.click();
 //            mainPage33303.btnContinuar.click();
 ////            verificarSeleccion(aduanalCheckBox, fusionEscisionCheckBox, articulo99CheckBox);
@@ -225,7 +249,6 @@ public class MainPage33303Test {
     }
 
     //Metodo que ejecuta n veces una clase que implementa Runnable
-
     public void ejecutarProcesoNRunnable(Runnable proceso, int n) {
         for (int i = 0; i < n; i++) {
             System.out.println("Ejecución del Proceso: " + (i + 1));
@@ -233,8 +256,38 @@ public class MainPage33303Test {
             proceso.run();  // Ejecuta el proceso de la clase
         }
     }
+
+//    private void verificarSeleccion(JCheckBox aduanalCheckBox, JCheckBox fusionEscisionCheckBox, JCheckBox articulo99CheckBox) {
+//        boolean aduanalSelected = aduanalCheckBox.isSelected();
+//        boolean fusionSelected = fusionEscisionCheckBox.isSelected();
+//        boolean articulo99Selected = articulo99CheckBox.isSelected();
+//
+//        // Verifica si alguno está seleccionado
+//        if (aduanalSelected && articulo99Selected) {
+//            ejecutarCodigoAdjuntar2();
+//        } else if (aduanalSelected || fusionSelected || articulo99Selected) {
+//            ejecutarCodigoAdjuntar();
+//        } else {
+//            System.out.println("No Hay Archivos Por Cargar");
+//        }
+//    }
+//
+//    private void ejecutarCodigoAdjuntar() {
+//        mainPage33303.btnAdjuntarDoc.click();
+//        mainPage33303.archivo1.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
+//        mainPage33303.btnAdjuntar.click(); sleep(1000);
+//        mainPage33303.btnCerrar.click();
+//    }
+//
+//    private void ejecutarCodigoAdjuntar2() {
+//        mainPage33303.btnAdjuntar2Doc.click();
+//        mainPage33303.segArchivo1.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
+//        mainPage33303.segArchivo2.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
+//        mainPage33303.btnAdjuntar.click(); sleep(1000);
+//        mainPage33303.btnCerrar.click();
+//    }
+
     private void ejecutarAvisoUsoGoce() {
-        scrollDecremento();
         mainPage33303.avisoUsoGoce.click();
         mainPage33303.usoGoce.click();
         mainPage33303.domicilio.sendKeys("CAMINO VIEJO 1353 MIGUEL HIDALGO");
@@ -242,24 +295,212 @@ public class MainPage33303Test {
         mainPage33303.entidadFederativa.sendKeys("SINALOA");
         mainPage33303.municipio.sendKeys("AHOME");
         mainPage33303.documentoUsoGoce.sendKeys("Donación");
-        mainPage33303.fechaInicioUsoGoce.click();
-        mainPage33303.selecFecha.click();
-        mainPage33303.fechaFin.click();
-        mainPage33303.selecFechaFin.click();
+        Selenide.executeJavaScript("arguments[0].value = '10/04/2025';", mainPage33303.fechaInicioUsoGoce); sleep(1000);
+        Selenide.executeJavaScript("arguments[0].value = '10/04/2025';", mainPage33303.fechaFin); sleep(1000);
         mainPage33303.rfcPartes.sendKeys("AAL0409235E6");
         mainPage33303.buscarRfcPartes.click();
         mainPage33303.caracterDePartes.sendKeys("jefe");
         mainPage33303.btnAgregar.click();
         clickAceptarButton();
         mainPage33303.observacionesPartes.sendKeys("QA");
+        mainPage33303.mismoDomicilio.click();
+        mainPage33303.domicilioNuevo.sendKeys("Calle1");
+        mainPage33303.codigoPostalNuevo.sendKeys("95281");
+        mainPage33303.estadoNuevo.sendKeys("DURANGO");
+        mainPage33303.municipioNuevo.sendKeys("LERDO");
+        mainPage33303.documentoNuevo.sendKeys("Donación");
+        Selenide.executeJavaScript("arguments[0].value = '10/04/2025';", mainPage33303.fechaInicioNueva); sleep(1000);
+        Selenide.executeJavaScript("arguments[0].value = '18/04/2025';", mainPage33303.fechaFinNuevo); sleep(1000);
+        mainPage33303.rfcPartesNuevo.sendKeys("MAVL621207C95");sleep(1000);
+        mainPage33303.buscarRfcPartesNuevo.click();sleep(1000);
+        mainPage33303.caracterDePartesNuevas.sendKeys("empleado");sleep(1000);
+        mainPage33303.btnAgregarNuevo.click();sleep(1000);
 
+        JavascriptExecutor js = (JavascriptExecutor) getWebDriver();
+        js.executeScript("function clickEnPosicion(x, y) {" +
+                "const evento = new MouseEvent('click', {" +
+                "view: window," +
+                "bubbles: true," +
+                "cancelable: true," +
+                "clientX: x," +
+                "clientY: y" +
+                "});" +
+                "const elemento = document.elementFromPoint(x, y);" +
+                "if (elemento) {" +
+                "elemento.dispatchEvent(evento);" +
+                "}" +
+                "}" +
+                "clickEnPosicion(948.90625, 350.5546875);");
+        sleep(1000);
+        scrollIncremento();sleep(1000);
+        scrollIncremento();sleep(1000);
+
+        mainPage33303.observacionesPartesNuevo.sendKeys("obs");sleep(1000);
+
+    }
+    private void ejecutarAvisoFusionEscision() {
+        mainPage33303.avisoFusionEscision.click();
+        mainPage33303.fusionEscision.click();
+        mainPage33303.fusion1.click();
+        mainPage33303.fusionEmpresa.click();
+        mainPage33303.certificacionSi.click();
+        mainPage33303.rfcFusion.sendKeys("AAL0409235E6");
+        mainPage33303.busquedaRfcFusion.click();
+        Selenide.executeJavaScript("arguments[0].value = '10/04/2025';", mainPage33303.fechaFusion); sleep(1000);
+        mainPage33303.folioFusion.sendKeys("12345");
+        mainPage33303.agregarEmpresaFusionada.click();
+        mainPage33303.certificacionFusionSi.click();
+        mainPage33303.rfcFusionada.sendKeys("AAL0409235E6");
+        mainPage33303.buscarRfcFusionada.click();
+        mainPage33303.btnAgregarFusionada.click();sleep(1000);
+        JavascriptExecutor js = (JavascriptExecutor) getWebDriver();
+        js.executeScript("function clickEnPosicion(x, y) {" +
+                "const evento = new MouseEvent('click', {" +
+                "view: window," +
+                "bubbles: true," +
+                "cancelable: true," +
+                "clientX: x," +
+                "clientY: y" +
+                "});" +
+                "const elemento = document.elementFromPoint(x, y);" +
+                "if (elemento) {" +
+                "elemento.dispatchEvent(evento);" +
+                "}" +
+                "}" +
+                "clickEnPosicion(948.90625, 350.5546875);");
+        sleep(1000);
+    }
+    private void ejecutarAvisoObservaciones() {
+        mainPage33303.avisoObservaciones.click();
+        mainPage33303.observaciones.click();
+        mainPage33303.agregarObservaciones.click();
+        mainPage33303.entidadObservaciones.sendKeys("SINALOA");
+        mainPage33303.selecDomicilioObservacion.click();
+        mainPage33303.aceptarDomicilioObservacion.click();
+        mainPage33303.selecDomicilioModificarOb.click();
+        mainPage33303.modificarDomicilioOb.click();
+        mainPage33303.tipoDomicilio.sendKeys("Planta productiva");
+        mainPage33303.numActaVisita.sendKeys("1");
+        Selenide.executeJavaScript("arguments[0].value = '10/04/2025';", mainPage33303.fechaVisita); sleep(1000);
+        mainPage33303.subestandaresVisita.sendKeys("PRUEBAS");
+        mainPage33303.btnAceptarObservaciones.click();sleep(1000);
+        JavascriptExecutor js = (JavascriptExecutor) getWebDriver();
+        js.executeScript("function clickEnPosicion(x, y) {" +
+                "const evento = new MouseEvent('click', {" +
+                "view: window," +
+                "bubbles: true," +
+                "cancelable: true," +
+                "clientX: x," +
+                "clientY: y" +
+                "});" +
+                "const elemento = document.elementFromPoint(x, y);" +
+                "if (elemento) {" +
+                "elemento.dispatchEvent(evento);" +
+                "}" +
+                "}" +
+                "clickEnPosicion(948.90625, 350.5546875);");
+        sleep(1000);
+    }
+    private void ejecutarAvisoSeguridad() {
+        mainPage33303.avisoSeguridad.click();
+        mainPage33303.seguridad.click();
+        mainPage33303.agregarDomiciliosIncidencias.click();
+        mainPage33303.entidadFederativaIncidencias.sendKeys("SINALOA");
+        mainPage33303.selecPlantaAgregar.click();
+        mainPage33303.btnAgregarDomicilio.click();
+        mainPage33303.selecPlantaModificarIncidencias.click();
+        mainPage33303.modificarPlantaIncidencias.click();
+        mainPage33303.tipoInstalacionIncidencias.sendKeys("Planta productiva");
+        mainPage33303.cambiosSubestandares.sendKeys("PRUEBAS");
+        mainPage33303.btnAceptarModificacionIncidencis.click();sleep(1000);
+        JavascriptExecutor js = (JavascriptExecutor) getWebDriver();
+        js.executeScript("function clickEnPosicion(x, y) {" +
+                "const evento = new MouseEvent('click', {" +
+                "view: window," +
+                "bubbles: true," +
+                "cancelable: true," +
+                "clientX: x," +
+                "clientY: y" +
+                "});" +
+                "const elemento = document.elementFromPoint(x, y);" +
+                "if (elemento) {" +
+                "elemento.dispatchEvent(evento);" +
+                "}" +
+                "}" +
+                "clickEnPosicion(948.90625, 350.5546875);");
+        sleep(1000);
+    }
+    private void ejecutarAvisoCuandoHayModificacion() {
+        mainPage33303.avisoModificación.click();
+        mainPage33303.circunstancias.click();
+        mainPage33303.agregarDomiciliosCircunstancias.click();
+        mainPage33303.entidadFederativaCircunstancias.sendKeys("SINALOA");
+        mainPage33303.selecPlantaAgregarCircunstancias.click();
+        mainPage33303.btnAgregarPlantaCircunstancias.click();
+        mainPage33303.selecPlantaModificar.click();
+        mainPage33303.modificarPlantaCircunstancias.click();
+        mainPage33303.tipoPlantaCircunstancias.sendKeys("Planta productiva");
+        mainPage33303.folioAltaInstalacion.sendKeys("123");
+        mainPage33303.fechaCircunstancias.click();
+        mainPage33303.selecFechaCircunstancias.click();
+        mainPage33303.cambioEstandaresCircunstancias.sendKeys("PRUEBAS");
+        mainPage33303.btnAceptarModificacionCircunstancias.click();sleep(1000);
+        JavascriptExecutor js = (JavascriptExecutor) getWebDriver();
+        js.executeScript("function clickEnPosicion(x, y) {" +
+                "const evento = new MouseEvent('click', {" +
+                "view: window," +
+                "bubbles: true," +
+                "cancelable: true," +
+                "clientX: x," +
+                "clientY: y" +
+                "});" +
+                "const elemento = document.elementFromPoint(x, y);" +
+                "if (elemento) {" +
+                "elemento.dispatchEvent(evento);" +
+                "}" +
+                "}" +
+                "clickEnPosicion(948.90625, 350.5546875);");
+        sleep(1000);
+    }
+    private void ejecutarAvisoAdiciónModificación() {
+        mainPage33303.avisoAdicionModificacion.click();
+        mainPage33303.AvisoAdiciónModificaciónMandatarios.click();
+        mainPage33303.aduanaAdscrita.click();
+        mainPage33303.aduanaSe.click();
+        mainPage33303.btnAgregarAduana.click();
+        mainPage33303.btnAgregarPatente.click();
+        mainPage33303.rfcBusqueda.sendKeys("LEQI8101314S7");
+        mainPage33303.btnBuscarRFC.click();
+        mainPage33303.AduanaAds2.sendKeys("ACAPULCO, GUERRERO.");
+        mainPage33303.tipoMov.sendKeys("Adición");
+        mainPage33303.btnAceptarAduana.click();
+        mainPage33303.btnok1.click();
+
+
+        mainPage33303.btnAfrefarMandatarioAgenteAduanal.click();
+        mainPage33303.rfcBusqueda2.sendKeys("LEQI8101314S7");
+        mainPage33303.btnBuscarRFC2.click();
+        mainPage33303.tipoMov2.sendKeys("Adición");
+        mainPage33303.btnAceptarAduana2.click();
+        mainPage33303.btnok2.click();
+
+
+
+
+    }
+    private void ejecutarAvisoPagoDeDerecho(){
+        mainPage33303.avisoAltaPagoDeDerecho.click();
+        scrollDecremento();
+        mainPage33303.Noperacion.sendKeys("37263543");
+        mainPage33303.bancoDerecho.sendKeys("BANCO AZTECA");
+        mainPage33303.llaveDePagoDeDerecho.sendKeys(llavePago);
+        Selenide.executeJavaScript("arguments[0].value = '11/04/2025';", mainPage33303.fechaDePago); sleep(1000);
     }
 
     public void clickOkButton() {
         // Localiza el botón "Ok" por el texto dentro del <span> y realiza el click
         $(byText("Ok")).shouldBe(visible).shouldHave(text("Ok")).click();
     }
-
     public void clickAceptarButton() {
         // Localiza el botón "Ok" por el texto dentro del <span> y realiza el click
         $(byText("Aceptar")).shouldBe(visible).shouldHave(text("Aceptar")).click();
@@ -280,4 +521,3 @@ public class MainPage33303Test {
     }
 
 }
-//2500302601120259912000001
