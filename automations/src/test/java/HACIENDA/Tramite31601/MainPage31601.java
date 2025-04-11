@@ -60,8 +60,7 @@ public class MainPage31601 {
     public SelenideElement nombreEmpresa = $x("//*[@id=\"socio.nombreEmpresa\"]");
     public SelenideElement nacionalidad = $x("//*[@id=\"socio.nacionalidad\"]");
     public SelenideElement btnAceptalEmpresa = $x("//*[@id=\"btnSocioAgregarModal\"]");
-    public SelenideElement btnAceptalEmpresa2 = $x("/html/body/div[22]/div[1]/a");
-
+    public SelenideElement btnAceptalEmpresa2 = $x("/html/body/div[19]/div[3]/div/button");
     public SelenideElement manif1Check = $x("/html/body/div[1]/div[3]/div[3]/div/form/div[2]/div[2]/table[12]/tbody/tr[1]/td/input");
     public SelenideElement manif2Check = $x("//*[@id=\"acepto253\"]");
 
@@ -69,7 +68,7 @@ public class MainPage31601 {
     public SelenideElement tercerosRelacionados = $x("//*[@id=\"tabs\"]/ul/li[3]/a");
     public SelenideElement rfc = $x("//*[@id=\"rfcTercero\"]");
     public SelenideElement btnBuscar = $x("//*[@id=\"buscar\"]");
-    //public SelenideElement btnAceptarRFC = $x("/html/body/div[23]/div[3]/div/button");
+    public SelenideElement btnAceptarRFC = $x("/html/body/div[20]/div[3]/div/button");
     //public SelenideElement btnAceptarRFC = $x("/html/body/div[16]/div[3]/div/button");
     public SelenideElement telefonoTerceroR = $x("//*[@id=\"terceroRepresentanteLegal.telefono\"]");
     public SelenideElement btnAgregarTerceroR = $x("//*[@id=\"btnAgregarEnlaceOperativo\"]");
@@ -92,6 +91,7 @@ public class MainPage31601 {
     public SelenideElement ValorPesos = $x("//*[@id=\'cantidad.inversionA\']");
     public SelenideElement descripcionGeneral = $x("//*[@id=\'desc.inversionA\']");
     public SelenideElement btnAgregarTerritorioNacional = $x("//*[@id=\'btnAgregarInversion\']");
+    public SelenideElement btnAceptarTerritorio = $x("/html/body/div[21]/div[3]/div/button");
     public SelenideElement CheckNo = $x("//*[@id=\"no702\"]");
     public SelenideElement CheckSi = $x("//*[@id=\"si703\"]");
 

@@ -157,22 +157,7 @@ public class Tramite31601Test {
             mainPage31601.nombreEmpresa.sendKeys("egwgwegwg"); sleep(1000);
             mainPage31601.nacionalidad.sendKeys("ANTARTIDA"); sleep(1000);
             mainPage31601.btnAceptalEmpresa.click(); sleep(1500);
-            // Simular click en pantalla
-            JavascriptExecutor js = (JavascriptExecutor) getWebDriver();
-            js.executeScript("function clickEnPosicion(x, y) {" +
-                    "const evento = new MouseEvent('click', {" +
-                    "view: window," +
-                    "bubbles: true," +
-                    "cancelable: true," +
-                    "clientX: x," +
-                    "clientY: y" +
-                    "});" +
-                    "const elemento = document.elementFromPoint(x, y);" +
-                    "if (elemento) {" +
-                    "elemento.dispatchEvent(evento);" +
-                    "}" +
-                    "}" +
-                    "clickEnPosicion(843.6000366210938, 420.70000648498535);");
+            mainPage31601.btnAceptalEmpresa2.click();
             sleep(1000);
             mainPage31601.manif1Check.click(); sleep(1000);
             mainPage31601.manif2Check.click(); sleep(1000);
@@ -181,21 +166,7 @@ public class Tramite31601Test {
             mainPage31601.tercerosRelacionados.click();sleep(1000);
             mainPage31601.rfc.sendKeys("LEQI8101314S7");sleep(1000);
             mainPage31601.btnBuscar.click();sleep(1000);
-            js.executeScript("function clickEnPosicion(x, y) {" +
-                    "const evento = new MouseEvent('click', {" +
-                    "view: window," +
-                    "bubbles: true," +
-                    "cancelable: true," +
-                    "clientX: x," +
-                    "clientY: y" +
-                    "});" +
-                    "const elemento = document.elementFromPoint(x, y);" +
-                    "if (elemento) {" +
-                    "elemento.dispatchEvent(evento);" +
-                    "}" +
-                    "}" +
-                    "clickEnPosicion(843.6000366210938, 420.70000648498535);");
-            sleep(1000);
+            mainPage31601.btnAceptarRFC.click();
 
             mainPage31601.btnAgregarTerceroR.click();sleep(1000);
             mainPage31601.rfcTerceroR2.sendKeys("LEQI8101314S7");sleep(1000);
@@ -214,21 +185,7 @@ public class Tramite31601Test {
             mainPage31601.ValorPesos.sendKeys("100");sleep(1000);
             mainPage31601.descripcionGeneral.sendKeys("Sillas");sleep(1000);
             mainPage31601.btnAgregarTerritorioNacional.click();sleep(1000);
-            js.executeScript("function clickEnPosicion(x, y) {" +
-                    "const evento = new MouseEvent('click', {" +
-                    "view: window," +
-                    "bubbles: true," +
-                    "cancelable: true," +
-                    "clientX: x," +
-                    "clientY: y" +
-                    "});" +
-                    "const elemento = document.elementFromPoint(x, y);" +
-                    "if (elemento) {" +
-                    "elemento.dispatchEvent(evento);" +
-                    "}" +
-                    "}" +
-                    "clickEnPosicion(843.6000366210938, 420.70000648498535);");
-            sleep(1000);
+            mainPage31601.btnAceptarTerritorio.click();
             mainPage31601.CheckNo.click();sleep(1000);
             mainPage31601.CheckSi.click();sleep(1000);
 

@@ -137,30 +137,19 @@ public class MainPage32617Test {
             mainPage32617.inputSubcontratadoEmpleados.sendKeys("10");
             mainPage32617.selectSubcontratadoBimestre.sendKeys("Marzo - Abril");
             mainPage32617.inputSubcontratadoAgregarModalEsquema.click();sleep(1000);
-            JavascriptExecutor js = (JavascriptExecutor) getWebDriver();
-            js.executeScript("function clickEnPosicion(x, y) {" +
-                    "const evento = new MouseEvent('click', {" +
-                    "view: window," +
-                    "bubbles: true," +
-                    "cancelable: true," +
-                    "clientX: x," +
-                    "clientY: y" +
-                    "});" +
-                    "const elemento = document.elementFromPoint(x, y);" +
-                    "if (elemento) {" +
-                    "elemento.dispatchEvent(evento);" +
-                    "}" +
-                    "}" +
-                    "clickEnPosicion(843.6000366210938, 417.1000061035156);");
-            sleep(1000);
+            mainPage32617.btnAceptarSubcontratados.click();
             mainPage32617.inputMapDeclaracionSolicitudAcepto3.click();
             mainPage32617.inputMapDeclaracionSolicitudAcepto5.click();
             mainPage32617.inputMapDeclaracionSolicitudAcepto6.click();
             mainPage32617.inputMapDeclaracionSolicitudAcepto7.click();
             mainPage32617.inputMapDeclaracionSolicitudAcepto8.click();
             mainPage32617.inputMapDeclaracionSolicitudAcepto9.click();
-            mainPage32617.immexNuevo.sendKeys("82024 - Autorización Programa Nuevo Servicio");
-            mainPage32617.immexNuevo.click();
+//            mainPage32617.immexNuevo.sendKeys("82024 - Autorización Programa Nuevo Servicio");
+//            mainPage32617.immexNuevo.click();
+            mainPage32617.inputAgregarDomicilios.click();
+            mainPage32617.selectEntidadFederativaIdc.sendKeys("SINALOA");
+            mainPage32617.inputGridDomiciliosModal.click();
+            mainPage32617.btnAceptarDomicilios.click();
             mainPage32617.inputGridDomicilios.click();
             mainPage32617.inputModificarDomicilios.click();
             mainPage32617.inputInstalacion.click();
@@ -171,41 +160,12 @@ public class MainPage32617Test {
             mainPage32617.inputOperacionesExt.click();
             mainPage32617.inputInstalacionCtpat.click();sleep(1000);
             mainPage32617.inputAceptarDomicilios2.click();sleep(1000);
-            js.executeScript("function clickEnPosicion(x, y) {" +
-                    "const evento = new MouseEvent('click', {" +
-                    "view: window," +
-                    "bubbles: true," +
-                    "cancelable: true," +
-                    "clientX: x," +
-                    "clientY: y" +
-                    "});" +
-                    "const elemento = document.elementFromPoint(x, y);" +
-                    "if (elemento) {" +
-                    "elemento.dispatchEvent(evento);" +
-                    "}" +
-                    "}" +
-                    "clickEnPosicion(843.6000366210938, 417.1000061035156);");
-            sleep(1000);
+            mainPage32617.aceptarDomiciliosEmergenetes.click();
             mainPage32617.inputMapDeclaracionSolicitudAcepto10.click();
             mainPage32617.inputMapDeclaracionSolicitudAcepto11.click();
             mainPage32617.inputArchivo.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\carga_proveedoresExtranjerosIC.xls");
             mainPage32617.inputUploadFileExtranjeros.click();sleep(1000);
-            js.executeScript("function clickEnPosicion(x, y) {" +
-                    "const evento = new MouseEvent('click', {" +
-                    "view: window," +
-                    "bubbles: true," +
-                    "cancelable: true," +
-                    "clientX: x," +
-                    "clientY: y" +
-                    "});" +
-                    "const elemento = document.elementFromPoint(x, y);" +
-                    "if (elemento) {" +
-                    "elemento.dispatchEvent(evento);" +
-                    "}" +
-                    "}" +
-                    "clickEnPosicion(843.6000366210938, 448.20001220703125);");
-            sleep(1000);
-
+            mainPage32617.btnOkExtranjeros.click();
             mainPage32617.inputMapDeclaracionSolicitudAcepto12.click();
             mainPage32617.inputMapDeclaracionSolicitudAcepto13.click();
             mainPage32617.inputInventario.click();
@@ -213,21 +173,7 @@ public class MainPage32617Test {
             mainPage32617.lugarInventario.sendKeys("QA");
             mainPage32617.inputAnexoInventario.click();
             mainPage32617.inputAgregarInventario.click();sleep(1000);
-            js.executeScript("function clickEnPosicion(x, y) {" +
-                    "const evento = new MouseEvent('click', {" +
-                    "view: window," +
-                    "bubbles: true," +
-                    "cancelable: true," +
-                    "clientX: x," +
-                    "clientY: y" +
-                    "});" +
-                    "const elemento = document.elementFromPoint(x, y);" +
-                    "if (elemento) {" +
-                    "elemento.dispatchEvent(evento);" +
-                    "}" +
-                    "}" +
-                    "clickEnPosicion(843.6000366210938, 417.1000061035156);");
-            sleep(1000);
+            mainPage32617.btnAceptarInventarios.click();
             mainPage32617.inputMapDeclaracionSolicitudAcepto14.click();
             mainPage32617.inputMapDeclaracionSolicitudAcepto15.click();
             mainPage32617.selectSocioCaracter.sendKeys("Administrador Unico");
@@ -237,21 +183,7 @@ public class MainPage32617Test {
             mainPage32617.nacionalidadSocio.sendKeys("ANGUILA");
             mainPage32617.nombreSocio.sendKeys("PRUEBAS");
             mainPage32617.btnAgregarSocio.click();sleep(1000);
-            js.executeScript("function clickEnPosicion(x, y) {" +
-                    "const evento = new MouseEvent('click', {" +
-                    "view: window," +
-                    "bubbles: true," +
-                    "cancelable: true," +
-                    "clientX: x," +
-                    "clientY: y" +
-                    "});" +
-                    "const elemento = document.elementFromPoint(x, y);" +
-                    "if (elemento) {" +
-                    "elemento.dispatchEvent(evento);" +
-                    "}" +
-                    "}" +
-                    "clickEnPosicion(843.6000366210938, 417.1000061035156);");
-            sleep(1000);
+            mainPage32617.btnAceptarSocios.click();
             mainPage32617.inputMapDeclaracionSolicitudAcepto16.click();
             mainPage32617.inputAcepto.click();
             mainPage32617.inputAcepto2.click();
@@ -260,21 +192,7 @@ public class MainPage32617Test {
             mainPage32617.tercerosRelacionados.click();
             mainPage32617.rfcRepresentanteL.sendKeys("LEQI8101314S7");
             mainPage32617.btnBuscarRfcRepresentanteL.click();sleep(1000);
-            js.executeScript("function clickEnPosicion(x, y) {" +
-                    "const evento = new MouseEvent('click', {" +
-                    "view: window," +
-                    "bubbles: true," +
-                    "cancelable: true," +
-                    "clientX: x," +
-                    "clientY: y" +
-                    "});" +
-                    "const elemento = document.elementFromPoint(x, y);" +
-                    "if (elemento) {" +
-                    "elemento.dispatchEvent(evento);" +
-                    "}" +
-                    "}" +
-                    "clickEnPosicion(843.6000366210938, 417.1000061035156);");
-            sleep(1000);
+            mainPage32617.btnAceptarRepresentanteL.click();
             mainPage32617.agregarEnlaceO.click();
             mainPage32617.rfcEnlaceO.sendKeys("LEQI8101314S7");
             mainPage32617.btnBuscarEnlaceO.click();
@@ -295,21 +213,7 @@ public class MainPage32617Test {
             mainPage32617.rfcTransportista.sendKeys("LEQI8101314S7");
             mainPage32617.btnBuscarTransportista.click();
             mainPage32617.btnAgregarTransportista.click();sleep(1000);
-            js.executeScript("function clickEnPosicion(x, y) {" +
-                    "const evento = new MouseEvent('click', {" +
-                    "view: window," +
-                    "bubbles: true," +
-                    "cancelable: true," +
-                    "clientX: x," +
-                    "clientY: y" +
-                    "});" +
-                    "const elemento = document.elementFromPoint(x, y);" +
-                    "if (elemento) {" +
-                    "elemento.dispatchEvent(evento);" +
-                    "}" +
-                    "}" +
-                    "clickEnPosicion(843.6000366210938, 417.1000061035156);");
-            sleep(1000);
+            mainPage32617.btnAceptarTransportista.click();
             mainPage32617.immex2si.click();
             mainPage32617.ivaIepsSi.click();
             mainPage32617.instalacionSi.click();
@@ -326,7 +230,7 @@ public class MainPage32617Test {
             mainPage32617.cbpSi.click();
             mainPage32617.cbp2Si.click();
             mainPage32617.cbp3No.click();
-
+            /// Guardar y Firmar
             mainPage32617.btnGuardarSoli.click();
             mainPage32617.btnContinuar.click();
             mainPage32617.btnAdjuntarDoc.click();
