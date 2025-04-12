@@ -33,8 +33,7 @@ public class MainPage32604 {
     public SelenideElement radioNo240 = $x("//*[@id='no240']");
     public SelenideElement btnAgregarDomicilios = $x("//*[@id='btnAgregarDomicilios']");
     public SelenideElement entidadFederativaIDC = $x("//*[@id='entidadFederativaIDC']");
-    public SelenideElement jqg_gridDomiciliosModal_5 = $x("//*[@id=\"jqg_gridDomiciliosModal_4\"]");
-    public SelenideElement inputAceptarDomicilios = $x("//input[@onclick='javaScript:guardarDatosDomicilios()']");
+    public SelenideElement jqg_gridDomiciliosModal_5 = $x("/html/body/div[7]/div[2]/table/tbody/tr[3]/td/div/div[3]/div[3]/div/table/tbody/tr[2]/td[1]/input");    public SelenideElement inputAceptarDomicilios = $x("//input[@onclick='javaScript:guardarDatosDomicilios()']");
     public SelenideElement checkDomicilios = $x("/html/body/div[1]/div[3]/div[3]/div/form/div[2]/div[2]/div[1]/div[1]/table/tbody/tr[7]/td/div/div[3]/div[3]/div/table/tbody/tr[2]/td[1]/input");
     public SelenideElement btnModificarDomicilios = $x("//*[@id=\"btnModificarDomicilios\"]");
     public SelenideElement siInstalacion = $x("//*[@id=\"siInstalacion\"]");

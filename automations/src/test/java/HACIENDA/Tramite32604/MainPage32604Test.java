@@ -121,7 +121,7 @@ public class MainPage32604Test {
                 mainPage32604.radioNo240.click();
                 mainPage32604.btnAgregarDomicilios.click();
                 mainPage32604.entidadFederativaIDC.sendKeys("SINALOA");
-                mainPage32604.jqg_gridDomiciliosModal_5.click();
+                mainPage32604.jqg_gridDomiciliosModal_5.click(); //Realizar cambio
                 mainPage32604.inputAceptarDomicilios.click();sleep(1000);
                 mainPage32604.checkDomicilios.click();
                 mainPage32604.btnModificarDomicilios.click();sleep(500);
