@@ -20,8 +20,6 @@ public class MainPage260212 {
     public SelenideElement linkPermisoSanitarioImportacionInsumoSalud = $x("/html/body/main/div/div[3]/div/div[6]/ul/li/ul/li[2]/a");
     public SelenideElement linkDispositivosMedicosMaquila = $x("/html/body/main/div/div[3]/div/div[6]/ul/li/ul/li[2]/ul/li[12]/a");
     //DATOS SOLICITUD
-
-
     public SelenideElement labelDatosSolicitud = $x("/html/body/main/div[1]/div[4]/div[1]/div[6]/form/div[1]/ul/li[2]/a/label");
     public SelenideElement inputEstablecimiento = $x("//*[@id='btnEstablecimiento']");
     public SelenideElement btnAceptar = $x("/html/body/div[28]/div[3]/div/button");
@@ -38,8 +36,6 @@ public class MainPage260212 {
     public SelenideElement inputScianAgregar = $x("//*[@id='btnScianAgregar']");
     public SelenideElement comboSCIAN = $x("//*[@id=\"comboSCIAN\"]");
     public SelenideElement inputAgregar = $x("//input[@onclick='javascript:agregarDatosSCIAN();']");
-
-
     public SelenideElement inputAvisoFuncionamiento = $x("//*[@id=\"avisoFuncionamiento\"]");
     public SelenideElement solicitudRegimen =$x("//*[@id=\"solicitud.regimen.clave\"]");
     public SelenideElement aduanaEntrada = $x("//*[@id=\"aduanasEntrada\"]");
@@ -73,8 +69,6 @@ public class MainPage260212 {
     public SelenideElement inputInformacionConfidencialSi = $x("//*[@id=\"informacionConfidencialSi\"]");
     public SelenideElement inputRepresentanteLegalRFC = $x("//*[@id=\"representanteLegalRFC\"]");
     public SelenideElement inputConsultarIDC = $x("//*[@id=\"consultarIDC\"]");
-
-
     //TERCEROS RELACIONADOS
     public SelenideElement Scrol = Selenide.$x("//*[@id=\"logoHeader\"]");
     public SelenideElement labelTerceroRElacionado = $x("/html/body/main/div[1]/div[4]/div[1]/div[6]/form/div[1]/ul/li[3]/a/label");
@@ -115,7 +109,6 @@ public class MainPage260212 {
     public SelenideElement terceroTelefono2 = $x("//*[@id=\"terceros_telefono\"]");
     public SelenideElement terceroCorreo2 = $x("//*[@id=\"terceros_correoElec\"]");
     public SelenideElement btnGuardarDatosTercero2 = $x("//*[@id=\"btnGuardarFrmDatosTercero\"]");
-
     public SelenideElement inputAgregarProveedor = $x("//*[@id=\"agregarTercero_TIPERS_PVD\"]");
     public SelenideElement inputTipoPeronaFisica = $x("//*[@id=\"terceros_tipoPersonaFisica\"]");
     public SelenideElement inputTerceroNombre3 = $x("//*[@id=\"terceros_nombre\"]");
@@ -146,9 +139,7 @@ public class MainPage260212 {
     public SelenideElement terceroTelefono4 = $x("//*[@id=\"terceros_telefono\"]");
     public SelenideElement terceroCorreo4 = $x("//*[@id=\"terceros_correoElec\"]");
     public SelenideElement btnGuardarDatosTercero4 = $x("//*[@id=\"btnGuardarFrmDatosTercero\"]");
-
     //PAGO DE DERECHOS
-
     public SelenideElement labelPagoDerechos =$x("//*[@id=\"ui-id-4\"]/label");
     public SelenideElement inputSolicitudPagoClaveReferencia = $x("//*[@id='solicitud.pago.claveDeReferencia']");
     public SelenideElement inputSolicitudPagoCadenaDependencia = $x("//*[@id='solicitud.pago.cadenaPagoDependencia']");
@@ -163,7 +154,6 @@ public class MainPage260212 {
     public SelenideElement selectDoc2 = $x("/html/body/main/div/div[4]/div[2]/div/form[3]/table/tbody/tr[1]/td[4]/input");
     public SelenideElement selectDoc3 = $x("/html/body/main/div/div[4]/div[2]/div/form[4]/table/tbody/tr[1]/td[4]/input");
     public SelenideElement selectDoc4 = $x("/html/body/main/div/div[4]/div[2]/div/form[5]/table/tbody/tr[1]/td[4]/input");
-
     public SelenideElement btnAnexar = $x("//*[@id=\"btnAnexar\"]");
     public SelenideElement btnCerrar = $x("//*[@id=\"btnCerrar\"]");
     public SelenideElement inputSiguiente = $x("/html/body/main/div/div[4]/div[1]/form[2]/div[2]/div/input[2]");

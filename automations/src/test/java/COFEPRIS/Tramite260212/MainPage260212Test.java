@@ -241,13 +241,6 @@ public class MainPage260212Test {
             mainPage260212.btnGuardarDatosTercero4.click();
 
             //PAGO DE DERECHOS
-//            try {
-//                Thread.sleep(2000); // Pausa de 3 segundos
-//                // Hacer scroll hasta el elemento
-//                mainPage260212.Scrol.scrollIntoView(true);
-//            } catch (InterruptedException e) {
-//                e.printStackTrace();
-//            }
             mainPage260212.labelPagoDerechos.click();
             mainPage260212.inputSolicitudPagoClaveReferencia.sendKeys("85434563");
             mainPage260212.inputSolicitudPagoCadenaDependencia.sendKeys("uaiusjjsdga");

@@ -36,8 +36,6 @@ public class MainPage260211 {
     public SelenideElement inputScianAgregar = $x("//*[@id='btnScianAgregar']");
     public SelenideElement comboSCIAN = $x("//*[@id=\"comboSCIAN\"]");
     public SelenideElement inputAgregar = $x("//input[@onclick='javascript:agregarDatosSCIAN();']");
-
-
     public SelenideElement inputAvisoFuncionamiento = $x("//*[@id=\"avisoFuncionamiento\"]");
     public SelenideElement solicitudRegimen =$x("//*[@id=\"solicitud.regimen.clave\"]");
     public SelenideElement aduanaEntrada = $x("//*[@id=\"aduanasEntrada\"]");
