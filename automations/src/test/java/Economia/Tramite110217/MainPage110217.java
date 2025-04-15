@@ -6,7 +6,7 @@ import static com.codeborne.selenide.Selenide.$x;
 
 public class MainPage110217 {
     //Tramite Aviso 110217
-    public SelenideElement folio = $x("/html/body/main/div/div[4]/div/div[4]/div/div/ul/li");
+    public SelenideElement folio = $x("/html/body/main/div/div[4]/div/div[4]/div/div/ul/li[2]");
     public SelenideElement selecRol = $x("//*[@id='claveRol']");
     public SelenideElement btnacep = $x("//button[@name='ingresar']");
     public SelenideElement Tramites = $x("//*[@id='Trámites']");
@@ -57,7 +57,7 @@ public class MainPage110217 {
     public SelenideElement NombreRepreExport = $x("//*[@id=\"solicitud.representanteLegal.nombre\"]");
     public SelenideElement EmpresaExport = $x("//*[@id=\"solicitud.representanteLegal.razonSocial\"]");
     public SelenideElement CargoExport = $x("//*[@id=\"solicitud.representanteLegal.puesto\"]");
-    public SelenideElement LadaExport = $x("//*[@id=\"solicitud.destinatario.domicilio.lada\"]");
+    public SelenideElement LadaExport = $x("/html/body/main/div/div[4]/div[1]/form/div[2]/div[3]/div[10]/div[3]/div/input");
     public SelenideElement TelefonoExport = $x("//*[@id=\"solicitud.representanteLegal.domicilio.telefono\"]");
     public SelenideElement FaxExport = $x("//*[@id=\"solicitud.representanteLegal.domicilio.fax\"]");
     public SelenideElement CorreoExport = $x("//*[@id=\"solicitud.representanteLegal.correoElectronico\"]");
