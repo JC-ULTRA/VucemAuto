@@ -1,4 +1,4 @@
-package Economia.Tramite110204;
+package Economia.Tramite110205;
 
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
@@ -6,7 +6,7 @@ import com.codeborne.selenide.SelenideElement;
 import static com.codeborne.selenide.Selenide.$x;
 
 // page_url = https://wwwqa.ventanillaunica.gob.mx/vucem/Ingreso.html
-public class MainPage110204 {
+public class MainPage110205 {
     //Tramite Aviso 110102
     public SelenideElement cerS = $x("//*[@id='certificate']");
     public SelenideElement keyS = $x("//*[@id='privateKey']");
@@ -25,18 +25,19 @@ public class MainPage110204 {
     //Elementos para encontrar tramite
     public SelenideElement CertOrigen = $x("/html/body/main/div/div[3]/div/div[6]/ul/li[4]/a");
     public SelenideElement ValidacionCertificado = $x("//*[@id=\"servicios\"]/ul/li[4]/ul/li[2]/a/span");
-    public SelenideElement ExportacionAladi = $x("//*[@id=\"servicios\"]/ul/li[4]/ul/li[2]/ul/li[4]/a");
+    public SelenideElement elementoTramite110205 = $x("//*[@id=\"servicios\"]/ul/li[4]/ul/li[2]/ul/li[5]/a");
+   /*
     public SelenideElement TituloPrincipal = Selenide.$x("//*[@id=\"h1_title\"]");
     public SelenideElement tabCertificadoOrigen = $x("//*[@id=\"ui-id-2\"]");
 
-    //Seccion Certificado de origen
-    //Elementos tercer operador
+    //Validación inicial del certificado de circulación de mercancías
     public SelenideElement checkTercerOperador = $x("//*[@id=\"idTercerOperador\"]");
     public SelenideElement TercerOperadorNombre = $x("//*[@id=\"solicitud.tercerOperador.nombre\"]");
     public SelenideElement TercerOperadorApellidoP = $x("//*[@id=\"solicitud.tercerOperador.apellidoPaterno\"]");
     public SelenideElement TercerOperadorApellidoM = $x("//*[@id=\"solicitud.tercerOperador.apellidoMaterno\"]");
     public SelenideElement TercerOperadorNumeroFiscal = $x("//*[@id=\"solicitud.tercerOperador.rfc\"]");
     public SelenideElement TercerOperadorRazonSocial= $x("//*[@id=\"solicitud.tercerOperador.razonSocial\"]");
+
     //Domicilio del tercer operador
     public SelenideElement selectTercerOperadorPais = $x("//*[@id=\"solicitud.tercerOperador.paisOrigen.clave\"]");
     public SelenideElement TercerOperadorCiudad = $x("//*[@id=\"solicitud.tercerOperador.domicilio.ciudad\"]");
@@ -60,7 +61,7 @@ public class MainPage110204 {
     //Grid Mercancias disponibles
     public SelenideElement filaMercanciaDisponible =$x("//*[@id=\"3\"]/td[4]");
 
-    //Sección llenado Informacion de la mercancia
+    //Informacion de la mercancia
     public SelenideElement Cantidad = $x("//*[@id=\"idCantidad\"]");
     public SelenideElement selectUMC = $x("//*[@id=\"datosMercancia.unidadMedidaComercializacion\"]");
     public SelenideElement ValorMercancia = $x("//*[@id=\"idValorMercancia\"]");
@@ -74,14 +75,14 @@ public class MainPage110204 {
     //Continuar Tramite
     public SelenideElement btnContinuar = $x("//*[@id=\"guardarSolicitud\"]");
     public SelenideElement Paso1Textoreferencia= $x("//*[@id=\"h1_title\"]");
-
-    //Sección Datos Certificado
+    //Datos Certificado
     public SelenideElement tabDatosCertificado = $x("//*[@id=\"ui-id-3\"]");
     public SelenideElement Observaciones = $x("//*[@id=\"solicitud.certificadoOrigen.observaciones\"]");
     public SelenideElement selectIdioma = $x("//*[@id=\"solicitud.certificadoOrigen.lenguaje.clave\"]");
+
     //Representacion Federal
     public SelenideElement selectEstado = $x("//*[@id=\"solicitud.entidadFederativa.entidad.clave\"]");
     public SelenideElement selectRrepreFederal = $x("//*[@id=\"representacionFederalSelect\"]");
-
+*/
 }
 
