@@ -1,11 +1,11 @@
-package COFEPRIS.Tramite260904;
+package COFEPRIS.Tramite260911;
 
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Selenide.$x;
 
-public class MainPage260904 {
+public class MainPage260911 {
     public SelenideElement cerS = $x("//*[@id='certificate']");
     public SelenideElement keyS = $x("//*[@id='privateKey']");
     public SelenideElement pass = $x("//*[@id='privateKeyPassword']");
@@ -19,12 +19,12 @@ public class MainPage260904 {
     public SelenideElement inputBuscarButton = $x("//*[@id=\"buscarButton\"]");
     public SelenideElement SolicitudTramite = $x("/html/body/main/div/div[3]/div/form[1]/div[6]/div[3]/div[3]/div/table/tbody/tr[2]/td[1]");
     public SelenideElement inputSolicitarModificacion = $x("/html/body/main/div/div[4]/div/form[1]/div[6]/div[2]/input");
+    public SelenideElement Scrol = Selenide.$x("//*[@id=\"logoHeader\"]");
     //DATOS SOLICITUD
     public SelenideElement labelDatosSolicitud = $x("/html/body/main/div[1]/div[4]/div[1]/div[6]/form/div[1]/ul/li[2]/a/label");
     public SelenideElement inputModif = $x("//*[@id=\"mod\"]");
     public SelenideElement textareaJustificacionId = $x("//*[@id=\"justificacionId\"]");
     //PAGO DE DERECHOS
-    public SelenideElement Scrol = Selenide.$x("//*[@id=\"logoHeader\"]");
     public SelenideElement labelPagoDerechos =$x("/html/body/main/div[1]/div[4]/div[1]/div[6]/form/div[1]/ul/li[4]/a/label");
     public SelenideElement inputSolicitudPagoClaveReferencia = $x("//*[@id='solicitud.pago.claveDeReferencia']");
     public SelenideElement inputSolicitudPagoCadenaDependencia = $x("//*[@id='solicitud.pago.cadenaPagoDependencia']");
@@ -41,7 +41,7 @@ public class MainPage260904 {
     //public SelenideElement selectDoc3 = $x("/html/body/main/div/div[4]/div[2]/div/form[4]/table/tbody/tr[1]/td[4]/input");
     //public SelenideElement selectDoc4 = $x("/html/body/main/div/div[4]/div[2]/div/form[5]/table/tbody/tr[1]/td[4]/input");
     public SelenideElement btnAnexar = $x("//*[@id=\"btnAnexar\"]");
-    public SelenideElement btnCerrar = $x("//*[@id=\"btnCerrar\"]");
+    public SelenideElement btnCerrar = $x("/html/body/main/div/div[4]/div[2]/form/div[3]/div/input");
     public SelenideElement inputSiguiente = $x("/html/body/main/div/div[4]/div[1]/form[2]/div[2]/div/input[2]");
 
 }
