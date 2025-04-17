@@ -96,12 +96,15 @@ public class MainPage110221Test {
             ///Certificado
             ejecutarCertificado();
 
-//            ///Firma
-//            loginSoli.firma(tramite110221);
-//            // Obtener el texto del folio desde mainPageB8
-//            String folioText = mainPage110221.folio.getText();
-//            // Llamar al método para obtener el folio
-//            String folioNumber = obtenerFolio.obtenerFolio(folioText);
+            ///Firma
+            loginSoli.firma(tramite110221);
+
+            // Obtener el texto del folio desde mainPageB8
+            String folioText = mainPage110221.folio.getText();
+
+            // Llamar al método para obtener el folio
+            String folioNumber = obtenerFolio.obtenerFolio(folioText);
+
         }, repeticiones);
     }
 
