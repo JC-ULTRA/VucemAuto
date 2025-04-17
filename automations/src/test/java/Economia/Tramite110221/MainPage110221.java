@@ -1,8 +1,6 @@
 package Economia.Tramite110221;
-
 import com.codeborne.selenide.SelenideElement;
 import static com.codeborne.selenide.Selenide.$x;
-
 public class MainPage110221 {
     //Tramite Aviso 110217
     public SelenideElement folio = $x("/html/body/main/div/div[4]/div/div[4]/div/div/ul/li[2]");
