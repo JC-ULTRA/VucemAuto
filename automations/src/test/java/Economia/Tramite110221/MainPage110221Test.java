@@ -238,5 +238,3 @@ public class MainPage110221Test {
         }
     }
 }
-
-//executeJavaScript("window.scrollTo(0, 0);");
