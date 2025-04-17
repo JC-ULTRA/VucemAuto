@@ -1,8 +1,10 @@
 package Economia.Tramite110205;
 
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 
+import static com.codeborne.selenide.Selenide.$$;
 import static com.codeborne.selenide.Selenide.$x;
 
 // page_url = https://wwwqa.ventanillaunica.gob.mx/vucem/Ingreso.html
@@ -13,7 +15,7 @@ public class MainPage110205 {
     public SelenideElement pass = $x("//*[@id='privateKeyPassword']");
     public SelenideElement btnIngres = $x("//button[@onclick='ejecutarProcesoFirma(1)']");
     public SelenideElement btnFirmar = $x("//*[@id='btnSubmit']");
-    public SelenideElement folio = $x("//*[@id=\"notification\"]/div/ul/li[2]");
+    public SelenideElement folio = $x("//*[@id=\"notification\"]/div/ul/li");
 
 
     public SelenideElement selecRol = $x("//*[@id='claveRol']");
@@ -26,31 +28,25 @@ public class MainPage110205 {
     public SelenideElement CertOrigen = $x("/html/body/main/div/div[3]/div/div[6]/ul/li[4]/a");
     public SelenideElement ValidacionCertificado = $x("//*[@id=\"servicios\"]/ul/li[4]/ul/li[2]/a/span");
     public SelenideElement elementoTramite110205 = $x("//*[@id=\"servicios\"]/ul/li[4]/ul/li[2]/ul/li[5]/a");
-   /*
-    public SelenideElement TituloPrincipal = Selenide.$x("//*[@id=\"h1_title\"]");
-    public SelenideElement tabCertificadoOrigen = $x("//*[@id=\"ui-id-2\"]");
 
-    //Validación inicial del certificado de circulación de mercancías
+
+    public SelenideElement TituloPrincipal = $x("//*[@id=\"h1_title\"]");
+    public SelenideElement SegundoTitulo = $x("//*[@id=\"tabs-solicitante\"]/div[5]/div/h3");
+
+    //Elementos seccion certificado
+    public SelenideElement tabCertificadoOrigen = $x("//*[@id=\"ui-id-2\"]");
+    //Elementos Check tercer operador
     public SelenideElement checkTercerOperador = $x("//*[@id=\"idTercerOperador\"]");
     public SelenideElement TercerOperadorNombre = $x("//*[@id=\"solicitud.tercerOperador.nombre\"]");
     public SelenideElement TercerOperadorApellidoP = $x("//*[@id=\"solicitud.tercerOperador.apellidoPaterno\"]");
     public SelenideElement TercerOperadorApellidoM = $x("//*[@id=\"solicitud.tercerOperador.apellidoMaterno\"]");
     public SelenideElement TercerOperadorNumeroFiscal = $x("//*[@id=\"solicitud.tercerOperador.rfc\"]");
     public SelenideElement TercerOperadorRazonSocial= $x("//*[@id=\"solicitud.tercerOperador.razonSocial\"]");
-
-    //Domicilio del tercer operador
-    public SelenideElement selectTercerOperadorPais = $x("//*[@id=\"solicitud.tercerOperador.paisOrigen.clave\"]");
-    public SelenideElement TercerOperadorCiudad = $x("//*[@id=\"solicitud.tercerOperador.domicilio.ciudad\"]");
-    public SelenideElement TercerOperadorCalle = $x("//*[@id=\"solicitud.tercerOperador.domicilio.calle\"]");
-    public SelenideElement TercerOperadorNumeroLetra = $x("//*[@id=\"solicitud.tercerOperador.domicilio.numeroExterior\"]");
-    public SelenideElement TercerOperadorLada= $x("//*[@id=\"solicitud.tercerOperador.domicilio.lada\"]");
-    public SelenideElement TercerOperadorTelefono = $x("//*[@id=\"solicitud.tercerOperador.domicilio.telefono\"]");
-    public SelenideElement TercerOperadorFax = $x("//*[@id=\"solicitud.tercerOperador.domicilio.fax\"]");
-    public SelenideElement TercerOperadorCorreo = $x("//*[@id=\"solicitud.tercerOperador.correoElectronico\"]");
-
     //Tratado y país o bloque
     public SelenideElement TratadoAcuerdo= $x("//*[@id=\"solicitud.idTratadoAcuerdoSeleccionado\"]");
     public SelenideElement PaisBloque= $x("//*[@id=\"solicitud.clavePaisSeleccionado\"]");
+    public SelenideElement Periodo = $x("//*[@id=\"check.periodo\"]");
+    public SelenideElement SolaImpresion = $x("//*[@id=\"check.una.importacion\"]");
     public SelenideElement FraccionArancelaria = $x("//*[@id=\"fraccionB\"]");
     public SelenideElement NumeroRegistroProducto= $x("//*[@id=\"numRegistro\"]");
     public SelenideElement NombreComercial= $x("//*[@id=\"nomComercial\"]");
@@ -59,30 +55,68 @@ public class MainPage110205 {
     public SelenideElement btnBuscarmercancia =$x("//*[@id=\"idBotonBuscarMercancias\"]");
 
     //Grid Mercancias disponibles
-    public SelenideElement filaMercanciaDisponible =$x("//*[@id=\"3\"]/td[4]");
+    public SelenideElement filaMercanciaDisponible =$x("//*[@id=\"3\"]/td[2]");
 
-    //Informacion de la mercancia
+    //Sección llenado Informacion de la mercancia
     public SelenideElement Cantidad = $x("//*[@id=\"idCantidad\"]");
     public SelenideElement selectUMC = $x("//*[@id=\"datosMercancia.unidadMedidaComercializacion\"]");
     public SelenideElement ValorMercancia = $x("//*[@id=\"idValorMercancia\"]");
     public SelenideElement ComplementoDescripcion = $x("//*[@id=\"idComplementoDescripcion\"]");
     public SelenideElement fechaFactura =  $x("//*[@id=\"idFechaFactura\"]");
     public SelenideElement NumeroFactura = $x("//*[@id=\"idNumeroFactura\"]");
-    public SelenideElement selectTipoFactura = $x("//*[@id=\"datosMercancia.tipoFactura\"]");
+    public SelenideElement selectTipoFactura = $x("/html/body/main/div/div[4]/div[2]/form/div[16]/div[4]/div/select");
     public SelenideElement btnAgregarDatosMercancia = $x("//*[@id=\"agregarMercancia\"]");
-    public SelenideElement btnAceptarNotficacionAgrMercancia = $x("/html/body/div[11]/div[3]/div/button");
+    public SelenideElement btnAceptarNotficacionAgrMercancia = $x("/html/body/div[13]/div[3]/div/button");
 
-    //Continuar Tramite
-    public SelenideElement btnContinuar = $x("//*[@id=\"guardarSolicitud\"]");
+
+    //Seccion Historico Productores
+    public SelenideElement tabHistoricoProductores = $$("ul.ui-tabs-nav li a").findBy(Condition.matchText("(?i)^\\s*Histórico productores\\s*$"));
+    public SelenideElement checkDatosProductorNoConfidencial = $x("//*[@id=\"idConfidencialesProductores\"]");
+    public SelenideElement checkExpImpNoMismaPersona = $x("//*[@id=\"idProductorMismoExportador\"]");
+    //Grid Productores por exportador
+    public SelenideElement fila1Productor = $x("//*[@id=\"jqg_gridProductoresPorExportador_3\"]");
+    public SelenideElement btnSeleccionarAgrProductor = $x("//*[@id=\"acciones\"]/input[2]");
+    public SelenideElement fila1ProductorSeleccionado = $x("//*[@id=\"jqg_gridProductoresPorExportadorSeleccionados_3\"]");
+    public SelenideElement btnProductorNuevo = $x("//*[@id=\"acciones\"]/input[1]");
+    //grid Mercancias seleccionadas
+    public SelenideElement fila1MercanciasSeleccionada = $x("//*[@id=\"jqg_gridMercanciasProductor_3\"]");
+    public SelenideElement btnAsignarProductor = $x("/html/body/main/div/div[4]/div[1]/form/div[2]/div/div[5]/div[3]/div/div/div/div[3]/div/div/div/div[6]/div/div/div/input");
+
+
+    //Sección Destinatario
+    public SelenideElement tabDestinatario = $$("ul.ui-tabs-nav li a").findBy(Condition.matchText("(?i)^\\s*Destinatario\\s*$"));
+    //Datos generales
+    public SelenideElement NombreDestinatario = $x("//*[@id=\"solicitud.destinatario.nombre\"]");
+    public SelenideElement ApellidoPaternoDestinatario = $x("//*[@id=\"solicitud.destinatario.apellidoPaterno\"]");
+    public SelenideElement ApellidoMaternoDestinatario = $x("//*[@id=\"solicitud.destinatario.apellidoMaterno\"]");
+    public SelenideElement RFCDestinatario = $x("//*[@id=\"solicitud.destinatario.rfc\"]");
+    public SelenideElement RazonSocialDestinatario = $x("//*[@id=\"solicitud.destinatario.razonSocial\"]");
+    //Domicilio del destinatario
+    public SelenideElement CiudadDestinatario = $x("//*[@id=\"solicitud.destinatario.domicilio.ciudad\"]");
+    public SelenideElement CalleDestinatario = $x("//*[@id=\"solicitud.destinatario.domicilio.calle\"]");
+    public SelenideElement NumeroLetraDestinatario = $x("//*[@id=\"solicitud.destinatario.domicilio.numeroExterior\"]");
+    public SelenideElement TelefonoDestinatario = $x("//*[@id=\"solicitud.destinatario.domicilio.telefono\"]");
+    public SelenideElement CorreoDestinatario = $x("//*[@id=\"solicitud.destinatario.correoElectronico\"]");
+
+    //Datos del representante legal del exportador
+    public SelenideElement LugarRepresentante = $x("//*[@id=\"solicitud.certificadoOrigen.lugarRegistro\"]");
+    public SelenideElement NombreRepresentante = $x("//*[@id=\"solicitud.representanteLegal.nombre\"]");
+    public SelenideElement CargoRepresentante = $x("//*[@id=\"solicitud.representanteLegal.puesto\"]");
+    public SelenideElement EmpresaRepresentante = $x("//*[@id=\"solicitud.representanteLegal.razonSocial\"]");
+    public SelenideElement TelefonoRepresentante = $x("//*[@id=\"solicitud.representanteLegal.domicilio.telefono\"]");
+    public SelenideElement CorreoRepresentante = $x("//*[@id=\"solicitud.representanteLegal.correoElectronico\"]");
+
+    //Seccion Datos Certificado
     public SelenideElement Paso1Textoreferencia= $x("//*[@id=\"h1_title\"]");
-    //Datos Certificado
-    public SelenideElement tabDatosCertificado = $x("//*[@id=\"ui-id-3\"]");
+    public SelenideElement tabDatosCertificado = $$("ul.ui-tabs-nav li a").findBy(Condition.matchText("(?i)^\\s*Datos certificado\\s*$"));
     public SelenideElement Observaciones = $x("//*[@id=\"solicitud.certificadoOrigen.observaciones\"]");
     public SelenideElement selectIdioma = $x("//*[@id=\"solicitud.certificadoOrigen.lenguaje.clave\"]");
-
     //Representacion Federal
     public SelenideElement selectEstado = $x("//*[@id=\"solicitud.entidadFederativa.entidad.clave\"]");
     public SelenideElement selectRrepreFederal = $x("//*[@id=\"representacionFederalSelect\"]");
-*/
+
+    //Continuar Tramite
+    public SelenideElement btnContinuar = $x("//*[@id=\"guardarSolicitud\"]");
+
 }
 
