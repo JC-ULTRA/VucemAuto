@@ -68,6 +68,8 @@ public class MainPage130106 {
     public SelenideElement selectRepresentacionFederal = Selenide.$x("//*[@id='representacionFederalSelect']");
     //GUARDAR SOLICITUD
     public SelenideElement inputGuardarSolicitud = Selenide.$x("//*[@id='guardarSolicitud']");
+    public SelenideElement inputSiguienteButton = Selenide.$x("//*[@id='siguienteButton']");
+    public SelenideElement folio = $x("/html/body/main/div/div[4]/div/div[4]/div/div/ul/li");
 
 
 }
