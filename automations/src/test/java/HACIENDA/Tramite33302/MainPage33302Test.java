@@ -15,6 +15,8 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 import javax.swing.*;
 import java.time.Duration;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -27,7 +29,7 @@ import static com.codeborne.selenide.Selenide.sleep;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 public class MainPage33302Test  {
-    HACIENDA.Tramite33302.MainPage33302 mainPage33302 = new HACIENDA.Tramite33302.MainPage33302();
+    MainPage33302 mainPage33302 = new MainPage33302();
     LoginFirmSoli loginFirmSoli = new LoginFirmSoli();
     ObtenerFolio obtenerFolio = new ObtenerFolio();
     TramitesFirmasLG tramite33302  = new TramitesFirmasLG(
@@ -78,8 +80,7 @@ public class MainPage33302Test  {
             repeticiones = 1; // Valor por defecto
             JOptionPane.showMessageDialog(null, "Valor no válido, se utilizará 1 repetición por defecto.");
         }
-
-        /////////////////////////////////////////////////////////////////////////////////////////////////////////-
+/////////////////////////////////////////////////////////////////////////////////////////////////////////-
 // Solicitar el folio al usuario
         String FolioRubro = JOptionPane.showInputDialog(null, "Ingrese el número de folio de 25 dígitos:", "Número de Folio", JOptionPane.QUESTION_MESSAGE);
 
@@ -120,7 +121,7 @@ public class MainPage33302Test  {
         avisoPanel.add(bajaCertificacionAltaTercerizacionCheckBox);
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////-
-// Lógica para habilitar o deshabilitar checkboxes según el `FolioRubro`
+// Lógica para habilitar o deshabilitar checkboxes según el FolioRubro
 
 // Activar/desactivar checkboxes basados en condiciones específicas
         usoYGoceCheckBox.setEnabled(FolioRubro.startsWith("25003026"));
@@ -130,7 +131,7 @@ public class MainPage33302Test  {
         circunstanciasCheckBox.setEnabled(FolioRubro.startsWith("25003026"));
         adicionRevocacionCheckBox.setEnabled(FolioRubro.startsWith("25003026"));
         registroSECIITCheckBox.setEnabled(FolioRubro.startsWith("25003026008"));
-        pagoDerechosCheckBox.setEnabled(false);
+        pagoDerechosCheckBox.setEnabled(FolioRubro.startsWith("2500301"));
         altaBajaTercerosCheckBox.setEnabled(FolioRubro.startsWith("25003026017"));
         bajaCertificacionAltaTercerizacionCheckBox.setEnabled(FolioRubro.startsWith("25003026017"));
 
@@ -229,7 +230,7 @@ public class MainPage33302Test  {
             mainPage33302.manifiestoAvisos.click();
             mainPage33302.btnGuardarSoli.click();
             mainPage33302.btnContinuar.click();
-            verificarSeleccion(usoYGoceCheckBox, fusionEscisionCheckBox, solventarObservacionesCheckBox, circunstanciasCheckBox, incidentesSeguridadCheckBox, registroSECIITCheckBox);
+            verificarSeleccion(usoYGoceCheckBox, fusionEscisionCheckBox, solventarObservacionesCheckBox, circunstanciasCheckBox, incidentesSeguridadCheckBox, registroSECIITCheckBox, pagoDerechosCheckBox);
 
             mainPage33302.btnSiguiente.click();
             loginFirmSoli.firma(tramite33302);
@@ -241,13 +242,14 @@ public class MainPage33302Test  {
         }, repeticiones);
     }
 
-    private void verificarSeleccion(JCheckBox usoYGoceCheckBox, JCheckBox fusionEscisionCheckBox, JCheckBox registroSECIITCheckBox,
+    private void verificarSeleccion(JCheckBox usoYGoceCheckBox, JCheckBox fusionEscisionCheckBox, JCheckBox registroSECIITCheckBox, JCheckBox pagoDerechosCheckBox,
                                     JCheckBox solventarObservacionesCheckBox, JCheckBox circunstanciasCheckBox, JCheckBox incidentesSeguridadCheckBox) {
 
         int totalDocumentos = 0;
 
         // Calculamos el valor total según los checkboxes seleccionados
         if (usoYGoceCheckBox.isSelected()) totalDocumentos += 1;
+        if (pagoDerechosCheckBox.isSelected()) totalDocumentos += 1;
         if (fusionEscisionCheckBox.isSelected()) totalDocumentos += 1;
         if (solventarObservacionesCheckBox.isSelected()) totalDocumentos += 1;
         if (circunstanciasCheckBox.isSelected()) totalDocumentos += 2;
@@ -647,11 +649,22 @@ public class MainPage33302Test  {
         sleep(1000);
     }
 
-
-
     private void ejecutarAvisoPago() {
-        scrollDecremento();
-
+//        // Obtener la fecha de hoy formateada
+//        LocalDate hoy = LocalDate.now();
+//        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+//        String fechaHoy = hoy.format(formatter);
+//        // Llave de pago
+//        String uuid = UUID.randomUUID().toString();
+//        int longitudDeseada = 16;
+//        String llavePago = uuid.replace("-", "").substring(0, longitudDeseada);
+//        mainPage33302.avisoPago.click();
+//        scrollDecremento();
+//        mainPage33302.pagoDerechos.click();
+//        mainPage33302.numOperacion.sendKeys("12345");
+//        mainPage33302.bancoPago.sendKeys("BANAMEX");
+//        mainPage33302.llavePago.sendKeys(llavePago);
+//        executeJavaScript("arguments[0].value = arguments[1];", mainPage33302.fechaPago, fechaHoy);sleep(1000);
     }
 
     public void clickOkButton() {
