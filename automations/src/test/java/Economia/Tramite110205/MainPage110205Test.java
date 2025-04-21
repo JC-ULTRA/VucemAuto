@@ -14,8 +14,12 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 import javax.swing.*;
 import java.io.IOException;
+import java.time.Duration;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.UUID;
 
+import static com.codeborne.selenide.Condition.enabled;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.Selenide.sleep;
@@ -75,6 +79,10 @@ public class MainPage110205Test {
             int longitudDeseada = 7;
             String FacturaGenerada = uuid.replace("-", "").substring(0, longitudDeseada);
 
+            // Obtener la fecha de hoy formateada
+            LocalDate hoy = LocalDate.now();
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+            String fechaHoy = hoy.format(formatter);
 
             loginFirmSoli.login(tramite110205); sleep(1000);
             mainPage110205.selecRol.sendKeys("Persona Moral"); sleep(1000);
@@ -85,51 +93,103 @@ public class MainPage110205Test {
             mainPage110205.CertOrigen.click(); sleep(1000);
             mainPage110205.ValidacionCertificado.click(); sleep(1000);
             mainPage110205.elementoTramite110205.click(); sleep(1000);
-/*
-            //Datos de la mercancia
-            // Usar Actions para desplazar hacia el elemento (scroll)
-            // Agregar un retraso de 3 segundos antes de hacer el scroll (3000 ms = 3 segundos)
-            mainPage110204.TituloPrincipal.scrollTo().shouldBe(visible);
-            mainPage110204.tabCertificadoOrigen.click();
 
-            mainPage110204.TratadoAcuerdo.sendKeys("Acuerdo de Complementación Económica No. 6 México-Argentina");
-            mainPage110204.PaisBloque.sendKeys("argentina (REPUBLICA)");
-            mainPage110204.btnBuscarmercancia.click();
-            mainPage110204.filaMercanciaDisponible.doubleClick();
 
+            // Seccion Certificado origen
+            mainPage110205.TituloPrincipal.scrollTo().shouldBe(visible);
+            mainPage110205.tabCertificadoOrigen.click();
+
+            mainPage110205.TratadoAcuerdo.sendKeys("Acuerdo Mexico-Perú");
+            mainPage110205.PaisBloque.selectOption("PERU (REPUBLICA DEL)");
+            mainPage110205.btnBuscarmercancia.click();
+            mainPage110205.filaMercanciaDisponible.doubleClick();
 
             //Agregar datos Mercancia
-            mainPage110204.Cantidad.sendKeys("24");
-            mainPage110204.selectUMC.sendKeys("Kilogramo");
-            mainPage110204.ValorMercancia.sendKeys("1000");
-            mainPage110204.ComplementoDescripcion.sendKeys("QA Descripcion");
-            Selenide.executeJavaScript("arguments[0].value = '01/04/2025';", mainPage110204.fechaFactura);
-            mainPage110204.NumeroFactura.sendKeys(FacturaGenerada);
-            mainPage110204.selectTipoFactura.sendKeys("Manual");
-            mainPage110204.btnAgregarDatosMercancia.click();
-            mainPage110204.btnAceptarNotficacionAgrMercancia.click();
+            mainPage110205.Cantidad.sendKeys("90");
+            mainPage110205.selectUMC.sendKeys("Kilogramo");
+            mainPage110205.ValorMercancia.sendKeys("4500");
+            mainPage110205.ComplementoDescripcion.sendKeys("QA Descripcion");
+            Selenide.executeJavaScript("arguments[0].value = arguments[1];", mainPage110205.fechaFactura, fechaHoy);sleep(1000);
+            mainPage110205.NumeroFactura.sendKeys(FacturaGenerada);
+            mainPage110205.selectTipoFactura.sendKeys("Manual");
+            mainPage110205.btnAgregarDatosMercancia.click();
+            mainPage110205.btnAceptarNotficacionAgrMercancia.click();
+
+            //Seccion Historico Productores
+            mainPage110205.TituloPrincipal.scrollTo().shouldBe(visible);
+            mainPage110205.tabHistoricoProductores.click();
+            mainPage110205.checkDatosProductorNoConfidencial.click();
+            mainPage110205.checkExpImpNoMismaPersona.click();
+            //Grid Productores por exportador
+            mainPage110205.fila1Productor.click();
+            mainPage110205.btnSeleccionarAgrProductor.click();
+            mainPage110205.fila1ProductorSeleccionado.click();
+            mainPage110205.fila1MercanciasSeleccionada.click();
+            mainPage110205.fila1ProductorSeleccionado.scrollTo().shouldBe(visible);
+            mainPage110205.btnAsignarProductor.click();
+
+
+            //Sección Destinatario
+            mainPage110205.TituloPrincipal.scrollTo().shouldBe(visible);
+            mainPage110205.tabDestinatario.click();
+            //Datos del destinatario
+            mainPage110205.RFCDestinatario.sendKeys("AAIJ891102208");
+            mainPage110205.RazonSocialDestinatario.sendKeys("Razón social QA");
+            //Domicilio del destinatario
+            mainPage110205.CiudadDestinatario.sendKeys("Perú");
+            mainPage110205.CalleDestinatario.sendKeys("Calle QA");
+            mainPage110205.NumeroLetraDestinatario.sendKeys("700");
+            mainPage110205.TelefonoDestinatario.sendKeys("5187669840");
+            mainPage110205.CorreoDestinatario.sendKeys("qacorreoUruguay@gmail.com");
+            //Detalles del representante legal del exportador
+            mainPage110205.LugarRepresentante.sendKeys("Ciudad de México");
+            mainPage110205.NombreRepresentante.sendKeys("Fernando Gutierrez Lopez QA");
+            mainPage110205.EmpresaRepresentante.sendKeys("Empresa QA representante");
+            mainPage110205.CargoRepresentante.sendKeys("Jefe departamento QA");
+            mainPage110205.TelefonoRepresentante.sendKeys("5561037069");
+            mainPage110205.CorreoRepresentante.sendKeys("representanteQA@gmail.com");
 
             //Datos certificado
-            mainPage110204.Paso1Textoreferencia.scrollTo().shouldBe(visible);
-            mainPage110204.tabDatosCertificado.click();
-            mainPage110204.Observaciones.sendKeys("QA Observaciones");
-            mainPage110204.selectIdioma.sendKeys("Español");
+            mainPage110205.Paso1Textoreferencia.scrollTo().shouldBe(visible);
+            mainPage110205.tabDatosCertificado.click();
+            mainPage110205.Observaciones.sendKeys("QA Observaciones");
+            mainPage110205.selectIdioma.sendKeys("Español");
             //Representación federal
-            mainPage110204.selectEstado.sendKeys("SINALOA");
+            mainPage110205.selectEstado.sendKeys("SINALOA");
 
-            mainPage110204.btnContinuar.click();
+            mainPage110205.btnContinuar.click();
 
-
-
-
-            loginFirmSoli.firma(tramite110204);
+            //Firmado
+            loginFirmSoli.firma(tramite110205);
 
             // Obtener el texto del folio desde mainPageB8
-            String folioText = mainPage110204.folio.getText();
+            String folioText = mainPage110205.folio.getText();
 
             // Llamar al método para obtener el folio
             String folioNumber = obtenerFolio.obtenerFolio(folioText);
-*/
+
+
+
+            /*
+            mainPage110205.SegundoTitulo.scrollTo();sleep(10000);
+            mainPage110205.TituloPrincipal.scrollTo();sleep(10000);
+            mainPage110205.SegundoTitulo.scrollTo();sleep(10000);
+            mainPage110205.TituloPrincipal.scrollTo();sleep(10000);
+            mainPage110205.SegundoTitulo.scrollTo();sleep(10000);
+            mainPage110205.TituloPrincipal.scrollTo();sleep(10000);
+            mainPage110205.SegundoTitulo.scrollTo();sleep(10000);
+            mainPage110205.TituloPrincipal.scrollTo();sleep(10000);
+            mainPage110205.SegundoTitulo.scrollTo();sleep(10000);
+            mainPage110205.TituloPrincipal.scrollTo();sleep(10000);
+            mainPage110205.SegundoTitulo.scrollTo();sleep(10000);
+            mainPage110205.TituloPrincipal.scrollTo();sleep(10000);
+            mainPage110205.SegundoTitulo.scrollTo();sleep(10000);
+            mainPage110205.TituloPrincipal.scrollTo();sleep(10000);
+            mainPage110205.SegundoTitulo.scrollTo();sleep(10000);
+
+             */
+
+
         }, repeticiones);
     }
 
