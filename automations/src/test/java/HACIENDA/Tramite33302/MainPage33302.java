@@ -31,6 +31,7 @@ public class MainPage33302 {
     public SelenideElement avisoSeciit = $x("//*[@id=\"aviso_14\"]");
     public SelenideElement avisoAltaTercerizacion = $x("//*[@id=\"aviso_15\"]");
     public SelenideElement avisoBajaTercerizacion = $x("//*[@id=\"aviso_16\"]");
+    public SelenideElement avisoPago = $x("//*[@id=\"aviso_20\"]");
     public SelenideElement manifiestoAvisos = $x("//*[@id=\"acepto253\"]");
     /// Uso y Goce
     public SelenideElement usoGoce = $x("/html/body/main/div/div[4]/div/form/div[2]/ul/li[6]/a/label");
@@ -149,6 +150,12 @@ public class MainPage33302 {
     public SelenideElement btnBuscarRfcTerceroBaja = $x("//*[@id=\"btnBuscarBajaTer\"]");
     public SelenideElement tipoRegistroTerceroBaja = $x("//*[@id=\"trTipoRegistroBaja\"]");
     public SelenideElement btnGuardarTerceroBaja = $x("//*[@id=\"btnGuardarBajaTercerizacion\"]");
+    /// Pago Derechos
+    public SelenideElement pagoDerechos = $x("/html/body/main/div/div[4]/div/form/div[2]/ul/li[16]/a");
+    public SelenideElement numOperacion = $x("//*[@id=\"solicitud.pagoSCC.referenciaBancaria\"]");
+    public SelenideElement bancoPago = $x("/html/body/main/div/div[4]/div/form/div[2]/div[16]/div[1]/div[3]/div[2]/select");
+    public SelenideElement llavePago = $x("//*[@id=\"solicitud.pagoSCC.llaveDePago\"]");
+    public SelenideElement fechaPago = $x("//*[@id=\"calendarTo\"]");
     /// Un solo documento
     public SelenideElement btnAdjuntar1Doc = $x("/html/body/main/div/div[4]/div/form[1]/table/tbody/tr[4]/td[2]/div/input[2]");
     public SelenideElement archivoUnico = $x("/html/body/main/div/div[4]/div[2]/div/form[2]/table/tbody/tr[1]/td[4]/input");
