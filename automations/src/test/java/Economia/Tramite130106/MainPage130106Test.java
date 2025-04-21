@@ -3,6 +3,7 @@ package Economia.Tramite130106;
 import DBYFOLIO.ConDBReasigSolFun;
 import DBYFOLIO.ObtenerFolio;
 import Firmas.*;
+import com.codeborne.selenide.Browsers;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
@@ -13,7 +14,10 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
+
 import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 public class MainPage130106Test {
     MainPage130106 mainPage130106 = new MainPage130106();
@@ -32,6 +36,14 @@ public class MainPage130106Test {
     public static void setUpAll() {
         Configuration.browserSize = "1920x1080";
         SelenideLogger.addListener("allure", new AllureSelenide());
+        iniDriver();
+    }
+
+    public static void iniDriver(){
+        Configuration.browser = Browsers.CHROME;
+        open();
+        getWebDriver().manage().window().maximize();
+        getWebDriver().manage().timeouts().pageLoadTimeout(90, TimeUnit.SECONDS);
     }
 
     @BeforeEach
@@ -85,15 +97,15 @@ public class MainPage130106Test {
         // Ejecutar el proceso con las repeticiones y los métodos seleccionados
         ejecutarProcesoNRunnable(() -> {
 //            // Ingreso y selección de trámite
-                    loginFirmSoli.login(tramite130106);
-                    mainPage130106.selecRol.sendKeys("Persona Moral");
-                    mainPage130106.btnacep.click();
-                    mainPage130106.Tramites.sendKeys("Solicitudes nuevas");
-                    mainPage130106.SoliNew.click();
-                    mainPage130106.Econom.click();
-                    mainPage130106.linkPermisosImportaciExportaci.click();
-                    mainPage130106.linkImportaci.click();
-                    mainPage130106.linkAvisoAutomTicoImportaci.click(); sleep(500);
+            loginFirmSoli.login(tramite130106);
+            mainPage130106.selecRol.sendKeys("Persona Moral");
+            mainPage130106.btnacep.click();
+            mainPage130106.Tramites.sendKeys("Solicitudes nuevas");
+            mainPage130106.SoliNew.click();
+            mainPage130106.Econom.click();
+            mainPage130106.linkPermisosImportaciExportaci.click();
+            mainPage130106.linkImportaci.click();
+            mainPage130106.linkAvisoAutomTicoImportaci.click(); sleep(500);
             // Usar Actions para desplazar hacia el elemento (scroll)
             // Agregar un retraso de 3 segundos antes de hacer el scroll (3000 ms = 3 segundos)
             try {
@@ -103,45 +115,59 @@ public class MainPage130106Test {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-                    mainPage130106.labelDatosSolicitud.click();
-                    //DATOS TRAMITE
-                    mainPage130106.SelectSolicitudRegimenClave.sendKeys("Definitivos");
-                    mainPage130106.SelectSolicitudClaveClasificacionRegimen.sendKeys("De importación");
-                    sleep(100);
-                    //DATOS DE LA MERCANCÍA
-                    mainPage130106.textareaDescripcionMercancia.sendKeys("Prueba");
-                    mainPage130106.SelectFraccionArancelaria.sendKeys("87032102 - Usados, excepto lo comprendido en la fracción arancelaria 8703.21.01.");
-                    mainPage130106.inputCantidadTarifaria.sendKeys("369");
-                    mainPage130106.inputValorFacturaUSD.sendKeys("36");
-                    mainPage130106.selectUnidadTarifaria.sendKeys("Pieza");
-                    //PARTIDAS MERCANCÍA
-                    mainPage130106.inputCantidad.sendKeys("15");
-                    mainPage130106.inputTotalUSDPartida.sendKeys("369");
-                    mainPage130106.textareaDescripcion.sendKeys("Prueba texto");
-                    mainPage130106.btnAgregar.click();
-                    //PAÍS PROCEDENCIA
-                    mainPage130106.bloqueAutocomplete.sendKeys("T-MEC");
-                    mainPage130106.paisBloqueOrigenSearch.click();
-                    mainPage130106.btnAgregarTodos.click();
-                    mainPage130106.textareaUsoEspecifico.sendKeys("Prueba");
-                    mainPage130106.textareaJustificacionImportacionExportacion.sendKeys("prueba");
-                    mainPage130106.textareaObservaciones.sendKeys("textareaObservaciones");
-                    //REPRESENTACIÓN FEDERAL
-                    mainPage130106.selectEntidadFederativaClave.sendKeys("SINALOA");
-                    mainPage130106.selectRepresentacionFederal.sendKeys("CENTRAL CDMX");
-                    mainPage130106.inputGuardarSolicitud.click();
-                    //Manda error: "el solicitante debe contar con RECIF."
-                    //Firmas
-    }, repeticiones);
+            //DATOS TRAMITE
+            mainPage130106.labelDatosSolicitud.click();
+            mainPage130106.SelectSolicitudRegimenClave.sendKeys("Definitivos");
+            mainPage130106.SelectSolicitudClaveClasificacionRegimen.sendKeys("De importación");
+            sleep(100);
+            //DATOS DE LA MERCANCÍA
+            mainPage130106.textareaDescripcionMercancia.sendKeys("Prueba");
+            mainPage130106.SelectFraccionArancelaria.sendKeys("87032102 - Usados, excepto lo comprendido en la fracción arancelaria 8703.21.01.");
+            mainPage130106.inputCantidadTarifaria.sendKeys("369");
+            mainPage130106.inputValorFacturaUSD.sendKeys("36");
+            mainPage130106.selectUnidadTarifaria.sendKeys("Pieza");
+            //PARTIDAS MERCANCÍA
+            mainPage130106.inputCantidad.sendKeys("15");
+            mainPage130106.inputTotalUSDPartida.sendKeys("369");
+            mainPage130106.textareaDescripcion.sendKeys("Prueba texto");
+            mainPage130106.btnAgregar.click();
+            //PAÍS PROCEDENCIA
+            mainPage130106.bloqueAutocomplete.sendKeys("T-MEC");
+            mainPage130106.paisBloqueOrigenSearch.click();
+            mainPage130106.btnAgregarTodos.click();
+            mainPage130106.textareaUsoEspecifico.sendKeys("Prueba");
+            mainPage130106.textareaJustificacionImportacionExportacion.sendKeys("prueba");
+            mainPage130106.textareaObservaciones.sendKeys("textareaObservaciones");
+            //REPRESENTACIÓN FEDERAL
+            mainPage130106.selectEntidadFederativaClave.sendKeys("SINALOA");
+            mainPage130106.selectRepresentacionFederal.sendKeys("CENTRAL CDMX");
+            mainPage130106.inputGuardarSolicitud.click();
+            //Manda error: "el solicitante debe contar con RECIF."
+            //Firmas
+            loginFirmSoli.firma(tramite130106);
 
-}
+            // Obtener el texto del folio desde mainPage130106
+            String folioText = mainPage130106.folio.getText();
 
-            //Metodo que ejecuta n veces una clase que implementa Runnable
-            public void ejecutarProcesoNRunnable(Runnable proceso, int n) {
-                for (int i = 0; i < n; i++) {
-                    System.out.println("Ejecución del Proceso: " + (i + 1));
-                    open("https://wwwqa.ventanillaunica.gob.mx/ventanilla-HA/authentication.action?showLogin=%22;");
-                    proceso.run();  // Ejecuta el proceso de la clase
-                }
-            }
+            // Llamar al mtodo para obtener el folio
+            String folioNumber = obtenerFolio.obtenerFolio(folioText);
+
+            ConDBReasigSolFun.processFolio(folioNumber, FunRFC);
+
+
+
+        }, repeticiones);
+
+    }
+
+    //Metodo que ejecuta n veces una clase que implementa Runnable
+    public void ejecutarProcesoNRunnable(Runnable proceso, int n) {
+        for (int i = 0; i < n; i++) {
+            System.out.println("Ejecución del Proceso: " + (i + 1));
+            open("https://wwwqa.ventanillaunica.gob.mx/ventanilla-HA/authentication.action?showLogin=%22;");
+            proceso.run();  // Ejecuta el proceso de la clase
+
+        }
+    }
+
 }
