@@ -85,8 +85,26 @@ public class MainPage190101Test {
         if (autorizacionCheckBox.isSelected()) selectedMethods.add("ProcesoAutorizacion190101");
         if (confirmacionCheckBox.isSelected()) selectedMethods.add("ProcesoConfirmarNotificaciónResolucion190101");
 
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////
+        // MENÚ para elegir qué flujo se va a ejecutar
+        JCheckBox flujo1CheckBox = new JCheckBox("PRUEBAS_PERIODICAS_AL_PRODUCTO");
+        JCheckBox flujo2CheckBox = new JCheckBox("DICTAMEN_DE_PRODUCTO_PARA_FABRICANTE_NACIONAL_EXTRANJERO");
+        Object[] flujoParams = {"Seleccione el flujo a ejecutar:", flujo1CheckBox, flujo2CheckBox};
+        int flujoSeleccionado = JOptionPane.showConfirmDialog(null, flujoParams, "Flujo de llenado", JOptionPane.OK_CANCEL_OPTION);
+
+        // Si el usuario cancela
+        if (flujoSeleccionado != JOptionPane.OK_OPTION) {
+            JOptionPane.showMessageDialog(null, "Operación cancelada por el usuario.");
+            return;
+        }
+
+
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////
         // Ejecutar el proceso con las repeticiones y los métodos seleccionados
         ejecutarProcesoNRunnable(() -> {
+            String flujo = "";
+            if (flujo1CheckBox.isSelected()) flujo = "Certificación con verificación mediante pruebas periódicas al producto";
+            if (flujo2CheckBox.isSelected()) flujo = "Certificación con verificación mediante el sistema de calidad de la línea de producción";
 //            // Ingreso y selección de trámite
             loginFirmSoli.login(tramite190101);
             mainPage190101.selecRol.sendKeys("Persona Moral");
@@ -106,7 +124,30 @@ public class MainPage190101Test {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            //
+            //DATOS SOLICITUD
+            mainPage190101.labelDatosSolicitud.click();
+
+                mainPage190101.input1.click();
+                mainPage190101.linkPestaña1input1.click();
+                mainPage190101.opcionllenado1.setValue("Valor para input1 campo 1");
+
+                mainPage190101.linkPestaña2input1.click();
+                mainPage190101.opcionllenado2.setValue("Valor para input1 campo 2");
+
+                // Puedes seguir llenando los demás campos aquí...
+
+
+            if (flujo.equals("input2")) {
+                mainPage190101.input2.click();
+                mainPage190101.linkPestaña1input2.click();
+                mainPage190101.opcionllenado1.setValue("Valor para input2 campo 1");
+
+                mainPage190101.linkPestaña2input2.click();
+                mainPage190101.opcionllenado2.setValue("Valor para input2 campo 2");
+
+                // Igual, sigue con los demás campos que apliquen aquí
+            }
+
 
             //Firmas
             mainPage190101.inputSiguienteButton.click();
