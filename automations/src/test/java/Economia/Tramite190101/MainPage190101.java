@@ -20,7 +20,29 @@ public class MainPage190101 {
     public SelenideElement linkCerfiticacion = $x("/html/body/main/div/div[3]/div/div[6]/ul/li[9]/ul/li[1]/a");
     public SelenideElement linkCerfiticacionNOM = $x("/html/body/main/div/div[3]/div/div[6]/ul/li[9]/ul/li[1]/ul/li[1]/a");
     public SelenideElement Scrol = Selenide.$x("//*[@id=\"logoHeader\"]");
+    public SelenideElement labelDatosSolicitud = $x("/html/body/main/div/div[4]/div/form/div[2]/ul/li[2]/a/label");
 
     public SelenideElement inputSiguienteButton = $x("//*[@id=\"siguienteButton\"]");
+////////////////////////////////////////////////////////
+public SelenideElement input1 = $x("//*[@id='PRUEBAS_PERIODICAS_AL_PRODUCTO']");
 
+    public SelenideElement linkPestaña1input1 = $x("/html/body/main/div/div[4]/div/form/div[2]/div/div[2]/div/ul/li[2]/a/label");
+    public SelenideElement linkPestaña2input1 = $x("/html/body/main/div/div[4]/div/form/div[2]/div/div[2]/div/ul/li[3]/a/label");
+    public SelenideElement linkPestaña3input1 = $x("/html/body/main/div/div[4]/div/form/div[2]/div/div[2]/div/ul/li[4]/a/label");
+    public SelenideElement linkPestaña4input1 = $x("/html/body/main/div/div[4]/div/form/div[2]/div/div[2]/div/ul/li[5]/a/label");
+
+    // Campos que se llenan con input1
+    public SelenideElement opcionllenado1 = $x("//*[@id='CATPR.N']/input");
+    public SelenideElement opcionllenado2 = $x("//*[@id='solicitud.descripcionOtroTipoDePropietarioAeronave']");
+
+    public SelenideElement input2 = $x("//*[@id='DICTAMEN_DE_PRODUCTO_PARA_FABRICANTE_NACIONAL_EXTRANJERO']");
+
+    public SelenideElement linkPestaña1input2 = $x("/html/body/main/div/div[4]/div/form/div[2]/div/div[2]/div/ul/li[2]/a/label");
+    public SelenideElement linkPestaña2input2 = $x("/html/body/main/div/div[4]/div/form/div[2]/div/div[2]/div/ul/li[3]/a/label");
+    public SelenideElement linkPestaña3input2 = $x("/html/body/main/div/div[4]/div/form/div[2]/div/div[2]/div/ul/li[5]/a/label");
+
+    // Campos que se llenan con input2
+    public SelenideElement opcionllenado3 = $x("//*[@id='entidadBodega']");
+
+    ///////////////////////////////////////////////////////////////
 }
