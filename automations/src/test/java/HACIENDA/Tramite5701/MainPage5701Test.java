@@ -18,6 +18,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byText;
@@ -32,8 +33,8 @@ public class MainPage5701Test {
     String SoliRFC = "AAL0409235E6";
 
     TramitesFirmasLG tramite5701 = new TramitesFirmasLG(
-            "C:\\VucemAuto\\automations\\src\\test\\resources\\CredSoli\\aal0409235e6.cer",
-            "C:\\VucemAuto\\automations\\src\\test\\resources\\CredSoli\\AAL0409235E6_1012231310.key"
+            "C:\\VucemAuto\\automations\\src\\test\\resources\\CredSoli\\leqi8101314s7.cer",
+            "C:\\VucemAuto\\automations\\src\\test\\resources\\CredSoli\\LEQI8101314S7_1012231707.key"
     );
 
     @BeforeAll
@@ -96,8 +97,9 @@ public class MainPage5701Test {
 
         // Ejecutar el proceso con las repeticiones y los métodos seleccionados
         ejecutarProcesoNRunnable(() -> {
+
             // Ingreso y selección de trámite
-//            desactivarPago();
+            desactivarPago();
             loginFirmSoli.login(tramite5701);
             mainPage5701.selecRol.sendKeys("Persona Fisica");
             mainPage5701.btnacep.click();
@@ -131,7 +133,7 @@ public class MainPage5701Test {
 //                    "Viernes,20/12/2024",
 //                    "Sábado,21/12/2024",
 //                    "Domingo,22/12/2024",
-                    "Lunes,20/01/2025"
+                    "Martes,15/04/2025"
             };
             for (String dia : diasSeleccionados) {
                 $$(byText(dia)).filter(visible).first().click(); // Encuentra y selecciona el día visible
@@ -173,7 +175,8 @@ public class MainPage5701Test {
             sleep(2000);
             mainPage5701.inputAgregarPago.click();
             sleep(2000);
-            mainPage5701.buttonAceptar.click();
+            mainPage5701.buttonAceptarNotificacion.click();
+            //mainPage5701.buttonAceptar.click();
             sleep(2000);
             mainPage5701.inputGridPagoSea.click();
             sleep(2000);
