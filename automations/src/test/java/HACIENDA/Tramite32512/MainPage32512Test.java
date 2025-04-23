@@ -30,8 +30,8 @@ public class MainPage32512Test {
     LoginFirmSoli loginFirmSoli = new LoginFirmSoli();
     ObtenerFolio obtenerFolio = new ObtenerFolio();
     TramitesFirmasLG tramite32512  = new TramitesFirmasLG(
-            "C:\\Users\\ErickALD\\Desktop\\Aqua\\automations\\src\\test\\resources\\CredSoli\\aal0409235e6.cer",
-            "C:\\Users\\ErickALD\\Desktop\\Aqua\\automations\\src\\test\\resources\\CredSoli\\AAL0409235E6_1012231310.key"
+            "C:\\VucemAuto\\automations\\src\\test\\resources\\CredSoli\\aal0409235e6.cer",
+            "C:\\VucemAuto\\automations\\src\\test\\resources\\CredSoli\\AAL0409235E6_1012231310.key"
     );
 
 
@@ -75,7 +75,7 @@ public class MainPage32512Test {
         // Ejecutar el proceso con las repeticiones
         ejecutarProcesoNRunnable(() -> {
 
-            File archivoDest = new File("C:\\Users\\ErickALD\\Downloads\\plantilla_aviso_destruccion.xls");
+            File archivoDest = new File("C:\\VucemAuto\\automations\\src\\test\\resources\\plantilla_Destruccion_94_32511.xlsx");
             // Ingreso y selección de trámite
 
             //mainPage32512.CondiMateriaMerc.sendKeys("");
@@ -121,7 +121,7 @@ public class MainPage32512Test {
             mainPage32512.btnSelectArch.uploadFile(archivoDest);sleep(1000);
 
             //Datos de la mercancía que se destruirá y proceso de destrucción
-            mainPage32512.btnCargarArch.click(); sleep(1000);
+            mainPage32512.btnCargarArch.click(); sleep(4000);
             mainPage32512.btnAceptNoti.click(); sleep(1000);
             mainPage32512.btnCont.click(); sleep(1000);
 
@@ -135,23 +135,6 @@ public class MainPage32512Test {
             //Paso 4
             loginFirmSoli.firma(tramite32512);sleep(29000);
             //mainPage32512.btnFirmarDes.shouldBe(Condition.disappear, Duration.ofSeconds(90));
-
-            // Obtener el texto del folio desde mainPageB8
-
-            //Prueba de manejo tiempo
-            /*try {
-                // Espera hasta que el folio esté presente y visible
-                mainPage32512.folio.shouldBe(Condition.exist, Duration.ofSeconds(90));
-                mainPage32512.folio.shouldBe(Condition.visible, Duration.ofSeconds(90));
-
-                // Obtener el texto del folio
-                String folioText = mainPage32512.folio.getText();
-                //Llamar al metodo para obtener el folio
-                String folioNumber = obtenerFolio.obtenerFolio(folioText);
-            } catch (Exception e) {
-                System.out.println("El folio no se pudo encontrar después de 90 segundos.");
-                // Maneja el error según sea necesario
-            }*/
 
             // Obtener el texto del folio
             String folioText = mainPage32512.folio.getText();

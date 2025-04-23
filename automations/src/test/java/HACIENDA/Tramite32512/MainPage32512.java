@@ -16,8 +16,6 @@ public class MainPage32512 {
     public SelenideElement btnFirmar = $x("//*[@id='btnSubmit']");
     public SelenideElement CuadroText = $x("//*[@id=\"notification\"]/div");
     public SelenideElement folio = $x("/html/body/main/div/div[4]/div/div[4]/div/div/ul/li");
-    ///html/body/main/div/div[4]/div/div[4]/div/div/ul/li
-    ///html/body/main/div/div[4]/div/div[4]/div/div/ul/li
     public SelenideElement selecRol = $x("//*[@id='claveRol']");
     public SelenideElement btnacep = $x("//button[@name='ingresar']");
     public SelenideElement Tramites = $x("//*[@id='Trámites']");
