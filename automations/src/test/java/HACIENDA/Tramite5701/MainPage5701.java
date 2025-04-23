@@ -10,10 +10,10 @@ public class MainPage5701 {
     public SelenideElement selecRol = $x("//*[@id='claveRol']");
     public SelenideElement btnacep = $x("//button[@name='ingresar']");
     public SelenideElement Tramites = $x("//*[@id=\"subenlaces\"]/ul/li[5]/a");
-    public SelenideElement SoliNew = $x("//*[@id=\"subenlaces\"]/ul/li[5]/ul/li[2]/a");
+    public SelenideElement SoliNew = $x("/html/body/main/div[1]/div[2]/div[1]/div[1]/div/nav/div/div[2]/ul/li[5]/ul/li[3]/a");
     public SelenideElement hacienda = $x("//img[contains(@alt, 'General')]");
-    public SelenideElement linkServiciosExtraordinarios = $x("//*[@id=\"servicios\"]/ul/li[8]/a");
-    public SelenideElement linkRegistroSolicitudServiciosExtraordinarios = $x("//*[@id=\"servicios\"]/ul/li[8]/ul/li[1]/a");
+    public SelenideElement linkServiciosExtraordinarios = $x("//*[@id=\"servicios\"]/ul/li[9]/a/span");
+    public SelenideElement linkRegistroSolicitudServiciosExtraordinarios = $x("//*[@id=\"servicios\"]/ul/li[9]/ul/li[1]/a");
     public SelenideElement labelDatosSolicitud = $x("//label[@for='Datos de la solicitud']");
     public SelenideElement selectTipoServicio = $x("//*[@id='selectTipoServicio']");
     public SelenideElement inputServiciosDtoImportadorExportador = $x("//*[@id='rfc']");
@@ -40,10 +40,11 @@ public class MainPage5701 {
     public SelenideElement inputMontoModal = $x("//*[@id='montoModal']");
     public SelenideElement inputAgregarPago = $x("//*[@id='idBtnAgregarPago']");
     public SelenideElement buttonAceptar = $x("//*[@id=\"guardarSolicitud\"]");
+    public SelenideElement buttonAceptarNotificacion = $x("/html/body/div[10]/div[3]/div/button");
     public SelenideElement inputGridPagoSea = $x("//*[@id='cb_gridPagoSea']");
     public SelenideElement inputGuardarSolicitud = $x("//*[@id='guardarSolicitud']");
     public SelenideElement inputBotonAgregarFechas = $x("//input[@class='btn btn-primary ']");
-    public SelenideElement labelFechasDentroDelPeriodo = $x("//label[@for='cboFechasSeleccionadas']");
+    public SelenideElement labelFechasDentroDelPeriodo = $x("//label[@for='cboFechasSeleccionadas']");//*[@id="cboFechasServicio"]
     public SelenideElement inputAdjuntarDocumentos = $x("//input[contains(@style, '0px;')]");
     public SelenideElement inputContinuar = $x("//input[@value='Continuar']");
     public SelenideElement inputDocumentosFile = $x("//input[@name='documentos[0].file']");
