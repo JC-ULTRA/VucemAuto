@@ -28,8 +28,8 @@ public class MainPage32610Test { MainPage32610 mainPage32610 = new MainPage32610
     LoginFirmSoli loginFirmSoli = new LoginFirmSoli();
     ObtenerFolio obtenerFolio = new ObtenerFolio();
     TramitesFirmasLG tramite32610  = new TramitesFirmasLG(
-            "C:\\VucemAuto\\automations\\src\\test\\resources\\CredSoli\\tsd931210493.cer",
-            "C:\\VucemAuto\\automations\\src\\test\\resources\\CredSoli\\TSD931210493_1012231144.key"
+            "C:\\VucemAuto\\automations\\src\\test\\resources\\CredSoli\\aal0409235e6.cer",
+            "C:\\VucemAuto\\automations\\src\\test\\resources\\CredSoli\\AAL0409235E6_1012231310.key"
     );
 
 
@@ -110,8 +110,8 @@ public class MainPage32610Test { MainPage32610 mainPage32610 = new MainPage32610
             String llavePago = uuid.replace("-", "").substring(0, longitudDeseada);
             // Ingreso y selección de trámite
             loginFirmSoli.login(tramite32610);
-//            mainPage32610.selecRol.sendKeys("Persona Moral");
-//            mainPage32610.btnacep.click();
+            mainPage32610.selecRol.sendKeys("Persona Moral");
+            mainPage32610.btnacep.click();
             mainPage32610.Tramites.sendKeys("Solicitudes nuevas");
             mainPage32610.SoliNew.click();
             mainPage32610.hacienda.click();
@@ -155,7 +155,6 @@ public class MainPage32610Test { MainPage32610 mainPage32610 = new MainPage32610
             mainPage32610.reconocimientoMutuoSi.click();
             mainPage32610.perfilEmpresaNo.click();
             mainPage32610.btnHacerModificacion.click();
-            mainPage32610.btnAceptarModificacion.click();
             mainPage32610.btnAceptarModificacion.click();
             mainPage32610.articulo17KSi.click();
             mainPage32610.suspesionPadronNo.click();

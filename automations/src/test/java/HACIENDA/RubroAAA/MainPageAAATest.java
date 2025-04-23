@@ -7,13 +7,17 @@ import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 import javax.swing.*;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 public class MainPageAAATest {
@@ -90,6 +94,14 @@ public class MainPageAAATest {
 
         // Ejecutar el proceso con las repeticiones y los métodos seleccionados
         ejecutarProcesoNRunnable(() -> {
+            // Obtener la fecha de hoy formateada
+            LocalDate hoy = LocalDate.now();
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+            String fechaHoy = hoy.format(formatter);
+            //llave de pago
+            String uuid = UUID.randomUUID().toString();
+            int longitudDeseada = 16;
+            String llavePago = uuid.replace("-", "").substring(0, longitudDeseada);
             // Ingreso y selección de trámite
             loginFirmSoli.login(tramiteAAA);
             mainPageAAA.selecRol.sendKeys("Persona Moral");
@@ -122,19 +134,19 @@ public class MainPageAAATest {
             mainPageAAA.selectSubcontratadoBimestre.sendKeys("Noviembre-Diciembre");
             mainPageAAA.AgregarModalEsquema.click();
             mainPageAAA.spanAceptar.click();
-            mainPageAAA.MapDeclaracionSolicitudAcepto.click();
+//            mainPageAAA.MapDeclaracionSolicitudAcepto.click();
             mainPageAAA.MapDeclaracionSolicitudAcepto2.click();
             mainPageAAA.inputMapDeclaracionSolicitudAcepto.click();
             mainPageAAA.inputMapDeclaracionSolicitudAcepto2.click();
             mainPageAAA.inputMapDeclaracionSolicitudAcepto3.click();
             mainPageAAA.inputMapDeclaracionSolicitudAcepto4.click();
-            mainPageAAA.selectImmex.sendKeys("142024 - Autorización Programa Nuevo Servicio");
+            mainPageAAA.infringioPrevistosNo.click();
+            mainPageAAA.selectImmex.sendKeys("82024 - Autorización Programa Nuevo Servicio");
             mainPageAAA.AgregarDomicilios.click();
             mainPageAAA.selectEntidadFederativaIdc.sendKeys("SINALOA");
-            mainPageAAA.selectEntidadFederativaIdc.click();
             mainPageAAA.inputGridDomiciliosModal.click();
-            mainPageAAA.inputDomiciliosModal2.click();
             mainPageAAA.inputGridDomicilios.click();
+            mainPageAAA.inputDomiciliosModal2.click();
             mainPageAAA.inputModificarDomicilios.click();
 
             mainPageAAA.inputInstalacion.click();
@@ -144,31 +156,139 @@ public class MainPageAAATest {
             mainPageAAA.inputAceptarDomicilios.click();
             mainPageAAA.inputAceptarDomicilios2.click();
             mainPageAAA.MapDeclaracionSolicitudAcepto5.click();
-            mainPageAAA.MapDeclaracionSolicitudAcepto6.click();
+            mainPageAAA.MapDeclaracionSolicitudAcepto6.click();sleep(1000);
 
             //Carga Plantilla Proveedores Extranjero
-            mainPageAAA.inputProvedoresExtranjeros.click();
-            mainPageAAA.cargaDocExtranjeros.sendKeys("C:\\VucemAuto\\RepoN\\src\\test\\resources\\carga_proveedoresExtranjerosIC.xls");
-            mainPageAAA.UploadNewFileExtranjeros.click();
+//            mainPageAAA.inputProvedoresExtranjeros.click();
+//            mainPageAAA.cargaDocExtranjeros.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\carga_proveedoresExtranjerosIC.xls");
+            mainPageAAA.inputProvedoresExtranjeros.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\carga_proveedoresExtranjerosIC.xls");
+            mainPageAAA.UploadNewFileExtranjeros.click();sleep(1000);
             mainPageAAA.spanButtonText.click();
             //Carga Plantilla Proveedores Nacionales
-            mainPageAAA.inputArchivoNacionalesIva.click();
-            mainPageAAA.cargaDocNacionales.sendKeys("C:\\VucemAuto\\RepoN\\src\\test\\resources\\carga_proveedoresNacionesIVAIC.xls");
-            mainPageAAA.UploadNewFileNacionales.click();
+//            mainPageAAA.inputArchivoNacionalesIva.click();
+//            mainPageAAA.cargaDocNacionales.sendKeys("C:\\VucemAuto\\automations\\src\\test\\resources\\carga_proveedoresNacionesIVAIC.xls");
+            mainPageAAA.inputArchivoNacionalesIva.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\carga_proveedoresNacionesIVAIC.xls");
+            mainPageAAA.UploadNewFileNacionales.click();sleep(1000);
             mainPageAAA.spanButtonText2.click();
+            mainPageAAA.querellaNo.click();
+            mainPageAAA.inventarioSi.click();
+            mainPageAAA.nombreInventario.sendKeys("PRUEBAS");
+            mainPageAAA.lugarInventario.sendKeys("QA");
+            mainPageAAA.anexo24.click();
+            mainPageAAA.btnAgregarInventario.click();sleep(1000);
+            mainPageAAA.btnAceptarInventario.click();
+            mainPageAAA.contabilidadElectronicosSi.click();
+            mainPageAAA.contabilidadPortalNo.click();
+            mainPageAAA.sociosNo.click();
+            mainPageAAA.provedoresListadoNo.click();
 
-            // Aduana
-//            mainPageB8.aduana.sendKeys("060 - CD. DEL CARMEN");
-//            mainPageB8.seccionAduanera.sendKeys("061 - campeche, camp.");
-//            mainPageB8.fechaSalida.pressEnter().sendKeys("31/10/2024");
+            mainPageAAA.btnAgregarMiembroEmpresa.click();
+            mainPageAAA.enCaracterDe.sendKeys("Administrador único");
+            mainPageAAA.obligadoTributarMexNo.click();
+            mainPageAAA.TipPersonaEmpresa.sendKeys("Moral");
+            mainPageAAA.TipPersonaEmpresa.click();
+            mainPageAAA.nombreEmpresa.sendKeys("egwgwegwg");
+            mainPageAAA.nacionalidad.sendKeys("ANTARTIDA");
+            mainPageAAA.btnAceptalEmpresa.click(); sleep(1500);
+            mainPageAAA.btnAceptalEmpresa2.click();
+            mainPageAAA.manif1Check.click();
+            mainPageAAA.manif2Check.click();
+            scrollDecremento();
+            //Terceros
+            mainPageAAA.tercerosRelacionados.click();
+            mainPageAAA.rfc.sendKeys("LEQI8101314S7");sleep(1000);
+            mainPageAAA.btnBuscar.click();sleep(1000);
+            mainPageAAA.btnAceptarRFC.click();
+
+            mainPageAAA.btnAgregarTerceroR.click();
+            mainPageAAA.rfcTerceroR2.sendKeys("LEQI8101314S7");
+            mainPageAAA.btnBuscar2.click();
+            mainPageAAA.inputCargo.sendKeys("ascva");
+            mainPageAAA.btnAceptar3.click();
+
+            mainPageAAA.datosRegimen.click();
+            mainPageAAA.opcion1Regimen.click();
+            mainPageAAA.opcion2Regimen.click();
+            mainPageAAA.opcion3Regimen.click();
+            mainPageAAA.valorTotalImp.sendKeys("100");
+            mainPageAAA.transferenciasVirtuales.sendKeys("25");
+            mainPageAAA.transferenciasVirtualesPorcentaje.sendKeys("25");
+            mainPageAAA.retornos.sendKeys("25");
+            mainPageAAA.retornosPorcentaje.sendKeys("25");
+            mainPageAAA.constanciaTransferencia.sendKeys("50");
+            mainPageAAA.constanciaTransferenciaPorcentaje.sendKeys("50");
+            mainPageAAA.opcion4Regimen.click();
+            mainPageAAA.opcion5Regimen.click();
+            mainPageAAA.opcion6Regimen.click();
+            mainPageAAA.opcion7Regimen.click();
+            mainPageAAA.opcion8Regimen.click();
+            mainPageAAA.opcion9Regimen.click();
+            scrollDecremento();
+            mainPageAAA.ivaIeeps.click();
+            mainPageAAA.grupoEmpresas.click();
+            mainPageAAA.agregarEmpresaIvaIeps.click();
+            mainPageAAA.rfcEmpresaIvaIeps.sendKeys("TSD931210493");
+            mainPageAAA.btnBuscarRfcIvaIeps.click();
+            mainPageAAA.btnGuardarEmpresaIvaIeps.click();sleep(1000);
+            mainPageAAA.btnAceptarEmpresaIvaIeps.click();
+            mainPageAAA.servicio1Empresa.click();
+            mainPageAAA.servicio2Empresa.click();
+            mainPageAAA.servicio3Empresa.click();
+            mainPageAAA.servicio4Empresa.click();
+            mainPageAAA.tipoInversion.sendKeys("BIENES MUEBLES");
+            mainPageAAA.valorInversion.sendKeys("100");
+            mainPageAAA.descripcionInversion.sendKeys("PRUEBAS");
+            mainPageAAA.btnAgregarInversion.click();sleep(1000);
+            mainPageAAA.btnAceptarInversion.click();
+            mainPageAAA.opcion2IvaIeps.click();
+            mainPageAAA.opcion3IvaIeps.click();
+            mainPageAAA.opcion4IvaIeps.click();
+            mainPageAAA.devolucionesIVA.sendKeys("1");
+            mainPageAAA.devolucionesIVAmonto.sendKeys("10");
+            mainPageAAA.opcion5IvaIeps.click();
+            mainPageAAA.opcion6IvaIeps.click();
+            mainPageAAA.maquinariaMayor.click();
+            mainPageAAA.montoMaquinaria.sendKeys("101000000");
+            mainPageAAA.numOperacion.sendKeys("891712");
+            mainPageAAA.bancoPago.sendKeys("BANAMEX");
+            mainPageAAA.llavePago.sendKeys(llavePago);
+            executeJavaScript("arguments[0].value = arguments[1];", mainPageAAA.fechaPago, fechaHoy);sleep(1000);
+            mainPageAAA.btnGuardarSoli.click();
+            mainPageAAA.btnContinuar.click();
+            mainPageAAA.btnAdjuntarDoc.click();
+            mainPageAAA.archivo1.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
+            mainPageAAA.archivo2.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
+            mainPageAAA.archivo3.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
+            mainPageAAA.archivo4.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
+            mainPageAAA.archivo5.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
+            mainPageAAA.archivo6.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
+            mainPageAAA.archivo7.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
+            mainPageAAA.archivo8.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
+            mainPageAAA.archivo9.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
+            mainPageAAA.archivo10.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
+            mainPageAAA.archivo11.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
+            mainPageAAA.archivo12.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
+            mainPageAAA.archivo13.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
+            mainPageAAA.archivo14.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
+            mainPageAAA.archivo15.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
+            mainPageAAA.archivo16.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
+            mainPageAAA.archivo17.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
+            mainPageAAA.archivo18.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
+            mainPageAAA.archivo19.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
+            mainPageAAA.archivo20.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
+            mainPageAAA.archivo21.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
+            mainPageAAA.archivo22.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
+            mainPageAAA.btnAdjuntar.click();sleep(27000);
+            mainPageAAA.btnCerrar.click();
+            mainPageAAA.btnSiguiente.click();
 
             loginFirmSoli.firma(tramiteAAA);
 
             // Obtener el texto del folio desde mainPageB8
-            //String folioText = mainPageAAA.folio.getText();
+            String folioText = mainPageAAA.folio.getText();
 
-            // Llamar al mtodo para obtener el folio
-            //String folioNumber = obtenerFolio.obtenerFolio(folioText);
+            // Llamar al metodo para obtener el folio
+            String folioNumber = obtenerFolio.obtenerFolio(folioText);
 
             //ConDBReasigSolFun.processFolio(folioNumber, FunRFC);
 
@@ -301,5 +421,18 @@ public class MainPageAAATest {
             proceso.run();  // Ejecuta el proceso de la clase
         }
     }
-
+    public void scrollIncremento() {
+        JavascriptExecutor js = (JavascriptExecutor) getWebDriver();
+        for (int i = 0; i < 1; i++){
+            js.executeScript("window.scrollBy(0,500);");
+            sleep(500);
+        }
+    }
+    public void scrollDecremento() {
+        JavascriptExecutor js = (JavascriptExecutor) getWebDriver();
+        for (int i = 0; i < 4; i++){
+            js.executeScript("window.scrollBy(0,-500);");
+            sleep(200);
+        }
+    }
 }

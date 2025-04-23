@@ -30,8 +30,8 @@ public class MainPage32512Test {
     LoginFirmSoli loginFirmSoli = new LoginFirmSoli();
     ObtenerFolio obtenerFolio = new ObtenerFolio();
     TramitesFirmasLG tramite32512  = new TramitesFirmasLG(
-            "C:\\Users\\ErickALD\\Desktop\\Aqua\\automations\\src\\test\\resources\\CredSoli\\aal0409235e6.cer",
-            "C:\\Users\\ErickALD\\Desktop\\Aqua\\automations\\src\\test\\resources\\CredSoli\\AAL0409235E6_1012231310.key"
+            "C:\\VucemAuto\\automations\\src\\test\\resources\\CredSoli\\aal0409235e6.cer",
+            "C:\\VucemAuto\\automations\\src\\test\\resources\\CredSoli\\AAL0409235E6_1012231310.key"
     );
 
 
@@ -75,7 +75,7 @@ public class MainPage32512Test {
         // Ejecutar el proceso con las repeticiones
         ejecutarProcesoNRunnable(() -> {
 
-            File archivoDest = new File("C:\\Users\\ErickALD\\Downloads\\plantilla_aviso_destruccion.xls");
+            File archivoDest = new File("C:\\VucemAuto\\automations\\src\\test\\resources\\plantilla_aviso_destruccion.xls");
             // Ingreso y selección de trámite
 
             //mainPage32512.CondiMateriaMerc.sendKeys("");
