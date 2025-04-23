@@ -87,6 +87,7 @@ public class MainPage31701 {
     public SelenideElement btnAdjuntar2 = $x("//*[@id=\"btnAnexar\"]");
 
     //
+    public SelenideElement continuarSoli = $x("//*[@id=\"siguienteButton\"]");
 
 
 

@@ -51,7 +51,8 @@ public class MainPage32609 {
     public SelenideElement numEmpleadosSubcontratados = $x("//*[@id=\"subcontratado.empleados\"]");
     public SelenideElement bimestreEmpleadosSubcontratados = $x("//*[@id=\"subcontratado.bimestre\"]");
     public SelenideElement btnAñadirSubcontratados = $x("/html/body/div[9]/div[2]/table/tbody/tr[2]/td/input[2]");
-    public SelenideElement btnAceptarSubcontratados = $x("/html/body/div[10]/div[3]/div/button/span");
+    public SelenideElement btnAceptarSubcontratados = $x("/html/body/div[13]/div[3]/div/button");
+
     //
     public SelenideElement radSiRegistroPadron = $x("//*[@id=\"si236\"]");
     public SelenideElement radNoArticulo69 = $x("//*[@id=\"no237\"]");
@@ -64,7 +65,7 @@ public class MainPage32609 {
     public SelenideElement btnAgregarInstalaciones = $x("//*[@id=\"btnAgregarDomicilios\"]");
     public SelenideElement listEntidadInstalacion = $x("//*[@id=\"entidadFederativaIDC\"]");
     public SelenideElement seleccionarInstalacion = $x("//*[@id=\"jqg_gridDomiciliosModal_3\"]");
-    public SelenideElement btnAceptarInstalaciones = $x("/html/body/div[9]/div[2]/table/tbody/tr[4]/td/input[1]");
+    public SelenideElement btnAceptarInstalaciones = $x("/html/body/div[7]/div[2]/table/tbody/tr[4]/td/input[1]");
     public SelenideElement selecInstalacionAModificar = $x("/html/body/div[1]/div[3]/div[3]/div/form/div[2]/div[2]/table[4]/tbody/tr[8]/td/div/div[3]/div[3]/div/table/tbody/tr[2]/td[1]/input");
     public SelenideElement btnmodificarInstalacion = $x("//*[@id=\"btnModificarDomicilios\"]");
 
@@ -76,8 +77,8 @@ public class MainPage32609 {
     public SelenideElement radSiComercioExterior = $x("//*[@id=\"siOperacionesCExt\"]");
     public SelenideElement radSiReconocimientoMutuo = $x("//*[@id=\"siInstalacionCtpat\"]");
     public SelenideElement radNoPerfilEmpresa = $x("//*[@id=\"noPerfil\"]");
-    public SelenideElement btnHacerModificacion = $x("/html/body/div[25]/div[2]/table/tbody/tr[15]/td/input[1]");
     public SelenideElement btnAceptarModificacion = $x("/html/body/div[15]/div[3]/div/button");
+    public SelenideElement btnHacerModificacion = $x("/html/body/div[14]/div[2]/table/tbody/tr[15]/td/input[1]");
 
     //Seccion Radio botones2
     public SelenideElement radSiArticulo17K = $x("//*[@id=\"si243\"]");
@@ -86,7 +87,7 @@ public class MainPage32609 {
     //Clientes y Proveedores en el Extranjero
     public SelenideElement ProvedoresExtranjeros = $x("//*[@id=\"archivo\"]");
     public SelenideElement btnAgregarProvedoresExtranjeros = $x("//*[@id=\"uploadFileExtranjeros\"]");
-
+    public SelenideElement btnOkProvedoresExtranjeros = $x("/html/body/div[16]/div[3]/div/button");
     //Proveedores
     public SelenideElement ProvedoresNacionales = $x("//*[@id=\"archivoNacionales\"]");
     public SelenideElement btnAgregarProvedoresNacionales = $x("//*[@id=\"uploadFileExtranjerosN\"]");
@@ -104,7 +105,8 @@ public class MainPage32609 {
     public SelenideElement radSiRMF = $x("//*[@id=\"si251\"]");
 
     //Agregar miembro de la empresa
-
+    public SelenideElement btnAgregarMiembro = $x("//*[@id=\"agregarSocio\"]");
+    public SelenideElement socioCaracterDe = $x("//*[@id=\"socio.caracterDe\"]");
 
 
 

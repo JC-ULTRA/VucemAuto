@@ -513,12 +513,17 @@ public class MainPage32607Test {
             mainPage32607.inputDocumentosFile35.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf"); sleep(500);
             mainPage32607.inputDocumentosFile36.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf"); sleep(500);
             mainPage32607.inputDocumentosFile37.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf"); sleep(500);
-            mainPage32607.buttonAnexar.click();sleep(2000);
+            mainPage32607.buttonAnexar.click();sleep(40000);
             mainPage32607.spanCerrar.click();sleep(500);
-            mainPage32607.Adjuntar.click();
+//            mainPage32607.Adjuntar.click();
             mainPage32607.inputSiguienteButton.click();sleep(500);
             //FIRMAR SOLICITUD
-            //loginFirmSoli.firma(tramite32607);
+            loginFirmSoli.firma(tramite32607);
+            // Obtener el texto del folio desde mainPageB8
+            String folioText = mainPage32607.folio.getText();
+
+            // Llamar al metodo para obtener el folio
+            String folioNumber = obtenerFolio.obtenerFolio(folioText);
         }, repeticiones);
 }
 

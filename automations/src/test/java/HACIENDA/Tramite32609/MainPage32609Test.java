@@ -154,6 +154,7 @@ public class MainPage32609Test {
             mainPage32609.radNoPerfilEmpresa.click();sleep(1000);
             mainPage32609.radSiComercioExterior.click();sleep(1000);
             mainPage32609.radSiReconocimientoMutuo.click();sleep(1000);
+            mainPage32609.btnHacerModificacion.click();
             mainPage32609.btnAceptarModificacion.click();sleep(1000);
             //End Flujo
 
@@ -163,6 +164,7 @@ public class MainPage32609Test {
             //CLientes y Proveedores en el Extranjero
             mainPage32609.ProvedoresExtranjeros.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\carga_proveedoresExtranjerosIC.xls");
             mainPage32609.btnAgregarProvedoresExtranjeros.click();sleep(1000);
+            mainPage32609.btnOkProvedoresExtranjeros.click();
 
             //Proveedores
             mainPage32609.ProvedoresNacionales.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\carga_proveedoresNacionesIC (1).xls");
@@ -178,6 +180,8 @@ public class MainPage32609Test {
             mainPage32609.NombreInventarios.sendKeys("TestIdentificación");sleep(1000);
             mainPage32609.LugarInventarios.sendKeys("TestLugar");sleep(1000);
             mainPage32609.checkAnexo24Inventarios.click();sleep(1000);
+            mainPage32609.btnAgregarInventario.click();
+            mainPage32609.radSiRMF.click();
 
 
 
@@ -186,7 +190,7 @@ public class MainPage32609Test {
 
 
 
-            //Selenide.executeJavaScript("window.scrollTo(0, 0);", new Object[0]);
+            Selenide.executeJavaScript("window.scrollTo(0, 0);", new Object[0]);
 
 
             //*[@id="docs"]/tbody/tr[8]/td[2]/div/input[2]
@@ -210,7 +214,7 @@ public class MainPage32609Test {
             mainPage32608.btnContinuar3.click();sleep(1000);
 */
             //Firma
-           // loginFirmSoli.firma(tramite32609);sleep(4000);
+            loginFirmSoli.firma(tramite32608);sleep(4000);
 
             // Obtener el texto del folio desde mainPageB8
             String folioText = mainPage32609.folio.getText();
