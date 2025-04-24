@@ -130,8 +130,12 @@ public class MainPage32513Test {
             mainPage32513.inputGuardarButton.click();sleep(500);
             mainPage32513.inputSiguienteButton.click();sleep(500);
             //FIRMAR SOLICITUD
-            //loginFirmSoli.firma(tramite32513);
+            loginFirmSoli.firma(tramite32513);
+            // Obtener el texto del folio desde mainPageB8
+            String folioText = mainPage32513.folio.getText();
 
+            // Llamar al metodo para obtener el folio
+            String folioNumber = obtenerFolio.obtenerFolio(folioText);
 
         }, repeticiones);
 }

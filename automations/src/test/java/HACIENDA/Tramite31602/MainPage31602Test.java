@@ -134,7 +134,7 @@ public class MainPage31602Test {
             mainPage31602.inputMapDeclaracionSolicitudAcepto7.click();
             mainPage31602.inputMapDeclaracionSolicitudAcepto8.click();
             sleep(200);
-            mainPage31602.selectImmex.sendKeys("32025 - Autorizacíon Programa Nuevo Industrial");
+            mainPage31602.selectImmex.sendKeys("82024 - Autorización Programa Nuevo Servicio");
             sleep(3000);
 //            mainPage31602.inputAgregarDomicilios.click();
 //            mainPage31602.selectEntidadFederativaIdc.sendKeys("SINALOA");
@@ -156,10 +156,10 @@ public class MainPage31602Test {
             mainPage31602.inputMapDeclaracionSolicitudAcepto9.click();
             mainPage31602.inputMapDeclaracionSolicitudAcepto10.click();
             sleep(200);
-            mainPage31602.inputArchivo.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Doc31601\\carga_proveedoresExtranjerosIC (1).xls");
-            mainPage31602.inputUploadNewFileExtranjeros.should(Condition.visible).click();
+            mainPage31602.inputArchivo.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\carga_proveedoresExtranjerosIC.xls");
+            mainPage31602.inputUploadNewFileExtranjeros.should(Condition.visible).click();sleep(1000);
             mainPage31602.inputUploadNewFileExtranjeros2.click();// Primer botón
-            mainPage31602.inputArchivoNacionalesIva.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Doc31601\\carga_proveedoresNacionesIC (1).xls");
+            mainPage31602.inputArchivoNacionalesIva.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\carga_proveedoresNacionesIVAIC.xls");
             mainPage31602.inputUploadFileExtranjerosNiva.should(Condition.visible).click();
             sleep(200);
             //otra forma para pasar las emergentes
@@ -207,7 +207,7 @@ public class MainPage31602Test {
             sleep(300);
             $$(byText("Aceptar")).get(4).click();// Hace clic en el primer elemento con el texto "Ok"
             sleep(300);
-            mainPage31602.Agregar.click();
+            mainPage31602.Agregar.click(); sleep(1000);
             mainPage31602.input.setValue("MAVL621207C95");
             mainPage31602.inputBuscarEnlaceOperativo.click();
             sleep(3000);
@@ -228,7 +228,7 @@ public class MainPage31602Test {
             ///  IVA e IEPS
             mainPage31602.spanRubroa.click();
             sleep(300);
-            mainPage31602.Manifieste.click();
+            //mainPage31602.Manifieste.click();
             mainPage31602.Proveedores.click();
             mainPage31602.Indique.click();
             mainPage31602.inputAgregarEmp.click();
@@ -241,6 +241,11 @@ public class MainPage31602Test {
             mainPage31602.inputEmpresa3.click();
             mainPage31602.tdMontoInversi.click();
             mainPage31602.inputEmpresa4.click();
+            mainPage31602.tipoInversion.sendKeys("Bienes Muebles");
+            mainPage31602.ValorPesos.sendKeys("100");
+            mainPage31602.descripcionGeneral.sendKeys("PRUEBAS ULTRASIST QA");
+            mainPage31602.btnAgregarTerritorioNacional.click();sleep(1000);
+            mainPage31602.btnAceptarTerritorio.click();
             mainPage31602.inputMapDeclaracionSolicitudAcepto16.click();
             mainPage31602.inputMapDeclaracionSolicitudAcepto17.click();
             mainPage31602.inputEmpresaSolicitantePorcentaje.setValue("10");
@@ -268,37 +273,37 @@ public class MainPage31602Test {
             sleep(3000);
             mainPage31602.inputSiguiente.click();
             mainPage31602.inputAdjuntarDocumentos.click();
-            mainPage31602.inputDocumentosFile.setValue("C:\\VucemAuto\\MigracionVucemTramites\\src\\test\\resources\\Lorem_ipsum.pdf");
-            mainPage31602.inputDocumentosFile2.setValue("C:\\VucemAuto\\MigracionVucemTramites\\src\\test\\resources\\Lorem_ipsum.pdf");
-            mainPage31602.inputDocumentosFile3.setValue("C:\\VucemAuto\\MigracionVucemTramites\\src\\test\\resources\\Lorem_ipsum.pdf");
-            mainPage31602.inputDocumentosFile4.setValue("C:\\VucemAuto\\MigracionVucemTramites\\src\\test\\resources\\Lorem_ipsum.pdf");
-            mainPage31602.inputDocumentosFile5.setValue("C:\\VucemAuto\\MigracionVucemTramites\\src\\test\\resources\\Lorem_ipsum.pdf");
-            mainPage31602.inputDocumentosFile6.setValue("C:\\VucemAuto\\MigracionVucemTramites\\src\\test\\resources\\Lorem_ipsum.pdf");
-            mainPage31602.inputDocumentosFile7.setValue("C:\\VucemAuto\\MigracionVucemTramites\\src\\test\\resources\\Lorem_ipsum.pdf");
-            mainPage31602.inputDocumentosFile8.setValue("C:\\VucemAuto\\MigracionVucemTramites\\src\\test\\resources\\Lorem_ipsum.pdf");
-            mainPage31602.inputDocumentosFile9.setValue("C:\\VucemAuto\\MigracionVucemTramites\\src\\test\\resources\\Lorem_ipsum.pdf");
-            mainPage31602.inputDocumentosFile10.setValue("C:\\VucemAuto\\MigracionVucemTramites\\src\\test\\resources\\Lorem_ipsum.pdf");
-            mainPage31602.inputDocumentosFile11.setValue("C:\\VucemAuto\\MigracionVucemTramites\\src\\test\\resources\\Lorem_ipsum.pdf");
-            mainPage31602.inputDocumentosFile12.setValue("C:\\VucemAuto\\MigracionVucemTramites\\src\\test\\resources\\Lorem_ipsum.pdf");
-            mainPage31602.inputDocumentosFile13.setValue("C:\\VucemAuto\\MigracionVucemTramites\\src\\test\\resources\\Lorem_ipsum.pdf");
-            mainPage31602.inputDocumentosFile14.setValue("C:\\VucemAuto\\MigracionVucemTramites\\src\\test\\resources\\Lorem_ipsum.pdf");
-            mainPage31602.inputDocumentosFile15.setValue("C:\\VucemAuto\\MigracionVucemTramites\\src\\test\\resources\\Lorem_ipsum.pdf");
-            mainPage31602.inputDocumentosFile16.setValue("C:\\VucemAuto\\MigracionVucemTramites\\src\\test\\resources\\Lorem_ipsum.pdf");
-            mainPage31602.inputDocumentosFile17.setValue("C:\\VucemAuto\\MigracionVucemTramites\\src\\test\\resources\\Lorem_ipsum.pdf");
-            mainPage31602.inputDocumentosFile18.setValue("C:\\VucemAuto\\MigracionVucemTramites\\src\\test\\resources\\Lorem_ipsum.pdf");
-            sleep(30000);
+            mainPage31602.inputDocumentosFile.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
+            mainPage31602.inputDocumentosFile2.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
+            mainPage31602.inputDocumentosFile3.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
+            mainPage31602.inputDocumentosFile4.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
+            mainPage31602.inputDocumentosFile5.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
+            mainPage31602.inputDocumentosFile6.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
+            mainPage31602.inputDocumentosFile7.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
+            mainPage31602.inputDocumentosFile8.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
+            mainPage31602.inputDocumentosFile9.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
+            mainPage31602.inputDocumentosFile10.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
+            mainPage31602.inputDocumentosFile11.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
+            mainPage31602.inputDocumentosFile12.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
+            mainPage31602.inputDocumentosFile13.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
+            mainPage31602.inputDocumentosFile14.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
+            mainPage31602.inputDocumentosFile15.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
+            mainPage31602.inputDocumentosFile16.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
+            mainPage31602.inputDocumentosFile17.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
+            mainPage31602.inputDocumentosFile18.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
+            mainPage31602.inputDocumentosFile19.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
+            mainPage31602.inputDocumentosFile20.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
             mainPage31602.spanAdjuntar.click();
-            sleep(9000);
+            sleep(30000);
             mainPage31602.spanCerrar.click();
-            sleep(6000);
             mainPage31602.inputSiguienteButton.click();
             loginFirmSoli.firma(tramite31602);
-//
-//            // Obtener el texto del folio desde mainPageB8
-//            String folioText = mainPage6001.folio.getText();
-//
-////            Llamar al método para obtener el folio
-//            String folioNumber = obtenerFolio.obtenerFolio(folioText);
+
+            // Obtener el texto del folio desde mainPageB8
+            String folioText = mainPage31602.folio.getText();
+
+            // Llamar al metodo para obtener el folio
+            String folioNumber = obtenerFolio.obtenerFolio(folioText);
 //
 //            ConDBReasigSolFun.processFolio(folioNumber, FunRFC);
 //

@@ -58,7 +58,7 @@ public class MainPage32610 {
     public SelenideElement usoGoceInmuebleSi = $x("//*[@id=\"siAcreditaIn\"]");
     public SelenideElement comercioExteriorSi = $x("//*[@id=\"siOperacionesCExt\"]");
     public SelenideElement reconocimientoMutuoSi = $x("//*[@id=\"siInstalacionCtpat\"]");
-    public SelenideElement perfilEmpresaNo = $x("//*[@id=\"noPerfil\"]");
+    public SelenideElement perfilEmpresaNo = $x("//*[@id=\"noPerfilRFE\"]");
     public SelenideElement btnHacerModificacion = $x("/html/body/div[14]/div[2]/table/tbody/tr[15]/td/input[1]");
     public SelenideElement btnAceptarModificacion = $x("/html/body/div[15]/div[3]/div/button");
     public SelenideElement articulo17KSi = $x("//*[@id=\"si243\"]");

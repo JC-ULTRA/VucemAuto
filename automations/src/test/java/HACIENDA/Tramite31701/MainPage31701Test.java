@@ -25,7 +25,7 @@ public class MainPage31701Test {
     MainPage31701 mainPage31701 = new MainPage31701();
     LoginFirmSoli loginFirmSoli = new LoginFirmSoli();
     ObtenerFolio obtenerFolio = new ObtenerFolio();
-    TramitesFirmasLG tramite32512  = new TramitesFirmasLG(
+    TramitesFirmasLG tramite31701  = new TramitesFirmasLG(
             "C:\\VucemAuto\\automations\\src\\test\\resources\\CredSoli\\aal0409235e6.cer",
             "C:\\VucemAuto\\automations\\src\\test\\resources\\CredSoli\\AAL0409235E6_1012231310.key"
     );
@@ -96,7 +96,7 @@ public class MainPage31701Test {
             String llavePago = uuid.replace("-", "").substring(0, longitudDeseada);
 
             //Loging y selección Rol
-            loginFirmSoli.login(tramite32512); sleep(1000);
+            loginFirmSoli.login(tramite31701); sleep(1000);
             mainPage31701.selecRol.sendKeys("Persona Moral"); sleep(1000);
             mainPage31701.btnacep.click(); sleep(1000);
 
@@ -159,17 +159,11 @@ public class MainPage31701Test {
             mainPage31701.btnAdjuntarDoc.click(); sleep(1000);
 
             //Sub Paso 3 Adjuntar Documentos
-            mainPage31701.btnSelecArchivo.setValue("C:\\Users\\ErickALD\\Desktop\\Aqua\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
-            mainPage31701.btnAdjuntar2.click(); sleep(1000);
+            mainPage31701.btnSelecArchivo.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
+            mainPage31701.btnAdjuntar2.click(); sleep(3000);
             mainPage31701.btnCerrar3.click();sleep(1000);
-
-            //Paso3 (Continuacion)
-            mainPage31701.comboDocumentoGrid.sendKeys("Lorem_ipsum.pdf"); sleep(1000);
-            mainPage31701.btnContinuar3.click(); sleep(1000);
-
-            //END FLUJO PRINCIPAL ANTES DE FIRMAR
-
-
+            mainPage31701.continuarSoli.click();
+            loginFirmSoli.firma(tramite31701);
             /*
             //BEGIN FLUJO CONTINUACION (REQUIERE NUMERO SOLICITUD)
 
@@ -202,6 +196,12 @@ public class MainPage31701Test {
             //END FLUJO ALTERNO
 
            */
+//            //Paso3 (Continuacion)
+//            mainPage31701.comboDocumentoGrid.sendKeys("Lorem_ipsum.pdf"); sleep(1000);
+//            mainPage31701.btnContinuar3.click(); sleep(1000);
+
+            //END FLUJO PRINCIPAL ANTES DE FIRMAR
+
 
 /*
             // Obtener el texto del folio desde mainPageB8

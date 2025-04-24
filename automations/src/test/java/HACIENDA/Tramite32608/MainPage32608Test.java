@@ -156,16 +156,16 @@ public class MainPage32608Test {
             mainPage32608.btnSelecArchivo3.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");sleep(1000);
             mainPage32608.btnSelecArchivo4.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");sleep(1000);
             mainPage32608.btnSelecArchivo5.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");sleep(1000);
-            mainPage32608.btnAdjuntar2.click();sleep(7000);
+            mainPage32608.btnAdjuntar2.click();sleep(6000);
             mainPage32608.btnCerrar3.click();sleep(1000);
 
 
-            //Paso 3 (Continuacion)
-            mainPage32608.listDocumento1Grid.sendKeys("Lorem_ipsum.pdf");sleep(1000);
-            mainPage32608.listDocumento2Grid.sendKeys("Lorem_ipsum.pdf");sleep(1000);
-            mainPage32608.listDocumento3Grid.sendKeys("Lorem_ipsum.pdf");sleep(1000);
-            mainPage32608.listDocumento4Grid.sendKeys("Lorem_ipsum.pdf");sleep(1000);
-            mainPage32608.listDocumento5Grid.sendKeys("Lorem_ipsum.pdf");sleep(1000);
+//            //Paso 3 (Continuacion)
+//            mainPage32608.listDocumento1Grid.sendKeys("Lorem_ipsum.pdf");sleep(1000);
+//            mainPage32608.listDocumento2Grid.sendKeys("Lorem_ipsum.pdf");sleep(1000);
+//            mainPage32608.listDocumento3Grid.sendKeys("Lorem_ipsum.pdf");sleep(1000);
+//            mainPage32608.listDocumento4Grid.sendKeys("Lorem_ipsum.pdf");sleep(1000);
+//            mainPage32608.listDocumento5Grid.sendKeys("Lorem_ipsum.pdf");sleep(1000);
             mainPage32608.btnContinuar3.click();sleep(1000);
 
             //Firma
