@@ -1,32 +1,34 @@
-package HACIENDA.Tramite40403;
+package HACIENDA.Tramite570101;
 
 import DBYFOLIO.ObtenerFolio;
 import Firmas.LoginFirmSoli;
 import Firmas.TramitesFirmasLG;
-import HACIENDA.Tramite40403.MainPage40403;
+import HACIENDA.Tramite570101.MainPage570101;
 import com.codeborne.selenide.Browsers;
 import com.codeborne.selenide.Configuration;
-import com.codeborne.selenide.Selenide;
+import com.codeborne.selenide.SelenideElement;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 import javax.swing.*;
-import java.io.File;
 import java.io.IOException;
 
-import static com.codeborne.selenide.Selenide.open;
-import static com.codeborne.selenide.Selenide.sleep;
+import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Condition.visible;
+import static com.codeborne.selenide.Selectors.byText;
+import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
-public class MainPage40403Test {
 
-    MainPage40403 mainPage40403 = new MainPage40403();
+public class MainPage570101Test {
+
+    MainPage570101 mainPage570101 = new MainPage570101();
     LoginFirmSoli loginFirmSoli = new LoginFirmSoli();
     ObtenerFolio obtenerFolio = new ObtenerFolio();
-    TramitesFirmasLG tramite40403  = new TramitesFirmasLG(
-            "C:\\VucemAuto\\automations\\src\\test\\resources\\CredSoli\\aal0409235e6.cer",
-            "C:\\VucemAuto\\automations\\src\\test\\resources\\CredSoli\\AAL0409235E6_1012231310.key"
+    TramitesFirmasLG tramite570101  = new TramitesFirmasLG(
+            "C:\\VucemAuto\\automations\\src\\test\\resources\\CredSoli\\leqi8101314s7.cer",
+            "C:\\VucemAuto\\automations\\src\\test\\resources\\CredSoli\\LEQI8101314S7_1012231707.key"
     );
 
 
@@ -43,7 +45,7 @@ public class MainPage40403Test {
     }
 
     @Test
-    public void Proceso40403() throws IOException {
+    public void Proceso570101() throws IOException {
         /////////////////////////////////////////////////////////////////////////////////////////////////////////-
         // Solicitar el número de repeticiones al usuario a través de un JOptionPane con opción de Cancelar
         String repeticionesStr = JOptionPane.showInputDialog(null, "Ingrese el número de repeticiones:", "Repeticiones", JOptionPane.QUESTION_MESSAGE);
@@ -71,37 +73,56 @@ public class MainPage40403Test {
         ejecutarProcesoNRunnable(() -> {
 
 
+            // Solicitar el folio al usuario
+            String FolioTramiteN = JOptionPane.showInputDialog(null, "Ingrese el número de folio de 25 dígitos:", "Número de Folio", JOptionPane.QUESTION_MESSAGE);
+            // Validar que el usuario haya ingresado un folio válido de 25 dígitos
+            if (FolioTramiteN == null || FolioTramiteN.length() != 25  || !FolioTramiteN.matches("\\d+")) {
+                JOptionPane.showMessageDialog(null, "El número de folio ingresado no es válido. La operación será cancelada.");
+                return; // Cancelar la operación
+            }
+            // Confirmar el folio ingresado
+            JOptionPane.showMessageDialog(null, "Folio válido ingresado: " + FolioTramiteN);
+
             // Ingreso y selección Rol
-            loginFirmSoli.login(tramite40403);
-            mainPage40403.selecRol.sendKeys("Persona Moral");
-            mainPage40403.btnacep.click();
+            loginFirmSoli.login(tramite570101);
+            mainPage570101.selecRol.sendKeys("Persona Moral");
+            mainPage570101.btnacep.click();
 
             //Búsqueda de tramite
-            mainPage40403.Tramites.sendKeys("Solicitudes nuevas");
-            mainPage40403.SoliNew.click();
-            mainPage40403.Hacienda.click();
-            mainPage40403.CodigoArmonizadoTransportista.click();
-            mainPage40403.RegistroCodigoAereo.click();
-            mainPage40403.Tramite40403.click();
+            mainPage570101.Tramites.sendKeys("Solicitudes nuevas");
+            mainPage570101.SoliSub.click();
+            mainPage570101.FolioTramite.sendKeys(FolioTramiteN);
+            mainPage570101.btnBuscarFolio.click();
+            SelenideElement filaFolioDeseado = mainPage570101.filaFolioGrid.findBy(text(FolioTramiteN));
+            filaFolioDeseado.doubleClick();
 
-            //Datos del Trámite
+            //Datos generales Original
+            mainPage570101.tabDatosGeneralesOriginal.click();
+            //Persona Responsable despacho
+            mainPage570101.checkPersonaDespacho.click();
             try {
                 Thread.sleep(2000); // Pausa de 3 segundos
                 // Hacer scroll hasta el elemento
-                mainPage40403.Scrol.scrollIntoView(true);
+                mainPage570101.Scrol.scrollIntoView(true);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            mainPage40403.TabDatosTramite.click();
-            mainPage40403.CodigoCAAT.sendKeys("3L6U");
-            mainPage40403.btnBuscarCAAT.click();
-            mainPage40403.btnContinuar.click();
+            mainPage570101.btnSolicitarCancelacion.click();
 
-            //Paso 2
-            loginFirmSoli.firma(tramite40403);sleep(29000);
+            //Paso1
+            //Datos de la solicitud
+            mainPage570101.tabDatosSolicitud.click();
+            mainPage570101.comboTipoCancelacion.sendKeys("Total");
+            mainPage570101.MotivoCancelacion.sendKeys("QA");
+            mainPage570101.btnGuardarFirmar.click();
+            //Notificacion
+            mainPage570101.btnSiCancelarFolio.click();
+
+            //Paso 2 Firma solicitud
+            loginFirmSoli.firma(tramite570101);sleep(29000);
 
             // Obtener el texto del folio
-            String folioText = mainPage40403.folio.getText();
+            String folioText = mainPage570101.folio.getText();
             //Llamar al metodo para obtener el folio
             String folioNumber = obtenerFolio.obtenerFolio(folioText);
 

@@ -73,6 +73,7 @@ public class MainPage110205Test {
 
         // Ejecutar el proceso con las repeticiones
         ejecutarProcesoNRunnable(() -> {
+
             // Ingreso y selección de trámite
 
             String uuid = UUID.randomUUID().toString();
@@ -96,7 +97,13 @@ public class MainPage110205Test {
 
 
             // Seccion Certificado origen
-            mainPage110205.TituloPrincipal.scrollTo().shouldBe(visible);
+            try {
+                Thread.sleep(2000); // Pausa de 3 segundos
+                // Hacer scroll hasta el elemento
+                mainPage110205.Scrol.scrollIntoView(true);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
             mainPage110205.tabCertificadoOrigen.click();
 
             mainPage110205.TratadoAcuerdo.sendKeys("Acuerdo Mexico-Perú");
@@ -116,7 +123,7 @@ public class MainPage110205Test {
             mainPage110205.btnAceptarNotficacionAgrMercancia.click();
 
             //Seccion Historico Productores
-            mainPage110205.TituloPrincipal.scrollTo().shouldBe(visible);
+            //mainPage110205.TituloPrincipal.scrollTo().shouldBe(visible);
             mainPage110205.tabHistoricoProductores.click();
             mainPage110205.checkDatosProductorNoConfidencial.click();
             mainPage110205.checkExpImpNoMismaPersona.click();
@@ -127,10 +134,14 @@ public class MainPage110205Test {
             mainPage110205.fila1MercanciasSeleccionada.click();
             mainPage110205.fila1ProductorSeleccionado.scrollTo().shouldBe(visible);
             mainPage110205.btnAsignarProductor.click();
-
-
             //Sección Destinatario
-            mainPage110205.TituloPrincipal.scrollTo().shouldBe(visible);
+            try {
+                Thread.sleep(2000); // Pausa de 3 segundos
+                // Hacer scroll hasta el elemento
+                mainPage110205.Scrol.scrollIntoView(true);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
             mainPage110205.tabDestinatario.click();
             //Datos del destinatario
             mainPage110205.RFCDestinatario.sendKeys("AAIJ891102208");
@@ -167,28 +178,6 @@ public class MainPage110205Test {
 
             // Llamar al método para obtener el folio
             String folioNumber = obtenerFolio.obtenerFolio(folioText);
-
-
-
-            /*
-            mainPage110205.SegundoTitulo.scrollTo();sleep(10000);
-            mainPage110205.TituloPrincipal.scrollTo();sleep(10000);
-            mainPage110205.SegundoTitulo.scrollTo();sleep(10000);
-            mainPage110205.TituloPrincipal.scrollTo();sleep(10000);
-            mainPage110205.SegundoTitulo.scrollTo();sleep(10000);
-            mainPage110205.TituloPrincipal.scrollTo();sleep(10000);
-            mainPage110205.SegundoTitulo.scrollTo();sleep(10000);
-            mainPage110205.TituloPrincipal.scrollTo();sleep(10000);
-            mainPage110205.SegundoTitulo.scrollTo();sleep(10000);
-            mainPage110205.TituloPrincipal.scrollTo();sleep(10000);
-            mainPage110205.SegundoTitulo.scrollTo();sleep(10000);
-            mainPage110205.TituloPrincipal.scrollTo();sleep(10000);
-            mainPage110205.SegundoTitulo.scrollTo();sleep(10000);
-            mainPage110205.TituloPrincipal.scrollTo();sleep(10000);
-            mainPage110205.SegundoTitulo.scrollTo();sleep(10000);
-
-             */
-
 
         }, repeticiones);
     }

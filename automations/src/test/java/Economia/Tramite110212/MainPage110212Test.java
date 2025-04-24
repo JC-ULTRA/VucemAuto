@@ -69,6 +69,7 @@ public class MainPage110212Test {
 
         // Ejecutar el proceso con las repeticiones
         ejecutarProcesoNRunnable(() -> {
+
             // Ingreso y selección de trámite
 
             String uuid = UUID.randomUUID().toString();
@@ -89,7 +90,13 @@ public class MainPage110212Test {
             //Datos de la mercancia
             // Usar Actions para desplazar hacia el elemento (scroll)
             // Agregar un retraso de 3 segundos antes de hacer el scroll (3000 ms = 3 segundos)
-            mainPage110212.TituloPrincipal.scrollTo().shouldBe(visible);
+            try {
+                Thread.sleep(2000); // Pausa de 3 segundos
+                // Hacer scroll hasta el elemento
+                mainPage110212.Scrol.scrollIntoView(true);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
             mainPage110212.tabCertificadoOrigen.click();
 
             mainPage110212.TratadoAcuerdo.sendKeys("Articulos Mexicanos");

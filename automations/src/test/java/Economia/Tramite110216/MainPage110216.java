@@ -1,6 +1,7 @@
 package Economia.Tramite110216;
 
 import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Selenide.$$;
@@ -8,14 +9,14 @@ import static com.codeborne.selenide.Selenide.$x;
 
 // page_url = https://wwwqa.ventanillaunica.gob.mx/vucem/Ingreso.html
 public class MainPage110216 {
-    //Tramite  110112
+    //Tramite  110216
     public SelenideElement cerS = $x("//*[@id='certificate']");
     public SelenideElement keyS = $x("//*[@id='privateKey']");
     public SelenideElement pass = $x("//*[@id='privateKeyPassword']");
     public SelenideElement btnIngres = $x("//button[@onclick='ejecutarProcesoFirma(1)']");
     public SelenideElement btnFirmar = $x("//*[@id='btnSubmit']");
     public SelenideElement folio = $x("//*[@id=\"notification\"]/div/ul/li");//*[@id="notification"]/div/ul/li
-
+    public SelenideElement Scrol = Selenide.$x("//*[@id=\"logoHeader\"]");
 
     public SelenideElement selecRol = $x("//*[@id='claveRol']");
     public SelenideElement btnacep = $x("//button[@name='ingresar']");
@@ -29,7 +30,6 @@ public class MainPage110216 {
     public SelenideElement elementoTramite110216 = $x("//*[@id=\"servicios\"]/ul/li[4]/ul/li[2]/ul/li[16]/a");
 
     //Elementos seccion certificado
-    public SelenideElement TituloPrincipal = $x("//*[@id=\"h1_title\"]");
     public SelenideElement tabCertificadoOrigen = $x("//*[@id=\"ui-id-2\"]");
 
     //Elementos Check tercer operador

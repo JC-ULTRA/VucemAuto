@@ -7,13 +7,15 @@ import static com.codeborne.selenide.Selenide.$x;
 
 // page_url = https://wwwqa.ventanillaunica.gob.mx/vucem/Ingreso.html
 public class MainPage110204 {
-    //Tramite Aviso 110102
+
+    //Tramite Aviso 110204
     public SelenideElement cerS = $x("//*[@id='certificate']");
     public SelenideElement keyS = $x("//*[@id='privateKey']");
     public SelenideElement pass = $x("//*[@id='privateKeyPassword']");
     public SelenideElement btnIngres = $x("//button[@onclick='ejecutarProcesoFirma(1)']");
     public SelenideElement btnFirmar = $x("//*[@id='btnSubmit']");
     public SelenideElement folio = $x("//*[@id=\"notification\"]/div/ul/li[2]");
+    public SelenideElement Scrol = Selenide.$x("//*[@id=\"logoHeader\"]");
 
 
     public SelenideElement selecRol = $x("//*[@id='claveRol']");

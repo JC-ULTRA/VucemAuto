@@ -83,6 +83,7 @@ public class MainPage140104Test {
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
             String fechaHoy = hoy.format(formatter);
 
+
             // Ingreso y selección de trámite
             loginFirmSoli.login(tramite140104);
             mainPage140104.selecRol.sendKeys("Persona Moral");
@@ -96,14 +97,14 @@ public class MainPage140104Test {
 
             // Paso 1
             // Sección Cancelación de permisos previamente autorizados
-            mainPage140104.TituloPrincipal.scrollTo();
+            mainPage140104.Scrol.scrollTo();
             mainPage140104.tabCancelacionPermisosPrevAutorizado.click();
             mainPage140104.btnAccederBusquedaFolio.click();
 
             // Solicitar el folio al usuario
-            String FolioRubro = JOptionPane.showInputDialog(null, "Ingrese el número de folio de 15 dígitos:", "Número de Folio", JOptionPane.QUESTION_MESSAGE);
+            String FolioRubro = JOptionPane.showInputDialog(null, "Ingrese el número de folio resolucion de 15 dígitos:", "Número de Folio", JOptionPane.QUESTION_MESSAGE);
             // Validar que el usuario haya ingresado un folio válido de 25 dígitos
-            if (FolioRubro == null  || FolioRubro.length() != 15) {
+            if (FolioRubro == null  || FolioRubro.length() < 12 || FolioRubro.length() > 18) {
                 JOptionPane.showMessageDialog(null, "El número de folio ingresado no es válido. La operación será cancelada.");
                 return; // Cancelar la operación
             }

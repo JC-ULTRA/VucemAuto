@@ -69,6 +69,7 @@ public class MainPage110211Test {
 
         // Ejecutar el proceso con las repeticiones
         ejecutarProcesoNRunnable(() -> {
+
             // Ingreso y selección de trámite
 
             String uuid = UUID.randomUUID().toString();
@@ -89,7 +90,13 @@ public class MainPage110211Test {
             //Datos de la mercancia
             // Usar Actions para desplazar hacia el elemento (scroll)
             // Agregar un retraso de 3 segundos antes de hacer el scroll (3000 ms = 3 segundos)
-            mainPage110211.TituloPrincipal.scrollTo().shouldBe(visible);
+            try {
+                Thread.sleep(2000); // Pausa de 3 segundos
+                // Hacer scroll hasta el elemento
+                mainPage110211.Scrol.scrollIntoView(true);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
             mainPage110211.tabCertificadoOrigen.click();
 
             mainPage110211.TratadoAcuerdo.sendKeys("Articulos Mexicanos");
@@ -110,6 +117,13 @@ public class MainPage110211Test {
             mainPage110211.btnAceptarNotficacionAgrMercancia.click();
 
             //Tab Destinatario
+            try {
+                Thread.sleep(2000); // Pausa de 3 segundos
+                // Hacer scroll hasta el elemento
+                mainPage110211.Scrol.scrollIntoView(true);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
             mainPage110211.tabDestinatario.click();
             //Datos del destinatario
             mainPage110211.RFCDestinatario.sendKeys("PELO932007200");
