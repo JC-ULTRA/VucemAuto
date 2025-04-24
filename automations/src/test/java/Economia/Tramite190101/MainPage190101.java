@@ -23,7 +23,6 @@ public class MainPage190101 {
     public SelenideElement Scrol = Selenide.$x("//*[@id=\"logoHeader\"]");
     public SelenideElement labelDatosSolicitud = $x("/html/body/main/div/div[4]/div/form/div[2]/ul/li[2]/a/label");
     public SelenideElement labelDatosGenerales = $x("/html/body/main/div/div[4]/div/form/div[2]/div/div[2]/div/ul/li[1]/a/label");
-    ////////////////////////////////////////////////////////
     //Certificación con verificación mediante pruebas periódicas al producto
     public SelenideElement input1 = $x("//*[@id='PRUEBAS_PERIODICAS_AL_PRODUCTO']");
     public SelenideElement selectClasificacionNorma = $x("//*[@id='clasificacionNorma']");
@@ -38,6 +37,7 @@ public class MainPage190101 {
     public SelenideElement labelMercancia = $x("/html/body/main/div/div[4]/div/form/div[2]/div/div[2]/div/ul/li[2]/a/label");
     public SelenideElement inputNuevo = $x("//input[@name='solicitud.categoriaProducto' and @value='NUEVO']\n");
     public SelenideElement inputSolicitudDescripcionOtroTipo = $x("//*[@id='solicitud.descripcionOtroTipoDePropietarioAeronave']");
+    //PRODUCTO
     public SelenideElement inputTicp = $x("//*[@id=\"TICP.CFP\"]\n");
     public SelenideElement btnAceptar = $x("/html/body/div[18]/div[3]/div/button");
     public SelenideElement inputSolicitudProductoMarca = $x("//*[@id='solicitud.producto.marca']");
@@ -48,7 +48,7 @@ public class MainPage190101 {
     public SelenideElement inputAgregarFracciones = $x("//*[@id='btnAgregarFracciones']");
     public SelenideElement inputAgregarFracciones2 = $x("/html/body/main/div/div[4]/div[2]/div[2]/div/div/div/ul/li[1]/a/ins[1]");
     public SelenideElement inputAgregarFracciones4 = $x("/html/body/main/div/div[4]/div[2]/div[4]/div[2]/div/input[2]");
-
+    //FAMILIA
     public SelenideElement inputTicp2 = $x("//*[@id=\"TICP.CFFM\"]");
     public SelenideElement inputFamiliaModelos = $x("//*[@id=\"idTextoFamilia\"]");
     public SelenideElement btnAgregarFamilia = $x("/html/body/main/div/div[4]/div/form/div[2]/div/div[2]/div/div[2]/div[3]/div[3]/div[2]/div/input");
@@ -60,9 +60,7 @@ public class MainPage190101 {
     public SelenideElement inputAgregarFraccionesFamlia = $x("//*[@id='btnAgregarFracciones']");
     public SelenideElement inputAgregarFracciones2Familia = $x("/html/body/main/div/div[4]/div[2]/div[2]/div/div/div/ul/li[1]/a/ins[1]");
     public SelenideElement inputAgregarFracciones4Familia = $x("/html/body/main/div/div[4]/div[2]/div[4]/div[2]/div/input[2]");
-
-
-
+    //LOTES
     public SelenideElement inputTicp3 = $x("//*[@id='TICP.CFL']");
     public SelenideElement inputTamanoLotes = $x("//*[@id=\"idTamanioProductoLotes\"]");
     public SelenideElement inputUnidadMedida = $x("//*[@id=\"unidadMedida\"]");
@@ -72,7 +70,6 @@ public class MainPage190101 {
     public SelenideElement inputSerieLotes = $x("//*[@id=\"serieLotes\"]");
     public SelenideElement btnAgregarLotes = $x("/html/body/main/div/div[4]/div/form/div[2]/div/div[2]/div/div[2]/div[5]/div[2]/div/div/input");
     public SelenideElement textareaAccesoriosProductoLote = $x("//*[@id=\"accesoriosProducto\"]");
-
     //BODEGAS
     public SelenideElement labelBodegas = $x("//label[@for='dgn.bodegasPlantas.titulo']");
     public SelenideElement selectEntidadBodega = $x("//*[@id='entidadBodega']");
@@ -105,12 +102,6 @@ public class MainPage190101 {
     public SelenideElement inputRFCAmpliacion = $x("//*[@id=\"idRfcAmpliacion\"]");
     public SelenideElement btnAgregarAmpliacion = $x("//*[@id=\"botonAgregarRFCAmpliacion\"]");
     public SelenideElement btnGuardaSolicitud = $x("//*[@id=\"guardarSolicitud\"]");
-
-    public SelenideElement linkPestaña2input1 = $x("/html/body/main/div/div[4]/div/form/div[2]/div/div[2]/div/ul/li[3]/a/label");
-    public SelenideElement linkPestaña3input1 = $x("/html/body/main/div/div[4]/div/form/div[2]/div/div[2]/div/ul/li[4]/a/label");
-    public SelenideElement linkPestaña4input1 = $x("/html/body/main/div/div[4]/div/form/div[2]/div/div[2]/div/ul/li[5]/a/label");
-    public SelenideElement opcionllenado2 = $x("//*[@id='solicitud.descripcionOtroTipoDePropietarioAeronave']");
-    //Certificación con verificación mediante el sistema de calidad de la línea de producción
     public SelenideElement input2 = $x("//*[@id=\"SISTEMA_DE_CALIDAD_DE_LA_LINEA_DE_PRODUCCION\"]");
     public SelenideElement inputNumeroInforme2 = $x("//*[@id='numeroInforme']");
     public SelenideElement inputFechaInforme = $x("//*[@id='campoFechaInforme']");
@@ -119,33 +110,18 @@ public class MainPage190101 {
     public SelenideElement inputFechaNumeroCertificado = $x("//*[@id='fechaNumeroCertificado']");
     public SelenideElement btnNumeroCertificado = $x("//input[@name='agregarNumeroCertificado']");
     public SelenideElement inputCampoOrganismo = $x("//*[@id='campoOrganismo']");
-    // selectClasificacionNorma
-    // selectNormaAplicable
-    // inputTiuad
-    // inputSolicitudRegimen
-
-    public SelenideElement linkPestaña1input2 = $x("/html/body/main/div/div[4]/div/form/div[2]/div/div[2]/div/ul/li[2]/a/label");
-    public SelenideElement linkPestaña2input2 = $x("/html/body/main/div/div[4]/div/form/div[2]/div/div[2]/div/ul/li[3]/a/label");
-    public SelenideElement linkPestaña3input2 = $x("/html/body/main/div/div[4]/div/form/div[2]/div/div[2]/div/ul/li[5]/a/label");
-
-    // Campos que se llenan con input2
-    public SelenideElement opcionllenado3 = $x("//*[@id='entidadBodega']");
-
-    ///////////////////////////////////////////////////////////////
-    public SelenideElement inputSiguienteButton = $x("//*[@id=\"siguienteButton\"]");
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    public SelenideElement input3 = $x("//*[@id=\"DICTAMEN_DE_PRODUCTO_PARA_FABRICANTE_NACIONAL_EXTRANJERO\"]");
+    public SelenideElement inputNumeroInformeD = $x("//*[@id=\"numeroInformeDictamen\"]");
+    public SelenideElement inputFechaInformeD = $x("//*[@id=\"campoFechaInformeDictamen\"]");
+    public SelenideElement inputCampoOrganismoD = $x("//*[@id='campoOrganismoDictamen']");
+    public SelenideElement btnAgregarInformeCertificacionD = $x("//input[@name='agregarInformeCertificacionDictamen']");
+    public SelenideElement inputnumeroDictamen = $x("//*[@id=\"numeroInformeDictamen\"]");
+    public SelenideElement inputFechaDictamen = $x("//*[@id=\"campoFechaInformeDictamen\"]");
+    public SelenideElement inputOrganismoEmisorDictamen = $x("//*[@id=\"organismoEmisorDictamen\"]");
+    public SelenideElement input4 = $x("//*[@id=\"ARTICULOS_RECONSTRUIDOS\"]");
+    public SelenideElement inputReconstruido = $x("//div[@id='CATPR.RC']//input[@value='RECONSTRUIDO']");
+    public SelenideElement input5 = $x("//*[@id=\"ARTICULOS_USADOS_SEGUNDA_MANO_SEGUNDA_LINEA_DESCONTINUADOS\"]");
+    public SelenideElement input6 = $x("//*[@id=\"ARTICULOS_FUERA_DE_ESPECIFICACION\"]");
+    public SelenideElement inputFueraEspecificaciones = $x("//div[@id='CATPR.FE']//input[@value='FUERA_ESPECIFICACIONES']");
 
 }
