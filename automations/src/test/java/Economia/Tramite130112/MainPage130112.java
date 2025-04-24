@@ -6,7 +6,6 @@ import com.codeborne.selenide.SelenideElement;
 import static com.codeborne.selenide.Selenide.$x;
 
 public class MainPage130112 {
-
     //seleccionar Rol
     public SelenideElement selecRol = $x("//*[@id='claveRol']");
     public SelenideElement btnacep = $x("//button[@name='ingresar']");

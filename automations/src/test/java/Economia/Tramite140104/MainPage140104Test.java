@@ -83,6 +83,7 @@ public class MainPage140104Test {
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
             String fechaHoy = hoy.format(formatter);
 
+
             // Ingreso y selección de trámite
             loginFirmSoli.login(tramite140104);
             mainPage140104.selecRol.sendKeys("Persona Moral");

@@ -10,7 +10,6 @@ import static com.codeborne.selenide.Selenide.$x;
 // page_url = https://wwwqa.ventanillaunica.gob.mx/vucem/Ingreso.html
 public class MainPage140104 {
     //Tramite  140104
-
     public SelenideElement folio = $x("//*[@id=\"notification\"]/div/ul/li");//*[@id="notification"]/div/ul/li
     public SelenideElement selecRol = $x("//*[@id='claveRol']");
     public SelenideElement btnacep = $x("//button[@name='ingresar']");

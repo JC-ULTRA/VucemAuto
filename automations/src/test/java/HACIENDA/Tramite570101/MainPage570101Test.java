@@ -72,6 +72,7 @@ public class MainPage570101Test {
         // Ejecutar el proceso con las repeticiones
         ejecutarProcesoNRunnable(() -> {
 
+
             // Solicitar el folio al usuario
             String FolioTramiteN = JOptionPane.showInputDialog(null, "Ingrese el número de folio de 25 dígitos:", "Número de Folio", JOptionPane.QUESTION_MESSAGE);
             // Validar que el usuario haya ingresado un folio válido de 25 dígitos
