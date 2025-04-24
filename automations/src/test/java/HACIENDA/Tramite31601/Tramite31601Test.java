@@ -1,4 +1,5 @@
 package HACIENDA.Tramite31601;
+import DBYFOLIO.ObtenerFolio;
 import Firmas.LoginFirmSoli;
 import Firmas.TramitesFirmasLG;
 import com.codeborne.selenide.Configuration;
@@ -21,7 +22,7 @@ import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 public class Tramite31601Test {
     MainPage31601 mainPage31601 = new MainPage31601();
     LoginFirmSoli loginFirmSoli = new LoginFirmSoli();
-
+    ObtenerFolio obtenerFolio = new ObtenerFolio();
     TramitesFirmasLG tramite31601 = new TramitesFirmasLG(
             "C:\\VucemAuto\\automations\\src\\test\\resources\\CredSoli\\aal0409235e6.cer",
             "C:\\VucemAuto\\automations\\src\\test\\resources\\CredSoli\\AAL0409235E6_1012231310.key"
@@ -99,46 +100,46 @@ public class Tramite31601Test {
 
             // Ingreso y selección de trámite
             loginFirmSoli.login(tramite31601);
-            mainPage31601.selecRol.sendKeys("Persona Moral"); sleep(1000);
-            mainPage31601.btnacep.click(); sleep(1000);
-            mainPage31601.Tramites.sendKeys("Solicitudes nuevas"); sleep(1000);
-            mainPage31601.SoliNew.click(); sleep(1000);
-            mainPage31601.hacienda.click(); sleep(1000);
-            mainPage31601.registroComercioExterior.click(); sleep(1000);
-            mainPage31601.solicitudRegistroEsquemaIntegralCertificacion.click(); sleep(1000);
-            mainPage31601.tramite31601.click(); sleep(1000);
-            mainPage31601.datosComunes.click(); sleep(1000);
-            mainPage31601.preOperativNo.click(); sleep(1000);
-            mainPage31601.recintoFiscalEstrateg.click(); sleep(1000);
-            mainPage31601.sectorProductivo.sendKeys("Fabricación de equipo ferroviario"); sleep(1000);
-            mainPage31601.opc1SI.click(); sleep(1000);
-            mainPage31601.opc2SI.click(); sleep(1000);
-            mainPage31601.opc3SI.click(); sleep(1000);
-            mainPage31601.nEpleados.sendKeys("10"); sleep(1000);
-            mainPage31601.bimestres.sendKeys("Mayo-Junio"); sleep(1000);
-            mainPage31601.opc4No.click(); sleep(1000);
-            mainPage31601.opc5No.click(); sleep(1000);
-            mainPage31601.opc6No.click(); sleep(1000);
-            mainPage31601.opc7si.click(); sleep(1000);
-            mainPage31601.opc8No.click(); sleep(1000);
-            mainPage31601.opc9Si.click(); sleep(1000);
-            mainPage31601.opc10No.click(); sleep(1000);
-            mainPage31601.opc11Autorizacion.sendKeys("42025 - Autorización Programa Nueva Industrial"); sleep(1000);
-            mainPage31601.btnAgregar.click(); sleep(1000);
-            mainPage31601.entidadFederativa.sendKeys("SINALOA"); sleep(1000);
+            mainPage31601.selecRol.sendKeys("Persona Moral");
+            mainPage31601.btnacep.click();
+            mainPage31601.Tramites.sendKeys("Solicitudes nuevas");
+            mainPage31601.SoliNew.click();
+            mainPage31601.hacienda.click();
+            mainPage31601.registroComercioExterior.click();
+            mainPage31601.solicitudRegistroEsquemaIntegralCertificacion.click();
+            mainPage31601.tramite31601.click();
+            mainPage31601.datosComunes.click();
+            mainPage31601.preOperativNo.click();
+            mainPage31601.recintoFiscalEstrateg.click();
+            mainPage31601.sectorProductivo.sendKeys("Fabricación de equipo ferroviario");
+            mainPage31601.opc1SI.click();
+            mainPage31601.opc2SI.click();
+            mainPage31601.opc3SI.click();
+            mainPage31601.nEpleados.sendKeys("10");
+            mainPage31601.bimestres.sendKeys("Mayo-Junio");
+            mainPage31601.opc4No.click();
+            mainPage31601.opc5No.click();
+            mainPage31601.opc6No.click();
+            mainPage31601.opc7si.click();
+            mainPage31601.opc8No.click();
+            mainPage31601.opc9Si.click();
+            mainPage31601.opc10No.click();
+            mainPage31601.opc11Autorizacion.sendKeys("42025 - Autorización Programa Nueva Industrial");
+            mainPage31601.btnAgregar.click();
+            mainPage31601.entidadFederativa.sendKeys("SINALOA");
             mainPage31601.checkInstalaciones.click(); sleep(1000);
             mainPage31601.btnAceptarInstalaciones.click(); sleep(1000);
 
-            mainPage31601.clienteProveedorExtranjero.setValue("C:\\Users\\miste\\OneDrive\\Escritorio\\alt\\carga_proveedoresExtranjerosIC (1).xls"); sleep(1000);
+            mainPage31601.clienteProveedorExtranjero.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\carga_proveedoresExtranjerosIC.xls"); sleep(1000);
             mainPage31601.clienteProveedorExtranjeroAnexar.click(); sleep(1500);
             clickOkButton(); sleep(1000);
 
-            mainPage31601.proveedoresNacionales.setValue("C:\\Users\\miste\\OneDrive\\Escritorio\\alt\\carga_proveedoresNacionesIC (1).xls"); sleep(1000);
+            mainPage31601.proveedoresNacionales.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\carga_proveedoresNacionesIC (1).xls"); sleep(1000);
             mainPage31601.proveedoresNacionalesAnexar.click(); sleep(1500);
             //otra forma para pasar las emergentes
             $$(byText("Ok")).get(1).click();  // Hace clic en el primer elemento con el texto "Ok"
-            mainPage31601.querellaNo.click(); sleep(1000);
-            mainPage31601.controlInventarioSi.click(); sleep(1000);
+            mainPage31601.querellaNo.click();
+            mainPage31601.controlInventarioSi.click();
             mainPage31601.nombreSistemaDatosIdentificacion.sendKeys("Nombrejhgjk"); sleep(1000);
             mainPage31601.lugarRadicacion.sendKeys("gwegw"); sleep(1000);
             mainPage31601.anexi24Check.click(); sleep(1000);
@@ -149,29 +150,28 @@ public class Tramite31601Test {
             mainPage31601.opc14No.click(); sleep(1500);
             mainPage31601.opc15No.click(); sleep(1500);
             mainPage31601.btnAgregarMiembroEmpresa.click(); sleep(1000);
-            mainPage31601.enCaracterDe.sendKeys("Administrador único"); sleep(1000);
-            mainPage31601.obligadoTributarMexNo.click(); sleep(1000);
-//            mainPage31601.TipPersonaEmpresa.click();sleep(1000);
+            mainPage31601.enCaracterDe.sendKeys("Administrador único");
+            mainPage31601.obligadoTributarMexNo.click();
             mainPage31601.TipPersonaEmpresa.sendKeys("Moral"); sleep(1500);
             mainPage31601.TipPersonaEmpresa.click(); sleep(1500);
-            mainPage31601.nombreEmpresa.sendKeys("egwgwegwg"); sleep(1000);
-            mainPage31601.nacionalidad.sendKeys("ANTARTIDA"); sleep(1000);
+            mainPage31601.nombreEmpresa.sendKeys("egwgwegwg");
+            mainPage31601.nacionalidad.sendKeys("ANTARTIDA");
             mainPage31601.btnAceptalEmpresa.click(); sleep(1500);
             mainPage31601.btnAceptalEmpresa2.click();
             sleep(1000);
-            mainPage31601.manif1Check.click(); sleep(1000);
-            mainPage31601.manif2Check.click(); sleep(1000);
+            mainPage31601.manif1Check.click();
+            mainPage31601.manif2Check.click();
 
             //Terceros
-            mainPage31601.tercerosRelacionados.click();sleep(1000);
+            mainPage31601.tercerosRelacionados.click();
             mainPage31601.rfc.sendKeys("LEQI8101314S7");sleep(1000);
             mainPage31601.btnBuscar.click();sleep(1000);
             mainPage31601.btnAceptarRFC.click();
 
-            mainPage31601.btnAgregarTerceroR.click();sleep(1000);
-            mainPage31601.rfcTerceroR2.sendKeys("LEQI8101314S7");sleep(1000);
+            mainPage31601.btnAgregarTerceroR.click();
+            mainPage31601.rfcTerceroR2.sendKeys("LEQI8101314S7");
             mainPage31601.btnBuscar2.click();sleep(1000);
-            mainPage31601.inputCargo.sendKeys("ascva");sleep(1000);
+            mainPage31601.inputCargo.sendKeys("ascva");
             mainPage31601.btnAceptar3.click();sleep(1000);
 
             mainPage31601.datosRegimen.click();sleep(1000);
@@ -179,40 +179,47 @@ public class Tramite31601Test {
             mainPage31601.check2Si.click();sleep(1000);
 
             mainPage31601.ivaEIepsA.click();sleep(1000);
-            mainPage31601.checkSi.click();sleep(1000);
-            mainPage31601.checkNo.click();sleep(1000);
-            mainPage31601.tipoInversion.sendKeys("Bienes Muebles");sleep(1000);
-            mainPage31601.ValorPesos.sendKeys("100");sleep(1000);
-            mainPage31601.descripcionGeneral.sendKeys("Sillas");sleep(1000);
+            mainPage31601.checkSi.click();
+            mainPage31601.checkNo.click();
+            mainPage31601.tipoInversion.sendKeys("Bienes Muebles");
+            mainPage31601.ValorPesos.sendKeys("100");
+            mainPage31601.descripcionGeneral.sendKeys("Sillas");
             mainPage31601.btnAgregarTerritorioNacional.click();sleep(1000);
             mainPage31601.btnAceptarTerritorio.click();
-            mainPage31601.CheckNo.click();sleep(1000);
-            mainPage31601.CheckSi.click();sleep(1000);
+            mainPage31601.CheckNo.click();
+            mainPage31601.CheckSi.click();
 
-            mainPage31601.nOperacion.sendKeys("1");sleep(1000);
-            mainPage31601.banco.sendKeys("BANAMEX");sleep(1000);
-            mainPage31601.llavePago.sendKeys(llavePago);sleep(1000);
-            mainPage31601.fechaPago.click();sleep(1000);
-            mainPage31601.fechaNum.click();sleep(1000);
-            mainPage31601.btnContinuar.click();sleep(1000);
-            mainPage31601.btnContinuarDigi.click();sleep(1000);
+            mainPage31601.nOperacion.sendKeys("1");
+            mainPage31601.banco.sendKeys("BANAMEX");
+            mainPage31601.llavePago.sendKeys(llavePago);
+            mainPage31601.fechaPago.click();
+            mainPage31601.fechaNum.click();
+            mainPage31601.btnContinuar.click();
+            mainPage31601.btnContinuarDigi.click();
 
-            mainPage31601.btnAdjuntar.click();sleep(1000);
+            mainPage31601.btnAdjuntar.click();
+            mainPage31601.archivo1.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
+            mainPage31601.archivo2.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
+            mainPage31601.archivo3.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
+            mainPage31601.archivo4.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
+            mainPage31601.archivo5.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
+            mainPage31601.archivo6.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
+            mainPage31601.archivo7.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
+            mainPage31601.archivo8.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
+            mainPage31601.archivo9.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
+            mainPage31601.archivo10.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
+            mainPage31601.archivo11.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
+            mainPage31601.archivo12.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
+            mainPage31601.adjuntarTodos.click();sleep(15000); //Tiempo aprox en cargar los archivos
+            mainPage31601.btnCerrar.click();sleep(1000);
+            mainPage31601.btnSiguienteFirmar.click();
+            loginFirmSoli.firma(tramite31601);
 
-//            recursosPruebas.Recursos31601();
-//            mainPage31601.adjuntarTodos.click();sleep(15000); //Tiempo aprox en cargar los archivos
-//            mainPage31601.btnCerrar.click();sleep(1000);
-//
-//            mainPage31601.btnSiguienteFirmar.click();sleep(1000);
-//
-//            loginFirmSoli.firma(tramite31601);sleep(5000);
+            // Obtener el texto del folio desde mainPageB8
+            String folioText = mainPage31601.folio.getText();
 
-
-//            // Obtener el texto del folio desde mainPageB8
-//            String folioText = mainPage6001.folio.getText();
-//
-////            Llamar al método para obtener el folio
-//            String folioNumber = mainPage31601.getFolio.getText();
+            // Llamar al metodo para obtener el folio
+            String folioNumber = obtenerFolio.obtenerFolio(folioText);
 //
 //            ConDBReasigSolFun.processFolio(folioNumber, FunRFC);
 //

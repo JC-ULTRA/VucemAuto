@@ -17,6 +17,7 @@ public class MainPage31602 {
     public SelenideElement btnIngresFs = $x("//button[@onclick='ejecutarProcesoFirma(1)']");
     public SelenideElement btnFirmar = $x("//*[@id='btnSubmit']");
     public SelenideElement selecRol = $x("//*[@id='claveRol']");
+    public SelenideElement folio = $x("/html/body/div[1]/div[3]/div[3]/div/div[3]/div/ul/li");
     public SelenideElement btnacep = $x("//button[@name='ingresar']");
     public SelenideElement Tramites = $x("//*[@id='Trámites']");
     public SelenideElement SoliNew = $x("/html/body/main/div/div[2]/div[1]/div[1]/div/nav/div/div[2]/ul/li[5]/ul/li[3]/a");
@@ -80,7 +81,7 @@ public class MainPage31602 {
 
     public SelenideElement inputMapDeclaracionSolicitudAcepto10 = $x("//*[@id='no244']");
 
-    public SelenideElement inputArchivo = $x("//*[@id='archivo']");
+    public SelenideElement inputArchivo = $x("//*[@id=\"archivo\"]");
 
     public SelenideElement inputUploadNewFileExtranjeros = $x("//*[@id='uploadNewFileExtranjeros']");
 
@@ -184,6 +185,12 @@ public class MainPage31602 {
 
     public SelenideElement inputEmpresa4 = $x("//*[@id='empresa_3']");
 
+    public SelenideElement tipoInversion = $x("//*[@id=\'tipo.inversionA\']");
+    public SelenideElement ValorPesos = $x("//*[@id=\'cantidad.inversionA\']");
+    public SelenideElement descripcionGeneral = $x("//*[@id=\'desc.inversionA\']");
+    public SelenideElement btnAgregarTerritorioNacional = $x("//*[@id=\'btnAgregarInversion\']");
+    public SelenideElement btnAceptarTerritorio = $x("/html/body/div[25]/div[3]/div/button");
+
     public SelenideElement inputMapDeclaracionSolicitudAcepto16 = $x("//*[@id='si3011aa']");
 
     public SelenideElement inputMapDeclaracionSolicitudAcepto17 = $x("//*[@id='si100aa']");
@@ -281,10 +288,12 @@ public class MainPage31602 {
     public SelenideElement inputDocumentosFile17 = $x("//input[@name='documentos[16].file']");
 
     public SelenideElement inputDocumentosFile18 = $x("//input[@name='documentos[17].file']");
+    public SelenideElement inputDocumentosFile19 = $x("//input[@name='documentos[18].file']");
+    public SelenideElement inputDocumentosFile20 = $x("//input[@name='documentos[19].file']");
 
     public SelenideElement spanAdjuntar = $x("//*[@id=\"btnAnexar\"]");
 
-    public SelenideElement spanCerrar = $x("/html/body/div[8]/div[3]/div/button[2]/span");
+    public SelenideElement spanCerrar = $x("//*[@id=\"btnCerrar\"]");
 
     public SelenideElement inputSiguienteButton = $x("//*[@id='siguienteButton']");
 

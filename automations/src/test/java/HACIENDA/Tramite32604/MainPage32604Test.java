@@ -216,7 +216,14 @@ public class MainPage32604Test {
                 mainPage32604.spanCerrar.click();sleep(500);
                 mainPage32604.inputSiguienteButton.click();sleep(500);
                 //FIRMAR SOLICITUD
-                //loginFirmSoli.firma(tramite32513);
+                loginFirmSoli.firma(tramite32604);
+                // Obtener el texto del folio desde mainPageB8
+                String folioText = mainPage32604.folio.getText();
+
+                // Llamar al metodo para obtener el folio
+                String folioNumber = obtenerFolio.obtenerFolio(folioText);
+
+
             }, repeticiones);
         }
     public void clickAceptarButton() {
