@@ -16,7 +16,7 @@ public class MainPage110205 {
     public SelenideElement btnIngres = $x("//button[@onclick='ejecutarProcesoFirma(1)']");
     public SelenideElement btnFirmar = $x("//*[@id='btnSubmit']");
     public SelenideElement folio = $x("//*[@id=\"notification\"]/div/ul/li");
-
+    public SelenideElement Scrol = Selenide.$x("//*[@id=\"logoHeader\"]");
 
     public SelenideElement selecRol = $x("//*[@id='claveRol']");
     public SelenideElement btnacep = $x("//button[@name='ingresar']");
@@ -30,7 +30,6 @@ public class MainPage110205 {
     public SelenideElement elementoTramite110205 = $x("//*[@id=\"servicios\"]/ul/li[4]/ul/li[2]/ul/li[5]/a");
 
 
-    public SelenideElement TituloPrincipal = $x("//*[@id=\"h1_title\"]");
     public SelenideElement SegundoTitulo = $x("//*[@id=\"tabs-solicitante\"]/div[5]/div/h3");
 
     //Elementos seccion certificado

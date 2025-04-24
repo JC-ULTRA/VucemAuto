@@ -1,6 +1,7 @@
 package Economia.Tramite140104;
 
 import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Selenide.$$;
@@ -16,7 +17,7 @@ public class MainPage140104 {
     public SelenideElement Tramites = $x("//*[@id='Trámites']");
     public SelenideElement SoliNew = $x("/html/body/main/div/div[2]/div[1]/div[1]/div/nav/div/div[2]/ul/li[5]/ul/li[3]/a");
     public SelenideElement Economia = $x("//img[contains(@alt, 'Economía')]");
-
+    public SelenideElement Scrol = Selenide.$x("//*[@id=\"logoHeader\"]");
     //Elementos para encontrar tramite
     public SelenideElement CancelModifDesistReact = $x("//*[@id=\"servicios\"]/ul/li[7]/a/span");
     public SelenideElement PeticionParte = $x("//*[@id=\"servicios\"]/ul/li[7]/ul/li/a/span");
@@ -24,7 +25,6 @@ public class MainPage140104 {
 
     //Paso1
     //Cancelacion Permisos Previamente Autorizados
-    public SelenideElement TituloPrincipal = $x("//*[@id=\"h1_title\"]");
     public SelenideElement tabCancelacionPermisosPrevAutorizado = $x("//*[@id=\"ui-id-2\"]/label");
     public SelenideElement btnAccederBusquedaFolio = $x("//*[@id=\"tabs-3\"]/div[2]/div/div/input[4]");
     public SelenideElement FolioResolucion = $x("//*[@id=\"folioResolucion\"]");

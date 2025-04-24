@@ -89,14 +89,19 @@ public class MainPage110207Test {
             //Datos de la mercancia
             // Usar Actions para desplazar hacia el elemento (scroll)
             // Agregar un retraso de 3 segundos antes de hacer el scroll (3000 ms = 3 segundos)
-            mainPage110207.TituloPrincipal.scrollTo().shouldBe(visible);
+            try {
+                Thread.sleep(2000); // Pausa de 3 segundos
+                // Hacer scroll hasta el elemento
+                mainPage110207.Scrol.scrollIntoView(true);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
             mainPage110207.tabCertificadoOrigen.click();
 
             mainPage110207.TratadoAcuerdo.sendKeys("Sistema Generalizado de Preferencias");
             mainPage110207.PaisBloque.sendKeys("JAPON");
             mainPage110207.btnBuscarmercancia.click();
             mainPage110207.filaMercanciaDisponible.doubleClick();
-            //mainPage110207.TituloPrincipal.scrollTo().shouldBe(visible);
 
             //Agregar datos Mercancia
             mainPage110207.MarcaMercancia.sendKeys("Marca QA");
@@ -129,7 +134,6 @@ public class MainPage110207Test {
             mainPage110207.RutaCompleta.sendKeys("Ruta QA translado");
             mainPage110207.PuertoEmbarque.sendKeys("Tokio");
             mainPage110207.PuertoDesembarque.sendKeys("Osaka");
-
 
             //Datos certificado
             mainPage110207.Paso1Textoreferencia.scrollTo().shouldBe(visible);

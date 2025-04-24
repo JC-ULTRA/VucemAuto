@@ -12,7 +12,7 @@ public class MainPage40403 {
     public SelenideElement folio = $x("//*[@id=\"notification\"]/div/ul/li");
     public SelenideElement selecRol = $x("//*[@id='claveRol']");
     public SelenideElement btnacep = $x("//button[@name='ingresar']");
-
+    public SelenideElement Scrol = Selenide.$x("//*[@id=\"logoHeader\"]");
     //Búsqueda de tramite
     public SelenideElement Tramites = $x("//*[@id='Trámites']");
     public SelenideElement SoliNew = $x("/html/body/main/div/div[2]/div[1]/div[1]/div/nav/div/div[2]/ul/li[5]/ul/li[3]/a");
@@ -23,7 +23,6 @@ public class MainPage40403 {
 
     //Paso 1
     //Pestaña Datos del trámite
-    public SelenideElement TituloTexto = $x("//*[@id=\"h1_title\"]");
     public SelenideElement TabDatosTramite = $x("//*[@id=\"ui-id-2\"]/label");
     public SelenideElement CodigoCAAT = $x("//*[@id=\"claveFolioCAAT\"]");
     public SelenideElement btnBuscarCAAT = $x("//*[@id=\"buscarSolicitudPorCAAT\"]");

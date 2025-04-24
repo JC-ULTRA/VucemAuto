@@ -95,7 +95,13 @@ public class MainPage110216Test {
             mainPage110216.elementoTramite110216.click(); sleep(1000);
 
             // Seccion Certificado origen
-            mainPage110216.TituloPrincipal.scrollTo().shouldBe(visible);
+            try {
+                Thread.sleep(2000); // Pausa de 3 segundos
+                // Hacer scroll hasta el elemento
+                mainPage110216.Scrol.scrollIntoView(true);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
             mainPage110216.tabCertificadoOrigen.click();
 
             mainPage110216.TratadoAcuerdo.sendKeys("Acuerdo México-Japón");
@@ -115,7 +121,13 @@ public class MainPage110216Test {
             mainPage110216.btnAceptarNotficacionAgrMercancia.click();
 
             //Flujo Seccion Historico Productores
-            mainPage110216.TituloPrincipal.scrollTo().shouldBe(visible);
+            try {
+                Thread.sleep(2000); // Pausa de 3 segundos
+                // Hacer scroll hasta el elemento
+                mainPage110216.Scrol.scrollIntoView(true);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
             mainPage110216.tabHistoricoProductores.click();
             mainPage110216.checkDatosProductorNoConfidencial.click();
             mainPage110216.checkExpImpNoMismaPersona.click();
@@ -124,7 +136,13 @@ public class MainPage110216Test {
             mainPage110216.btnSeleccionarAgrProductor.click();
 
             //Flujo Seccion Destinatario
-            mainPage110216.TituloPrincipal.scrollTo().shouldBe(visible);
+            try {
+                Thread.sleep(2000); // Pausa de 3 segundos
+                // Hacer scroll hasta el elemento
+                mainPage110216.Scrol.scrollIntoView(true);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
             mainPage110216.tabDestinatario.click();
             //Datos del destinatario
             mainPage110216.RFCDestinatario.sendKeys("GOFM951102208");

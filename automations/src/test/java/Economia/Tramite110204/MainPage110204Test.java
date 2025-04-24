@@ -89,9 +89,14 @@ public class MainPage110204Test {
             //Datos de la mercancia
             // Usar Actions para desplazar hacia el elemento (scroll)
             // Agregar un retraso de 3 segundos antes de hacer el scroll (3000 ms = 3 segundos)
-            mainPage110204.TituloPrincipal.scrollTo().shouldBe(visible);
+            try {
+                Thread.sleep(2000); // Pausa de 3 segundos
+                // Hacer scroll hasta el elemento
+                mainPage110204.Scrol.scrollIntoView(true);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
             mainPage110204.tabCertificadoOrigen.click();
-
             mainPage110204.TratadoAcuerdo.sendKeys("Acuerdo de Complementación Económica No. 6 México-Argentina");
             mainPage110204.PaisBloque.sendKeys("argentina (REPUBLICA)");
             mainPage110204.btnBuscarmercancia.click();
@@ -118,9 +123,6 @@ public class MainPage110204Test {
             mainPage110204.selectEstado.sendKeys("SINALOA");
 
             mainPage110204.btnContinuar.click();
-
-
-
 
             loginFirmSoli.firma(tramite110204);
 

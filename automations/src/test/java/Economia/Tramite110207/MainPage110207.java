@@ -1,6 +1,7 @@
 package Economia.Tramite110207;
 
 import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 import static com.codeborne.selenide.Selenide.$$;
 import static com.codeborne.selenide.Selenide.$x;
@@ -14,6 +15,7 @@ public class MainPage110207 {
     public SelenideElement btnIngres = $x("//button[@onclick='ejecutarProcesoFirma(1)']");
     public SelenideElement btnFirmar = $x("//*[@id='btnSubmit']");
     public SelenideElement folio = $x("//*[@id=\"notification\"]/div/ul/li");
+    public SelenideElement Scrol = Selenide.$x("//*[@id=\"logoHeader\"]");
 
 
     public SelenideElement selecRol = $x("//*[@id='claveRol']");
@@ -27,7 +29,6 @@ public class MainPage110207 {
     public SelenideElement ValidacionCertificado = $x("//*[@id=\"servicios\"]/ul/li[4]/ul/li[2]/a/span");
     public SelenideElement elementoTramite110207 = $x("//*[@id=\"servicios\"]/ul/li[4]/ul/li[2]/ul/li[7]/a");
 
-    public SelenideElement TituloPrincipal = $x("//*[@id=\"h1_title\"]");
     public SelenideElement tabCertificadoOrigen = $x("//*[@id=\"ui-id-2\"]");
 
   //Tratado y país o bloque

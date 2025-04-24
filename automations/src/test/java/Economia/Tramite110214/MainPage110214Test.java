@@ -120,7 +120,13 @@ public class MainPage110214Test {
             mainPage110214.elementoTramite110214.click(); sleep(1000);
 
             // Seccion Certificado origen
-            mainPage110214.TituloPrincipal.scrollTo().shouldBe(visible);
+            try {
+                Thread.sleep(2000); // Pausa de 3 segundos
+                // Hacer scroll hasta el elemento
+                mainPage110214.Scrol.scrollIntoView(true);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
             mainPage110214.tabCertificadoOrigen.click();
             //Seleccion de radio botones
             if (PeriodoRadio.isSelected()) {
@@ -152,7 +158,13 @@ public class MainPage110214Test {
             mainPage110214.btnAceptarNotficacionAgrMercancia.click();
 
             //Seccion Historico Productores
-            mainPage110214.TituloPrincipal.scrollTo().shouldBe(visible);
+            try {
+                Thread.sleep(2000); // Pausa de 3 segundos
+                // Hacer scroll hasta el elemento
+                mainPage110214.Scrol.scrollIntoView(true);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
             mainPage110214.tabHistoricoProductores.click();
             mainPage110214.checkDatosProductorNoConfidencial.click();
             mainPage110214.checkExpImpNoMismaPersona.click();
@@ -165,7 +177,13 @@ public class MainPage110214Test {
             mainPage110214.btnAsignarProductor.click();
 
             //Sección Destinatario
-            mainPage110214.TituloPrincipal.scrollTo().shouldBe(visible);
+            try {
+                Thread.sleep(2000); // Pausa de 3 segundos
+                // Hacer scroll hasta el elemento
+                mainPage110214.Scrol.scrollIntoView(true);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
             mainPage110214.tabDestinatario.click();
             //Datos del destinatario
             mainPage110214.RFCDestinatario.sendKeys("GOFM951102208");

@@ -14,6 +14,7 @@ public class MainPage110204 {
     public SelenideElement btnIngres = $x("//button[@onclick='ejecutarProcesoFirma(1)']");
     public SelenideElement btnFirmar = $x("//*[@id='btnSubmit']");
     public SelenideElement folio = $x("//*[@id=\"notification\"]/div/ul/li[2]");
+    public SelenideElement Scrol = Selenide.$x("//*[@id=\"logoHeader\"]");
 
 
     public SelenideElement selecRol = $x("//*[@id='claveRol']");
