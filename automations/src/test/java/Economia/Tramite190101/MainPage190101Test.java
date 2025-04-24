@@ -98,32 +98,22 @@ public class MainPage190101Test {
         Object[] flujoParams = {"Seleccione el flujo a ejecutar:", flujo1CheckBox, flujo2CheckBox, flujo3CheckBox, flujo4CheckBox, flujo5CheckBox, flujo6CheckBox, };
         int flujoSeleccionado = JOptionPane.showConfirmDialog(null, flujoParams, "Flujo de llenado", JOptionPane.OK_CANCEL_OPTION);
 
-        // Si el usuario cancela
-        if (flujoSeleccionado != JOptionPane.OK_OPTION) {
-            JOptionPane.showMessageDialog(null, "Operación cancelada por el usuario.");
-            return;
-        }
-        // Validación de selección obligatoria
-// Si el usuario cancela
         if (flujoSeleccionado != JOptionPane.OK_OPTION) {
             JOptionPane.showMessageDialog(null, "Operación cancelada por el usuario.");
             return;
         }
 
-// Verificar si alguna casilla está seleccionada
+        if (flujoSeleccionado != JOptionPane.OK_OPTION) {
+            JOptionPane.showMessageDialog(null, "Operación cancelada por el usuario.");
+            return;
+        }
+
         if (!flujo1CheckBox.isSelected() && !flujo2CheckBox.isSelected() && !flujo3CheckBox.isSelected() &&
                 !flujo4CheckBox.isSelected() && !flujo5CheckBox.isSelected() && !flujo6CheckBox.isSelected()) {
             // Si no se seleccionó ninguna opción, seleccionar automáticamente la primera opción
             flujo1CheckBox.setSelected(true);
             JOptionPane.showMessageDialog(null, "No se seleccionó ninguna opción. Se ha seleccionado automáticamente el primer flujo.");
         }
-
-// Aquí puedes agregar el código para procesar la opción seleccionada
-// Por ejemplo:
-        if (flujo1CheckBox.isSelected()) {
-            // Lógica para el flujo 1
-        }
-
         /////////////////////////////////////////////////////////////////////////////////////////////////////////
         // Ejecutar el proceso con las repeticiones y los métodos seleccionados
         ejecutarProcesoNRunnable(() -> {
@@ -134,7 +124,62 @@ public class MainPage190101Test {
             if (flujo4CheckBox.isSelected()) flujo = "input4";
             if (flujo5CheckBox.isSelected()) flujo = "input5";
             if (flujo6CheckBox.isSelected()) flujo = "input6";
-//            // Ingreso y selección de trámite
+            //EJECUTA CAMPOS COMUNES
+            Runnable bodegas = () -> {
+                //BODEGAS
+                mainPage190101.labelBodegas.click();
+                sleep(1000);
+                mainPage190101.selectEntidadBodega.sendKeys("SINALOA");
+                mainPage190101.selectEntidadBodegaDomicilio.sendKeys("Domicilio Fiscal");
+                mainPage190101.inputAgregarBodega.click();
+            };
+            Runnable informeLaboratorio = () -> {
+                try {
+                    Thread.sleep(2000);
+                    mainPage190101.Scrol.scrollIntoView(true);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                mainPage190101.labelInformeLaboratorio.click();
+                mainPage190101.inputAgregarNoAcreditado.click();
+                mainPage190101.btnBuscarLaboratorio.click();
+                mainPage190101.inputLaboratorioNoAcreditado.sendKeys("LEQI8101314S7");
+                mainPage190101.btnObtenerDatosLaboratorio.click();
+                mainPage190101.labelCamposFormulario.click();
+                mainPage190101.inputNormaAplicable.sendKeys("NOM-011-SCFI-2004");
+                mainPage190101.inputMarca.sendKeys("MarcaEjemplo");
+                Selenide.executeJavaScript("arguments[0].value = '06/04/2025';", mainPage190101.inputFechaInicioPruebas);sleep(100);
+                Selenide.executeJavaScript("arguments[0].value = '08/05/2025';", mainPage190101.inputFechaFinalPruebas);sleep(100);
+                Selenide.executeJavaScript("arguments[0].value = '22/04/2025';", mainPage190101.inputFechaEmision);sleep(100);
+                Selenide.executeJavaScript("arguments[0].value = '22/04/2025';", mainPage190101.inputFechaFinal);sleep(100);
+                mainPage190101.inputModeloEvaluado.sendKeys("ModeloX");
+                mainPage190101.inputNumeroInforme.sendKeys("12345");
+                try {
+                    Thread.sleep(2000);
+                    mainPage190101.Scrol.scrollIntoView(true);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                mainPage190101.labelNumeroSerie.click();
+                mainPage190101.inputUnidadesProducto.sendKeys("100");
+                mainPage190101.inputAgregarSerial.sendKeys("ABC123456");
+                mainPage190101.btnAgregarSerial.click();
+                mainPage190101.btnAgregarInformeLaboratorio.click();
+            };
+            Runnable ampliacionTitularidad = () -> {
+                mainPage190101.labelAmpliacionTitularidad.click();
+                mainPage190101.inputRequiereAmplitudTitularidad.click();
+                mainPage190101.inputManifiestoDesclaracion.click();
+                mainPage190101.inputRFCAmpliacion.sendKeys("LEQI8101314S7");
+                mainPage190101.btnAgregarAmpliacion.click();
+            };
+            Runnable norma = () -> {
+                mainPage190101.selectClasificacionNorma.sendKeys("Instrumentos de Medición"); // Seguridad del Producto
+                mainPage190101.selectNormaAplicable.sendKeys("NOM-005-SCFI-2011"); // NOM-021-ENER/SCFI-2008
+                mainPage190101.inputTiuad.click();
+                mainPage190101.inputSolicitudRegimen.click();
+            };
+            // Ingreso y selección de trámite
             loginFirmSoli.login(tramite190101);
             mainPage190101.selecRol.sendKeys("Persona Moral");
             mainPage190101.btnacep.click();
@@ -144,8 +189,6 @@ public class MainPage190101Test {
             mainPage190101.linkDireccionGeneralNormas.click();
             mainPage190101.linkCerfiticacion.click();
             mainPage190101.linkCerfiticacionNOM.click(); sleep(500);
-            // Usar Actions para desplazar hacia el elemento (scroll)
-            // Agregar un retraso de 3 segundos antes de hacer el scroll (3000 ms = 3 segundos)
             try {
                 Thread.sleep(2000); // Pausa de 3 segundos
                 // Hacer scroll hasta el elemento
@@ -172,29 +215,22 @@ public class MainPage190101Test {
                 }
                 mainPage190101.labelMercancia.click();
                 mainPage190101.inputNuevo.click();
-                //mainPage190101.inputNuevo.shouldBe(Condition.visible).click();
-                //Selenide.executeJavaScript("arguments[0].value = 'NUEVO';", mainPage190101.inputNuevo); sleep(1000);
-                //$("option[value='NUEVO']").click();
                 mainPage190101.inputSolicitudDescripcionOtroTipo.sendKeys("PRODUCTO DE PRUEBA");
-
                 // Mostrar submenú solo para la certificacion
                 JCheckBox tiuadCheckBox = new JCheckBox("Por Producto");
                 JCheckBox ticp2CheckBox = new JCheckBox("Por Familia de Modelos");
                 JCheckBox ticp3CheckBox = new JCheckBox("Por Lote");
-
                 Object[] opcionesInput1 = {
 
                         "Seleccione el tipo de certificación:",
                         tiuadCheckBox, ticp2CheckBox, ticp3CheckBox
                 };
-
                 int seleccionCampos = JOptionPane.showConfirmDialog(
                         null,
                         opcionesInput1,
                         "CATEGORIA DEL PRODUCTO",
                         JOptionPane.OK_CANCEL_OPTION
                 );
-
                 if (seleccionCampos == JOptionPane.OK_OPTION) {
                     if (tiuadCheckBox.isSelected()) {
                         $(By.xpath("//*[@id=\"TICP.CFP\"]\n")).click();
@@ -208,51 +244,11 @@ public class MainPage190101Test {
                         mainPage190101.inputAgregarFracciones2.click();sleep(1000);
                         mainPage190101.inputAgregarFracciones4.click();
                         //BODEGAS
-                        mainPage190101.labelBodegas.click();sleep(1000);
-                        mainPage190101.selectEntidadBodega.sendKeys("SINALOA");
-                        mainPage190101.selectEntidadBodegaDomicilio.sendKeys("Domicilio Fiscal");
-                        mainPage190101.inputAgregarBodega.click();
+                        bodegas.run();
                         //INFORME LABORATORIO
-//                try {
-//                    Thread.sleep(2000); // Pausa de 3 segundos
-//                    // Hacer scroll hasta el elemento
-//                    mainPage190101.Scrol.scrollIntoView(true);
-//                } catch (InterruptedException e) {
-//                    e.printStackTrace();
-//                }
-//                mainPage190101.labelInformeLaboratorio.click();
-//                mainPage190101.inputAgregarNoAcreditado.click();
-//                mainPage190101.btnBuscarLaboratorio.click();
-//                mainPage190101.inputLaboratorioNoAcreditado.sendKeys("LEQI8101314S7");
-//                mainPage190101.btnObtenerDatosLaboratorio.click();
-//                mainPage190101.labelCamposFormulario.click();
-//                mainPage190101.inputNormaAplicable.sendKeys("NOM-011-SCFI-2004");
-//                mainPage190101.inputMarca.sendKeys("MarcaEjemplo");
-//                Selenide.executeJavaScript("arguments[0].value = '06/04/2025';", mainPage190101.inputFechaInicioPruebas);sleep(100);
-//                Selenide.executeJavaScript("arguments[0].value = '08/05/2025';", mainPage190101.inputFechaFinalPruebas);sleep(100);
-//                Selenide.executeJavaScript("arguments[0].value = '22/04/2025';", mainPage190101.inputFechaEmision);sleep(100);
-//                Selenide.executeJavaScript("arguments[0].value = '22/04/2025';", mainPage190101.inputFechaFinal);sleep(100);
-//                mainPage190101.inputModeloEvaluado.sendKeys("ModeloX");
-//                mainPage190101.inputNumeroInforme.sendKeys("12345");
-//                try {
-//                    Thread.sleep(2000); // Pausa de 3 segundos
-//                    // Hacer scroll hasta el elemento
-//                    mainPage190101.Scrol.scrollIntoView(true);
-//                } catch (InterruptedException e) {
-//                    e.printStackTrace();
-//                }
-//                mainPage190101.labelNumeroSerie.click();
-//                mainPage190101.inputUnidadesProducto.sendKeys("100");
-//                mainPage190101.inputAgregarSerial.sendKeys("ABC123456");
-//                mainPage190101.btnAgregarSerial.click();
-//                mainPage190101.btnAgregarInformeLaboratorio.click();
-
-                        //AMPLIACION TITULARIDAD
-//                mainPage190101.labelAmpliacionTitularidad.click();
-//                mainPage190101.inputRequiereAmplitudTitularidad.click();
-//                mainPage190101.inputManifiestoDesclaracion.click();
-//                mainPage190101.inputRFCAmpliacion.sendKeys("LEQI8101314S7");
-//                mainPage190101.btnAgregarAmpliacion.click();
+                        informeLaboratorio.run();
+                        //AMPLITUD TITULARIDAD
+                        ampliacionTitularidad.run();
                     }
                     if (ticp2CheckBox.isSelected()) {
                         $(By.xpath("//*[@id=\"TICP.CFFM\"]")).click();
@@ -268,51 +264,11 @@ public class MainPage190101Test {
                         mainPage190101.inputAgregarFracciones2.click();sleep(1000);
                         mainPage190101.inputAgregarFracciones4.click();
                         //BODEGAS
-                        mainPage190101.labelBodegas.click();sleep(1000);
-                        mainPage190101.selectEntidadBodega.sendKeys("SINALOA");
-                        mainPage190101.selectEntidadBodegaDomicilio.sendKeys("Domicilio Fiscal");
-                        mainPage190101.inputAgregarBodega.click();
+                        bodegas.run();
                         //INFORME LABORATORIO
-//                try {
-//                    Thread.sleep(2000); // Pausa de 3 segundos
-//                    // Hacer scroll hasta el elemento
-//                    mainPage190101.Scrol.scrollIntoView(true);
-//                } catch (InterruptedException e) {
-//                    e.printStackTrace();
-//                }
-//                mainPage190101.labelInformeLaboratorio.click();
-//                mainPage190101.inputAgregarNoAcreditado.click();
-//                mainPage190101.btnBuscarLaboratorio.click();
-//                mainPage190101.inputLaboratorioNoAcreditado.sendKeys("LEQI8101314S7");
-//                mainPage190101.btnObtenerDatosLaboratorio.click();
-//                mainPage190101.labelCamposFormulario.click();
-//                mainPage190101.inputNormaAplicable.sendKeys("NOM-011-SCFI-2004");
-//                mainPage190101.inputMarca.sendKeys("MarcaEjemplo");
-//                Selenide.executeJavaScript("arguments[0].value = '06/04/2025';", mainPage190101.inputFechaInicioPruebas);sleep(100);
-//                Selenide.executeJavaScript("arguments[0].value = '08/05/2025';", mainPage190101.inputFechaFinalPruebas);sleep(100);
-//                Selenide.executeJavaScript("arguments[0].value = '22/04/2025';", mainPage190101.inputFechaEmision);sleep(100);
-//                Selenide.executeJavaScript("arguments[0].value = '22/04/2025';", mainPage190101.inputFechaFinal);sleep(100);
-//                mainPage190101.inputModeloEvaluado.sendKeys("ModeloX");
-//                mainPage190101.inputNumeroInforme.sendKeys("12345");
-//                try {
-//                    Thread.sleep(2000); // Pausa de 3 segundos
-//                    // Hacer scroll hasta el elemento
-//                    mainPage190101.Scrol.scrollIntoView(true);
-//                } catch (InterruptedException e) {
-//                    e.printStackTrace();
-//                }
-//                mainPage190101.labelNumeroSerie.click();
-//                mainPage190101.inputUnidadesProducto.sendKeys("100");
-//                mainPage190101.inputAgregarSerial.sendKeys("ABC123456");
-//                mainPage190101.btnAgregarSerial.click();
-//                mainPage190101.btnAgregarInformeLaboratorio.click();
-
+                        informeLaboratorio.run();
                         //AMPLIACION TITULARIDAD
-//                mainPage190101.labelAmpliacionTitularidad.click();
-//                mainPage190101.inputRequiereAmplitudTitularidad.click();
-//                mainPage190101.inputManifiestoDesclaracion.click();
-//                mainPage190101.inputRFCAmpliacion.sendKeys("LEQI8101314S7");
-//                mainPage190101.btnAgregarAmpliacion.click();
+                        ampliacionTitularidad.run();
                     }
                     if (ticp3CheckBox.isSelected()) {
                         $(By.xpath("//*[@id='TICP.CFL']")).click();
@@ -329,50 +285,12 @@ public class MainPage190101Test {
                         mainPage190101.inputAgregarFracciones2.click();sleep(1000);
                         mainPage190101.inputAgregarFracciones4.click();
                         //BODEGAS
-                        mainPage190101.labelBodegas.click();sleep(1000);
-                        mainPage190101.selectEntidadBodega.sendKeys("SINALOA");
-                        mainPage190101.selectEntidadBodegaDomicilio.sendKeys("Domicilio Fiscal");
-                        mainPage190101.inputAgregarBodega.click();
+                        bodegas.run();
                         //INFORME LABORATORIO
-//                        try {
-//                            Thread.sleep(2000); // Pausa de 3 segundos
-//                            // Hacer scroll hasta el elemento
-//                            mainPage190101.Scrol.scrollIntoView(true);
-//                        } catch (InterruptedException e) {
-//                            e.printStackTrace();
-//                        }
-//                        mainPage190101.labelInformeLaboratorio.click();
-//                        mainPage190101.inputAgregarNoAcreditado.click();
-//                        mainPage190101.btnBuscarLaboratorio.click();
-//                        mainPage190101.inputLaboratorioNoAcreditado.sendKeys("LEQI8101314S7");
-//                        mainPage190101.btnObtenerDatosLaboratorio.click();
-//                        mainPage190101.labelCamposFormulario.click();
-//                        mainPage190101.inputNormaAplicable.sendKeys("NOM-011-SCFI-2004");
-//                        mainPage190101.inputMarca.sendKeys("MarcaEjemplo");
-//                        Selenide.executeJavaScript("arguments[0].value = '06/04/2025';", mainPage190101.inputFechaInicioPruebas);sleep(100);
-//                        Selenide.executeJavaScript("arguments[0].value = '08/05/2025';", mainPage190101.inputFechaFinalPruebas);sleep(100);
-//                        Selenide.executeJavaScript("arguments[0].value = '22/04/2025';", mainPage190101.inputFechaEmision);sleep(100);
-//                        Selenide.executeJavaScript("arguments[0].value = '22/04/2025';", mainPage190101.inputFechaFinal);sleep(100);
-//                        mainPage190101.inputModeloEvaluado.sendKeys("ModeloX");
-//                        mainPage190101.inputNumeroInforme.sendKeys("12345");
-//                        try {
-//                            Thread.sleep(2000); // Pausa de 3 segundos
-//                            // Hacer scroll hasta el elemento
-//                            mainPage190101.Scrol.scrollIntoView(true);
-//                        } catch (InterruptedException e) {
-//                            e.printStackTrace();
-//                        }
-//                        mainPage190101.labelNumeroSerie.click();
-//                        mainPage190101.inputUnidadesProducto.sendKeys("100");
-//                        mainPage190101.inputAgregarSerial.sendKeys("ABC123456");
-//                        mainPage190101.btnAgregarSerial.click();
-//                        mainPage190101.btnAgregarInformeLaboratorio.click();
+                        informeLaboratorio.run();
                     }
-                    mainPage190101.btnGuardaSolicitud.click();
                 }
-
             }
-
             if (flujo.equals("input2")) {
                 mainPage190101.input2.click();
                 mainPage190101.inputNumeroInforme2.sendKeys("12345");
@@ -382,11 +300,7 @@ public class MainPage190101Test {
                 Selenide.executeJavaScript("arguments[0].value = '08/04/2025';", mainPage190101.inputFechaNumeroCertificado);sleep(100);
                 mainPage190101.btnNumeroCertificado.click();
                 mainPage190101.inputCampoOrganismo.sendKeys("98676");
-                mainPage190101.selectClasificacionNorma.sendKeys("Instrumentos de Medición"); // Seguridad del Producto
-                mainPage190101.selectNormaAplicable.sendKeys("NOM-005-SCFI-2011"); // NOM-021-ENER/SCFI-2008
-                mainPage190101.inputTiuad.click();
-                mainPage190101.inputSolicitudRegimen.click();
-
+                norma.run();
                 try {
                     Thread.sleep(2000); // Pausa de 3 segundos
                     // Hacer scroll hasta el elemento
@@ -394,31 +308,24 @@ public class MainPage190101Test {
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
+                //MERCANCIA
                 mainPage190101.labelMercancia.click();
                 mainPage190101.inputNuevo.click();
-                //mainPage190101.inputNuevo.shouldBe(Condition.visible).click();
-                //Selenide.executeJavaScript("arguments[0].value = 'NUEVO';", mainPage190101.inputNuevo); sleep(1000);
-                //$("option[value='NUEVO']").click();
                 mainPage190101.inputSolicitudDescripcionOtroTipo.sendKeys("PRODUCTO DE PRUEBA");
-
                 // Mostrar submenú solo para la certificacion
                 JCheckBox tiuadCheckBox = new JCheckBox("Por Producto");
                 JCheckBox ticp2CheckBox = new JCheckBox("Por Familia de Modelos");
                 JCheckBox ticp3CheckBox = new JCheckBox("Por Lote");
-
                 Object[] opcionesInput1 = {
-
                         "Seleccione el tipo de certificación:",
                         tiuadCheckBox, ticp2CheckBox, ticp3CheckBox
                 };
-
                 int seleccionCampos = JOptionPane.showConfirmDialog(
                         null,
                         opcionesInput1,
                         "CATEGORIA DEL PRODUCTO",
                         JOptionPane.OK_CANCEL_OPTION
                 );
-
                 if (seleccionCampos == JOptionPane.OK_OPTION) {
                     if (tiuadCheckBox.isSelected()) {
                         $(By.xpath("//*[@id=\"TICP.CFP\"]\n")).click();
@@ -432,58 +339,298 @@ public class MainPage190101Test {
                         mainPage190101.inputAgregarFracciones2.click();sleep(1000);
                         mainPage190101.inputAgregarFracciones4.click();
                         //BODEGAS
-                        mainPage190101.labelBodegas.click();sleep(1000);
-                        mainPage190101.selectEntidadBodega.sendKeys("SINALOA");
-                        mainPage190101.selectEntidadBodegaDomicilio.sendKeys("Domicilio Fiscal");
-                        mainPage190101.inputAgregarBodega.click();
+                        bodegas.run();
                         //INFORME LABORATORIO
-//                        try {
-//                            Thread.sleep(2000); // Pausa de 3 segundos
-//                            // Hacer scroll hasta el elemento
-//                            mainPage190101.Scrol.scrollIntoView(true);
-//                        } catch (InterruptedException e) {
-//                            e.printStackTrace();
-//                        }
-//                        mainPage190101.labelInformeLaboratorio.click();
-//                        mainPage190101.inputAgregarNoAcreditado.click();
-//                        mainPage190101.btnBuscarLaboratorio.click();
-//                        mainPage190101.inputLaboratorioNoAcreditado.sendKeys("LEQI8101314S7");
-//                        mainPage190101.btnObtenerDatosLaboratorio.click();
-//                        mainPage190101.labelCamposFormulario.click();
-//                        mainPage190101.inputNormaAplicable.sendKeys("NOM-011-SCFI-2004");
-//                        mainPage190101.inputMarca.sendKeys("MarcaEjemplo");
-//                        Selenide.executeJavaScript("arguments[0].value = '06/04/2025';", mainPage190101.inputFechaInicioPruebas);sleep(100);
-//                        Selenide.executeJavaScript("arguments[0].value = '08/05/2025';", mainPage190101.inputFechaFinalPruebas);sleep(100);
-//                        Selenide.executeJavaScript("arguments[0].value = '22/04/2025';", mainPage190101.inputFechaEmision);sleep(100);
-//                        Selenide.executeJavaScript("arguments[0].value = '22/04/2025';", mainPage190101.inputFechaFinal);sleep(100);
-//                        mainPage190101.inputModeloEvaluado.sendKeys("ModeloX");
-//                        mainPage190101.inputNumeroInforme.sendKeys("12345");
-//                        try {
-//                            Thread.sleep(2000); // Pausa de 3 segundos
-//                            // Hacer scroll hasta el elemento
-//                            mainPage190101.Scrol.scrollIntoView(true);
-//                        } catch (InterruptedException e) {
-//                            e.printStackTrace();
-//                        }
-//                        mainPage190101.labelNumeroSerie.click();
-//                        mainPage190101.inputUnidadesProducto.sendKeys("100");
-//                        mainPage190101.inputAgregarSerial.sendKeys("ABC123456");
-//                        mainPage190101.btnAgregarSerial.click();
-//                        mainPage190101.btnAgregarInformeLaboratorio.click();
+                        informeLaboratorio.run();
+                        //AMPLIACION TITULARIDAD
+                        ampliacionTitularidad.run();
                     }
-                    mainPage190101.btnGuardaSolicitud.click();
+                    if (ticp2CheckBox.isSelected()) {
+                        $(By.xpath("//*[@id=\"TICP.CFFM\"]")).click();
+                        mainPage190101.btnAceptar.click();
+                        mainPage190101.inputFamiliaModelos.sendKeys("MODELOS QA");
+                        mainPage190101.btnAgregarFamilia.click();
+                        mainPage190101.inputMarcaFamilia.sendKeys("MARCA QA");
+                        mainPage190101.inputModeloRepresentativoFamilia.sendKeys("MODELO QA");
+                        mainPage190101.inputSolicitudProductoTipoFamilia.sendKeys("QA");
+                        mainPage190101.inputSolicitudProductoSubtipoFamilia.sendKeys("QA");
+                        mainPage190101.textareaAccesoriosProductofamilia.sendKeys("ACCESORIOS DE QA");
+                        mainPage190101.inputAgregarFracciones.click();sleep(500);
+                        mainPage190101.inputAgregarFracciones2.click();sleep(1000);
+                        mainPage190101.inputAgregarFracciones4.click();
+                        //BODEGAS
+                        bodegas.run();
+                        //INFORME LABORATORIO
+                        informeLaboratorio.run();
+                        //AMPLIACION TITULARIDAD
+                        ampliacionTitularidad.run();
+                    }
+                    if (ticp3CheckBox.isSelected()) {
+                        $(By.xpath("//*[@id='TICP.CFL']")).click();
+                        mainPage190101.btnAceptar.click();
+                        mainPage190101.inputTamanoLotes.sendKeys("50");
+                        mainPage190101.inputUnidadMedida.sendKeys("Docenas");
+                        mainPage190101.inputNumSerie.click();
+                        mainPage190101.inputMarcaLotes.sendKeys("MARCA QA");
+                        mainPage190101.inputModeloLotes.sendKeys("MODELO QA");
+                        mainPage190101.inputSerieLotes.sendKeys("SERIE QA");
+                        mainPage190101.btnAgregarLotes.click();
+                        mainPage190101.textareaAccesoriosProductoLote.sendKeys("PRUEBA QA");
+                        mainPage190101.inputAgregarFracciones.click();sleep(500);
+                        mainPage190101.inputAgregarFracciones2.click();sleep(1000);
+                        mainPage190101.inputAgregarFracciones4.click();
+                        //BODEGAS
+                        bodegas.run();
+                        //INFORME LABORATORIO
+                        informeLaboratorio.run();
+                    }
                 }
-
-
-
-
-
-
             }
+            if (flujo.equals("input3")) {
+                mainPage190101.input3.click();
+                mainPage190101.inputNumeroInformeD.sendKeys("12345");
+                Selenide.executeJavaScript("arguments[0].value = '08/04/2025';", mainPage190101.inputFechaInformeD);sleep(100);
+                mainPage190101.inputCampoOrganismoD.sendKeys("98676");
+                mainPage190101.btnAgregarInformeCertificacionD.click();
+                mainPage190101.inputnumeroDictamen.sendKeys("23456");
+                Selenide.executeJavaScript("arguments[0].value = '08/04/2025';", mainPage190101.inputFechaDictamen);sleep(100);
+                mainPage190101.inputOrganismoEmisorDictamen.click();
+                norma.run();
+                try {
+                    Thread.sleep(2000); // Pausa de 3 segundos
+                    // Hacer scroll hasta el elemento
+                    mainPage190101.Scrol.scrollIntoView(true);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                mainPage190101.labelMercancia.click();
+                mainPage190101.inputNuevo.click();
+                mainPage190101.inputSolicitudDescripcionOtroTipo.sendKeys("PRODUCTO DE PRUEBA");
+                // Mostrar submenú solo para la certificacion
+                JCheckBox tiuadCheckBox = new JCheckBox("Por Producto");
+                JCheckBox ticp2CheckBox = new JCheckBox("Por Familia de Modelos");
+                JCheckBox ticp3CheckBox = new JCheckBox("Por Lote");
+                Object[] opcionesInput1 = {
+                        "Seleccione el tipo de certificación:",
+                        tiuadCheckBox, ticp2CheckBox, ticp3CheckBox
+                };
+                int seleccionCampos = JOptionPane.showConfirmDialog(
+                        null,
+                        opcionesInput1,
+                        "CATEGORIA DEL PRODUCTO",
+                        JOptionPane.OK_CANCEL_OPTION
+                );
+                if (seleccionCampos == JOptionPane.OK_OPTION) {
+                    if (tiuadCheckBox.isSelected()) {
+                        $(By.xpath("//*[@id=\"TICP.CFP\"]\n")).click();
+                        mainPage190101.btnAceptar.click();
+                        mainPage190101.inputSolicitudProductoMarca.sendKeys("MARCA QA");
+                        mainPage190101.inputSolicitudProductoModeloRepresentativo.sendKeys("MODELO QA");
+                        mainPage190101.inputSolicitudProductoTipo.sendKeys("QA");
+                        mainPage190101.inputSolicitudProductoSubtipo.sendKeys("QA");
+                        mainPage190101.textareaAccesoriosProducto.sendKeys("ACCESORIOS DE QA");
+                        mainPage190101.inputAgregarFracciones.click();sleep(500);
+                        mainPage190101.inputAgregarFracciones2.click();sleep(1000);
+                        mainPage190101.inputAgregarFracciones4.click();
+                        //BODEGAS
+                        bodegas.run();
+                        //AMPLITUD TITULARIDAD
+                        ampliacionTitularidad.run();
+                    }
+                    if (ticp2CheckBox.isSelected()) {
+                        $(By.xpath("//*[@id=\"TICP.CFFM\"]")).click();
+                        mainPage190101.btnAceptar.click();
+                        mainPage190101.inputFamiliaModelos.sendKeys("MODELOS QA");
+                        mainPage190101.btnAgregarFamilia.click();
+                        mainPage190101.inputMarcaFamilia.sendKeys("MARCA QA");
+                        mainPage190101.inputModeloRepresentativoFamilia.sendKeys("MODELO QA");
+                        mainPage190101.inputSolicitudProductoTipoFamilia.sendKeys("QA");
+                        mainPage190101.inputSolicitudProductoSubtipoFamilia.sendKeys("QA");
+                        mainPage190101.textareaAccesoriosProductofamilia.sendKeys("ACCESORIOS DE QA");
+                        mainPage190101.inputAgregarFracciones.click();sleep(500);
+                        mainPage190101.inputAgregarFracciones2.click();sleep(1000);
+                        mainPage190101.inputAgregarFracciones4.click();
+                        //BODEGAS
+                        bodegas.run();
+                        //AMPLIACION TITULARIDAD
+                        ampliacionTitularidad.run();
+                    }
+                    if (ticp3CheckBox.isSelected()) {
+                        $(By.xpath("//*[@id='TICP.CFL']")).click();
+                        mainPage190101.btnAceptar.click();
+                        mainPage190101.inputTamanoLotes.sendKeys("50");
+                        mainPage190101.inputUnidadMedida.sendKeys("Docenas");
+                        mainPage190101.inputNumSerie.click();
+                        mainPage190101.inputMarcaLotes.sendKeys("MARCA QA");
+                        mainPage190101.inputModeloLotes.sendKeys("MODELO QA");
+                        mainPage190101.inputSerieLotes.sendKeys("SERIE QA");
+                        mainPage190101.btnAgregarLotes.click();
+                        mainPage190101.textareaAccesoriosProductoLote.sendKeys("PRUEBA QA");
+                        mainPage190101.inputAgregarFracciones.click();sleep(500);
+                        mainPage190101.inputAgregarFracciones2.click();sleep(1000);
+                        mainPage190101.inputAgregarFracciones4.click();
+                        //BODEGAS
+                        bodegas.run();
+                    }
+                }
+            }
+            if (flujo.equals("input4")) {
+                mainPage190101.input4.click();
+                norma.run();
+                try {
+                    Thread.sleep(2000); // Pausa de 3 segundos
+                    // Hacer scroll hasta el elemento
+                    mainPage190101.Scrol.scrollIntoView(true);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                mainPage190101.labelMercancia.click();
+                mainPage190101.inputReconstruido.click();
+                mainPage190101.inputSolicitudDescripcionOtroTipo.sendKeys("PRODUCTO DE PRUEBA");
+                // Mostrar submenú solo para la certificacion
+                JCheckBox tiuadCheckBox = new JCheckBox("Por Producto");
+                JCheckBox ticp2CheckBox = new JCheckBox("Por Familia de Modelos");
+                JCheckBox ticp3CheckBox = new JCheckBox("Por Lote");
+                Object[] opcionesInput1 = {
 
+                        "Seleccione el tipo de certificación:",
+                        tiuadCheckBox, ticp2CheckBox, ticp3CheckBox
+                };
+                int seleccionCampos = JOptionPane.showConfirmDialog(
+                        null,
+                        opcionesInput1,
+                        "CATEGORIA DEL PRODUCTO",
+                        JOptionPane.OK_CANCEL_OPTION
+                );
+                if (seleccionCampos == JOptionPane.OK_OPTION) {
+                    if (tiuadCheckBox.isSelected()) {
+                        $(By.xpath("//*[@id=\"TICP.CFP\"]\n")).click();
+                        //mainPage190101.btnAceptar.click();
+                        mainPage190101.inputSolicitudProductoMarca.sendKeys("MARCA QA");
+                        mainPage190101.inputSolicitudProductoModeloRepresentativo.sendKeys("MODELO QA");
+                        mainPage190101.inputSolicitudProductoTipo.sendKeys("QA");
+                        mainPage190101.inputSolicitudProductoSubtipo.sendKeys("QA");
+                        mainPage190101.textareaAccesoriosProducto.sendKeys("ACCESORIOS DE QA");
+                        mainPage190101.inputAgregarFracciones.click();sleep(500);
+                        mainPage190101.inputAgregarFracciones2.click();sleep(1000);
+                        mainPage190101.inputAgregarFracciones4.click();
+                        //BODEGAS
+                        bodegas.run();
+                        //INFROME LABORATORIO
+                        informeLaboratorio.run();
+                        //AMPLITUD TITULARIDAD
+                        ampliacionTitularidad.run();
+                    }
+                    if (ticp2CheckBox.isSelected()) {
+                        $(By.xpath("//*[@id=\"TICP.CFFM\"]")).click();
+                        mainPage190101.inputFamiliaModelos.sendKeys("MODELOS QA");
+                        mainPage190101.btnAgregarFamilia.click();
+                        mainPage190101.inputMarcaFamilia.sendKeys("MARCA QA");
+                        mainPage190101.inputModeloRepresentativoFamilia.sendKeys("MODELO QA");
+                        mainPage190101.inputSolicitudProductoTipoFamilia.sendKeys("QA");
+                        mainPage190101.inputSolicitudProductoSubtipoFamilia.sendKeys("QA");
+                        mainPage190101.textareaAccesoriosProductofamilia.sendKeys("ACCESORIOS DE QA");
+                        mainPage190101.inputAgregarFracciones.click();sleep(500);
+                        mainPage190101.inputAgregarFracciones2.click();sleep(1000);
+                        mainPage190101.inputAgregarFracciones4.click();
+                        //BODEGAS
+                        bodegas.run();
+                        //INFROME LABORATORIO
+                        informeLaboratorio.run();
+                        //AMPLITUD TITULARIDAD
+                        ampliacionTitularidad.run();
+                    }
+                    if (ticp3CheckBox.isSelected()) {
+                        $(By.xpath("//*[@id='TICP.CFL']")).click();
+                        mainPage190101.btnAceptar.click();
+                        mainPage190101.inputTamanoLotes.sendKeys("50");
+                        mainPage190101.inputUnidadMedida.sendKeys("Docenas");
+                        mainPage190101.inputNumSerie.click();
+                        mainPage190101.inputMarcaLotes.sendKeys("MARCA QA");
+                        mainPage190101.inputModeloLotes.sendKeys("MODELO QA");
+                        mainPage190101.inputSerieLotes.sendKeys("SERIE QA");
+                        mainPage190101.btnAgregarLotes.click();
+                        mainPage190101.textareaAccesoriosProductoLote.sendKeys("PRUEBA QA");
+                        mainPage190101.inputAgregarFracciones.click();sleep(500);
+                        mainPage190101.inputAgregarFracciones2.click();sleep(1000);
+                        mainPage190101.inputAgregarFracciones4.click();
+                        //BODEGAS
+                        bodegas.run();
+                        //INFROME LABORATORIO
+                        informeLaboratorio.run();
+                    }
+                }
+            }
+            if (flujo.equals("input5")) {
+                mainPage190101.input5.click();
+                norma.run();
+                try {
+                    Thread.sleep(2000); // Pausa de 3 segundos
+                    // Hacer scroll hasta el elemento
+                    mainPage190101.Scrol.scrollIntoView(true);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                mainPage190101.labelMercancia.click();
+                mainPage190101.inputReconstruido.click();
+                mainPage190101.inputSolicitudDescripcionOtroTipo.sendKeys("PRODUCTO DE PRUEBA");
+                $(By.xpath("//*[@id='TICP.CFL']")).click();
+                mainPage190101.btnAceptar.click();
+                mainPage190101.inputTamanoLotes.sendKeys("50");
+                mainPage190101.inputUnidadMedida.sendKeys("Docenas");
+                mainPage190101.inputNumSerie.click();
+                mainPage190101.inputMarcaLotes.sendKeys("MARCA QA");
+                mainPage190101.inputModeloLotes.sendKeys("MODELO QA");
+                mainPage190101.inputSerieLotes.sendKeys("SERIE QA");
+                mainPage190101.btnAgregarLotes.click();
+                mainPage190101.textareaAccesoriosProductoLote.sendKeys("PRUEBA QA");
+                mainPage190101.inputAgregarFracciones.click();
+                sleep(500);
+                mainPage190101.inputAgregarFracciones2.click();
+                sleep(1000);
+                mainPage190101.inputAgregarFracciones4.click();
+                //BODEGAS
+                bodegas.run();
+                //INFROME LABORATORIO
+                informeLaboratorio.run();
+            }
+            if (flujo.equals("input6")) {
+                mainPage190101.input6.click();
+                norma.run();
+                try {
+                    Thread.sleep(2000); // Pausa de 3 segundos
+                    // Hacer scroll hasta el elemento
+                    mainPage190101.Scrol.scrollIntoView(true);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                mainPage190101.labelMercancia.click();
+                mainPage190101.inputFueraEspecificaciones.click();
+                mainPage190101.inputSolicitudDescripcionOtroTipo.sendKeys("PRODUCTO DE PRUEBA");
+                $(By.xpath("//*[@id='TICP.CFL']")).click();
+                mainPage190101.btnAceptar.click();
+                mainPage190101.inputTamanoLotes.sendKeys("50");
+                mainPage190101.inputUnidadMedida.sendKeys("Docenas");
+                mainPage190101.inputNumSerie.click();
+                mainPage190101.inputMarcaLotes.sendKeys("MARCA QA");
+                mainPage190101.inputModeloLotes.sendKeys("MODELO QA");
+                mainPage190101.inputSerieLotes.sendKeys("SERIE QA");
+                mainPage190101.btnAgregarLotes.click();
+                mainPage190101.textareaAccesoriosProductoLote.sendKeys("PRUEBA QA");
+                mainPage190101.inputAgregarFracciones.click();
+                sleep(500);
+                mainPage190101.inputAgregarFracciones2.click();
+                sleep(1000);
+                mainPage190101.inputAgregarFracciones4.click();
+                //BODEGAS
+                bodegas.run();
+                //INFROME LABORATORIO
+                informeLaboratorio.run();
+            }
+            mainPage190101.btnGuardaSolicitud.click();
 
             //Firmas
-            mainPage190101.inputSiguienteButton.click();
+//            mainPage190101.inputSiguienteButton.click();
 //            loginFirmSoli.firma(tramite190101);
 //
 //            // Obtener el texto del folio desde mainPage190101
