@@ -20,14 +20,17 @@ public class MainPage120101Test {
     MainPage120101 mainPage120101 = new MainPage120101();
     LoginFirmSoli loginSoli = new LoginFirmSoli();
     ObtenerFolio obtenerFolio = new ObtenerFolio();
-    TramitesFirmasLG tramite120101  = new TramitesFirmasLG(
+    TramitesFirmasLG tramite120101 = new TramitesFirmasLG(
             "C:\\VucemAuto\\automations\\src\\test\\resources\\CredSoli\\aal0409235e6.cer",
             "C:\\VucemAuto\\automations\\src\\test\\resources\\CredSoli\\AAL0409235E6_1012231310.key"
     );
 
+    // Variable para almacenar el tipo de trámite seleccionado
+    private String tipoTramite = "";
+
     @BeforeAll
     public static void initDriver() {
-        Configuration.browser = Browsers.CHROME;   //FIREFOX;
+        Configuration.browser = Browsers.CHROME;
         open();
         getWebDriver().manage().window().maximize();
     }
@@ -40,54 +43,70 @@ public class MainPage120101Test {
 
     @Test
     public void Proceso120101() throws IOException {
-        /////////////////////////////////////////////////////////////////////////////////////////////////////////-
-        // Solicitar el número de repeticiones al usuario a través de un JOptionPane con opción de Cancelar
-        String repeticionesStr = JOptionPane.showInputDialog(null, "Ingrese el número de repeticiones:", "Repeticiones", JOptionPane.QUESTION_MESSAGE);
 
-        // Si el usuario cancela o cierra el cuadro de diálogo, repeticionesStr será null
-        if (repeticionesStr == null) {
+        if (tipoTramite == null) {
             JOptionPane.showMessageDialog(null, "Operación cancelada por el usuario.");
-            return; // Termina el método si se selecciona cancelar
+            return;
         }
 
-        // Convertir el valor ingresado a entero, manejando posibles excepciones si el usuario no ingresa un número válido
+        // Solicitar el número de repeticiones
+        String repeticionesStr = JOptionPane.showInputDialog(null, "Ingrese el número de repeticiones:", "Repeticiones", JOptionPane.QUESTION_MESSAGE);
+
+        if (repeticionesStr == null) {
+            JOptionPane.showMessageDialog(null, "Operación cancelada por el usuario.");
+            return;
+        }
+
         int repeticiones;
         try {
             repeticiones = Integer.parseInt(repeticionesStr);
         } catch (NumberFormatException e) {
-            // Si el valor ingresado no es un número válido, asigna un valor por defecto (por ejemplo, 1)
             repeticiones = 1;
             JOptionPane.showMessageDialog(null, "Valor no válido, se utilizará 1 repetición por defecto.");
         }
-        /////////////////////////////////////////////////////////////////////////////////////////////////////////-
 
+        /// Selección del tipo de trámite
+        String[] opciones = {"Hilo", "Tela", "Bienes", "Prendas"};
+        tipoTramite = (String) JOptionPane.showInputDialog(
+                null,
+                "Seleccione el tipo de trámite:",
+                "Tipo de Trámite",
+                JOptionPane.QUESTION_MESSAGE,
+                null,
+                opciones,
+                opciones[0]
+        );
 
-///Tramite Aviso 120101
-        // Ejecutar el proceso con las repeticiones
+        // Ejecutar el proceso repetidamente
         ejecutarProcesoNRunnable(() -> {
             ///Login
             loginSoli.login(tramite120101); sleep(1000);
 
-            ///RutaAlTramite
+            ///Ruta del Tramite
             ejecutarRutaAlTramite();
 
-            ///Consulta de Cupo
+            ///Consultar Cupo
             ejecutarConsultarCupo();
 
-//
+            ///Insumos
+            ejecutarInsumos();
+
+            ///Proceso Productivo: Según su selección
+            ejecutarProcesoProductivo();
+
 //            ///Firma
 //            loginSoli.firma(tramite120101);
 //
-//            // Obtener el texto del folio desde mainPageB8
+////          Obtener el texto del folio
 //            String folioText = mainPage120101.folio.getText();
 //
-//            // Llamar al método para obtener el folio
+////          Llamar al método para obtener el folio
 //            String folioNumber = obtenerFolio.obtenerFolio(folioText);
 
         }, repeticiones);
     }
-
-    public void ejecutarRutaAlTramite(){
+    ///Ruta del Tramite
+    public void ejecutarRutaAlTramite() {
         mainPage120101.selecRol.sendKeys("Persona Moral"); sleep(1000);
         mainPage120101.btnacep.click(); sleep(1000);
         mainPage120101.Tramites.sendKeys("Solicitudes nuevas"); sleep(1000);
@@ -96,30 +115,69 @@ public class MainPage120101Test {
         mainPage120101.CertificadoOrigen.click(); sleep(1000);
         mainPage120101.ValidacionCertificadosOrigen.click(); sleep(1000);
         mainPage120101.Tramite120101.click(); sleep(1000);
-
     }
-    public void ejecutarConsultarCupo(){
+
+    ///Consultar Cupo
+    public void ejecutarConsultarCupo() {
         mainPage120101.ConsultCupoPest.click();
         mainPage120101.ClasifRegimen.sendKeys("Exportación"); sleep(1000);
         mainPage120101.PaisDestOrg.sendKeys("ESTADOS UNIDOS DE AMERICA"); sleep(1000);
-        mainPage120101.FreaccionArancel.sendKeys("6203315020"); sleep(1000);
+        mainPage120101.FreaccionArancel.sendKeys("9404902000"); sleep(1000);
         mainPage120101.btnBuscarTPL.click(); sleep(1000);
         mainPage120101.CargaRegistro.doubleClick(); sleep(1000);
         mainPage120101.Estado.sendKeys("SINALOA"); sleep(1000);
         mainPage120101.RepreFede.sendKeys("CENTRAL CDMX"); sleep(1000);
         mainPage120101.Descrip.sendKeys("Prueba UAT"); sleep(1000);
         mainPage120101.btnContinuarCupo.click(); sleep(1000);
-
     }
 
+    ///Insumos
+    public void ejecutarInsumos() {
+        mainPage120101.InsumosPest.click();
+        mainPage120101.btnAgregarInsumo.click();
+        mainPage120101.DescripInsumo.sendKeys("Pruebas QA");
+        mainPage120101.InsumoFraccArancel.sendKeys("9404902000");
+        mainPage120101.DescripFraccArancel.sendKeys("Prenda de algodón");
+        mainPage120101.PaisDeOrigen.sendKeys("ANGUILA");
+        mainPage120101.btnAgregarInsumo2.click();
+    }
 
-    // Metodo que ejecuta n veces una clase que implementa Runnable
+    ///Proceso Productivo: Según su selección
+    public void ejecutarProcesoProductivo() {
+        mainPage120101.ProcesoProductivoPest.click();sleep(1500);
+        if (tipoTramite.equalsIgnoreCase("Hilo")) {
+            mainPage120101.CheckHilo.click();sleep(1500);
+            mainPage120101.PaisOrgFibra.sendKeys("ANGUILA");sleep(1500);
+            mainPage120101.PaisRealizoHilado.sendKeys("MEXICO (ESTADOS UNIDOS MEXICANOS)");sleep(1500);
+
+        } else if (tipoTramite.equalsIgnoreCase("Tela")) {
+            mainPage120101.CheckTela.click();sleep(1500);
+            mainPage120101.PaisRealizoHilado2.sendKeys("ANGUILA");sleep(1500);
+            mainPage120101.PaisRealizoTejido.sendKeys("MEXICO (ESTADOS UNIDOS MEXICANOS)");sleep(1500);
+
+        } else if (tipoTramite.equalsIgnoreCase("Bienes")) {
+            mainPage120101.CheckBienes.click();sleep(1500);
+            mainPage120101.PaisRealizoHilado3.sendKeys("ANGUILA");sleep(1500);
+            mainPage120101.PaisRealizoTejidoForma.sendKeys("MEXICO (ESTADOS UNIDOS MEXICANOS)");sleep(1500);
+
+        } else if (tipoTramite.equalsIgnoreCase("Prendas")) {
+            mainPage120101.CheckPrendas.click();sleep(1500);
+            mainPage120101.PaisRealizoHilado4.sendKeys("ANGUILA");sleep(1500);
+            mainPage120101.PaisRealizoTejido4.sendKeys("ANGUILA");sleep(1500);
+            mainPage120101.PaisRealizoCorte.sendKeys("MEXICO (ESTADOS UNIDOS MEXICANOS)");sleep(1500);
+            mainPage120101.PaisRealizoEnsamble.sendKeys("MEXICO (ESTADOS UNIDOS MEXICANOS)");sleep(1500);
+
+        } else {
+            System.out.println("Tipo de trámite no reconocido.");
+        }
+        mainPage120101.btnContinuarFirma.click();
+    }
+
     public void ejecutarProcesoNRunnable(Runnable proceso, int n) {
         for (int i = 0; i < n; i++) {
             System.out.println("Ejecución del Proceso: " + (i + 1));
             open("https://wwwqa.ventanillaunica.gob.mx/ventanilla-HA/authentication.action?showLogin=%22;");
-            proceso.run();  // Ejecuta el proceso de la clase
+            proceso.run();
         }
     }
 }
-
