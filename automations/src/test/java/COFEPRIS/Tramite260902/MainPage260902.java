@@ -1,11 +1,11 @@
-package COFEPRIS.Tramite260904;
+package COFEPRIS.Tramite260902;
 
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Selenide.$x;
 
-public class MainPage260904 {
+public class MainPage260902 {
     public SelenideElement cerS = $x("//*[@id='certificate']");
     public SelenideElement keyS = $x("//*[@id='privateKey']");
     public SelenideElement pass = $x("//*[@id='privateKeyPassword']");
@@ -18,13 +18,13 @@ public class MainPage260904 {
     public SelenideElement inputIdFolio = $x("//*[@id=\"idFolio\"]");
     public SelenideElement inputBuscarButton = $x("//*[@id=\"buscarButton\"]");
     public SelenideElement SolicitudTramite = $x("/html/body/main/div/div[3]/div/form[1]/div[6]/div[3]/div[3]/div/table/tbody/tr[2]/td[1]");
-    public SelenideElement inputSolicitarModificacion = $x("/html/body/main/div/div[4]/div/form[1]/div[6]/div[2]/input");
+    public SelenideElement inputSolicitarModificacion = $x("/html/body/main/div/div[4]/div/form[1]/div[6]/div[2]/input[2]");
     //DATOS SOLICITUD
+    public SelenideElement Scrol = Selenide.$x("//*[@id=\"logoHeader\"]");
     public SelenideElement labelDatosSolicitud = $x("/html/body/main/div[1]/div[4]/div[1]/div[6]/form/div[1]/ul/li[2]/a/label");
     public SelenideElement inputModif = $x("//*[@id=\"mod\"]");
     public SelenideElement textareaJustificacionId = $x("//*[@id=\"justificacionId\"]");
     //PAGO DE DERECHOS
-    public SelenideElement Scrol = Selenide.$x("//*[@id=\"logoHeader\"]");
     public SelenideElement labelPagoDerechos =$x("/html/body/main/div[1]/div[4]/div[1]/div[6]/form/div[1]/ul/li[4]/a/label");
     public SelenideElement inputSolicitudPagoClaveReferencia = $x("//*[@id='solicitud.pago.claveDeReferencia']");
     public SelenideElement inputSolicitudPagoCadenaDependencia = $x("//*[@id='solicitud.pago.cadenaPagoDependencia']");
@@ -32,7 +32,6 @@ public class MainPage260904 {
     public SelenideElement inputSolicitudPagoLlave = $x("//*[@id='solicitud.pago.llaveDePago']");
     public SelenideElement inputCalendar = $x("//*[@id='calendarTo']");
     public SelenideElement inputSolicitudPagoImp = $x("//*[@id='solicitud.pago.impPago']");
-
     public SelenideElement inputGuardarSolicitud = $x("//*[@id=\"guardarSolicitud\"]");
     public SelenideElement inputGuarda = $x("//*[@id=\"workingArea\"]/form/div[4]/div/div/input[2]");
     public SelenideElement inputAdjuntar = $x("/html/body/main/div/div[4]/div/form[1]/table/tbody/tr[5]/td[2]/div/input[2]");
