@@ -17,6 +17,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 import static com.codeborne.selenide.Selenide.open;
@@ -209,7 +210,9 @@ public class MainPage260202Test {
             mainPage260202.inputSolicitudPagoClaveReferencia.sendKeys("85434563");
             mainPage260202.inputSolicitudPagoCadenaDependencia.sendKeys("uaiusjjsdga");
             mainPage260202.selectSolicitudPagoBancoClave.sendKeys("BANAMEX");
-            mainPage260202.inputSolicitudPagoLlave.sendKeys("3456456243");
+            Random random = new Random();
+            int nFacturaR = 10_000_000 + random.nextInt(90_000_000);
+            mainPage260202.inputSolicitudPagoLlave.setValue(String.valueOf(nFacturaR));
             mainPage260202.inputSolicitudPagoImp.sendKeys("2000");
             Selenide.executeJavaScript("arguments[0].value = '08/04/2025';", mainPage260202.inputCalendar);sleep(100);
             mainPage260202.inputGuardarSolicitud.click();
@@ -227,8 +230,9 @@ public class MainPage260202Test {
             mainPage260202.btnCerrar.click();
             mainPage260202.inputSiguiente.click();
             //FIRMAR SOLICITUD
-            //loginFirmSoli.firma(tramite260101);
-
+            loginFirmSoli.firma(tramite260202);
+            String folioText = mainPage260202.folio.getText();sleep(5000);
+            String folioNumber = obtenerFolio.obtenerFolio(folioText);
         }, repeticiones);
     }
 

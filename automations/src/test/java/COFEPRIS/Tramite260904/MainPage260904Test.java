@@ -147,7 +147,13 @@ public class MainPage260904Test {
             mainPage260904.btnCerrar.click();sleep(500);
             mainPage260904.inputSiguiente.click();
             //FIRMAR SOLICITUD
-            //loginFirmSoli.firma(tramite260904);
+            loginFirmSoli.firma(tramite260904);
+
+            // Obtener el texto del folio desde mainPage260904
+            //String folioText = mainPage260904.folio.getText();
+
+            // Llamar al mtodo para obtener el folio
+            //String folioNumber = obtenerFolio.obtenerFolio(folioText);
 
         }, repeticiones);
     }
