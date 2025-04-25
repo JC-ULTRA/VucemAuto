@@ -13,6 +13,8 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 import javax.swing.*;
 
+import java.util.UUID;
+
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
@@ -89,6 +91,10 @@ public class MainPage31602Test {
 
         // Ejecutar el proceso con las repeticiones y los métodos seleccionados
         ejecutarProcesoNRunnable(() -> {
+            //llave de pago
+            String uuid = UUID.randomUUID().toString();
+            int longitudDeseada = 16;
+            String llavePago = uuid.replace("-", "").substring(0, longitudDeseada);
             // Ingreso y selección de trámite
             loginFirmSoli.login(tramite31602);
             mainPage31602.selecRol.sendKeys("Persona Fisica");
@@ -259,7 +265,7 @@ public class MainPage31602Test {
             mainPage31602.inputMapDeclaracionSolicitudAcepto23.click();
             mainPage31602.inputNumMaquinaria.setValue("50000000");
             mainPage31602.inputSolicitudPagoReferenciaBancaria.setValue("aaaaaaa");
-            mainPage31602.inputSolicitudPagoLlave.setValue("LLAVEPRUMAU12345");
+            mainPage31602.inputSolicitudPagoLlave.setValue(llavePago);
             mainPage31602.selectSolicitudPagoBancoClave.sendKeys("HSBC");
             sleep(300);
 //            mainPage31602.inputGuardarSolicitudParcial.should(Condition.visible).click();

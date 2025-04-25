@@ -11,11 +11,16 @@ import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 import javax.swing.*;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 import java.time.Duration;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -36,16 +41,21 @@ public class MainPage32301Test {
             "C:\\VucemAuto\\automations\\src\\test\\resources\\CredSoli\\AAL0409235E6_1012231310.key"
     );
 
-
     @BeforeAll
     public static void setUpAll() {
-        Configuration.browser = Browsers.CHROME; //FIREFOX;
-        Configuration.browserCapabilities = new ChromeOptions().addArguments("--incognito").addArguments("--remote-allow-origins=*");
+        Configuration.browser = Browsers.CHROME;
+
+        // Configuraciones de Chrome
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--incognito");
+        options.addArguments("--remote-allow-origins=*");
+        options.addArguments("--force-device-scale-factor=1.25"); // Escala 150%
+        Configuration.browserCapabilities = options;
+
         open();
-        getWebDriver().manage().window().maximize();
-        Configuration.timeout = 120000; // tiempo de espera
-        getWebDriver().manage().timeouts().scriptTimeout(Duration.ofSeconds(10));
-        SelenideLogger.addListener("allure", new AllureSelenide());
+        getWebDriver().manage().window().setSize(new Dimension(1920, 1080)); // Resolución personalizada
+        getWebDriver().manage().window().maximize(); // Maximizar la ventana
+        Configuration.timeout = 120000; // Tiempo de espera
     }
 
     @BeforeEach
@@ -120,10 +130,30 @@ public class MainPage32301Test {
             avisoPanel.add(checkbox);
         }
 
+        // Añadir un ItemListener para permitir solo una selección a la vez
+        ItemListener listener = e -> {
+            JCheckBox source = (JCheckBox) e.getSource();
+            if (source.isSelected()) {
+                for (JCheckBox checkbox : opcionesAvisoCheckbox) {
+                    if (checkbox != source) {
+                        checkbox.setSelected(false); // Desactivar los demás
+                    }
+                }
+            }
+        };
+
+        // Añadir el listener a cada checkbox
+        for (JCheckBox checkbox : opcionesAvisoCheckbox) {
+            checkbox.addItemListener(listener);
+        }
+
         // Mostrar diálogo con los checkboxes
         int avisoOption = JOptionPane.showConfirmDialog(
                 null,
-                avisoPanel, "Seleccione los tipos de aviso a ejecutar:", JOptionPane.OK_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE
+                avisoPanel,
+                "Seleccione un tipo de aviso a ejecutar:",
+                JOptionPane.OK_CANCEL_OPTION,
+                JOptionPane.QUESTION_MESSAGE
         );
 
         if (avisoOption != JOptionPane.OK_OPTION) {
@@ -131,18 +161,19 @@ public class MainPage32301Test {
             return; // Cancelar si el usuario no acepta
         }
 
-        // Recoger las selecciones realizadas por el usuario
-        List<String> avisosSeleccionados = new ArrayList<>();
+        // Recoger la selección realizada por el usuario
+        String avisoSeleccionado = null;
         for (JCheckBox checkbox : opcionesAvisoCheckbox) {
             if (checkbox.isSelected()) {
-                avisosSeleccionados.add(checkbox.getText());
+                avisoSeleccionado = checkbox.getText();
+                break;
             }
         }
 
-        // Validar que al menos un aviso haya sido seleccionado
-        if (avisosSeleccionados.isEmpty()) {
+        if (avisoSeleccionado == null) {
             JOptionPane.showMessageDialog(null, "No se seleccionó ningún aviso. La operación será cancelada.");
-            return;
+        } else {
+            JOptionPane.showMessageDialog(null, "Aviso seleccionado: " + avisoSeleccionado);
         }
 
         // Ejecutar el proceso con el folio válido
@@ -162,38 +193,49 @@ public class MainPage32301Test {
             mainPage32301.tablaFolios.doubleClick();
             mainPage32301.avisoModificacion.click();
             // Ejecutar los métodos seleccionados
-            for (String aviso : avisosSeleccionados) {
-                switch (aviso) {
-                    case "Aviso Clientes y Proveedores Extranjeros":
-                        ejecutarAvisoExtranjeros();
-                        break;
-                    case "Aviso Proveedores Nacionales":
-                        ejecutarAvisoNacionales();
-                        break;
-                    case "Aviso Modificacion Socios":
-                        ejecutarAvisoSocios();
-                        break;
-                    case "Aviso Por Modificación de Uso y Goce del Inmueble":
-                        ejecutarAvisoUsoyGoce();
-                        break;
-                    case "Aviso Fusion Escision":
-                        ejecutarAvisoFusionEscision();
-                        break;
-                    case "Aviso de Adición de Fracciones":
-                        ejecutarAvisoFracciones();
-                        break;
-                    default:
-                        JOptionPane.showMessageDialog(null, "Aviso no válido seleccionado: " + aviso);
-                        break;
-                }
-                scrollDecremento();sleep(1000);
+            for (JCheckBox checkbox : opcionesAvisoCheckbox) {
                 mainPage32301.tipoAviso.click();
+                if (checkbox.isSelected()) {
+                    String aviso = checkbox.getText(); // Obtiene el texto del checkbox seleccionado
+                    switch (aviso) {
+                        case "Aviso Clientes y Proveedores Extranjeros":
+                            ejecutarAvisoExtranjeros();
+                            break;
+                        case "Aviso Proveedores Nacionales":
+                            ejecutarAvisoNacionales();
+                            break;
+                        case "Aviso Modificación Socios":
+                            ejecutarAvisoSocios();
+                            break;
+                        case "Aviso Por Modificación de Uso y Goce del Inmueble":
+                            ejecutarAvisoUsoyGoce();
+                            break;
+                        case "Aviso Fusion Escision":
+                            ejecutarAvisoFusionEscision();
+                            break;
+                        case "Aviso de Adición de Fracciones":
+                            ejecutarAvisoFracciones();
+                            break;
+                        default:
+                            JOptionPane.showMessageDialog(null, "Aviso no válido seleccionado: " + aviso);
+                            break;
+                    }
+                }
             }
+            scrollDecremento();
+            mainPage32301.tipoAviso.click();
             mainPage32301.casillaAcepto.click();
             mainPage32301.btnGuardarSoli.click();
             mainPage32301.btnContinuar.click();
 
-            verificarSeleccionArchivos(avisosSeleccionados);
+            // Verificar si uno de los dos checkboxes relevantes está seleccionado
+            boolean avisoFusionSelected = opcionesAvisoCheckbox[4].isSelected(); // Aviso Fusion Escision
+            boolean avisoUsoSelected = opcionesAvisoCheckbox[3].isSelected(); // Aviso Por Modificación de Uso y Goce del Inmueble
+
+            // Realizar acción si alguno de los dos está seleccionado
+            if (avisoFusionSelected || avisoUsoSelected) {
+                ejecutarCodigoAdjuntar();
+            }
             mainPage32301.btnSiguiente.click();
             loginFirmSoli.firma(tramite32301);
 
@@ -270,74 +312,45 @@ public class MainPage32301Test {
         mainPage32301.tipoPersona.sendKeys("moral");
         mainPage32301.nombreEmpresa.sendKeys("PRUEBAS2");
         mainPage32301.btnAgregarSocio.click();sleep(1000);
-        JavascriptExecutor js = (JavascriptExecutor) getWebDriver();
-        js.executeScript("function clickEnPosicion(x, y) {" +
-                "const evento = new MouseEvent('click', {" +
-                "view: window," +
-                "bubbles: true," +
-                "cancelable: true," +
-                "clientX: x," +
-                "clientY: y" +
-                "});" +
-                "const elemento = document.elementFromPoint(x, y);" +
-                "if (elemento) {" +
-                "elemento.dispatchEvent(evento);" +
-                "}" +
-                "}" +
-                "clickEnPosicion(755.9000015258789, 349.79374504089355);");
-        sleep(1000);
+        mainPage32301.btnAceptar.click();
         mainPage32301.selecTodos.click();
-//        mainPage32301.nuevoNom.click();
         mainPage32301.btnRatificar.click();sleep(1000);
-        js.executeScript("function clickEnPosicion(x, y) {" +
-                "const evento = new MouseEvent('click', {" +
-                "view: window," +
-                "bubbles: true," +
-                "cancelable: true," +
-                "clientX: x," +
-                "clientY: y" +
-                "});" +
-                "const elemento = document.elementFromPoint(x, y);" +
-                "if (elemento) {" +
-                "elemento.dispatchEvent(evento);" +
-                "}" +
-                "}" +
-                "clickEnPosicion(755.9000015258789, 349.79374504089355);");
+        mainPage32301.btnAceptarRatificar.click();
         sleep(1000);
     }
 
     private void ejecutarAvisoUsoyGoce() {
+        LocalDate hoy = LocalDate.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        String fechaHoy = hoy.format(formatter);
         mainPage32301.avisoInmuebles.click();
         /// Inmuebles
         scrollDecremento();
         mainPage32301.inmuebles.click();
+        mainPage32301.domicilioNuevo.click();sleep(1000);
+        mainPage32301.btnAceptarDomicilioNuevo.click();
+        mainPage32301.btnAgregarDomicilioNuevo.click();sleep(1000);
         mainPage32301.domicilioInmueble.sendKeys("CAMINO VIEJO, MIGUEL HIDALGO, 1353");
         mainPage32301.codigoPostalInmueble.sendKeys("81210");
         mainPage32301.entidadInmueble.sendKeys("SINALOA");
         mainPage32301.municipioInmueble.sendKeys("CULIACAN");
         mainPage32301.documentoUsoGoce.sendKeys("DONACION");
-        mainPage32301.fechaInicioInmueble.click();
-        mainPage32301.selecFecha.click();
+        executeJavaScript("arguments[0].value = arguments[1];", mainPage32301.fechaInicioInmueble, fechaHoy);sleep(1000);
         mainPage32301.fechaFinInmueble.click();
         mainPage32301.selecFechaFin.click();
-        mainPage32301.rfcPartes.sendKeys("AAL0409235E6");   ///Solosirve en la primera automatizacion del tramite
-        mainPage32301.btnBuscarPersonaM.click();sleep(1000); ///Solosirve en la primera automatizacion del tramite
-        mainPage32301.caracterDe.sendKeys("PERSONA MORAL"); ///Solosirve en la primera automatizacion del tramite
-        mainPage32301.agregarPersonaM.click();                          ///Solosirve en la primera automatizacion del tramite
-        mainPage32301.btnAceptarPersonaM.click();                       ///Solosirve en la primera automatizacion del tramite
+        mainPage32301.rfcPartes.sendKeys("AAL0409235E6");
+        mainPage32301.btnBuscarPersonaM.click();sleep(1000);
+        mainPage32301.caracterDe.sendKeys("PERSONA MORAL");
+        mainPage32301.agregarPersonaM.click();
+        mainPage32301.btnAceptarPersonaM.click();
         mainPage32301.observacionesInmueble.sendKeys("PRUEBA");
-        mainPage32301.mismoDomicilioSi.click();
-        mainPage32301.documentoUsoGoce2.sendKeys("Donación");
-        mainPage32301.modificacionVigenciasNo.click();
-        mainPage32301.modificacionPartesSi.click();
-        mainPage32301.rfcPartesM.sendKeys("AAL0409235E6");
-        mainPage32301.btnBuscarPartesM.click();
-        mainPage32301.caracterDePartesM.sendKeys("PERSONA MORAL");
-        mainPage32301.btnAgregarParteM.click();
-        mainPage32301.clickAceptar.click();
-        mainPage32301.observaciones2.sendKeys("PRUEBA");
+        mainPage32301.agregarNuevoDomicilio.click();sleep(1000);
+        mainPage32301.btnAceptarNuevoDomicilio.click();
     }
     private void ejecutarAvisoFusionEscision() {
+        LocalDate hoy = LocalDate.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        String fechaHoy = hoy.format(formatter);
         mainPage32301.avisoFusionEscision.click();
         /// Fusion Escesion
         scrollDecremento();scrollDecremento();
@@ -347,30 +360,14 @@ public class MainPage32301Test {
         mainPage32301.certificacionNo.click();
         mainPage32301.rfcEmpresa.sendKeys("GARR880923F55");
         mainPage32301.razonSocial.sendKeys("PRUEBA");
-        mainPage32301.fechaFusEsc.click();
-        mainPage32301.selecFechaFusEsc.click();
+        executeJavaScript("arguments[0].value = arguments[1];", mainPage32301.fechaFusEsc, fechaHoy);sleep(1000);
         mainPage32301.folioFusEsc.sendKeys("QA");
         mainPage32301.btnAgregarPersonaFusEsc.click();
         mainPage32301.certificacionSi.click();
         mainPage32301.rfcPersona.sendKeys("AAL0409235E6");
         mainPage32301.btnBuscarPersona.click();
         mainPage32301.btnAceptarPersona.click();sleep(1000);
-        JavascriptExecutor js = (JavascriptExecutor) getWebDriver();
-        js.executeScript("function clickEnPosicion(x, y) {" +
-                "const evento = new MouseEvent('click', {" +
-                "view: window," +
-                "bubbles: true," +
-                "cancelable: true," +
-                "clientX: x," +
-                "clientY: y" +
-                "});" +
-                "const elemento = document.elementFromPoint(x, y);" +
-                "if (elemento) {" +
-                "elemento.dispatchEvent(evento);" +
-                "}" +
-                "}" +
-                "clickEnPosicion(755.9000015258789, 349.79374504089355);");
-        sleep(1000);
+        mainPage32301.clickAceptar.click();
     }
     private void ejecutarAvisoFracciones() {
         mainPage32301.avisoFracciones.click();
@@ -378,45 +375,30 @@ public class MainPage32301Test {
         mainPage32301.fracciones.click();
         mainPage32301.cargaManual.click();
         mainPage32301.btnAgregarFrraccion.click();
-        mainPage32301.fraccionDeclarada.sendKeys("00111111");
-        mainPage32301.actividadRelacionada.sendKeys("AMBOS");
+        mainPage32301.fraccionDeclarada.sendKeys("12345");
+        mainPage32301.actividadRelacionada.sendKeys("PROCESO");
         mainPage32301.descripcionMercancia.sendKeys("PRUEBAS");
-        mainPage32301.fraccionActual.sendKeys("30012004");
-        mainPage32301.unidadMedida.sendKeys("LITRO");
+        mainPage32301.fraccionActual.sendKeys("01023101");
+        mainPage32301.unidadMedida.sendKeys("Voltios");
         mainPage32301.nico.sendKeys("00");
         mainPage32301.btnAgregarTodosPaises.click();sleep(1000);
         mainPage32301.btnGuardarCargaManual.click();sleep(1000);
         mainPage32301.btnAgregarFrraccion.click();
-        mainPage32301.fraccionDeclarada.sendKeys("32974389");
-        mainPage32301.actividadRelacionada.sendKeys("PROCESO");
-        mainPage32301.descripcionMercancia.sendKeys("PRUEBA 3");
-        mainPage32301.fraccionActual.sendKeys("01069099");
-        mainPage32301.unidadMedida.sendKeys("LITRO");
+        mainPage32301.fraccionDeclarada.sendKeys("54321");
+        mainPage32301.actividadRelacionada.sendKeys("AMBOS");
+        mainPage32301.descripcionMercancia.sendKeys("PRUEBAS");
+        mainPage32301.fraccionActual.sendKeys("01041001");
+        mainPage32301.unidadMedida.sendKeys("Voltios");
         mainPage32301.nico.sendKeys("00");
         mainPage32301.btnAgregarTodosPaises.click();sleep(1000);
-        mainPage32301.btnGuardarCargaManual.click();
+        mainPage32301.btnGuardarCargaManual.click();sleep(1000);
         mainPage32301.manifiestoFracciones.click();
         /// Procesos
         scrollDecremento();
         mainPage32301.procesos.click();
         mainPage32301.archivoProcesos.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Procesos todas aduanas paises corregido paises.xls");
         mainPage32301.cargarArchivo.click();sleep(3000);
-        JavascriptExecutor js = (JavascriptExecutor) getWebDriver();
-        js.executeScript("function clickEnPosicion(x, y) {" +
-                "const evento = new MouseEvent('click', {" +
-                "view: window," +
-                "bubbles: true," +
-                "cancelable: true," +
-                "clientX: x," +
-                "clientY: y" +
-                "});" +
-                "const elemento = document.elementFromPoint(x, y);" +
-                "if (elemento) {" +
-                "elemento.dispatchEvent(evento);" +
-                "}" +
-                "}" +
-                "clickEnPosicion(755.9000015258789, 349.79374504089355);");
-        sleep(1000);
+        mainPage32301.aceptarCarga.click();
     }
 
     //Metodo que ejecuta n veces una clase que implementa Runnable

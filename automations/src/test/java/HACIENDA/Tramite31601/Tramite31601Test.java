@@ -210,7 +210,7 @@ public class Tramite31601Test {
             mainPage31601.archivo10.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
             mainPage31601.archivo11.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
             mainPage31601.archivo12.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
-            mainPage31601.adjuntarTodos.click();sleep(15000); //Tiempo aprox en cargar los archivos
+            mainPage31601.adjuntarTodos.click();sleep(17000); //Tiempo aprox en cargar los archivos
             mainPage31601.btnCerrar.click();sleep(1000);
             mainPage31601.btnSiguienteFirmar.click();
             loginFirmSoli.firma(tramite31601);
