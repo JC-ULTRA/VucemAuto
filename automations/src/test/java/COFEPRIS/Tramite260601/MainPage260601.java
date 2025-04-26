@@ -109,6 +109,7 @@ public class MainPage260601 {
     public SelenideElement inputCalendar = $x("//*[@id='calendarTo']");
     public SelenideElement inputSolicitudPagoImp = $x("//*[@id='solicitud.pago.impPago']");
     public SelenideElement inputGuardarSolicitud = $x("//*[@id=\"guardarSolicitud\"]");
+    //
     public SelenideElement inputGuarda = $x("//*[@id=\"workingArea\"]/form/div[4]/div/div/input[2]");
     public SelenideElement inputAdjuntar = $x("/html/body/main/div/div[4]/div/form[1]/table/tbody/tr[5]/td[2]/div/input[2]");
     public SelenideElement selectDoc = $x("/html/body/main/div/div[4]/div[2]/div/form[2]/table/tbody/tr[1]/td[4]/input");
