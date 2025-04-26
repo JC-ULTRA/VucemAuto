@@ -145,33 +145,40 @@ public class MainPage260603Test {
             mainPage260603.inputUMC.sendKeys("JUEGO");
             mainPage260603.inputPorcentaje.sendKeys("25");
             mainPage260603.inputValorComercial.sendKeys("123");
-            Selenide.executeJavaScript("arguments[0].value = '10/05/2025';", mainPage260603.inputFechaImportExport);sleep(100);
-mainPage260603.inputPresentacion.sendKeys("PARA PRUEBA");
-mainPage260603.inputPaisPRocedencia.sendKeys("DEU");
-mainPage260603.inputPaisOrigen.sendKeys("MEX");
-
+            Selenide.executeJavaScript("arguments[0].value = '10/05/2025';",mainPage260603.inputFechaImportExport);sleep(100);
+            mainPage260603.inputPresentacion.sendKeys("PARA PRUEBA");
+            mainPage260603.inputPaisPRocedencia.sendKeys("DEU");
+            mainPage260603.inputPaisOrigen.sendKeys("MEX");
             mainPage260603.botonAbrirPanelUsosEspecificos.click();
             mainPage260603.UsoEspecifico.sendKeys("FABRICACIÓN");
             mainPage260603.botonAgregarSeleccion.click();
             mainPage260603.inputAgregarMercancia.click();
-            mainPage260603.btnGuardarDatosTercero3.click();
-
             mainPage260603.inputInformacionConfidencialNo.click();
             mainPage260603.inputRepresentanteLegalRFC.sendKeys("MAVL621207C95");
             mainPage260603.inputConsultarIDC.click();
-            //FACTURADOR
+            try {
+                Thread.sleep(2000); // Pausa de 3 segundos
+                // Hacer scroll hasta el elemento
+                mainPage260603.Scrol.scrollIntoView(true);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            mainPage260603.labelTercerosRelacionados.click();
             mainPage260603.inputAgregarFacturador.click();
+            //mainPage260603.btnGuardarDatosTercero3.click();
+
+            //FACTURADOR
             mainPage260603.inputTipoPeronaFisica4.click();
             mainPage260603.inputTerceroNombre4.sendKeys("HARRY");
             mainPage260603.inputTerceroApePAter4.sendKeys("POTTER");
             mainPage260603.inputTerceroApeMAter4.sendKeys("HERNANDEZ");
             mainPage260603.inputPais4.sendKeys("ARUBA (TERRITORIO HOLANDES DE ULTRAMAR)");
             mainPage260603.terceroEstadoLocalidad4.sendKeys("AMSTERDAM");
-            mainPage260603.terceroCodigoPostal4.sendKeys("00000");
-            mainPage260603.terceroColoniaEquiv4.sendKeys("10 DE ABRIL");
+            mainPage260603.terceroCodigoPostal4.sendKeys("000034");
             mainPage260603.terceroCalle4.sendKeys("Eje Central Lázaro Cárdenas");
             mainPage260603.terceroNumExterior4.sendKeys("123");
             mainPage260603.terceroNumInterior4.sendKeys("4B");
+            mainPage260603.terceroLada.sendKeys("52");
             mainPage260603.terceroTelefono4.sendKeys("5555555555");
             mainPage260603.terceroCorreo4.sendKeys("contacto@fabricante.com");
             mainPage260603.btnGuardarDatosTercero4.click();
@@ -181,18 +188,19 @@ mainPage260603.inputPaisOrigen.sendKeys("MEX");
             
             //GUARDAR
             mainPage260603.inputGuarda.click();sleep(1000);
+            mainPage260603.inputContinuar.click();
             mainPage260603.inputAdjuntar.click();
             mainPage260603.selectDoc.sendKeys("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
-            mainPage260603.selectDoc2.sendKeys("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
-            //mainPage260603.selectDoc3.sendKeys("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
-            //mainPage260603.selectDoc4.sendKeys("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
-            //mainPage260603.selectDoc5.sendKeys("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
-            //mainPage260603.selectDoc6.sendKeys("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
             mainPage260603.btnAnexar.click();sleep(20000);
             mainPage260603.btnCerrar.click();
             mainPage260603.inputSiguiente.click();
             //FIRMAR SOLICITUD
-            //loginFirmSoli.firma(tramite260603);
+            loginFirmSoli.firma(tramite260603);
+            // Obtener el texto del folio desde mainPage260912
+            String folioText = mainPage260603.folio.getText();
+
+            // Llamar al mtodo para obtener el folio
+            String folioNumber = obtenerFolio.obtenerFolio(folioText);
 
         }, repeticiones);
     }
