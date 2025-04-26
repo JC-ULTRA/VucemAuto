@@ -1,5 +1,6 @@
 package COFEPRIS.Tramite260603;
 
+import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Selenide.$x;
@@ -62,6 +63,9 @@ public class MainPage260603 {
     public SelenideElement inputInformacionConfidencialNo = $x("//*[@id=\"informacionConfidencialNo\"]");
     public SelenideElement inputRepresentanteLegalRFC = $x("//*[@id=\"representanteLegalRFC\"]");
     public SelenideElement inputConsultarIDC = $x("//*[@id=\"consultarIDC\"]");
+    public SelenideElement Scrol = Selenide.$x("//*[@id=\"logoHeader\"]");
+    public SelenideElement labelTercerosRelacionados = $x("/html/body/main/div/div[4]/div[1]/form/div[2]/ul/li[3]/a/label");
+
     public SelenideElement btnGuardarDatosTercero3 = $x("//*[@id=\"btnGuardarFrmDatosTercero\"]");
 
     public SelenideElement inputAgregarFacturador = $x("//*[@id=\"agregarTercero_TIPERS_FAC\"]");
@@ -76,20 +80,23 @@ public class MainPage260603 {
     public SelenideElement terceroCalle4 = $x("//*[@id=\"terceros_calle\"]");
     public SelenideElement terceroNumExterior4 = $x("//*[@id=\"terceros_numExterior\"]");
     public SelenideElement terceroNumInterior4 = $x("//*[@id=\"terceros_numInterior\"]");
+    public SelenideElement terceroLada = $x("//*[@id=\"terceros_lada\"]");
     public SelenideElement terceroTelefono4 = $x("//*[@id=\"terceros_telefono\"]");
     public SelenideElement terceroCorreo4 = $x("//*[@id=\"terceros_correoElec\"]");
     public SelenideElement btnGuardarDatosTercero4 = $x("//*[@id=\"btnGuardarFrmDatosTercero\"]");
 
 
 
-    public SelenideElement inputGuarda = $x("//*[@id=\"workingArea\"]/form/div[4]/div/div/input[2]");
-    public SelenideElement inputAdjuntar = $x("/html/body/main/div/div[4]/div/form[1]/table/tbody/tr[5]/td[2]/div/input[2]");
+    public SelenideElement inputGuarda = $x("//*[@id=\"guardarSolicitud\"]");
+    public SelenideElement inputContinuar = $x("/html/body/main/div/div[4]/div/form/div[4]/div/div/input[2]");
+
+    public SelenideElement inputAdjuntar = $x("/html/body/main/div/div[4]/div/form[1]/table/tbody/tr[4]/td[2]/div/input[2]");
     public SelenideElement selectDoc = $x("/html/body/main/div/div[4]/div[2]/div/form[2]/table/tbody/tr[1]/td[4]/input");
-    public SelenideElement selectDoc2 = $x("/html/body/main/div/div[4]/div[2]/div/form[3]/table/tbody/tr[1]/td[4]/input");
-    public SelenideElement selectDoc3 = $x("/html/body/main/div/div[4]/div[2]/div/form[4]/table/tbody/tr[1]/td[4]/input");
-    public SelenideElement selectDoc4 = $x("/html/body/main/div/div[4]/div[2]/div/form[5]/table/tbody/tr[1]/td[4]/input");
     public SelenideElement btnAnexar = $x("//*[@id=\"btnAnexar\"]");
     public SelenideElement btnCerrar = $x("//*[@id=\"btnCerrar\"]");
-    public SelenideElement inputSiguiente = $x("/html/body/main/div/div[4]/div[1]/form[2]/div[2]/div/input[2]");
+
+    public SelenideElement inputSiguiente = $x("//*[@id=\"siguienteButton\"]");
+    public SelenideElement folio = $x("/html/body/main/div/div[4]/div/div[4]/div/div/ul/li");
+
 
 }
