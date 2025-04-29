@@ -259,7 +259,7 @@ public class MainPage230901Test {
                 if (movimiento3.isSelected()) {
                     mainPage230901.selectTipoMovimiento.selectOptionByValue("04");
                     mainPage230901.inputTipoRegimen.sendKeys("Definitvos");
-                    mainPage230901.selectListaOrigen.sendKeys("AGUASCALIENTES, AGS.");
+                    mainPage230901.selectListaOrigen2.sendKeys("AGUASCALIENTES, AGS.");
                     mainPage230901.inputAgregarLista2.click();
                     mainPage230901.btnAgregarMercancia.click();
                     try {
@@ -278,9 +278,29 @@ public class MainPage230901Test {
                         e.printStackTrace();
                     }
                     mainPage230901.labelTerceros.click();
-                    mainPage230901.inputEntidadFederativa.sendKeys("MICHOACÁN DE OCAMPO");
-                    procesoComun.run();
+                    mainPage230901.inputEntidadFederativa.sendKeys("ANTILLAS NEERLANDESAS (TERRITORIO HOLANDES DE ULTRAMAR)");
                 }
+                //PAGO DERECHOS
+                try {
+                    Thread.sleep(2000); // Pausa de 3 segundos
+                    // Hacer scroll hasta el elemento
+                    mainPage230901.Scrol.scrollIntoView(true);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                mainPage230901.labelPagoDerechos.click();
+                mainPage230901.selectBanco.sendKeys("BANAMEX");
+                //mainPage230901.inputLlavePago.sendKeys("123ASD123");
+                String caracteres = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+                StringBuilder factura = new StringBuilder();
+                Random random = new Random();
+
+                for (int i = 0; i < 10; i++) {
+                    factura.append(caracteres.charAt(random.nextInt(caracteres.length())));
+                }
+                mainPage230901.inputLlavePago.setValue(factura.toString());
+                Selenide.executeJavaScript("arguments[0].value = '08/04/2025';",mainPage230901.inputFechaPago);sleep(100);
+
 
             }
 
@@ -292,7 +312,7 @@ public class MainPage230901Test {
             mainPage230901.inputDocumento3.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
             mainPage230901.inputDocumento4.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
             mainPage230901.inputAdjuntar.click();sleep(1000);
-            mainPage230901.inputCerrar.click();sleep(1000);
+            mainPage230901.inputCerrar.click();sleep(200);
             mainPage230901.btnContinuar.click();sleep(1000);
 
             //FIRMAR SOLICITUD
