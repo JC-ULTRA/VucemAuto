@@ -1,0 +1,85 @@
+package HACIENDA.Tramite40201;
+
+import com.codeborne.selenide.SelenideElement;
+
+import static com.codeborne.selenide.Selenide.$x;
+
+public class MainPage40201 {
+    public SelenideElement cerS = $x("//*[@id='certificate']");
+    public SelenideElement keyS = $x("//*[@id='privateKey']");
+    public SelenideElement pass = $x("//*[@id='privateKeyPassword']");
+    public SelenideElement btnIngresFs = $x("//button[@onclick='ejecutarProcesoFirma(1)']");
+    public SelenideElement btnFirmar = $x("//*[@id='btnSubmit']");
+    public SelenideElement folio = $x("/html/body/div[1]/div[3]/div[3]/div/div[3]/div/ul/li");
+    public SelenideElement selecRol = $x("//*[@id='claveRol']");
+    public SelenideElement btnacep = $x("//button[@name='ingresar']");
+    public SelenideElement Tramites = $x("//*[@id='Trámites']");
+    public SelenideElement SoliNew = $x("/html/body/main/div/div[2]/div[1]/div[1]/div/nav/div/div[2]/ul/li[5]/ul/li[3]/a");
+    public SelenideElement hacienda = $x("//img[contains(@alt, 'General')]");
+    public SelenideElement registroCAAT =  $x("/html/body/main/div/div[3]/div/div[6]/ul/li[5]/a");
+    public SelenideElement CAATMaritima = $x("/html/body/main/div/div[3]/div/div[6]/ul/li[5]/ul/li[2]/a");
+    public SelenideElement tramite40201 = $x("/html/body/main/div/div[3]/div/div[6]/ul/li[5]/ul/li[2]/ul/li[1]/a");
+    /// Asignar CAAT Maritimo
+    public SelenideElement asignarCAAT = $x("/html/body/main/div/div[4]/div/form/div[2]/ul/li[2]");
+    public SelenideElement personaFisicaNacional = $x("/html/body/main/div/div[4]/div/form/div[2]/div[1]/div[2]/div/ul/li[1]");
+    public SelenideElement agregarPersonaFisicaN = $x("/html/body/main/div/div[4]/div/form/div[2]/div[1]/div[2]/div/div[2]/div[1]/div[3]/div/div/input[3]");
+    public SelenideElement rfcPrsonaFisicaN = $x("//*[@id=\"buscaRfcPFN\"]");
+    public SelenideElement btnBuscarRfcPersonaFisicaN = $x("//*[@id=\"buscarPFN\"]");
+    public SelenideElement btnGuardarPersonaFisicaN = $x("//*[@id=\"guardarPFN\"]");
+    public SelenideElement personaMoralNacional = $x("/html/body/main/div/div[4]/div/form/div[2]/div[1]/div[2]/div/ul/li[2]");
+    public SelenideElement agregarPersonaMoralN = $x("/html/body/main/div/div[4]/div/form/div[2]/div[1]/div[2]/div/div[2]/div[2]/div[2]/div/div/input[3]");
+    public SelenideElement rfcPersonaMoralN = $x("//*[@id=\"buscaRfcPMN\"]");
+    public SelenideElement btnBuscarRfcPersonaMoralN = $x("//*[@id=\"buscarPMN\"]");
+    public SelenideElement nombreDirector = $x("//*[@id=\"nombreDirectorGeneral\"]");
+    public SelenideElement apellidoMaternoDirector = $x("//*[@id=\"apellidoPaternoDirectorGeneral\"]");
+    public SelenideElement apellidoPaternoDirector = $x("//*[@id=\"apellidoMaternoDirectorGeneral\"]");
+    public SelenideElement btnGuardarPersonaMoralN = $x("//*[@id=\"guardarPMN\"]");
+    public SelenideElement personaFisicaExtranjera = $x("/html/body/main/div/div[4]/div/form/div[2]/div[1]/div[2]/div/ul/li[3]");
+    public SelenideElement agregarPersonaFisicaE = $x("/html/body/main/div/div[4]/div/form/div[2]/div[1]/div[2]/div/div[2]/div[3]/div[3]/div/div/input[3]");
+    public SelenideElement numeroSeguridadSocial = $x("//*[@id=\"nssPFE\"]");
+    public SelenideElement nombrePersonaFisicaE = $x("//*[@id=\"nombrePFE\"]");
+    public SelenideElement primerApellidoPersonaFisicaE = $x("//*[@id=\"apellidoPaternoPFE\"]");
+    public SelenideElement segundoApellidoPersonaFisicaE = $x("//*[@id=\"apellidoMaternoPFE\"]");
+    public SelenideElement correoPersonaFisicaE = $x("//*[@id=\"correoPFE\"]");
+    public SelenideElement paisPersonaFisicaE = $x("//*[@id=\"paisPFE\"]");
+    public SelenideElement codigoPostalPersonaFisicaE = $x("//*[@id=\"codigoPostalPFE\"]");
+    public SelenideElement ciudadPersonaFisicaE = $x("//*[@id=\"ciudadPFE\"]");
+    public SelenideElement estadoPersonaFisicaE = $x("//*[@id=\"entidadFederativaPFE\"]");
+    public SelenideElement callePersonaFiscaE = $x("//*[@id=\"callePFE\"]");
+    public SelenideElement numeroExterior = $x("//*[@id=\"numeroExteriorPFE\"]");
+    public SelenideElement numeroInterior = $x("//*[@id=\"numeroInteriorPFE\"]");
+    public SelenideElement btnGuardarPersonaFisicaE = $x("//*[@id=\"guardarPFE\"]");
+    public SelenideElement personaMoralExtranjera = $x("/html/body/main/div/div[4]/div/form/div[2]/div[1]/div[2]/div/ul/li[4]");
+    public SelenideElement agregarPersonaMoralExtranjera = $x("/html/body/main/div/div[4]/div/form/div[2]/div[1]/div[2]/div/div[2]/div[4]/div[3]/div/div/input[3]");
+    public SelenideElement razonSocialPersonaMoralE = $x("//*[@id=\"denominacionPME\"]");
+    public SelenideElement correoPersonaMoralE = $x("//*[@id=\"correoPME\"]");
+    public SelenideElement paisPersonaMoralE = $x("//*[@id=\"paisPME\"]");
+    public SelenideElement codigoPostalPersonaMoralE = $x("//*[@id=\"codigoPostalPME\"]");
+    public SelenideElement ciudadPersonaMoralE = $x("//*[@id=\"ciudadPME\"]");
+    public SelenideElement estadoPersonaMoralE = $x("//*[@id=\"entidadFederativaPME\"]");
+    public SelenideElement callePersonaMoralE = $x("//*[@id=\"callePME\"]");
+    public SelenideElement numeroExteriorPersonaMoralE = $x("//*[@id=\"numeroExteriorPME\"]");
+    public SelenideElement numeroInteriorPersonaMoralE = $x("//*[@id=\"numeroInteriorPME\"]");
+    public SelenideElement nombreDirectorPersonaME = $x("//*[@id=\"nombreDG\"]");
+    public SelenideElement apellidoDirectorPPersonaME = $x("//*[@id=\"apellidoPaternoDG\"]");
+    public SelenideElement apellidoDirectorMPersonaME = $x("//*[@id=\"apellidoMaternoDG\"]");
+    public SelenideElement btnGuardarPersonaMoralE = $x("//*[@id=\"guardarPME\"]");
+
+    public SelenideElement btnGuardarSoli = $x("//*[@id=\"guardarSolicitud\"]");
+    public SelenideElement btnContinuar = $x("/html/body/div[1]/div[3]/div[3]/div/form/table/tbody/tr/td/input[2]");
+    public SelenideElement btnAdjuntarDoc = $x("/html/body/main/div/div[4]/div/form[1]/table/tbody/tr[14]/td[2]/div/input[2]");
+    public SelenideElement archivo1 = $x("/html/body/main/div/div[4]/div[2]/div/form[2]/table/tbody/tr[1]/td[4]/input");
+    public SelenideElement archivo2 = $x("/html/body/main/div/div[4]/div[2]/div/form[3]/table/tbody/tr[1]/td[4]/input");
+    public SelenideElement archivo3 = $x("/html/body/main/div/div[4]/div[2]/div/form[4]/table/tbody/tr[1]/td[4]/input");
+    public SelenideElement archivo4 = $x("/html/body/main/div/div[4]/div[2]/div/form[5]/table/tbody/tr[1]/td[4]/input");
+    public SelenideElement archivo5 = $x("/html/body/main/div/div[4]/div[2]/div/form[6]/table/tbody/tr[1]/td[4]/input");
+    public SelenideElement archivo6 = $x("/html/body/main/div/div[4]/div[2]/div/form[7]/table/tbody/tr[1]/td[4]/input");
+    public SelenideElement archivo7 = $x("/html/body/main/div/div[4]/div[2]/div/form[8]/table/tbody/tr[1]/td[4]/input");
+    public SelenideElement archivo8 = $x("/html/body/main/div/div[4]/div[2]/div/form[9]/table/tbody/tr[1]/td[4]/input");
+    public SelenideElement archivo9 = $x("/html/body/main/div/div[4]/div[2]/div/form[10]/table/tbody/tr[1]/td[4]/input");
+    public SelenideElement archivo10 = $x("/html/body/main/div/div[4]/div[2]/div/form[11]/table/tbody/tr[1]/td[4]/input");
+    public SelenideElement archivo11 = $x("/html/body/main/div/div[4]/div[2]/div/form[12]/table/tbody/tr[1]/td[4]/input");
+    public SelenideElement btnAdjuntar = $x("//*[@id=\"btnAnexar\"]");
+    public SelenideElement btnCerrar = $x("//*[@id=\"btnCerrar\"]");
+    public SelenideElement btnSiguiente = $x("//*[@id=\"siguienteButton\"]");
+}
