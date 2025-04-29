@@ -19,9 +19,9 @@ public class MainPage220403 {
     public SelenideElement agriCultura = $x("//*[@id=\"workingArea\"]/form/a[10]/img");
     public SelenideElement certSoliReq = $x("//*[@id=\"servicios\"]/ul/li/a");
     public SelenideElement cerExport = $x("//*[@id=\"servicios\"]/ul/li/ul/li[3]/a");
-    public SelenideElement tramite220403 = $x("//*[@id=\"servicios\"]/ul/li/ul/li[3]/ul/li[3]/a");
-    public SelenideElement DatosDeSoLI = $x("//*[@id=\"ui-id-2\"]/label");
+    public SelenideElement tramite220403 = $x("/html/body/main/div/div[3]/div/div[6]/ul/li/ul/li[3]/ul/li[3]/a");
 
+    public SelenideElement DatosDeSoLI = $x("//*[@id=\"ui-id-2\"]/label");
     //llenado de la solicitud
     public SelenideElement checkAnimal = $x("//*[@id=\"tipoMercanciaA\"]");
     public SelenideElement aduana = $x("//*[@id=\"solicitud.claveAduana\"]");
