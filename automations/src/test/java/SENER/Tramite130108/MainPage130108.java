@@ -1,4 +1,4 @@
-package SENER;
+package SENER.Tramite130108;
 
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
@@ -16,9 +16,9 @@ public class MainPage130108 {
     public SelenideElement Tramites = $x("//*[@id='Trámites']");
     public SelenideElement SoliNew = $x("/html/body/main/div/div[2]/div[1]/div[1]/div/nav/div/div[2]/ul/li[5]/ul/li[3]/a");
     public SelenideElement Sener = $x("/html/body/main/div/div[3]/div/form/a[11]/img");
-    public SelenideElement linkCertificadosLicenciasPermisos = $x("/html/body/main/div/div[3]/div/div[6]/ul/li[1]/a");
-    public SelenideElement linkPermisoSanitarioImportacionInsumoSalud = $x("/html/body/main/div/div[3]/div/div[6]/ul/li[1]/ul/li[1]/a");
-    public SelenideElement linkPerSanImpDisMedDesPruLab = $x("/html/body/main/div/div[3]/div/div[6]/ul/li[1]/ul/li[1]/ul/li[1]/a");
+    public SelenideElement linkPermisoImportExport = $x("/html/body/main/div/div[3]/div/div[6]/ul/li[1]/a");
+    public SelenideElement linkImportacion = $x("/html/body/main/div/div[3]/div/div[6]/ul/li[1]/ul/li[1]/a");
+    public SelenideElement linkSolImpPetro = $x("/html/body/main/div/div[3]/div/div[6]/ul/li[1]/ul/li[1]/ul/li[1]/a");
     //DATOS SOLICITUD
     public SelenideElement Scrol = Selenide.$x("//*[@id=\"logoHeader\"]");
     public SelenideElement labelDatosSolicitud = $x("/html/body/main/div/div[4]/div/form/div[2]/ul/li[2]/a");
