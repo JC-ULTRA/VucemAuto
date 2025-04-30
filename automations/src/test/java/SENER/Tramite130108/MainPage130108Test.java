@@ -1,4 +1,4 @@
-package SENER;
+package SENER.Tramite130108;
 
 import DBYFOLIO.ObtenerFolio;
 import Firmas.LoginFirmSoli;
@@ -106,9 +106,9 @@ public class MainPage130108Test {
             mainPage130108.Tramites.sendKeys("Solicitudes nuevas");
             mainPage130108.SoliNew.click();
             mainPage130108.Sener.click();
-            mainPage130108.linkCertificadosLicenciasPermisos.click();
-            mainPage130108.linkPermisoSanitarioImportacionInsumoSalud.click();
-            mainPage130108.linkPerSanImpDisMedDesPruLab.click();
+            mainPage130108.linkPermisoImportExport.click();
+            mainPage130108.linkImportacion.click();
+            mainPage130108.linkSolImpPetro.click();
             //DATOS SOLICITUD
             try {
                 Thread.sleep(2000);

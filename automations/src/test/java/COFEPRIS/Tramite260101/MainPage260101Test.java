@@ -203,8 +203,8 @@ public class MainPage260101Test {
             Selenide.executeJavaScript("arguments[0].value = '08/04/2025';", mainPage260101.inputCalendar);sleep(100);
 
             mainPage260101.inputGuardarSolicitud.click();
-mainPage260101.inputGuarda.click();
-mainPage260101.inputAdjuntar.click();
+            mainPage260101.inputGuarda.click();
+            mainPage260101.inputAdjuntar.click();
 
             mainPage260101.selectDoc.sendKeys("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
             mainPage260101.selectDoc2.sendKeys("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
