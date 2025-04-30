@@ -222,7 +222,7 @@ public class MainPage260102Test {
             mainPage260102.btnCerrar.click();
             mainPage260102.inputSiguiente.click();
             //FIRMAR SOLICITUD
-            //loginFirmSoli.firma(tramite260102);
+            loginFirmSoli.firma(tramite260102);
             String folioText = mainPage260102.folio.getText();sleep(5000);
             String folioNumber = obtenerFolio.obtenerFolio(folioText);
 
