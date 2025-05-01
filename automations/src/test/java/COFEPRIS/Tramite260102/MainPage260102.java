@@ -96,9 +96,14 @@ public class MainPage260102 {
     public SelenideElement inputAgregarTerceroTipersFab = $x("//*[@id='agregarTercero_TIPERS_FAB']");
     public SelenideElement inputTercerosNacionalidadMexicana = $x("//*[@id='terceros_nacionalidadMexicana']");
     public SelenideElement inputTercerosTipoPersonaFisica = $x("//*[@id=\"terceros_tipoPersonaFisica\"]");
+    public SelenideElement inputTercerosNombre =$x("//*[@id=\"terceros_nombre\"]");
+    public SelenideElement inputTercerosApellidoPaterno =$x("//*[@id=\"terceros_apellidoPaterno\"]");
+    public SelenideElement inputTercerosApellidoMaterno =$x("//*[@id=\"terceros_apellidoMaterno\"]");
+    public SelenideElement selectTercerosPais =$x("//*[@id=\"terceros_selectPais\"]");
+    public SelenideElement inputTercerosEstado =$x("//*[@id=\"terceros_txtEstadoLocalidad\"]");
+    public SelenideElement inputTercerosCodigoPostal =$x("//*[@id=\"terceros_codPostal\"]");
     public SelenideElement inputTerceros2 = $x("//*[@id='terceros_rfc']");
     public SelenideElement btnBuscarEmpresa = $x("//*[@id=\"buscarEmpresa\"]");
-    public SelenideElement buttonGuardarDatosTercero2 = $x("//*[@id='btnGuardarFrmDatosTercero']");
     //PAGO DE DERECHOS
     public SelenideElement labelPagoDerechos =$x("/html/body/main/div[1]/div[4]/div[1]/form/div[1]/ul/li[4]/a/label");
     public SelenideElement inputSolicitudPagoClaveReferencia = $x("//*[@id='solicitud.pago.claveDeReferencia']");
@@ -109,7 +114,7 @@ public class MainPage260102 {
     public SelenideElement inputSolicitudPagoImp = $x("//*[@id='solicitud.pago.impPago']");
     public SelenideElement inputGuardarSolicitud = $x("//*[@id=\"guardarSolicitud\"]");
     public SelenideElement inputGuarda = $x("//*[@id=\"workingArea\"]/form/div[4]/div/div/input[2]");
-    public SelenideElement inputAdjuntar = $x("//*[@id=\"docs\"]/tbody/tr[14]/td[2]/div/input[2]");
+    public SelenideElement inputAdjuntar = $x("/html/body/main/div/div[4]/div/form[1]/table/tbody/tr[8]/td[2]/div/input[2]");
     //ADJUNTAR
     public SelenideElement inputContinuar = $x("//input[@value='Continuar']");
     public SelenideElement selectDoc = $x("/html/body/main/div/div[4]/div[2]/div/form[2]/table/tbody/tr[1]/td[4]/input");

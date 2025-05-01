@@ -17,6 +17,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 import static com.codeborne.selenide.Selenide.*;
@@ -190,16 +191,29 @@ public class MainPage260102Test {
             mainPage260102.inputAgregarTerceroTipersFab.click();
             //mainPage260102.inputTercerosNacionalidadMexicana.click();
             mainPage260102.inputTercerosTipoPersonaFisica.click();
-            mainPage260102.inputTerceros2.sendKeys("AAL0409235E6");
-            
-            mainPage260102.btnBuscarEmpresa.click();
-            mainPage260102.buttonGuardarDatosTercero2.click();
+            mainPage260102.inputTercerosNombre.sendKeys("NAME");
+            mainPage260102.inputTercerosApellidoPaterno.sendKeys("LASTNAME");
+            mainPage260102.inputTercerosApellidoMaterno.sendKeys("MATERNAL LAST NAME");
+            mainPage260102.selectTercerosPais.sendKeys("ALEMANIA");
+            mainPage260102.inputTercerosEstado.sendKeys("PRUEBA QA");
+            mainPage260102.inputTercerosCodigoPostal.sendKeys("06900");
+            mainPage260102.inputTercerosCalle.sendKeys("PRUEBAS");
+            mainPage260102.inputTercerosNumExterior.sendKeys("123");sleep(500);
+            mainPage260102.inputTercerosNumInterior.sendKeys("1");sleep(500);
+            mainPage260102.inputTercerosLada.sendKeys("52");
+            mainPage260102.inputTercerosTelefono.sendKeys("5551234567");sleep(500);
+            mainPage260102.inputTercerosCorreoElec.sendKeys("correo@dominio.com");sleep(500);
+            mainPage260102.buttonGuardarDatosTercero.click();sleep(500);
+
             //PAGO DE DERECHOS
             mainPage260102.labelPagoDerechos.click();
             mainPage260102.inputSolicitudPagoClaveReferencia.sendKeys("85434563");
-            mainPage260102.inputSolicitudPagoCadenaDependencia.sendKeys("uaiusjjsdga");
+            mainPage260102.inputSolicitudPagoCadenaDependencia.sendKeys("846272654");
             mainPage260102.selectSolicitudPagoBancoClave.sendKeys("BANAMEX");
-            mainPage260102.inputSolicitudPagoLlave.sendKeys("3456456243");
+            Random random = new Random();
+            int nFacturaR = 10_000_000 + random.nextInt(90_000_000);
+            mainPage260102.inputSolicitudPagoLlave.setValue(String.valueOf(nFacturaR));
+            //mainPage260102.inputSolicitudPagoLlave.sendKeys("3456452543");
             mainPage260102.inputSolicitudPagoImp.sendKeys("2000");
             Selenide.executeJavaScript("arguments[0].value = '08/04/2025';", mainPage260102.inputCalendar);sleep(100);
 
@@ -212,14 +226,9 @@ public class MainPage260102Test {
             mainPage260102.selectDoc3.sendKeys("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
             mainPage260102.selectDoc4.sendKeys("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
             mainPage260102.selectDoc5.sendKeys("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
-            mainPage260102.selectDoc6.sendKeys("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
-            mainPage260102.selectDoc7.sendKeys("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
-            mainPage260102.selectDoc8.sendKeys("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
-            mainPage260102.selectDoc9.sendKeys("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
-            mainPage260102.selectDoc10.sendKeys("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
-            mainPage260102.selectDoc11.sendKeys("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
+
             mainPage260102.btnAnexar.click();
-            mainPage260102.btnCerrar.click();
+            mainPage260102.btnCerrar.click();sleep(1000);
             mainPage260102.inputSiguiente.click();
             //FIRMAR SOLICITUD
             loginFirmSoli.firma(tramite260102);
