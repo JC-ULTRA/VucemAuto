@@ -1,0 +1,88 @@
+package COFEPRIS.Tramite260402;
+
+import com.codeborne.selenide.SelenideElement;
+import static com.codeborne.selenide.Selenide.$x;
+
+public class MainPage260402 {
+    ///Ruta al Tramite 2560402
+    public SelenideElement selecRol = $x("//*[@id='claveRol']");
+    public SelenideElement btnacep = $x("//button[@name='ingresar']");
+    public SelenideElement Tramites = $x("//*[@id='Trámites']");
+    public SelenideElement SoliNew = $x("/html/body/main/div/div[2]/div[1]/div[1]/div/nav/div/div[2]/ul/li[5]/ul/li[3]/a");
+    public SelenideElement Cofepris = $x("/html/body/main/div/div[3]/div/form/a[3]/img");
+    public SelenideElement CertiLicPer = $x("/html/body/main/div/div[3]/div/div[6]/ul/li/a");
+    public SelenideElement PermisosInterSalidaProdHumano = $x("/html/body/main/div/div[3]/div/div[6]/ul/li/ul/li[4]/a");
+    public SelenideElement Tramite260402 = $x("/html/body/main/div/div[3]/div/div[6]/ul/li/ul/li[4]/ul/li[2]/a");
+
+    ///Datos de la Solicitud Propietario
+    public SelenideElement PestDatSoli = $x("//*[@id=\"ui-id-2\"]");
+    public SelenideElement btnAgregarPropietario = $x("//*[@id=\"agregarTercero_TIPERS_PRO\"]");
+    public SelenideElement CheckNacional = $x("//*[@id=\"terceros_nacionalidadMexicana\"]");
+    public SelenideElement CheckPerFisica = $x("//*[@id=\"terceros_tipoPersonaFisica\"]");
+    public SelenideElement rfcPropietario = $x("//*[@id=\"terceros_rfc\"]");
+    public SelenideElement btnBuscarRFC = $x("/html/body/main/div[1]/div[4]/div[4]/form/div[1]/fieldset/div[3]/div[1]/div[4]/div[1]/div/button");
+    public SelenideElement btnGuardarPropietario = $x("//*[@id=\"btnGuardarFrmDatosTercero\"]");
+
+    ///Datos del establecimiento
+    public SelenideElement DenomiSocial = $x("//*[@id=\"solicitud.establecimiento.razonSocial\"]");
+    public SelenideElement Correo = $x("//*[@id=\"solicitud.establecimiento.correoElectronico\"]");
+    public SelenideElement CP = $x("//*[@id=\"solicitud.establecimiento.domicilio.codigoPostal\"]");
+    public SelenideElement Estado = $x("//*[@id=\"solicitud.establecimiento.domicilio.entidadFederativa.clave\"]");
+    public SelenideElement MunAlcald = $x("//*[@id=\"solicitud.establecimiento.domicilio.descripcionMunicipio\"]");
+    public SelenideElement Localidad = $x("//*[@id=\"solicitud.establecimiento.domicilio.informacionExtra\"]");
+    public SelenideElement Colonia = $x("//*[@id=\"solicitud.establecimiento.domicilio.descripcionColonia\"]");
+    public SelenideElement CalleEs = $x("//*[@id=\"solicitud.establecimiento.domicilio.calle\"]");
+    public SelenideElement Lada = $x("//*[@id=\"solicitud.establecimiento.domicilio.lada\"]");
+    public SelenideElement Telefono = $x("//*[@id=\"solicitud.establecimiento.domicilio.telefono\"]");
+
+    ///SCIAN
+    public SelenideElement btnAgregarSCIAN = $x("//*[@id=\"btnScianAgregar\"]");
+    public SelenideElement ClaveSCIAN = $x("/html/body/main/div[1]/div[4]/div[4]/form/div[1]/div[2]/div/select");
+    public SelenideElement btnAgregarSCIANOK = $x("/html/body/main/div[1]/div[4]/div[4]/form/div[1]/div[4]/div[2]/div/input[3]");
+
+    ///Formulario
+    public SelenideElement rfcResponsable = $x("//*[@id=\"solicitud_rfcCertificador\"]");
+    public SelenideElement nombreResponsable = $x("//*[@id=\"solicitud_descripcionCertificador\"]");
+    public SelenideElement nLicSani = $x("//*[@id=\"numeroLicenciaSanitaria\"]");
+    public SelenideElement btnAgregarLicSani = $x("/html/body/main/div[1]/div[4]/div[1]/form/div[2]/div/div[2]/div[16]/div[2]/div[1]/div[2]/div/input");
+    public SelenideElement regiDestMerca = $x("/html/body/main/div[1]/div[4]/div[1]/form/div[2]/div/div[2]/div[17]/div[1]/div/select");
+    public SelenideElement AduanaEntrada = $x("/html/body/main/div[1]/div[4]/div[1]/form/div[2]/div/div[2]/div[17]/div[2]/div/select");
+    public SelenideElement btnAgregarProducto = $x("//*[@id=\"btnagregarAduana\"]");
+    public SelenideElement nombreEspecifico = $x("//*[@id=\"fraccionArancelaria\"]");
+    public SelenideElement tipoProductoMerca = $x("//*[@id=\"cantidadUMT\"]");
+    public SelenideElement fracArancel = $x("//*[@id=\"fraccionArancelaria\"]");
+    public SelenideElement cantidadUMTPro = $x("//*[@id=\"cantidadUMT\"]");
+    public SelenideElement cantidadVol = $x("//*[@id=\"cantidadUMC\"]");
+    public SelenideElement unIdadMedida = $x("/html/body/main/div[1]/div[4]/div[5]/form/div[2]/div[8]/div[2]/div/select");
+    public SelenideElement PresFarmaEnv = $x("//*[@id=\"presentacion\"]");
+    public SelenideElement EnvprimarioAl = $x("//*[@id=\"condicionAlmacenamientoPrimario\"]");
+    public SelenideElement EnvSecundariAl = $x("//*[@id=\"condicionAlmacenamientoSecundario\"]");
+    public SelenideElement EnvprimarioCT = $x("//*[@id=\"condicionTransPrimario\"]");
+    public SelenideElement EnvSecundariTC = $x("//*[@id=\"condicionTransSecundario\"]");
+    public SelenideElement PaisOrgClick1 = $x("/html/body/main/div[1]/div[4]/div[5]/form/div[4]/div[1]/div/div[1]/button");
+    public SelenideElement PaisOrgAntartida2 = $x("/html/body/main/div[1]/div[4]/div[5]/form/div[4]/div[1]/div/div[2]/div/div/div[1]/div[2]/select/option[6]");
+    public SelenideElement PaisOrgClick3 = $x("/html/body/main/div[1]/div[4]/div[5]/form/div[4]/div[1]/div/div[2]/div/div/div[2]/div/div/input[2]");
+    public SelenideElement PaisOrgClick4 = $x("/html/body/main/div[1]/div[4]/div[5]/form/div[4]/div[2]/div/div[1]/button");
+    public SelenideElement PaisOrgAntartida5 = $x("/html/body/main/div[1]/div[4]/div[5]/form/div[4]/div[2]/div/div[2]/div/div/div[1]/div[2]/select/option[7]");
+    public SelenideElement PaisOrgANGUILA6 = $x("/html/body/main/div[1]/div[4]/div[5]/form/div[4]/div[2]/div/div[2]/div/div/div[2]/div/div/input[2]");
+    public SelenideElement usEspesific = $x("//*[@id=\"mercanciaGrid.clavesUsosEspecificos\"]");
+    public SelenideElement btnAgregarUsEspecifico = $x("//*[@id=\"btnAgregarMercancia\"]");
+
+    ///Manifiesto y Representante Legal
+    public SelenideElement CheckManifiesto = $x("/html/body/main/div[1]/div[4]/div[1]/form/div[2]/div/div[2]/div[24]/div/div/div/div[1]/div[1]/div/input");
+    public SelenideElement CheckSI = $x("//*[@id=\"informacionConfidencialNo\"]");
+    public SelenideElement RFCRepreLegal = $x("//*[@id=\"representanteLegalRFC\"]");
+    public SelenideElement btnBuscarRfcRepreLegal = $x("/html/body/main/div[1]/div[4]/div[1]/form/div[2]/div/div[2]/div[27]/div[2]/input");
+
+
+
+
+
+//    public SelenideElement name = $x("");
+//
+//
+//
+//
+//
+//    public SelenideElement folio = $x("/html/body/main/div/div[4]/div/div[4]/div/div/ul/li");
+}
