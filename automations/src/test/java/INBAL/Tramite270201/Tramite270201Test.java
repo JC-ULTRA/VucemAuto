@@ -146,7 +146,8 @@ public class Tramite270201Test {
             mainPage270201.btnAdjuntarDocument.click();
             mainPage270201.inputDocument.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
             mainPage270201.btmAnexar.click();
-            mainPage270201.btnCerrar.click();
+            mainPage270201.btnCerrar.click();sleep(2000);
+            mainPage270201.inputSiguiente.click();sleep(3000);
             //FIRMAR SOLICITUD
             loginFirmSoli.firma(tramite270201);
             String folioText = mainPage270201.folio.getText();sleep(5000);
