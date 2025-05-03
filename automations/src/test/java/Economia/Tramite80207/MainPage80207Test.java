@@ -87,8 +87,8 @@ public class MainPage80207Test {
                     mainPage80207.selecImmex.doubleClick();
 
                     mainPage80207.empresasSub.click();
-                    mainPage80207.rfcEmpresa.sendKeys("AAL970927390");//ERROR DE IDC AL MOMENTO
-                    mainPage80207.entidadEmpresa.sendKeys("MÉXICO");  //DE BUSCAR, TAMBIEN SE
+                    mainPage80207.rfcEmpresa.sendKeys("AFC000526BJ2");//Actualización de RFC
+                    mainPage80207.entidadEmpresa.sendKeys("CHIHUAHUA");  //DE BUSCAR
                     mainPage80207.btnBuscarPlantas.click();                    //INTENTO CON OTRO RFC Y ESTADO
                     mainPage80207.btnAceptar.pressEnter();
                     mainPage80207.selecPlantas.click();
