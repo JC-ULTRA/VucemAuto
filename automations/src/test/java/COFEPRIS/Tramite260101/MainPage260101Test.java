@@ -161,8 +161,6 @@ public class MainPage260101Test {
             mainPage260101.inputResultadoIdc.sendKeys("MAVL621207C95");sleep(500);
             mainPage260101.inputConsultarIdc.click();sleep(500);
             //TERCEROS RELACIONADOS
-            // Usar Actions para desplazar hacia el elemento (scroll)
-            // Agregar un retraso de 3 segundos antes de hacer el scroll (3000 ms = 3 segundos)
             try {
                 Thread.sleep(2000); // Pausa de 3 segundos
                 // Hacer scroll hasta el elemento
