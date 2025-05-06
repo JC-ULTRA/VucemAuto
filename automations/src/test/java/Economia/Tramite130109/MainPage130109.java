@@ -1,12 +1,11 @@
-package Economia.Tramite130106;
+package Economia.Tramite130109;
 
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Selenide.$x;
-import static com.codeborne.selenide.Selenide.getSelectedText;
 
-public class MainPage130106 {
+public class MainPage130109 {
     public SelenideElement cerS = $x("//*[@id='certificate']");
     public SelenideElement keyS = $x("//*[@id='privateKey']");
     public SelenideElement pass = $x("//*[@id='privateKeyPassword']");
@@ -19,13 +18,15 @@ public class MainPage130106 {
     public SelenideElement Econom = $x("//img[contains(@alt, 'Economía')]");
     public SelenideElement linkPermisosImportaciExportaci = $x("/html/body/main/div/div[3]/div/div[6]/ul/li[6]/a");
     public SelenideElement linkImportaci = $x("/html/body/main/div/div[3]/div/div[6]/ul/li[6]/ul/li[1]/a");
-    public SelenideElement linkAvisoAutomTicoImportaci = $x("/html/body/main/div/div[3]/div/div[6]/ul/li[6]/ul/li[1]/ul/li[5]/a");
+    public SelenideElement linkImpNeuRecPruLab = $x("/html/body/main/div/div[3]/div/div[6]/ul/li[6]/ul/li[1]/ul/li[7]/a");
+
     public SelenideElement Scrol = Selenide.$x("//*[@id=\"logoHeader\"]");
     public SelenideElement labelDatosSolicitud = $x("/html/body/main/div[1]/div[4]/div/form/div[2]/ul/li[2]/a/label");
     //DATOS TRÁMITE
     public SelenideElement SelectSolicitudRegimenClave = Selenide.$x("//*[@id=\"solicitud.regimen.clave\"]");
     public SelenideElement SelectSolicitudClaveClasificacionRegimen = Selenide.$x("//*[@id=\"solicitud.claveClasificacionRegimen\"]");
     //DATOS MERCANCÍA
+    public SelenideElement inputUsado = $x("/html/body/main/div[1]/div[4]/div/form/div[2]/div/div[2]/div[3]/div[1]/div[2]/input");
     public SelenideElement textareaDescripcionMercancia = Selenide.$x("//*[@id=\"solicitud.mercancia.descripcion\"]");
     public SelenideElement SelectFraccionArancelaria = Selenide.$x("//*[@id=\"cveFraccionArancelaria\"]");
     public SelenideElement inputCantidadTarifaria = Selenide.$x("//*[@id=\"solicitud_mercancia_cantidadTarifaria\"]");
@@ -42,6 +43,7 @@ public class MainPage130106 {
     public SelenideElement inputDocumentosFile = $x("//input[@type='file']");
     public SelenideElement btnCerrarAdjuntar = Selenide.$x("//*[@id=\"cerrarAdjuntar\"]");
     public SelenideElement btnCargarArchivo = Selenide.$x("//*[@id=\"cargaArchivo\"]");
+
     public SelenideElement checkPartidaMercancia = Selenide.$x("//*[@id=\"cb_gridPartidaMercancias\"]");
     public SelenideElement textareaCantidadDispobible = Selenide.$x("//*[@id=\"cantidadDispobible\"]");
     public SelenideElement textareaCantidadUsdDispobible = Selenide.$x("//*[@id=\"cantidadUsdDispobible\"]");
@@ -50,8 +52,8 @@ public class MainPage130106 {
     //PAÍS PROCEDENCIA
     public SelenideElement bloqueAutocomplete = Selenide.$x("//*[@id=\"bloqueAutocomplete\"]");
     public SelenideElement inputPaises = Selenide.$x("/html/body/main/div[1]/div[4]/div/form/div[2]/div/div[2]/div[16]/div[1]/div[2]/div[2]/a/input");
-    public SelenideElement paisBloqueOrigenSearch = Selenide.$x("//*[@id=\"paisBloqueOrigenSearch\"]");
-    public SelenideElement selectPaisBloqueOrigen = Selenide.$x("//*[@id=\"sPaisBloqueOrigen\"]");
+    public SelenideElement paisBloqueOrigenSearch = Selenide.$x("/html/body/main/div[1]/div[4]/div/form/div[2]/div/div[2]/div[16]/div[2]/div[1]/div[3]/select/option[2]");
+    public SelenideElement selectPaisBloqueOrigen = Selenide.$x("//*[@id=\"agregarPaisBloque\"]");
     public SelenideElement btnAgregarTodos = Selenide.$x("//*[@id=\"agregarTodosPaisBloque\"]");
     public SelenideElement btnAgregarSeleccion = Selenide.$x("//*[@id='agregarPaisBloque']");
     public SelenideElement btnRestarSeleccion = Selenide.$x("//*[@id='eliminarPaisBloque']");
@@ -65,7 +67,16 @@ public class MainPage130106 {
     public SelenideElement selectEntidadFederativaClave = Selenide.$x("//*[@id='solicitud.entidadFederativa.entidad.clave']");
     public SelenideElement selectRepresentacionFederal = Selenide.$x("//*[@id='representacionFederalSelect']");
     //GUARDAR SOLICITUD
-    public SelenideElement inputGuardarSolicitud = Selenide.$x("//*[@id='guardarSolicitud']");
-    public SelenideElement inputSiguienteButton = Selenide.$x("//*[@id='siguienteButton']");
+    public SelenideElement inputGuardarSolicitud = $x("//*[@id=\"guardarSolicitud\"]");
+    public SelenideElement btnContinuar = $x("/html/body/main/div/div[4]/div/form/div[4]/div/div/input[2]");
+    public SelenideElement btnAdjuntarDoc = $x("/html/body/main/div/div[4]/div/form[1]/table/tbody/tr[5]/td[2]/div/input[2]");
+    public SelenideElement archivo1 = $x("/html/body/main/div/div[4]/div[2]/div/form[2]/table/tbody/tr[1]/td[4]/input");
+    public SelenideElement archivo2 = $x("/html/body/main/div/div[4]/div[2]/div/form[3]/table/tbody/tr[1]/td[4]/input");
+    public SelenideElement archivo3 = $x("/html/body/main/div/div[4]/div[2]/div/form[4]/table/tbody/tr[1]/td[4]/input");
+    public SelenideElement archivo4 = $x("/html/body/main/div/div[4]/div[2]/div/form[5]/table/tbody/tr[1]/td[4]/input");
+    public SelenideElement archivo5 = $x("/html/body/main/div/div[4]/div[2]/div/form[6]/table/tbody/tr[1]/td[4]/input");
+    public SelenideElement btnAdjuntar = $x("//*[@id=\"btnAnexar\"]");
+    public SelenideElement btnCerrar = $x("//*[@id=\"btnCerrar\"]");
+    public SelenideElement btnSiguiente = $x("//*[@id=\"siguienteButton\"]");
     public SelenideElement folio = $x("/html/body/main/div/div[4]/div/div[4]/div/div/ul/li");
 }

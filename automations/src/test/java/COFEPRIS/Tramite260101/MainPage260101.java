@@ -124,7 +124,5 @@ public class MainPage260101 {
     public SelenideElement btnAnexar = $x("//*[@id=\"btnAnexar\"]");
     public SelenideElement btnCerrar = $x("/html/body/main/div/div[4]/div[2]/form/div[3]/div/input");
     public SelenideElement inputSiguiente = $x("/html/body/main/div/div[4]/div[1]/form[2]/div[2]/div/input[2]");
-
-
-
+    public SelenideElement folio = $x("/html/body/main/div/div[4]/div/div[4]/div/div/ul/li");
 }
