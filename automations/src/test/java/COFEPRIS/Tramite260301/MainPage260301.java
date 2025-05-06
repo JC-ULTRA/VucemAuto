@@ -98,7 +98,7 @@ public class MainPage260301 {
     public SelenideElement inputTercerosTelefono = $x("//*[@id='terceros_telefono']");
     public SelenideElement inputTercerosCorreoElec = $x("//*[@id='terceros_correoElec']");
     public SelenideElement buttonGuardarDatosTercero = $x("//*[@id='btnGuardarFrmDatosTercero']");
-//*[@id="terceros_calle"]
+
 
     public SelenideElement inputTercerosNacionalidadMexicana = $x("//*[@id='terceros_nacionalidadMexicana']");
     public SelenideElement inputTercerosTipoPersonaMoral2 = $x("//*[@id='terceros_tipoPersonaMoral']");
@@ -115,13 +115,19 @@ public class MainPage260301 {
     public SelenideElement selectTercerosLocalidad = $x("//*[@id='terceros_selectLocalidad']");
     public SelenideElement PostalCode = $x("/html/body/main/div[1]/div[4]/div[5]/form/div[1]/fieldset/div[3]/div[1]/div[7]/div[5]/div/div[1]/select");
     public SelenideElement selectTercerosColonia = $x("//*[@id='terceros_selectColonia']");
-
-
-
-
-
+    //PAGO DE DEREACHOS
+    public SelenideElement labelPagoDerechos = $x("/html/body/main/div[1]/div[4]/div[1]/form/div[2]/ul/li[4]/a/label");
+    public SelenideElement inputSolicitudPagoClaveReferencia = $x("//*[@id='solicitud.pago.claveDeReferencia']");
+    public SelenideElement inputSolicitudPagoCadenaDependencia = $x("//*[@id='solicitud.pago.cadenaPagoDependencia']");
+    public SelenideElement selectSolicitudPagoBancoClave = $x("//*[@id='solicitud.pago.banco.clave']");
+    public SelenideElement inputSolicitudPagoLlave = $x("//*[@id='solicitud.pago.llaveDePago']");
+    public SelenideElement inputCalendar = $x("//*[@id='calendarTo']");
+    public SelenideElement inputSolicitudPagoImp = $x("//*[@id='solicitud.pago.impPago']");
+    public SelenideElement inputGuardarSolicitud = $x("//*[@id=\"guardarSolicitud\"]");
     public SelenideElement inputGuarda = $x("//*[@id=\"workingArea\"]/form/div[4]/div/div/input[2]");
-    public SelenideElement inputAdjuntar = $x("/html/body/main/div/div[4]/div/form[1]/table/tbody/tr[10]/td[2]/div/input[2]");
+    public SelenideElement inputAdjuntar = $x("/html/body/main/div/div[4]/div/form[1]/table/tbody/tr[8]/td[2]/div/input[2]");
+
+
     public SelenideElement selectDoc = $x("/html/body/main/div/div[4]/div[2]/div/form[2]/table/tbody/tr[1]/td[4]/input");
     public SelenideElement selectDoc2 = $x("/html/body/main/div/div[4]/div[2]/div/form[3]/table/tbody/tr[1]/td[4]/input");
     public SelenideElement selectDoc3 = $x("/html/body/main/div/div[4]/div[2]/div/form[4]/table/tbody/tr[1]/td[4]/input");

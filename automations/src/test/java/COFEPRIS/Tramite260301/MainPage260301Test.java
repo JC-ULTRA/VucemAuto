@@ -16,6 +16,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 import static com.codeborne.selenide.Selenide.*;
@@ -187,36 +188,51 @@ public class MainPage260301Test {
             mainPage260301.selectTercerosCodPostal.sendKeys("06900");
             mainPage260301.inputTercerosCalle.sendKeys("Calle Conocida");sleep(500);
             mainPage260301.inputTercerosNumExterior.sendKeys("123");sleep(500);
-            mainPage260301.inputTercerosNumInterior.sendKeys("A");sleep(500);
+            mainPage260301.inputTercerosNumInterior.sendKeys("1");sleep(500);
             mainPage260301.inputTercerosLada.sendKeys("52");
             mainPage260301.inputTercerosTelefono.sendKeys("5551234567");sleep(500);
             mainPage260301.inputTercerosCorreoElec.sendKeys("correo@dominio.com");sleep(500);
             mainPage260301.buttonGuardarDatosTercero.click();sleep(500);
 
             mainPage260301.btnAgregarFacturador.click();sleep(500);
-            mainPage260301.inputTercerosTipoPersonaMoral.sendKeys("Persona Moral");sleep(500);
-            mainPage260301.inputTerceros.sendKeys("RFC123456789");sleep(500);
-            mainPage260301.inputTercerosSocial.sendKeys("PRUEBAS SA DE CV");sleep(500);
-            mainPage260301.selectTercerosEstado.sendKeys("MORELOS");sleep(500);
-            mainPage260301.selectTercerosMunicipio.sendKeys("ZACATEPEC DE HIDALGO");sleep(1000);
-            mainPage260301.selectTercerosLocalidad.sendKeys("GALEANA");sleep(1000);
-            $("option[value='62780']").click();
-            mainPage260301.selectTercerosColonia.sendKeys("VICENTE GUERRERO");sleep(500);
+            mainPage260301.inputDenominacion.sendKeys("PRUEBAS");
+            mainPage260301.inputPais.sendKeys("ARGELIA");
+            mainPage260301.inputEstado.sendKeys("CDMX");
+            mainPage260301.selectTercerosCodPostal.sendKeys("06900");
+            mainPage260301.inputTercerosCalle.sendKeys("Calle Conocida");sleep(500);
+            mainPage260301.inputTercerosNumExterior.sendKeys("123");sleep(500);
+            mainPage260301.inputTercerosNumInterior.sendKeys("1");sleep(500);
+            mainPage260301.inputTercerosLada.sendKeys("52");
+            mainPage260301.inputTercerosTelefono.sendKeys("5551234567");sleep(500);
+            mainPage260301.inputTercerosCorreoElec.sendKeys("correo@dominio.com");sleep(500);
+            mainPage260301.buttonGuardarDatosTercero.click();sleep(500);
+//PAGO DERECHOS
+            mainPage260301.labelPagoDerechos.click();
+            mainPage260301.inputSolicitudPagoClaveReferencia.sendKeys("85434563");
+            mainPage260301.inputSolicitudPagoCadenaDependencia.sendKeys("234523345");
+            mainPage260301.selectSolicitudPagoBancoClave.sendKeys("BANAMEX");
+            Random random = new Random();
+            int nFacturaR = 10_000_000 + random.nextInt(90_000_000);
+            mainPage260301.inputSolicitudPagoLlave.setValue(String.valueOf(nFacturaR));
+            Selenide.executeJavaScript("arguments[0].value = '08/04/2025';", mainPage260301.inputCalendar);sleep(100);
+            mainPage260301.inputSolicitudPagoImp.sendKeys("2000");
 
+            mainPage260301.inputGuardarSolicitud.click();
+            mainPage260301.inputGuarda.click();
+            mainPage260301.inputAdjuntar.click();
 
 
             //GUARDAR
-            mainPage260301.inputGuarda.click();
-            mainPage260301.inputAdjuntar.click();
+
             mainPage260301.selectDoc.sendKeys("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
             mainPage260301.selectDoc2.sendKeys("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
             mainPage260301.selectDoc3.sendKeys("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
             mainPage260301.selectDoc4.sendKeys("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
             mainPage260301.selectDoc5.sendKeys("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
-            mainPage260301.selectDoc6.sendKeys("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
-            mainPage260301.selectDoc7.sendKeys("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
-            mainPage260301.btnAnexar.click();sleep(20000);
-            mainPage260301.btnCerrar.click();
+//            mainPage260301.selectDoc6.sendKeys("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
+//            mainPage260301.selectDoc7.sendKeys("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
+            mainPage260301.btnAnexar.click();sleep(2000);
+            mainPage260301.btnCerrar.click();sleep(3500);
             mainPage260301.inputSiguiente.click();
             //FIRMAR SOLICITUD
             loginFirmSoli.firma(tramite260301);
