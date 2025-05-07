@@ -152,16 +152,10 @@ public class MainPage130109Test {
             mainPage130109.btnAdjuntar.click();Selenide.sleep(3000);
             mainPage130109.btnCerrar.click();sleep(3500);
             mainPage130109.btnSiguiente.click();
-            //Manda error: "el solicitante debe contar con RECIF."
             //Firmas
             loginFirmSoli.firma(tramite130109);
-
-            // Obtener el texto del folio desde mainPage130109
             String folioText = mainPage130109.folio.getText();
-
-            // Llamar al mtodo para obtener el folio
             String folioNumber = obtenerFolio.obtenerFolio(folioText);
-
             ConDBReasigSolFun.processFolio(folioNumber, FunRFC);
 
 

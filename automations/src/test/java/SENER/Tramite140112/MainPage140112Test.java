@@ -1,4 +1,4 @@
-package COFEPRIS.Tramite261702;
+package SENER.Tramite140112;
 
 import DBYFOLIO.ObtenerFolio;
 import Firmas.LoginFirmSoli;
@@ -19,8 +19,8 @@ import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.Selenide.sleep;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
-public class MainPage261702Test {
-    MainPage261702 mainPage261702 = new MainPage261702();
+public class MainPage140112Test {
+    MainPage140112 mainPage140112 = new MainPage140112();
     LoginFirmSoli loginFirmSoli = new LoginFirmSoli();
 
     ObtenerFolio obtenerFolio = new ObtenerFolio();
@@ -28,7 +28,7 @@ public class MainPage261702Test {
     String FunRFC = "MAVL621207C95";
     String SoliRFC = "AAL0409235E6";
 
-    TramitesFirmasLG tramite261702  = new TramitesFirmasLG(
+    TramitesFirmasLG tramite140112  = new TramitesFirmasLG(
             "C:\\VucemAuto\\automations\\src\\test\\resources\\CredSoli\\aal0409235e6.cer",
             "C:\\VucemAuto\\automations\\src\\test\\resources\\CredSoli\\AAL0409235E6_1012231310.key"
     );
@@ -53,7 +53,7 @@ public class MainPage261702Test {
     }
 
     @Test
-    public void Proceso261702() {
+    public void Proceso140112() {
         /////////////////////////////////////////////////////////////////////////////////////////////////////////-
         // Solicitar el número de repeticiones al usuario a través de un JOptionPane con opción de Cancelar
         String repeticionesStr = JOptionPane.showInputDialog(null, "Ingrese el número de repeticiones:", "Repeticiones", JOptionPane.QUESTION_MESSAGE);
@@ -78,39 +78,38 @@ public class MainPage261702Test {
         // Ejecutar el proceso con las repeticiones y los métodos seleccionados
         ejecutarProcesoNRunnable(() -> {
 //          Ingreso y selección de trámite
-            loginFirmSoli.login(tramite261702);
-            mainPage261702.selecRol.sendKeys("Persona Moral");
-            mainPage261702.btnacep.click();
-            mainPage261702.Tramites.sendKeys("Solicitudes subsecuentes");
-            mainPage261702.SoliSub.click();
-            mainPage261702.inputIdFolio.sendKeys("0402600201020254006000010");
-            mainPage261702.inputBuscarButton.click();sleep(1000);
-            mainPage261702.SolicitudTramite.doubleClick();
-            mainPage261702.inputSolicitarDesistimiento.click();
+            loginFirmSoli.login(tramite140112);
+            mainPage140112.selecRol.sendKeys("Persona Moral");
+            mainPage140112.btnacep.click();
+            mainPage140112.Tramites.sendKeys("Solicitudes subsecuentes");
+            mainPage140112.SoliSub.click();
+            mainPage140112.inputIdFolio.sendKeys("1701300100820251701000029");
+            mainPage140112.inputBuscarButton.click();sleep(1000);
+            mainPage140112.SolicitudTramite.doubleClick();
+            mainPage140112.inputSolicitarDesistimiento.click();
             try {
                 Thread.sleep(2000); // Pausa de 3 segundos
                 // Hacer scroll hasta el elemento
-                mainPage261702.Scrol.scrollIntoView(true);
+                mainPage140112.Scrol.scrollIntoView(true);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
             //DATOS SOLICITUD
-            mainPage261702.labelDatosSolicitud.click();
-            mainPage261702.textareaMotivo.sendKeys("MOTIVO DE PRUEBA QA");
-            mainPage261702.inputDeclaracion.click();
-            mainPage261702.inputRFC.sendKeys("MAVL621207C95");
-            mainPage261702.inputConsultarIDC.click();
-            mainPage261702.inputGuardarSolicitud.click();
-            mainPage261702.btnContinuar.click();
-            mainPage261702.btnAdjuntarDocumentos.click();
-            mainPage261702.inputDocument.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
-            mainPage261702.inputDocument1.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
-            mainPage261702.btnAdjuntar.click();sleep(3500);
-            mainPage261702.btnCerrar.click();sleep(7000);
-            mainPage261702.inputSiguiente.click();sleep(3000);
+            mainPage140112.labelDesistimientoSol.click();
+            mainPage140112.selectFolio.click();
+            mainPage140112.inputChekMAnifiesto.click();
+            mainPage140112.inputMotivoDesistimiento.sendKeys("POR PRUEBAS QA");
+
+            mainPage140112.inputGuardarSolicitud.click();
+            mainPage140112.btnContinuar.click();
+            mainPage140112.btnAdjuntarDocumentos.click();
+            mainPage140112.inputDocument.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
+            mainPage140112.btnAdjuntar.click();sleep(3500);
+            mainPage140112.btnCerrar.click();sleep(7000);
+            mainPage140112.inputSiguiente.click();sleep(3000);
             //FIRMAR SOLICITUD
-            loginFirmSoli.firma(tramite261702);
-            String folioText = mainPage261702.folio.getText();
+            loginFirmSoli.firma(tramite140112);
+            String folioText = mainPage140112.folio.getText();
             String folioNumber = obtenerFolio.obtenerFolio(folioText);
 
         }, repeticiones);
