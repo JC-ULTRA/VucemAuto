@@ -15,7 +15,7 @@ public class MainPage260402 {
     public SelenideElement Tramite260402 = $x("/html/body/main/div/div[3]/div/div[6]/ul/li/ul/li[4]/ul/li[2]/a");
 
     ///Datos de la Solicitud Propietario
-    public SelenideElement PestDatSoli = $x("//*[@id=\"ui-id-2\"]");
+    public SelenideElement PestDatSoli = $x("/html/body/main/div[1]/div[4]/div[1]/form/div[2]/ul/li[2]/a");
     public SelenideElement btnAgregarPropietario = $x("//*[@id=\"agregarTercero_TIPERS_PRO\"]");
     public SelenideElement CheckNacional = $x("//*[@id=\"terceros_nacionalidadMexicana\"]");
     public SelenideElement CheckPerFisica = $x("//*[@id=\"terceros_tipoPersonaFisica\"]");
@@ -48,8 +48,8 @@ public class MainPage260402 {
     public SelenideElement regiDestMerca = $x("/html/body/main/div[1]/div[4]/div[1]/form/div[2]/div/div[2]/div[17]/div[1]/div/select");
     public SelenideElement AduanaEntrada = $x("/html/body/main/div[1]/div[4]/div[1]/form/div[2]/div/div[2]/div[17]/div[2]/div/select");
     public SelenideElement btnAgregarProducto = $x("//*[@id=\"btnagregarAduana\"]");
-    public SelenideElement nombreEspecifico = $x("//*[@id=\"fraccionArancelaria\"]");
-    public SelenideElement tipoProductoMerca = $x("//*[@id=\"cantidadUMT\"]");
+    public SelenideElement nombreEspecifico = $x("//*[@id=\"idDenominacionEspecifica\"]");
+    public SelenideElement tipoProductoMerca = $x("//*[@id=\"mercanciaGrid.tipoProducto.idTipoProductoTipoTramite\"]");
     public SelenideElement fracArancel = $x("//*[@id=\"fraccionArancelaria\"]");
     public SelenideElement cantidadUMTPro = $x("//*[@id=\"cantidadUMT\"]");
     public SelenideElement cantidadVol = $x("//*[@id=\"cantidadUMC\"]");
@@ -74,15 +74,35 @@ public class MainPage260402 {
     public SelenideElement RFCRepreLegal = $x("//*[@id=\"representanteLegalRFC\"]");
     public SelenideElement btnBuscarRfcRepreLegal = $x("/html/body/main/div[1]/div[4]/div[1]/form/div[2]/div/div[2]/div[27]/div[2]/input");
 
+    ///Terceros Relacionados
+    public SelenideElement PestTerceros = $x("//*[@id=\"ui-id-3\"]");
+    public SelenideElement btnAgregarTerceros = $x("//*[@id=\"agregarTercero_TIPERS_INFPR\"]");
+    public SelenideElement TipPerMoral = $x("//*[@id=\"terceros_tipoPersonaMoral\"]");
+    public SelenideElement rSocial = $x("/html/body/main/div[1]/div[4]/div[5]/form/div[1]/fieldset/div[3]/div[1]/div[5]/div[2]/div/div/input");
+    public SelenideElement paisDomic = $x("//*[@id=\"terceros_selectPais\"]");
+    public SelenideElement estadoDomic = $x("//*[@id=\"terceros_txtEstadoLocalidad\"]");
+    public SelenideElement CPEquivalente = $x("//*[@id=\"terceros_codPostal\"]");
+    public SelenideElement CalleDom = $x("//*[@id=\"terceros_calle\"]");
+    public SelenideElement numExt = $x("//*[@id=\"terceros_numExterior\"]");
+    public SelenideElement numInt = $x("//*[@id=\"terceros_numInterior\"]");
+    public SelenideElement LadaDomc = $x("//*[@id=\"terceros_lada\"]");
+    public SelenideElement TelefonoDomc = $x("//*[@id=\"terceros_telefono\"]");
+    public SelenideElement CoccreoDomc = $x("//*[@id=\"terceros_correoElec\"]");
+    public SelenideElement btnGuardarDom = $x("/html/body/main/div[1]/div[4]/div[5]/form/div[1]/fieldset/div[3]/div[4]/div/div[2]/div/button[3]");
 
+    ///Pago de Derechos
+    public SelenideElement PestPagoDerecho = $x("//*[@id=\"ui-id-4\"]");
+    public SelenideElement ClaveReferen = $x("//*[@id=\"solicitud.pago.claveDeReferencia\"]");
+    public SelenideElement CadenaDepend = $x("//*[@id=\"solicitud.pago.cadenaPagoDependencia\"]");
+    public SelenideElement Banco = $x("//*[@id=\"solicitud.pago.banco.clave\"]");
+    public SelenideElement LlavePago = $x("//*[@id=\"solicitud.pago.llaveDePago\"]");
+    public SelenideElement FechaPago = $x("//*[@id=\"calendarTo\"]");
+    public SelenideElement Import = $x("//*[@id=\"solicitud.pago.impPago\"]");
+    public SelenideElement btnContinuarDoc = $x("/html/body/main/div[1]/div[4]/div[1]/form/div[3]/div/div/div[2]/input[1]");
 
+    ///Documentos Requeridos
+    public SelenideElement CheckSelecDoc = $x("//*[@id=\"cb_jqgridDoctosEspecificos\"]");
+    public SelenideElement btnEliminarDoc = $x("//*[@id=\"deleteButton\"]");
+    public SelenideElement btnConFirm = $x("/html/body/main/div/div[4]/div/form/div[4]/div/div/input[2]");
 
-
-//    public SelenideElement name = $x("");
-//
-//
-//
-//
-//
-//    public SelenideElement folio = $x("/html/body/main/div/div[4]/div/div[4]/div/div/ul/li");
 }
