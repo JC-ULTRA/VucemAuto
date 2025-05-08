@@ -129,9 +129,9 @@ public class MainPage32611Test {
             mainPage32611.subcontratacionSi.click();
             mainPage32611.agregarSubcontratado.click();
             //executeJavaScript("arguments[0].value = 'MAVL621207C95';",
-            mainPage32611.rfcSubcontratado.setValue("MAVL621207C95");
-            mainPage32611.inputFuera.pressTab();
-            executeJavaScript("arguments[0].click();", mainPage32611.btnBuscarRfcSubcontratado);
+            mainPage32611.rfcSubcontratado.setValue("MAVL621207C95"); sleep(2000);
+            mainPage32611.subContr.click();
+            mainPage32611.btnBuscarRfcSub.click();
             mainPage32611.bimestreEmpleadosSubcontratados.sendKeys("Marzo - Abril");
             mainPage32611.añadirSubcontratados.click();
             mainPage32611.btnAceptarSubcontratados.click();

@@ -36,7 +36,9 @@ public class MainPage32611 {
     public SelenideElement agregarSubcontratado = $x("//*[@id=\"agregarSubcontratado\"]");
     public SelenideElement rfcSubcontratado = $x("//*[@id=\"subcontratado.rfcBusqueda\"]");
     public SelenideElement inputFuera = $x("/html/body/div[11]/div[2]/table/tbody/tr[1]/td/div/div[1]");
-    public SelenideElement btnBuscarRfcSubcontratado = $x("//*[@id=\"buscarRFC\"]");
+    public SelenideElement subContr = $x("//*[@id=\"subcontratado.rfc\"]");
+    public SelenideElement btnBuscarRfcSub = $x("/html/body/div[11]/div[2]/table/tbody/tr[1]/td/div/div[1]/input[2]");
+
     public SelenideElement numEmpleadosSubcontratados = $x("//*[@id=\"subcontratado.empleados\"]");
     public SelenideElement bimestreEmpleadosSubcontratados = $x("//*[@id=\"subcontratado.bimestre\"]");
     public SelenideElement añadirSubcontratados = $x("//*[@id=\"subcontratadoAgregarModalEsquemaIC\"]");
