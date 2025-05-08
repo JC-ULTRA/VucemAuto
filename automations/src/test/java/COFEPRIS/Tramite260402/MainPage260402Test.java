@@ -10,15 +10,14 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.chrome.ChromeOptions;
 import javax.swing.*;
-import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.UUID;
+import java.util.concurrent.TimeUnit;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 public class MainPage260402Test {
-
     MainPage260402 mainPage260402 = new MainPage260402();
     LoginFirmSoli loginSoli = new LoginFirmSoli();
     ObtenerFolio obtenerFolio = new ObtenerFolio();
@@ -29,10 +28,11 @@ public class MainPage260402Test {
 
     // Variable para almacenar el tipo de trámite seleccionado
     @BeforeAll
-    public static void initDriver() {
+    public static void iniDriver(){
         Configuration.browser = Browsers.CHROME;
         open();
         getWebDriver().manage().window().maximize();
+        getWebDriver().manage().timeouts().pageLoadTimeout(90, TimeUnit.SECONDS);
     }
 
     @BeforeEach
@@ -42,7 +42,7 @@ public class MainPage260402Test {
     }
 
     @Test
-    public void Proceso260402() throws IOException {
+    public void Proceso260402(){
 
         // Solicitar el número de repeticiones
         String repeticionesStr = JOptionPane.showInputDialog(null, "Ingrese el número de repeticiones:", "Repeticiones", JOptionPane.QUESTION_MESSAGE);
@@ -70,7 +70,17 @@ public class MainPage260402Test {
 
             ///Datos de la Solicitud
             ejecutarPestDatSoli();
-//            mainPage260402.btnContinuarFirma.click();
+
+            ///Terceros Relacionados
+            ejecutarPestTercRelacionados();
+
+            ///Pago de Derechos
+            ejecutarPestPagoDerecho();
+
+            ///Documentos Requeridos
+            ejecutarPestDocRequeridos();
+
+            mainPage260402.btnConFirm.click();
 
 //            ///Firma
 //            loginSoli.firma(tramite260402);
@@ -91,22 +101,16 @@ public class MainPage260402Test {
         mainPage260402.Cofepris.click(); sleep(1000);
         mainPage260402.CertiLicPer.click(); sleep(1000);
         mainPage260402.PermisosInterSalidaProdHumano.click(); sleep(1000);
-        mainPage260402.Tramite260402.click(); sleep(1000);
+        mainPage260402.Tramite260402.click();
     }
 
     public void ejecutarPestDatSoli() {
-        // Obtener la fecha de hoy formateada
-        LocalDate hoy = LocalDate.now();
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        String fechaHoy = hoy.format(formatter);
-
         //llave de pago
         String uuid = UUID.randomUUID().toString();
         int longitudDeseada = 16;
         String llavePago = uuid.replace("-", "").substring(0, longitudDeseada);
-
         ///Propietario
-        mainPage260402.PestDatSoli.click(); sleep(1000);
+        mainPage260402.PestDatSoli.click();
         mainPage260402.btnAgregarPropietario.click(); sleep(1000);
         mainPage260402.CheckNacional.click(); sleep(1000);
         mainPage260402.CheckPerFisica.click(); sleep(1000);
@@ -140,10 +144,10 @@ public class MainPage260402Test {
         mainPage260402.AduanaEntrada.sendKeys("ALTAMIRA"); sleep(1000);
         mainPage260402.btnAgregarProducto.click(); sleep(1000);
         mainPage260402.nombreEspecifico.sendKeys("NombreEs."); sleep(1000);
-        mainPage260402.tipoProductoMerca.sendKeys("OTROS."); sleep(1000);
         mainPage260402.fracArancel.sendKeys("30019099."); sleep(1000);
-        mainPage260402.cantidadUMTPro.sendKeys("12."); sleep(1000);
-        mainPage260402.cantidadVol.sendKeys("12."); sleep(1000);
+        mainPage260402.tipoProductoMerca.sendKeys("OTROS."); sleep(1000);
+        mainPage260402.cantidadUMTPro.sendKeys("12"); sleep(1000);
+        mainPage260402.cantidadVol.sendKeys("12"); sleep(1000);
         mainPage260402.unIdadMedida.sendKeys("Bote."); sleep(1000);
         mainPage260402.PresFarmaEnv.sendKeys("Prueba QA"); sleep(1000);
         mainPage260402.EnvprimarioAl.sendKeys("Botella."); sleep(1000);
@@ -156,7 +160,7 @@ public class MainPage260402Test {
         mainPage260402.PaisOrgClick4.click(); sleep(1000);
         mainPage260402.PaisOrgAntartida5.click(); sleep(1000);
         mainPage260402.PaisOrgANGUILA6.click(); sleep(1000);
-        mainPage260402.usEspesific.click(); sleep(1000);
+        mainPage260402.usEspesific.sendKeys("Internación al territorio nacional de células, tejidos, productos de seres humanos y suero, destinado a diagnóstico."); sleep(1000);
         mainPage260402.btnAgregarUsEspecifico.click(); sleep(1000);
 
         ///Manifiesto y Representante Legal
@@ -164,27 +168,52 @@ public class MainPage260402Test {
         mainPage260402.CheckSI.click(); sleep(1000);
         mainPage260402.RFCRepreLegal.sendKeys("MAVL621207C95"); sleep(1000);
         mainPage260402.btnBuscarRfcRepreLegal.click(); sleep(1000);
+    }
 
+    public void ejecutarPestTercRelacionados() {
+        ///Terceros Relacionados
+        executeJavaScript("window.scrollTo(0, 0);");
+          mainPage260402.PestTerceros.click();
+          mainPage260402.btnAgregarTerceros.click();
+          mainPage260402.TipPerMoral.click();
+          mainPage260402.rSocial.sendKeys("Nombre Empresa");
+          mainPage260402.paisDomic.sendKeys("ANTARTIDA");
+          mainPage260402.estadoDomic.sendKeys("VERACRUZ");
+          mainPage260402.CPEquivalente.sendKeys("95275");
+          mainPage260402.CalleDom.sendKeys("Calle 01");
+          mainPage260402.numExt.sendKeys("01");
+          mainPage260402.numInt.sendKeys("02");
+          mainPage260402.LadaDomc.sendKeys("52");
+          mainPage260402.TelefonoDomc.sendKeys("2435243345");
+          mainPage260402.CoccreoDomc.sendKeys("UltraQA@Test.com.mx");
+          mainPage260402.btnGuardarDom.click();
+    }
 
+    public void ejecutarPestPagoDerecho() {
+        ///Terceros Relacionados, Fecha del dia
+        LocalDate hoy = LocalDate.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        String fechaHoy = hoy.format(formatter);
+        String uuid = UUID.randomUUID().toString();
+        int longitudDeseada = 16;
+        String llavePago = uuid.replace("-", "").substring(0, longitudDeseada);
+        executeJavaScript("window.scrollTo(0, 0);");
+          mainPage260402.PestPagoDerecho.click();
+          mainPage260402.ClaveReferen.sendKeys("Clave de Referencia");
+          mainPage260402.CadenaDepend.sendKeys("Cadena de Dependencia");
+          mainPage260402.Banco.sendKeys("BANCA MIFEL");
+          mainPage260402.LlavePago.sendKeys(llavePago);
+          executeJavaScript("arguments[0].value = arguments[1];", mainPage260402.FechaPago, fechaHoy);sleep(1000);
+//          mainPage260402.FechaPago.setValue(fechaHoy);
+          mainPage260402.Import.setValue("100");
+          mainPage260402.btnContinuarDoc.click();
+    }
 
-
-
-
-//        mainPage260402.ProrrogaDelTramite.click(); sleep(1000);
-//        mainPage260402.PestDatosSoli.click(); sleep(1000);
-//        mainPage260402.Justific.sendKeys("Pruebas QA"); sleep(1000);
-//        executeJavaScript("window.scrollTo(0, 0);");
-//        mainPage260402.PestLLavePago.click(); sleep(1000);
-//        mainPage260402.Banco.sendKeys("BANCA AFIRME"); sleep(1000);
-//        mainPage260402.LlavePago.sendKeys(llavePago); sleep(1000);
-//        executeJavaScript("arguments[0].value = arguments[1];", mainPage260402.FechaPagoP, fechaHoy);sleep(1000);
-//        mainPage260402.btnContiRequerimiento.click(); sleep(1000);
-//        mainPage260402.btnContiCarga.click(); sleep(1000);
-//        mainPage260402.btnAdjuntarDocs.click(); sleep(1000);
-//        mainPage260402.Doc.sendKeys("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf"); sleep(1000);
-//        mainPage260402.btnAnex.click(); sleep(1000);
-//        mainPage260402.btnCerrarMod.click(); sleep(1000);
-//        mainPage260402.btnContFirm.click(); sleep(1000);
+    public void ejecutarPestDocRequeridos() {
+        ///Terceros Relacionados
+        executeJavaScript("window.scrollTo(0, 0);");
+        mainPage260402.CheckSelecDoc.click();
+        mainPage260402.btnEliminarDoc.click();
     }
 
     public void ejecutarProcesoNRunnable(Runnable proceso, int n) {
