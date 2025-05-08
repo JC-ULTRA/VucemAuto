@@ -19,7 +19,6 @@ public class MainPage130109 {
     public SelenideElement linkPermisosImportaciExportaci = $x("/html/body/main/div/div[3]/div/div[6]/ul/li[6]/a");
     public SelenideElement linkImportaci = $x("/html/body/main/div/div[3]/div/div[6]/ul/li[6]/ul/li[1]/a");
     public SelenideElement linkImpNeuRecPruLab = $x("/html/body/main/div/div[3]/div/div[6]/ul/li[6]/ul/li[1]/ul/li[7]/a");
-
     public SelenideElement Scrol = Selenide.$x("//*[@id=\"logoHeader\"]");
     public SelenideElement labelDatosSolicitud = $x("/html/body/main/div[1]/div[4]/div/form/div[2]/ul/li[2]/a/label");
     //DATOS TRÁMITE
@@ -43,7 +42,6 @@ public class MainPage130109 {
     public SelenideElement inputDocumentosFile = $x("//input[@type='file']");
     public SelenideElement btnCerrarAdjuntar = Selenide.$x("//*[@id=\"cerrarAdjuntar\"]");
     public SelenideElement btnCargarArchivo = Selenide.$x("//*[@id=\"cargaArchivo\"]");
-
     public SelenideElement checkPartidaMercancia = Selenide.$x("//*[@id=\"cb_gridPartidaMercancias\"]");
     public SelenideElement textareaCantidadDispobible = Selenide.$x("//*[@id=\"cantidadDispobible\"]");
     public SelenideElement textareaCantidadUsdDispobible = Selenide.$x("//*[@id=\"cantidadUsdDispobible\"]");
