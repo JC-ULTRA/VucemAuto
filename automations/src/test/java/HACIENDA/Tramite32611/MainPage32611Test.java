@@ -6,6 +6,7 @@ import Firmas.TramitesFirmasLG;
 import com.codeborne.selenide.Browsers;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.BeforeAll;
@@ -16,6 +17,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 
@@ -132,6 +134,7 @@ public class MainPage32611Test {
             mainPage32611.rfcSubcontratado.setValue("MAVL621207C95"); sleep(2000);
             mainPage32611.subContr.click();
             mainPage32611.btnBuscarRfcSub.click();
+            mainPage32611.numEmpleadosSubcontratados.sendKeys("10");
             mainPage32611.bimestreEmpleadosSubcontratados.sendKeys("Marzo - Abril");
             mainPage32611.añadirSubcontratados.click();
             mainPage32611.btnAceptarSubcontratados.click();
@@ -141,8 +144,9 @@ public class MainPage32611Test {
             mainPage32611.articulo64BBisNo.click();
             mainPage32611.sellosVigentes.click();
             mainPage32611.articulo17HBis.click();
+            mainPage32611.inputIMMEX.sendKeys("82024");
             mainPage32611.AgregarInstalaciones.click();
-            mainPage32611.entidadInstalacion.sendKeys("QUERETARO");
+            mainPage32611.entidadInstalacion.sendKeys("MÉXICO");
             mainPage32611.seleccionarInstalacion.click();
             mainPage32611.btnAgregarInstalaciones.click();
             mainPage32611.selecInstalacionAModificar.click();
@@ -158,22 +162,7 @@ public class MainPage32611Test {
             mainPage32611.btnAceptarModificacion.click();
             mainPage32611.articulo17KSi.click();
             mainPage32611.suspesionPadronNo.click();
-            mainPage32611.provedoresExtranjeros.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\carga_proveedoresExtranjerosIC.xls");
-            mainPage32611.agregarProvedoresExtranjeros.click();
-            sleep(1000);
-            //clickOkButton();
-            mainPage32611.provedoresNacionales.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\carga_proveedoresNacionesIC (1).xls");
-            mainPage32611.agregarProvedoresNacionales.click();
-            mainPage32611.btnOkProvedoresNacionales.click();
-            mainPage32611.querellaNo.click();
-            mainPage32611.inventariosSi.click();
-            mainPage32611.nombreInventarios.sendKeys("PRUEBAS");
-            mainPage32611.lugarInventarios.sendKeys("QA");
-            mainPage32611.anexo24InventariosOk.click();
-            mainPage32611.btnAgregarInventario.click();
-            sleep(1000);
-            mainPage32611.btnAceptarInventario.click();
-            mainPage32611.rmfSi.click();
+            mainPage32611.ingresoMensual.click();
             mainPage32611.agregarSocio.click();
             mainPage32611.caracterSocio.sendKeys("administrador unico");
             mainPage32611.tributarEnMexicoNo.click();
@@ -188,52 +177,53 @@ public class MainPage32611Test {
             mainPage32611.manifiesto1.click();
             mainPage32611.manifiesto2.click();
             /// Terceros Relacionados
-            //scrollDecremento();
+            try {
+                Thread.sleep(2000); // Pausa de 3 segundos
+                // Hacer scroll hasta el elemento
+                mainPage32611.Scrol.scrollIntoView(true);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
             mainPage32611.tercerosRelacionados.click();
-            mainPage32611.rfcRepresentanteLegal.sendKeys("MAVL621207C95");
+            mainPage32611.rfcRepresentanteLegal.sendKeys("GALE4909081Q7");
             mainPage32611.btnBuscarRfcRepresentanteL.click();
             sleep(1000);
             mainPage32611.btnAceptarRepresentanteL.click();
             mainPage32611.btnAgregarEnlaceOperativo.click();
-            mainPage32611.rfcEnlaceO.sendKeys("LEQI8101314S7");
+            mainPage32611.rfcEnlaceO.sendKeys("MAVL621207C95");
             mainPage32611.btnBuscarEnlaceO.click();
             mainPage32611.cargoEnlaceO.sendKeys("PRUEBA");
             mainPage32611.btnAñadirEnlaceO.click();
             /// Importador y/o Exportador
             //scrollDecremento();
-            mainPage32611.importadorYExportador.click();
-            mainPage32611.operacionesComercioExterior.click();
-            mainPage32611.mismoGrupoNo.click();
-            mainPage32611.fusionEscisionNo.click();
-            mainPage32611.programaImmexSi.click();
-            mainPage32611.fechaPago.click();
-            mainPage32611.selecFechaPago.click();
-            mainPage32611.montoPago.sendKeys("1000");
-            mainPage32611.numOperacionBancaria.sendKeys("12");
-            mainPage32611.llaveDEPago.sendKeys(llavePago);
-            mainPage32611.agregarTransportistas.click();
-            mainPage32611.rfcTransportista.sendKeys("LEQI8101314S7");
-            mainPage32611.btnBuscarTransportista.click();
-            mainPage32611.btnAgregarTransportista.click();
-            sleep(1000);
-            mainPage32611.btnAceptarTransportista.click();
-            mainPage32611.Perfil.click();
-            mainPage32611.RecintoFiscalizadoEstrategico.click();
-            mainPage32611.FechaFin.click();
-            mainPage32611.SelectFechaFin.click();
-            mainPage32611.NumFolioOficio.sendKeys("2837438237782");
-            mainPage32611.RegistroEsquema.click();
-            mainPage32611.SujetoProCance.click();
-            mainPage32611.autorizoReconocimientoMutuo.click();
-            mainPage32611.informacionPublica.click();
-
+            mainPage32611.autoTrasnportista.click();
+            mainPage32611.dosExperienciaNo.click();
+            mainPage32611.btnAceptar.click();
+            mainPage32611.permisoVigenteNo.click();
+            mainPage32611.btnAceptar2.click();
+            mainPage32611.SitemaRastreoSi.click();
+            mainPage32611.perfilAutoTerrestreSi.click();
+            mainPage32611.inputAutorizoNo.click();
+            mainPage32611.inputRFCNo.click();
+            mainPage32611.inputRazonSocialNo.click();
+            mainPage32611.inputDireccionFiscalNo.click();
+            mainPage32611.inputPaginaElectronicaNo.click();
+            mainPage32611.inputCorreoElectronicoNo.click();
+            mainPage32611.inputTelefonoNo.click();
+            mainPage32611.inputPublica.click();
+            Random random = new Random();
+            int nFacturaR = 10_000_000 + random.nextInt(90_000_000);
+            mainPage32611.inputNumOperacion.setValue(String.valueOf(nFacturaR));
+            mainPage32611.inputBanco.sendKeys("BANAMEX");
+            Random variant = new Random();
+            int nLlaveP = 10_000_000 + variant.nextInt(90_000_000);
+            mainPage32611.inputLlavePago.setValue(String.valueOf(nLlaveP));
+            Selenide.executeJavaScript("arguments[0].value = '25/05/2025';", mainPage32611.inputFechaPago);sleep(100);
             /// CTPAT
-            //scrollDecremento();
             mainPage32611.CTPAT.click();
             mainPage32611.autorizoCBPSi.click();
             mainPage32611.materiaSeguridadSi.click();
             mainPage32611.cancelacionNo.click();
-
             mainPage32611.btnGuardarSoli.click();
             mainPage32611.btnContinuar.click();
             mainPage32611.btnAdjuntarDoc.click();
@@ -248,18 +238,15 @@ public class MainPage32611Test {
             mainPage32611.archivo9.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
             mainPage32611.archivo10.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
             mainPage32611.archivo11.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
+            mainPage32611.archivo12.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
+            mainPage32611.archivo13.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
+            mainPage32611.archivo14.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
             mainPage32611.btnAdjuntar.click();
             sleep(3500);
             mainPage32611.btnCerrar.click();
             mainPage32611.btnSiguiente.click();
-
             loginFirmSoli.firma(tramite32611);
-
-
-            // Obtener el texto del folio desde mainPageB8
             String folioText = mainPage32611.folio.getText();
-
-            // Llamar al metodo para obtener el folio
             String folioNumber = obtenerFolio.obtenerFolio(folioText);
 
 //            ConDBReasigSolFun.processFolio(folioNumber, FunRFC);
