@@ -261,7 +261,6 @@ public class MainPage32611Test {
 //            if (selectedMethods.contains("ProcesoConfirmarNotificaciónResolucion6001")) {
 //                ProcesoConfirmarNotificaciónResolucionB8(folioNumber);
 //            }
-//
         }, repeticiones);
     }
 

@@ -2,7 +2,6 @@ package HACIENDA.Tramite32611;
 
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
-
 import static com.codeborne.selenide.Selenide.$x;
 
 public class MainPage32611 {
@@ -20,8 +19,6 @@ public class MainPage32611 {
     public SelenideElement registrosComercioExt = $x("/html/body/main/div/div[3]/div/div[8]/ul/li/a");
     public SelenideElement solicitudRegistro = $x("/html/body/main/div/div[3]/div/div[8]/ul/li/ul/li[7]/a");
     public SelenideElement rubroAutoTransportista = $x("/html/body/main/div/div[3]/div/div[8]/ul/li/ul/li[7]/ul/li[8]/a");
-
-
     /// datos comunes
     public SelenideElement datosComunes = $x("/html/body/div[1]/div[3]/div[3]/div/form/div[2]/ul/li[2]/a/label");
     public SelenideElement sectorProductivo = $x("//*[@id=\"solicitud.listaCatalogoSolicitud[0].catalogo\"]");
@@ -39,7 +36,6 @@ public class MainPage32611 {
     public SelenideElement inputFuera = $x("/html/body/div[11]/div[2]/table/tbody/tr[1]/td/div/div[1]");
     public SelenideElement subContr = $x("//*[@id=\"subcontratado.rfc\"]");
     public SelenideElement btnBuscarRfcSub = $x("/html/body/div[11]/div[2]/table/tbody/tr[1]/td/div/div[1]/input[2]");
-
     public SelenideElement numEmpleadosSubcontratados = $x("//*[@id=\"subcontratado.empleados\"]");
     public SelenideElement bimestreEmpleadosSubcontratados = $x("//*[@id=\"subcontratado.bimestre\"]");
     public SelenideElement añadirSubcontratados = $x("//*[@id=\"subcontratadoAgregarModalEsquemaIC\"]");
@@ -50,7 +46,7 @@ public class MainPage32611 {
     public SelenideElement articulo64BBisNo = $x("//*[@id=\"no462\"]");
     public SelenideElement sellosVigentes = $x("//*[@id=\"si239\"]");
     public SelenideElement articulo17HBis = $x("//*[@id=\"no240\"]");
-public SelenideElement inputIMMEX = $x("//*[@id=\"IMMEX\"]");
+    public SelenideElement inputIMMEX = $x("//*[@id=\"IMMEX\"]");
     public SelenideElement AgregarInstalaciones = $x("//*[@id=\"btnAgregarDomicilios\"]");
     public SelenideElement entidadInstalacion = $x("//*[@id=\"entidadFederativaIDC\"]");
     public SelenideElement seleccionarInstalacion = $x("//*[@id=\"jqg_gridDomiciliosModal_3\"]");
@@ -95,7 +91,6 @@ public SelenideElement inputIMMEX = $x("//*[@id=\"IMMEX\"]");
     public SelenideElement manifiesto1 = $x("//*[@id=\"acepto252\"]");
     public SelenideElement manifiesto2 = $x("//*[@id=\"acepto253\"]");
     /// TERCEROS RELACIONADOS
-
     public SelenideElement Scrol = Selenide.$x("//*[@id=\"logoHeader\"]");
     public SelenideElement tercerosRelacionados = $x("/html/body/div[1]/div[3]/div[3]/div/form/div[2]/ul/li[3]/a");
     public SelenideElement rfcRepresentanteLegal = $x("//*[@id=\"rfcTercero\"]");
@@ -128,8 +123,6 @@ public SelenideElement inputIMMEX = $x("//*[@id=\"IMMEX\"]");
     public SelenideElement inputBanco = $x("//*[@id=\"solicitud.pagoSCC.banco.clave\"]");
     public SelenideElement inputLlavePago = $x("//*[@id=\"solicitud.pagoSCC.llaveDePago\"]");
     public SelenideElement inputFechaPago = $x("//*[@id=\"calendarToSCC\"]");
-
-
     public SelenideElement fusionEscisionNo= $x("//*[@id=\"empFusNo\"]");
     public SelenideElement programaImmexSi = $x("//*[@id=\"empExtSi\"]");
     public SelenideElement fechaPago = $x("/html/body/div[1]/div[3]/div[3]/div/form/div[2]/div[4]/div[1]/table[3]/tbody/tr[2]/td[2]/img");
@@ -142,7 +135,6 @@ public SelenideElement inputIMMEX = $x("//*[@id=\"IMMEX\"]");
     public SelenideElement btnBuscarTransportista = $x("//*[@id=\"btnBuscarEmpresa\"]");
     public SelenideElement btnAgregarTransportista = $x("//*[@id=\"btnGuardarTransportista\"]");
     public SelenideElement btnAceptarTransportista = $x("/html/body/div[23]/div[3]/div/button");
-
     public SelenideElement Perfil = $x("//*[@id=\"perfilRFESi\"]");
     public SelenideElement RecintoFiscalizadoEstrategico = $x("//*[@id=\"autoRFESi\"]");
     public SelenideElement FechaFin = $x("/html/body/div[1]/div[3]/div[3]/div/form/div[2]/div[4]/div[2]/table[3]/tbody/tr[2]/td[2]/img");
@@ -153,16 +145,13 @@ public SelenideElement inputIMMEX = $x("//*[@id=\"IMMEX\"]");
     public SelenideElement FecFicRubro = $x("//*[@id=\"fechaRegRFE\"]");
     public SelenideElement NumOfiAuto = $x("//*[@id=\"rfeOficioIva\"]");
     public SelenideElement SujetoProCance = $x("//*[@id=\"cancelRFENo\"]");
-
     public SelenideElement autorizoReconocimientoMutuo = $x("//*[@id=\"si4060Recinto\"]");
     public SelenideElement informacionPublica = $x("//*[@id=\"si1091Recinto\"]");
-
     /// CTPAT
     public SelenideElement CTPAT = $x("/html/body/div[1]/div[3]/div[3]/div/form/div[2]/ul/li[5]/a");
     public SelenideElement autorizoCBPSi = $x("//*[@id=\"si2089\"]");
     public SelenideElement materiaSeguridadSi = $x("//*[@id=\"si2090\"]");
     public SelenideElement cancelacionNo = $x("//*[@id=\"no2091\"]");
-
     public SelenideElement btnGuardarSoli = $x("//*[@id=\"guardarSolicitud\"]");
     public SelenideElement btnContinuar = $x("/html/body/div[1]/div[3]/div[3]/div/form/table/tbody/tr/td/input[2]");
     public SelenideElement btnAdjuntarDoc = $x("/html/body/div[1]/div[3]/div[3]/div/form[1]/table[3]/tbody/tr[17]/td[2]/input");
