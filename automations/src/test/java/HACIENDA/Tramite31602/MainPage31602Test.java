@@ -97,7 +97,7 @@ public class MainPage31602Test {
             String llavePago = uuid.replace("-", "").substring(0, longitudDeseada);
             // Ingreso y selección de trámite
             loginFirmSoli.login(tramite31602);
-            mainPage31602.selecRol.sendKeys("Persona Fisica");
+            mainPage31602.selecRol.sendKeys("Persona Moral");
             sleep(200);
             mainPage31602.btnacep.click();
             mainPage31602.Tramites.sendKeys("Solicitudes nuevas");
@@ -109,9 +109,8 @@ public class MainPage31602Test {
             //IVA e IEPS AA
             //Datos comunes
             mainPage31602.labelDatosComunes.click();
-            sleep(4000);
+            sleep(1000);
             mainPage31602.inputPreOperativo.click();
-            //mainPage31602.inputRegimen.click();
             mainPage31602.inputRegimen2.click();
             mainPage31602.inputRegimen3.click();
             mainPage31602.inputRegimen4.click();
@@ -125,15 +124,16 @@ public class MainPage31602Test {
             mainPage31602.inputMapDeclaracionSolicitudAcepto3.click();
             sleep(2000);
             mainPage31602.inputAgregarSubcontratado.click();
-            mainPage31602.inputSubcontratadoBusqueda.setValue("MAVL621207C95");
+            mainPage31602.inputSubcontratadoBusqueda.sendKeys("MAVL621207C95");sleep(1000);
             mainPage31602.inputBuscar.click();
             sleep(2000);
-            mainPage31602.inputSubcontratadoEmpleados.setValue("12345");
+            mainPage31602.inputSubcontratadoEmpleados.sendKeys("12345");
             mainPage31602.selectSubcontratadoBimestre.sendKeys("Enero - Febrero");
             sleep(2000);
-            mainPage31602.inputSubcontratadoAgregarModalEsquema.should(Condition.visible).click();
+            mainPage31602.inputSubcontratadoAgregarModalEsquema.click();
             sleep(1000);
-            mainPage31602.spanAceptar2.click();
+            mainPage31602.imoutAceptarVentanaEmergente.click();
+//            mainPage31602.spanAceptar2.click();
             mainPage31602.inputMapDeclaracionSolicitudAcepto4.click();
             mainPage31602.inputMapDeclaracionSolicitudAcepto5.click();
             mainPage31602.inputMapDeclaracionSolicitudAcepto6.click();
@@ -141,13 +141,7 @@ public class MainPage31602Test {
             mainPage31602.inputMapDeclaracionSolicitudAcepto8.click();
             sleep(200);
             mainPage31602.selectImmex.sendKeys("82024 - Autorización Programa Nuevo Servicio");
-            sleep(3000);
-//            mainPage31602.inputAgregarDomicilios.click();
-//            mainPage31602.selectEntidadFederativaIdc.sendKeys("SINALOA");
-//            sleep(1000);
-////            mainPage31602.inputGridDomiciliosModal.click();
-////            mainPage31602.inputAceptarDomicilios.click();
-////            sleep(3000);
+            sleep(1000);
             mainPage31602.check.click();
             mainPage31602.modificar.click();
             mainPage31602.InstalacionesSI.click();

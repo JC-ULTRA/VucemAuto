@@ -20,6 +20,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
+import java.util.concurrent.TimeUnit;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
@@ -41,9 +42,10 @@ public class MainPage33302Test  {
     @BeforeAll
     public static void setUpAll() {
         Configuration.browser = Browsers.CHROME; //FIREFOX;
-        Configuration.browserCapabilities = new ChromeOptions().addArguments("--incognito").addArguments("--remote-allow-origins=*");
+        Configuration.browserCapabilities = new ChromeOptions().addArguments("--incognito").addArguments("--remote-allow-origins=*").addArguments("--force-device-scale-factor=1.25");
         open();
         getWebDriver().manage().window().maximize();
+        getWebDriver().manage().timeouts().pageLoadTimeout(120, TimeUnit.SECONDS);
         Configuration.timeout = 120000; // tiempo de espera
         getWebDriver().manage().timeouts().scriptTimeout(Duration.ofSeconds(10));
         SelenideLogger.addListener("allure", new AllureSelenide());
@@ -80,21 +82,21 @@ public class MainPage33302Test  {
             repeticiones = 1; // Valor por defecto
             JOptionPane.showMessageDialog(null, "Valor no válido, se utilizará 1 repetición por defecto.");
         }
-/////////////////////////////////////////////////////////////////////////////////////////////////////////-
-// Solicitar el folio al usuario
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////-
+        // Solicitar el folio al usuario
         String FolioRubro = JOptionPane.showInputDialog(null, "Ingrese el número de folio de 25 dígitos:", "Número de Folio", JOptionPane.QUESTION_MESSAGE);
 
-// Validar que el usuario haya ingresado un folio válido de 25 dígitos
+        // Validar que el usuario haya ingresado un folio válido de 25 dígitos
         if (FolioRubro == null || FolioRubro.length() != 25 || !FolioRubro.matches("\\d+")) {
             JOptionPane.showMessageDialog(null, "El número de folio ingresado no es válido. La operación será cancelada.");
             return; // Cancelar la operación
         }
 
-// Confirmar el folio ingresado
+        // Confirmar el folio ingresado
         JOptionPane.showMessageDialog(null, "Folio válido ingresado: " + FolioRubro);
 
-/////////////////////////////////////////////////////////////////////////////////////////////////////////-
-// Crear checkboxes para los nuevos tipos de aviso
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////-
+        // Crear checkboxes para los nuevos tipos de aviso
         JCheckBox usoYGoceCheckBox = new JCheckBox("Aviso Uso y Goce");
         JCheckBox fusionEscisionCheckBox = new JCheckBox("Aviso Fusión o Escisión");
         JCheckBox solventarObservacionesCheckBox = new JCheckBox("Aviso Para Solventar Observaciones");
@@ -106,7 +108,7 @@ public class MainPage33302Test  {
         JCheckBox altaBajaTercerosCheckBox = new JCheckBox("Avisos Alta o Baja Terceros");
         JCheckBox bajaCertificacionAltaTercerizacionCheckBox = new JCheckBox("Aviso Baja Tercero Certificación / Alta Tercero Tercerización");
 
-// Crear un panel para mostrar los checkboxes
+        // Crear un panel para mostrar los checkboxes
         JPanel avisoPanel = new JPanel();
         avisoPanel.setLayout(new BoxLayout(avisoPanel, BoxLayout.Y_AXIS));
         avisoPanel.add(usoYGoceCheckBox);
@@ -120,10 +122,10 @@ public class MainPage33302Test  {
         avisoPanel.add(altaBajaTercerosCheckBox);
         avisoPanel.add(bajaCertificacionAltaTercerizacionCheckBox);
 
-/////////////////////////////////////////////////////////////////////////////////////////////////////////-
-// Lógica para habilitar o deshabilitar checkboxes según el FolioRubro
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////-
+        // Lógica para habilitar o deshabilitar checkboxes según el FolioRubro
 
-// Activar/desactivar checkboxes basados en condiciones específicas
+        // Activar/desactivar checkboxes basados en condiciones específicas
         usoYGoceCheckBox.setEnabled(FolioRubro.startsWith("25003026"));
         fusionEscisionCheckBox.setEnabled(FolioRubro.startsWith("25003026"));
         solventarObservacionesCheckBox.setEnabled(FolioRubro.startsWith("25003026"));
@@ -135,7 +137,7 @@ public class MainPage33302Test  {
         altaBajaTercerosCheckBox.setEnabled(FolioRubro.startsWith("25003026017"));
         bajaCertificacionAltaTercerizacionCheckBox.setEnabled(FolioRubro.startsWith("25003026017"));
 
-// Mostrar diálogo con los checkboxes
+        // Mostrar diálogo con los checkboxes
         int avisoOption = JOptionPane.showConfirmDialog(
                 null,
                 avisoPanel,
@@ -146,7 +148,7 @@ public class MainPage33302Test  {
             return; // Cancelar si el usuario no acepta
         }
 
-// Recoger las selecciones realizadas por el usuario
+        // Recoger las selecciones realizadas por el usuario
         List<String> avisosSeleccionados = new ArrayList<>();
         if (usoYGoceCheckBox.isSelected()) avisosSeleccionados.add(usoYGoceCheckBox.getText());
         if (fusionEscisionCheckBox.isSelected()) avisosSeleccionados.add(fusionEscisionCheckBox.getText());
@@ -159,13 +161,13 @@ public class MainPage33302Test  {
         if (altaBajaTercerosCheckBox.isSelected()) avisosSeleccionados.add(altaBajaTercerosCheckBox.getText());
         if (bajaCertificacionAltaTercerizacionCheckBox.isSelected()) avisosSeleccionados.add(bajaCertificacionAltaTercerizacionCheckBox.getText());
 
-// Validar que al menos un aviso haya sido seleccionado
+        // Validar que al menos un aviso haya sido seleccionado
         if (avisosSeleccionados.isEmpty()) {
             JOptionPane.showMessageDialog(null, "No se seleccionó ningún aviso. La operación será cancelada.");
             return;
         }
 
-// Confirmación y manejo de selecciones
+        // Confirmación y manejo de selecciones
         JOptionPane.showMessageDialog(null, "Procesos ejecutados para: " + String.join(", ", avisosSeleccionados));
 
         // Ejecutar el proceso con el folio válido
@@ -254,7 +256,7 @@ public class MainPage33302Test  {
         if (solventarObservacionesCheckBox.isSelected()) totalDocumentos += 1;
         if (circunstanciasCheckBox.isSelected()) totalDocumentos += 2;
         if (incidentesSeguridadCheckBox.isSelected()) totalDocumentos += 1;
-        if (registroSECIITCheckBox.isSelected()) totalDocumentos += 6;
+        if (registroSECIITCheckBox.isSelected()) totalDocumentos += 5;
 
         // Evaluamos el total de documentos y ejecutamos las acciones correspondientes
         switch (totalDocumentos) {
@@ -650,21 +652,21 @@ public class MainPage33302Test  {
     }
 
     private void ejecutarAvisoPago() {
-//        // Obtener la fecha de hoy formateada
-//        LocalDate hoy = LocalDate.now();
-//        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-//        String fechaHoy = hoy.format(formatter);
-//        // Llave de pago
-//        String uuid = UUID.randomUUID().toString();
-//        int longitudDeseada = 16;
-//        String llavePago = uuid.replace("-", "").substring(0, longitudDeseada);
-//        mainPage33302.avisoPago.click();
-//        scrollDecremento();
-//        mainPage33302.pagoDerechos.click();
-//        mainPage33302.numOperacion.sendKeys("12345");
-//        mainPage33302.bancoPago.sendKeys("BANAMEX");
-//        mainPage33302.llavePago.sendKeys(llavePago);
-//        executeJavaScript("arguments[0].value = arguments[1];", mainPage33302.fechaPago, fechaHoy);sleep(1000);
+        // Obtener la fecha de hoy formateada
+        LocalDate hoy = LocalDate.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        String fechaHoy = hoy.format(formatter);
+        // Llave de pago
+        String uuid = UUID.randomUUID().toString();
+        int longitudDeseada = 16;
+        String llavePago = uuid.replace("-", "").substring(0, longitudDeseada);
+        mainPage33302.avisoPago.click();
+        scrollDecremento();
+        mainPage33302.pagoDerechos.click();
+        mainPage33302.numOperacion.sendKeys("12345");
+        mainPage33302.bancoPago.sendKeys("BANAMEX");
+        mainPage33302.llavePago.sendKeys(llavePago);
+        executeJavaScript("arguments[0].value = arguments[1];", mainPage33302.fechaPago, fechaHoy);sleep(1000);
     }
 
     public void clickOkButton() {

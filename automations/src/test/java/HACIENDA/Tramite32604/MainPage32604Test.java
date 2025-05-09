@@ -212,7 +212,7 @@ public class MainPage32604Test {
                 mainPage32604.inputDocumentosFile4.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");sleep(500);
                 mainPage32604.inputDocumentosFile5.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");sleep(500);
                 mainPage32604.inputDocumentosFile6.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");sleep(500);
-                mainPage32604.buttonAnexar.click();sleep(8000);
+                mainPage32604.buttonAnexar.click();sleep(9000);
                 mainPage32604.spanCerrar.click();sleep(500);
                 mainPage32604.inputSiguienteButton.click();sleep(500);
                 //FIRMAR SOLICITUD

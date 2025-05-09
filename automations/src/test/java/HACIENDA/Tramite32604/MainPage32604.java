@@ -81,7 +81,7 @@ public class MainPage32604 {
     public SelenideElement btnAceptarEnlace = $x ("//*[@id=\"btnAceptarEnlace\"]");
     //MODALIDAD COMERCIALIZADORA E IMPORTADORA
     public SelenideElement modalidadComercializadoraLabel = $x("/html/body/div[1]/div[3]/div[3]/div/form/div[2]/ul/li[4]/a/label");
-    public SelenideElement fechaPagoComer = $x("/html/body/div[2]/table/tbody/tr[1]/td[2]/a");
+    public SelenideElement fechaPagoComer = $x("/html/body/div[2]/table/tbody/tr[2]/td[1]/a");
     public SelenideElement btncerrar = $x("/html/body/div[2]/div[2]/button[2]");
     public SelenideElement montoComer = $x("//*[@id='montoComer']");
     public SelenideElement imageCalendar = $x("//img[@alt='Calendar']");

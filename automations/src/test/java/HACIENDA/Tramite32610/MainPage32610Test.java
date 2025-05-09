@@ -15,6 +15,8 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 import javax.swing.*;
 import java.time.Duration;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.UUID;
 
 import static com.codeborne.selenide.Condition.text;
@@ -103,7 +105,9 @@ public class MainPage32610Test { MainPage32610 mainPage32610 = new MainPage32610
 
         // Ejecutar el proceso con las repeticiones y los métodos seleccionados
         ejecutarProcesoNRunnable(() -> {
-
+            LocalDate hoy = LocalDate.now();
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+            String fechaHoy = hoy.format(formatter);
             //llave de pago
             String uuid = UUID.randomUUID().toString();
             int longitudDeseada = 16;
@@ -214,9 +218,9 @@ public class MainPage32610Test { MainPage32610 mainPage32610 = new MainPage32610
             mainPage32610.btnAceptarTransportista.click();
             mainPage32610.Perfil.click();
             mainPage32610.RecintoFiscalizadoEstrategico.click();
-            mainPage32610.FechaFin.click();
+            mainPage32610.FechaFin.click();sleep(1000);
             mainPage32610.SelectFechaFin.click();
-            mainPage32610.NumFolioOficio.sendKeys("2837438237782");
+            mainPage32610.NumFolioOficio.sendKeys("12345");
             mainPage32610.RegistroEsquema.click();
             mainPage32610.SujetoProCance.click();
             mainPage32610.autorizoReconocimientoMutuo.click();

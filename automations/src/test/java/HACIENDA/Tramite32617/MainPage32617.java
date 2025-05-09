@@ -11,7 +11,7 @@ public class MainPage32617 {
     public SelenideElement pass = $x("//*[@id='privateKeyPassword']");
     public SelenideElement btnIngresFs = $x("//button[@onclick='ejecutarProcesoFirma(1)']");
     public SelenideElement btnFirmar = $x("//*[@id='btnSubmit']");
-    public SelenideElement folio = $x("/html/body/div[1]/div[3]/div[3]/div/div[3]/div/ul/li");
+    public SelenideElement folio = $x("/html/body/main/div/div[4]/div/div[4]/div/div/ul/li");
     public SelenideElement selecRol = $x("//*[@id='claveRol']");
     public SelenideElement btnacep = $x("//button[@name='ingresar']");
     public SelenideElement Tramites = $x("//*[@id='Trámites']");
@@ -19,7 +19,7 @@ public class MainPage32617 {
     public SelenideElement hacienda = $x("//img[contains(@alt, 'General')]");
     public SelenideElement registrosComercioExt = $x("/html/body/main/div/div[3]/div/div[8]/ul/li/a");
     public SelenideElement solicitudRegistro = $x("/html/body/main/div/div[3]/div/div[8]/ul/li/ul/li[7]/a");
-    public SelenideElement rubroTercerizacionLogistica = $x("/html/body/main/div/div[3]/div/div[8]/ul/li/ul/li[7]/ul/li[14]/a");
+    public SelenideElement rubroTercerizacionLogistica = $x("/html/body/main/div/div[3]/div/div[8]/ul/li/ul/li[7]/ul/li[13]/a");
     /// Datos comunes
     public SelenideElement datosComunes = $x("/html/body/div[1]/div[3]/div[3]/div/form/div[2]/ul/li[2]/a/label");
     public SelenideElement sectorProductivo = $x("//*[@id=\"solicitud.listaCatalogoSolicitud[0].catalogo\"]");
@@ -129,7 +129,7 @@ public class MainPage32617 {
 
     public SelenideElement btnGuardarSoli = $x("//*[@id=\"guardarSolicitud\"]");
     public SelenideElement btnContinuar = $x("/html/body/div[1]/div[3]/div[3]/div/form/table/tbody/tr/td/input[2]");
-    public SelenideElement btnAdjuntarDoc = $x("/html/body/main/div/div[4]/div/form[1]/table/tbody/tr[14]/td[2]/div/input[2]");
+    public SelenideElement btnAdjuntarDoc = $x("/html/body/main/div/div[4]/div/form[1]/table/tbody/tr[17]/td[2]/div/input[2]");
     public SelenideElement archivo1 = $x("/html/body/main/div/div[4]/div[2]/div/form[2]/table/tbody/tr[1]/td[4]/input");
     public SelenideElement archivo2 = $x("/html/body/main/div/div[4]/div[2]/div/form[3]/table/tbody/tr[1]/td[4]/input");
     public SelenideElement archivo3 = $x("/html/body/main/div/div[4]/div[2]/div/form[4]/table/tbody/tr[1]/td[4]/input");
@@ -141,6 +141,9 @@ public class MainPage32617 {
     public SelenideElement archivo9 = $x("/html/body/main/div/div[4]/div[2]/div/form[10]/table/tbody/tr[1]/td[4]/input");
     public SelenideElement archivo10 = $x("/html/body/main/div/div[4]/div[2]/div/form[11]/table/tbody/tr[1]/td[4]/input");
     public SelenideElement archivo11 = $x("/html/body/main/div/div[4]/div[2]/div/form[12]/table/tbody/tr[1]/td[4]/input");
+    public SelenideElement archivo12 = $x("/html/body/main/div/div[4]/div[2]/div/form[13]/table/tbody/tr[1]/td[4]/input");
+    public SelenideElement archivo13 = $x("/html/body/main/div/div[4]/div[2]/div/form[14]/table/tbody/tr[1]/td[4]/input");
+    public SelenideElement archivo14 = $x("/html/body/main/div/div[4]/div[2]/div/form[15]/table/tbody/tr[1]/td[4]/input");
     public SelenideElement btnAdjuntar = $x("//*[@id=\"btnAnexar\"]");
     public SelenideElement btnCerrar = $x("//*[@id=\"btnCerrar\"]");
     public SelenideElement btnSiguiente = $x("//*[@id=\"siguienteButton\"]");
