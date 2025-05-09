@@ -16,6 +16,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 
 import static com.codeborne.selenide.Selenide.*;
@@ -99,6 +100,11 @@ public class MainPage303Test {
 
         // Ejecutar el proceso con las repeticiones y los métodos seleccionados
         ejecutarProcesoNRunnable(() -> {
+            //llave de pago
+            String uuid = UUID.randomUUID().toString();
+            int longitudDeseada = 16;
+            String llavePago = uuid.replace("-", "").substring(0, longitudDeseada);
+
 //            // Ingreso y selección de trámite
             loginFirmSoli.login(tramite303);
             mainPage303.selecRol.sendKeys("Persona Moral");
@@ -176,7 +182,7 @@ public class MainPage303Test {
             // PAGO DE DERECHOS
             mainPage303.labelPagoDerechos.click();
             mainPage303.selectSolicitudPagoBancoClave.sendKeys("BANBAJIO");
-            mainPage303.inputSolicitudPagoLlave.sendKeys("1Q9ASWQ81GUHSA23");
+            mainPage303.inputSolicitudPagoLlave.sendKeys(llavePago);
             Selenide.executeJavaScript("arguments[0].value = '01/04/2025';", mainPage303.inputCalendar); sleep(1000);
             // CONTINUAR
             mainPage303.inputSolicitud.click();
@@ -186,12 +192,16 @@ public class MainPage303Test {
             mainPage303.selectDoc.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
             mainPage303.selectDoc2.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
             mainPage303.selectDoc3.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
-            mainPage303.btnAdjuntar.click();
+            mainPage303.btnAdjuntar.click();sleep(4000);
             mainPage303.btnCerrar.click();
             // SIGUIENTE
             mainPage303.inputSiguienteButton.click();
             //FIRMAR SOLICITUD
-            //loginFirmSoli.firma(tramite303);
+            loginFirmSoli.firma(tramite303);
+            // Obtener el texto del folio desde mainPageB8
+            String folioText = mainPage303.folio.getText();
+            // Llamar al metodo para obtener el folio
+            String folioNumber = obtenerFolio.obtenerFolio(folioText);
         }, repeticiones);
     }
 

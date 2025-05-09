@@ -39,8 +39,8 @@ public class MainPage32608Test {
     LoginFirmSoli loginFirmSoli = new LoginFirmSoli();
     ObtenerFolio obtenerFolio = new ObtenerFolio();
     TramitesFirmasLG tramite32608  = new TramitesFirmasLG(
-            "C:\\VucemAuto\\automations\\src\\test\\resources\\CredSoli\\afc000526bj2.cer",
-            "C:\\VucemAuto\\automations\\src\\test\\resources\\CredSoli\\AFC000526BJ2_1012280944.key"
+            "C:\\VucemAuto\\automations\\src\\test\\resources\\CredSoli\\aal0409235e6.cer",
+            "C:\\VucemAuto\\automations\\src\\test\\resources\\CredSoli\\AAL0409235E6_1012231310.key"
     );
 
 
@@ -89,9 +89,9 @@ public class MainPage32608Test {
 
             desactivarPago();
             loginFirmSoli.login(tramite32608);
-            //mainPage32608.selecRol.sendKeys("Persona Moral"); sleep(1000);
+            mainPage32608.selecRol.sendKeys("Persona Moral");
             Selenide.sleep(1000);
-            //mainPage32608.btnacep.click();
+            mainPage32608.btnacep.click();
             Selenide.sleep(1000);
             mainPage32608.Tramites.sendKeys("Solicitudes nuevas");
             Selenide.sleep(1000);
@@ -139,7 +139,7 @@ public class MainPage32608Test {
             mainPage32608.radNoInfracArt17HBis.click();
 
             //Seccion Lista 2 y Tabla
-            mainPage32608.listDomicilioRegistrado.selectOptionByValue("120997");
+            mainPage32608.listDomicilioRegistrado.sendKeys("802024- Autorización Programa Nuevo Servicio");
             //Agregar Instalacion
             mainPage32608.btnAgregarInstalaciones.click();
             mainPage32608.listEntidadInstalacion.sendKeys("AGUASCALIENTES");

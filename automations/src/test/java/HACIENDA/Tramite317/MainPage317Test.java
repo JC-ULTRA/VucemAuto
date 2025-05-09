@@ -140,7 +140,7 @@ public class MainPage317Test {
             filaFolioDeseado.doubleClick();
 
             //Solicitar modificación y Prórroga
-            //mainPage317.btnSolicitarRenovacion.click();
+            mainPage317.btnSolicitarRenovacion.click();
             mainPage317.tabAvisoRenovacion.click();
 
             if (FolioTramiteN.startsWith("25003016001")) {

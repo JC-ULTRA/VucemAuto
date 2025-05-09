@@ -105,7 +105,7 @@ public class MainPage32610 {
     public SelenideElement fusionEscisionNo= $x("//*[@id=\"empFusNo\"]");
     public SelenideElement programaImmexSi = $x("//*[@id=\"empExtSi\"]");
     public SelenideElement fechaPago = $x("/html/body/div[1]/div[3]/div[3]/div/form/div[2]/div[4]/div[1]/table[3]/tbody/tr[2]/td[2]/img");
-    public SelenideElement selecFechaPago = $x("/html/body/div[2]/table/tbody/tr[1]/td[2]/a");
+    public SelenideElement selecFechaPago = $x("/html/body/div[2]/table/tbody/tr[2]/td[2]/a");
     public SelenideElement montoPago = $x("//*[@id=\"montoOEA\"]");
     public SelenideElement numOperacionBancaria = $x("//*[@id=\"operBancOEA\"]");
     public SelenideElement llaveDEPago = $x("//*[@id=\"llaveOEA\"]");
@@ -118,7 +118,7 @@ public class MainPage32610 {
     public SelenideElement Perfil = $x("//*[@id=\"perfilRFESi\"]");
     public SelenideElement RecintoFiscalizadoEstrategico = $x("//*[@id=\"autoRFESi\"]");
     public SelenideElement FechaFin = $x("/html/body/div[1]/div[3]/div[3]/div/form/div[2]/div[4]/div[2]/table[3]/tbody/tr[2]/td[2]/img");
-    public SelenideElement SelectFechaFin = $x("/html/body/div[2]/table/tbody/tr[1]/td[2]/a");
+    public SelenideElement SelectFechaFin = $x("/html/body/div[2]/table/tbody/tr[2]/td[3]/a");
     public SelenideElement NumFolioOficio = $x("//*[@id=\"rfeOficio\"]");
     public SelenideElement RegistroEsquema = $x("//*[@id=\"operaRFESi\"]");
     public SelenideElement Rubro = $x("//*[@id=\"rfeRubro\"]");

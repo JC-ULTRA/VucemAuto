@@ -104,7 +104,7 @@ public class MainPage32605 {
     public SelenideElement fusionEscisionNo= $x("//*[@id=\"empFusNo\"]");
     public SelenideElement programaImmexSi = $x("//*[@id=\"empExtSi\"]");
     public SelenideElement fechaPago = $x("/html/body/div[1]/div[3]/div[3]/div/form/div[2]/div[4]/div[1]/table[3]/tbody/tr[2]/td[2]/img");
-    public SelenideElement selecFechaPago = $x("/html/body/div[2]/table/tbody/tr[1]/td[2]/a");
+    public SelenideElement selecFechaPago = $x("/html/body/div[2]/table/tbody/tr[2]/td[1]/a");
     public SelenideElement montoPago = $x("//*[@id=\"montoOEA\"]");
     public SelenideElement numOperacionBancaria = $x("//*[@id=\"operBancOEA\"]");
     public SelenideElement llaveDEPago = $x("//*[@id=\"llaveOEA\"]");

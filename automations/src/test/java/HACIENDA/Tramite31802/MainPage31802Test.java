@@ -107,7 +107,7 @@ public class MainPage31802Test {
             mainPage31802.btnacep.click();
             mainPage31802.Tramites.sendKeys("Solicitudes subsecuentes");
             mainPage31802.SoliSub.click();
-            mainPage31802.inputIdFolio.sendKeys("2500302601720259912000010");
+            mainPage31802.inputIdFolio.sendKeys("2500302600820259912000017");
             mainPage31802.inputBuscarButton.click();sleep(1000);
             mainPage31802.SolicitudTramite.doubleClick();
             mainPage31802.inputRenovarEsquema.click();

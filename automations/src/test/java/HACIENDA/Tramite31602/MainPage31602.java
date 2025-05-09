@@ -57,13 +57,13 @@ public class MainPage31602 {
 
     public SelenideElement inputAgregarSubcontratado = $x("//*[@id='agregarSubcontratado']");
 
-    public SelenideElement inputSubcontratadoBusqueda = $x("/html/body/div[13]/div[2]/form/table/tbody/tr[1]/td/div/div[1]/input[1]");
+    public SelenideElement inputSubcontratadoBusqueda = $x("//*[@id=\"subcontratado.rfcBusqueda\"]");
 
-    public SelenideElement inputBuscar = $x("/html/body/div[13]/div[2]/form/table/tbody/tr[1]/td/div/div[1]/input[2]");
-
-    public SelenideElement inputSubcontratadoAgregarModalEsquema = $x("/html/body/div[13]/div[2]/form/table/tbody/tr[2]/td/input[2]");
-    public SelenideElement inputSubcontratadoEmpleados = $x("/html/body/div[13]/div[2]/form/table/tbody/tr[1]/td/div/div[3]/input");
-    public SelenideElement selectSubcontratadoBimestre = $x("/html/body/div[13]/div[2]/form/table/tbody/tr[1]/td/div/div[4]/select");
+    public SelenideElement inputBuscar = $x("/html/body/div[14]/div[2]/form/table/tbody/tr[1]/td/div/div[1]/input[2]");
+    public SelenideElement imoutAceptarVentanaEmergente = $x("/html/body/div[17]/div[3]/div/button/span");
+    public SelenideElement inputSubcontratadoAgregarModalEsquema = $x("/html/body/div[14]/div[2]/form/table/tbody/tr[2]/td/input[2]");
+    public SelenideElement inputSubcontratadoEmpleados = $x("//*[@id=\"subcontratado.empleados\"]");
+    public SelenideElement selectSubcontratadoBimestre = $x("//*[@id=\"subcontratado.bimestre\"]");
     public SelenideElement inputMapDeclaracionSolicitudAcepto4 = $x("//*[@id='si704']");
     public SelenideElement inputMapDeclaracionSolicitudAcepto5 = $x("//*[@id='no237']");
     public SelenideElement inputMapDeclaracionSolicitudAcepto6 = $x("//*[@id='no238']");
@@ -189,7 +189,7 @@ public class MainPage31602 {
     public SelenideElement ValorPesos = $x("//*[@id=\'cantidad.inversionA\']");
     public SelenideElement descripcionGeneral = $x("//*[@id=\'desc.inversionA\']");
     public SelenideElement btnAgregarTerritorioNacional = $x("//*[@id=\'btnAgregarInversion\']");
-    public SelenideElement btnAceptarTerritorio = $x("/html/body/div[25]/div[3]/div/button");
+    public SelenideElement btnAceptarTerritorio = $x("/html/body/div[26]/div[3]/div/button");
 
     public SelenideElement inputMapDeclaracionSolicitudAcepto16 = $x("//*[@id='si3011aa']");
 
