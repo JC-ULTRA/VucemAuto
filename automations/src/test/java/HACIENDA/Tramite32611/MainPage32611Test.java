@@ -248,7 +248,6 @@ public class MainPage32611Test {
             loginFirmSoli.firma(tramite32611);
             String folioText = mainPage32611.folio.getText();
             String folioNumber = obtenerFolio.obtenerFolio(folioText);
-
 //            ConDBReasigSolFun.processFolio(folioNumber, FunRFC);
 //
 //            // Ejecutar métodos seleccionados

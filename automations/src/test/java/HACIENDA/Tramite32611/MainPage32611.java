@@ -146,7 +146,6 @@ public class MainPage32611 {
     public SelenideElement NumOfiAuto = $x("//*[@id=\"rfeOficioIva\"]");
     public SelenideElement SujetoProCance = $x("//*[@id=\"cancelRFENo\"]");
     public SelenideElement autorizoReconocimientoMutuo = $x("//*[@id=\"si4060Recinto\"]");
-    public SelenideElement informacionPublica = $x("//*[@id=\"si1091Recinto\"]");
     /// CTPAT
     public SelenideElement CTPAT = $x("/html/body/div[1]/div[3]/div[3]/div/form/div[2]/ul/li[5]/a");
     public SelenideElement autorizoCBPSi = $x("//*[@id=\"si2089\"]");
