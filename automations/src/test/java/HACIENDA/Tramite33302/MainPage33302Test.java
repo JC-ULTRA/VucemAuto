@@ -5,13 +5,18 @@ import Firmas.LoginFirmSoli;
 import Firmas.TramitesFirmasLG;
 import com.codeborne.selenide.Browsers;
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.WebDriverRunner;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.*;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import javax.swing.*;
 import java.time.Duration;
@@ -188,29 +193,36 @@ public class MainPage33302Test  {
             mainPage33302.tablaFolios.doubleClick();
             mainPage33302.btnModificar.click();
             mainPage33302.tipoAvisos.click();
+            int totalDocumentosAdjuntar = 0;
             // Ejecutar procesos según selección
             for (String aviso : avisosSeleccionados) {
                 switch (aviso) {
                     case "Aviso Uso y Goce":
                         ejecutarAvisoUsoGoce();
+                        totalDocumentosAdjuntar += 1;
                         break;
                     case "Aviso Fusión o Escisión":
                         ejecutarAvisoFusionEscision();
+                        totalDocumentosAdjuntar += 1;
                         break;
                     case "Aviso Para Solventar Observaciones":
                         ejecutarAvisoObservaciones();
+                        totalDocumentosAdjuntar += 1;
                         break;
                     case "Aviso Incidentes de Seguridad":
                         ejecutarAvisoSeguridad();
+                        totalDocumentosAdjuntar += 1;
                         break;
                     case "Aviso de Circunstancias":
                         ejecutarAvisoCircunstancias();
+                        totalDocumentosAdjuntar += 2;
                         break;
                     case "Aviso de Adición o Revocación":
                         ejecutarAvisoAdicionRevocacio();
                         break;
                     case "Aviso Registro SECIIT":
                         ejecutarAvisoSeciit();
+                        totalDocumentosAdjuntar += 5;
                         break;
                     case "Avisos Alta o Baja Terceros":
                         ejecutarAvisoAltaTercerizacion();
@@ -220,6 +232,7 @@ public class MainPage33302Test  {
                         break;
                     case "Aviso Pago Derechos":
                         ejecutarAvisoPago();
+                        totalDocumentosAdjuntar += 1;
                         break;
                     default:
                         JOptionPane.showMessageDialog(null, "Aviso no válido seleccionado: " + aviso);
@@ -232,8 +245,12 @@ public class MainPage33302Test  {
             mainPage33302.manifiestoAvisos.click();
             mainPage33302.btnGuardarSoli.click();
             mainPage33302.btnContinuar.click();
-            verificarSeleccion(usoYGoceCheckBox, fusionEscisionCheckBox, solventarObservacionesCheckBox, circunstanciasCheckBox, incidentesSeguridadCheckBox, registroSECIITCheckBox, pagoDerechosCheckBox);
-
+            scrollIncremento();
+//            driver.findElement(By.cssSelector("input[value='Adjuntar documentos']")).click();
+//            clickAdjuntarButton();
+            //new WebDriverWait(driver, Duration.ofSeconds(10))
+            //        .until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.cssSelector("input[name^='documentos'][type='file']")));
+            adjuntarDocumentos();
             mainPage33302.btnSiguiente.click();
             loginFirmSoli.firma(tramite33302);
 
@@ -243,40 +260,48 @@ public class MainPage33302Test  {
 
         }, repeticiones);
     }
+    public void adjuntarDocumentos() {
+        WebDriver driver = new ChromeDriver();
+        try {
+            List<WebElement> inputs = driver.findElements(By.cssSelector("input[name^='documentos'][type='file']"));
 
-    private void verificarSeleccion(JCheckBox usoYGoceCheckBox, JCheckBox fusionEscisionCheckBox, JCheckBox registroSECIITCheckBox, JCheckBox pagoDerechosCheckBox,
-                                    JCheckBox solventarObservacionesCheckBox, JCheckBox circunstanciasCheckBox, JCheckBox incidentesSeguridadCheckBox) {
+            if (inputs.isEmpty()) {
+                System.out.println(" No se encontraron inputs de tipo file.");
+                return;
+            }
 
-        int totalDocumentos = 0;
-
-        // Calculamos el valor total según los checkboxes seleccionados
-        if (usoYGoceCheckBox.isSelected()) totalDocumentos += 1;
-        if (pagoDerechosCheckBox.isSelected()) totalDocumentos += 1;
-        if (fusionEscisionCheckBox.isSelected()) totalDocumentos += 1;
-        if (solventarObservacionesCheckBox.isSelected()) totalDocumentos += 1;
-        if (circunstanciasCheckBox.isSelected()) totalDocumentos += 2;
-        if (incidentesSeguridadCheckBox.isSelected()) totalDocumentos += 1;
-        if (registroSECIITCheckBox.isSelected()) totalDocumentos += 5;
-
-        // Evaluamos el total de documentos y ejecutamos las acciones correspondientes
-        switch (totalDocumentos) {
-            case 6:
-                ejecutarCodigoAdjuntar6();
-                break;
-            case 5:
-                ejecutarCodigoAdjuntar5();
-                break;
-            case 4:
-                ejecutarCodigoAdjuntar4();
-                break;
-            case 3:
-                ejecutarCodigoAdjuntar3();
+            for (WebElement input : inputs) {
+                input.sendKeys("C:\\ruta\\archivo.pdf");
+                System.out.println(" Archivo adjuntado en: " + input.getAttribute("name"));
+            }
+        } catch (Exception e) {
+            System.out.println(" Error en adjuntarDocumentos: " + e.getMessage());
+        }
+    }
+    private void adjuntarDocumentosa(int numDocumentos) {
+        switch (numDocumentos) {
+            case 1:
+                ejecutarCodigoAdjuntar();
                 break;
             case 2:
                 ejecutarCodigoAdjuntar2();
                 break;
-            case 1:
-                ejecutarCodigoAdjuntar();
+            case 3:
+                ejecutarCodigoAdjuntar3();
+                break;
+            case 4:
+                ejecutarCodigoAdjuntar4();
+                break;
+            case 5:
+                ejecutarCodigoAdjuntar5();
+                break;
+            case 6:
+                ejecutarCodigoAdjuntar6();
+                break;
+            default:
+                if (numDocumentos > 0) {
+                    System.out.println("Número de documentos a adjuntar: " + numDocumentos + ". Necesitas implementar el método ejecutarCodigoAdjuntar" + numDocumentos + "().");
+                }
                 break;
         }
     }
@@ -358,22 +383,8 @@ public class MainPage33302Test  {
         mainPage33302.rfcPartes.sendKeys("AAL0409235E6");
         mainPage33302.buscarRfcPartes.click();
         mainPage33302.caracterDePartes.sendKeys("MORAL");
-        mainPage33302.btnAgregarPartes.click();sleep(1000);
-        JavascriptExecutor js = (JavascriptExecutor) getWebDriver();
-        js.executeScript("function clickEnPosicion(x, y) {" +
-                "const evento = new MouseEvent('click', {" +
-                "view: window," +
-                "bubbles: true," +
-                "cancelable: true," +
-                "clientX: x," +
-                "clientY: y" +
-                "});" +
-                "const elemento = document.elementFromPoint(x, y);" +
-                "if (elemento) {" +
-                "elemento.dispatchEvent(evento);" +
-                "}" +
-                "}" +
-                "clickEnPosicion(755.9000015258789, 349.79374504089355);");
+        mainPage33302.btnAgregarPartes.click();sleep(3000);
+        presionarEscYSpace();
         sleep(1000);
         mainPage33302.observacionesPartes.sendKeys("PRUEBAS");
         mainPage33302.mismoDomicilio.click();
@@ -390,20 +401,7 @@ public class MainPage33302Test  {
         mainPage33302.buscarRfcPartesNuevo.doubleClick();
         mainPage33302.caracterDePartesNuevas.sendKeys("FISICA");
         mainPage33302.btnAgregarPartesNuevo.click();sleep(1000);
-        js.executeScript("function clickEnPosicion(x, y) {" +
-                "const evento = new MouseEvent('click', {" +
-                "view: window," +
-                "bubbles: true," +
-                "cancelable: true," +
-                "clientX: x," +
-                "clientY: y" +
-                "});" +
-                "const elemento = document.elementFromPoint(x, y);" +
-                "if (elemento) {" +
-                "elemento.dispatchEvent(evento);" +
-                "}" +
-                "}" +
-                "clickEnPosicion(755.9000015258789, 349.79374504089355);");
+        presionarEscYSpace();
         sleep(1000);
         mainPage33302.observacionesPartesNuevo.sendKeys("PRUEBAS");
     }
@@ -423,22 +421,9 @@ public class MainPage33302Test  {
         mainPage33302.certificacionFusionSi.click();
         mainPage33302.rfcFusionada.sendKeys("AAL0409235E6");
         mainPage33302.buscarRfcFusionada.click();
-        mainPage33302.btnAgregarFusionada.click();sleep(1000);
-        JavascriptExecutor js = (JavascriptExecutor) getWebDriver();
-        js.executeScript("function clickEnPosicion(x, y) {" +
-                "const evento = new MouseEvent('click', {" +
-                "view: window," +
-                "bubbles: true," +
-                "cancelable: true," +
-                "clientX: x," +
-                "clientY: y" +
-                "});" +
-                "const elemento = document.elementFromPoint(x, y);" +
-                "if (elemento) {" +
-                "elemento.dispatchEvent(evento);" +
-                "}" +
-                "}" +
-                "clickEnPosicion(756.9000015258789, 349.79374504089355);");
+        mainPage33302.btnAgregarFusionada.click();sleep(3000);
+
+        presionarEscYSpace();
         sleep(1000);
     }
 
@@ -456,22 +441,9 @@ public class MainPage33302Test  {
         mainPage33302.fechaVisita.click();
         mainPage33302.selecFechaVisita.click();
         mainPage33302.subestandaresVisita.sendKeys("PRUEBAS");
-        mainPage33302.btnAceptarObservaciones.click();sleep(1000);
-        JavascriptExecutor js = (JavascriptExecutor) getWebDriver();
-        js.executeScript("function clickEnPosicion(x, y) {" +
-                "const evento = new MouseEvent('click', {" +
-                "view: window," +
-                "bubbles: true," +
-                "cancelable: true," +
-                "clientX: x," +
-                "clientY: y" +
-                "});" +
-                "const elemento = document.elementFromPoint(x, y);" +
-                "if (elemento) {" +
-                "elemento.dispatchEvent(evento);" +
-                "}" +
-                "}" +
-                "clickEnPosicion(756.9000015258789, 349.79374504089355);");
+        mainPage33302.btnAceptarObservaciones.click();sleep(3000);
+
+        presionarEscYSpace();
         sleep(1000);
     }
 
@@ -486,22 +458,8 @@ public class MainPage33302Test  {
         mainPage33302.modificarPlantaIncidencias.click();
         mainPage33302.tipoInstalacionIncidencias.sendKeys("Planta productiva");
         mainPage33302.cambiosSubestandares.sendKeys("PRUEBAS");
-        mainPage33302.btnAceptarModificacionIncidencis.click();sleep(1000);
-        JavascriptExecutor js = (JavascriptExecutor) getWebDriver();
-        js.executeScript("function clickEnPosicion(x, y) {" +
-                "const evento = new MouseEvent('click', {" +
-                "view: window," +
-                "bubbles: true," +
-                "cancelable: true," +
-                "clientX: x," +
-                "clientY: y" +
-                "});" +
-                "const elemento = document.elementFromPoint(x, y);" +
-                "if (elemento) {" +
-                "elemento.dispatchEvent(evento);" +
-                "}" +
-                "}" +
-                "clickEnPosicion(756.9000015258789, 349.79374504089355);");
+        mainPage33302.btnAceptarModificacionIncidencis.click();sleep(3000);
+        presionarEscYSpace();
         sleep(1000);
 
 
@@ -521,22 +479,8 @@ public class MainPage33302Test  {
         mainPage33302.fechaCircunstancias.click();
         mainPage33302.selecFechaCircunstancias.click();
         mainPage33302.cambioEstandaresCircunstancias.sendKeys("PRUEBAS");
-        mainPage33302.btnAceptarModificacionCircunstancias.click();sleep(1000);
-        JavascriptExecutor js = (JavascriptExecutor) getWebDriver();
-        js.executeScript("function clickEnPosicion(x, y) {" +
-                "const evento = new MouseEvent('click', {" +
-                "view: window," +
-                "bubbles: true," +
-                "cancelable: true," +
-                "clientX: x," +
-                "clientY: y" +
-                "});" +
-                "const elemento = document.elementFromPoint(x, y);" +
-                "if (elemento) {" +
-                "elemento.dispatchEvent(evento);" +
-                "}" +
-                "}" +
-                "clickEnPosicion(756.9000015258789, 349.79374504089355);");
+        mainPage33302.btnAceptarModificacionCircunstancias.click();sleep(3000);
+        presionarEscYSpace();
         sleep(1000);
     }
 
@@ -546,41 +490,14 @@ public class MainPage33302Test  {
         mainPage33302.selecTransportistaModificar.click();
         mainPage33302.modificarTransportista.click();
         mainPage33302.estatusTransportista.sendKeys("Ratificado");
-        mainPage33302.btnModificarTransportista.click();sleep(1000);
-        JavascriptExecutor js = (JavascriptExecutor) getWebDriver();
-        js.executeScript("function clickEnPosicion(x, y) {" +
-                "const evento = new MouseEvent('click', {" +
-                "view: window," +
-                "bubbles: true," +
-                "cancelable: true," +
-                "clientX: x," +
-                "clientY: y" +
-                "});" +
-                "const elemento = document.elementFromPoint(x, y);" +
-                "if (elemento) {" +
-                "elemento.dispatchEvent(evento);" +
-                "}" +
-                "}" +
-                "clickEnPosicion(756.9000015258789, 349.79374504089355);");
+        mainPage33302.btnModificarTransportista.click();sleep(3000);
+        presionarEscYSpace();
         sleep(1000);
         mainPage33302.agregarTransportista.click();
         mainPage33302.rfcNuevoTransportista.sendKeys("TSD931210493");
         mainPage33302.btnBuscarRfcTransportista.click();
-        mainPage33302.btnAgregarTransportista.click();sleep(1000);
-        js.executeScript("function clickEnPosicion(x, y) {" +
-                "const evento = new MouseEvent('click', {" +
-                "view: window," +
-                "bubbles: true," +
-                "cancelable: true," +
-                "clientX: x," +
-                "clientY: y" +
-                "});" +
-                "const elemento = document.elementFromPoint(x, y);" +
-                "if (elemento) {" +
-                "elemento.dispatchEvent(evento);" +
-                "}" +
-                "}" +
-                "clickEnPosicion(756.9000015258789, 349.79374504089355);");
+        mainPage33302.btnAgregarTransportista.click();sleep(3000);
+        presionarEscYSpace();
         sleep(1000);
     }
 
@@ -594,7 +511,6 @@ public class MainPage33302Test  {
         mainPage33302.modifSistemaPropios.click();
         mainPage33302.modifOtro.click();
         mainPage33302.descripcionOtros.sendKeys("PRUEBAS");
-
     }
 
     private void ejecutarAvisoAltaTercerizacion() {
@@ -605,22 +521,8 @@ public class MainPage33302Test  {
         mainPage33302.rfcTerceroAlta.sendKeys("MAVL621207C95");;
         mainPage33302.btnBuscarRfcTerceroAlta.click();
         mainPage33302.tipoRegistroTerceroAlta.sendKeys("ALTA");
-        mainPage33302.btnGuardarTerceroAlta.click();sleep(1000);
-        JavascriptExecutor js = (JavascriptExecutor) getWebDriver();
-        js.executeScript("function clickEnPosicion(x, y) {" +
-                "const evento = new MouseEvent('click', {" +
-                "view: window," +
-                "bubbles: true," +
-                "cancelable: true," +
-                "clientX: x," +
-                "clientY: y" +
-                "});" +
-                "const elemento = document.elementFromPoint(x, y);" +
-                "if (elemento) {" +
-                "elemento.dispatchEvent(evento);" +
-                "}" +
-                "}" +
-                "clickEnPosicion(756.9000015258789, 349.79374504089355);");
+        mainPage33302.btnGuardarTerceroAlta.click();sleep(3000);
+        presionarEscYSpace();
         sleep(1000);
     }
 
@@ -632,22 +534,8 @@ public class MainPage33302Test  {
         mainPage33302.rfcTerceroBaja.sendKeys("LEQI8101314S7");;
         mainPage33302.btnBuscarRfcTerceroBaja.click();
         mainPage33302.tipoRegistroTerceroBaja.sendKeys("BAJA");
-        mainPage33302.btnGuardarTerceroBaja.click();sleep(1000);
-        JavascriptExecutor js = (JavascriptExecutor) getWebDriver();
-        js.executeScript("function clickEnPosicion(x, y) {" +
-                "const evento = new MouseEvent('click', {" +
-                "view: window," +
-                "bubbles: true," +
-                "cancelable: true," +
-                "clientX: x," +
-                "clientY: y" +
-                "});" +
-                "const elemento = document.elementFromPoint(x, y);" +
-                "if (elemento) {" +
-                "elemento.dispatchEvent(evento);" +
-                "}" +
-                "}" +
-                "clickEnPosicion(756.9000015258789, 349.79374504089355);");
+        mainPage33302.btnGuardarTerceroBaja.click();sleep(3000);
+        presionarEscYSpace();
         sleep(1000);
     }
 
@@ -674,9 +562,9 @@ public class MainPage33302Test  {
         $(byText("Ok")).shouldBe(visible).shouldHave(text("Ok")).click();
     }
 
-    public void clickAceptarButton() {
+    public void clickAdjuntarButton() {
         // Localiza el botón "Aceptar" por el texto dentro del <span> y realiza el click
-        $(byText("Aceptar")).shouldBe(visible).shouldHave(text("Aceptar")).click();
+        $(byText("Adjuntar documentos")).shouldBe(visible).shouldHave(text("Adjuntar documentos")).click();
     }
 
     public void clickSocioButton() {
@@ -686,7 +574,7 @@ public class MainPage33302Test  {
 
     public void scrollIncremento() {
         JavascriptExecutor js = (JavascriptExecutor) getWebDriver();
-        for (int i = 0; i < 1; i++){
+        for (int i = 0; i < 2; i++){
             js.executeScript("window.scrollBy(0,500);");
             sleep(500);
         }
@@ -697,5 +585,12 @@ public class MainPage33302Test  {
             js.executeScript("window.scrollBy(0,-500);");
             sleep(500);
         }
+    }
+    public void presionarEscYSpace() {
+        // Utilizamos WebDriverRunner para obtener el WebDriver actual
+        new Actions(WebDriverRunner.getWebDriver())
+                .sendKeys(Keys.ESCAPE) // Presiona la tecla Esc
+                .sendKeys(Keys.SPACE)   // Luego presiona la barra espaciadora (Space)
+                .perform();             // Ejecuta las acciones
     }
 }
