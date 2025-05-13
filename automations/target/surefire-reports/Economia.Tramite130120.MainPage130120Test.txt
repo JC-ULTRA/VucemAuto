@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: Economia.Tramite130120.MainPage130120Test
--------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.219 s -- in Economia.Tramite130120.MainPage130120Test
