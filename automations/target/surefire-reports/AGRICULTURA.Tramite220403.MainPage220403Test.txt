@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: AGRICULTURA.Tramite220403.MainPage220403Test
--------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 11.69 s -- in AGRICULTURA.Tramite220403.MainPage220403Test

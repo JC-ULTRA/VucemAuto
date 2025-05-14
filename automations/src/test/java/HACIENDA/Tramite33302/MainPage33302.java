@@ -41,9 +41,9 @@ public class MainPage33302 {
     public SelenideElement municipio = $x("//*[@id=\"solicitud.avisoConsulta.municipio\"]");
     public SelenideElement documentoUsoGoce = $x("//*[@id=\"solicitud.avisoConsulta.doctoAcredita\"]");
     public SelenideElement fechaInicioUsoGoce = $x("//*[@id=\"fechaInicialActualCon\"]");
-    public SelenideElement selecFecha = $x("//*[@id=\"ui-datepicker-div\"]/table/tbody/tr[1]/td[2]/a");
+    public SelenideElement selecFecha = $x("/html/body/div[3]/table/tbody/tr[3]/td[2]/a");
     public SelenideElement fechaFin = $x("//*[@id=\"fechaFinalActualCon\"]");
-    public SelenideElement selecFechaFin = $x("//*[@id=\"ui-datepicker-div\"]/table/tbody/tr[2]/td[2]/a");
+    public SelenideElement selecFechaFin = $x("/html/body/div[3]/table/tbody/tr[5]/td[6]/a");
     public SelenideElement rfcPartes = $x("//*[@id=\"rfcPartesC\"]");
     public SelenideElement buscarRfcPartes = $x("//*[@id=\"btnBuscarPersonaM\"]");
     public SelenideElement caracterDePartes = $x("//*[@id=\"caracterDeCons\"]");
@@ -56,9 +56,9 @@ public class MainPage33302 {
     public SelenideElement municipioNuevo = $x("//*[@id=\"solicitud.avisoModificacion.municipio\"]");
     public SelenideElement documentoNuevo = $x("//*[@id=\"solicitud.avisoModificacion.doctoAcredita\"]");
     public SelenideElement fechaInicioNueva = $x("//*[@id=\"fechaInicialActualMod\"]");
-    public SelenideElement selecFechaNuevo = $x("//*[@id=\"ui-datepicker-div\"]/table/tbody/tr[1]/td[2]/a");
+    public SelenideElement selecFechaNuevo = $x("/html/body/div[3]/table/tbody/tr[3]/td[2]/a");
     public SelenideElement fechaFinNuevo = $x("//*[@id=\"fechaFinalActualMod\"]");
-    public SelenideElement selecFechaFinNuevo = $x("//*[@id=\"ui-datepicker-div\"]/table/tbody/tr[2]/td[3]/a");
+    public SelenideElement selecFechaFinNuevo = $x("/html/body/div[3]/table/tbody/tr[5]/td[6]/a");
     public SelenideElement rfcPartesNuevo = $x("//*[@id=\"rfcPartesM\"]");
     public SelenideElement buscarRfcPartesNuevo = $x("/html/body/main/div/div[4]/div/form/div[2]/div[6]/div[35]/div[2]/input");
     public SelenideElement caracterDePartesNuevas = $x("//*[@id=\"caracterDePartesMod\"]");
@@ -179,7 +179,7 @@ public class MainPage33302 {
     public SelenideElement archivo54 = $x("/html/body/main/div/div[4]/div[2]/div/form[5]/table/tbody/tr[1]/td[4]/input");
     public SelenideElement archivo55 = $x("/html/body/main/div/div[4]/div[2]/div/form[6]/table/tbody/tr[1]/td[4]/input");
     /// Seis Documentos
-    public SelenideElement btnAdjuntar6Doc = $x("/html/body/main/div/div[4]/div[1]/form[1]/table/tbody/tr[9]/td[2]/div/input[2]");
+    public SelenideElement btnAdjuntar6Doc = $x("/html/body/main/div/div[4]/div/form[1]/table/tbody/tr[9]/td[2]/div/input[2]");
     public SelenideElement archivo61 = $x("/html/body/main/div/div[4]/div[2]/div/form[2]/table/tbody/tr[1]/td[4]/input");
     public SelenideElement archivo62 = $x("/html/body/main/div/div[4]/div[2]/div/form[3]/table/tbody/tr[1]/td[4]/input");
     public SelenideElement archivo63 = $x("/html/body/main/div/div[4]/div[2]/div/form[4]/table/tbody/tr[1]/td[4]/input");
