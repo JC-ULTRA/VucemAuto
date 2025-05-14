@@ -4,28 +4,30 @@ import DBYFOLIO.ObtenerFolio;
 import Firmas.LoginFirmSoli;
 import Firmas.TramitesFirmasLG;
 import HACIENDA.Tramite33304.MainPage33304;
-import com.codeborne.selenide.Browsers;
-import com.codeborne.selenide.Configuration;
-import com.codeborne.selenide.Selenide;
+import com.codeborne.selenide.*;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.interactions.Actions;
 
 import javax.swing.*;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 
-import static com.codeborne.selenide.Selenide.open;
-import static com.codeborne.selenide.Selenide.sleep;
+import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 public class MainPage33304Test {
+
+
     MainPage33304 mainPage33304 = new MainPage33304();
     LoginFirmSoli loginFirmSoli = new LoginFirmSoli();
     ObtenerFolio obtenerFolio = new ObtenerFolio();
@@ -72,6 +74,8 @@ public class MainPage33304Test {
             JOptionPane.showMessageDialog(null, "Valor no válido, se utilizará 1 repetición por defecto.");
         }
         /////////////////////////////////////////////////////////////////////////////////////////////////////////-
+
+        /////////////////////////////////////////////////////
         // Solicitar el folio al usuario
 //        String FolioRubro = JOptionPane.showInputDialog(null, "Ingrese el número de folio de 25 dígitos:", "Número de Folio", JOptionPane.QUESTION_MESSAGE);
 //
@@ -172,13 +176,16 @@ public class MainPage33304Test {
             mainPage33304.btnacep.click();
             mainPage33304.Tramites.sendKeys("Solicitudes subsecuentes");
             mainPage33304.soliSubsecuente.click();
-            mainPage33304.folioTramite.sendKeys("FolioRubro");
+            mainPage33304.folioTramite.sendKeys("2500302600420259912000023");
             mainPage33304.btnBuscarFolio.click();sleep(1000);
             mainPage33304.tablaFolios.doubleClick();
             mainPage33304.btnAvisoModificacionCeI.click();
             //ACUSES Y RESOLUCIONES
             mainPage33304.checkVariacion.click();
             mainPage33304.checkAvisoFusionEscision.click();
+            mainPage33304.checkAvisoAdicionRevocacion.click();
+            //mainPage33304.checkPresentacionPago.click();
+            mainPage33304.checkProtestaFacultades.click();
             //AVISO GOCE INMUEBLE
             mainPage33304.labelAvisoModGoceInmueble.click();
             mainPage33304.inputDireccionInmueble.sendKeys("CONOCIDA");
@@ -190,7 +197,10 @@ public class MainPage33304Test {
             Selenide.executeJavaScript("arguments[0].value = '09/06/2025';", mainPage33304.inputFechaFinVigencia);sleep(100);
             mainPage33304.inputRFC.sendKeys("AAL0409235E6");
             mainPage33304.btnBuscarRFC.click();
+            mainPage33304.inputCaracter.sendKeys("PRUEBA");
             mainPage33304.btnAgregarParteC.click();
+            Selenide.sleep(500);
+            presionarEscYSpace();
             mainPage33304.inputObservaciones.sendKeys("PRUEBA");
             mainPage33304.inputMismoRegistro.click();
             mainPage33304.inputDoctoAcreditaUsoGoce.sendKeys("Contrato de Usufructo");
@@ -202,18 +212,56 @@ public class MainPage33304Test {
 mainPage33304.inputModificacionPartes.click();
 mainPage33304.inputRFCPartes.sendKeys("AAL0409235E6");
 mainPage33304.btnBuscarPersona.click();
+mainPage33304.inputCaracterParteMod.sendKeys("PRUEBA");
 mainPage33304.btnAgregarParte.click();
+            Selenide.sleep(500);
+            presionarEscYSpace();
 mainPage33304.inputObservacionesM.sendKeys("PRUEBAS");
 //FUSION ESCISION
+            try {
+                Thread.sleep(2000); // Pausa de 3 segundos
+                // Hacer scroll hasta el elemento
+                mainPage33304.Scrol.scrollIntoView(true);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
             mainPage33304.labelAvisoFusionEscision.click();
             mainPage33304.inputFusion1.click();
             mainPage33304.inputFusion.click();
             mainPage33304.inputRegistroEIC.click();
             mainPage33304.inputRFCFusionEIC.sendKeys("AAL0409235E6");
             mainPage33304.btnAceptarDomicilios.click();
+            Selenide.executeJavaScript("arguments[0].value = '01/07/2025';", mainPage33304.inputFechaFusion);sleep(100);
+            mainPage33304.inputFolioFusion.sendKeys("234");
+            mainPage33304.inputAgregarPersona.click();
+            mainPage33304.inputCertificacionModal.click();
+            mainPage33304.inputBuscaRFC.sendKeys("AAL0409235E6");
+            mainPage33304.inputRazonSocialFusion.sendKeys("PRUEBAS");
+            mainPage33304.btnAceptarFusion.click();
+            Selenide.sleep(500);
+            presionarEscYSpace();
+            //AVISO ADICION RENOVACION
+            mainPage33304.labelAvisoAdicionRevocacion.click();
+            mainPage33304.inputAgregarTransportista.click();
+            mainPage33304.inputRFCAdicionRevocacion.sendKeys("");
+            mainPage33304.inputBuscarEmpresa.click();
+            mainPage33304.btnGuardarTransportista.click();
+            Selenide.sleep(500);
+            presionarEscYSpace();
+            //AVISO PAGO DERECHOS
+//            mainPage33304.labelPagoDerechos.click();
+//            Random aleatoria = new Random();
+//            int nReferenciaR = 10_000_000 + aleatoria.nextInt(90_000_000);
+//            mainPage33304.inputReferenciaBancaria.setValue(String.valueOf(nReferenciaR));
+//            mainPage33304.inputBanco.sendKeys("HSBC");
+//            Random random = new Random();
+//            int nFacturaR = 10_000_000 + random.nextInt(90_000_000);
+//            mainPage33304.inputLlavePago.setValue(String.valueOf(nFacturaR));
+//            Selenide.executeJavaScript("arguments[0].value = '15/05/2025';", mainPage33304.inputFechaPago);sleep(100);
+//            mainPage33304.btnGuardarSolicitud.click();
 
 
-            mainPage33304.inputGuardarSolicitud.click();
+
             //REQUISITOS NECESARIOS
             mainPage33304.inputSiguiente.click();
             //ANEXAR REQUISITOS
@@ -250,4 +298,12 @@ mainPage33304.inputObservacionesM.sendKeys("PRUEBAS");
             proceso.run();  // Ejecuta el proceso de la clase
         }
     }
+    public void presionarEscYSpace() {
+        // Utilizamos WebDriverRunner para obtener el WebDriver actual
+        new Actions(WebDriverRunner.getWebDriver())
+                .sendKeys(Keys.ESCAPE) // Presiona la tecla Esc
+                .sendKeys(Keys.SPACE)   // Luego presiona la barra espaciadora (Space)
+                .perform();             // Ejecuta las acciones
+    }
+
 }

@@ -1,5 +1,6 @@
 package HACIENDA.Tramite33304;
 
+import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Selenide.$x;
@@ -11,6 +12,7 @@ public class MainPage33304 {
     public SelenideElement btnIngresFs = $x("//button[@onclick='ejecutarProcesoFirma(1)']");
     public SelenideElement btnFirmar = $x("//*[@id='btnSubmit']");
     public SelenideElement folio = $x("/html/body/main/div/div[4]/div/div[4]/div/div/ul/li");
+    public SelenideElement Scrol = Selenide.$x("//*[@id=\"logoHeader\"]");
     public SelenideElement selecRol = $x("//*[@id='claveRol']");
     public SelenideElement btnacep = $x("//button[@name='ingresar']");
     public SelenideElement Tramites = $x("//*[@id='Trámites']");
@@ -32,6 +34,7 @@ public class MainPage33304 {
     public SelenideElement inputFechaFinVigencia = $x("//*[@id=\"fechaFinalActualCon\"]");
     public SelenideElement inputRFC = $x("//*[@id=\"rfcPartesC\"]");
     public SelenideElement btnBuscarRFC = $x("//*[@id=\"btnBuscarPersonaM\"]");
+    public SelenideElement inputCaracter = $x("//*[@id=\"caracterDeCons\"]");
     public SelenideElement btnAgregarParteC = $x("//*[@id=\"btnAgregarParteC\"]");
     public SelenideElement inputObservaciones = $x("//*[@id=\"observacionesC\"]");
     public SelenideElement inputMismoRegistro = $x("//*[@id=\"si3093\"]");
@@ -43,7 +46,8 @@ public class MainPage33304 {
     public SelenideElement inputFechaFinalActual = $x("//*[@id=\"fechaFinalActualMod\"]");
     public SelenideElement inputModificacionPartes = $x("//*[@id=\"si3095\"]");
     public SelenideElement inputRFCPartes = $x("//*[@id=\"rfcPartesM\"]");
-    public SelenideElement btnBuscarPersona = $x("//*[@id=\"btnBuscarPersonaM\"]");
+    public SelenideElement btnBuscarPersona = $x("/html/body/main/div/div[4]/div/form/div[2]/div[3]/div[35]/div[2]/input");
+    public SelenideElement inputCaracterParteMod = $x("//*[@id=\"caracterDePartesMod\"]");
     public SelenideElement btnAgregarParte = $x("//*[@id=\"btnAgregarParte\"]");
     public SelenideElement inputObservacionesM = $x("//*[@id=\"observacionesM\"]");
     //AVISO FUSION ESCISIÓN
@@ -56,15 +60,22 @@ public class MainPage33304 {
     public SelenideElement inputRegistroEIC = $x("//*[@id=\"idSiCertificacion\"]");
     public SelenideElement inputRFCFusionEIC = $x("//*[@id=\"idRfcBusqueda\"]");
     public SelenideElement btnAceptarDomicilios = $x("//*[@id=\"btnAceptarDomicilios\"]");
-    public SelenideElement input = $x("");
-    public SelenideElement input1 = $x("");
-    public SelenideElement input2 = $x("");
-    public SelenideElement input3 = $x("");
-    public SelenideElement input4 = $x("");
-    public SelenideElement input5 = $x("");
+    public SelenideElement inputFechaFusion = $x("//*[@id=\"fechaFusion\"]");
+    public SelenideElement inputFolioFusion = $x("//*[@id=\"idFolioFusion\"]");
+    public SelenideElement inputAgregarPersona = $x("//*[@id=\"btnAgregarPersona\"]");
+    //public SelenideElement inputCertificacionModal = $x("//*[@id=\"idSiCertificacionModal\"]");
+    public SelenideElement inputCertificacionModal = $x("//*[@id=\"idNoCertificacionModal\"]");
+    public SelenideElement inputBuscaRFC = $x("//*[@id=\"idRfcBusquedaModalSC\"]");
+    public SelenideElement inputRazonSocialFusion = $x("//*[@id=\"idRazonSocialFusionanteSC\"]");
+    public SelenideElement btnAceptarFusion = $x("//*[@id=\"btnAceptarFusionEscision\"]");
+    //AVISO ADICION REVOCACION
+    public SelenideElement checkAvisoAdicionRevocacion = $x("//*[@id=\"aviso_13\"]");
+    public SelenideElement labelAvisoAdicionRevocacion = $x("/html/body/main/div/div[4]/div/form/div[2]/ul/li[5]/a/label");
+    public SelenideElement inputAgregarTransportista = $x("//*[@id=\"agregarTransportista\"]");
+    public SelenideElement inputRFCAdicionRevocacion = $x("//*[@id=\"trRfc\"]");
+    public SelenideElement inputBuscarEmpresa = $x("//*[@id=\"btnBuscarEmpresa\"]");
+    public SelenideElement btnGuardarTransportista = $x("//*[@id=\"btnGuardarTransportista\"]");
     public SelenideElement input6 = $x("");
-
-
     //AVISO PAGO
     public SelenideElement checkPresentacionPago = $x("//*[@id=\"aviso_20\"]");
     public SelenideElement checkProtestaFacultades = $x("//*[@id=\"acepto253\"]");
@@ -88,7 +99,7 @@ public class MainPage33304 {
 
 
 
-    public SelenideElement inputGuardarSolicitud = $x("//*[@id='guardarSolicitud']");
+
 
     /// //
     public SelenideElement check = $x("//*[@id='cb_gridDomicilios']");
