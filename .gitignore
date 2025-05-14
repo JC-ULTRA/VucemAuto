@@ -1,3 +1,7 @@
 /.idea/
+
+/target/
 /automations/target/
-target/
+/automations/build/
+.vucem
+
