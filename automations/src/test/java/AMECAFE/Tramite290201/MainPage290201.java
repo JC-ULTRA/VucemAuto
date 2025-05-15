@@ -26,46 +26,25 @@ public class MainPage290201 {
     public SelenideElement Tipos = $x("//*[@id='tipoCafeClasificacion']");
     public SelenideElement Calidad = $x("//*[@id='calidadCafeClasificacion']");
     public SelenideElement Procesos = $x("//*[@id='procesoCafeClasificacion']");
-    public SelenideElement Certificaciones = $x("//*[@id='certificacionCafeClasificacion']");
-
     public SelenideElement selectSolicitudClaveAduana = $x("//*[@id='solicitud.claveAduana']");
-
     public SelenideElement selectSolicitudPaisProcedenciaClave = $x("//*[@id='solicitud.paisProcedencia.clave']");
-
     public SelenideElement selectSolicitudEntidadesEntidadClave = $x("//*[@id='solicitud.entidadesSolicitud[0].entidad.clave']");
-
     public SelenideElement selectSolicitudDescripcionGenerica = $x("//*[@id='solicitud.descripcionGenerica1']");
-
     public SelenideElement inputAgregarLote = $x("//input[contains(@onclick, 'resetear()')]");
-
     public SelenideElement selectGenerica = $x("//*[@id='generica1']");
-
     public SelenideElement selectAceptada = $x("//*[@id='aceptada']");
-
     public SelenideElement inputCantidadUmc = $x("//*[@id='cantidadUMC']");
-
     public SelenideElement selectUnidadMedidaComercialClave = $x("//*[@id='unidadMedidaComercial.clave']");
-
     public SelenideElement inputMercanciasImporteTotalComponente = $x("//*[@id='mercancias.importeTotalComponente']");
-
     public SelenideElement selectMonedaClave = $x("//*[@id='moneda.clave']");
-
     public SelenideElement inputNumeroLote = $x("//*[@id='numeroLote']");
-
     public SelenideElement inputDescripcionMercancia = $x("//*[@id='descripcionMercancia']");
-
     public SelenideElement selectBooleanGenerico = $x("//*[@id='booleanGenerico1']");
-
     public SelenideElement inputFechaSalida = $x("//*[@id='fechaSalida']");
-
     public SelenideElement selectCondicionAlmacenamientoSecundario = $x("//*[@id='condicionAlmacenamientoSecundario']");
-
     public SelenideElement selectGenerica2 = $x("//*[@id='generica2']");
-
     public SelenideElement inputMarcasEmbarque = $x("//*[@id='marcasEmbarque']");
-
     public SelenideElement textareaDescripcionTratamiento = $x("//*[@id='descripcionTratamiento']");
-
     public SelenideElement inputAgregarLote2 = $x("//input[@onclick='guardarLotes()']");
 
     //Pestaña Terceros Relacionados

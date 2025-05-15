@@ -116,6 +116,16 @@ public class MainPage290201Test {
             mainPage290201.Tramites.sendKeys("Solicitudes nuevas");
             mainPage290201.SoliNew.click();
 
+            mainPage290201.AMECAFE.click();
+            mainPage290201.CerificadosLicenciaPermisos.click();
+            mainPage290201.CertificadoOrigen.click();
+            mainPage290201.Tramite290201.click();
+            mainPage290201.labelDatosSolicitud.click();
+            mainPage290201.FormaCafe.sendKeys("Café Chiapas (Tostado)");
+            mainPage290201.Tipos.sendKeys("ARÁBICA");
+            mainPage290201.Calidad.sendKeys("ALTURA");
+            mainPage290201.Procesos.sendKeys("CONVENCIONAL");
+
 
 
             loginFirmSoli.firma(tramite290201);

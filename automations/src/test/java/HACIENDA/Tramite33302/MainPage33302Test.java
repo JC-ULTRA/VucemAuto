@@ -3,9 +3,7 @@ package HACIENDA.Tramite33302;
 import DBYFOLIO.ObtenerFolio;
 import Firmas.LoginFirmSoli;
 import Firmas.TramitesFirmasLG;
-import com.codeborne.selenide.Browsers;
-import com.codeborne.selenide.Configuration;
-import com.codeborne.selenide.WebDriverRunner;
+import com.codeborne.selenide.*;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.BeforeAll;
@@ -19,6 +17,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import javax.swing.*;
+import java.io.File;
 import java.time.Duration;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -244,13 +243,12 @@ public class MainPage33302Test  {
 
             mainPage33302.manifiestoAvisos.click();
             mainPage33302.btnGuardarSoli.click();
-            mainPage33302.btnContinuar.click();
-            scrollIncremento();
-//            driver.findElement(By.cssSelector("input[value='Adjuntar documentos']")).click();
-//            clickAdjuntarButton();
-            //new WebDriverWait(driver, Duration.ofSeconds(10))
-            //        .until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.cssSelector("input[name^='documentos'][type='file']")));
-            adjuntarDocumentos();
+            mainPage33302.btnContinuar.click();sleep(1000);
+            SelenideElement button = $x("//input[@type='button' and @value='Adjuntar documentos']");
+            button.click();
+            subirDocumentos("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
+            mainPage33302.btnAdjuntar.click();sleep(10000);
+            mainPage33302.btnCerrar.click();
             mainPage33302.btnSiguiente.click();
             loginFirmSoli.firma(tramite33302);
 
@@ -259,6 +257,14 @@ public class MainPage33302Test  {
             String folioNumber = obtenerFolio.obtenerFolio(folioText);
 
         }, repeticiones);
+    }
+    public void subirDocumentos(String rutaArchivo) {
+        ElementsCollection inputs = $$x("//input[starts-with(@name, 'documentos') and substring(@name, string-length(@name) - 4) = '.file']");
+
+        for (SelenideElement input : inputs) {
+            input.uploadFile(new File(rutaArchivo));
+            sleep(500);
+        }
     }
     public void adjuntarDocumentos() {
         WebDriver driver = new ChromeDriver();
