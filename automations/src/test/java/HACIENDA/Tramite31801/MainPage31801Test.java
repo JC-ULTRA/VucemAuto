@@ -120,6 +120,7 @@ public class MainPage31801Test {
         mainPage31801.llavePagoR.sendKeys(llavePago);
         mainPage31801.manif1.click();
         mainPage31801.manif2.click();
+
         mainPage31801.btnContiR.click();
     }
 

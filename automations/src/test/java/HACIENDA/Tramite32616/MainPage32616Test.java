@@ -228,6 +228,7 @@ public class MainPage32616Test {
         // Llave de pago
         String uuid = UUID.randomUUID().toString();
         int longitudDeseada = 8;
+
         String llavePago = uuid.replace("-", "").substring(0, longitudDeseada).toUpperCase();;
 
         mainPage32616.MesnajeriayPaqueteria.click(); sleep(500);

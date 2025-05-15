@@ -6,7 +6,9 @@ import static com.codeborne.selenide.Selenide.$x;
 
 public class MainPage31801 {
     public SelenideElement cerS = $x("//*[@id='certificate']");
+
     public SelenideElement keyS = $x("//*[@id='privateKey']");
+
     public SelenideElement pass = $x("//*[@id='privateKeyPassword']");
     public SelenideElement btnIngresFs = $x("//button[@onclick='ejecutarProcesoFirma(1)']");
     public SelenideElement btnFirmar = $x("//*[@id='btnSubmit']");
