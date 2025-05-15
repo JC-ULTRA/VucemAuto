@@ -31,13 +31,10 @@ public class MainPage31801 {
     public SelenideElement manif2 = $x("//*[@id=\"acepto3061\"]");
     public SelenideElement btnContiR = $x("//*[@id=\"guardarSolicitud\"]");
 
-//    public SelenideElement btnContCargaDocR = $x("/html/body/main/div/div[4]/div/form/div[4]/div/div/input[2]");
-//    public SelenideElement btnAdjuntDocR = $x("//*[@id=\"docs\"]/tbody/tr[4]/td[2]/div/input[2]");
-//    public SelenideElement dco1R = $x("//*[@id=\"solicitud_0\"]/table/tbody/tr[1]/td[4]/input");
-//    public SelenideElement btnOk = $x("//*[@id=\"btnAnexar\"]");
-
-
-
-
-
+    public SelenideElement btnContCargaDocR = $x("/html/body/main/div/div[4]/div/form/div[4]/div/div/input[2]");
+    public SelenideElement btnAdjuntDocR = $x("//*[@id=\"docs\"]/tbody/tr[4]/td[2]/div/input[2]");
+    public SelenideElement dco1R = $x("//*[@id=\"solicitud_0\"]/table/tbody/tr[1]/td[4]/input");
+    public SelenideElement btnOk = $x("//*[@id=\"btnAnexar\"]");
+    public SelenideElement btnCerrarR = $x("/html/body/main/div/div[4]/div[2]/form/div[3]/div/input");
+    public SelenideElement btnSiguienteFirma = $x("//*[@id=\"siguienteButton\"]");
 }

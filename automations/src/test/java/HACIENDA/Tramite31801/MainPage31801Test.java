@@ -80,9 +80,9 @@ public class MainPage31801Test {
 
             ejecutarRenovacion();
 
-//            loginFirmSoli.firma(tramite31801);
-//
-//            //          Obtener el texto del folio
+            loginFirmSoli.firma(tramite31801);
+
+////          Obtener el texto del folio
 //            String folioText = mainPage31801.folio.getText();
 //
 ////          Llamar al método para obtener el folio
@@ -122,6 +122,12 @@ public class MainPage31801Test {
         mainPage31801.manif2.click();
 
         mainPage31801.btnContiR.click();
+        mainPage31801.btnContCargaDocR.click();
+        mainPage31801.btnAdjuntDocR.click();
+        mainPage31801.dco1R.sendKeys("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
+        mainPage31801.btnOk.click();
+        mainPage31801.btnCerrarR.click();
+        mainPage31801.btnSiguienteFirma.click();
     }
 
     public void ejecutarProcesoNRunnable(Runnable proceso, int n) {
