@@ -110,6 +110,7 @@ public class MainPage31501Test {
             mainPage31501.btnGuardarSoli.click();
             loginFirmSoli.firma(tramite31501);
 
+
             // Obtener el texto del folio desde mainPage31501
             String folioText = mainPage31501.folio.getText();
             String folioNumber = obtenerFolio.obtenerFolio(folioText);
