@@ -20,6 +20,7 @@ public class MainPage33304 {
     public SelenideElement folioTramite = $x("//*[@id=\"idFolio\"]");
     public SelenideElement btnBuscarFolio = $x("//*[@id=\"buscarButton\"]");
     public SelenideElement tablaFolios = $x("/html/body/main/div/div[3]/div/form[1]/div[6]/div[3]/div[3]/div/table/tbody/tr[2]");
+    public SelenideElement labelTipoAviso = $x("/html/body/main/div/div[4]/div/form/div[2]/ul/li[2]/a/label");
     /// ACUSES Y RESOLUCIONES
     public SelenideElement btnAvisoModificacionCeI = $x("//*[@id=\"avisoModificacionComerAgaceButton\"]");
     //AVISO MODIFICACION
@@ -93,6 +94,8 @@ public class MainPage33304 {
     public SelenideElement btnContinuar2 = $x("//*[@id=\"siguienteButton\"]");
 
 
+    public SelenideElement inputSiguiente = $x("/html/body/main/div/div[4]/div/form/div[4]/div/div/input[2]");
+    public SelenideElement inputAdjuntarDocumentos = $x("//input[@type='button' and @value='Adjuntar documentos']");
 
 
 
@@ -128,51 +131,11 @@ public class MainPage33304 {
     public SelenideElement inputTerceroEnlaceOperativoTelefono = $x("//*[@id='terceroEnlaceOperativo.telefono']");
     public SelenideElement fechapago = $x("//*[@id='calendarTo']");
 
-    public SelenideElement inputSiguiente = $x("//input[@value='Siguiente']");
 
-    public SelenideElement inputAdjuntarDocumentos = $x("//input[@class='largemid']");
 
-    public SelenideElement inputDocumentosFile = $x("//input[@name='documentos[0].file']");
 
-    public SelenideElement inputDocumentosFile2 = $x("//input[@name='documentos[1].file']");
-
-    public SelenideElement inputDocumentosFile3 = $x("//input[@name='documentos[2].file']");
-
-    public SelenideElement inputDocumentosFile4 = $x("//input[@name='documentos[3].file']");
-
-    public SelenideElement inputDocumentosFile5 = $x("//input[@name='documentos[4].file']");
-
-    public SelenideElement inputDocumentosFile6 = $x("//input[@name='documentos[5].file']");
-
-    public SelenideElement inputDocumentosFile7 = $x("//input[@name='documentos[6].file']");
-
-    public SelenideElement inputDocumentosFile8 = $x("//input[@name='documentos[7].file']");
-
-    public SelenideElement inputDocumentosFile9 = $x("//input[@name='documentos[8].file']");
-
-    public SelenideElement inputDocumentosFile10 = $x("//input[@name='documentos[9].file']");
-
-    public SelenideElement inputDocumentosFile11 = $x("//input[@name='documentos[10].file']");
-
-    public SelenideElement inputDocumentosFile12 = $x("//input[@name='documentos[11].file']");
-
-    public SelenideElement inputDocumentosFile13 = $x("//input[@name='documentos[12].file']");
-
-    public SelenideElement inputDocumentosFile14 = $x("//input[@name='documentos[13].file']");
-
-    public SelenideElement inputDocumentosFile15 = $x("//input[@name='documentos[14].file']");
-
-    public SelenideElement inputDocumentosFile16 = $x("//input[@name='documentos[15].file']");
-
-    public SelenideElement inputDocumentosFile17 = $x("//input[@name='documentos[16].file']");
-
-    public SelenideElement inputDocumentosFile18 = $x("//input[@name='documentos[17].file']");
-    public SelenideElement inputDocumentosFile19 = $x("//input[@name='documentos[18].file']");
-    public SelenideElement inputDocumentosFile20 = $x("//input[@name='documentos[19].file']");
 
     public SelenideElement spanAdjuntar = $x("//*[@id=\"btnAnexar\"]");
-
     public SelenideElement spanCerrar = $x("//*[@id=\"btnCerrar\"]");
-
     public SelenideElement inputSiguienteButton = $x("//*[@id='siguienteButton']");
 }

@@ -1,7 +1,8 @@
 /.idea/
 
 /target/
-/automations/target/
-/automations/build/
+/automations/allure-results
+/automations/maven-status
+/automations/surefire-reports
 .vucem
 
