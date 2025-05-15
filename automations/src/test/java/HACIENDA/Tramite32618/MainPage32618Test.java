@@ -4,6 +4,7 @@ import DBYFOLIO.ObtenerFolio;
 import Firmas.LoginFirmSoli;
 import Firmas.TramitesFirmasLG;
 import HACIENDA.Tramite32618.MainPage32618;
+import Metodos.Metodos;
 import com.codeborne.selenide.Browsers;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.ElementsCollection;
@@ -29,6 +30,7 @@ import static com.codeborne.selenide.Selenide.sleep;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 public class MainPage32618Test {
+    Metodos metodos = new Metodos();
     MainPage32618 mainPage32618 = new MainPage32618();
     LoginFirmSoli loginFirmSoli = new LoginFirmSoli();
     ObtenerFolio obtenerFolio = new ObtenerFolio();
@@ -464,8 +466,9 @@ public class MainPage32618Test {
             /// Guardar y Firmar
             mainPage32618.btnGuardarSoli.click();
             mainPage32618.btnContinuar.click();
-            mainPage32618.btnAdjuntarDoc.click();sleep(1000);
-            subirDocumentos();
+//            mainPage32618.btnAdjuntarDoc.click();sleep(1000);
+//            subirDocumentos();
+            metodos.cargarDocumentos();
             mainPage32618.btnAdjuntar.click();sleep(35000);
             mainPage32618.btnCerrar.click();
             mainPage32618.btnSiguiente.click();
