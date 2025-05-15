@@ -3,6 +3,7 @@ package HACIENDA.Tramite33302;
 import DBYFOLIO.ObtenerFolio;
 import Firmas.LoginFirmSoli;
 import Firmas.TramitesFirmasLG;
+import Metodos.Metodos;
 import com.codeborne.selenide.*;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
@@ -34,6 +35,7 @@ import static com.codeborne.selenide.Selenide.sleep;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 public class MainPage33302Test  {
+    Metodos metodos = new Metodos();
     MainPage33302 mainPage33302 = new MainPage33302();
     LoginFirmSoli loginFirmSoli = new LoginFirmSoli();
     ObtenerFolio obtenerFolio = new ObtenerFolio();
@@ -192,36 +194,29 @@ public class MainPage33302Test  {
             mainPage33302.tablaFolios.doubleClick();
             mainPage33302.btnModificar.click();
             mainPage33302.tipoAvisos.click();
-            int totalDocumentosAdjuntar = 0;
             // Ejecutar procesos según selección
             for (String aviso : avisosSeleccionados) {
                 switch (aviso) {
                     case "Aviso Uso y Goce":
                         ejecutarAvisoUsoGoce();
-                        totalDocumentosAdjuntar += 1;
                         break;
                     case "Aviso Fusión o Escisión":
                         ejecutarAvisoFusionEscision();
-                        totalDocumentosAdjuntar += 1;
                         break;
                     case "Aviso Para Solventar Observaciones":
                         ejecutarAvisoObservaciones();
-                        totalDocumentosAdjuntar += 1;
                         break;
                     case "Aviso Incidentes de Seguridad":
                         ejecutarAvisoSeguridad();
-                        totalDocumentosAdjuntar += 1;
                         break;
                     case "Aviso de Circunstancias":
                         ejecutarAvisoCircunstancias();
-                        totalDocumentosAdjuntar += 2;
                         break;
                     case "Aviso de Adición o Revocación":
                         ejecutarAvisoAdicionRevocacio();
                         break;
                     case "Aviso Registro SECIIT":
                         ejecutarAvisoSeciit();
-                        totalDocumentosAdjuntar += 5;
                         break;
                     case "Avisos Alta o Baja Terceros":
                         ejecutarAvisoAltaTercerizacion();
@@ -231,7 +226,6 @@ public class MainPage33302Test  {
                         break;
                     case "Aviso Pago Derechos":
                         ejecutarAvisoPago();
-                        totalDocumentosAdjuntar += 1;
                         break;
                     default:
                         JOptionPane.showMessageDialog(null, "Aviso no válido seleccionado: " + aviso);
@@ -244,9 +238,10 @@ public class MainPage33302Test  {
             mainPage33302.manifiestoAvisos.click();
             mainPage33302.btnGuardarSoli.click();
             mainPage33302.btnContinuar.click();sleep(1000);
-            SelenideElement button = $x("//input[@type='button' and @value='Adjuntar documentos']");
-            button.click();
-            subirDocumentos("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
+//            SelenideElement button = $x("//input[@type='button' and @value='Adjuntar documentos']");
+//            button.click();sleep(1000);
+//            subirDocumentos("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
+            metodos.cargarDocumentos();
             mainPage33302.btnAdjuntar.click();sleep(10000);
             mainPage33302.btnCerrar.click();
             mainPage33302.btnSiguiente.click();
@@ -266,105 +261,6 @@ public class MainPage33302Test  {
             sleep(500);
         }
     }
-    public void adjuntarDocumentos() {
-        WebDriver driver = new ChromeDriver();
-        try {
-            List<WebElement> inputs = driver.findElements(By.cssSelector("input[name^='documentos'][type='file']"));
-
-            if (inputs.isEmpty()) {
-                System.out.println(" No se encontraron inputs de tipo file.");
-                return;
-            }
-
-            for (WebElement input : inputs) {
-                input.sendKeys("C:\\ruta\\archivo.pdf");
-                System.out.println(" Archivo adjuntado en: " + input.getAttribute("name"));
-            }
-        } catch (Exception e) {
-            System.out.println(" Error en adjuntarDocumentos: " + e.getMessage());
-        }
-    }
-    private void adjuntarDocumentosa(int numDocumentos) {
-        switch (numDocumentos) {
-            case 1:
-                ejecutarCodigoAdjuntar();
-                break;
-            case 2:
-                ejecutarCodigoAdjuntar2();
-                break;
-            case 3:
-                ejecutarCodigoAdjuntar3();
-                break;
-            case 4:
-                ejecutarCodigoAdjuntar4();
-                break;
-            case 5:
-                ejecutarCodigoAdjuntar5();
-                break;
-            case 6:
-                ejecutarCodigoAdjuntar6();
-                break;
-            default:
-                if (numDocumentos > 0) {
-                    System.out.println("Número de documentos a adjuntar: " + numDocumentos + ". Necesitas implementar el método ejecutarCodigoAdjuntar" + numDocumentos + "().");
-                }
-                break;
-        }
-    }
-
-    private void ejecutarCodigoAdjuntar() {
-        mainPage33302.btnAdjuntar1Doc.click();
-        mainPage33302.archivo1.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
-        mainPage33302.btnAdjuntar.click(); sleep(1000);
-        mainPage33302.btnCerrar.click();
-    }
-    private void ejecutarCodigoAdjuntar2() {
-        mainPage33302.btnAdjuntar2Doc.click();
-        mainPage33302.segArchivo1.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
-        mainPage33302.segArchivo2.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
-        mainPage33302.btnAdjuntar.click(); sleep(1000);
-        mainPage33302.btnCerrar.click();
-    }
-    private void ejecutarCodigoAdjuntar3() {
-        mainPage33302.btnAdjuntar3Doc.click();
-        mainPage33302.archivo31.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
-        mainPage33302.archivo32.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
-        mainPage33302.archivo33.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
-        mainPage33302.btnAdjuntar.click(); sleep(3000);
-        mainPage33302.btnCerrar.click();
-    }
-    private void ejecutarCodigoAdjuntar4() {
-        mainPage33302.btnAdjuntar4Doc.click();
-        mainPage33302.archivo41.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
-        mainPage33302.archivo42.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
-        mainPage33302.archivo43.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
-        mainPage33302.archivo44.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
-        mainPage33302.btnAdjuntar.click(); sleep(4000);
-        mainPage33302.btnCerrar.click();
-    }
-    private void ejecutarCodigoAdjuntar5() {
-        mainPage33302.btnAdjuntar5Doc.click();
-        mainPage33302.archivo51.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
-        mainPage33302.archivo52.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
-        mainPage33302.archivo53.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
-        mainPage33302.archivo54.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
-        mainPage33302.archivo55.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
-        mainPage33302.btnAdjuntar.click(); sleep(5000);
-        mainPage33302.btnCerrar.click();
-    }
-    private void ejecutarCodigoAdjuntar6() {
-        mainPage33302.btnAdjuntar6Doc.click();
-        mainPage33302.archivo61.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
-        mainPage33302.archivo62.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
-        mainPage33302.archivo63.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
-        mainPage33302.archivo64.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
-        mainPage33302.archivo65.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
-        mainPage33302.archivo66.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
-        mainPage33302.btnAdjuntar.click(); sleep(6000);
-        mainPage33302.btnCerrar.click();
-    }
-
-    //Metodo que ejecuta n veces una clase que implementa Runnable
 
     public void ejecutarProcesoNRunnable(Runnable proceso, int n) {
         for (int i = 0; i < n; i++) {
@@ -448,7 +344,6 @@ public class MainPage33302Test  {
         mainPage33302.selecFechaVisita.click();
         mainPage33302.subestandaresVisita.sendKeys("PRUEBAS");
         mainPage33302.btnAceptarObservaciones.click();sleep(3000);
-
         presionarEscYSpace();
         sleep(1000);
     }
@@ -467,8 +362,6 @@ public class MainPage33302Test  {
         mainPage33302.btnAceptarModificacionIncidencis.click();sleep(3000);
         presionarEscYSpace();
         sleep(1000);
-
-
     }
 
     private void ejecutarAvisoCircunstancias() {
@@ -561,29 +454,6 @@ public class MainPage33302Test  {
         mainPage33302.bancoPago.sendKeys("BANAMEX");
         mainPage33302.llavePago.sendKeys(llavePago);
         executeJavaScript("arguments[0].value = arguments[1];", mainPage33302.fechaPago, fechaHoy);sleep(1000);
-    }
-
-    public void clickOkButton() {
-        // Localiza el botón "Ok" por el texto dentro del <span> y realiza el click
-        $(byText("Ok")).shouldBe(visible).shouldHave(text("Ok")).click();
-    }
-
-    public void clickAdjuntarButton() {
-        // Localiza el botón "Aceptar" por el texto dentro del <span> y realiza el click
-        $(byText("Adjuntar documentos")).shouldBe(visible).shouldHave(text("Adjuntar documentos")).click();
-    }
-
-    public void clickSocioButton() {
-        // Localiza el botón "Aceptar" por el texto dentro del <span> y realiza el click
-        $(byText("Socio")).shouldBe(visible).shouldHave(text("Socio")).doubleClick();
-    }
-
-    public void scrollIncremento() {
-        JavascriptExecutor js = (JavascriptExecutor) getWebDriver();
-        for (int i = 0; i < 2; i++){
-            js.executeScript("window.scrollBy(0,500);");
-            sleep(500);
-        }
     }
     public void scrollDecremento() {
         JavascriptExecutor js = (JavascriptExecutor) getWebDriver();
