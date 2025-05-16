@@ -27,6 +27,20 @@ public void login(TramitesFirmasLG tramite) {
         btnFirmar.click();
     }
 
+    public void login2(TramitesFirmasLG tramite) {
+        cerS.setValue(tramite.getCer());
+        keyS.setValue(tramite.getKey());
+        pass.setValue("12345678a");
+        btnIngres.click();
+    }
+
+    public void firma2(TramitesFirmasLG tramite) {
+        cerS.setValue(tramite.getCer());
+        keyS.setValue(tramite.getKey());
+        pass.setValue("12345678a");
+        btnFirmar.click();
+    }
+
 
 
 }
