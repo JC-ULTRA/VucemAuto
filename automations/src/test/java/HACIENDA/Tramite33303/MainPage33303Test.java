@@ -12,13 +12,11 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.chrome.ChromeOptions;
-
 import javax.swing.*;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
-
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
@@ -28,14 +26,10 @@ public class MainPage33303Test {
     MainPage33303 mainPage33303 = new MainPage33303();
     LoginFirmSoli loginFirmSoli = new LoginFirmSoli();
     ObtenerFolio obtenerFolio = new ObtenerFolio();
-//    TramitesFirmasLG tramite33303  = new TramitesFirmasLG(
-//            "C:\\VucemAuto\\automations\\src\\test\\resources\\CredSoli\\aal0409235e6.cer",
-//            "C:\\VucemAuto\\automations\\src\\test\\resources\\CredSoli\\AAL0409235E6_1012231310.key"
-//    );
 
         TramitesFirmasLG tramite33303  = new TramitesFirmasLG(
-            "C:\\VucemAuto\\automations\\src\\test\\resources\\CredSoli\\leqi8101314s7.cer",
-            "C:\\VucemAuto\\automations\\src\\test\\resources\\CredSoli\\LEQI8101314S7_1012231707.key"
+            "C:\\VucemAuto\\automations\\src\\test\\resources\\CredSoli\\spi090212e4a.cer",
+            "C:\\VucemAuto\\automations\\src\\test\\resources\\CredSoli\\SPI090212E4A.key"
     );
 
     String uuid = UUID.randomUUID().toString();
@@ -95,16 +89,16 @@ public class MainPage33303Test {
         //para aviso de pago de derechos
 //        String FolioRubro = "2500301800320259911000003";
 
-        //para hacer los de agente aduanal
-        String FolioRubro = "2500301800320259911000006";
+//        //para hacer los de agente aduanal
+//        String FolioRubro = "2500301800320259911000006";
+
+        String FolioRubro = JOptionPane.showInputDialog(null, "Ingresa un folio de 25 dígitos:");
+
 // Validar que el usuario haya ingresado un folio válido de 25 dígitos
         if (FolioRubro == null || FolioRubro.length() != 25 || !FolioRubro.matches("\\d+")) {
             JOptionPane.showMessageDialog(null, "El número de folio ingresado no es válido. La operación será cancelada.");
             return; // Cancelar la operación
         }
-
-// Confirmar el folio ingresado
-//        JOptionPane.showMessageDialog(null, "Folio válido ingresado: " + FolioRubro);
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////-
 // Crear checkboxes para los nuevos tipos de aviso
@@ -133,7 +127,6 @@ public class MainPage33303Test {
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////-
 // Lógica para habilitar o deshabilitar checkboxes según el `FolioRubro`
-
 // Activar/desactivar checkboxes basados en condiciones específicas
         avisoCambioSituacionFiscal.setEnabled(true);
         avisoFusionEscisiondeEmpresas.setEnabled(true);
@@ -143,9 +136,6 @@ public class MainPage33303Test {
         parquesIndustriales.setEnabled(true);
         modificacionMandatarios.setEnabled(true);
         pagoDerechos.setEnabled(true);
-
-//        pagoDerechos.setEnabled(FolioRubro.startsWith("false"));
-
 
 // Mostrar diálogo con los checkboxes
         int avisoOption = JOptionPane.showConfirmDialog(
@@ -186,9 +176,7 @@ public class MainPage33303Test {
             String llavePago = uuid.replace("-", "").substring(0, longitudDeseada);
 
             // Ingreso y selección de trámite
-            loginFirmSoli.login(tramite33303);
-            mainPage33303.selecRol.sendKeys("Persona Moral");
-            mainPage33303.btnacep.click();
+            loginFirmSoli.login2(tramite33303);
             mainPage33303.Tramites.sendKeys("Solicitudes subsecuentes");
             mainPage33303.soliSubsecuente.click();
             mainPage33303.folioTramite.sendKeys(FolioRubro);
@@ -233,13 +221,13 @@ public class MainPage33303Test {
                 mainPage33303.tipoAvisos.click();
             }
 
-//            mainPage33303.manifiestoAcepto.click();
-//            mainPage33303.btnGuardarSoli.click();
-//            mainPage33303.btnContinuar.click();
+            mainPage33303.manifiestoAcepto.click();
+            mainPage33303.btnGuardarSoli.click();
+            mainPage33303.btnContinuar.click();
 ////            verificarSeleccion(aduanalCheckBox, fusionEscisionCheckBox, articulo99CheckBox);
 //
-//            mainPage33303.btnSiguiente.click();
-//            loginFirmSoli.firma(tramite33303);
+            mainPage33303.btnSiguiente.click();
+//            loginFirmSoli.firma2(tramite33303);
 
             // Obtener el texto del folio desde mainPage33303
             String folioText = mainPage33303.folio.getText();

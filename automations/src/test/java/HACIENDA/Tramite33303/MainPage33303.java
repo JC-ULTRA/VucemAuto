@@ -77,7 +77,7 @@ public class MainPage33303 {
     public SelenideElement observaciones = $x("/html/body/main/div/div[4]/div/form/div[2]/ul/li[9]/a");
     public SelenideElement agregarObservaciones = $x("//*[@id=\"btnAgregarObservaciones\"]");
     public SelenideElement entidadObservaciones = $x("//*[@id=\"entidadFederativaOb\"]");
-    public SelenideElement selecDomicilioObservacion = $x("//*[@id=\"5\"]/td[8]");
+    public SelenideElement selecDomicilioObservacion = $x("/html/body/main/div/div[4]/div[2]/form/div[1]/div[3]/div/div/div[1]/div[3]/div[3]/div/table/tbody/tr[2]/td[1]/input");
     public SelenideElement aceptarDomicilioObservacion = $x("//*[@id=\"btnAceptarModalObservacion\"]");
     public SelenideElement selecDomicilioModificarOb = $x("/html/body/main/div/div[4]/div/form/div[2]/div[9]/div[4]/div/div/div/div[3]/div[3]/div/table/tbody/tr[2]/td[8]");
     public SelenideElement modificarDomicilioOb = $x("//*[@id=\"btnModificarObservaciones\"]");
@@ -92,7 +92,7 @@ public class MainPage33303 {
     public SelenideElement seguridad = $x("/html/body/main/div/div[4]/div/form/div[2]/ul/li[10]/a");
     public SelenideElement agregarDomiciliosIncidencias = $x("/html/body/main/div/div[4]/div/form/div[2]/div[10]/div[5]/div/div/input[1]");
     public SelenideElement entidadFederativaIncidencias = $x("//*[@id=\"entidadFederativaIDCIS\"]");
-    public SelenideElement selecPlantaAgregar = $x("/html/body/main/div/div[4]/div[2]/form/div[1]/div[3]/div/div/div/div[3]/div[3]/div/table/tbody/tr[4]/td[9]");
+    public SelenideElement selecPlantaAgregar = $x("/html/body/main/div/div[4]/div[2]/form/div[1]/div[3]/div/div/div/div[3]/div[3]/div/table/tbody/tr[2]/td[1]/input");
     public SelenideElement btnAgregarDomicilio = $x("/html/body/main/div/div[4]/div[2]/form/div[1]/div[4]/div/div/input[2]");
     public SelenideElement selecPlantaModificarIncidencias = $x("/html/body/main/div/div[4]/div/form/div[2]/div[10]/div[4]/div/div/div/div[3]/div[3]/div/table/tbody/tr[2]/td[8]");
     public SelenideElement modificarPlantaIncidencias = $x("/html/body/main/div/div[4]/div/form/div[2]/div[10]/div[5]/div/div/input[3]");
