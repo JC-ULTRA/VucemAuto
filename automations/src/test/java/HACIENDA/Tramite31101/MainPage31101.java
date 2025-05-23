@@ -61,6 +61,10 @@ public class MainPage31101 {
     public SelenideElement radbtnSiSuspensionPadron = $x("//*[@id=\"si3509\"]");
     public SelenideElement radbtnNoSuspensionPadron = $x("//*[@id=\"no3509\"]");
 
+    //NEW
+    public SelenideElement radbtnSiQuerellaSAT = $x("//*[@id=\"si3511\"]");
+    public SelenideElement radbtnNoQuerellaSAT = $x("//*[@id=\"no3511\"]");
+
     //Clientes y provedores en el Extranjero
     public SelenideElement btnSelectArchivoClientesProv = $x("//*[@id=\"archivoAdjuntarProveedoresExtranjeros\"]");//*[@id="archivoAdjuntarProveedoresExtranjeros"]
     public SelenideElement btnCargarArchivoClientesProv = $x("//*[@id=\"btnArchivoProveedoresExtranjeros\"]");
@@ -86,7 +90,8 @@ public class MainPage31101 {
     //Miembros de la empresa
     public SelenideElement radbtnSiObligacionesFiscales = $x("//*[@id=\"si3516\"]");
     public SelenideElement radbtnNoObligacionesFiscales = $x("//*[@id=\"no3516\"]");
-    public SelenideElement OpinionPositiva = $x("//*[@id=\"camposTextArea.textoGenerico3\"]");
+    public SelenideElement radbtnSiOpinionPositiva = $x("//*[@id=\"si3616\"]");
+    public SelenideElement radbtnNoOpinionPositiva = $x("//*[@id=\"no3616\"]");
     //Agregar Miembro
     public SelenideElement btnAgregarMiembro = $x("//*[@id=\"agregarSocio\"]");
     public SelenideElement selectCaracter = $x("//*[@id=\"socio.caracterDe\"]");

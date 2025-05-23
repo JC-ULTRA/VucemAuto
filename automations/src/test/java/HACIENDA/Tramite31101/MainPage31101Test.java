@@ -29,8 +29,8 @@ public class MainPage31101Test {
     ObtenerFolio obtenerFolio = new ObtenerFolio();
 
     TramitesFirmasLG tramite31101 = new TramitesFirmasLG(
-            "C:\\VucemAuto\\automations\\src\\test\\resources\\CredSoli\\afc000526bj2.cer",
-            "C:\\VucemAuto\\automations\\src\\test\\resources\\CredSoli\\AFC000526BJ2_1012280944.key"
+            "C:\\VucemAuto\\automations\\src\\test\\resources\\CredSoli\\aac720713bq0.cer",
+            "C:\\VucemAuto\\automations\\src\\test\\resources\\CredSoli\\AAC720713BQ0_1012271736.key"
     );
 
     @BeforeAll
@@ -89,9 +89,9 @@ public class MainPage31101Test {
 
             // Ingreso y selección de trámite
 
-            loginFirmSoli.login(tramite31101);
-            //mainPage31101.selecRol.sendKeys("Persona Moral");
-            //mainPage31101.btnacep.click();
+            loginFirmSoli.login(tramite31101); sleep(1000);
+           // mainPage31101.selecRol.sendKeys("Persona Moral");
+           // mainPage31101.btnacep.click();
             mainPage31101.Tramites.click();
             mainPage31101.SoliNew.click();
             mainPage31101.Hacienda.click();
@@ -129,7 +129,8 @@ public class MainPage31101Test {
             mainPage31101.radbtnSiCertificadosVigentes.click();
             mainPage31101.radbtnSiArticulo17K.click();
             mainPage31101.radbtnNoSuspensionPadron.click();
-
+            mainPage31101.radbtnNoQuerellaSAT.click();
+/*
             //Clientes y provedores en el Extranjero
             mainPage31101.btnSelectArchivoClientesProv.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\PROVEEDOR_EXT_31101.xls");
             mainPage31101.btnCargarArchivoClientesProv.click(); sleep(1000);
@@ -138,7 +139,7 @@ public class MainPage31101Test {
             mainPage31101.btnSelectArchivoProvedorNacional.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\PROVEEDOR_NAC_31101.xls");
             mainPage31101.btnCargarArchivoProvedorNacionals.click(); sleep(1000);
             mainPage31101.radbtnNoQuerellaDenuncia.click();
-
+*/
             //Control de inventarios
             mainPage31101.radbtnSiArticulo59.click();
             mainPage31101.radbtnSiAnexo24.click();
@@ -149,7 +150,7 @@ public class MainPage31101Test {
 
             //MIembros de la empresa
             mainPage31101.radbtnSiObligacionesFiscales.click();
-            mainPage31101.OpinionPositiva.sendKeys("QA Opinion");
+            mainPage31101.radbtnNoOpinionPositiva.click();
             //Agregar Miembro
             mainPage31101.btnAgregarMiembro.click();
             mainPage31101.selectCaracter.selectOption("Administrador único");
@@ -161,6 +162,7 @@ public class MainPage31101Test {
             mainPage31101.btnAceptarNotifMiembro.click();
 
             mainPage31101.radbtnSiRegistroEsquemaCertificado.click();
+/*
             mainPage31101.radbtnNoArticulo69B.click();
             mainPage31101.radbtnNoCredito12Meses.click();
             mainPage31101.radbtnSiInversionNacional.click();
@@ -168,20 +170,20 @@ public class MainPage31101Test {
             mainPage31101.ValorPesos.sendKeys("10000");
             mainPage31101.DescripcionGeneral.sendKeys("Descripcion QA");
             mainPage31101.btnAgregarInfoInversion.click();
+
+ */
             mainPage31101.radbtnSiPrvCertificacionIVAeIEPS.click();
             mainPage31101.radbtnSiCumplimientoAnexo30.click();
 
             //Regimen Aduanero
-            //mainPage31101.checkImportacionTemporal.click();
-            //mainPage31101.checkDepositoFiscal.click();
             mainPage31101.checkElaboracionRecintoFiscal.click();
-            //mainPage31101.checkRecientoEstrategico.click();
 
             mainPage31101.radbtnSiAutorizacionReciento.click();
             executeJavaScript("arguments[0].value = arguments[1];", mainPage31101.fechaFinVigenciaRecinto, fechaFinVigencia);sleep(1000);
             mainPage31101.NumeroOficioAutorizacionRecinto.sendKeys("6031469410");
             mainPage31101.radbtnNoSujetoCancelacionRecinto.click();
 
+/*
             //Infrastructura
             mainPage31101.radbtnSiCuentaConInfrastructura.click();
             mainPage31101.radbtnNoResolucionImprocedencia.click();
@@ -209,6 +211,7 @@ public class MainPage31101Test {
             mainPage31101.PorcentajeImportacionDesperdicio.sendKeys("5");
             mainPage31101.PorcentajeImportacionConstancia.sendKeys("4");
 
+            */
             try {
                 Thread.sleep(2000); // Pausa de 2 segundos
                 // Hacer scroll hasta el elemento
