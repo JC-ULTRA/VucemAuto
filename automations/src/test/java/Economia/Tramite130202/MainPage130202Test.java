@@ -58,7 +58,7 @@ public class MainPage130202Test {
     @BeforeEach
     public void setUp() {
         Configuration.browserCapabilities = new ChromeOptions().addArguments("--remote-allow-origins=*");
-        //Configuration.holdBrowserOpen = true;
+        Configuration.holdBrowserOpen = true;
     }
 
     @Test
@@ -116,6 +116,13 @@ public class MainPage130202Test {
             mainPage130202.direccionGeneralNormas.click();
             mainPage130202.exportacion.click();
             mainPage130202.exportacionMineralesHierro.click();
+            try {
+                Thread.sleep(2000); // Pausa de 3 segundos
+                // Hacer scroll hasta el elemento
+                mainPage130202.Scrol.scrollIntoView(true);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
             mainPage130202.labelDatosSolicitud.click();
             mainPage130202.inputRegimen.sendKeys("Definitivos");
             mainPage130202.inputClasificacion.sendKeys(" De exportación");
@@ -125,20 +132,19 @@ public class MainPage130202Test {
             mainPage130202.inputValorFactura.sendKeys("33");
             mainPage130202.inputUMT.sendKeys("Kilogramo");
             mainPage130202.inputCantidadPartida.sendKeys("22");
-            mainPage130202.inputValorPartida.sendKeys("1.5");
+            mainPage130202.inputValorPartida.sendKeys("33");
             mainPage130202.inputDescripcionPartida.sendKeys("PRUEBAS");
             mainPage130202.btnAgregarPartida.click();
-            mainPage130202.inputBloquePaisDestino.sendKeys("T-MEC");
-            mainPage130202.inputPaisDedstino.sendKeys("ESTADOS UNIDOS DE AMERICA");
-            mainPage130202.btnAgregarBloque.click();
+            mainPage130202.inputBloquePaisDestino.sendKeys("T-MEC");sleep(1000);
+            mainPage130202.inputPaisDedstino.sendKeys("ESTADOS UNIDOS DE AMERICA");sleep(1000);
+            mainPage130202.btnAgregarBloque.click();sleep(1000);
             mainPage130202.textareaUsoEspecifico.sendKeys("PRUEBA");
             mainPage130202.textareaJustificacion.sendKeys("PRUEBA");
             mainPage130202.textareaObservaciones.sendKeys("PRUEBAS");
-            mainPage130202.inputEntidad.sendKeys("CIUDAD DE MEXICO");
+            mainPage130202.inputEntidad.sendKeys("SINALOA");
             mainPage130202.inputRepresentacionFederal.sendKeys("CENTRAL CDMX");
             mainPage130202.inputGuardarSolicitud.click();
             mainPage130202.inputGuarda.click();sleep(1000);
-            mainPage130202.inputAdjuntar.click();sleep(1000);
             metodos.cargarDocumentos();
             mainPage130202.btnAnexar.click();sleep(20000);
             mainPage130202.btnCerrar.click();
@@ -158,20 +164,4 @@ public class MainPage130202Test {
             proceso.run();  // Ejecuta el proceso de la clase
         }
     }
-    public void subirDocumentos(String rutaArchivo) {
-        ElementsCollection inputs = $$x("//input[starts-with(@name, 'documentos') and substring(@name, string-length(@name) - 4) = '.file']");
-
-        for (SelenideElement input : inputs) {
-            input.uploadFile(new File(rutaArchivo));
-            sleep(500);
-        }
-    }
-    public void presionarEscYSpace() {
-        // Utilizamos WebDriverRunner para obtener el WebDriver actual
-        new Actions(WebDriverRunner.getWebDriver())
-                .sendKeys(Keys.ESCAPE) // Presiona la tecla Esc
-                .sendKeys(Keys.SPACE)   // Luego presiona la barra espaciadora (Space)
-                .perform();             // Ejecuta las acciones
-    }
-
 }
