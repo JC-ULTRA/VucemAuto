@@ -1,4 +1,4 @@
-package INBAL.Tramite270101;
+package SENER.Tramite130201;
 
 import DBYFOLIO.ObtenerFolio;
 import Firmas.LoginFirmSoli;
@@ -13,18 +13,16 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.chrome.ChromeOptions;
-
 import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
-
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.Selenide.sleep;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
-public class MainPage270101Test {
-    MainPage270101 mainPage270101 = new MainPage270101();
+public class MainPage130201Test {
+    MainPage130201 mainPage130201 = new MainPage130201();
     LoginFirmSoli loginFirmSoli = new LoginFirmSoli();
     ObtenerFolio obtenerFolio = new ObtenerFolio();
     Metodos metodos = new Metodos();
@@ -32,7 +30,7 @@ public class MainPage270101Test {
     String FunRFC = "MAVL621207C95";
     String SoliRFC = "AAL0409235E6";
 
-    TramitesFirmasLG tramite270101  = new TramitesFirmasLG(
+    TramitesFirmasLG tramite130201  = new TramitesFirmasLG(
             "C:\\VucemAuto\\automations\\src\\test\\resources\\CredSoli\\aal0409235e6.cer",
             "C:\\VucemAuto\\automations\\src\\test\\resources\\CredSoli\\AAL0409235E6_1012231310.key"
     );
@@ -57,7 +55,7 @@ public class MainPage270101Test {
     }
 
     @Test
-    public void Proceso270101() {
+    public void Proceso130201() {
         /////////////////////////////////////////////////////////////////////////////////////////////////////////-
         // Solicitar el número de repeticiones al usuario a través de un JOptionPane con opción de Cancelar
         String repeticionesStr = JOptionPane.showInputDialog(null, "Ingrese el número de repeticiones:", "Repeticiones", JOptionPane.QUESTION_MESSAGE);
@@ -80,9 +78,9 @@ public class MainPage270101Test {
         /////////////////////////////////////////////////////////////////////////////////////////////////////////-
 
         //Crear checkboxes para seleccionar los métodos
-        JCheckBox dictamenCheckBox = new JCheckBox("ProcesoDictamen270101");
-        JCheckBox autorizacionCheckBox = new JCheckBox("ProcesoAutorizacion270101");
-        JCheckBox confirmacionCheckBox = new JCheckBox("ProcesoConfirmarNotificaciónResolucion270101");
+        JCheckBox dictamenCheckBox = new JCheckBox("ProcesoDictamen130201");
+        JCheckBox autorizacionCheckBox = new JCheckBox("ProcesoAutorizacion130201");
+        JCheckBox confirmacionCheckBox = new JCheckBox("ProcesoConfirmarNotificaciónResolucion130201");
 
         Object[] params = {"Seleccione los métodos a ejecutar:", dictamenCheckBox, autorizacionCheckBox, confirmacionCheckBox};
         int option = JOptionPane.showConfirmDialog(null, params, "Opciones de Métodos", JOptionPane.OK_CANCEL_OPTION);
@@ -95,81 +93,56 @@ public class MainPage270101Test {
 
         // Recopilar los métodos seleccionados
         List<String> selectedMethods = new ArrayList<>();
-        if (dictamenCheckBox.isSelected()) selectedMethods.add("ProcesoDictamen270101");
-        if (autorizacionCheckBox.isSelected()) selectedMethods.add("ProcesoAutorizacion270101");
-        if (confirmacionCheckBox.isSelected()) selectedMethods.add("ProcesoConfirmarNotificaciónResolucion270101");
+        if (dictamenCheckBox.isSelected()) selectedMethods.add("ProcesoDictamen130201");
+        if (autorizacionCheckBox.isSelected()) selectedMethods.add("ProcesoAutorizacion130201");
+        if (confirmacionCheckBox.isSelected()) selectedMethods.add("ProcesoConfirmarNotificaciónResolucion130201");
 
         // Ejecutar el proceso con las repeticiones y los métodos seleccionados
         ejecutarProcesoNRunnable(() -> {
 //            // Ingreso y selección de trámite
-            loginFirmSoli.login(tramite270101);
-            mainPage270101.selecRol.sendKeys("Persona Moral");
-            mainPage270101.btnacep.click();
-            mainPage270101.Tramites.sendKeys("Solicitudes nuevas");
-            mainPage270101.SoliNew.click();
-            mainPage270101.inbal.click();
-            mainPage270101.linkCertificadosLicenciasPermisos.click();
-            mainPage270101.linkINBA03003.click();
-            mainPage270101.linkPerExpTemObrPlaDecArtHisComINBAL.click();
+            loginFirmSoli.login(tramite130201);
+            mainPage130201.selecRol.sendKeys("Persona Moral");
+            mainPage130201.btnacep.click();
+            mainPage130201.Tramites.sendKeys("Solicitudes nuevas");
+            mainPage130201.SoliNew.click();
+            mainPage130201.Sener.click();
+            mainPage130201.linkPermisoImportExport.click();
+            mainPage130201.linkExportacion.click();
+            mainPage130201.linkSolExpPetro.click();
             //DATOS SOLICITUD
             try {
                 Thread.sleep(2000);
-                mainPage270101.Scrol.scrollIntoView(true);
+                mainPage130201.Scrol.scrollIntoView(true);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            mainPage270101.labelDatosSolicitud.click();
-            mainPage270101.btnAgregarObra.click();
-            mainPage270101.InputAutor.sendKeys("Diego Rivera");
-            mainPage270101.InputTitulo.sendKeys("CATZILLA");
-            mainPage270101.InputTecnica.sendKeys("RESINA Y ACRÍLICOS");
-            mainPage270101.InputAlto.sendKeys("17");
-            mainPage270101.InputAncho.sendKeys("6");
-            mainPage270101.InputProfundidad.sendKeys("6");
-            mainPage270101.InputDiametro.sendKeys("15");
-            mainPage270101.InputVariables.sendKeys("RESINAS Y VINIL");
-            mainPage270101.InputAnoCreacion.sendKeys("2025");
-            mainPage270101.InputAvaluo.sendKeys("50000");
-            mainPage270101.InputMoneda.sendKeys("US Dollar");
-            mainPage270101.InputPropietario.sendKeys("TOYCON");
-            mainPage270101.InputFraccionArancelaria.sendKeys("97012201");
-            mainPage270101.btnGuardar.click();
-            Selenide.executeJavaScript("arguments[0].value = '14/06/2025';", mainPage270101.inputFechaInicioExpo);sleep(100);
-            Selenide.executeJavaScript("arguments[0].value = '20/06/2025';", mainPage270101.inputFechaFinExpo);sleep(100);
-            mainPage270101.inputResponsable.sendKeys("PROTEO");
-            mainPage270101.inputMotivo.sendKeys("Exposición");
-            mainPage270101.inputNombre.sendKeys("PROTEUS");
-            mainPage270101.InputPais.sendKeys("MEXICO");
-            mainPage270101.InputCiudadDestino.sendKeys("CDMX");
-            mainPage270101.InputSede.sendKeys("MÉXICO");
-            mainPage270101.inputAduana.sendKeys("AEROPUERTO");
-            mainPage270101.inputAgregarIntinerario.click();
-            mainPage270101.InputCiudadItinerario.sendKeys("MÉXICO");
-            mainPage270101.inputMedioTransporte.sendKeys("Marítimo");
-            mainPage270101.inputObservaciones.sendKeys("PRUEBAS");
-            Selenide.executeJavaScript("arguments[0].value = '14/06/2025';", mainPage270101.inputFechaInicio);sleep(100);
-            Selenide.executeJavaScript("arguments[0].value = '18/06/2025';", mainPage270101.inputFechaFin);sleep(100);
-            mainPage270101.btnAgregar.click();
-            mainPage270101.inputAgregarIntinerario.click();
-            mainPage270101.InputCiudadItinerario.sendKeys("MÉXICO");
-            mainPage270101.inputNombreSede.sendKeys("Marítimo");
-            mainPage270101.inputObservaciones.sendKeys("PRUEBAS");
-            Selenide.executeJavaScript("arguments[0].value = '18/06/2025';", mainPage270101.inputFechaExhibicion);sleep(100);
-            Selenide.executeJavaScript("arguments[0].value = '18/06/2025';", mainPage270101.inputFechaInicio);sleep(100);
-            Selenide.executeJavaScript("arguments[0].value = '20/06/2025';", mainPage270101.inputFechaFin);sleep(100);
-            mainPage270101.btnAgregar.click();
-            mainPage270101.InputDeclaracion.click();
-            mainPage270101.InputGuardarSolicitud.click();
-            mainPage270101.btnContinuar.click();
-            metodos.cargarDocumentos();
-            mainPage270101.btmAnexar.click();
-            Selenide.sleep(5000);
-            mainPage270101.btnCerrar.click();
+            mainPage130201.labelDatosSolicitud.click();
+            mainPage130201.selectRegimenClave.sendKeys("Definitivos");
+            mainPage130201.selectClasificacionRegimen.sendKeys("De exportación");
+            mainPage130201.TextareaDescripcionMercancia.sendKeys("PRUEBA QA");
+            mainPage130201.inputCveFraccionArancelaria.sendKeys("27101999");
+            mainPage130201.inputNICO.sendKeys("04");
+            mainPage130201.inputCantidadMercancia.sendKeys("1");
+            mainPage130201.inputValorFactura.sendKeys("1");
+            mainPage130201.inputCantidad.sendKeys("1");
+            mainPage130201.inputDescripcion.sendKeys("PRUEBA QA");
+            mainPage130201.inputValorPArtida.sendKeys("1");
+            mainPage130201.btnAgregarPartida.click();sleep(500);
+            mainPage130201.btnPaises.click();sleep(1000);
+            mainPage130201.inputPaisOrigen.sendKeys("CANADA");sleep(1000);
+            mainPage130201.btnAgregar.click();sleep(1000);
+            mainPage130201.textareaUsoEspecifico.sendKeys("PRUEBAS QA");
+            mainPage130201.textareaJustificacion.sendKeys("PRUEBA QA");
+            mainPage130201.textareaObservaciones.sendKeys("PRUEBAS QA");
+            mainPage130201.inputDeclaracion.click();
+            //GUARDAR
+            mainPage130201.btnGuarda.click();
+            mainPage130201.inputContinuar.click();
             Selenide.sleep(2000);
-            mainPage270101.inputSiguiente.click();sleep(3000);
+            mainPage130201.inputSiguiente.click();sleep(3000);
             //FIRMAR SOLICITUD
-            loginFirmSoli.firma(tramite270101);
-            String folioText = mainPage270101.folio.getText();sleep(5000);
+            loginFirmSoli.firma(tramite130201);
+            String folioText = mainPage130201.folio.getText();sleep(5000);
             String folioNumber = obtenerFolio.obtenerFolio(folioText);
         }, repeticiones);
     }

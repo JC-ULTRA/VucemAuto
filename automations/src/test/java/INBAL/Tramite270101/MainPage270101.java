@@ -2,7 +2,6 @@ package INBAL.Tramite270101;
 
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
-
 import static com.codeborne.selenide.Selenide.$x;
 
 public class MainPage270101 {
@@ -25,7 +24,7 @@ public class MainPage270101 {
     public SelenideElement inputTipoOperacion = $x("//*[@id=\"solicitud.tipoOperacion\"]");
     public SelenideElement inputTipoMovimiento = $x("//*[@id=\"solicitud.tipoMovimiento\"]");
     public SelenideElement btnAgregarObra = $x("/html/body/main/div/div[4]/div/form/div[2]/div/div[2]/div[5]/div/div/input[2]");
-    public SelenideElement InputAutor = $x("//*[@id=\"descripcionDenominacionEspecifica\"]");
+    public SelenideElement InputAutor = $x("//*[@id=\"catalogoD\"]");
     public SelenideElement InputTecnica = $x("//*[@id=\"tecnicasRealizacionObra\"]");
     public SelenideElement InputTitulo = $x("//*[@id=\"tituloObra\"]");
     public SelenideElement InputAlto = $x("//*[@id=\"medidaAlto\"]");
@@ -38,17 +37,26 @@ public class MainPage270101 {
     public SelenideElement InputMoneda = $x("//*[@id=\"moneda.clave\"]");
     public SelenideElement InputPropietario = $x("//*[@id=\"propietario\"]");
     public SelenideElement InputFraccionArancelaria = $x("//*[@id=\"fraccionArancelaria.clave\"]");
-    public SelenideElement btnGuardar = $x("//*[@id=\"btnGuardarFrmDatosTercero\"]");
+    public SelenideElement btnGuardar = $x("/html/body/main/div/div[4]/div[2]/form/div[11]/div[2]/div/input[2]");
+    public SelenideElement inputFechaInicioExpo = $x("//*[@id=\"fechaInicioPeriodo\"]");
+    public SelenideElement inputFechaFinExpo = $x("//*[@id=\"fechaFinPeriodo\"]");
+    public SelenideElement inputResponsable = $x("//*[@id=\"responsable\"]");
     public SelenideElement inputMotivo = $x("//*[@id=\"solicitud.motivoSolicitud.catalogo\"]");
     public SelenideElement inputNombre = $x("//*[@id=\"nombreExposicion\"]");
     public SelenideElement InputPais = $x("//*[@id=\"solicitud.paisDestino.clave\"]");
     public SelenideElement InputCiudadDestino = $x("//*[@id=\"ciudadDestino\"]");
-    public SelenideElement InputMedioTransporte = $x("//*[@id=\"solicitud.medioTransporte\"]");
-    public SelenideElement inputEmpresaTransportista = $x("//*[@id=\"infAdicional\"]");
-    public SelenideElement InputUbicacionFinal = $x("//*[@id=\"solicitud.ubicacionSolicitud.catalogo\"]");
-    public SelenideElement inputPeriodo = $x("//*[@id=\"solicitud.catalogoD.clave\"]");
-    public SelenideElement inputAduanaEntrada = $x("//*[@id=\"solicitud.aduanaEntrada.clave\"]");
-    public SelenideElement InputDeclaracion = $x("//*[@id=\"declaracion[0]\"]");
+    public SelenideElement InputSede = $x("//*[@id=\"sedeDestino\"]");
+    public SelenideElement inputAduana = $x("//*[@id=\"solicitud.aduanaSalida.clave\"]");
+    public SelenideElement inputAgregarIntinerario = $x("//*[@id=\"tabs-2\"]/div[16]/div/div/input[2]");
+    public SelenideElement InputCiudadItinerario = $x("//*[@id=\"ciudadItinerario\"]");
+    public SelenideElement inputMedioTransporte = $x("//*[@id=\"medioTransporte\"]");
+    public SelenideElement inputNombreSede = $x("//*[@id=\"sedeItinerario\"]");
+    public SelenideElement inputObservaciones = $x("//*[@id=\"observacionItinerarioTranslado\"]");
+    public SelenideElement inputFechaExhibicion = $x("//*[@id=\"fechaExhibicion\"]");
+    public SelenideElement inputFechaInicio = $x("//*[@id=\"fechaInicioItinerario\"]");
+    public SelenideElement inputFechaFin = $x("//*[@id=\"fechaFinItinerario\"]");
+    public SelenideElement btnAgregar = $x("//*[@id=\"frmItinerario\"]/div[6]/div[2]/div/input[2]");
+    public SelenideElement InputDeclaracion = $x("//*[@id=\"exentoPago\"]");
     public SelenideElement InputGuardarSolicitud = $x("//*[@id=\"guardarSolicitud\"]");
     public SelenideElement btnContinuar = $x("/html/body/main/div/div[4]/div/form/div[4]/div/div/input[2]");
     public SelenideElement btmAnexar = $x("//*[@id=\"btnAnexar\"]");
