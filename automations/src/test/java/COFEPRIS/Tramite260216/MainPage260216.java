@@ -8,9 +8,9 @@ import static com.codeborne.selenide.Selenide.$x;
 // page_url = https://wwwqa.ventanillaunica.gob.mx/vucem/Ingreso.html
 public class MainPage260216 {
     //Tramite 260216
-    //Loging y selección de rol
     public SelenideElement folio = $x("//*[@id=\"notification\"]/div/ul/li");
     public SelenideElement Scrol = Selenide.$x("//*[@id=\"logoHeader\"]");
+    //Loging y selección de rol
     public SelenideElement selecRol = $x("//*[@id='claveRol']");
     public SelenideElement btnacep = $x("//button[@name='ingresar']");
 
@@ -22,14 +22,15 @@ public class MainPage260216 {
     public SelenideElement PermisoSanitarioImportaciInsumosSalud = $x(" /html/body/main/div/div[3]/div/div[6]/ul/li/ul/li[2]/a/span");
     public SelenideElement Tramite260216 = $x("//*[@id=\"servicios\"]/ul/li/ul/li[2]/ul/li[16]/a");
 
+    //Paso 1 CAPTURAR SOLICITUD
     //Pestaña Datos de la Solicitud
     public SelenideElement DatosSolicitud = $x("//*[@id=\"ui-id-2\"]/label");   //*[@id="ui-id-2"]/label
+    //Datos del establecimiento
     public SelenideElement btnEstablecimiento = $x("//*[@id='btnEstablecimiento']");
     public SelenideElement buttonAceptar = $x("/html/body/div[28]/div[3]/div/button");
     public SelenideElement ResponsableSanitarioRFC = $x("//*[@id=\"solicitud.establecimiento.RFCResponsableSanitario\"]");
     public SelenideElement inputSolicitudEstablecimientoRazonSocial = $x("//*[@id='solicitud.establecimiento.razonSocial']");
     public SelenideElement inputSolicitudEstablecimientoCorreoElectronico = $x("//*[@id='solicitud.establecimiento.correoElectronico']");
-
     //Domicilio del establecimiento
     public SelenideElement inputSolicitudEstablecimientoDomicilioCodigo = $x("//*[@id='solicitud.establecimiento.domicilio.codigoPostal']");
     public SelenideElement selectSolicitudEstablecimientoDomicilioEntidad = $x("//*[@id='solicitud.establecimiento.domicilio.entidadFederativa.clave']");
@@ -150,10 +151,10 @@ public class MainPage260216 {
     public SelenideElement FechaPago = $x("//*[@id=\"calendarTo\"]");
     public SelenideElement ImportePago = $x("//*[@id=\"solicitud.pago.impPago\"]");
 
-    //PASO2 REQUISITOS NECESARIOS
+    //Paso 2 REQUISITOS NECESARIOS
     public SelenideElement btnContinuarPaso2= $x("//*[@id=\"workingArea\"]/form/div[4]/div/div/input[2]");
 
-    //Paso 3
+    //Paso 3 ANEXAR REQUISITOS
     public SelenideElement listDocumento1Grid = $x("//*[@id=\"idDoc0\"]");
     public SelenideElement listDocumento2Grid = $x("//*[@id=\"idDoc1\"]");
     public SelenideElement listDocumento3Grid = $x("//*[@id=\"idDoc2\"]");
@@ -174,20 +175,6 @@ public class MainPage260216 {
     public SelenideElement btnGuardar = $x("//*[@id=\"guardarButton\"]");
 
     //Sub paso 3 Pantalla Adjuntar Documentos
-    public SelenideElement btnSelecArchivo1 = $x("//*[@id=\"solicitud_0\"]/table/tbody/tr[1]/td[4]/input");
-    public SelenideElement btnSelecArchivo2 = $x("//*[@id=\"solicitud_1\"]/table/tbody/tr[1]/td[4]/input");
-    public SelenideElement btnSelecArchivo3 = $x("//*[@id=\"solicitud_2\"]/table/tbody/tr[1]/td[4]/input");
-    public SelenideElement btnSelecArchivo4 = $x("//*[@id=\"solicitud_3\"]/table/tbody/tr[1]/td[4]/input");
-    public SelenideElement btnSelecArchivo5 = $x("//*[@id=\"solicitud_4\"]/table/tbody/tr[1]/td[4]/input");
-    public SelenideElement btnSelecArchivo6 = $x("//*[@id=\"solicitud_5\"]/table/tbody/tr[1]/td[4]/input");
-    public SelenideElement btnSelecArchivo7 = $x("//*[@id=\"solicitud_6\"]/table/tbody/tr[1]/td[4]/input");
-    public SelenideElement btnSelecArchivo8 = $x("//*[@id=\"solicitud_7\"]/table/tbody/tr[1]/td[4]/input");
-    public SelenideElement btnSelecArchivo9 = $x("//*[@id=\"solicitud_8\"]/table/tbody/tr[1]/td[4]/input");
-    public SelenideElement btnSelecArchivo10 = $x("//*[@id=\"solicitud_9\"]/table/tbody/tr[1]/td[4]/input");
-    public SelenideElement btnSelecArchivo11 = $x("//*[@id=\"solicitud_10\"]/table/tbody/tr[1]/td[4]/input");
-    public SelenideElement btnSelecArchivo12 = $x("//*[@id=\"solicitud_11\"]/table/tbody/tr[1]/td[4]/input");
-    public SelenideElement btnSelecArchivo13 = $x("//*[@id=\"solicitud_12\"]/table/tbody/tr[1]/td[4]/input");
-
     public SelenideElement btnAdjuntar2 = $x("//*[@id=\"btnAnexar\"]");
     public SelenideElement MensajeCarga = $x("//*[@id=\"divMsgModal\"]");
     public SelenideElement btnCerrar3 = $x("//*[@id=\"btnCerrar\"]");

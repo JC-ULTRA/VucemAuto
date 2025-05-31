@@ -39,7 +39,7 @@ public class MainPage260216Test {
         ObtenerFolio obtenerFolio = new ObtenerFolio();
         Metodos metodos = new Metodos();
 
-        TramitesFirmasLG tramite260204  = new TramitesFirmasLG(
+        TramitesFirmasLG tramite260216  = new TramitesFirmasLG(
                 "C:\\VucemAuto\\automations\\src\\test\\resources\\CredSoli\\aal0409235e6.cer",
                 "C:\\VucemAuto\\automations\\src\\test\\resources\\CredSoli\\AAL0409235E6_1012231310.key"
         );
@@ -86,7 +86,7 @@ public class MainPage260216Test {
 
             ejecutarProcesoNRunnable(() -> {
 
-                // Obtener la fecha de (hoy+Meses) formateada
+                // Obtener la fecha de (hoy) formateada
                 DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
                 String fechaHoy = LocalDate.now().format(formatter);
 
@@ -96,7 +96,7 @@ public class MainPage260216Test {
                 String llavePago = uuid.replace("-", "").substring(0, longitudDeseada);
 
                 //Loging y Seleccion Rol
-                loginFirmSoli.login(tramite260204);
+                loginFirmSoli.login(tramite260216);
                 mainPage260216.selecRol.sendKeys("Persona Moral"); sleep(1000);
                 mainPage260216.btnacep.click();sleep(1000);
 
@@ -108,18 +108,16 @@ public class MainPage260216Test {
                 mainPage260216.PermisoSanitarioImportaciInsumosSalud.click();//sleep(1000);
                 mainPage260216.Tramite260216.click();sleep(1000);
 
+                //Paso 1 CAPTURAR SOLICITUD
                 //Datos de solicitud
                 mainPage260216.Scrol.scrollTo().shouldBe(visible);
                 mainPage260216.DatosSolicitud.click();
-
+                //Datos del establecimiento
                 mainPage260216.btnEstablecimiento.click();
                 mainPage260216.buttonAceptar.click();
-
-                //LLenado de datos
                 mainPage260216.ResponsableSanitarioRFC.sendKeys("AAL0409235E6");
                 mainPage260216.inputSolicitudEstablecimientoRazonSocial.sendKeys("RazonTest");
                 mainPage260216.inputSolicitudEstablecimientoCorreoElectronico.sendKeys("Test@gmail.com");
-
                 //Domicilio del establecimiento
                 mainPage260216.inputSolicitudEstablecimientoDomicilioCodigo.sendKeys("607059");
                 mainPage260216.selectSolicitudEstablecimientoDomicilioEntidad.sendKeys("CIUDAD DE MÉXICO");
@@ -271,31 +269,11 @@ public class MainPage260216Test {
                 mainPage260216.ImportePago.sendKeys("100");
                 mainPage260216.btnContinuarDatosCompletos.click();
 
-                //Paso2
+                //Paso 2 REQUISITOS NECESARIOS
                 mainPage260216.btnContinuarPaso2.click();
 
-                //Paso 3
+                //Paso 3 ANEXAR REQUISITOS
                 metodos.cargarDocumentos();
-
-                //mainPage260216.btnAdjuntarDoc.click();sleep(1000);
-
-                //*[@id="docs"]/tbody/tr[8]/td[2]/div/input[2]
-                //Sub Paso 3
-                /*
-                mainPage260216.btnSelecArchivo1.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
-                mainPage260216.btnSelecArchivo2.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
-                mainPage260216.btnSelecArchivo3.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
-                mainPage260216.btnSelecArchivo4.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
-                mainPage260216.btnSelecArchivo5.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
-                mainPage260216.btnSelecArchivo6.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
-                mainPage260216.btnSelecArchivo7.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
-                mainPage260216.btnSelecArchivo8.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
-                mainPage260216.btnSelecArchivo9.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
-                mainPage260216.btnSelecArchivo10.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
-                mainPage260216.btnSelecArchivo11.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
-                mainPage260216.btnSelecArchivo12.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
-                mainPage260216.btnSelecArchivo13.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
-*/
                 mainPage260216.btnAdjuntar2.click();
                 mainPage260216.MensajeCarga.shouldNotBe(Condition.visible, Duration.ofSeconds(30));
                 mainPage260216.btnCerrar3.click();
@@ -303,8 +281,9 @@ public class MainPage260216Test {
                 //Paso 3 (Continuacion)
                 mainPage260216.btnContinuar3.click();
 
+                //PASO 4 FIRMAR SOLICITUD
                 //Firma
-                loginFirmSoli.firma(tramite260204);sleep(3000);
+                loginFirmSoli.firma(tramite260216);sleep(3000);
 
                 // Obtener el texto del folio desde mainPageB8
                 String folioText = mainPage260216.folio.getText();
