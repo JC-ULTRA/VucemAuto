@@ -1,11 +1,11 @@
-package COFEPRIS.Tramite260913;
+package COFEPRIS.Tramite260907;
 
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Selenide.$x;
 
-public class MainPage260913 {
+public class MainPage260907 {
     public SelenideElement cerS = $x("//*[@id='certificate']");
     public SelenideElement keyS = $x("//*[@id='privateKey']");
     public SelenideElement pass = $x("//*[@id='privateKeyPassword']");
@@ -54,12 +54,14 @@ public class MainPage260913 {
     public SelenideElement textareaPresentacion = $x("//*[@id='presentacion']");
     public SelenideElement inputNumeroRegistroSanitario = $x("//*[@id=\"registroSanitario\"]");
     public SelenideElement inputFechaCaducidad = $x("//*[@id=\"fechaDeCaducidad\"]");
-    public SelenideElement buttonAbrirPanelPaisesOrigen = $x("//*[@id=\"input28\"]");
+    public SelenideElement buttonAbrirPanelPaisesOrigen = $x("//*[@id=\"input33\"]");
     public SelenideElement PaisOrigen = $x("//*[@id=\"paisesDeOrigen\"]");
     public SelenideElement inputAgregarSeleccion = $x("//input[@value='Agregar selección']");
-    public SelenideElement inputAbrirPanelPaisesProcedencia = $x("//button[@id='input35']");
+    public SelenideElement inputAbrirPanelPaisesProcedencia = $x("//button[@id='input40']");
     public SelenideElement PaisProcedencia = $x("//*[@id=\"paisesDeProcedencia\"]");
     public SelenideElement btnModificarMercancia = $x("//*[@id=\"btnModificarMercancia\"]");
+    public SelenideElement inputRFC = $x("//*[@id=\"representanteLegalRFC\"]");
+    public SelenideElement btnBuscarRFC = $x("//*[@id=\"consultarIDC\"]");
     public SelenideElement labelTerceros = $x("/html/body/main/div[1]/div[4]/div[1]/div[6]/form/div[1]/ul/li[3]/a/label");
     public SelenideElement checkBoxFabricante = $x("//*[@id=\"jqg_gridTerceros_TIPERS_FAB_0\"]");
     public SelenideElement btnModificarFabricante = $x("//*[@id=\"modificarTercero_TIPERS_FAB\"]");
