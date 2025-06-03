@@ -32,7 +32,7 @@ public class MainPage260913Test {
     String FunRFC = "MAVL621207C95";
     String SoliRFC = "AAL0409235E6";
 
-    TramitesFirmasLG tramite260913  = new TramitesFirmasLG(
+    TramitesFirmasLG tramite260913 = new TramitesFirmasLG(
             "C:\\VucemAuto\\automations\\src\\test\\resources\\CredSoli\\aal0409235e6.cer",
             "C:\\VucemAuto\\automations\\src\\test\\resources\\CredSoli\\AAL0409235E6_1012231310.key"
     );
@@ -44,7 +44,7 @@ public class MainPage260913Test {
         iniDriver();
     }
 
-    public static void iniDriver(){
+    public static void iniDriver() {
         Configuration.browser = Browsers.CHROME;
         open();
         getWebDriver().manage().window().maximize();
@@ -86,7 +86,8 @@ public class MainPage260913Test {
             mainPage260913.Tramites.sendKeys("Solicitudes subsecuentes");
             mainPage260913.SoliSub.click();
             mainPage260913.inputIdFolio.sendKeys("0402600201320254006000004");
-            mainPage260913.inputBuscarButton.click();sleep(1000);
+            mainPage260913.inputBuscarButton.click();
+            sleep(1000);
             mainPage260913.SolicitudTramite.doubleClick();
             mainPage260913.inputSolicitarModificacion.click();
             try {
@@ -138,7 +139,7 @@ public class MainPage260913Test {
             mainPage260913.PaisProcedencia.sendKeys("ANGOLA");
             mainPage260913.btnModificarMercancia.click();
 
-        /// ///
+            /// ///
             //PAGO DE DERECHOS
             try {
                 Thread.sleep(2000); // Pausa de 3 segundos
@@ -165,8 +166,8 @@ public class MainPage260913Test {
             mainPage260913.terceroTelefono.setValue("5533335");
             mainPage260913.terceroCorreo.setValue("contactar@fabricante.com");
             mainPage260913.btnGuardarDatosTerceros.click();
-mainPage260913.checkBoxDestinatario.click();
-mainPage260913.btnModificarDestinatario.click();
+            mainPage260913.checkBoxDestinatario.click();
+            mainPage260913.btnModificarDestinatario.click();
             mainPage260913.inputTerceroRFC.setValue("TSD931210493");
             mainPage260913.inputTerceroRazonSocial.setValue("PRUEBAS SA DE CV");
             //mainPage260913.inputPais.sendKeys("CHINA (REPUBLICA POPULAR)");
@@ -199,14 +200,18 @@ mainPage260913.btnModificarDestinatario.click();
             int nFacturaR = 10_000_000 + aleatorio.nextInt(90_000_000);
             mainPage260913.inputSolicitudPagoLlave.setValue(String.valueOf(nFacturaR));
             //mainPage260913.inputSolicitudPagoLlave.sendKeys("3456452543");
-            executeJavaScript("arguments[0].value = '08/04/2025';", mainPage260913.inputCalendar);sleep(100);
+            executeJavaScript("arguments[0].value = '08/04/2025';", mainPage260913.inputCalendar);
+            sleep(100);
             mainPage260913.inputSolicitudPagoImp.sendKeys("2000");
             mainPage260913.inputGuardarSolicitud.click();
             //GUARDAR
-            mainPage260913.inputGuarda.click();sleep(1000);
+            mainPage260913.inputGuarda.click();
+            sleep(1000);
             metodos.cargarDocumentos();
-            mainPage260913.btnAnexar.click();sleep(2000);
-            mainPage260913.btnCerrar.click();sleep(100);
+            mainPage260913.btnAnexar.click();
+            sleep(2000);
+            mainPage260913.btnCerrar.click();
+            sleep(100);
             mainPage260913.inputSiguiente.click();
             //FIRMAR SOLICITUD
             loginFirmSoli.firma(tramite260913);

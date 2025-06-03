@@ -25,6 +25,7 @@ public class MainPage130106 {
     //DATOS TRÁMITE
     public SelenideElement SelectSolicitudRegimenClave = Selenide.$x("//*[@id=\"solicitud.regimen.clave\"]");
     public SelenideElement SelectSolicitudClaveClasificacionRegimen = Selenide.$x("//*[@id=\"solicitud.claveClasificacionRegimen\"]");
+    public SelenideElement inpuProducto = $x("//*[@id=\"tabs-3\"]/div[3]/div[1]/div[2]/input");
     //DATOS MERCANCÍA
     public SelenideElement textareaDescripcionMercancia = Selenide.$x("//*[@id=\"solicitud.mercancia.descripcion\"]");
     public SelenideElement SelectFraccionArancelaria = Selenide.$x("//*[@id=\"cveFraccionArancelaria\"]");

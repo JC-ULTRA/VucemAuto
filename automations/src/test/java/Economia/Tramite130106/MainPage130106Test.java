@@ -119,16 +119,17 @@ public class MainPage130106Test {
             mainPage130106.labelDatosSolicitud.click();
             mainPage130106.SelectSolicitudRegimenClave.sendKeys("Definitivos");
             mainPage130106.SelectSolicitudClaveClasificacionRegimen.sendKeys("De importación");
+            mainPage130106.inpuProducto.click();
             sleep(100);
             //DATOS DE LA MERCANCÍA
             mainPage130106.textareaDescripcionMercancia.sendKeys("Prueba");
             mainPage130106.SelectFraccionArancelaria.sendKeys("87032102 - Usados, excepto lo comprendido en la fracción arancelaria 8703.21.01.");
-            mainPage130106.inputCantidadTarifaria.sendKeys("369");
-            mainPage130106.inputValorFacturaUSD.sendKeys("36");
+            mainPage130106.inputCantidadTarifaria.sendKeys("10");
+            mainPage130106.inputValorFacturaUSD.sendKeys("10");
             mainPage130106.selectUnidadTarifaria.sendKeys("Pieza");
             //PARTIDAS MERCANCÍA
-            mainPage130106.inputCantidad.sendKeys("15");
-            mainPage130106.inputTotalUSDPartida.sendKeys("369");
+            mainPage130106.inputCantidad.sendKeys("10");
+            mainPage130106.inputTotalUSDPartida.sendKeys("10");
             mainPage130106.textareaDescripcion.sendKeys("Prueba texto");
             mainPage130106.btnAgregar.click();
             //PAÍS PROCEDENCIA

@@ -49,6 +49,7 @@ public class MainPage260208 {
     public SelenideElement inputDenominacionDistintiva = $x("//*[@id='idDenominacionDistintiva']");
     public SelenideElement inputDenominacionComunInternacional = $x("//*[@id='idDenominacionComunInternacional']");
     public SelenideElement selectTipoProductoTipoTramite = $x("//*[@id='mercanciaGrid.tipoProducto.idTipoProductoTipoTramite']");
+    public SelenideElement inputEspecifique = $x("//*[@id=\"idTipoProductoDescripcionOtros\"]");
     public SelenideElement selectFormaFarmaceutica = $x("//*[@id='mercanciaGrid.idFormaFarmaceutica']");
     public SelenideElement selectEstadoFisico = $x("//*[@id='mercanciaGrid.idEstadoFisico']");
     public SelenideElement inputFraccionArancelaria = $x("//*[@id='fraccionArancelaria']");
