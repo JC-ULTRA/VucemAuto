@@ -167,7 +167,6 @@ public class MainPage240120Test {
             mainPage240120.inputTercerosTelefono.sendKeys("234565432");
             mainPage240120.inputTercerosCorreoElec.sendKeys("pruebas@test.com");
             mainPage240120.btnGuardarTerceros.click();
-
             mainPage240120.labelPagoDerechos.click();
             Random random = new Random();
             int cveReferencia = 10_000_000 + random.nextInt(90_000_000);
