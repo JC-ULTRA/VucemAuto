@@ -1,4 +1,4 @@
-package COFEPRIS.Tramite260216;
+package COFEPRIS.Tramite260505;
 
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
@@ -6,28 +6,29 @@ import com.codeborne.selenide.SelenideElement;
 import static com.codeborne.selenide.Selenide.$x;
 
 // page_url = https://wwwqa.ventanillaunica.gob.mx/vucem/Ingreso.html
-public class MainPage260216 {
-    //Tramite 260216
+public class MainPage260505 {
+
     public SelenideElement folio = $x("//*[@id=\"notification\"]/div/ul/li");
     public SelenideElement Scrol = Selenide.$x("//*[@id=\"logoHeader\"]");
+
     //Loging y selección de rol
     public SelenideElement selecRol = $x("//*[@id='claveRol']");
     public SelenideElement btnacep = $x("//button[@name='ingresar']");
 
-    //Busqueda de tramite
+    //Busqueda de tramite 260504
     public SelenideElement Tramites = $x("//*[@id='Trámites']");
     public SelenideElement SoliNew = $x("/html/body/main/div/div[2]/div[1]/div[1]/div/nav/div/div[2]/ul/li[5]/ul/li[3]/a");
     public SelenideElement Cofepris = $x("//img[contains(@alt, 'para')]");
     public SelenideElement CertificadosLicenciasPermisos = $x("/html/body/main/div/div[3]/div/div[6]/ul/li/a");
-    public SelenideElement PermisoSanitarioImportaciInsumosSalud = $x(" /html/body/main/div/div[3]/div/div[6]/ul/li/ul/li[2]/a/span");
-    public SelenideElement Tramite260216 = $x("//*[@id=\"servicios\"]/ul/li/ul/li[2]/ul/li[16]/a");
+    public SelenideElement PermisoImportacionToxicosPeligro = $x("//*[@id=\"servicios\"]/ul/li/ul/li[5]/a/span");
+    public SelenideElement elementoTramite260505 = $x("//*[@id=\"servicios\"]/ul/li/ul/li[5]/ul/li[5]/a");
 
-    //Paso 1 CAPTURAR SOLICITUD
+    //PASO 1 CAPTURAR SOLICITUD
     //Pestaña Datos de la Solicitud
-    public SelenideElement DatosSolicitud = $x("//*[@id=\"ui-id-2\"]/label");   //*[@id="ui-id-2"]/label
+    public SelenideElement DatosSolicitud = $x("//*[@id=\"ui-id-2\"]/label");
     //Datos del establecimiento
     public SelenideElement btnEstablecimiento = $x("//*[@id='btnEstablecimiento']");
-    public SelenideElement buttonAceptar = $x("/html/body/div[28]/div[3]/div/button");
+    public SelenideElement buttonAceptar = $x("/html/body/div[21]/div[3]/div/button");
     public SelenideElement ResponsableSanitarioRFC = $x("//*[@id=\"solicitud.establecimiento.RFCResponsableSanitario\"]");
     public SelenideElement inputSolicitudEstablecimientoRazonSocial = $x("//*[@id='solicitud.establecimiento.razonSocial']");
     public SelenideElement inputSolicitudEstablecimientoCorreoElectronico = $x("//*[@id='solicitud.establecimiento.correoElectronico']");
@@ -47,46 +48,46 @@ public class MainPage260216 {
     public SelenideElement selectComboDescripcionScian = $x("//*[@id='comboDescripcionSCIAN']");
     public SelenideElement btnAgregar2Scian = $x("//*[@id=\"frmSCIAN\"]/div[1]/div[4]/div[2]/div/input[3]");
 
-//Check Aviso
+    //Aviso de funcionamiento
     public SelenideElement checkAvisoFuncionamiento = $x("//*[@id='avisoFuncionamiento']");
     public SelenideElement inputNumeroLicencia = $x("//*[@id='numeroLicencia']");
-    public SelenideElement selectSolicitudRegimenClave = $x("//*[@id='solicitud.regimen.clave']");
-    public SelenideElement selectAduanasEntrada = $x("//*[@id=\"aduanasEntrada\"]"); //*[@id="aduanasEntrada"]
-    
+
+    //Aduanas de entrada
+    public SelenideElement listAduanasEntrada = $x("//*[@id=\"origenlistaOrigen1\"]");
+    public SelenideElement btnAgregarAduanaentrada = $x("//*[@id=\"addlistaOrigen1\"]");
+
 // Agregar Mercancía
-    public SelenideElement btnAgregarAduana = $x("//*[@id='btnagregarAduana']");
-    public SelenideElement selectMercanciaGridClasificacionProducto = $x("//*[@id='mercanciaGrid.idClasificacionProducto']");
-    public SelenideElement selectMercanciaGridEspecificaClasProd = $x("//*[@id='mercanciaGrid.ideSubClasificacionProducto']");
-    public SelenideElement inputDenominacionEspecifica = $x("//*[@id='idDenominacionEspecifica']");
-    public SelenideElement inputDenominacionDistintiva = $x("//*[@id='idDenominacionDistintiva']");
-    public SelenideElement inputDenominacionNombreCientif = $x("//*[@id=\"idDenominacionComunInternacional\"]");
-    public SelenideElement selectMercanciaGridTipoProducto = $x("//*[@id='mercanciaGrid.tipoProducto.idTipoProductoTipoTramite']");
-    public SelenideElement selectEstadoFisico = $x("//*[@id=\"mercanciaGrid.idEstadoFisico\"]");
-    public SelenideElement Especifique = $x("//*[@id=\"idEstadoFisicoDescripcionOtros\"]");
+    public SelenideElement btnAgregarMercancia = $x("//*[@id='btnagregarAduana']");
+    //Identificación del producto
+    public SelenideElement NombreComercial = $x("//*[@id=\"nombreComercial\"]");
+    public SelenideElement NombreComun = $x("//*[@id=\"nombreComun\"]");
+    public SelenideElement inputDenominacionNombreCientif = $x("//*[@id=\"nombreCientifico\"]");
+    public SelenideElement UsoEspecifico = $x("//*[@id=\"mercanciausoFinal\"]");
     public SelenideElement inputFraccionArancelaria = $x("//*[@id='fraccionArancelaria']");
     public SelenideElement inputCantidadUmt = $x("//*[@id='cantidadUMT']");
     public SelenideElement inputCantidadUmc = $x("//*[@id='cantidadUMC']");
-    public SelenideElement selectMercanciaGridUnidadMedida = $x("//*[@id='mercanciaGrid.unidadMedidaComercial.clave']");
-    public SelenideElement PresentacionFarmaTipoEnvase = $x("//*[@id=\"presentacion\"]");
-    public SelenideElement NumRegistroSanitario = $x("//*[@id=\"registroSanitario\"]");
-
-//País origen
-    public SelenideElement btnDesplegarInfoPaisOrigen = $x("//*[@id=\"input27\"]");
-    public SelenideElement buttonResolution = $x("//button[@href='#panel-listaPaisesDeOrigen']");
-    public SelenideElement listaPaisOrigen = $x("//*[@id=\"paisesDeOrigen\"]");
-    public SelenideElement inputAdd = $x("//input[contains(@onclick, \"remover('paisesDeOrigen1',\")]");
-
-//País procedencia
-    public SelenideElement btnDesplegarInfoPaisProcedencia = $x("//*[@id=\"input34\"]");
-    public SelenideElement buttonResolution2 = $x("//button[@aria-controls='panel-listaPaisesDeProcedencia']");
-    public SelenideElement listaPaisesProcedencia = $x("//*[@id=\"paisesDeProcedencia\"]");
-    public SelenideElement inputAdd2 = $x("//*[@id=\"panel-listaPaisesDeProcedencia\"]/div/div/div[2]/div/div/input[2]");
-
-    //Uso especifico
-    public  SelenideElement btnDesplegarInfoUsoEspecifico = $x("//*[@id=\"input41\"]");
-    public SelenideElement listaUsoEspecifico = $x("//*[@id=\"usoEspecifico\"]");
-    public SelenideElement inputAdd3 = $x("//*[@id=\"panel-listaUsosEspecificos\"]/div/div/div[2]/div/div/input[2]");
-
+    public SelenideElement selectUMC = $x("//*[@id=\"mercanciaGrid.unidadMedidaComercial.clave\"]");
+    public SelenideElement PorcentajeConcentracion = $x("//*[@id=\"porcentajeConcentracion\"]");
+    //País donde se produce o fabrica el ingrediente activo
+    public SelenideElement btnDesplegarInfoPaisFabricante = $x("//button[contains(@onclick, 'abrirPanelPaisesFIA')]");
+    public SelenideElement listaPaisFabricante = $x("//*[@id=\"paisesFabricaIngredienteActivo\"]");
+    public SelenideElement btnAgregarPaisFabricante = $x("//input[@name='add' and contains(@onclick, 'paisesFabricaIngredienteActivo')]");
+    //País donde se elabora el producto
+    public SelenideElement btnDesplegarInfoPaisElabora = $x("//button[contains(@onclick, 'abrirPanelPaisesFP')]");
+    public SelenideElement listaPaisElabora= $x("//*[@id=\"paisesFormulaProducto\"]");
+    public SelenideElement btnAgregarPaisElabora = $x("//input[@name='add' and contains(@onclick, 'paisesFormulaProducto')]");
+    //País proveedor (Origen)
+    public SelenideElement btnDesplegarInfoPaisProveedor = $x("//button[contains(@onclick, 'abrirPanelPaisesOrigen')]");
+    public SelenideElement listaPaisProveedor= $x("//*[@id=\"paisesDeOrigen\"]");
+    public SelenideElement btnAgregarPaisProveedor = $x("//input[@name='add' and contains(@onclick, 'paisesDeOrigen')]");
+    //País de procedencia/ País del último puerto de embarque
+    public SelenideElement btnDesplegarInfoPaisProcedencia = $x("//button[contains(@onclick, 'abrirPanelPaisesProcedencia')]");
+    public SelenideElement listaPaisProcedencia = $x("//*[@id=\"paisesDeProcedencia\"]");
+    public SelenideElement btnAgregarPaisProcedencia = $x("//input[@name='add' and contains(@onclick, 'paisesDeProcedencia')]");
+    //Clasificación Toxicológica e importación
+    public SelenideElement selectClasificacionToxi = $x("//*[@id=\"mercanciaGrid.clasificacionToxicologica.idClasificacionToxicologicaTipoTramite\"]");
+    public SelenideElement selectObjetoImportacion = $x("//*[@id=\"mercanciaGrid.objetoImportacionEnum\"]");
+    //Guardar información de la mercancia
     public SelenideElement btnAgregarMercanciaTotalInfo = $x("//*[@id=\"btnAgregarMercancia\"]");
 
     //Manifiesto y declaraciones
@@ -103,6 +104,10 @@ public class MainPage260216 {
 
     //Agregar fabricante
     public  SelenideElement btnAgregarFabricante = $x("//*[@id=\"agregarTercero_TIPERS_FAB\"]");
+    //Agregar formulador
+    public SelenideElement btnAgregarFormulador = $x("//*[@id=\"agregarTercero_TIPERS_FOR\"]");
+    //Agregar Proveedor
+    public SelenideElement btnAgregarProveedor = $x("//*[@id=\"agregarTercero_TIPERS_PVD\"]");
 
     //Datos Generales
     public  SelenideElement radExtranjeroTerceros= $x("//*[@id=\"terceros_nacionalidadExtranjera\"]");
@@ -110,7 +115,8 @@ public class MainPage260216 {
     public  SelenideElement radPersonaFisica = $x("//*[@id=\"terceros_tipoPersonaFisica\"]");
     public  SelenideElement radPersonaMoral = $x("//*[@id=\"terceros_tipoPersonaMoral\"]");
     public  SelenideElement inputTercerosDenominacionRazon = $x("//*[@id=\"terceros_rSocial\"]");
-    public  SelenideElement FabricanteRFC = $x("//*[@id=\"terceros_rfc\"]");
+    public  SelenideElement TercerosRFC = $x("//*[@id=\"terceros_rfc\"]");
+    public  SelenideElement btnBuscarTerceroRFC = $x("//*[@id=\"buscarEmpresa\"]");
 
     //Datos personales Nacional
     public SelenideElement inputTercerosNombre = $x("//*[@id='terceros_nombre']");
@@ -135,12 +141,6 @@ public class MainPage260216 {
     public SelenideElement CodigoPostaltxt = $x("//*[@id=\"terceros_codPostal\"]");
     public SelenideElement TercerosColoniatxt = $x("//*[@id=\"terceros_coloniaEquiv\"]");
 
-    //Agregar Destino
-    public SelenideElement btnAgregarDestinatario =$x("//*[@id=\"agregarTercero_TIPERS_DES\"]");
-    //Agregar Proveedor
-    public SelenideElement btnAgregarProveedor = $x("//*[@id=\"agregarTercero_TIPERS_PVD\"]");
-    //Agregar facturador
-    public SelenideElement btnAgregarFacturador = $x("//*[@id=\"agregarTercero_TIPERS_FAC\"]");
 
     //Pago de derechos
     public SelenideElement tabPagoDerechos = $x("//*[@id=\"ui-id-4\"]/label");
