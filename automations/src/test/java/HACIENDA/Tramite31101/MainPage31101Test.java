@@ -29,8 +29,8 @@ public class MainPage31101Test {
     ObtenerFolio obtenerFolio = new ObtenerFolio();
 
     TramitesFirmasLG tramite31101 = new TramitesFirmasLG(
-            "C:\\VucemAuto\\automations\\src\\test\\resources\\CredSoli\\aac720713bq0.cer",
-            "C:\\VucemAuto\\automations\\src\\test\\resources\\CredSoli\\AAC720713BQ0_1012271736.key"
+            "C:\\VucemAuto\\automations\\src\\test\\resources\\CredSoli\\aal0409235e6.cer",
+            "C:\\VucemAuto\\automations\\src\\test\\resources\\CredSoli\\AAL0409235E6_1012231310.key"
     );
 
     @BeforeAll
@@ -90,8 +90,8 @@ public class MainPage31101Test {
             // Ingreso y selección de trámite
 
             loginFirmSoli.login(tramite31101); sleep(1000);
-           // mainPage31101.selecRol.sendKeys("Persona Moral");
-           // mainPage31101.btnacep.click();
+            mainPage31101.selecRol.sendKeys("Persona Moral");
+            mainPage31101.btnacep.click();
             mainPage31101.Tramites.click();
             mainPage31101.SoliNew.click();
             mainPage31101.Hacienda.click();
