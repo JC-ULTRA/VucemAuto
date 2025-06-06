@@ -1,36 +1,36 @@
-package Economia.Tramite80302;
+package Economia.Tramite420101;
 
 import DBYFOLIO.ObtenerFolio;
 import Firmas.LoginFirmSoli;
 import Firmas.TramitesFirmasLG;
-import com.codeborne.selenide.*;
+import Metodos.Metodos;
+import com.codeborne.selenide.Browsers;
+import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.chrome.ChromeOptions;
-
 import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 import java.util.concurrent.TimeUnit;
-
 import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.sleep;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
-public class MainPage80302Test {
-    MainPage80302 mainPage80302 = new MainPage80302();
-    LoginFirmSoli loginSoli = new LoginFirmSoli();
-
-
+public class MainPage420101Test {
+    MainPage420101 mainPage420101 = new MainPage420101();
+    LoginFirmSoli loginFirmSoli = new LoginFirmSoli();
     ObtenerFolio obtenerFolio = new ObtenerFolio();
+    Metodos metodos = new Metodos();
     //VARIABLES
     String FunRFC = "MAVL621207C95";
     String SoliRFC = "AAL0409235E6";
 
-    TramitesFirmasLG tramite80302  = new TramitesFirmasLG(
+    TramitesFirmasLG tramite420101  = new TramitesFirmasLG(
             "C:\\VucemAuto\\automations\\src\\test\\resources\\CredSoli\\aal0409235e6.cer",
             "C:\\VucemAuto\\automations\\src\\test\\resources\\CredSoli\\AAL0409235E6_1012231310.key"
     );
@@ -55,7 +55,7 @@ public class MainPage80302Test {
     }
 
     @Test
-    public void Proceso80302() {
+    public void Proceso420101() {
         /////////////////////////////////////////////////////////////////////////////////////////////////////////-
         // Solicitar el número de repeticiones al usuario a través de un JOptionPane con opción de Cancelar
         String repeticionesStr = JOptionPane.showInputDialog(null, "Ingrese el número de repeticiones:", "Repeticiones", JOptionPane.QUESTION_MESSAGE);
@@ -78,9 +78,9 @@ public class MainPage80302Test {
         /////////////////////////////////////////////////////////////////////////////////////////////////////////-
 
         //Crear checkboxes para seleccionar los métodos
-        JCheckBox dictamenCheckBox = new JCheckBox("ProcesoDictamen80302");
-        JCheckBox autorizacionCheckBox = new JCheckBox("ProcesoAutorizacion80302");
-        JCheckBox confirmacionCheckBox = new JCheckBox("ProcesoConfirmarNotificaciónResolucion80302");
+        JCheckBox dictamenCheckBox = new JCheckBox("ProcesoDictamen420101");
+        JCheckBox autorizacionCheckBox = new JCheckBox("ProcesoAutorizacion420101");
+        JCheckBox confirmacionCheckBox = new JCheckBox("ProcesoConfirmarNotificaciónResolucion420101");
 
         Object[] params = {"Seleccione los métodos a ejecutar:", dictamenCheckBox, autorizacionCheckBox, confirmacionCheckBox};
         int option = JOptionPane.showConfirmDialog(null, params, "Opciones de Métodos", JOptionPane.OK_CANCEL_OPTION);
@@ -93,27 +93,49 @@ public class MainPage80302Test {
 
         // Recopilar los métodos seleccionados
         List<String> selectedMethods = new ArrayList<>();
-        if (dictamenCheckBox.isSelected()) selectedMethods.add("ProcesoDictamen80302");
-        if (autorizacionCheckBox.isSelected()) selectedMethods.add("ProcesoAutorizacion80302");
-        if (confirmacionCheckBox.isSelected()) selectedMethods.add("ProcesoConfirmarNotificaciónResolucion80302");
+        if (dictamenCheckBox.isSelected()) selectedMethods.add("ProcesoDictamen420101");
+        if (autorizacionCheckBox.isSelected()) selectedMethods.add("ProcesoAutorizacion420101");
+        if (confirmacionCheckBox.isSelected()) selectedMethods.add("ProcesoConfirmarNotificaciónResolucion420101");
 
-    ejecutarProcesoNRunnable(() -> {
-        String uuid = UUID.randomUUID().toString();
-        int longitudDeseada = 16;
-        String llavePago = uuid.replace("-", "").substring(0, longitudDeseada);
-        loginSoli.login(tramite80302);
-        mainPage80302.selecRol.sendKeys(new CharSequence[]{"Persona Moral"});
-        mainPage80302.btnacep.click();
-        mainPage80302.Tramites.sendKeys(new CharSequence[]{"Solicitudes nuevas"});
-        mainPage80302.SoliNew.click();
-        mainPage80302.economia.click();
-        mainPage80302.immex.click();
-        mainPage80302.ModificacionPrograma.click();
-        mainPage80302.ModifBajaDomiPBA.click();
-    }, repeticiones);
+        // Ejecutar el proceso con las repeticiones y los métodos seleccionados
+        ejecutarProcesoNRunnable(() -> {
+//            // Ingreso y selección de trámite
+            loginFirmSoli.login(tramite420101);
+            mainPage420101.selecRol.sendKeys("Persona Moral");
+            mainPage420101.btnacep.click();
+            mainPage420101.Tramites.sendKeys("Solicitudes nuevas");
+            mainPage420101.SoliNew.click();
+            mainPage420101.HACIENDA.click();
+            mainPage420101.linkAvisoUnico.click();
+            mainPage420101.linkRegistroPrveedores.click();
+            mainPage420101.linkRegistroDeProveedores.click();
+            //DATOS SOLICITANTE
+            try {
+                Thread.sleep(2000); // Pausa de 3 segundos
+                // Hacer scroll hasta el elemento
+                mainPage420101.Scrol.scrollIntoView(true);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            mainPage420101.labelTipoAviso.click();
+
+            mainPage420101.InputGuardarSolicitud.click();
+            mainPage420101.btnContinuar.click();sleep(5000);
+            Selenide.sleep(5000);
+            metodos.cargarDocumentos();
+            mainPage420101.btmAnexar.click();sleep(4000);
+            Selenide.sleep(8000);
+            mainPage420101.btnCerrar.click();
+            Selenide.sleep(2000);
+            mainPage420101.inputSiguiente.click();sleep(3000);
+            //FIRMAR SOLICITUD
+            loginFirmSoli.firma(tramite420101);
+            String folioText = mainPage420101.folio.getText();sleep(5000);
+            String folioNumber = obtenerFolio.obtenerFolio(folioText);
+        }, repeticiones);
     }
 
-    // Metodo que ejecuta n veces una clase que implementa Runnable
+    //Metodo que ejecuta n veces una clase que implementa Runnable
     public void ejecutarProcesoNRunnable(Runnable proceso, int n) {
         for (int i = 0; i < n; i++) {
             System.out.println("Ejecución del Proceso: " + (i + 1));
