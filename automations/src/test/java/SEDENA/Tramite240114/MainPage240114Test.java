@@ -1,4 +1,4 @@
-package SEDENA.Tramite240119;
+package SEDENA.Tramite240114;
 
 import DBYFOLIO.ObtenerFolio;
 import Firmas.LoginFirmSoli;
@@ -22,8 +22,8 @@ import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.Selenide.sleep;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
-public class MainPage240119Test {
-    MainPage240119 mainPage240119 = new MainPage240119();
+public class MainPage240114Test {
+    MainPage240114 mainPage240114 = new MainPage240114();
     LoginFirmSoli loginFirmSoli = new LoginFirmSoli();
     ObtenerFolio obtenerFolio = new ObtenerFolio();
     Metodos metodos = new Metodos();
@@ -31,7 +31,7 @@ public class MainPage240119Test {
     String FunRFC = "MAVL621207C95";
     String SoliRFC = "AAL0409235E6";
 
-    TramitesFirmasLG tramite240119  = new TramitesFirmasLG(
+    TramitesFirmasLG tramite240114  = new TramitesFirmasLG(
             "C:\\VucemAuto\\automations\\src\\test\\resources\\CredSoli\\aal0409235e6.cer",
             "C:\\VucemAuto\\automations\\src\\test\\resources\\CredSoli\\AAL0409235E6_1012231310.key"
     );
@@ -56,7 +56,7 @@ public class MainPage240119Test {
     }
 
     @Test
-    public void Proceso240119() {
+    public void Proceso240114() {
         /////////////////////////////////////////////////////////////////////////////////////////////////////////-
         // Solicitar el número de repeticiones al usuario a través de un JOptionPane con opción de Cancelar
         String repeticionesStr = JOptionPane.showInputDialog(null, "Ingrese el número de repeticiones:", "Repeticiones", JOptionPane.QUESTION_MESSAGE);
@@ -79,9 +79,9 @@ public class MainPage240119Test {
         /////////////////////////////////////////////////////////////////////////////////////////////////////////-
 
         //Crear checkboxes para seleccionar los métodos
-        JCheckBox dictamenCheckBox = new JCheckBox("ProcesoDictamen240119");
-        JCheckBox autorizacionCheckBox = new JCheckBox("ProcesoAutorizacion240119");
-        JCheckBox confirmacionCheckBox = new JCheckBox("ProcesoConfirmarNotificaciónResolucion240119");
+        JCheckBox dictamenCheckBox = new JCheckBox("ProcesoDictamen240114");
+        JCheckBox autorizacionCheckBox = new JCheckBox("ProcesoAutorizacion240114");
+        JCheckBox confirmacionCheckBox = new JCheckBox("ProcesoConfirmarNotificaciónResolucion240114");
 
         Object[] params = {"Seleccione los métodos a ejecutar:", dictamenCheckBox, autorizacionCheckBox, confirmacionCheckBox};
         int option = JOptionPane.showConfirmDialog(null, params, "Opciones de Métodos", JOptionPane.OK_CANCEL_OPTION);
@@ -94,124 +94,124 @@ public class MainPage240119Test {
 
         // Recopilar los métodos seleccionados
         List<String> selectedMethods = new ArrayList<>();
-        if (dictamenCheckBox.isSelected()) selectedMethods.add("ProcesoDictamen240119");
-        if (autorizacionCheckBox.isSelected()) selectedMethods.add("ProcesoAutorizacion240119");
-        if (confirmacionCheckBox.isSelected()) selectedMethods.add("ProcesoConfirmarNotificaciónResolucion240119");
+        if (dictamenCheckBox.isSelected()) selectedMethods.add("ProcesoDictamen240114");
+        if (autorizacionCheckBox.isSelected()) selectedMethods.add("ProcesoAutorizacion240114");
+        if (confirmacionCheckBox.isSelected()) selectedMethods.add("ProcesoConfirmarNotificaciónResolucion240114");
 
         // Ejecutar el proceso con las repeticiones y los métodos seleccionados
         ejecutarProcesoNRunnable(() -> {
 //            // Ingreso y selección de trámite
-            loginFirmSoli.login(tramite240119);
-            mainPage240119.selecRol.sendKeys("Persona Moral");
-            mainPage240119.btnacep.click();
-            mainPage240119.Tramites.sendKeys("Solicitudes nuevas");
-            mainPage240119.SoliNew.click();
-            mainPage240119.SEDENA.click();
-            mainPage240119.linkCerLicPer.click();
-            mainPage240119.linkPermisoAduanalSEDENA.click();
-            mainPage240119.linkPermisoOrdExpArtPirotecnicos.click();
+            loginFirmSoli.login(tramite240114);
+            mainPage240114.selecRol.sendKeys("Persona Moral");
+            mainPage240114.btnacep.click();
+            mainPage240114.Tramites.sendKeys("Solicitudes nuevas");
+            mainPage240114.SoliNew.click();
+            mainPage240114.SEDENA.click();
+            mainPage240114.linkCerLicPer.click();
+            mainPage240114.linkPermisoAduanalSEDENA.click();
+            mainPage240114.linkPerOrdExpArmMunDivMatPerFisMor.click();
             //DATOS SOLICITANTE
             try {
                 Thread.sleep(2000); // Pausa de 3 segundos
                 // Hacer scroll hasta el elemento
-                mainPage240119.Scrol.scrollIntoView(true);
+                mainPage240114.Scrol.scrollIntoView(true);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            mainPage240119.labelDatosSolicitud.click();
-            mainPage240119.inputOrigenLista.sendKeys("ALTAMIRA");
-            mainPage240119.inputAddOrigenLista.click();
-            mainPage240119.inputPermisoGeneral.sendKeys("PRUEBAS");
-            mainPage240119.inputUsoFinalMercancia.sendKeys("PRUEBA");
-            mainPage240119.btnAgregarMercancia.click();
-            mainPage240119.inputDescripcionMercancia.sendKeys("PRUEBAS");
-            mainPage240119.inputFraccionArancelariaMercancia.sendKeys("28291999");
-            mainPage240119.inputCantidadUMTMercancia.sendKeys("10");
-            mainPage240119.inputValorComercialMercancia.sendKeys("1234");
-            mainPage240119.selectUMCMercancia.sendKeys("Caja");
-            mainPage240119.inputTipoMonedaMercancia.sendKeys("Mexican Peso");
-            mainPage240119.inputPaisOrigenMercancia.sendKeys("ANTARTIDA");
-            mainPage240119.btnAgregarPaisSeleccion.click();
-            mainPage240119.btnAgregarMercancia2.click();
-            mainPage240119.inputSemestre2.click();
-            mainPage240119.inputAnoCurso.click();
+            mainPage240114.labelDatosSolicitud.click();
+            mainPage240114.inputOrigenLista.sendKeys("ALTAMIRA");
+            mainPage240114.inputAddOrigenLista.click();
+            mainPage240114.inputPermisoGeneral.sendKeys("PRUEBAS");
+            mainPage240114.inputUsoFinalMercancia.sendKeys("PRUEBA");
+            mainPage240114.btnAgregarMercancia.click();
+            mainPage240114.inputDescripcionMercancia.sendKeys("PRUEBAS");
+            mainPage240114.inputFraccionArancelariaMercancia.sendKeys("28291999");
+            mainPage240114.inputCantidadUMTMercancia.sendKeys("10");
+            mainPage240114.inputValorComercialMercancia.sendKeys("1234");
+            mainPage240114.selectUMCMercancia.sendKeys("Caja");
+            mainPage240114.inputTipoMonedaMercancia.sendKeys("Mexican Peso");
+            mainPage240114.inputPaisOrigenMercancia.sendKeys("ANTARTIDA");
+            mainPage240114.btnAgregarPaisSeleccion.click();
+            mainPage240114.btnAgregarMercancia2.click();
+            mainPage240114.inputSemestre2.click();
+            mainPage240114.inputAnoCurso.click();
             try {
                 Thread.sleep(2000); // Pausa de 3 segundos
                 // Hacer scroll hasta el elemento
-                mainPage240119.Scrol.scrollIntoView(true);
+                mainPage240114.Scrol.scrollIntoView(true);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            mainPage240119.labelTercerosRelacionados.click();
-            mainPage240119.btnAgregarDestinatario.click();
-            mainPage240119.inputFisica.click();
-            mainPage240119.inputTercerosNombre.sendKeys("PROTEO");
-            mainPage240119.inputTercerosApellidoPaterno.sendKeys("RIVAS");
-            mainPage240119.inputTercerosApellidoMaterno.sendKeys("CHACON");
-            mainPage240119.inputTercerosPais.sendKeys("ARGENTINA");
-            mainPage240119.inputTercerosEstado.sendKeys("CONOCIDO");
-            mainPage240119.inputTercerosCP.sendKeys("23456");
-            mainPage240119.inputTercerosCalle.sendKeys("PRUEBA");
-            mainPage240119.inputTercerosNumeroExt.sendKeys("23456");
-            mainPage240119.inputTercerosNumeroInt.sendKeys("23456");
-            mainPage240119.inputTercerosLada.sendKeys("52");
-            mainPage240119.inputTercerosTelefono.sendKeys("23456257");
-            mainPage240119.inputTercerosCorreoElec.sendKeys("prueba@test.com");
-            mainPage240119.btnGuardarTerceros.click();
-            mainPage240119.btnAgregarProveedor.click();
-            mainPage240119.inputNacional.click();
-            mainPage240119.inputFisica.click();
-            mainPage240119.inputTerceroRFC.sendKeys("LEQI8101314S7");
-            mainPage240119.inputTercerosNombre.sendKeys("RICARDO");
-            mainPage240119.inputTercerosApellidoPaterno.sendKeys("REYES");
-            mainPage240119.inputTercerosApellidoMaterno.sendKeys("RAMIREZ");
-            mainPage240119.inputTercerosEstado2.sendKeys("COLIMA");
-            mainPage240119.inputTercerosMunicipio.sendKeys("COLIMA");
-            mainPage240119.inputTercerosLocalidad.sendKeys("COLIMA");
-            mainPage240119.inputTercerosCP2.sendKeys("28006");
-            mainPage240119.inputTercerosColonia.sendKeys("AYUNTAMIENTO");
-            mainPage240119.inputTercerosCalle.sendKeys("PRUEBA");
-            mainPage240119.inputTercerosNumeroExt.sendKeys("1234");
-            mainPage240119.inputTercerosNumeroInt.sendKeys("321");
-            mainPage240119.inputTercerosLada.sendKeys("52");
-            mainPage240119.inputTercerosTelefono.sendKeys("234565432");
-            mainPage240119.inputTercerosCorreoElec.sendKeys("pruebas@test.com");
-            mainPage240119.btnGuardarTerceros.click();
+            mainPage240114.labelTercerosRelacionados.click();
+            mainPage240114.btnAgregarDestinatario.click();
+            mainPage240114.inputFisica.click();
+            mainPage240114.inputTercerosNombre.sendKeys("PROTEO");
+            mainPage240114.inputTercerosApellidoPaterno.sendKeys("RIVAS");
+            mainPage240114.inputTercerosApellidoMaterno.sendKeys("CHACON");
+            mainPage240114.inputTercerosPais.sendKeys("ARGENTINA");
+            mainPage240114.inputTercerosEstado.sendKeys("CONOCIDO");
+            mainPage240114.inputTercerosCP.sendKeys("23456");
+            mainPage240114.inputTercerosCalle.sendKeys("PRUEBA");
+            mainPage240114.inputTercerosNumeroExt.sendKeys("23456");
+            mainPage240114.inputTercerosNumeroInt.sendKeys("23456");
+            mainPage240114.inputTercerosLada.sendKeys("52");
+            mainPage240114.inputTercerosTelefono.sendKeys("23456257");
+            mainPage240114.inputTercerosCorreoElec.sendKeys("prueba@test.com");
+            mainPage240114.btnGuardarTerceros.click();
+            mainPage240114.btnAgregarProveedor.click();
+            mainPage240114.inputNacional.click();
+            mainPage240114.inputFisica.click();
+            mainPage240114.inputTerceroRFC.sendKeys("LEQI8101314S7");
+            mainPage240114.inputTercerosNombre.sendKeys("RICARDO");
+            mainPage240114.inputTercerosApellidoPaterno.sendKeys("REYES");
+            mainPage240114.inputTercerosApellidoMaterno.sendKeys("RAMIREZ");
+            mainPage240114.inputTercerosEstado2.sendKeys("COLIMA");
+            mainPage240114.inputTercerosMunicipio.sendKeys("COLIMA");
+            mainPage240114.inputTercerosLocalidad.sendKeys("COLIMA");
+            mainPage240114.inputTercerosCP2.sendKeys("28006");
+            mainPage240114.inputTercerosColonia.sendKeys("AYUNTAMIENTO");
+            mainPage240114.inputTercerosCalle.sendKeys("PRUEBA");
+            mainPage240114.inputTercerosNumeroExt.sendKeys("1234");
+            mainPage240114.inputTercerosNumeroInt.sendKeys("321");
+            mainPage240114.inputTercerosLada.sendKeys("52");
+            mainPage240114.inputTercerosTelefono.sendKeys("234565432");
+            mainPage240114.inputTercerosCorreoElec.sendKeys("pruebas@test.com");
+            mainPage240114.btnGuardarTerceros.click();
 
-            mainPage240119.labelPagoDerechos.click();
+            mainPage240114.labelPagoDerechos.click();
             Random random = new Random();
             int cveReferencia = 10_000_000 + random.nextInt(90_000_000);
-            mainPage240119.inputClaveReferencia.setValue(String.valueOf(cveReferencia));
+            mainPage240114.inputClaveReferencia.setValue(String.valueOf(cveReferencia));
             String caracteres = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
             StringBuilder factura = new StringBuilder();
             Random aleatorio = new Random();
             for (int i = 0; i < 10; i++) {
                 factura.append(caracteres.charAt(random.nextInt(caracteres.length())));
             }
-            mainPage240119.inputCadenaDependencia.setValue(factura.toString());
-            mainPage240119.selectSolicitudPagoBancoClave.sendKeys("BANAMEX");
+            mainPage240114.inputCadenaDependencia.setValue(factura.toString());
+            mainPage240114.selectSolicitudPagoBancoClave.sendKeys("BANAMEX");
             String letras = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
             StringBuilder otro = new StringBuilder();
             Random serial = new Random();
             for (int i = 0; i < 5; i++) {
                 factura.append(caracteres.charAt(random.nextInt(caracteres.length())));
             }
-            mainPage240119.inputSolicitudPagoLlave.setValue(factura.toString());
-            Selenide.executeJavaScript("arguments[0].value = '08/04/2025';",mainPage240119.inputCalendar);sleep(100);
-            mainPage240119.inputImportePago.sendKeys("5000");
-            mainPage240119.InputGuardarSolicitud.click();
-            mainPage240119.btnContinuar.click();sleep(5000);
+            mainPage240114.inputSolicitudPagoLlave.setValue(factura.toString());
+            Selenide.executeJavaScript("arguments[0].value = '08/04/2025';",mainPage240114.inputCalendar);sleep(100);
+            mainPage240114.inputImportePago.sendKeys("5000");
+            mainPage240114.InputGuardarSolicitud.click();
+            mainPage240114.btnContinuar.click();sleep(5000);
             Selenide.sleep(5000);
             metodos.cargarDocumentos();
-            mainPage240119.btmAnexar.click();sleep(4000);
-            Selenide.sleep(4000);
-            mainPage240119.btnCerrar.click();
+            mainPage240114.btmAnexar.click();sleep(7000);
+            Selenide.sleep(8000);
+            mainPage240114.btnCerrar.click();
             Selenide.sleep(2000);
-            mainPage240119.inputSiguiente.click();sleep(3000);
+            mainPage240114.inputSiguiente.click();sleep(3000);
             //FIRMAR SOLICITUD
-            loginFirmSoli.firma(tramite240119);
+            loginFirmSoli.firma(tramite240114);
             Selenide.sleep(2000);
-            String folioText = mainPage240119.folio.getText();sleep(5000);
+            String folioText = mainPage240114.folio.getText();sleep(5000);
             String folioNumber = obtenerFolio.obtenerFolio(folioText);
         }, repeticiones);
     }

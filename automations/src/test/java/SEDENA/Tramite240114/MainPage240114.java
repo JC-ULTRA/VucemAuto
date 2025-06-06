@@ -1,11 +1,11 @@
-package SEDENA.Tramite240119;
+package SEDENA.Tramite240114;
 
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Selenide.$x;
 
-public class MainPage240119 {
+public class MainPage240114 {
     public SelenideElement cerS = $x("//*[@id='certificate']");
     public SelenideElement keyS = $x("//*[@id='privateKey']");
     public SelenideElement pass = $x("//*[@id='privateKeyPassword']");
@@ -20,12 +20,12 @@ public class MainPage240119 {
     public SelenideElement SEDENA = $x("//*[@id=\"workingArea\"]/form/a[5]/img");
     public SelenideElement linkCerLicPer = $x("/html/body/main/div/div[3]/div/div[6]/ul/li/a");
     public SelenideElement linkPermisoAduanalSEDENA = $x("/html/body/main/div/div[3]/div/div[6]/ul/li/ul/li[1]/a");
-    public SelenideElement linkPermisoOrdExpArtPirotecnicos = $x("/html/body/main/div/div[3]/div/div[6]/ul/li/ul/li[1]/ul/li[17]/a");
+    public SelenideElement linkPerOrdExpArmMunDivMatPerFisMor = $x("/html/body/main/div/div[3]/div/div[6]/ul/li/ul/li[1]/ul/li[12]/a");
     //DATOS SOLICITUD
     public SelenideElement labelDatosSolicitud = $x("/html/body/main/div/div[4]/div/form/div[2]/ul/li[2]/a/label");
     public SelenideElement inputOrigenLista = $x("//*[@id=\"origenlistaOrigen1\"]");
-    public SelenideElement inputAddOrigenLista = $x("/html/body/main/div/div[4]/div/form/div[2]/div/div[2]/div[2]/div/div/div[2]/div[2]/input[2]");
-    public SelenideElement inputPermisoGeneral = $x("//*[@id=\"tabs-2\"]/div[3]/div[1]/input");
+    public SelenideElement inputAddOrigenLista = $x("//*[@id=\"addlistaOrigen1\"]");
+    public SelenideElement inputPermisoGeneral = $x("/html/body/main/div/div[4]/div/form/div[2]/div/div[2]/div[4]/div[1]/input");
     public SelenideElement inputUsoFinalMercancia = $x("//*[@id=\"solicitud.mercancia.usoFinal\"]");
     public SelenideElement btnAgregarMercancia = $x("//*[@id=\"btnAgregarMercancias\"]");
     public SelenideElement inputDescripcionMercancia = $x("//*[@id=\"idDenominacionComunInternacional\"]");
@@ -81,5 +81,4 @@ public class MainPage240119 {
     public SelenideElement btmAnexar = $x("//*[@id=\"btnAnexar\"]");
     public SelenideElement btnCerrar = $x("//*[@id=\"btnCerrar\"]");
     public SelenideElement inputSiguiente = $x("//*[@id=\"siguienteButton\"]");
-
 }

@@ -108,7 +108,7 @@ public class MainPage260703Test {
             mainPage260703.inputCalle.setValue("Av. Revolución");
             mainPage260703.inputLada.setValue("52");
             mainPage260703.inputTelefono.setValue("12345678");
-            mainPage260703.inputRegimen.sendKeys("Temporles"); // Ejemplo: Régimen general de personas morales
+            mainPage260703.inputRegimen.sendKeys("Temporles");
             mainPage260703.inputAduana.sendKeys("ALTAMIRA");
             mainPage260703.checkBoxMercancia.click();
             mainPage260703.btnModificar.click();
@@ -170,19 +170,20 @@ public class MainPage260703Test {
             mainPage260703.btnModificarDestinatario.click();
             //mainPage260703.checkBoxMoral.click();
             mainPage260703.inputTerceroRFC.setValue("TSD931210493");
-            mainPage260703.inputTerceroRazonSocial.setValue("PRUEBAS SA DE CV");
-            //mainPage260703.inputPais.sendKeys("CHINA (REPUBLICA POPULAR)");
-            mainPage260703.terceroEstadoLocalidad.sendKeys("COLIMA");
-            mainPage260703.inputTerceroMunicipio.sendKeys("COLIMA");
-            mainPage260703.inputTerceroLocalidad.sendKeys("COLIMA");
-            mainPage260703.terceroCodigoPostal.sendKeys("28010");
-            mainPage260703.inputCodigoPostalEquivalente.sendKeys("ANTORCHA");
-            mainPage260703.terceroCalle.setValue("Lázaro Cárdenas");
-            mainPage260703.terceroNumExterior.setValue("13471118");
-            mainPage260703.terceroNumInterior.setValue("4A");
-            mainPage260703.inputTerceroLada.setValue("52");
-            mainPage260703.terceroTelefono.setValue("5533335");
-            mainPage260703.terceroCorreo.setValue("contactar@fabricante.com");
+            mainPage260703.btnBuscarEmpresa.click();
+//            mainPage260703.inputTerceroRazonSocial.setValue("PRUEBAS SA DE CV");
+//            //mainPage260703.inputPais.sendKeys("CHINA (REPUBLICA POPULAR)");
+//            mainPage260703.terceroEstadoLocalidad.sendKeys("COLIMA");
+//            mainPage260703.inputTerceroMunicipio.sendKeys("COLIMA");
+//            mainPage260703.inputTerceroLocalidad.sendKeys("COLIMA");
+//            mainPage260703.terceroCodigoPostal.sendKeys("28010");
+//            mainPage260703.inputCodigoPostalEquivalente.sendKeys("ANTORCHA");
+//            mainPage260703.terceroCalle.setValue("Lázaro Cárdenas");
+//            mainPage260703.terceroNumExterior.setValue("13471118");
+//            mainPage260703.terceroNumInterior.setValue("4A");
+//            mainPage260703.inputTerceroLada.setValue("52");
+//            mainPage260703.terceroTelefono.setValue("5533335");
+//            mainPage260703.terceroCorreo.setValue("contactar@fabricante.com");
             mainPage260703.btnGuardarDatosTerceros.click();
             try {
                 Thread.sleep(2000); // Pausa de 3 segundos
@@ -209,8 +210,8 @@ public class MainPage260703Test {
             mainPage260703.inputGuarda.click();
             sleep(1000);
             metodos.cargarDocumentos();
-            mainPage260703.btnAnexar.click();
-            sleep(2000);
+            mainPage260703.btnAnexar.click();sleep(4000);
+            sleep(4000);
             mainPage260703.btnCerrar.click();
             sleep(100);
             mainPage260703.inputSiguiente.click();
