@@ -1,7 +1,6 @@
 package Economia.Tramite80302;
 
 import DBYFOLIO.ObtenerFolio;
-import Economia.Tramite80302.MainPage80302;
 import Firmas.LoginFirmSoli;
 import Firmas.TramitesFirmasLG;
 import com.codeborne.selenide.*;

@@ -22,7 +22,9 @@ public class MainPage260703 {
     public SelenideElement Scrol = Selenide.$x("//*[@id=\"logoHeader\"]");
     //DATOS SOLICITUD
     public SelenideElement labelDatosSolicitud = $x("/html/body/main/div[1]/div[4]/div[1]/form/div[1]/ul/li[2]/a/label");
+    public SelenideElement inputProrroga = $x("//*[@id=\"pro\"]");
     public SelenideElement inputModif = $x("//*[@id=\"mod\"]");
+    public SelenideElement inputModificacionProrroga = $x("//*[@id=\"modPro\"]");
     public SelenideElement textareaJustificacionId = $x("//*[@id=\"justificacionId\"]");
     public SelenideElement inputRazonSocial = $x("//*[@id=\"solicitud.establecimiento.RFCResponsableSanitario\"]");
     public SelenideElement inputDenominación = $x("//*[@id=\"solicitud.establecimiento.razonSocial\"]");
@@ -87,7 +89,7 @@ public class MainPage260703 {
     public SelenideElement terceroCorreo = $x("//*[@id=\"terceros_correoElec\"]");
     public SelenideElement btnGuardarDatosTerceros = $x("//*[@id=\"btnGuardarFrmDatosTercero\"]");
     public SelenideElement checkBoxDestinatario = $x("//*[@id=\"jqg_gridTerceros_TIPERS_DES_0\"]");
-    public SelenideElement btnModificarDestinatario = $x("//*[@id=\"modificarTercero_TIPERS_DES\"]");
+    public SelenideElement btnModificarDestinatario = $x("//*[@id=\"modificarTercero_TIPERS_FAB\"]");
     public SelenideElement checkBoxMoral = $x("//*[@id=\"terceros_tipoPersonaMoral\"]");
     public SelenideElement inputCodigoPostalEquivalente = $x("//*[@id=\"terceros_selectColonia\"]");
     //PAGO DE DERECHOS
