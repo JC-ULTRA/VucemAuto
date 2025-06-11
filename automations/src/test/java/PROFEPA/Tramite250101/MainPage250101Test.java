@@ -16,6 +16,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import java.util.concurrent.TimeUnit;
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.Selenide.sleep;
@@ -90,16 +91,14 @@ public class MainPage250101Test {
             JOptionPane.showMessageDialog(null, "Operación cancelada por el usuario.");
             return;
         }
-
         // Recopilar los métodos seleccionados
         List<String> selectedMethods = new ArrayList<>();
         if (dictamenCheckBox.isSelected()) selectedMethods.add("ProcesoDictamen250101");
         if (autorizacionCheckBox.isSelected()) selectedMethods.add("ProcesoAutorizacion250101");
         if (confirmacionCheckBox.isSelected()) selectedMethods.add("ProcesoConfirmarNotificaciónResolucion250101");
-
         // Ejecutar el proceso con las repeticiones y los métodos seleccionados
         ejecutarProcesoNRunnable(() -> {
-//            // Ingreso y selección de trámite
+            // Ingreso y selección de trámite
             loginFirmSoli.login(tramite250101);
             mainPage250101.selecRol.sendKeys("Persona Moral");
             mainPage250101.btnacep.click();
@@ -121,9 +120,76 @@ public class MainPage250101Test {
             mainPage250101.selectSolicitudAduanasAduanaClave.sendKeys("COLOMBIA");
             mainPage250101.selectSolicitudUnidadAdministrativaRepresentacion.sendKeys("COLOMBIA");
             mainPage250101.selectSolicitudEntidadesEntidadClave.sendKeys("NUEVO LEON");
-
-
-
+            mainPage250101.inputGuardarSolicitudParcial.click();
+            mainPage250101.labelDestinatarioAgenteAduanal.click();
+            mainPage250101.inputCapturarDestinatario.click();
+            mainPage250101.inputDenominacionDestinatario.sendKeys("PROTEO TOYS");
+            mainPage250101.selectEntidadFederativa.sendKeys("CIUDAD DE MÉXICO");
+            mainPage250101.inputCodigoPostalDestinatario.sendKeys("06934");
+            mainPage250101.textareaCalleDestinatario.sendKeys("CONOCIDA");
+            mainPage250101.inputRegistroDestinatario.click();
+            Selenide.sleep(500);
+            metodos.presionarEscYSpace();
+            mainPage250101.inputAgregarRequisito.click();
+            mainPage250101.inputNombreAgente.sendKeys("RICHARD");
+            mainPage250101.inputApellidoPaternoAgente.sendKeys("RICSON");
+            mainPage250101.inputApellidoMaternoAgente.sendKeys("RIVERO");
+            mainPage250101.inputPatente.sendKeys("1234");
+            mainPage250101.inputAgregarAgente.click();
+            mainPage250101.labelMercancSinCfi.click();
+            mainPage250101.inputAgregarDescripcion.click();
+            mainPage250101.selectDescripcionProducto.sendKeys("ASERRIN");
+            mainPage250101.selectFraccionArancelariaClave.sendKeys("44013999");
+            mainPage250101.inputCantidad.sendKeys("10");
+            mainPage250101.selectUnidadMedidaClave.sendKeys("Gramo");
+            mainPage250101.selectGenero.sendKeys("Alnus");
+            mainPage250101.selectEspecie.sendKeys("ninguno");
+            mainPage250101.selectVidaSilvestre.sendKeys("ninguno");
+            mainPage250101.selectPaisesDetalleMercanciaPais.sendKeys("BRASIL");
+            mainPage250101.selectPaisesDetalleMercanciaPais2.sendKeys("ALEMANIA");
+            mainPage250101.inputAgregarMercancia.click();
+            mainPage250101.inputAgregarAgente2.click();
+            mainPage250101.inputGuardarSeccionMercancias.click();
+            mainPage250101.labelRequisitos.click();
+            mainPage250101.selectMedioTransporte.sendKeys("Carretero");
+            mainPage250101.inputAgregarRequisito2.click();
+            mainPage250101.inputNumIdentificacion.sendKeys("1234");
+            mainPage250101.inputNumEconomico.sendKeys("2345");
+            mainPage250101.inputPlaca.sendKeys("3465");
+            mainPage250101.inputAgregarTransporte.click();
+            mainPage250101.inputAgregarRequisito3.click();
+            mainPage250101.selectRegistroRequisitoCaption.sendKeys("Comprobante");
+            mainPage250101.inputNumero.sendKeys("1369");
+            Selenide.executeJavaScript("arguments[0].value = '08/04/2025';",mainPage250101.inputCalendarFrom);sleep(100);
+            mainPage250101.inputAgregarAgente3.click();
+            mainPage250101.inputAgregarRequisito3.click();
+            mainPage250101.selectRegistroRequisitoCaption.sendKeys("Certificado");
+            mainPage250101.inputNumero.sendKeys("1369");
+            Selenide.executeJavaScript("arguments[0].value = '08/04/2025';",mainPage250101.inputCalendarFrom);sleep(100);
+            mainPage250101.inputAgregarAgente3.click();
+            mainPage250101.inputAgregarRequisito3.click();
+            mainPage250101.selectRegistroRequisitoCaption.sendKeys("Factura");
+            mainPage250101.inputNumero.sendKeys("1369");
+            Selenide.executeJavaScript("arguments[0].value = '08/04/2025';",mainPage250101.inputCalendarFrom);sleep(100);
+            mainPage250101.inputAgregarAgente3.click();
+            mainPage250101.inputAgregarRequisito3.click();
+            mainPage250101.selectRegistroRequisitoCaption.sendKeys("Otros");
+            mainPage250101.inputTxtNumero.sendKeys("1369");
+            mainPage250101.inputAgregarAgente3.click();
+            mainPage250101.labelPagoDerechos.click();
+            mainPage250101.selectSolicitudPagoBancoClave.sendKeys("BANAMEX");
+            Random random = new Random();
+            String caracteres = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            StringBuilder factura = new StringBuilder();
+            Random serial = new Random();
+            for (int i = 0; i < 5; i++) {
+                factura.append(caracteres.charAt(random.nextInt(caracteres.length())));
+            }
+            mainPage250101.inputSolicitudPagoLlave.setValue(factura.toString());
+            Selenide.executeJavaScript("arguments[0].value = '08/04/2025';",mainPage250101.inputSolicitudPagoLlave2);sleep(100);
+            mainPage250101.inputGuardarPago.click();
+            mainPage250101.inputDatosRevisadosCorrectos.click();
+            //FIRMA
             mainPage250101.inputGuardarSolicitud.click();
             mainPage250101.inputGuarda.click();sleep(5000);
             Selenide.sleep(5000);
@@ -133,7 +199,6 @@ public class MainPage250101Test {
             mainPage250101.btnCerrar.click();
             Selenide.sleep(2000);
             mainPage250101.inputSiguiente.click();sleep(3000);
-            //FIRMAR SOLICITUD
             loginFirmSoli.firma(tramite250101);
             Selenide.sleep(2000);
             String folioText = mainPage250101.folio.getText();sleep(5000);

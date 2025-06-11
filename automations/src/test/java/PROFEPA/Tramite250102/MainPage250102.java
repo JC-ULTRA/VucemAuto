@@ -1,11 +1,11 @@
-package PROFEPA.Tramite250101;
+package PROFEPA.Tramite250102;
 
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Selenide.$x;
 
-public class MainPage250101 {
+public class MainPage250102 {
     public SelenideElement cerS = $x("//*[@id='certificate']");
     public SelenideElement keyS = $x("//*[@id='privateKey']");
     public SelenideElement pass = $x("//*[@id='privateKeyPassword']");
@@ -20,7 +20,7 @@ public class MainPage250101 {
     public SelenideElement PROFEPA = $x("//*[@id=\"workingArea\"]/form/a[6]/img");
     public SelenideElement linkCertificadosLicenciasPermisos = $x("/html/body/main/div/div[3]/div/div[6]/ul/li/a");
     public SelenideElement linkRegistroVerificaci = $x("/html/body/main/div/div[3]/div/div[6]/ul/li/ul/li/a");
-    public SelenideElement linkProfepaSiiFloraFauna = $x("//a[@onclick=\"javascript:callMenuTramite('/ventanilla-gubernamentales-HA/invocarModulo.action?init','/ventanilla-gubernamentales-HA//gubernamentales2/profepa/registroVerificacion.action?solicitud.discriminatorValue=250101&iniciar','250101','','')\"]");
+    public SelenideElement linkProfepaSiiFloraFaunaDifComercio = $x("/html/body/main/div/div[3]/div/div[6]/ul/li/ul/li/ul/li[2]/a");
     //SOLICITUD
     public SelenideElement labelTipoMovimiento = $x("//label[@for='captura.tab.tipoMovimiento']");
     //tipo movimiento
