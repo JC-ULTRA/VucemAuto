@@ -179,7 +179,7 @@ public class MainPage260303Test {
                 mainPage260303.NumRegistroSanitario.sendKeys("5645464102");
                 mainPage260303.Presentacion.sendKeys("Tabletas");
                 mainPage260303.btnAgregarDetalle.sendKeys("Tabletas 100mg QA");
-                mainPage260303.btnAgregarInfoMercancia.click();
+                mainPage260303.btnAgregarInfoMercancia.click();sleep(1000);
                 //Agregar la información de la mercancía
                 mainPage260303.selectAduanas.selectOption("AEROPUERTO INT. DE LA CD DE MEXICO");
 
