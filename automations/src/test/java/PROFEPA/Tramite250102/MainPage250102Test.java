@@ -13,13 +13,11 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.chrome.ChromeOptions;
-
 import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
-
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.Selenide.sleep;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
@@ -194,7 +192,6 @@ public class MainPage250102Test {
             Selenide.executeJavaScript("arguments[0].value = '08/04/2025';",mainPage250102.inputSolicitudPagoLlave2);sleep(100);
             mainPage250102.inputGuardarPago.click();
             mainPage250102.inputDatosRevisadosCorrectos.click();
-
             mainPage250102.inputGuardarSolicitud.click();
             mainPage250102.inputGuarda.click();sleep(5000);
             Selenide.sleep(5000);
