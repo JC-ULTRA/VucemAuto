@@ -99,6 +99,7 @@ public class MainPage250103 {
     public SelenideElement inputGuardarPago = $x("//*[@id='guardarPago']");
     public SelenideElement inputDatosRevisadosCorrectos = $x("//*[@id='datosRevisadosCorrectos']");
     //FIRMA
+
     public SelenideElement inputGuardarSolicitud = $x("//*[@id=\"guardarSolicitud\"]");
     public SelenideElement inputGuarda = $x("/html/body/div[1]/div[3]/div[3]/div/form/table/tbody/tr/td/input[2]");
     public SelenideElement inputAdjuntarDocumentos = $x("//input[@type='button' and @value='Adjuntar documentos']");
