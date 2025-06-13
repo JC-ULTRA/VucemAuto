@@ -165,24 +165,24 @@ public class MainPage250103Test {
             mainPage250103.selectRegistroRequisitoCaption.sendKeys("Comprobante");
             mainPage250103.inputNumero.sendKeys("1369");
             Selenide.executeJavaScript("arguments[0].value = '08/04/2025';",mainPage250103.inputCalendarFrom);sleep(100);
-            mainPage250103.inputAgregarAgente3.click();
-            Selenide.sleep(500);
-            mainPage250103.inputAgregarRequisito3.click();
-            mainPage250103.selectRegistroRequisitoCaption.sendKeys("Certificado");
-            mainPage250103.inputNumero.sendKeys("1369");
-            Selenide.executeJavaScript("arguments[0].value = '08/04/2025';",mainPage250103.inputCalendarFrom);sleep(100);
-            mainPage250103.inputAgregarAgente3.click();
-            mainPage250103.inputAgregarRequisito3.click();
-            mainPage250103.selectRegistroRequisitoCaption.sendKeys("Factura");
-            mainPage250103.inputNumero.sendKeys("1369");
-            Selenide.executeJavaScript("arguments[0].value = '08/04/2025';",mainPage250103.inputCalendarFrom);sleep(100);
-            mainPage250103.inputAgregarAgente3.click();
-            mainPage250103.inputAgregarRequisito3.click();
-            mainPage250103.selectRegistroRequisitoCaption.sendKeys("Otros");
-            mainPage250103.inputTxtNumero.sendKeys("1369");
-            mainPage250103.inputAgregarAgente3.click();
-            mainPage250103.labelPagoDerechos.click();
-            mainPage250103.selectSolicitudPagoBancoClave.sendKeys("BANAMEX");
+            mainPage250103.inputAgregarAgente3.click();sleep(500);
+            Selenide.sleep(500);sleep(500);
+            mainPage250103.inputAgregarRequisito3.click();sleep(500);
+            mainPage250103.selectRegistroRequisitoCaption.sendKeys("Certificado");sleep(500);
+            mainPage250103.inputNumero.sendKeys("1369");sleep(500);
+            Selenide.executeJavaScript("arguments[0].value = '08/04/2025';",mainPage250103.inputCalendarFrom);sleep(100);sleep(500);
+            mainPage250103.inputAgregarAgente3.click();sleep(500);
+            mainPage250103.inputAgregarRequisito3.click();sleep(500);
+            mainPage250103.selectRegistroRequisitoCaption.sendKeys("Factura");sleep(500);
+            mainPage250103.inputNumero.sendKeys("1369");sleep(500);
+            Selenide.executeJavaScript("arguments[0].value = '08/04/2025';",mainPage250103.inputCalendarFrom);sleep(100);sleep(500);
+            mainPage250103.inputAgregarAgente3.click();sleep(500);
+            mainPage250103.inputAgregarRequisito3.click();sleep(500);
+            mainPage250103.selectRegistroRequisitoCaption.sendKeys("Otros");sleep(500);
+            mainPage250103.inputTxtNumero.sendKeys("1369");sleep(500);
+            mainPage250103.inputAgregarAgente3.click();sleep(500);
+            mainPage250103.labelPagoDerechos.click();sleep(500);
+            mainPage250103.selectSolicitudPagoBancoClave.sendKeys("BANAMEX");sleep(500);
             Random random = new Random();
             String caracteres = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
             StringBuilder factura = new StringBuilder();
@@ -207,8 +207,8 @@ public class MainPage250103Test {
             //FIRMAR SOLICITUD
             loginFirmSoli.firma(tramite250103);
             Selenide.sleep(2000);
-            String folioText = mainPage250103.folio.getText();sleep(5000);
-            String folioNumber = obtenerFolio.obtenerFolio(folioText);
+//            String folioText = mainPage250103.folio.getText();sleep(5000);
+//            String folioNumber = obtenerFolio.obtenerFolio(folioText);
         }, repeticiones);
     }
 
