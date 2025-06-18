@@ -25,13 +25,14 @@ public class MainPage230501 {
     public SelenideElement labelDatosSolicitud = $x("/html/body/main/div/div[4]/div/div[5]/form/div[2]/ul/li[2]/a/label");
     //tipo movimiento
     public SelenideElement inputDeclaracion = $x("//*[@id=\"declaracion0\"]");
-    public SelenideElement inputfraccion = $x("//*[@id=\"fraccionNoRooterdam\"]");
+    public SelenideElement inputfraccion = $x("//*[@id=\"fraccionRooterdam\"]");
     public SelenideElement checkMaterial = $x("//*[@id=\"esMinimata\"]");
     public SelenideElement inputCompuestoMercurio = $x("//*[@id=\"solicitud.ideGenerica2\"]");
     public SelenideElement inputEsMercurio = $x("//*[@id=\"esMercurio\"]");
-    public SelenideElement inputNumCAS = $x("//*[@id=\"numeroCasTextoNoRotterdam\"]");
+    public SelenideElement inputNumCAS = $x("//*[@id=\"numeroCasTextoRotterdam\"]");
     public SelenideElement inputConstanciaCISEN = $x("//*[@id=\"constancisCISEN\"]");
     public SelenideElement btnAgregarCAS = $x("//*[@id=\"btnAgregarCASMercancias\"]");
+    //DATOS
     public SelenideElement inputNombreComun = $x("//*[@id=\"solicitud.nombreComun\"]");
     public SelenideElement inputNombreComercial = $x("//*[@id=\"solicitud.nombreComercial\"]");
     public SelenideElement inputEstadoFisicoMental = $x("//*[@id=\"solicitud.mercancia.estadoFisico\"]");
@@ -56,21 +57,26 @@ public class MainPage230501 {
     public SelenideElement inputTerceroNombre = $x("//*[@id=\"terceros_nombre\"]");
     public SelenideElement inputTerceroApePAter = $x("//*[@id=\"terceros_apellidoPaterno\"]");
     public SelenideElement inputTerceroApeMAter = $x("//*[@id=\"terceros_apellidoMaterno\"]");
-    public SelenideElement terceroEstado2 = $x("//*[@id=\"terceros_selectEstado\"]");
-    public SelenideElement terceroMunicipio2 = $x("//*[@id=\"terceros_selectMunicipio\"]");
-    public SelenideElement terceroLocalidad2 = $x("//*[@id=\"terceros_selectLocalidad\"]");
-    public SelenideElement terceroCodigoPostal2 = $x("//*[@id=\"terceros_codPostal1\"]");
+    public SelenideElement terceroEstado = $x("//*[@id=\"terceros_selectPais\"]");
+    public SelenideElement terceroCodigoPostal = $x("//*[@id=\"terceros_codPostal\"]");
+    public SelenideElement terceroLocalidad = $x("//*[@id=\"terceros_txtEstadoLocalidad\"]");
+    public SelenideElement terceroCalle = $x("//*[@id=\"terceros_calle\"]");
     public SelenideElement terceroColonia2 = $x("//*[@id=\"terceros_selectColonia\"]");
-    public SelenideElement terceroCalle2 = $x("//*[@id=\"terceros_calle\"]");
-    public SelenideElement terceroNumExterior2 = $x("//*[@id=\"terceros_numExterior\"]");
-    public SelenideElement terceroNumInterior2 = $x("//*[@id=\"terceros_numInterior\"]");
-    public SelenideElement terceroTelefono2 = $x("//*[@id=\"terceros_telefono\"]");
-    public SelenideElement terceroCorreo2 = $x("//*[@id=\"terceros_correoElec\"]");
-    public SelenideElement btnGuardarDatosTercero2 = $x("//*[@id=\"btnGuardarFrmDatosTercero\"]");
+    public SelenideElement terceroNumExterior = $x("//*[@id=\"terceros_numExterior\"]");
+    public SelenideElement terceroNumInterior = $x("//*[@id=\"terceros_numInterior\"]");
+    public SelenideElement terceroLada = $x("//*[@id=\"terceros_lada\"]");
+    public SelenideElement terceroTelefono = $x("//*[@id=\"terceros_telefono\"]");
+    public SelenideElement terceroCorreo = $x("//*[@id=\"terceros_correoElec\"]");
+    public SelenideElement tercerosUso = $x ("//*[@id=\"terceros_usoFinal\"]");
+public SelenideElement terceroDescripcionUso = $x("//*[@id=\"descripcionUsoFinal\"]");
+public SelenideElement btnAgregarUsoFinal = $x("//*[@id=\"contenidoDatosUsoFinal\"]/div[3]/div[2]/input[2]");
+    public SelenideElement btnGuardarDatosTercero = $x("//*[@id=\"btnGuardarFrmDatosTercero\"]");
+    public SelenideElement btAgregarRepresentante = $x("//*[@id=\"agregarTercero_TIPERS_OTR\"]");
+    public SelenideElement btnAgregarUsuario = $x ("//*[@id=\"agregarTercero_TIPERS_USF\"]");
     //guardado
     //DESTINATARIO & AGENTE ADUANAL
     //Datos Destinatario
-    public SelenideElement inputAgregarDestinatario = $x("//*[@id=\"agregarDestinatario\"]");
+    public SelenideElement inputAgregarDestinatario2 = $x("//*[@id=\"agregarDestinatario\"]");
     //Destinatario
     public SelenideElement inputDenominacionDestinatario = $x("//*[@id='denominacionRSDestinatario']");
     public SelenideElement selectPaisNacionalDestinatario = $x("//*[@id='paisNacionalDestinatario1']");
@@ -95,7 +101,7 @@ public class MainPage230501 {
     public SelenideElement selectDescripcionProducto = $x("//*[@id='descripcionProducto.idDescripcionProducto']");
     //Detalle
     public SelenideElement selectFraccionArancelariaClave = $x("//*[@id='fraccionArancelaria.clave']");
-    public SelenideElement inputCantidad = $x("//*[@id='cantidad']");
+    public SelenideElement inputCantidad2 = $x("//*[@id='cantidad']");
     public SelenideElement selectUnidadMedidaClave = $x("//*[@id='unidadMedida.clave']");
     public SelenideElement selectGenero = $x("//*[@id='genero.genero']");
     public SelenideElement selectEspecie = $x("//*[@id='especie.idEspecie']");
@@ -122,10 +128,10 @@ public class MainPage230501 {
     public SelenideElement inputAgregarAgente3 = $x("//input[contains(@onclick, \"'clickin');javascript:agregarRequisito();\")]");
     public SelenideElement inputTxtNumero = $x("//*[@id='txt_numero']");
     //PAGO DERECHO
-    public SelenideElement labelPagoDerechos = $x("//label[contains(@for, 'rofepa')]");
+    public SelenideElement labelPagoDerechos = $x("/html/body/main/div/div[4]/div/div[5]/form/div[2]/ul/li[4]/a/label");
     public SelenideElement selectSolicitudPagoBancoClave = $x("//*[@id='solicitud.pago.banco.clave']");
     public SelenideElement inputSolicitudPagoLlave = $x("//*[@id='solicitud.pago.llaveDePago']");
-    public SelenideElement inputSolicitudPagoLlave2 = $x("//*[@id='fechaPago']");
+    public SelenideElement inputSolicitudPagoLlave2 = $x("//*[@id=\"calendarTo\"]");
     public SelenideElement inputGuardarPago = $x("//*[@id='guardarPago']");
     public SelenideElement inputDatosRevisadosCorrectos = $x("//*[@id='datosRevisadosCorrectos']");
     //FIRMA

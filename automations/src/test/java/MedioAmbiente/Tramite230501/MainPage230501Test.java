@@ -16,6 +16,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import java.util.concurrent.TimeUnit;
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.Selenide.sleep;
@@ -118,8 +119,98 @@ public class MainPage230501Test {
                 e.printStackTrace();
             }
             mainPage230501.labelDatosSolicitud.click();
+            mainPage230501.inputDeclaracion.click();
+            mainPage230501.inputfraccion.sendKeys("29312001");
+//            mainPage230501.checkMaterial.click();
+//            mainPage230501.inputCompuestoMercurio.sendKeys("Sulfuro de Mercurio");
+            mainPage230501.inputNumCAS.sendKeys("4342-36-3");
+//            mainPage230501.inputConstanciaCISEN.sendKeys("1234");
+            mainPage230501.btnAgregarCAS.click();
+            mainPage230501.inputNombreComun.sendKeys("TEST");
+            mainPage230501.inputNombreComercial.sendKeys("PROTEO");
+            mainPage230501.inputEstadoFisicoMental.sendKeys("Solido");
+            mainPage230501.inputCantidad.sendKeys("5000");
+            mainPage230501.inputUnidadMedida.sendKeys("Litro");
+            mainPage230501.inputLicenciaSanitaria.sendKeys("12348765");
+            mainPage230501.inputUsoEspecificoExportacion.sendKeys("Test");
+            Selenide.executeJavaScript("arguments[0].value = '18/06/2025';",mainPage230501.inputFechaPrevista);sleep(100);
+//            mainPage230501.inputDestinoFinal.sendKeys("ALEMANIA");
+            mainPage230501.btnAgregarMercancias.click();
+            mainPage230501.inputComponenteMaterial.sendKeys("1234");
+            mainPage230501.inputPorcentajeConcentracion.sendKeys("25");
+            mainPage230501.inputAgregarModalComponente.click();
+            try {
+                Thread.sleep(2000); // Pausa de 3 segundos
+                // Hacer scroll hasta el elemento
+                mainPage230501.Scrol.scrollIntoView(true);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            mainPage230501.labelTercerosRelacionados.click();
+            mainPage230501.inputAgregarDestinatario.click();
+            mainPage230501.inputTipoPeronaMoral.click();
+            //mainPage230501.inputTerceroRFC2.sendKeys("AAL0409235E6");
+            mainPage230501.inputTerceroRazonSocial2.sendKeys("AGRICOLA ALPE, S DE RL DE CV");
+            mainPage230501.terceroEstado.sendKeys("ALEMANIA");
+            mainPage230501.terceroCodigoPostal.sendKeys("06278");
+            mainPage230501.terceroLocalidad.sendKeys("CUAUHTEMOC");
+            mainPage230501.terceroCalle.sendKeys("Eje Central Lázaro Cárdenas");
+            mainPage230501.terceroNumExterior.sendKeys("123");
+            mainPage230501.terceroNumInterior.sendKeys("4B");
+            mainPage230501.terceroLada.sendKeys("4B");
+            mainPage230501.terceroTelefono.sendKeys("5555555555");
+            mainPage230501.terceroCorreo.sendKeys("contacto@fabricante.com");
+            mainPage230501.btnGuardarDatosTercero.click();
 
+            mainPage230501.btAgregarRepresentante.click();
+            mainPage230501.inputTipoPeronaMoral.click();
+            mainPage230501.inputTerceroRazonSocial2.sendKeys("AGRICOLA ALPE, S DE RL DE CV");
+            mainPage230501.terceroEstado.sendKeys("ALEMANIA");
+            mainPage230501.terceroCodigoPostal.sendKeys("06278");
+            mainPage230501.terceroLocalidad.sendKeys("CUAUHTEMOC");
+            mainPage230501.terceroCalle.sendKeys("Eje Central Lázaro Cárdenas");
+            mainPage230501.terceroNumExterior.sendKeys("123");
+            mainPage230501.terceroNumInterior.sendKeys("4B");
+            mainPage230501.terceroLada.sendKeys("4B");
+            mainPage230501.terceroTelefono.sendKeys("5555555555");
+            mainPage230501.terceroCorreo.sendKeys("contacto@fabricante.com");
+            mainPage230501.btnGuardarDatosTercero.click();
 
+            mainPage230501.btnAgregarUsuario.click();
+            mainPage230501.inputTipoPeronaMoral.click();
+            mainPage230501.inputTerceroRazonSocial2.sendKeys("AGRICOLA ALPE, S DE RL DE CV");
+            mainPage230501.terceroEstado.sendKeys("ALEMANIA");
+            mainPage230501.terceroCodigoPostal.sendKeys("06278");
+            mainPage230501.terceroLocalidad.sendKeys("CUAUHTEMOC");
+            mainPage230501.terceroCalle.sendKeys("Eje Central Lázaro Cárdenas");
+            mainPage230501.terceroNumExterior.sendKeys("123");
+            mainPage230501.terceroNumInterior.sendKeys("4B");
+            mainPage230501.terceroLada.sendKeys("4B");
+            mainPage230501.terceroTelefono.sendKeys("5555555555");
+            mainPage230501.terceroCorreo.sendKeys("contacto@fabricante.com");
+            mainPage230501.tercerosUso.sendKeys("Producción");
+mainPage230501.terceroDescripcionUso.sendKeys("TEST");
+mainPage230501.btnAgregarUsoFinal.click();
+            mainPage230501.btnGuardarDatosTercero.click();
+//PAGO
+            try {
+                Thread.sleep(2000); // Pausa de 3 segundos
+                // Hacer scroll hasta el elemento
+                mainPage230501.Scrol.scrollIntoView(true);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            mainPage230501.labelPagoDerechos.click();
+            mainPage230501.selectSolicitudPagoBancoClave.sendKeys("BANAMEX");
+            Random random = new Random();
+            String caracteres = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            StringBuilder factura = new StringBuilder();
+            Random serial = new Random();
+            for (int i = 0; i < 10; i++) {
+                factura.append(caracteres.charAt(random.nextInt(caracteres.length())));
+            }
+            mainPage230501.inputSolicitudPagoLlave.setValue(factura.toString());
+            Selenide.executeJavaScript("arguments[0].value = '08/06/2025';",mainPage230501.inputSolicitudPagoLlave2);sleep(100);
             mainPage230501.inputGuardarSolicitud.click();
             mainPage230501.inputGuarda.click();sleep(5000);
             Selenide.sleep(5000);
