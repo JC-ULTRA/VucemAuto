@@ -6,6 +6,7 @@ import Firmas.TramitesFirmasLG;
 import Metodos.Metodos;
 import com.codeborne.selenide.Browsers;
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.BeforeAll;
@@ -96,7 +97,9 @@ public class MainPage260917Test {
             }
             //DATOS SOLICITUD
             mainPage260917.labelDatosSolicitud.click();
-            mainPage260917.inputModif.click();
+            Selenide.sleep(100);
+            mainPage260917.inputModif.click();sleep(1000);
+            Selenide.sleep(100);
             mainPage260917.textareaJustificacionId.sendKeys("TRABAJO DE PRUEBAS");
             //mainPage260917.inputRazonSocial.setValue("TSD931210493");
             mainPage260917.inputDenominación.setValue("EMPRESA S.A. DE C.V.");
@@ -152,15 +155,15 @@ public class MainPage260917Test {
             mainPage260917.checkBoxFabricante.click();
             mainPage260917.btnModificarFabricante.click();
             mainPage260917.checkBoxMoral.click();
-//            mainPage260917.inputTerceroRFC.setValue("TSD931210493");
+            mainPage260917.inputTerceroRFC.setValue("TSD931210493");
 //            mainPage260917.btnBuscarEmpresa.click();
             mainPage260917.inputTerceroRazonSocial.setValue("PRUEBAS SA DE CV");
-            mainPage260917.inputPais.sendKeys("CANADA");
+//            mainPage260917.inputPais.sendKeys("CANADA");
             mainPage260917.inputEstadoLocalidad.sendKeys("COLIMA");
-//            mainPage260917.inputTerceroMunicipio.sendKeys("COLIMA");
-//            mainPage260917.inputTerceroLocalidad.sendKeys("COLIMA");
+            mainPage260917.inputTerceroMunicipio.sendKeys("COLIMA");
+            mainPage260917.inputTerceroLocalidad.sendKeys("COLIMA");
             mainPage260917.inputCodigoPostalFabricante.setValue("28010");
-//            mainPage260917.terceroColoniaEquiv.setValue("ANTORCHA");
+            mainPage260917.terceroColoniaEquiv.setValue("ANTORCHA");
             mainPage260917.terceroCalle.setValue("Lázaro Cárdenas");
             mainPage260917.terceroNumExterior.setValue("13471118");
             mainPage260917.terceroNumInterior.setValue("4A");
