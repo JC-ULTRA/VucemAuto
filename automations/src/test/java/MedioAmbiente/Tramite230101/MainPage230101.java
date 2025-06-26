@@ -50,7 +50,7 @@ public class MainPage230101 {
     public SelenideElement NombreComun = $x("//*[@id='mercanciaGrid.nombreComun.clave']");
     public SelenideElement AgregarDetalleMercancias = $x("//input[@name='agregarDetalle']");
     public SelenideElement inputAgregarMercancia = $x("//*[@id='btnAgregarMercancia']");
-    public SelenideElement selectDescripcionProducto = $x("//*[@id='solicitud.descripcionProducto.idDescripcionProducto']");
+    public SelenideElement selectDescripcionProducto = $x("//*[@id=\"solicitud.descripcionProducto.idDescripcionProducto\"]");
     public SelenideElement optionKilogramo = $x("/html/body/main/div/div[4]/div[1]/form/div[2]/div[2]/div/div/div[17]/div[3]/div/select/option[2]");
     public SelenideElement inputDeclaracion = $x("//*[@id='declaracion[0]']");
 

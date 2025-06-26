@@ -75,11 +75,11 @@ public class MainPage260917 {
     public SelenideElement inputTerceroRazonSocial = $x("//*[@id=\"terceros_rSocial\"]");
     public SelenideElement inputPais = $x("//*[@id=\"terceros_selectPais\"]");
     public SelenideElement terceroEstadoLocalidad = $x("//*[@id=\"terceros_selectEstado\"]");
-    public SelenideElement inputEstadoLocalidad = $x("//*[@id=\"terceros_txtEstadoLocalidad\"]");
+    public SelenideElement inputEstadoLocalidad = $x("//*[@id=\"terceros_selectEstado\"]");
     public SelenideElement inputTerceroMunicipio = $x("//*[@id=\"terceros_selectMunicipio\"]");
     public SelenideElement inputTerceroLocalidad = $x("//*[@id=\"terceros_selectLocalidad\"]");
     public SelenideElement terceroCodigoPostal = $x("//*[@id=\"terceros_codPostal1\"]");
-    public SelenideElement inputCodigoPostalFabricante = $x("//*[@id=\"terceros_codPostal\"]");
+    public SelenideElement inputCodigoPostalFabricante = $x("//*[@id=\"terceros_codPostal1\"]");
     public SelenideElement terceroColoniaEquiv = $x("//*[@id=\"terceros_coloniaEquiv\"]");
     public SelenideElement terceroCalle = $x("//*[@id=\"terceros_calle\"]");
     public SelenideElement terceroNumExterior = $x("//*[@id=\"terceros_numExterior\"]");
@@ -93,7 +93,7 @@ public class MainPage260917 {
     public SelenideElement checkBoxMoral = $x("//*[@id=\"terceros_tipoPersonaMoral\"]");
     public SelenideElement inputCodigoPostalEquivalente = $x("//*[@id=\"terceros_selectColonia\"]");
     //PAGO DE DERECHOS
-    public SelenideElement labelPagoDerechos = $x("/html/body/main/div[1]/div[4]/div[1]/form/div[1]/ul/li[4]/a/label");
+    public SelenideElement labelPagoDerechos = $x("/html/body/main/div[1]/div[4]/div[1]/div[6]/form/div[1]/ul/li[4]/a/label");
     public SelenideElement inputSolicitudPagoClaveReferencia = $x("//*[@id='solicitud.pago.claveDeReferencia']");
     public SelenideElement inputSolicitudPagoCadenaDependencia = $x("//*[@id='solicitud.pago.cadenaPagoDependencia']");
     public SelenideElement selectSolicitudPagoBancoClave = $x("//*[@id='solicitud.pago.banco.clave']");
