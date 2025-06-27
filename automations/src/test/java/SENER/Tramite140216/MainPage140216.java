@@ -5,7 +5,7 @@ import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Selenide.$x;
 
-public class MainPage140616 {
+public class MainPage140216 {
     public SelenideElement cerS = $x("//*[@id='certificate']");
     public SelenideElement keyS = $x("//*[@id='privateKey']");
     public SelenideElement pass = $x("//*[@id='privateKeyPassword']");
@@ -21,7 +21,7 @@ public class MainPage140616 {
     public SelenideElement imgOtrasTareas = $x("//*[@id=\"tablaMenuLateral\"]/tbody/tr[7]/td/a/img");
     public SelenideElement labeOtrasTareas = $x("/html/body/div[1]/div[3]/div[2]/div/div/ul/li/a");
     public SelenideElement labelSENER = $x("/html/body/div[1]/div[3]/div[2]/div/div/ul/li/ul/li[29]/a");
-    public SelenideElement labelRevocacionPF = $x("/html/body/div[1]/div[3]/div[2]/div/div/ul/li/ul/li[29]/ul/li[2]/a");
+    public SelenideElement labelSuspencsionPF = $x("/html/body/div[1]/div[3]/div[2]/div/div/ul/li/ul/li[29]/ul/li[3]/a");
     public SelenideElement inputFolioTramite = $x("//*[@id=\"parametroBusqueda\"]");
     public SelenideElement btnBuscarFolio = $x("//*[@id=\"tabs-solicitante\"]/div[1]/div[2]/input");
     public SelenideElement inputMotivoSuspension = $x("//*[@id=\"motivoText\"]");
