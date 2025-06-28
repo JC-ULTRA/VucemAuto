@@ -3,6 +3,7 @@ package AMECAFE.Tramite290201;
 import DBYFOLIO.ObtenerFolio;
 import Firmas.LoginFirmSoli;
 import Firmas.TramitesFirmasLG;
+import Metodos.Metodos;
 import com.codeborne.selenide.Browsers;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
@@ -15,6 +16,9 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 import javax.swing.*;
 import java.time.Duration;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Random;
 import java.util.UUID;
 
 import static com.codeborne.selenide.Condition.text;
@@ -28,6 +32,7 @@ public class MainPage290201Test {
     MainPage290201 mainPage290201 = new MainPage290201();
     LoginFirmSoli loginFirmSoli = new LoginFirmSoli();
     ObtenerFolio obtenerFolio = new ObtenerFolio();
+    Metodos metodos = new Metodos();
     TramitesFirmasLG tramite290201  = new TramitesFirmasLG(
             "C:\\VucemAuto\\automations\\src\\test\\resources\\CredSoli\\aal0409235e6.cer",
             "C:\\VucemAuto\\automations\\src\\test\\resources\\CredSoli\\AAL0409235E6_1012231310.key"
@@ -105,38 +110,107 @@ public class MainPage290201Test {
         // Ejecutar el proceso con las repeticiones y los métodos seleccionados
         ejecutarProcesoNRunnable(() -> {
 
-            //llave de pago
-            String uuid = UUID.randomUUID().toString();
-            int longitudDeseada = 16;
-            String llavePago = uuid.replace("-", "").substring(0, longitudDeseada);
+            // Obtener la fecha de (hoy+Meses) formateada
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+            String fechaHoy = LocalDate.now().format(formatter);
+
+            //Lote aleatorio
+            Random rand = new Random();
+            String NumLoteValor = String.valueOf(rand.nextInt(1000));
+
             // Ingreso y selección de trámite
             loginFirmSoli.login(tramite290201);
             mainPage290201.selecRol.sendKeys("Persona Moral");
             mainPage290201.btnacep.click();
+            //Búsqueda de tramite
             mainPage290201.Tramites.sendKeys("Solicitudes nuevas");
             mainPage290201.SoliNew.click();
-
             mainPage290201.AMECAFE.click();
             mainPage290201.CerificadosLicenciaPermisos.click();
             mainPage290201.CertificadoOrigen.click();
             mainPage290201.Tramite290201.click();
+
+            //Paso 1 CAPTURAR SOLICITUD
+            mainPage290201.Scrol.scrollTo();
+            //Pestaña Datos de la solicitud
             mainPage290201.labelDatosSolicitud.click();
-            mainPage290201.FormaCafe.sendKeys("Café Chiapas (Tostado)");
-            mainPage290201.Tipos.sendKeys("ARÁBICA");
-            mainPage290201.Calidad.sendKeys("ALTURA");
-            mainPage290201.Procesos.sendKeys("CONVENCIONAL");
+            //Información del cáfe
+            mainPage290201.selectFormaCafe.sendKeys("Café Chiapas (Tostado)");
+            mainPage290201.selectTipos.sendKeys("ARÁBICA");
+            mainPage290201.selectCalidad.sendKeys("ALTURA");
+            mainPage290201.selectProcesos.sendKeys("CONVENCIONAL");
+            //Destino
+            mainPage290201.selectSolicitudClaveAduana.selectOption("TECATE");
+            mainPage290201.selectSolicitudPaisProcedenciaClave.selectOption("JAPON");
+            //Procedencia
+            mainPage290201.selectSolicitudEntidadesEntidadClave.selectOption("OAXACA");
+            //Ciclo cafetalero
+            mainPage290201.selectSolicitudDescripcionGenerica.selectOption("2021/2022");
 
 
+            //Lotes
+            //Agregar lote
+            mainPage290201.inputAgregarLote.click();
+            //Datos del café
+            mainPage290201.selectGenerica.selectOption("Contenedor");
+            mainPage290201.selectAceptada.selectOption("Si");
+            //Si: Café materia prima
+            mainPage290201.CantidadUtilizadaElaborar.sendKeys("1000");
+            mainPage290201.NumPedimento.sendKeys("3828");
+            mainPage290201.selectPaisImportacion.selectOption("COLOMBIA (REPUBLICA DE)");
+            mainPage290201.selectFraccion.selectOption("21013001");
+            //Factura y Cantidad
+            mainPage290201.inputCantidadUmc.sendKeys("2000");
+            mainPage290201.selectUnidadMedidaComercialClave.selectOption("Kilogramo");
+            mainPage290201.inputMercanciasImporteTotalComponente.sendKeys("50");
+            mainPage290201.selectMonedaClave.selectOption("Mexican Peso");
+            //Marcas
+            mainPage290201.inputNumeroLote.sendKeys(NumLoteValor);
+            mainPage290201.inputDescripcionMercancia.sendKeys("QA Otras Marcas");
+            //Características Especiales
+            mainPage290201.selectBooleanGenerico.selectOption("SI");
+            mainPage290201.checkCafeEspecial.click();
+            mainPage290201.checkNespresso.click();
+            executeJavaScript("arguments[0].value = arguments[1];", mainPage290201.inputFechaSalida, fechaHoy);
 
-            loginFirmSoli.firma(tramite290201);
+            //Transbordo
+            mainPage290201.selectCondicionAlmacenamientoSecundario.selectOption("MEXICO (ESTADOS UNIDOS MEXICANOS)");
+            mainPage290201.selectGenerica2.selectOption("VIA AEREA");
+            mainPage290201.inputMarcasEmbarque.sendKeys("AE365");
 
+            //Observaciones
+            mainPage290201.textareaDescripcionTratamiento.sendKeys("Descripción QA");
+            mainPage290201.inputAgregarLote2.click();
 
+            //Pestaña Terceros relacionados
+            mainPage290201.Scrol.scrollTo();
+            mainPage290201.tabTercerosRelacionados.click();
 
-    // Obtener el texto del folio desde mainPageB8
-    String folioText = mainPage290201.folio.getText();
+            //Agregar destinatario
+            mainPage290201.btnAgregarDestinatario.click();
+            //Tipo de persona
+            mainPage290201.radbtnPersonaMoral.click();
+            //Tipo de persona moral
+            mainPage290201.DenominacionTerceros.sendKeys("Denomiación QA");
+            //Datos generales
+            mainPage290201.TercerosDomicilio.sendKeys("162-1070 Takakadocho Hiroshima");
+            mainPage290201.selectTercerosPais.selectOption("JAPON");
+            mainPage290201.selectTercerosCodPostal.sendKeys("73001");
+            mainPage290201.inputTercerosTelefono.sendKeys("1720351661");
+            mainPage290201.inputTercerosCorreoElec.sendKeys("DestinatarioQA@gmail.com");
+            mainPage290201.buttonGuardarDatosTercero.click();
 
-    // Llamar al metodo para obtener el folio
-    String folioNumber = obtenerFolio.obtenerFolio(folioText);
+            //Continuar paso 1
+            mainPage290201.btnContinuarPaso1.click();
+
+            //Paso 2 FIRMA SOLICITUD
+            loginFirmSoli.firma(tramite290201);sleep(3000);
+
+            // Obtener el texto del folio desde mainPageB8
+            String folioText = mainPage290201.folio.getText();
+
+            // Llamar al metodo para obtener el folio
+            String folioNumber = obtenerFolio.obtenerFolio(folioText);
 
 //            ConDBReasigSolFun.processFolio(folioNumber, FunRFC);
 //
