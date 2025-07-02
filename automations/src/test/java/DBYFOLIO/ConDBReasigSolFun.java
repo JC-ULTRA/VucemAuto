@@ -4,7 +4,7 @@ import java.sql.*;
 
 public class ConDBReasigSolFun {
     // Configuración de la conexión a la base de datos
-    private static final String URL = "jdbc:oracle:thin:@172.57.1.24:1521:vucprod2"; // Ajusta si es necesario
+    private static final String URL = "jdbc:oracle:thin:@//10.181.233.242:1521/vucprod2"; // Ajusta si es necesario
     private static final String USER = "BPMDB24"; // Reemplaza con tu usuario
     private static final String PASSWORD = "B9w6B2a"; // Reemplaza con tu contraseña
 

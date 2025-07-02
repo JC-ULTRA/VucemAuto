@@ -97,6 +97,16 @@ public class MainPage130120 {
     //Guardar y Firmar
     public SelenideElement inputMostrarFirma = $x("//input[@value='Firmar']");
 
+    public SelenideElement iniciofun = $x("/html/body/div[1]/div[3]/div[1]/table/tbody/tr[2]/td/a/img");
+    public SelenideElement numfolio = $x("//*[@id=\"idNumFolio\"]");
+    public SelenideElement btnBuscarFolio = $x("//*[@id=\"buscarTareasFuncionario\"]");
+    public SelenideElement tablatarea = $x("/html/body/div[1]/div[3]/div[3]/div/div[3]/div[3]/div[3]/div/table/tbody/tr[2]");
+    public SelenideElement generaDict = $x("//*[@id=\"opcion\"]");
+    public SelenideElement btmContinuarDict = $x("/html/body/div[1]/div[3]/div[3]/div/form/div[1]/input");
+    public SelenideElement sentidoAceptado = $x("//*[@id=\"sentidoDictamen\"]");
+    public SelenideElement antecedentesDict = $x("//*[@id=\"textoDictamen\"]");
+    public SelenideElement btnFirmarDict = $x("/html/body/div[1]/div[3]/div[3]/div/form/div[2]/input[1]");
+    public SelenideElement btnAutorizar = $x("/html/body/div[1]/div[3]/div[3]/div/form/div[2]/input[2]");
 
 
 }
