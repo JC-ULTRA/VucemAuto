@@ -41,6 +41,20 @@ public void login(TramitesFirmasLG tramite) {
         btnFirmar.click();
     }
 
+    public void loginFun(TramitesFirmasLG tramite) {
+        cerS.setValue(tramite.getCer());
+        keyS.setValue(tramite.getKey());
+        pass.setValue("delfin40");
+        btnFirmar.click();
+    }
+
+    public void firmaFun(TramitesFirmasLG tramite) {
+        cerS.setValue(tramite.getCer());
+        keyS.setValue(tramite.getKey());
+        pass.setValue("delfin40");
+        btnFirmar.click();
+    }
+
 
 
 }
