@@ -5,6 +5,8 @@ import DBYFOLIO.ObtenerFolio;
 import Firmas.*;
 import com.codeborne.selenide.Browsers;
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.logevents.SelenideLogger;
+import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -14,6 +16,7 @@ import javax.swing.*;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -42,10 +45,16 @@ public class MainPage130120Test {
 
 
     @BeforeAll
-//    public static void setUpAll() {
-//        Configuration.browserSize = "1920x1080";
-//        SelenideLogger.addListener("allure", new AllureSelenide());
-//    }
+    public static void setUpAll() {
+        Configuration.browser = Browsers.CHROME; //FIREFOX;
+        Configuration.browserCapabilities = new ChromeOptions().addArguments("--incognito").addArguments("--remote-allow-origins=*").addArguments("--force-device-scale-factor=1.25");
+        open();
+        getWebDriver().manage().window().maximize();
+        Configuration.timeout = 120000; // tiempo de espera
+        getWebDriver().manage().timeouts().scriptTimeout(Duration.ofSeconds(10));
+        SelenideLogger.addListener("allure", new AllureSelenide());
+        initDriver();
+    }
 
     public static void initDriver() {
         Configuration.browser = Browsers.CHROME;   //FIREFOX;
@@ -55,7 +64,15 @@ public class MainPage130120Test {
 
     @BeforeEach
     public void setUp() {
-        Configuration.browserCapabilities = new ChromeOptions().addArguments("--remote-allow-origins=*");
+//        Configuration.browserCapabilities = new ChromeOptions().addArguments("--remote-allow-origins=*");
+        ChromeOptions options = new ChromeOptions();
+
+        // Configura las opciones para Chrome: incognito y permitir orígenes remotos
+        options.addArguments("--remote-allow-origins=*");
+        options.addArguments("--incognito");  // Abre el navegador en modo incognito
+
+        // Asignar las capacidades de navegador
+        Configuration.browserCapabilities = options;
     }
 
     @Test
@@ -80,16 +97,47 @@ public class MainPage130120Test {
             JOptionPane.showMessageDialog(null, "Valor no válido, se utilizará 1 repetición por defecto.");
         }
         /////////////////////////////////////////////////////////////////////////////////////////////////////////-
-
-        // Crear checkboxes para seleccionar los métodos
+        // Crear checkboxes
         JCheckBox dictamenCheckBox = new JCheckBox("ProcesoDictamen130120");
         JCheckBox autorizacionCheckBox = new JCheckBox("ProcesoAutorizacion130120");
         JCheckBox confirmacionCheckBox = new JCheckBox("ProcesoConfirmarNotificaciónResolucion130120");
 
-        Object[] params = {"Seleccione los métodos a ejecutar:", dictamenCheckBox, autorizacionCheckBox, confirmacionCheckBox};
-        int option = JOptionPane.showConfirmDialog(null, params, "Opciones de Métodos", JOptionPane.OK_CANCEL_OPTION);
+        // Deshabilitar los siguientes inicialmente
+        autorizacionCheckBox.setEnabled(false);
+        confirmacionCheckBox.setEnabled(false);
 
-        // Si el usuario selecciona Cancelar, termina el método
+        // Listener para Dictamen → habilita Autorización
+        dictamenCheckBox.addItemListener(e -> {
+            boolean selected = dictamenCheckBox.isSelected();
+            autorizacionCheckBox.setEnabled(selected);
+            if (!selected) {
+                autorizacionCheckBox.setSelected(false);
+                confirmacionCheckBox.setSelected(false);
+                confirmacionCheckBox.setEnabled(false);
+            }
+        });
+
+        // Listener para Autorización → habilita Confirmación
+        autorizacionCheckBox.addItemListener(e -> {
+            boolean selected = autorizacionCheckBox.isSelected();
+            confirmacionCheckBox.setEnabled(selected);
+            if (!selected) {
+                confirmacionCheckBox.setSelected(false);
+            }
+        });
+
+        // Panel vertical para presentación
+        JPanel panel = new JPanel();
+        panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
+        panel.add(new JLabel("Seleccione los métodos a ejecutar:"));
+        panel.add(dictamenCheckBox);
+        panel.add(autorizacionCheckBox);
+        panel.add(confirmacionCheckBox);
+
+        // Mostrar diálogo
+        int option = JOptionPane.showConfirmDialog(null, panel, "Opciones de Métodos", JOptionPane.OK_CANCEL_OPTION);
+
+        // Validar opción
         if (option != JOptionPane.OK_OPTION) {
             JOptionPane.showMessageDialog(null, "Operación cancelada por el usuario.");
             return;
@@ -177,7 +225,7 @@ public class MainPage130120Test {
 
             // Llamar al mtodo para obtener el folio
             String folioNumber = obtenerFolio.obtenerFolio(folioText);
-            guardarFolioEnArchivo(folioNumber);
+
             ConDBReasigSolFun.processFolio(folioNumber, FunRFC);
 
             // Ejecutar métodos seleccionados
@@ -190,6 +238,7 @@ public class MainPage130120Test {
 //            if (selectedMethods.contains("ProcesoConfirmarNotificaciónResolucionB8")) {
 //                ProcesoConfirmarNotificaciónResolucion130120(folioNumber);
 //            }
+            guardarFolioEnArchivo(folioNumber);
 
         }, repeticiones);
 
