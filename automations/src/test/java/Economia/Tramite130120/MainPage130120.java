@@ -27,18 +27,19 @@ public class MainPage130120 {
     public SelenideElement textareaSolicitudMercanciaDescripcion = Selenide.$x("//*[@id='solicitud.mercancia.descripcion']");
     public SelenideElement inputSolicitudMercanciaMarca = Selenide.$x("//*[@id='solicitud.mercancia.marca']");
     public SelenideElement inputSolicitudAduana = Selenide.$x("//*[@id='solicitud.mercancia.tipoAduana.clave']");
-    public SelenideElement optionLasDem = Selenide.$x("//option[@value='51099099']");
-    public SelenideElement optionLosDem = Selenide.$x("//option[@value='5109909900']");
+    public SelenideElement fracArancel = Selenide.$x("/html/body/main/div/div[4]/div/form/div[2]/div[2]/div[2]/div[6]/div/select");
+    public SelenideElement inputNico = Selenide.$x("/html/body/main/div/div[4]/div/form/div[2]/div[2]/div[2]/div[7]/div/select");
+    public SelenideElement inputUnidadMedidaTarifaUMT = Selenide.$x("/html/body/main/div/div[4]/div/form/div[2]/div[2]/div[2]/div[8]/div[1]/div/select");
     public SelenideElement optionUnidadMedida = Selenide.$x("//*[@id='solicitud.mercancia.unidadMedidaTarifaria.clave']");
     public SelenideElement inputSolicitudMercanciaNumeroFactura = Selenide.$x("//*[@id='solicitud.mercancia.numeroFactura']");
     public SelenideElement inputFechaFactura = Selenide.$x("//*[@id='fechaFactura']");
-    public SelenideElement optionAbsorcion = Selenide.$x("//option[@value='63_R21']");
+    public SelenideElement inputUnidadmedidaComercializaciónUMC = Selenide.$x("//*[@id=\"solicitud.mercancia.unidadMedidaComercial.clave\"]");
     public SelenideElement inputSolicitudMercanciaCantidadComercial = Selenide.$x("//*[@id='solicitud.mercancia.cantidadComercial']");
     public SelenideElement inputSolicitudMercanciaCapacidad = Selenide.$x("//*[@id='solicitud.mercancia.capacidad']");
     public SelenideElement inputSolicitudMercanciaValorFactura = Selenide.$x("//*[@id='solicitud.mercancia.valorFactura']");
-    public SelenideElement optionDinar = Selenide.$x("//option[@value='KWD']");
-    public SelenideElement optionPaisExp = Selenide.$x("/html/body/main/div/div[4]/div/form/div[2]/div[2]/div[2]/div[15]/div[1]/select/option[4]");
-    public SelenideElement optionPaisOri = Selenide.$x("/html/body/main/div/div[4]/div/form/div[2]/div[2]/div[2]/div[15]/div[2]/select/option[2]");
+    public SelenideElement inputMonedaComer = Selenide.$x("/html/body/main/div/div[4]/div/form/div[2]/div[2]/div[2]/div[12]/div[2]/select");
+    public SelenideElement inputPaisExp = Selenide.$x("/html/body/main/div/div[4]/div/form/div[2]/div[2]/div[2]/div[15]/div[1]/select");
+    public SelenideElement inputPaisOri = Selenide.$x("/html/body/main/div/div[4]/div/form/div[2]/div[2]/div[2]/div[15]/div[2]/select");
     public SelenideElement inputSolicitudMercanciaValorTotal = Selenide.$x("//*[@id='solicitud.mercancia.valorTotalFacturaDolares']");
     public SelenideElement inputSolicitudNumDocumento = Selenide.$x("//*[@id='solicitud.datosGenericosSolicitud.descripcionGenerica1']");
     public SelenideElement inputFechaGenerica = Selenide.$x("//*[@id='fechaGenerica1']");
@@ -53,8 +54,8 @@ public class MainPage130120 {
     public SelenideElement inputSolicitudExpRazonSocial = Selenide.$x("//*[@id='solicitud.exportador.razonSocial']");
     public SelenideElement textareaSolicitudExportadorDomicilioDes = Selenide.$x("//*[@id='solicitud.exportador.domicilio.descripcionUbicacion']");
     public SelenideElement textareaSolicitudObservaciones = Selenide.$x("//*[@id='solicitud.observaciones']");
-    public SelenideElement optionSin = Selenide.$x("//option[@value='SIN']");
-    public SelenideElement optionCuliacan = Selenide.$x("//option[@value='2540']");
+    public SelenideElement inputEntidadFederativa = Selenide.$x("/html/body/main/div/div[4]/div/form/div[2]/div[2]/div[21]/div[5]/div[1]/select");
+    public SelenideElement inputRepresentaciónFederal = Selenide.$x("/html/body/main/div/div[4]/div/form/div[2]/div[2]/div[21]/div[5]/div[2]/select");
     public SelenideElement inputGuardarSolicitud = Selenide.$x("//*[@id='guardarSolicitud']");
     public SelenideElement inputContinuar = Selenide.$x("//input[@value='Continuar']");
     public SelenideElement inputAdjuntarDocumentos = Selenide.$x("//input[contains(@style, '0px;')]");
@@ -107,6 +108,4 @@ public class MainPage130120 {
     public SelenideElement antecedentesDict = $x("//*[@id=\"textoDictamen\"]");
     public SelenideElement btnFirmarDict = $x("/html/body/div[1]/div[3]/div[3]/div/form/div[2]/input[1]");
     public SelenideElement btnAutorizar = $x("/html/body/div[1]/div[3]/div[3]/div/form/div[2]/input[2]");
-
-
 }

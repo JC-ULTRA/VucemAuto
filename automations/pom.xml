@@ -16,9 +16,26 @@
         <junit.version>5.10.2</junit.version>
         <aspectj.version>1.9.22</aspectj.version>
         <allure.version>2.27.0</allure.version>
+        <selenide.version>7.2.3</selenide.version>
+        <poi.version>5.2.3</poi.version> <!-- Versión recomendada POI para Excel -->
     </properties>
 
     <dependencies>
+        <!-- Selenide -->
+        <dependency>
+            <groupId>com.codeborne</groupId>
+            <artifactId>selenide</artifactId>
+            <version>${selenide.version}</version>
+        </dependency>
+
+        <!-- Apache POI para leer archivos Excel .xlsx -->
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml</artifactId>
+            <version>${poi.version}</version>
+        </dependency>
+
+        <!-- Allure para JUnit 5 -->
         <dependency>
             <groupId>io.qameta.allure</groupId>
             <artifactId>allure-junit5</artifactId>
@@ -26,42 +43,46 @@
             <scope>test</scope>
         </dependency>
 
-        <dependency>
-            <groupId>com.oracle.database.jdbc</groupId>
-            <artifactId>ojdbc11</artifactId>
-            <version>21.9.0.0</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.codeborne</groupId>
-            <artifactId>selenide</artifactId>
-            <version>7.2.3</version>
-            <scope>test</scope>
-        </dependency>
+        <!-- Allure integration con Selenide -->
         <dependency>
             <groupId>io.qameta.allure</groupId>
             <artifactId>allure-selenide</artifactId>
             <version>${allure.version}</version>
             <scope>test</scope>
         </dependency>
+
+        <!-- JUnit 5 API -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
             <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
+
+        <!-- JUnit 5 Engine -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>
             <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
+
+        <!-- Oracle JDBC -->
+        <dependency>
+            <groupId>com.oracle.database.jdbc</groupId>
+            <artifactId>ojdbc11</artifactId>
+            <version>21.9.0.0</version>
+        </dependency>
+
+        <!-- SLF4J simple para logs -->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-simple</artifactId>
             <version>2.0.13</version>
             <scope>test</scope>
         </dependency>
+
+        <!-- (Opcional) JUnit 4 para compatibilidad si la usas -->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
@@ -69,8 +90,10 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+
     <build>
         <plugins>
+            <!-- Plugin Surefire para correr pruebas -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
@@ -80,12 +103,15 @@
                     <argLine>
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
                     </argLine>
-                    <systemProperties>
+                    <includes>
+                        <include>**/*Test.java</include>
+                    </includes>
+                    <properties>
                         <property>
-                            <name>allure.results.directory</name>
-                            <value>${project.build.directory}/allure-results</value>
+                            <name>listener</name>
+                            <value>io.qameta.allure.junit5.AllureJunit5</value>
                         </property>
-                    </systemProperties>
+                    </properties>
                 </configuration>
                 <dependencies>
                     <dependency>
@@ -95,6 +121,8 @@
                     </dependency>
                 </dependencies>
             </plugin>
+
+            <!-- Plugin Allure para reportes -->
             <plugin>
                 <groupId>io.qameta.allure</groupId>
                 <artifactId>allure-maven</artifactId>
