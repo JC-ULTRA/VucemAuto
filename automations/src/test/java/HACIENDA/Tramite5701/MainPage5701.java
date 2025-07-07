@@ -45,6 +45,9 @@ public class MainPage5701 {
     public SelenideElement inputGuardarSolicitud = $x("//*[@id='guardarSolicitud']");
     public SelenideElement inputBotonAgregarFechas = $x("//input[@class='btn btn-primary ']");
     public SelenideElement labelFechasDentroDelPeriodo = $x("//label[@for='cboFechasSeleccionadas']");//*[@id="cboFechasServicio"]
+    public SelenideElement diaUno = $x("/html/body/main/div/div[4]/div/form/div[2]/div/div[3]/div[3]/div[7]/div[4]/div/div/div[2]/div/div/div[3]/select/option[1]");
+    public SelenideElement diaDos = $x("/html/body/main/div/div[4]/div/form/div[2]/div/div[3]/div[3]/div[7]/div[4]/div/div/div[2]/div/div/div[3]/select/option[2]");
+    public SelenideElement agregarTodos = $x("/html/body/main/div/div[4]/div/form/div[2]/div/div[3]/div[3]/div[7]/div[4]/div/div/div[2]/div/div/div[4]/div[3]/input");
     public SelenideElement inputAdjuntarDocumentos = $x("//input[contains(@style, '0px;')]");
     public SelenideElement inputContinuar = $x("//input[@value='Continuar']");
     public SelenideElement inputDocumentosFile = $x("//input[@name='documentos[0].file']");
@@ -103,7 +106,16 @@ public class MainPage5701 {
     public SelenideElement tdConfirmarNotificaciResoluci = $x("//td[@aria-describedby='gridTareasSolicitante_actionName']");
     public SelenideElement inputAcuse = $x("//*[@id='acuse']");
     public SelenideElement notification = $x("//*[@id='notification']/div/ul/li");
-
+    public SelenideElement iniciofun = $x("/html/body/div[1]/div[3]/div[1]/table/tbody/tr[2]/td/a/img");
+    public SelenideElement numfolio = $x("//*[@id=\"idNumFolio\"]");
+    public SelenideElement btnBuscarFolio = $x("//*[@id=\"buscarTareasFuncionario\"]");
+    public SelenideElement tablatarea = $x("/html/body/div[1]/div[3]/div[3]/div/div[3]/div[3]/div[3]/div/table/tbody/tr[2]");
+    public SelenideElement generaDict = $x("//*[@id=\"opcion\"]");
+    public SelenideElement btmContinuarDict = $x("/html/body/div[1]/div[3]/div[3]/div/form/div[1]/input");
+    public SelenideElement sentidoAceptado = $x("/html/body/div[1]/div[3]/div[3]/div/form[1]/table/tbody/tr[2]/td[2]/input[1]");
+    public SelenideElement justificacionDict = $x("//*[@id=\"valueTA\"]");
+    public SelenideElement btnFirmarDict = $x("/html/body/div[1]/div[3]/div[3]/div/form[1]/div[2]/input[3]");
+    public SelenideElement btnAutorizar = $x("/html/body/div[1]/div[3]/div[3]/div/form[1]/div[2]/input[2]");
 
 
 }
