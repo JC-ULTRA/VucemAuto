@@ -1,6 +1,7 @@
 
 package Economia.Tramite130120;
 import DBYFOLIO.ConDBReasigSolFun;
+import DBYFOLIO.LectorExcel;
 import DBYFOLIO.ObtenerFolio;
 import Firmas.*;
 import com.codeborne.selenide.Browsers;
@@ -28,6 +29,7 @@ public class MainPage130120Test {
     MainPage130120 mainPage130120 = new MainPage130120();
     LoginFirmSoli loginFirmSoli = new LoginFirmSoli();
     ObtenerFolio obtenerFolio = new ObtenerFolio();
+    LectorExcel lectorExcel = new LectorExcel();
 
     //VARIABLES
     String FunRFC = "MAVL621207C95";
@@ -80,7 +82,7 @@ public class MainPage130120Test {
         }
 // Intentar leer la hoja "Hoja1"
         Map<String, String> datosExcel;
-        try {datosExcel = LectorExcel.leerDatos(rutaExcel, "Hoja1");
+        try {datosExcel = lectorExcel.leerDatos(rutaExcel, "Hoja1");
             if (datosExcel == null || datosExcel.isEmpty()) {
                 JOptionPane.showMessageDialog(null, "No se encontró la hoja 'Hoja1' o está vacía.", "Error", JOptionPane.ERROR_MESSAGE);
                 return;
@@ -167,43 +169,43 @@ public class MainPage130120Test {
                 e.printStackTrace();
             }
             mainPage130120.DatosSolicitud.click();
-            mainPage130120.selectSolicitudRegimenClave.sendKeys(datosExcel.get("selectSolicitudRegimenClave"));sleep(1500);
-            mainPage130120.selectClasificacionRegimen.sendKeys(datosExcel.get("selectClasificacionRegimen"));sleep(1500);
-            mainPage130120.textareaSolicitudMercanciaDescripcion.sendKeys(datosExcel.get("textareaSolicitudMercanciaDescripcion"));sleep(1500);
-            mainPage130120.inputSolicitudMercanciaMarca.sendKeys(datosExcel.get("inputSolicitudMercanciaMarca"));sleep(1500);
-            mainPage130120.inputSolicitudAduana.sendKeys(datosExcel.get("inputSolicitudAduana"));sleep(1500);
-            mainPage130120.fracArancel.sendKeys(datosExcel.get("fracArancel"));sleep(1500);
-            mainPage130120.inputNico.sendKeys(datosExcel.get("inputNico"));sleep(1500);
-            mainPage130120.inputUnidadMedidaTarifaUMT.sendKeys(datosExcel.get("inputUnidadMedidaTarifaUMT"));sleep(1500);
-            mainPage130120.optionUnidadMedida.sendKeys(datosExcel.get("optionUnidadMedida"));sleep(1500);
-            mainPage130120.inputSolicitudMercanciaNumeroFactura.sendKeys(datosExcel.get("inputSolicitudMercanciaNumeroFactura"));sleep(1500);
-            mainPage130120.inputFechaFactura.pressEnter().sendKeys(datosExcel.get("inputFechaFactura"));sleep(1500);
-            mainPage130120.inputUnidadmedidaComercializaciónUMC.pressEnter().sendKeys(datosExcel.get("inputUnidadmedidaComercializaciónUMC"));sleep(1500);
-            mainPage130120.inputSolicitudMercanciaCantidadComercial.sendKeys(datosExcel.get("inputSolicitudMercanciaCantidadComercial"));sleep(1500);
-            mainPage130120.inputSolicitudMercanciaCapacidad.sendKeys(datosExcel.get("inputSolicitudMercanciaCapacidad"));sleep(1500);
-            mainPage130120.inputSolicitudMercanciaValorFactura.sendKeys(datosExcel.get("inputSolicitudMercanciaValorFactura"));sleep(1500);
-            mainPage130120.inputMonedaComer.sendKeys(datosExcel.get("inputMonedaComer"));sleep(1500);
-            mainPage130120.inputPaisExp.sendKeys(datosExcel.get("inputPaisExp"));sleep(1500);
-            mainPage130120.inputPaisOri.sendKeys(datosExcel.get("inputPaisOri"));sleep(1500);
-            mainPage130120.inputSolicitudMercanciaValorTotal.sendKeys(datosExcel.get("inputSolicitudMercanciaValorTotal"));sleep(1500);
-            mainPage130120.inputSolicitudNumDocumento.sendKeys(datosExcel.get("inputSolicitudNumDocumento"));sleep(1500);
-            mainPage130120.inputFechaGenerica.pressEnter().sendKeys(datosExcel.get("inputFechaGenerica"));sleep(1500);
-            mainPage130120.textareaSolicitudDatosGenericosDescripcion.sendKeys(datosExcel.get("textareaSolicitudDatosGenericosDescripcion"));sleep(1500);
-            mainPage130120.inputSolicitudCodigoAran.sendKeys(datosExcel.get("inputSolicitudCodigoAran"));sleep(1500);
-            mainPage130120.inputSolicitudCantidadUnidadMedida.sendKeys(datosExcel.get("inputSolicitudCantidadUnidadMedida"));sleep(1500);
-            mainPage130120.inputSolicitudValorUSD.sendKeys(datosExcel.get("inputSolicitudValorUSD"));sleep(1500);
-            mainPage130120.inputSolicitudPrecioUnitario.sendKeys(datosExcel.get("inputSolicitudPrecioUnitario"));sleep(1500);
+            mainPage130120.selectSolicitudRegimenClave.sendKeys(datosExcel.get("selectSolicitudRegimenClave"));
+            mainPage130120.selectClasificacionRegimen.sendKeys(datosExcel.get("selectClasificacionRegimen"));
+            mainPage130120.textareaSolicitudMercanciaDescripcion.sendKeys(datosExcel.get("textareaSolicitudMercanciaDescripcion"));
+            mainPage130120.inputSolicitudMercanciaMarca.sendKeys(datosExcel.get("inputSolicitudMercanciaMarca"));
+            mainPage130120.inputSolicitudAduana.sendKeys(datosExcel.get("inputSolicitudAduana"));
+            mainPage130120.fracArancel.sendKeys(datosExcel.get("fracArancel"));
+            mainPage130120.inputNico.sendKeys(datosExcel.get("inputNico"));
+            mainPage130120.inputUnidadMedidaTarifaUMT.sendKeys(datosExcel.get("inputUnidadMedidaTarifaUMT"));
+            mainPage130120.optionUnidadMedida.sendKeys(datosExcel.get("optionUnidadMedida"));
+            mainPage130120.inputSolicitudMercanciaNumeroFactura.sendKeys(datosExcel.get("inputSolicitudMercanciaNumeroFactura"));
+            mainPage130120.inputFechaFactura.pressEnter().sendKeys(datosExcel.get("inputFechaFactura"));
+            mainPage130120.inputUnidadmedidaComercializaciónUMC.pressEnter().sendKeys(datosExcel.get("inputUnidadmedidaComercializaciónUMC"));
+            mainPage130120.inputSolicitudMercanciaCantidadComercial.sendKeys(datosExcel.get("inputSolicitudMercanciaCantidadComercial"));
+            mainPage130120.inputSolicitudMercanciaCapacidad.sendKeys(datosExcel.get("inputSolicitudMercanciaCapacidad"));
+            mainPage130120.inputSolicitudMercanciaValorFactura.sendKeys(datosExcel.get("inputSolicitudMercanciaValorFactura"));
+            mainPage130120.inputMonedaComer.sendKeys(datosExcel.get("inputMonedaComer"));
+            mainPage130120.inputPaisExp.sendKeys(datosExcel.get("inputPaisExp"));
+            mainPage130120.inputPaisOri.sendKeys(datosExcel.get("inputPaisOri"));
+            mainPage130120.inputSolicitudMercanciaValorTotal.sendKeys(datosExcel.get("inputSolicitudMercanciaValorTotal"));
+            mainPage130120.inputSolicitudNumDocumento.sendKeys(datosExcel.get("inputSolicitudNumDocumento"));
+            mainPage130120.inputFechaGenerica.pressEnter().sendKeys(datosExcel.get("inputFechaGenerica"));
+            mainPage130120.textareaSolicitudDatosGenericosDescripcion.sendKeys(datosExcel.get("textareaSolicitudDatosGenericosDescripcion"));
+            mainPage130120.inputSolicitudCodigoAran.sendKeys(datosExcel.get("inputSolicitudCodigoAran"));
+            mainPage130120.inputSolicitudCantidadUnidadMedida.sendKeys(datosExcel.get("inputSolicitudCantidadUnidadMedida"));
+            mainPage130120.inputSolicitudValorUSD.sendKeys(datosExcel.get("inputSolicitudValorUSD"));
+            mainPage130120.inputSolicitudPrecioUnitario.sendKeys(datosExcel.get("inputSolicitudPrecioUnitario"));
             mainPage130120.inputNinguno.click();
-            mainPage130120.textareaSolicitudDomicilio.sendKeys(datosExcel.get("textareaSolicitudDomicilio"));sleep(1500);
-            mainPage130120.inputMoral.click();sleep(1500);
-            mainPage130120.inputSolicitudExpRazonSocial.sendKeys(datosExcel.get("inputSolicitudExpRazonSocial"));sleep(1500);
-            mainPage130120.textareaSolicitudExportadorDomicilioDes.sendKeys(datosExcel.get("textareaSolicitudExportadorDomicilioDes"));sleep(1500);
-            mainPage130120.textareaSolicitudObservaciones.sendKeys(datosExcel.get("textareaSolicitudObservaciones"));sleep(1500);
-            mainPage130120.inputEntidadFederativa.sendKeys(datosExcel.get("inputEntidadFederativa"));sleep(1500);
-            mainPage130120.inputRepresentaciónFederal.sendKeys(datosExcel.get("inputRepresentaciónFederal"));sleep(1500);
-            mainPage130120.inputGuardarSolicitud.click();sleep(1500);
-            mainPage130120.inputContinuar.click();sleep(1500);
-            mainPage130120.inputAdjuntarDocumentos.click();sleep(1500);
+            mainPage130120.textareaSolicitudDomicilio.sendKeys(datosExcel.get("textareaSolicitudDomicilio"));
+            mainPage130120.inputMoral.click();
+            mainPage130120.inputSolicitudExpRazonSocial.sendKeys(datosExcel.get("inputSolicitudExpRazonSocial"));
+            mainPage130120.textareaSolicitudExportadorDomicilioDes.sendKeys(datosExcel.get("textareaSolicitudExportadorDomicilioDes"));
+            mainPage130120.textareaSolicitudObservaciones.sendKeys(datosExcel.get("textareaSolicitudObservaciones"));
+            mainPage130120.inputEntidadFederativa.sendKeys(datosExcel.get("inputEntidadFederativa"));
+            mainPage130120.inputRepresentaciónFederal.sendKeys(datosExcel.get("inputRepresentaciónFederal"));
+            mainPage130120.inputGuardarSolicitud.click();
+            mainPage130120.inputContinuar.click();
+            mainPage130120.inputAdjuntarDocumentos.click();
             mainPage130120.inputDocumentosFile.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
             mainPage130120.inputDocumentosFile2.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
             mainPage130120.inputAnexar.click(); sleep(3500);
@@ -217,6 +219,7 @@ public class MainPage130120Test {
 
             // Llamar al mtodo para obtener el folio
             String folioNumber = obtenerFolio.obtenerFolio(folioText);
+
             ConDBReasigSolFun.processFolio(folioNumber, FunRFC);
 
             // Ejecutar métodos seleccionados
