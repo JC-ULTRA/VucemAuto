@@ -5,8 +5,6 @@ import DBYFOLIO.ObtenerFolio;
 import Firmas.*;
 import com.codeborne.selenide.Browsers;
 import com.codeborne.selenide.Configuration;
-import com.codeborne.selenide.logevents.SelenideLogger;
-import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -14,22 +12,23 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 import javax.swing.*;
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 import static java.sql.DriverManager.setLoginTimeout;
-
 public class MainPage130120Test {
     MainPage130120 mainPage130120 = new MainPage130120();
     LoginFirmSoli loginFirmSoli = new LoginFirmSoli();
     ObtenerFolio obtenerFolio = new ObtenerFolio();
+
     //VARIABLES
     String FunRFC = "MAVL621207C95";
     String SoliRFC = "AAL0409235E6";
@@ -45,16 +44,10 @@ public class MainPage130120Test {
 
 
     @BeforeAll
-    public static void setUpAll() {
-        Configuration.browser = Browsers.CHROME; //FIREFOX;
-        Configuration.browserCapabilities = new ChromeOptions().addArguments("--incognito").addArguments("--remote-allow-origins=*").addArguments("--force-device-scale-factor=1.25");
-        open();
-        getWebDriver().manage().window().maximize();
-        Configuration.timeout = 120000; // tiempo de espera
-        getWebDriver().manage().timeouts().scriptTimeout(Duration.ofSeconds(10));
-        SelenideLogger.addListener("allure", new AllureSelenide());
-        initDriver();
-    }
+//    public static void setUpAll() {
+//        Configuration.browserSize = "1920x1080";
+//        SelenideLogger.addListener("allure", new AllureSelenide());
+//    }
 
     public static void initDriver() {
         Configuration.browser = Browsers.CHROME;   //FIREFOX;
@@ -64,19 +57,56 @@ public class MainPage130120Test {
 
     @BeforeEach
     public void setUp() {
-//        Configuration.browserCapabilities = new ChromeOptions().addArguments("--remote-allow-origins=*");
-        ChromeOptions options = new ChromeOptions();
-
-        // Configura las opciones para Chrome: incognito y permitir orígenes remotos
-        options.addArguments("--remote-allow-origins=*");
-        options.addArguments("--incognito");  // Abre el navegador en modo incognito
-
-        // Asignar las capacidades de navegador
-        Configuration.browserCapabilities = options;
+        Configuration.browserCapabilities = new ChromeOptions().addArguments("--remote-allow-origins=*");
     }
 
     @Test
     public void Proceso130120() {
+        // Cargar datos desde el archivo Excel
+        JFileChooser fileChooser = new JFileChooser();
+        fileChooser.setDialogTitle("Seleccione el archivo Excel con la información");
+// Filtrar solo archivos .xlsx
+        fileChooser.setFileFilter(new javax.swing.filechooser.FileNameExtensionFilter("Archivos Excel (*.xlsx)", "xlsx"));
+        int userSelection = fileChooser.showOpenDialog(null);
+        if (userSelection != JFileChooser.APPROVE_OPTION) {
+            JOptionPane.showMessageDialog(null, "Operación cancelada por el usuario.");
+            return;}
+        File excelFile = fileChooser.getSelectedFile();
+        String rutaExcel = excelFile.getAbsolutePath();
+// Validar que el archivo exista y tenga extensión .xlsx
+        if (!excelFile.exists() || !rutaExcel.toLowerCase().endsWith(".xlsx")) {
+            JOptionPane.showMessageDialog(null, "Archivo inválido o no es un archivo Excel (.xlsx).", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+// Intentar leer la hoja "Hoja1"
+        Map<String, String> datosExcel;
+        try {datosExcel = LectorExcel.leerDatos(rutaExcel, "Hoja1");
+            if (datosExcel == null || datosExcel.isEmpty()) {
+                JOptionPane.showMessageDialog(null, "No se encontró la hoja 'Hoja1' o está vacía.", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error al leer el archivo Excel:\n" + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        // Validar campos requeridos
+        List<String> camposRequeridos = List.of(
+                "SelecRol", "tramites", "selectSolicitudRegimenClave", "selectClasificacionRegimen",
+                "textareaSolicitudMercanciaDescripcion", "inputSolicitudMercanciaMarca", "inputSolicitudAduana",
+                "fracArancel", "inputNico", "inputUnidadMedidaTarifaUMT", "optionUnidadMedida", "inputSolicitudMercanciaNumeroFactura", "inputFechaFactura",
+                "inputUnidadmedidaComercializaciónUMC", "inputSolicitudMercanciaCantidadComercial", "inputMonedaComer", "inputSolicitudMercanciaCapacidad",
+                "inputSolicitudMercanciaValorFactura", "inputSolicitudMercanciaValorTotal",
+                "inputSolicitudNumDocumento", "inputFechaGenerica", "textareaSolicitudDatosGenericosDescripcion",
+                "inputSolicitudCodigoAran", "inputSolicitudCantidadUnidadMedida", "inputSolicitudValorUSD",
+                "inputSolicitudPrecioUnitario", "textareaSolicitudDomicilio", "inputSolicitudExpRazonSocial",
+                "textareaSolicitudExportadorDomicilioDes", "textareaSolicitudObservaciones", "inputPaisExp", "inputPaisOri",
+                "inputRepresentaciónFederal", "inputEntidadFederativa"
+        );
+// Validar
+        if (!validarCamposExcel(datosExcel, camposRequeridos)) {
+            return; // Detener ejecución si hay campos faltantes
+        }
+
         /////////////////////////////////////////////////////////////////////////////////////////////////////////-
         // Solicitar el número de repeticiones al usuario a través de un JOptionPane con opción de Cancelar
         String repeticionesStr = JOptionPane.showInputDialog(null, "Ingrese el número de repeticiones:", "Repeticiones", JOptionPane.QUESTION_MESSAGE);
@@ -97,47 +127,15 @@ public class MainPage130120Test {
             JOptionPane.showMessageDialog(null, "Valor no válido, se utilizará 1 repetición por defecto.");
         }
         /////////////////////////////////////////////////////////////////////////////////////////////////////////-
-        // Crear checkboxes
+        // Crear checkboxes para seleccionar los métodos
         JCheckBox dictamenCheckBox = new JCheckBox("ProcesoDictamen130120");
         JCheckBox autorizacionCheckBox = new JCheckBox("ProcesoAutorizacion130120");
         JCheckBox confirmacionCheckBox = new JCheckBox("ProcesoConfirmarNotificaciónResolucion130120");
 
-        // Deshabilitar los siguientes inicialmente
-        autorizacionCheckBox.setEnabled(false);
-        confirmacionCheckBox.setEnabled(false);
+        Object[] params = {"Seleccione los métodos a ejecutar:", dictamenCheckBox, autorizacionCheckBox, confirmacionCheckBox};
+        int option = JOptionPane.showConfirmDialog(null, params, "Opciones de Métodos", JOptionPane.OK_CANCEL_OPTION);
 
-        // Listener para Dictamen → habilita Autorización
-        dictamenCheckBox.addItemListener(e -> {
-            boolean selected = dictamenCheckBox.isSelected();
-            autorizacionCheckBox.setEnabled(selected);
-            if (!selected) {
-                autorizacionCheckBox.setSelected(false);
-                confirmacionCheckBox.setSelected(false);
-                confirmacionCheckBox.setEnabled(false);
-            }
-        });
-
-        // Listener para Autorización → habilita Confirmación
-        autorizacionCheckBox.addItemListener(e -> {
-            boolean selected = autorizacionCheckBox.isSelected();
-            confirmacionCheckBox.setEnabled(selected);
-            if (!selected) {
-                confirmacionCheckBox.setSelected(false);
-            }
-        });
-
-        // Panel vertical para presentación
-        JPanel panel = new JPanel();
-        panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
-        panel.add(new JLabel("Seleccione los métodos a ejecutar:"));
-        panel.add(dictamenCheckBox);
-        panel.add(autorizacionCheckBox);
-        panel.add(confirmacionCheckBox);
-
-        // Mostrar diálogo
-        int option = JOptionPane.showConfirmDialog(null, panel, "Opciones de Métodos", JOptionPane.OK_CANCEL_OPTION);
-
-        // Validar opción
+        // Si el usuario selecciona Cancelar, termina el método
         if (option != JOptionPane.OK_OPTION) {
             JOptionPane.showMessageDialog(null, "Operación cancelada por el usuario.");
             return;
@@ -149,83 +147,76 @@ public class MainPage130120Test {
         if (autorizacionCheckBox.isSelected()) selectedMethods.add("ProcesoAutorizacion130120");
         if (confirmacionCheckBox.isSelected()) selectedMethods.add("ProcesoConfirmarNotificaciónResolucion130120");
 
-
         // Ejecutar el proceso con las repeticiones y los métodos seleccionados
         ejecutarProcesoNRunnable(() -> {
             // Ingreso y selección de trámite
             loginFirmSoli.login(tramite130120);
-            mainPage130120.SelecRol.sendKeys(new CharSequence[]{"Persona Moral"});
+            mainPage130120.SelecRol.sendKeys(datosExcel.get("SelecRol"));
             mainPage130120.Btnacep.click();
-            mainPage130120.tramites.sendKeys(new CharSequence[]{"Solicitudes nuevas"});
+            mainPage130120.tramites.sendKeys(datosExcel.get("tramites"));
             mainPage130120.SoliNew.click();
             mainPage130120.Economia.click();
             mainPage130120.Permisos.click();
             mainPage130120.Importacion.click();
             mainPage130120.Tramite130120.click();
-            // Usar Actions para desplazar hacia el elemento (scroll)
-            // Agregar un retraso de 3 segundos antes de hacer el scroll (3000 ms = 3 segundos)
+
             try {
-                Thread.sleep(3000); // Pausa de 3 segundos
-                // Hacer scroll hasta el elemento
+                Thread.sleep(3000);
                 mainPage130120.Scrol.scrollIntoView(true);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
             mainPage130120.DatosSolicitud.click();
-
-
-
-
-            mainPage130120.selectSolicitudRegimenClave.sendKeys(new CharSequence[]{"Definitivos"});
-            mainPage130120.selectClasificacionRegimen.sendKeys(new CharSequence[]{"De importación"});
-            mainPage130120.textareaSolicitudMercanciaDescripcion.sendKeys(new CharSequence[]{"PRUEBAS QA"});
-            mainPage130120.inputSolicitudMercanciaMarca.sendKeys(new CharSequence[]{"QA MERCANCIA"});
-            mainPage130120.inputSolicitudAduana.sendKeys(new CharSequence[]{"Terrestre"});
-            mainPage130120.optionLasDem.click();
-            mainPage130120.optionLosDem.click();
-            mainPage130120.optionUnidadMedida.sendKeys(new CharSequence[]{"Amperios"});
-            mainPage130120.inputSolicitudMercanciaNumeroFactura.sendKeys(new CharSequence[]{"123456654"});
-            mainPage130120.inputFechaFactura.pressEnter().sendKeys(new CharSequence[]{"22/10/2024"});
-            mainPage130120.optionAbsorcion.click();
-            mainPage130120.inputSolicitudMercanciaCantidadComercial.sendKeys(new CharSequence[]{"100"});
-            mainPage130120.inputSolicitudMercanciaCapacidad.sendKeys(new CharSequence[]{"10"});
-            mainPage130120.inputSolicitudMercanciaValorFactura.sendKeys(new CharSequence[]{"100"});
-            mainPage130120.optionDinar.click();
-            mainPage130120.optionPaisExp.click();
-            mainPage130120.optionPaisOri.click();
-            mainPage130120.inputSolicitudMercanciaValorTotal.sendKeys(new CharSequence[]{"100"});
-            mainPage130120.inputSolicitudNumDocumento.sendKeys(new CharSequence[]{"123456"});
-            mainPage130120.inputFechaGenerica.pressEnter().sendKeys(new CharSequence[]{"22/10/2024"});
-            mainPage130120.textareaSolicitudDatosGenericosDescripcion.sendKeys(new CharSequence[]{"PRUEBAS QA"});
-            mainPage130120.inputSolicitudCodigoAran.sendKeys(new CharSequence[]{"1234"});
-            mainPage130120.inputSolicitudCantidadUnidadMedida.sendKeys(new CharSequence[]{"100"});
-            mainPage130120.inputSolicitudValorUSD.sendKeys(new CharSequence[]{"100"});
-            mainPage130120.inputSolicitudPrecioUnitario.sendKeys(new CharSequence[]{"100"});
+            mainPage130120.selectSolicitudRegimenClave.sendKeys(datosExcel.get("selectSolicitudRegimenClave"));sleep(1500);
+            mainPage130120.selectClasificacionRegimen.sendKeys(datosExcel.get("selectClasificacionRegimen"));sleep(1500);
+            mainPage130120.textareaSolicitudMercanciaDescripcion.sendKeys(datosExcel.get("textareaSolicitudMercanciaDescripcion"));sleep(1500);
+            mainPage130120.inputSolicitudMercanciaMarca.sendKeys(datosExcel.get("inputSolicitudMercanciaMarca"));sleep(1500);
+            mainPage130120.inputSolicitudAduana.sendKeys(datosExcel.get("inputSolicitudAduana"));sleep(1500);
+            mainPage130120.fracArancel.sendKeys(datosExcel.get("fracArancel"));sleep(1500);
+            mainPage130120.inputNico.sendKeys(datosExcel.get("inputNico"));sleep(1500);
+            mainPage130120.inputUnidadMedidaTarifaUMT.sendKeys(datosExcel.get("inputUnidadMedidaTarifaUMT"));sleep(1500);
+            mainPage130120.optionUnidadMedida.sendKeys(datosExcel.get("optionUnidadMedida"));sleep(1500);
+            mainPage130120.inputSolicitudMercanciaNumeroFactura.sendKeys(datosExcel.get("inputSolicitudMercanciaNumeroFactura"));sleep(1500);
+            mainPage130120.inputFechaFactura.pressEnter().sendKeys(datosExcel.get("inputFechaFactura"));sleep(1500);
+            mainPage130120.inputUnidadmedidaComercializaciónUMC.pressEnter().sendKeys(datosExcel.get("inputUnidadmedidaComercializaciónUMC"));sleep(1500);
+            mainPage130120.inputSolicitudMercanciaCantidadComercial.sendKeys(datosExcel.get("inputSolicitudMercanciaCantidadComercial"));sleep(1500);
+            mainPage130120.inputSolicitudMercanciaCapacidad.sendKeys(datosExcel.get("inputSolicitudMercanciaCapacidad"));sleep(1500);
+            mainPage130120.inputSolicitudMercanciaValorFactura.sendKeys(datosExcel.get("inputSolicitudMercanciaValorFactura"));sleep(1500);
+            mainPage130120.inputMonedaComer.sendKeys(datosExcel.get("inputMonedaComer"));sleep(1500);
+            mainPage130120.inputPaisExp.sendKeys(datosExcel.get("inputPaisExp"));sleep(1500);
+            mainPage130120.inputPaisOri.sendKeys(datosExcel.get("inputPaisOri"));sleep(1500);
+            mainPage130120.inputSolicitudMercanciaValorTotal.sendKeys(datosExcel.get("inputSolicitudMercanciaValorTotal"));sleep(1500);
+            mainPage130120.inputSolicitudNumDocumento.sendKeys(datosExcel.get("inputSolicitudNumDocumento"));sleep(1500);
+            mainPage130120.inputFechaGenerica.pressEnter().sendKeys(datosExcel.get("inputFechaGenerica"));sleep(1500);
+            mainPage130120.textareaSolicitudDatosGenericosDescripcion.sendKeys(datosExcel.get("textareaSolicitudDatosGenericosDescripcion"));sleep(1500);
+            mainPage130120.inputSolicitudCodigoAran.sendKeys(datosExcel.get("inputSolicitudCodigoAran"));sleep(1500);
+            mainPage130120.inputSolicitudCantidadUnidadMedida.sendKeys(datosExcel.get("inputSolicitudCantidadUnidadMedida"));sleep(1500);
+            mainPage130120.inputSolicitudValorUSD.sendKeys(datosExcel.get("inputSolicitudValorUSD"));sleep(1500);
+            mainPage130120.inputSolicitudPrecioUnitario.sendKeys(datosExcel.get("inputSolicitudPrecioUnitario"));sleep(1500);
             mainPage130120.inputNinguno.click();
-            mainPage130120.textareaSolicitudDomicilio.sendKeys(new CharSequence[]{"PRUEBA QA CDMX"});
-            mainPage130120.inputMoral.click();
-            mainPage130120.inputSolicitudExpRazonSocial.sendKeys(new CharSequence[]{"ULTRASIST"});
-            mainPage130120.textareaSolicitudExportadorDomicilioDes.sendKeys(new CharSequence[]{"PRUEBA QA CDMX"});
-            mainPage130120.textareaSolicitudObservaciones.sendKeys(new CharSequence[]{"PRUEBA QAS"});
-            mainPage130120.optionSin.click();
-            mainPage130120.optionCuliacan.click();
-            mainPage130120.inputGuardarSolicitud.click();
-            mainPage130120.inputContinuar.click();
-            mainPage130120.inputAdjuntarDocumentos.click();
+            mainPage130120.textareaSolicitudDomicilio.sendKeys(datosExcel.get("textareaSolicitudDomicilio"));sleep(1500);
+            mainPage130120.inputMoral.click();sleep(1500);
+            mainPage130120.inputSolicitudExpRazonSocial.sendKeys(datosExcel.get("inputSolicitudExpRazonSocial"));sleep(1500);
+            mainPage130120.textareaSolicitudExportadorDomicilioDes.sendKeys(datosExcel.get("textareaSolicitudExportadorDomicilioDes"));sleep(1500);
+            mainPage130120.textareaSolicitudObservaciones.sendKeys(datosExcel.get("textareaSolicitudObservaciones"));sleep(1500);
+            mainPage130120.inputEntidadFederativa.sendKeys(datosExcel.get("inputEntidadFederativa"));sleep(1500);
+            mainPage130120.inputRepresentaciónFederal.sendKeys(datosExcel.get("inputRepresentaciónFederal"));sleep(1500);
+            mainPage130120.inputGuardarSolicitud.click();sleep(1500);
+            mainPage130120.inputContinuar.click();sleep(1500);
+            mainPage130120.inputAdjuntarDocumentos.click();sleep(1500);
             mainPage130120.inputDocumentosFile.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
             mainPage130120.inputDocumentosFile2.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
-            mainPage130120.inputAnexar.click();sleep(3500);
+            mainPage130120.inputAnexar.click(); sleep(3500);
             mainPage130120.inputCerrar.click();
             setLoginTimeout(3000);
             mainPage130120.inputSiguienteButton.click();
             loginFirmSoli.firma(tramite130120);
-
+            sleep(1000);
             // Obtener el texto del folio desde mainPage130120
             String folioText = mainPage130120.folio.getText();
 
             // Llamar al mtodo para obtener el folio
             String folioNumber = obtenerFolio.obtenerFolio(folioText);
-
             ConDBReasigSolFun.processFolio(folioNumber, FunRFC);
 
             // Ejecutar métodos seleccionados
@@ -239,7 +230,6 @@ public class MainPage130120Test {
 //                ProcesoConfirmarNotificaciónResolucion130120(folioNumber);
 //            }
             guardarFolioEnArchivo(folioNumber);
-
         }, repeticiones);
 
     }
@@ -318,6 +308,7 @@ public class MainPage130120Test {
 
         }
     }
+
     public void guardarFolioEnArchivo(String folioNumber) {
         String rutaArchivo = "C:\\VucemAuto\\automations\\folios_generados.txt";
 
@@ -332,6 +323,21 @@ public class MainPage130120Test {
         } catch (IOException e) {
             System.err.println("Error al guardar el folio: " + e.getMessage());
         }
+    }
+
+    public boolean validarCamposExcel(Map<String, String> datos, List<String> camposRequeridos) {
+        List<String> faltantes = new ArrayList<>();
+        for (String campo : camposRequeridos) {
+            if (!datos.containsKey(campo) || datos.get(campo) == null || datos.get(campo).isEmpty()) {
+                faltantes.add(campo);
+            }
+        }
+        if (!faltantes.isEmpty()) {
+            String mensaje = "Faltan los siguientes campos en el Excel:\n" + String.join("\n", faltantes);
+            JOptionPane.showMessageDialog(null, mensaje, "Campos faltantes", JOptionPane.ERROR_MESSAGE);
+            return false;
+        }
+        return true;
     }
 
 }
