@@ -12,6 +12,7 @@ import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.chrome.ChromeOptions;
 import javax.swing.*;
 import java.util.UUID;
@@ -100,13 +101,18 @@ public class MainPage80206Test {
             }
             mainPage80206.labelAnexoI.click();
             mainPage80206.inputFraccionArancelaria.sendKeys("85044017");
-            mainPage80206.btnAgregarFraccion.click();
+            mainPage80206.btnAgregarFraccionE.click(); // botón para Exportación
+
             mainPage80206.inputFraccion.click();
             metodos.scrollIncremento(1);
+
             mainPage80206.inputFraccionImportacion.sendKeys("98060008");
-            Selenide.sleep(1000);
-            mainPage80206.inputclic.click();
-            mainPage80206.btnAgregarFraccionI.click();
+            mainPage80206.inputFraccionImportacion.sendKeys(Keys.TAB);
+            sleep(300); // da un tiempo para que se activen validaciones o lógica JS
+
+            mainPage80206.btnAgregarFraccionI.scrollTo(); // opcional si está fuera de vista
+            Selenide.executeJavaScript("arguments[0].click();", mainPage80206.btnAgregarFraccionI); // clic forzado
+
             try {
                 Thread.sleep(2000);
                 mainPage80206.Scrol.scrollIntoView(true);
