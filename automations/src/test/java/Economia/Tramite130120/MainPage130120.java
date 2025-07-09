@@ -10,6 +10,12 @@ public class MainPage130120 {
     public SelenideElement keyS = Selenide.$x("//*[@id='privateKey']");
     public SelenideElement pass = Selenide.$x("//*[@id='privateKeyPassword']");
 
+    public SelenideElement SoliNewC = $x("/html/body/main/div/div[3]/div/div[6]/div[2]/div[1]/form/input");
+    public SelenideElement PermisosC = $x("/html/body/main/div/div[3]/div/div[6]/ul/li[5]/a");
+    public SelenideElement ImportacionC = $x("/html/body/main/div/div[3]/div/div[6]/ul/li[5]/ul/li[1]/a");
+    public SelenideElement Tramite130120C = $x("/html/body/main/div/div[3]/div/div[6]/ul/li[5]/ul/li[1]/ul/li[18]/a");
+    public SelenideElement rfcCapturista = $x("/html/body/main/div/div[1]/div[2]/div/div[1]/form/div[2]/div[2]/select");
+
     public SelenideElement btnIngresFs = Selenide.$x("//button[@onclick='ejecutarProcesoFirma(1)']");
     public SelenideElement SelecRol = Selenide.$x("//*[@id='claveRol']");
     public SelenideElement Btnacep = Selenide.$x("//button[@name='ingresar']");
@@ -70,6 +76,7 @@ public class MainPage130120 {
     public SelenideElement btnFirmar = $x("//*[@id='btnSubmit']");
 
     public SelenideElement folio = $x("/html/body/main/div/div[4]/div/div[4]/div/div/ul/li");
+    public SelenideElement folioTemp = $x("/html/body/main/div/div[4]/div/div[4]/div/div/ul/li");
 
     //Solo Firma Funcionario
     public SelenideElement cerfF = $x("//*[@id='certificate']");
