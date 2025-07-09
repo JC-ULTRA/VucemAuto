@@ -17,7 +17,7 @@ import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
-
+import static DBYFOLIO.ObtenerFolio.obtenerFolioTemp;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 import static java.sql.DriverManager.setLoginTimeout;
@@ -84,21 +84,34 @@ public class MainPage130120Test {
         }
 
 // Mostrar opciones para Persona Moral o Física
-        JRadioButton moralButton = new JRadioButton("Persona Moral");
-        JRadioButton fisicaButton = new JRadioButton("Persona Física");
+        JRadioButton moralButton = new JRadioButton("Persona Moral-F-001.E01.CP02");
+        JRadioButton fisicaButton = new JRadioButton("Persona Física-F-001.E01.CP01");
+        JRadioButton CapPrivButton = new JRadioButton("Capturista Privado-F-001.E01.CP03");
         ButtonGroup group = new ButtonGroup();
         group.add(moralButton);
         group.add(fisicaButton);
-        Object[] options = {"Seleccione el tipo de persona:", moralButton, fisicaButton};
+        group.add(CapPrivButton);
+        Object[] options = {"Seleccione el tipo de persona:", moralButton, fisicaButton, CapPrivButton};
         int seleccionTipo = JOptionPane.showConfirmDialog(null, options, "Tipo de Persona", JOptionPane.OK_CANCEL_OPTION);
 
 // Validar la selección del usuario
-        if (seleccionTipo != JOptionPane.OK_OPTION || (!moralButton.isSelected() && !fisicaButton.isSelected())) {
+        if (seleccionTipo != JOptionPane.OK_OPTION || (!moralButton.isSelected() && !fisicaButton.isSelected() && !CapPrivButton.isSelected())) {
             JOptionPane.showMessageDialog(null, "Debe seleccionar una opción válida. Operación cancelada.");
             return;
         }
-// Determinar la hoja del Excel según la selección
-        String hojaExcel = moralButton.isSelected() ? "F-001.E01.CP02" : "F-001.E01.CP01";
+
+        // Determinar la hoja del Excel según la selección
+        String hojaExcel;
+        if (moralButton.isSelected()) {
+            hojaExcel = "F-001.E01.CP02";
+        } else if (fisicaButton.isSelected()) {
+            hojaExcel = "F-001.E01.CP01";
+        } else if (CapPrivButton.isSelected()) {
+            hojaExcel = "F-001.E01.CP03"; // Asigna aquí la hoja que corresponde al Capturista Privado
+        } else {
+            JOptionPane.showMessageDialog(null, "No se seleccionó una hoja válida.");
+            return;
+        }
 
 // Leer datos desde la hoja seleccionada
         Map<String, String> datosExcel;
@@ -182,12 +195,53 @@ public class MainPage130120Test {
             nombresCamposF.put("B32", "Entidad federativa * :");
             nombresCamposF.put("B33", "Representación federal");
 
+            Map<String, String> nombresCamposC = new HashMap<>();
+            //Nombres persona capturista privado
+            nombresCamposC.put("C1", "Tipo Persona");
+            nombresCamposC.put("C2", "RFC Asociado * :");
+            nombresCamposC.put("C3", "Régimen al que se destinará la mercancía * :");
+            nombresCamposC.put("C4", "Clasificación de régimen * :");
+            nombresCamposC.put("C5", "Descripción de la mercancía * :");
+            nombresCamposC.put("C6", "Marca(s) comercial(es) y modelo(s) * :");
+            nombresCamposC.put("C7", "Tipo de aduana de entrada * :");
+            nombresCamposC.put("C8", "Fracción arancelaria * :");
+            nombresCamposC.put("C9", "NICO * :");
+            nombresCamposC.put("C10", "Unidad de medida de la tarifa(UMT) * :");
+            nombresCamposC.put("C11", "Numero de factura * :");
+            nombresCamposC.put("C12", "Fecha de factura * :");
+            nombresCamposC.put("C3", "Unidad de medida de comercialización(UMC) * :");
+            nombresCamposC.put("C4", "Cantidad UMC * :");
+            nombresCamposC.put("C5", "Factor de conversión * :");
+            nombresCamposC.put("C6", "Valor de la factura de la mercancía a importar en términos de la Moneda de Comercialización * :");
+            nombresCamposC.put("C7", "Moneda de comercialización * :");
+            nombresCamposC.put("C8", "País exportador * :");
+            nombresCamposC.put("C9", "País origen * :");
+            nombresCamposC.put("C20", "Valor total de la factura en términos de la Moneda de Comercialización * :");
+            nombresCamposC.put("C21", "Número de documento * :");
+            nombresCamposC.put("C22", "Fecha del documento * :");
+            nombresCamposC.put("C23", "Descripción de la mercancía * :");
+            nombresCamposC.put("C24", "Código arancelario * :");
+            nombresCamposC.put("C25", "Cantidad en la unidad de medida señalada en el documento de exportación * :");
+            nombresCamposC.put("C26", "Valor en USD de la mercancía a importar * :");
+            nombresCamposC.put("C27", "Precio unitario en USD * :");
+            nombresCamposC.put("C28", "Domicilio * productor:");
+            nombresCamposC.put("C29", "Denominación o razón social * :");
+            nombresCamposC.put("C30", "Domicilio * export:");
+            nombresCamposC.put("C31", "Observaciones :");
+            nombresCamposC.put("C32", "Entidad federativa * :");
+            nombresCamposC.put("C33", "Representación federal");
+
             // Validar campos requeridos según el tipo de hoja
             List<String> camposRequeridos;
             if (moralButton.isSelected()) {
                 camposRequeridos = new ArrayList<>(nombresCamposM.keySet());//VALIDA PERSONA MORAL
-            } else {
+            } else if (fisicaButton.isSelected()) {
                 camposRequeridos = new ArrayList<>(nombresCamposF.keySet());//VALIDA PERSONA FISICA
+            }else if (CapPrivButton.isSelected()) {
+                camposRequeridos = new ArrayList<>(nombresCamposC.keySet());//VALIDA CAPTURISTA PRIVADO
+            } else {
+                JOptionPane.showMessageDialog(null, "Tipo de persona no válido.");
+                return;
             }
 
             // Validar campos requeridos y mostrar nombres legibles si faltan
@@ -196,6 +250,7 @@ public class MainPage130120Test {
                 if (!datosExcel.containsKey(clave) || datosExcel.get(clave).trim().isEmpty()) {
                     camposFaltantes.add(nombresCamposM.getOrDefault(clave, clave));
                     camposFaltantes.add(nombresCamposF.getOrDefault(clave, clave));
+                    camposFaltantes.add(nombresCamposC.getOrDefault(clave, clave));
                 }
             }
 
@@ -209,8 +264,6 @@ public class MainPage130120Test {
             JOptionPane.showMessageDialog(null, "Error al leer el archivo Excel:\n" + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
-
-
 
         /////////////////////////////////////////////////////////////////////////////////////////////////////////-
         // Solicitar el número de repeticiones al usuario a través de un JOptionPane con opción de Cancelar
@@ -258,11 +311,21 @@ public class MainPage130120Test {
 // Ingreso y selección de trámite según tipo de persona
             if (moralButton.isSelected()) {
                 ProcesoRegistro130120Moral(datosExcel);
-            } else {
+            } else if (fisicaButton.isSelected()) {
                 ProcesoRegistro130120Fisica(datosExcel);
+            }else if (CapPrivButton.isSelected()) {
+                ProcesoRegistro130120CapPriv(datosExcel);
+            } else {
+                JOptionPane.showMessageDialog(null, "Tipo de persona no válido.");
+                return;
             }
 
+
+
             String folioText = mainPage130120.folio.getText();
+//            String folioTemp = mainPage130120.folioTemp.getText();
+//            String FolioTemporal = obtenerFolio.obtenerFolioTemp(folioTemp);
+
             // Llamar al mtodo para obtener el folio
             String folioNumber = obtenerFolio.obtenerFolio(folioText);
             ConDBReasigSolFun.processFolio(folioNumber, FunRFC);
@@ -405,6 +468,70 @@ public class MainPage130120Test {
         mainPage130120.inputSiguienteButton.click();
         loginFirmSoli.firma(tramite130120F);
     }
+    public void ProcesoRegistro130120CapPriv(Map<String, String> datosExcel) {
+        loginFirmSoli.LoginPerCapPriv();
+        mainPage130120.SelecRol.sendKeys(datosExcel.get("C1"));
+        mainPage130120.rfcCapturista.sendKeys(datosExcel.get("C2"));
+        mainPage130120.Btnacep.click();
+        mainPage130120.tramites.click();
+        mainPage130120.SoliNewC.click();
+        mainPage130120.Economia.click();
+        mainPage130120.PermisosC.click();
+        mainPage130120.ImportacionC.click();
+        mainPage130120.Tramite130120C.click();
+        try {
+            Thread.sleep(3000);
+            mainPage130120.Scrol.scrollIntoView(true);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        mainPage130120.DatosSolicitud.click();
+        mainPage130120.selectSolicitudRegimenClave.sendKeys(datosExcel.get("C3"));
+        mainPage130120.selectClasificacionRegimen.sendKeys(datosExcel.get("C4"));
+        mainPage130120.textareaSolicitudMercanciaDescripcion.sendKeys(datosExcel.get("C5"));
+        mainPage130120.inputSolicitudMercanciaMarca.sendKeys(datosExcel.get("C6"));
+        mainPage130120.inputSolicitudAduana.sendKeys(datosExcel.get("C7"));
+        mainPage130120.fracArancel.sendKeys(datosExcel.get("C8"));
+        mainPage130120.inputNico.sendKeys(datosExcel.get("C9"));
+        mainPage130120.inputUnidadMedidaTarifaUMT.sendKeys(datosExcel.get("C10"));
+        mainPage130120.inputSolicitudMercanciaNumeroFactura.sendKeys(datosExcel.get("C11"));
+        mainPage130120.inputFechaFactura.pressEnter().sendKeys(datosExcel.get("C12"));
+        mainPage130120.inputUnidadmedidaComercializaciónUMC.pressEnter().sendKeys(datosExcel.get("C13"));
+        mainPage130120.inputSolicitudMercanciaCantidadComercial.sendKeys(datosExcel.get("C14"));
+        mainPage130120.inputSolicitudMercanciaCapacidad.sendKeys(datosExcel.get("C15"));
+        mainPage130120.inputSolicitudMercanciaValorFactura.sendKeys(datosExcel.get("C16"));
+        mainPage130120.inputMonedaComer.sendKeys(datosExcel.get("C17"));
+        mainPage130120.inputPaisExp.sendKeys(datosExcel.get("C18"));
+        mainPage130120.inputPaisOri.sendKeys(datosExcel.get("C19"));
+        mainPage130120.inputSolicitudMercanciaValorTotal.sendKeys(datosExcel.get("C20"));
+        mainPage130120.inputSolicitudNumDocumento.sendKeys(datosExcel.get("C21"));
+        mainPage130120.inputFechaGenerica.pressEnter().sendKeys(datosExcel.get("C22"));
+        mainPage130120.textareaSolicitudDatosGenericosDescripcion.sendKeys(datosExcel.get("C23"));
+        mainPage130120.inputSolicitudCodigoAran.sendKeys(datosExcel.get("C24"));
+        mainPage130120.inputSolicitudCantidadUnidadMedida.sendKeys(datosExcel.get("C25"));
+        mainPage130120.inputSolicitudValorUSD.sendKeys(datosExcel.get("C26"));
+        mainPage130120.inputSolicitudPrecioUnitario.sendKeys(datosExcel.get("C27"));
+        mainPage130120.inputNinguno.click();
+        mainPage130120.textareaSolicitudDomicilio.sendKeys(datosExcel.get("C28"));
+        mainPage130120.inputMoral.click();
+        mainPage130120.inputSolicitudExpRazonSocial.sendKeys(datosExcel.get("C29"));
+        mainPage130120.textareaSolicitudExportadorDomicilioDes.sendKeys(datosExcel.get("C30"));
+        mainPage130120.textareaSolicitudObservaciones.sendKeys(datosExcel.get("C31"));
+        mainPage130120.inputEntidadFederativa.sendKeys(datosExcel.get("C32"));
+        mainPage130120.inputRepresentaciónFederal.sendKeys(datosExcel.get("C33"));
+        mainPage130120.inputGuardarSolicitud.click();
+        mainPage130120.inputContinuar.click();
+        mainPage130120.inputAdjuntarDocumentos.click();
+        mainPage130120.inputDocumentosFile.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
+        mainPage130120.inputDocumentosFile2.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
+        mainPage130120.inputAnexar.click(); sleep(3500);
+        mainPage130120.inputCerrar.click();
+        setLoginTimeout(3000);
+        mainPage130120.inputSiguienteButton.click();
+    }
+
+
+
 
     //Proceso Dictamen, autorizar y Confitmar Notificación Resolución.
     public void ProcesoDictamen130120(String folioNumber) {
