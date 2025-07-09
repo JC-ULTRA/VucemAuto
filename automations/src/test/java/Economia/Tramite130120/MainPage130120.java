@@ -17,8 +17,11 @@ public class MainPage130120 {
     public SelenideElement SoliNew = Selenide.$x("/html/body/main/div/div[2]/div[1]/div[1]/div/nav/div/div[2]/ul/li[5]/ul/li[3]/a");
     public SelenideElement Economia = Selenide.$x("//img[contains(@alt, 'Economía')]");
     public SelenideElement Permisos = Selenide.$x("/html/body/main/div/div[3]/div/div[6]/ul/li[6]/a");
+    public SelenideElement PermisosF = Selenide.$x("/html/body/main/div/div[3]/div/div[6]/ul/li[4]/a");
     public SelenideElement Importacion = Selenide.$x("/html/body/main/div/div[3]/div/div[6]/ul/li[6]/ul/li[1]/a");
+    public SelenideElement ImportacionF = Selenide.$x("/html/body/main/div/div[3]/div/div[6]/ul/li[4]/ul/li[1]/a");
     public SelenideElement Tramite130120 = Selenide.$x("//a[contains(@onclick, 'nicio')]");
+    public SelenideElement Tramite130120F = Selenide.$x("/html/body/main/div/div[3]/div/div[6]/ul/li[4]/ul/li[1]/ul/li[16]/a");
     //Scroll
     public SelenideElement Scrol = Selenide.$x("//*[@id=\"logoHeader\"]");
     public SelenideElement DatosSolicitud = Selenide.$x("//*[@id='ui-id-2']");
