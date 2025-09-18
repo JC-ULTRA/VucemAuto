@@ -25,7 +25,7 @@ public class LectorExcel {
 
             for (Row row : sheet) {
                 Cell clave = row.getCell(0);
-                Cell valor = row.getCell(1);
+                Cell valor = row.getCell(2);
                 if (clave != null && valor != null) {
                     String claveStr = formatter.formatCellValue(clave).trim();
                     String valorStr = formatter.formatCellValue(valor).trim();

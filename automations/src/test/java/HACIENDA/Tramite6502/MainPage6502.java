@@ -1,14 +1,13 @@
-package Economia.Tramite140102;
+package HACIENDA.Tramite6502;
 
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Selenide.$x;
 
-public class MainPage140102 {
-
+public class MainPage6502 {
     public SelenideElement Scrol = Selenide.$x("//*[@id=\"logoHeader\"]");
-    public SelenideElement folio = $x("/html/body/main/div/div[4]/div/div[4]/div/div/ul/li");
+    public SelenideElement folio = $x("/html/body/div[1]/div[3]/div[3]/div/div[3]/div/ul/li");
     //Loging y selección de rol
     public SelenideElement selecRol = $x("//*[@id='claveRol']");
     public SelenideElement btnacep = $x("//button[@name='ingresar']");
@@ -19,8 +18,11 @@ public class MainPage140102 {
     public SelenideElement Economia = $x("//img[contains(@alt, 'Economía')]");
     //Continuar (Agregar Solicitud)
     public SelenideElement btnContinuarPaso1 = $x("//*[@id=\"guardarSolicitud\"]");
-    public SelenideElement Obs = $x("/html/body/main/div/div[4]/div/form/div[2]/div/div[2]/div[4]/div/textarea");
-    public SelenideElement btnContinuaFirma = $x("/html/body/main/div/div[4]/div/form/div[3]/div/div/div[2]/input[1]");
 
+    public SelenideElement check1 = $x("/html/body/div[1]/div[3]/div[3]/div/form/div[2]/div[2]/table/tbody/tr[2]/td/div[1]/div[3]/div[3]/div/table/tbody/tr[2]/td[1]/input");
+    public SelenideElement btnModificar1 = $x("/html/body/div[1]/div[3]/div[3]/div/form/div[2]/div[2]/table/tbody/tr[3]/td/div/input");
+
+
+//    public SelenideElement btnModificar2 = $x("");
 
 }

@@ -60,4 +60,18 @@ public class ObtenerFolio {
         Selenide.closeWebDriver();
         return folioNumber;
     }
+
+    public static void obtenerFolioTemp(String texto) {
+        // Expresión regular para encontrar un número de exactamente 9 dígitos
+        Pattern pattern = Pattern.compile("\\b\\d{9}\\b");
+        Matcher matcher = pattern.matcher(texto);
+
+        if (matcher.find()) {
+            String folio = matcher.group();
+            System.out.println("Folio extraído: " + folio);
+            // Aquí puedes hacer algo más con el folio si necesitas
+        } else {
+            System.out.println("No se encontró un folio en el texto.");
+        }
+    }
 }
