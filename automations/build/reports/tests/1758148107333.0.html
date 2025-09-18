@@ -1,0 +1,1478 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+        <title>Verificar Dictamen</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="pragma" content="no-cache">
+        <meta http-equiv="cache-control" content="no-cache">
+        <meta http-equiv="expires" content="-1">
+        
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">                
+        <meta name="description" content="VUCEM">
+        <meta name="keywords" content="VUCEM">
+        <meta name="author" content="Softtek">  
+        <link rel="shortcut icon" type="image/x-icon" media="screen" href="/ventanilla-gubernamentales-HA/images/main/favicon.ico">
+        <link rel="icon" type="image/x-icon" media="screen" href="/ventanilla-gubernamentales-HA/images/main/favicon.ico">         
+        
+        <script type="text/javascript">var contextPath = '/ventanilla-gubernamentales-HA';</script>
+                
+        <link rel="stylesheet" type="text/css" media="screen" href="/ventanilla-gubernamentales-HA/css/main/main.css">
+        <link rel="stylesheet" type="text/css" media="screen" href="/ventanilla-gubernamentales-HA/css/formato_unico/formato_unico.css">
+        
+        <link rel="stylesheet" type="text/css" media="screen" href="/ventanilla-gubernamentales-HA/css/jquery/redmond/jquery-ui-1.8.6.custom.css">
+        <script type="text/javascript" language="javascript" src="/ventanilla-gubernamentales-HA/js/jquery/jquery-1.4.4.min.js"></script>
+        <script type="text/javascript" language="javascript" src="/ventanilla-gubernamentales-HA/js/jquery/jsrsasign-4.7.0-all-min_sat-fix.js"></script>
+        <script type="text/javascript" language="javascript" src="/ventanilla-gubernamentales-HA/js/jquery/jquery.timers-1.2.js"></script>                    
+        <script type="text/javascript" language="javascript" src="/ventanilla-gubernamentales-HA/js/jquery/jquery-ui-1.8.6.custom.min.js"></script>
+        <script type="text/javascript" language="javascript" src="/ventanilla-gubernamentales-HA/js/jquery/ui/i18n/jquery-ui-i18n.js"></script>            
+        <script type="text/javascript" language="javascript" src="/ventanilla-gubernamentales-HA/js/jquery/ui/external/jquery.bgiframe-2.1.2.js"></script>
+        <script type="text/javascript" language="javascript" src="/ventanilla-gubernamentales-HA/js/jquery/ui/external/jquery.cookie.js"></script>
+        <script type="text/javascript" language="javascript" src="/ventanilla-gubernamentales-HA/js/jquery/jquery.filestyle.js"></script>
+        <script type="text/javascript" language="javascript" src="/ventanilla-gubernamentales-HA/js/jquery/jquery-ui-init.js"></script>
+             
+        <script type="text/javascript" language="javascript" src="/ventanilla-gubernamentales-HA/js/main/ajaxfileupload.js"></script>
+        
+        
+        
+        <script type="text/javascript" language="javascript" src="/ventanilla-gubernamentales-HA/js/jquery/combo/jquery.selectbox-0.1.3.js"></script>
+        <link href="/ventanilla-gubernamentales-HA/css/combo/jquery.selectbox.css" type="text/css" rel="stylesheet">
+        
+        <link rel="stylesheet" type="text/css" media="screen" href="/ventanilla-gubernamentales-HA/css/jqgrid/ui.jqgrid.css">            
+        <script type="text/javascript" language="javascript" src="/ventanilla-gubernamentales-HA/js/jqgrid/i18n/grid.locale-es.js"></script>
+        <script type="text/javascript" language="javascript" src="/ventanilla-gubernamentales-HA/js/jqgrid/jquery.jqGrid.min.js"></script>            
+        
+        <script type="text/javascript" language="javascript" src="/ventanilla-gubernamentales-HA/js/jquery/validation/jquery.validate.min.js"></script>
+        <script type="text/javascript" language="javascript" src="/ventanilla-gubernamentales-HA/js/jquery/validation/stripes.jquery.validation.js"></script>
+
+        <script type="text/javascript" language="javascript" src="/ventanilla-gubernamentales-HA/js/jquery/validation/localization/messages_es.js"></script>
+
+        <script type="text/javascript" language="javascript" src="/ventanilla-gubernamentales-HA/js/blockUI/jquery.blockUI.js"></script>
+        
+        <script language="javascript" type="text/javascript" src="/ventanilla-gubernamentales-HA/js/qtip/jquery.qtip-1.0.0-rc3.min.js"></script>
+        
+        <link rel="stylesheet" type="text/css" media="screen" href="/ventanilla-gubernamentales-HA/css/tooltip/jquery.tooltip.css">
+        <link type="text/css" rel="stylesheet" href="/ventanilla-gubernamentales-HA/css/modulos/aga/common/justificaciones.css">
+        
+        <script type="text/javascript" src="/ventanilla-gubernamentales-HA/js/stk/stk-framework.js"></script>
+        <script type="text/javascript" src="/ventanilla-gubernamentales-HA/js/stk/stk-common.js"></script>
+        <script type="text/javascript" src="/ventanilla-gubernamentales-HA/js/stk/catalog.js"></script>
+        <script type="text/javascript" src="/ventanilla-gubernamentales-HA/js/stk/stk-grid.js"></script>
+        
+        <script type="text/javascript" language="javascript" src="/ventanilla-gubernamentales-HA/js/main/adminDocuments.js"></script>
+        <script type="text/javascript" language="javascript" src="/ventanilla-gubernamentales-HA/js/main/fiel.js"></script> 
+		<script type="text/javascript" language="javascript" src="/ventanilla-gubernamentales-HA/js/main/FielUtil-1.5.js"></script>       
+        <script type="text/javascript" language="javascript" src="/ventanilla-gubernamentales-HA/js/main/main.js?version=1.1.1"></script> 
+        <script type="text/javascript" language="javascript" src="/ventanilla-gubernamentales-HA/js/jquery/jstree_pre1.0_fix_1/jquery.jstree.js"></script>
+        <link type="text/css" rel="stylesheet" href="/ventanilla-gubernamentales-HA/css/jquery/jquery.alerts.css">
+        <script type="text/javascript" language="javascript" src="/ventanilla-gubernamentales-HA/js/jquery/jquery.alerts.js"></script>        
+        
+        <link rel="stylesheet" type="text/css" href="/ventanilla-gubernamentales-HA/css/menu/menu_servs.css">
+    	<script type="text/javascript" language="javascript" src="/ventanilla-gubernamentales-HA/js/jquery/scriptbreaker-multiple-accordion-1.js"></script>
+	    
+        
+        
+        
+	<!-- CSS -->
+	
+
+    <style type="text/css" id="vakata-stylesheet">#vakata-dragged { display:block; margin:0 0 0 0; padding:4px 4px 4px 24px; position:absolute; top:-2000px; line-height:16px; z-index:10000; } #vakata-contextmenu { display:block; visibility:hidden; left:0; top:-200px; position:absolute; margin:0; padding:0; min-width:180px; background:#ebebeb; border:1px solid silver; z-index:10000; *width:180px; } #vakata-contextmenu ul { min-width:180px; *width:180px; } #vakata-contextmenu ul, #vakata-contextmenu li { margin:0; padding:0; list-style-type:none; display:block; } #vakata-contextmenu li { line-height:20px; min-height:20px; position:relative; padding:0px; } #vakata-contextmenu li a { padding:1px 6px; line-height:17px; display:block; text-decoration:none; margin:1px 1px 0 1px; } #vakata-contextmenu li ins { float:left; width:16px; height:16px; text-decoration:none; margin-right:2px; } #vakata-contextmenu li a:hover, #vakata-contextmenu li.vakata-hover > a { background:gray; color:white; } #vakata-contextmenu li ul { display:none; position:absolute; top:-2px; left:100%; background:#ebebeb; border:1px solid gray; } #vakata-contextmenu .right { right:100%; left:auto; } #vakata-contextmenu .bottom { bottom:-1px; top:auto; } #vakata-contextmenu li.vakata-separator { min-height:0; height:1px; line-height:1px; font-size:1px; overflow:hidden; margin:0 2px; background:silver; /* border-top:1px solid #fefefe; */ padding:0; } </style><style type="text/css" id="jstree-stylesheet">.jstree ul, .jstree li { display:block; margin:0 0 0 0; padding:0 0 0 0; list-style-type:none; } .jstree li { display:block; min-height:18px; line-height:18px; white-space:nowrap; margin-left:18px; min-width:18px; } .jstree-rtl li { margin-left:0; margin-right:18px; } .jstree > ul > li { margin-left:0px; } .jstree-rtl > ul > li { margin-right:0px; } .jstree ins { display:inline-block; text-decoration:none; width:18px; height:18px; margin:0 0 0 0; padding:0; } .jstree a { display:inline-block; line-height:16px; height:16px; color:black; white-space:nowrap; text-decoration:none; padding:1px 2px; margin:0; } .jstree a:focus { outline: none; } .jstree a > ins { height:16px; width:16px; } .jstree a > .jstree-icon { margin-right:3px; } .jstree-rtl a > .jstree-icon { margin-left:3px; margin-right:0; } li.jstree-open > ul { display:block; } li.jstree-closed > ul { display:none; } #vakata-dragged ins { display:block; text-decoration:none; width:16px; height:16px; margin:0 0 0 0; padding:0; position:absolute; top:4px; left:4px;  -moz-border-radius:4px; border-radius:4px; -webkit-border-radius:4px; } #vakata-dragged .jstree-ok { background:green; } #vakata-dragged .jstree-invalid { background:red; } #jstree-marker { padding:0; margin:0; font-size:12px; overflow:hidden; height:12px; width:8px; position:absolute; top:-30px; z-index:10001; background-repeat:no-repeat; display:none; background-color:transparent; text-shadow:1px 1px 1px white; color:black; line-height:10px; } #jstree-marker-line { padding:0; margin:0; line-height:0%; font-size:1px; overflow:hidden; height:1px; width:100px; position:absolute; top:-30px; z-index:10000; background-repeat:no-repeat; display:none; background-color:#456c43;  cursor:pointer; border:1px solid #eeeeee; border-left:0; -moz-box-shadow: 0px 0px 2px #666; -webkit-box-shadow: 0px 0px 2px #666; box-shadow: 0px 0px 2px #666;  -moz-border-radius:1px; border-radius:1px; -webkit-border-radius:1px; }.jstree .jstree-real-checkbox { display:none; } .jstree-themeroller .ui-icon { overflow:visible; } .jstree-themeroller a { padding:0 2px; } .jstree-themeroller .jstree-no-icon { display:none; }.jstree .jstree-wholerow-real { position:relative; z-index:1; } .jstree .jstree-wholerow-real li { cursor:pointer; } .jstree .jstree-wholerow-real a { border-left-color:transparent !important; border-right-color:transparent !important; } .jstree .jstree-wholerow { position:relative; z-index:0; height:0; } .jstree .jstree-wholerow ul, .jstree .jstree-wholerow li { width:100%; } .jstree .jstree-wholerow, .jstree .jstree-wholerow ul, .jstree .jstree-wholerow li, .jstree .jstree-wholerow a { margin:0 !important; padding:0 !important; } .jstree .jstree-wholerow, .jstree .jstree-wholerow ul, .jstree .jstree-wholerow li { background:transparent !important; }.jstree .jstree-wholerow ins, .jstree .jstree-wholerow span, .jstree .jstree-wholerow input { display:none !important; }.jstree .jstree-wholerow a, .jstree .jstree-wholerow a:hover { text-indent:-9999px; !important; width:100%; padding:0 !important; border-right-width:0px !important; border-left-width:0px !important; } .jstree .jstree-wholerow-span { position:absolute; left:0; margin:0px; padding:0; height:18px; border-width:0; padding:0; z-index:0; }</style></head>
+    <body>
+        <noscript>
+            <div id="main">
+                <br />
+                <div id="noscript">
+                    <div style="margin-left:9em; height:35px;"><h1>Atenci&oacute;n</h1></div>
+                    <p>Para utilizar la Ventana &Uacute;nica de Comercio Exterior, la configuraci&oacute;n del explorador debe permitir la ejecuci&oacute;n de scripts. Para obtener informaci&oacute;n sobre c&oacute;mo permitir scripts, consulte el enlace siguiente. <br /><br />
+                    <a href="http://www.google.com/support/bin/answer.py?answer=23852" target="_blank">http://www.google.com/support/bin/answer.py?answer=23852</a><br /><br />
+                    Si el navegador no admite scripts, puede descargar una versi&oacute;n mas reciente del navegador de su elecci&oacute;n.</p>
+                </div>
+                <br/>
+            </div>
+        </noscript>
+        <div id="main">
+            <div id="sesion2">
+
+                <p class="sesiontext">
+                Usuario:&nbsp;<span class="etiqueta">MAVL621207C95</span><br>
+                EUROFOODS DE MEXICO GONZALEZ PINAL<br>
+                Rol:&nbsp;<span class="etiqueta">Administrador de la Ventanilla Unica</span>
+                
+                	<br>Tipo Certificado:&nbsp;<span class="etiqueta">FIEL</span>
+                
+                </p>
+
+            </div>
+            <div id="header">
+<span id="version">???version.label???&nbsp;1.2.0&nbsp;build-${BUILD_NUMBER} - revisión ${SVN_REVISION} - ${BUILD_ID}</span>
+<div id="logoHeader">
+    <div id="sesion">
+		
+		<input type="button" onclick="javascript:logout();" value="Cerrar la sesión" class="logout">
+		
+    </div>    
+</div></div>
+            <div id="mainContent">
+                
+    <div id="menu_lateral" class="notrigger">
+        <table id="tablaMenuLateral" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td>Menú</td>
+        </tr>
+        <tr>
+            <td>
+                <a title="       Inicio" href="javascript:ejecutarOpcion('/ventanilla-HA/bandeja.action?mostrarTareasFuncionarioJQuery=','/ventanilla-HA/invocarModulo.action?init')">
+                    <img alt="       Inicio" border="0" src="/ventanilla-gubernamentales-HA/images/menu/icoInicio.png">
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a title="      Consultas" href="#" onclick="javascript:showSubOptions(50); return false;">
+                    <img alt="      Consultas" border="0" src="/ventanilla-gubernamentales-HA/images/menu/icoConsultas.png">
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a title="    Solicitudes" href="javascript:ejecutarOpcion('/ventanilla-HA/bandejaSolicitudes.action','/ventanilla-HA/invocarModulo.action?init')">
+                    <img alt="    Solicitudes" border="0" src="/ventanilla-gubernamentales-HA/images/menu/icoPendientes.png">
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a title="   Trámites" href="javascript:ejecutarOpcion('/ventanilla-HA/tramitesDisponibles.action','/ventanilla-HA/invocarModulo.action?init')">
+                    <img alt="   Trámites" border="0" src="/ventanilla-gubernamentales-HA/images/menu/IcoTramites.png">
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a title="  Usuarios" href="#" onclick="javascript:showSubOptions(60); return false;">
+                    <img alt="  Usuarios" border="0" src="/ventanilla-gubernamentales-HA/images/menu/icoUsuarios.png">
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a title=" Otras tareas" href="#" onclick="javascript:showSubOptions(70); return false;">
+                    <img alt=" Otras tareas" border="0" src="/ventanilla-gubernamentales-HA/images/menu/icoOtrasTareas.png">
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a title="Configuración" href="#" onclick="javascript:showSubOptions(40); return false;">
+                    <img alt="Configuración" border="0" src="/ventanilla-gubernamentales-HA/images/menu/icoConfiguracion.png">
+                </a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<div style="display:none;">
+<ul id="15" class="topnav">
+    <li>
+        <a href="#" id="       Inicio">       Inicio</a>
+        <ul>
+        </ul>
+    </li>
+</ul>
+<ul id="50" class="topnav">
+    <li>
+        <a href="#" id="      Consultas">      Consultas</a>
+        <ul>
+<li>
+<a href="javascript:ejecutarOpcion('//declaracionAduanera/consultas/consultaFuncionario.action','//invocarModulo.action?init') ">Consulta Declaración Aduanera</a>
+</li>
+<li>
+<a href="# ">Consulta Información AGACE/ACAJA</a>
+<ul>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-aviso-HA/AvisoUnico/IndustriaAutomotriz/consultaFuncionariosInformacionIndustriaAutomotriz.action','/ventanilla-aviso-HA/invocarModulo.action?init') ">Consultar de Información Industria Automotriz</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-aviso-HA/AvisoUnico/IndustriaAutomotriz/consultaFuncionariosInformacionProveedores.action','/ventanilla-aviso-HA/invocarModulo.action?init') ">Consultar de Información Proveedores</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cove-HA/cove/cove.action?consultarCove','/ventanilla-cove-HA/invocarModulo.action?init') ">Consulta Información de Valor y de Comercialización</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-se-HA/se/ReportesSAAI/consultarSolicitud.action','/ventanilla-se-HA/invocarModulo.action?init') ">Consulta Reporte Replica</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('//manifestacion/consultaManifestacion.action','//invocarModulo.action?init') ">Consulta de Manifiestación de Valor</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-gafetes-HA/aaa/consulta/consultaGafetesVu.action','/ventanilla-gafetes-HA/invocarModulo.action?init') ">Consulta de gafetes</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-sagarpa-HA/gubernamentales2/sagarpa/consultasTramitesFuncionarioSagarpa.action','/ventanilla-sagarpa-HA/invocarModulo.action?init') ">Consulta trámites de AGRICULTURA</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-se-HA/pexim/consultasFuncionarioPexim.action','/ventanilla-se-HA/invocarModulo.action?init') ">Consulta trámites de SE</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-digitalizacion-HA/aga/consultaDigitalizarDocumentosController.action?consultarDocumentosDigitalizados','/ventanilla-digitalizacion-HA/invocarModulo.action?init') ">Consultar  Documentos Digitalizados</a>
+</li>
+<li>
+<a href="# ">Consultar CAAT</a>
+<ul>
+<li>
+<a href="javascript:ejecutarOpcion('//aga/consultas/ConsultaCaatAereo.action?','//invocarModulo.action?init') ">Consultar CAAT Aéreo</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-aga-HA/aga/consultas/ConsultaCaatMaritimo.action?','/ventanilla-aga-HA/invocarModulo.action?init') ">Consultar CAAT Marítimo</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-aga-HA/aga/consultas/ConsultaCaatTerrestre.action?','/ventanilla-aga-HA/invocarModulo.action?init') ">Consultar CAAT Terrestre</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-aga-HA/aga/consultas/ConsultaCaatNaviero.action?','/ventanilla-aga-HA/invocarModulo.action?init') ">Consultar CAAT de Agentes y Consignatarios</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-HA/bandejaConsultas.action','/ventanilla-HA/invocarModulo.action?init') ">Consultar estado del trámite</a>
+</li>
+<li>
+<a href="# ">Consultas de Manifiesto Ferroviario</a>
+<ul>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-consultas-HA/ferroviarios/consultarDespachoElectronico.action','/ventanilla-consultas-HA/invocarModulo.action?init') ">Consulta Despacho electrónico</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-consultas-HA/ferroviarios/consultarDocumentodeTransporte.action','/ventanilla-consultas-HA/invocarModulo.action?init') ">Consulta Documento de transporte</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('//privados/ferros/consultarListaIntercambio.action','//invocarModulo.action?init') ">Consulta Lista Detallada</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-consultas-HA/ferroviarios/consultarConsist.action','/ventanilla-consultas-HA/invocarModulo.action?init') ">Consulta Lista de intercambio (Consist)/Aviso de arribo (Consist preliminar)</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('//privados/ferros/consultarApeDiecisiete.action','//invocarModulo.action?init') ">Consulta de operaciones en contingencia</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cat-HA/catalogos/descargaCatSAGARPA.action','/ventanilla-cat-HA/invocarModulo.action?init') ">Descarga Catálogos SADER</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-se-HA/historicoCertificado/consulta.action','/ventanilla-se-HA/invocarModulo.action?init') ">Histórico de certificados NOM's</a>
+</li>
+<li>
+<a href="# ">Manifiesto Aéreo</a>
+<ul>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-aereos-HA/consulta3/ConsultaMensajes.action','/ventanilla-aereos-HA/invocarModulo.action?init') ">Consulta de Manifiestos de Carga y Guías Aéreas</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-aereos-HA/consulta3/ConsultaMensajes.action','/ventanilla-aereos-HA/invocarModulo.action?init') ">Consulta de Manifiestos de Carga y Guías Aéreas  (AGA)</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('//aga/consultaTransbordo/registrarSolicitud.action?iniciar','//invocarModulo.action?init') ">Consulta de Transbordo</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('//consulta/consultaProceso06.action?iniciar','//invocarModulo.action?init') ">Consulta de guías aéreas</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="# ">Manifiesto Marítimo</a>
+<ul>
+<li>
+<a href="javascript:ejecutarOpcion('/consultasMaritimos/consulta/ConsultaBitacora.action?iniciar','/consultasMaritimos/invocarModulo.action?init') ">Consulta portal bitácora</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/consultasMaritimos/consulta/ConsultaContenedores.action?iniciar','/consultasMaritimos/invocarModulo.action?init') ">Consulta portal contenedores</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/consultasMaritimos/consulta/ConsultaHouse.action?iniciar','/consultasMaritimos/invocarModulo.action?init') ">Consulta portal house</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/consultasMaritimos/consulta/ConsultaManifiesto.action?iniciar','/consultasMaritimos/invocarModulo.action?init') ">Consulta portal manifiesto</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/consultasMaritimos/consulta/ConsultaMaster.action?iniciar','/consultasMaritimos/invocarModulo.action?init') ">Consulta portal master</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/consultasMaritimos/consulta/ConsultaMovimientoManifiesto.action?iniciar','/consultasMaritimos/invocarModulo.action?init') ">Consulta portal movimientos manifiesto</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="# ">Proceso de revisión de pedimentos</a>
+<ul>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-pedimentos-HA/pedimentos/consultaPedimentos.action','/ventanilla-pedimentos-HA/invocarModulo.action?init') ">Proceso de revisión de pedimento específico vía portal</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-pedimentos-HA/pedimentos/consultaListaPedimentos.action','/ventanilla-pedimentos-HA/invocarModulo.action?init') ">Proceso de revisión del listado de pedimentos vía portal</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cat-HA/reportesPredefinidos.action','/ventanilla-cat-HA/invocarModulo.action?init') ">Programación de reportes predefinidos</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-req-HA/aga/requerimientoAutoridad/consultaTramiteRequerimiento.action?mostrarConsulta','/ventanilla-req-HA/invocarModulo.action?init') ">Requerimiento por parte de la autoridad</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-req-HA/aga/requerimientoAutoridadEIC/consultaTramiteRequerimiento.action?mostrarConsulta','/ventanilla-req-HA/invocarModulo.action?init') ">Requerimiento por parte de la autoridad en el Registro en el Esquema de Certificación de Empresas</a>
+</li>
+        </ul>
+    </li>
+</ul>
+<ul id="30" class="topnav">
+    <li>
+        <a href="#" id="    Solicitudes">    Solicitudes</a>
+        <ul>
+        </ul>
+    </li>
+</ul>
+<ul id="20" class="topnav">
+    <li>
+        <a href="#" id="   Trámites">   Trámites</a>
+        <ul>
+        </ul>
+    </li>
+</ul>
+<ul id="60" class="topnav">
+    <li>
+        <a href="#" id="  Usuarios">  Usuarios</a>
+        <ul>
+<li>
+<a href="# ">Administración de los usuarios</a>
+<ul>
+<li>
+<a href="# ">Administración de funcionarios</a>
+<ul>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-HA/admon/usuarios/verificaTramite.action','/ventanilla-HA/invocarModulo.action?init') ">Configurar los trámites los cuales requieren de verificación</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-HA/admon/usuarios/tramitesUnidadAdministrativa.action','/ventanilla-HA/invocarModulo.action?init') ">Configurar los trámites para la Unidad Administrativa</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-HA/admon/usuarios/tramitesEmisorAUnidadAdministrativa.action','/ventanilla-HA/invocarModulo.action?init') ">Configurar los trámites que requieren emisión de opinión</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-HA/admon/usuarios/asignarRoles.action','/ventanilla-HA/invocarModulo.action?init') ">Creación de funcionarios y asignación de roles</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-HA/admon/usuarios/desasignarRoles.action','/ventanilla-HA/invocarModulo.action?init') ">Desasignar roles asignados a los funcionarios</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-HA/admon/usuarios/modificarDatosFuncionarios.action','/ventanilla-HA/invocarModulo.action?init') ">Modificación de datos de funcionarios</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-HA/admon/usuarios/modificarTramites.action','/ventanilla-HA/invocarModulo.action?init') ">Modificar los trámites asociados a los funcionarios</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="# ">Datos generales</a>
+<ul>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-HA/admon/usuarios/cambioCorreo.action','/ventanilla-HA/invocarModulo.action?init') ">Cambiar la cuenta de correo electrónico</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<a href="# ">Administración de perfilador</a>
+<ul>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-perfilador-HA/admon/usuarios/asignaRolPerfilador.action','/ventanilla-perfilador-HA/invocarModulo.action?init') ">Asignar roles</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-perfilador-HA/admon/usuarios/consultaRolesPerfilador.action','/ventanilla-perfilador-HA/invocarModulo.action?init') ">Consultar y crear rol</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-perfilador-HA/admon/usuarios/desasignarRolExternoPerfilador.action','/ventanilla-perfilador-HA/invocarModulo.action?init') ">Consultar y desasignar roles a usuarios externos</a>
+</li>
+</ul>
+</li>
+        </ul>
+    </li>
+</ul>
+<ul id="70" class="topnav">
+    <li>
+        <a href="#" id=" Otras tareas"> Otras tareas</a>
+        <ul>
+<li>
+<a href="# ">AMECAFE</a>
+<ul>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-gubernamentales-HA/amecafe/certificadoAmecafe/cancelacionCertificado.action?iniciar','/ventanilla-gubernamentales-HA/invocarModulo.action?init') ">Cancelación de certficado</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-gubernamentales-HA/amecafe/certificadoAmecafe/moduloExportadores.action?iniciar','/ventanilla-gubernamentales-HA/invocarModulo.action?init') ">Exportadores</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-aaa-HA/patentesAutorizaciones/CatalogoPatentes.action?','/ventanilla-aaa-HA/invocarModulo.action?init') ">Administrador de Patentes</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-HA/reasignarTareas.action','/ventanilla-HA/invocarModulo.action?init') ">Administrar bandejas</a>
+</li>
+<li>
+<a href="# ">CUPOS </a>
+<ul>
+<li>
+<a href="# ">Cancelación</a>
+<ul>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-se-HA/se/cupos/solicitudCancelacionCertificadosPorFacultadWizard.action?solicitud.discriminatorValue=140205\&amp;iniciar','/ventanilla-se-HA/invocarModulo.action?init') ">Certificados de CUPO por Facultad</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-se-HA/se/cupos/consultaCancelacionesPorVigenciaFacultad.action','/ventanilla-se-HA/invocarModulo.action?init') ">Certificados de CUPO por Vigencia</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-se-HA/se/cupos/consultaMensajesCBP.action','/ventanilla-se-HA/invocarModulo.action?init') ">Consulta de estado de certificados electrónicos TPL</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-se-HA/se/cupos/consultaMensajesSaldoCBP.action','/ventanilla-se-HA/invocarModulo.action?init') ">Consulta de saldo de certificados electrónicos TPL, en el pais destino</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-se-HA/se/cupos/consultarCertificadoAsignacion.action','/ventanilla-se-HA/invocarModulo.action?init') ">Generar Certificado de cupo</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('//ippchub/consultas/consultaFuncionario.action','//invocarModulo.action?init') ">Certificados IPPC ePhyto HUB</a>
+</li>
+<li>
+<a href="# ">Consulta Información Garantías IMMEX</a>
+<ul>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-garantias-HA/agace/garantiasImmex/consultaEstadoCuentaGarantia.action','/ventanilla-garantias-HA/invocarModulo.action?init') ">Estado De Cuenta</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cp-HA/cerorAladi/consultaBid.action','/ventanilla-cp-HA/invocarModulo.action?init') ">Consulta de COD emitidos por paises miembros de la ALADI</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-aga2-HA-Gamma/aga/consultaCopiasCertificadas/consultaSolicitud.action?iniciar','/ventanilla-aga2-HA-Gamma/invocarModulo.action?init') ">Consulta de certificación electrónica de pedimentos</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-sagarpa-HA/consultarEstadisticasTramites.action','/ventanilla-sagarpa-HA/invocarModulo.action?init') ">Consulta de estadísticas</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cp-HA/cer_ori/consultaBid.action','/ventanilla-cp-HA/invocarModulo.action?init') ">Consulta y retroalimentación del COD emitido por países de la Alianza del Pacífico.</a>
+</li>
+<li>
+<a href="# ">Cuaderno ATA</a>
+<ul>
+<li>
+<a href="javascript:ejecutarOpcion('//consulta/consultaCuaderno.action','//invocarModulo.action?init') ">Consulta cuaderno anticipada</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('//consulta/consultaCuadernoMensual.action','//invocarModulo.action?init') ">Consulta cuaderno mensual</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('//consultaHistorico/consultaHistoricoCuaderno.action','//invocarModulo.action?init') ">Consulta histórico cuaderno ATA</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('//registro/registrarCuadernoATA.action','//invocarModulo.action?init') ">Registro operación</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="# ">DGN</a>
+<ul>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-se-HA/dgnModificaciones/registrarSolicitudModificaciones.action?solicitud.discriminatorValue=140215&amp;iniciar','/ventanilla-se-HA/invocarModulo.action?init') ">Modificación de Aprobación del Modelo o Prototipo</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-se-HA/dgnModificaciones/registrarSolicitudModificaciones.action?solicitud.discriminatorValue=140214&amp;iniciar','/ventanilla-se-HA/invocarModulo.action?init') ">Modificación de Autorización de Certificado NOM Global</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-se-HA/dgnModificaciones/registrarSolicitudModificaciones.action?solicitud.discriminatorValue=140213&amp;iniciar','/ventanilla-se-HA/invocarModulo.action?init') ">Modificación de Certificación NOM por parte de la Autoridad</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="# ">DRAWBACK</a>
+<ul>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-se-HA/se/cargaPedimentos/cargaArchivo.action','/ventanilla-se-HA/invocarModulo.action?init') ">Carga de pedimentos</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-se-HA/se/devolucion.impuestos/consultaSaldoPedimento.action','/ventanilla-se-HA/invocarModulo.action?init') ">Consulta Historico Pedimentos</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="# ">Descarga Masiva E-Document</a>
+<ul>
+<li>
+<a href="javascript:ejecutarOpcion('//aga/descargarEDocument.action?descargarEDocument.action','//invocarModulo.action?init') ">Descargar archivo de Masiva E-Document</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('//aga/solicitudDescargaEDocument.action?solicitudDescargaEDocument.action','//invocarModulo.action?init') ">Solicitar Descarga Masiva E-Document</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="# ">Despacho a domicilio a la exportación</a>
+<ul>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-aga2-HA-Gammaaga/terminacionDDE/registrarSolicitud.action','/ventanilla-aga2-HA-Gamma/invocarModulo.action?init') ">Terminación a la autorización de despacho a domicilio a la exportación</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="# ">Devolución de gafete</a>
+<ul>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-aaa-HA/aaa/devoluciones/registroDevolucion.action','/ventanilla-aaa-HA/invocarModulo.action?init') ">Devolución de gafete GUIAAA</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-gafetes-HA/aaa/devolucionGestorGT/devolverGestorGT.action','/ventanilla-gafetes-HA/invocarModulo.action?init') ">Devolución de gafete transportista</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cp-HA/sagarpa/consultaBid.action','/ventanilla-cp-HA/invocarModulo.action?init') ">Dictamen Certificados Internacionales Alianza del Pacífico</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-sagarpa-HA/certificadosZoosanitarios/consulta.action','/ventanilla-sagarpa-HA/invocarModulo.action?init') ">Dictamen Certificados Zoosanitarios</a>
+</li>
+<li>
+<a href="# ">Firmas masivas</a>
+<ul>
+<li>
+<a href="javascript:ejecutarOpcion('/firmasMasivas/common/firmasMasivas/autorizarDictamen.action?iniciar','/firmasMasivas/invocarModulo.action?init') ">Autorización masiva</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-gafetes-HA/aaa/firmasMasivasGT/firmasMasivasDesistimientoGT.action?','/ventanilla-gafetes-HA/invocarModulo.action?init') ">Firma masiva de desistimiento de gafete transportista</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-aga2-HA/aga/servicios/firmasMasivas/evaluarSolicitud.action?iniciar','/ventanilla-aga2-HA/invocarModulo.action?init') ">Firma masiva de servicios extraordinarios</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-sagarpa-HA/generacionModelosCertificados.action','/ventanilla-sagarpa-HA/invocarModulo.action?init') ">Generación de Modelos de Certificados</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-se-HA/se/cer_ori/registro/generarCertificadoOrigenWizard.action?solicitud.discriminatorValue=110220\&amp;iniciar','/ventanilla-se-HA/invocarModulo.action?init') ">Generar certificado de origen</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('//servicios-tenologicos/acceso/solicitudAccesos.action?iniciar','//invocarModulo.action?init') ">Gestión de Cuentas y Roles SAT</a>
+</li>
+<li>
+<a href="# ">IPC</a>
+<ul>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-se-HA/se/cancelaciones/atenderRequerimientoIPC.action','/ventanilla-se-HA/invocarModulo.action?init') ">Atender requerimientos</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-se-HA/se/cancelaciones/solicitudCancelacionIPC.action?solicitud.discriminatorValue=140201&amp;iniciar','/ventanilla-se-HA/invocarModulo.action?init') ">Cancelaciones por parte de la autoridad de la Secretaria de Economía</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="# ">LDA</a>
+<ul>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-aga2-HA/aga/lugarDistintoAutorizado/procedimientosAutoridad.action','/ventanilla-aga2-HA/invocarModulo.action?init') ">Autorización por lugar distinto al autorizado</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-aga2-HA/aga/lugarDistintoAutorizado/pagoDerechos/consultarPagos.action','/ventanilla-aga2-HA/invocarModulo.action?init') ">Consulta cumplimiento de pago de derecho anual</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-aga2-HA/aga/lugarDistintoAutorizado/consultas/consultaAutoridad.action','/ventanilla-aga2-HA/invocarModulo.action?init') ">Consultar autorizaciones LDA por autoridad</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-aga2-HA/aga/lugarDistintoAutorizado/pagoDerechos/registrarPago.action','/ventanilla-aga2-HA/invocarModulo.action?init') ">Registrar cuota de pago de derecho anual</a>
+</li>
+<li>
+<a href="# ">Reportes</a>
+<ul>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-aga2-HA/aga/lugarDistintoAutorizado/consultas/reporteConsulta.action?mostrarReporteDetalle','/ventanilla-aga2-HA/invocarModulo.action?init') ">Consultar detalle de autorizaciones</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-aga2-HA/aga/lugarDistintoAutorizado/consultas/reporteConsulta.action?mostrarReporteTotal','/ventanilla-aga2-HA/invocarModulo.action?init') ">Consultar totales de autorizaciones</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-aga2-HA/aga/lugarDistintoAutorizado/consultas/reporteConsulta.action?mostrarReporteUbicacion','/ventanilla-aga2-HA/invocarModulo.action?init') ">Consultar ubicación de autorizaciones</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<a href="# ">Modificar Programa</a>
+<ul>
+<li>
+<a href="# ">IMMEX</a>
+<ul>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-se-HA/se/modificacionesImmexProsec/solicitudModificaciones.action?solicitud.discriminatorValue=80316&amp;iniciar','/ventanilla-se-HA/invocarModulo.action?init') ">Modificar Cambio de sector</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-se-HA/se/modificacionesImmexProsec/solicitudModificaciones.action?solicitud.discriminatorValue=80315&amp;iniciar','/ventanilla-se-HA/invocarModulo.action?init') ">Modificar Reactivación de Programa IMMEX</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="# ">PROSEC</a>
+<ul>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-se-HA/se/modificacionesImmexProsec/solicitudModificaciones.action?solicitud.discriminatorValue=90307\&amp;iniciar','/ventanilla-se-HA/invocarModulo.action?init') ">Modificar Reactivación de Programa</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<a href="# ">Módulo de Gafetes</a>
+<ul>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-gafetes-HA/gafetes/carga/retroalimentacionVu.action?','/ventanilla-gafetes-HA/invocarModulo.action?init') ">Carga de Archivo con Retroalimentación</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-gafetes-HA/gafetes/consulta/guiasPrepagadasVu.action?','/ventanilla-gafetes-HA/invocarModulo.action?init') ">Consulta de Guías Prepagadas</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="# ">PEXIM </a>
+<ul>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-se-HA/se/pexim/solicitudFacultadPermisos.action?solicitud.discriminatorValue=140212\&amp;iniciar','/ventanilla-se-HA/invocarModulo.action?init') ">Cancelación de Permiso por Facultad</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-se-HA/se/pexim/reactivarPermisosSuspendidos.action?solicitud.discriminatorValue=140211\&amp;iniciar','/ventanilla-se-HA/invocarModulo.action?init') ">Reactivación de Permiso por Facultad</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-se-HA/se/pexim/solicitudFacultadPermisos.action?solicitud.discriminatorValue=140206\&amp;iniciar','/ventanilla-se-HA/invocarModulo.action?init') ">Suspensión de Permiso por Facultad</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-aga2-HA-Gamma/aga/juntasTecnicas/gridJuntaTecnica.action','/ventanilla-aga2-HA-Gamma/invocarModulo.action?init') ">Registro de Información de Junta Técnica</a>
+</li>
+<li>
+<a href="# ">SENER</a>
+<ul>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-sener-HA/sener/pexim/reactivacionPermisoFacultadSener.action?solicitud.discriminatorValue=140217&amp;iniciar','/ventanilla-sener-HA/invocarModulo.action?init') ">Reactivación de Permiso por Facultad</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-sener-HA/sener/pexim/cancelacionPermisoSener.action?solicitud.discriminatorValue=140218&amp;iniciar','/ventanilla-sener-HA/invocarModulo.action?init') ">Revocación de Permiso por Facultad</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-sener-HA/sener/pexim/suspensionPermisoSener.action?solicitud.discriminatorValue=140216&amp;iniciar','/ventanilla-sener-HA/invocarModulo.action?init') ">Suspensión de Permiso por Facultad</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-aga2-HA/aga/seguimiento/bandejaSeguimientoSvex.action','/ventanilla-aga2-HA/invocarModulo.action?init') ">Seguimiento al servicio extraordinario</a>
+</li>
+<li>
+<a href="# ">Tareas Masivas</a>
+<ul>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-se-HA/se/autorizacionmasiva/autorizarDictamenBloques.action','/ventanilla-se-HA/invocarModulo.action?init') ">Autorización Masiva</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-se-HA/se/autorizacionmasiva/generarDictamenBloques.action','/ventanilla-se-HA/invocarModulo.action?init') ">Dictaminación Masiva</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-se-HA/se/autorizacionmasiva/generarDictamenConAutorizacionMasivo.action','/ventanilla-se-HA/invocarModulo.action?init') ">Dictaminación Masiva Con Autorización</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-se-HA/se/autorizacionmasiva/generarDictamenMasivo.action','/ventanilla-se-HA/invocarModulo.action?init') ">Dictaminación Masiva Sin Firma</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('//se/ceror/dictaminacionMasiva/cargaMasivaDictamen.action?iniciar','//invocarModulo.action?init') ">Dictaminación Masiva de Registro de Productos Elegibles</a>
+</li>
+</ul>
+</li>
+        </ul>
+    </li>
+</ul>
+<ul id="40" class="topnav">
+    <li>
+        <a href="#" id="Configuración">Configuración</a>
+        <ul>
+<li>
+<a href="# ">Administración  de Fracciones Arancelarias</a>
+<ul>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-HA/admon/catalogos/tigie/admon.action','/ventanilla-HA/invocarModulo.action?init') ">Administrar TIGIE</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="# ">Administración de Catálogos</a>
+<ul>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cat-HA/admin/catalogos/adminRepositorioFirmas.action','/ventanilla-cat-HA/invocarModulo.action?init') ">Administración Repositorio de Firmas</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cat-HA/admin/catalogos/actividadEconomica.action','/ventanilla-cat-HA/invocarModulo.action?init') ">Catálogo Actividad Económica SAT</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cat-HA/admin/catalogos/aduana.action','/ventanilla-cat-HA/invocarModulo.action?init') ">Catálogo Aduana </a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cat-HA/admin/catalogos/aduanaClasificacionProducto.action','/ventanilla-cat-HA/invocarModulo.action?init') ">Catálogo Aduana Clasificación Producto</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cat-HA/admin/catalogos/aduanaTipoTramite.action','/ventanilla-cat-HA/invocarModulo.action?init') ">Catálogo Aduana Trámite</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cat-HA/admin/catalogos/parametroAGA.action','/ventanilla-cat-HA/invocarModulo.action?init') ">Catálogo Aga</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cat-HA/admin/catalogos/aprobacionCertificadoSE.action','/ventanilla-cat-HA/invocarModulo.action?init') ">Catálogo Aprobación y Acreditación de Unidades Emisoras</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cat-HA/admin/catalogos/arancelProsec.action','/ventanilla-cat-HA/invocarModulo.action?init') ">Catálogo Arancel PROSEC</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cat-HA/admin/catalogos/banco.action','/ventanilla-cat-HA/invocarModulo.action?init') ">Catálogo Banco</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cat-HA/admin/catalogos/casFraccionTTRA.action','/ventanilla-cat-HA/invocarModulo.action?init') ">Catálogo CAS Fracción Trámite</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cat-HA/admin/catalogos/calendario.action','/ventanilla-cat-HA/invocarModulo.action?init') ">Catálogo Calendario</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cat-HA/admin/catalogos/capitulo.action','/ventanilla-cat-HA/invocarModulo.action?init') ">Catálogo Capítulo Fracción</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cat-HA/admin/catalogos/categoriaTextil.action','/ventanilla-cat-HA/invocarModulo.action?init') ">Catálogo Categoría Textil</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cat-HA/admin/catalogos/chemicalAbstractsService.action','/ventanilla-cat-HA/invocarModulo.action?init') ">Catálogo Chemical Abstracts Service</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cat-HA/admin/catalogos/clasificacionProducto.action','/ventanilla-cat-HA/invocarModulo.action?init') ">Catálogo Clasificación Producto</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cat-HA/admin/catalogos/clasificacionRegimen.action','/ventanilla-cat-HA/invocarModulo.action?init') ">Catálogo Clasificación Régimen</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cat-HA/admin/catalogos/clasificacionToxicologicaTTRA.action','/ventanilla-cat-HA/invocarModulo.action?init') ">Catálogo Clasificación Toxicologica Trámite</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cat-HA/admin/catalogos/colonia.action','/ventanilla-cat-HA/invocarModulo.action?init') ">Catálogo Colonia</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cat-HA/admin/catalogos/combinacionRequerida.action','/ventanilla-cat-HA/invocarModulo.action?init') ">Catálogo Combinación Requerida</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cat-HA/admin/catalogos/condicionUso.action','/ventanilla-cat-HA/invocarModulo.action?init') ">Catálogo Condiciones de Uso</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cat-HA/admin/catalogos/controlReferencia.action','/ventanilla-cat-HA/invocarModulo.action?init') ">Catálogo Control Referencia</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cat-HA/admin/catalogos/criterioDictaminacion.action','/ventanilla-cat-HA/invocarModulo.action?init') ">Catálogo Criterio Dictaminación</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cat-HA/admin/catalogos/declaracion.action','/ventanilla-cat-HA/invocarModulo.action?init') ">Catálogo Declaración</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cat-HA/admin/catalogos/declaracionTramite.action','/ventanilla-cat-HA/invocarModulo.action?init') ">Catálogo Declaración Trámite</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cat-HA/admin/catalogos/delegacionMunicipio.action','/ventanilla-cat-HA/invocarModulo.action?init') ">Catálogo Delegación Municipio</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cat-HA/admin/catalogos/dependencia.action','/ventanilla-cat-HA/invocarModulo.action?init') ">Catálogo Dependencia</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cat-HA/admin/catalogos/descripcionProducto.action','/ventanilla-cat-HA/invocarModulo.action?init') ">Catálogo Descripción Producto</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cat-HA/admin/catalogos/dictamenTramite.action','/ventanilla-cat-HA/invocarModulo.action?init') ">Catálogo Dictamen Trámite</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cat-HA/admin/catalogos/documentoTramite.action','/ventanilla-cat-HA/invocarModulo.action?init') ">Catálogo Documento Trámite</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cat-HA/admin/catalogos/diaNoLaborable.action','/ventanilla-cat-HA/invocarModulo.action?init') ">Catálogo Día No Laborable</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cat-HA/admin/catalogos/empresaRecif.action','/ventanilla-cat-HA/invocarModulo.action?init') ">Catálogo Empresa RECIF</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cat-HA/admin/catalogos/entidad.action','/ventanilla-cat-HA/invocarModulo.action?init') ">Catálogo Entidad Federativa</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cat-HA/admin/catalogos/equivalenciaAelc.action','/ventanilla-cat-HA/invocarModulo.action?init') ">Catálogo Equivalencia AELC</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cat-HA/admin/catalogos/equivalenciaMonedas.action','/ventanilla-cat-HA/invocarModulo.action?init') ">Catálogo Equivalencia Moneda</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cat-HA/admin/catalogos/especie.action','/ventanilla-cat-HA/invocarModulo.action?init') ">Catálogo Especie</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cat-HA/admin/catalogos/esquemaRegla8.action','/ventanilla-cat-HA/invocarModulo.action?init') ">Catálogo Esquema Regla 8</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cat-HA/admin/catalogos/fraccionAladi.action','/ventanilla-cat-HA/invocarModulo.action?init') ">Catálogo Fracción ALADI</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cat-HA/admin/catalogos/fraccionHTSUSA.action','/ventanilla-cat-HA/invocarModulo.action?init') ">Catálogo Fracción HTS USA</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cat-HA/admin/catalogos/fraccionTTRA.action','/ventanilla-cat-HA/invocarModulo.action?init') ">Catálogo Fracción Trámite</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cat-HA/admin/catalogos/fraccionTramiteDescripcionProducto.action','/ventanilla-cat-HA/invocarModulo.action?init') ">Catálogo Fracción Trámite Descripción Producto</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cat-HA/admin/catalogos/fundamentoDictamen.action','/ventanilla-cat-HA/invocarModulo.action?init') ">Catálogo Fundamento Dictamen</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cat-HA/admin/catalogos/fundamentoTTRA.action','/ventanilla-cat-HA/invocarModulo.action?init') ">Catálogo Fundamento Trámite</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cat-HA/admin/catalogos/genero.action','/ventanilla-cat-HA/invocarModulo.action?init') ">Catálogo Género</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cat-HA/admin/catalogos/identificadorPrevalidador.action','/ventanilla-cat-HA/invocarModulo.action?init') ">Catálogo Identificador Prevalidador</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cat-HA/admin/catalogos/infoAdicionalAduanas.action','/ventanilla-cat-HA/invocarModulo.action?init') ">Catálogo Información Adicional de Aduanas</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cat-HA/admin/catalogos/isotopoFraccion.action','/ventanilla-cat-HA/invocarModulo.action?init') ">Catálogo Isótopo Fracción</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cat-HA/admin/catalogos/isotopoTramite.action','/ventanilla-cat-HA/invocarModulo.action?init') ">Catálogo Isótopo Trámite</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cat-HA/admin/catalogos/justificacionTramite.action','/ventanilla-cat-HA/invocarModulo.action?init') ">Catálogo Justificación Trámite</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cat-HA/admin/catalogos/lenguaje.action','/ventanilla-cat-HA/invocarModulo.action?init') ">Catálogo Lenguaje</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cat-HA/admin/catalogos/leyendaTexto.action','/ventanilla-cat-HA/invocarModulo.action?init') ">Catálogo Leyenda Texto</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cat-HA/admin/catalogos/localidad.action','/ventanilla-cat-HA/invocarModulo.action?init') ">Catálogo Localidad</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cat-HA/admin/catalogos/medioTransporte.action','/ventanilla-cat-HA/invocarModulo.action?init') ">Catálogo Medio Transporte Trámite</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cat-HA/admin/catalogos/moneda.action','/ventanilla-cat-HA/invocarModulo.action?init') ">Catálogo Moneda</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cat-HA/admin/catalogos/montoExportacion.action','/ventanilla-cat-HA/invocarModulo.action?init') ">Catálogo Monto Exportación</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cat-HA/admin/catalogos/motivoTTRA.action','/ventanilla-cat-HA/invocarModulo.action?init') ">Catálogo Motivo Trámite</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cat-HA/admin/catalogos/normaAplicable.action','/ventanilla-cat-HA/invocarModulo.action?init') ">Catálogo Norma Oficial</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cat-HA/admin/catalogos/observacionTramite.action','/ventanilla-cat-HA/invocarModulo.action?init') ">Catálogo Observación Trámite</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cat-HA/admin/catalogos/partidaFraccion.action','/ventanilla-cat-HA/invocarModulo.action?init') ">Catálogo Partida Fracción</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cat-HA/admin/catalogos/parametro.action','/ventanilla-cat-HA/invocarModulo.action?init') ">Catálogo Parámetro</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cat-HA/admin/catalogos/patenteAduanal.action','/ventanilla-cat-HA/invocarModulo.action?init') ">Catálogo Patente Aduanal</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cat-HA/admin/catalogos/pais.action','/ventanilla-cat-HA/invocarModulo.action?init') ">Catálogo País</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cat-HA/admin/catalogos/paisRestriccionTramite.action','/ventanilla-cat-HA/invocarModulo.action?init') ">Catálogo País Restricción Trámite</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cat-HA/admin/catalogos/paisTratadoAcuerdo.action','/ventanilla-cat-HA/invocarModulo.action?init') ">Catálogo País Tratado Acuerdo</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cat-HA/admin/catalogos/plazoMaximoAutorizaciondeTramite.action','/ventanilla-cat-HA/invocarModulo.action?init') ">Catálogo Plazo Máximo Autorización de Trámite</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cat-HA/admin/catalogos/plazoTTRA.action','/ventanilla-cat-HA/invocarModulo.action?init') ">Catálogo Plazo Trámite</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cat-HA/admin/catalogos/producto.action','/ventanilla-cat-HA/invocarModulo.action?init') ">Catálogo Producto</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cat-HA/admin/catalogos/puntoVerificacion.action','/ventanilla-cat-HA/invocarModulo.action?init') ">Catálogo Punto Verificación</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cat-HA/admin/catalogos/recintoFiscalizado.action','/ventanilla-cat-HA/invocarModulo.action?init') ">Catálogo Recinto Fiscalizado</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cat-HA/admin/catalogos/restriccionesDescripcionProducto.action','/ventanilla-cat-HA/invocarModulo.action?init') ">Catálogo Restricciones Descripción Producto</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cat-HA/admin/catalogos/restriccionTTRA.action','/ventanilla-cat-HA/invocarModulo.action?init') ">Catálogo Restricción Trámite</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cat-HA/admin/catalogos/regimen.action','/ventanilla-cat-HA/invocarModulo.action?init') ">Catálogo Régimen</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cat-HA/admin/catalogos/regimenTTRA.action','/ventanilla-cat-HA/invocarModulo.action?init') ">Catálogo Régimen Trámite</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cat-HA/admin/catalogos/scian.action','/ventanilla-cat-HA/invocarModulo.action?init') ">Catálogo SCIAN</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cat-HA/admin/catalogos/seccionTTRA.action','/ventanilla-cat-HA/invocarModulo.action?init') ">Catálogo Sección Trámite</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cat-HA/admin/catalogos/sectorProsec.action','/ventanilla-cat-HA/invocarModulo.action?init') ">Catálogo Sector PROSEC</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cat-HA/admin/catalogos/servicioIMMEX.action','/ventanilla-cat-HA/invocarModulo.action?init') ">Catálogo Servicio IMMEX</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cat-HA/admin/catalogos/catSitDomIdc.action','/ventanilla-cat-HA/invocarModulo.action?init') ">Catálogo Situación Domicilio IDC</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cat-HA/admin/catalogos/subdivisionFraccion.action','/ventanilla-cat-HA/invocarModulo.action?init') ">Catálogo Subdivisión Fracción</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cat-HA/admin/catalogos/subPartidaFraccion.action','/ventanilla-cat-HA/invocarModulo.action?init') ">Catálogo Subpartida Fracción</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cat-HA/admin/catalogos/suplencia.action','/ventanilla-cat-HA/invocarModulo.action?init') ">Catálogo Suplencia</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cat-HA/admin/catalogos/tarifa.action','/ventanilla-cat-HA/invocarModulo.action?init') ">Catálogo Tarifa</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cat-HA/admin/catalogos/tipoAduana.action','/ventanilla-cat-HA/invocarModulo.action?init') ">Catálogo Tipo Aduana</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cat-HA/admin/catalogos/tipoDictamen.action','/ventanilla-cat-HA/invocarModulo.action?init') ">Catálogo Tipo Dictamen</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cat-HA/admin/catalogos/tipoDocumento.action','/ventanilla-cat-HA/invocarModulo.action?init') ">Catálogo Tipo Documento</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cat-HA/admin/catalogos/tipoEmpresaRecif.action','/ventanilla-cat-HA/invocarModulo.action?init') ">Catálogo Tipo Empresa RECIF</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cat-HA/admin/catalogos/tipoProductoTTRA.action','/ventanilla-cat-HA/invocarModulo.action?init') ">Catálogo Tipo Producto Trámite</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cat-HA/admin/catalogos/tipoRFC.action','/ventanilla-cat-HA/invocarModulo.action?init') ">Catálogo Tipo RFC</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cat-HA/admin/catalogos/tipoTramite.action','/ventanilla-cat-HA/invocarModulo.action?init') ">Catálogo Tipo Trámite</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cat-HA/admin/catalogos/tratadoAcuerdo.action','/ventanilla-cat-HA/invocarModulo.action?init') ">Catálogo Tratado Acuerdo</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cat-HA/admin/catalogos/bloqueTratadoAcuerdo.action','/ventanilla-cat-HA/invocarModulo.action?init') ">Catálogo Tratado Bloque</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cat-HA/admin/catalogos/paisTratadoAcuerdoCeror.action','/ventanilla-cat-HA/invocarModulo.action?init') ">Catálogo Tratado/Acuerdo-país para consulta CEROR</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cat-HA/admin/catalogos/tratamientoEspecial.action','/ventanilla-cat-HA/invocarModulo.action?init') ">Catálogo Tratamiento Especial</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cat-HA/admin/catalogos/unidadAdministrativa.action','/ventanilla-cat-HA/invocarModulo.action?init') ">Catálogo Unidad Administrativa</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cat-HA/admin/catalogos/unidadAdministrativaAduana.action','/ventanilla-cat-HA/invocarModulo.action?init') ">Catálogo Unidad Administrativa Aduana</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cat-HA/admin/catalogos/unidadAdministrativaVecina.action','/ventanilla-cat-HA/invocarModulo.action?init') ">Catálogo Unidad Administrativa Vecina</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cat-HA/admin/catalogos/unidadMedida.action','/ventanilla-cat-HA/invocarModulo.action?init') ">Catálogo Unidad Medida</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cat-HA/admin/catalogos/unidadMedidaTipoTramite.action','/ventanilla-cat-HA/invocarModulo.action?init') ">Catálogo Unidad Medida Trámite</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cat-HA/admin/catalogos/usoEspecificoMercanciaTTRA.action','/ventanilla-cat-HA/invocarModulo.action?init') ">Catálogo Uso Especifico Mercancía Trámite</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cat-HA/admin/catalogos/usoMercanciaTTRA.action','/ventanilla-cat-HA/invocarModulo.action?init') ">Catálogo Uso Mercancía Trámite</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cat-HA/admin/catalogos/vidaSilvestre.action','/ventanilla-cat-HA/invocarModulo.action?init') ">Catálogo Vida Silvestre</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cat-HA/admin/catalogos/vigenciaServicio.action','/ventanilla-cat-HA/invocarModulo.action?init') ">Catálogo Vigencia Servicio</a>
+</li>
+<li>
+<a href="# ">Catálogos LDA</a>
+<ul>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-aga2-HA/aga/lugarDistintoAutorizado/catalogos/configuracionCorreos.action','/ventanilla-aga2-HA/invocarModulo.action?init') ">Catálogo configuración de correos</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-aga2-HA/aga/lugarDistintoAutorizado/catalogos/listacorreos.action','/ventanilla-aga2-HA/invocarModulo.action?init') ">Catálogo lista de correos</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-aga2-HA/aga/lugarDistintoAutorizado/catalogos/configuracionVariables.action','/ventanilla-aga2-HA/invocarModulo.action?init') ">Catálogo variables</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<a href="# ">Configuración</a>
+<ul>
+<li>
+<a href="# ">Documentos</a>
+<ul>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-se-HA/admon/configuracion/documentos/cambioModalidad.action','/ventanilla-se-HA/invocarModulo.action?init') ">Cambio de Modalidad IMMEX</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-se-HA/admon/configuracion/documentos/clasificacion.action','/ventanilla-se-HA/invocarModulo.action?init') ">Clasificación de documentos</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-se-HA/admon/configuracion/documentos/reglaNegocio.action','/ventanilla-se-HA/invocarModulo.action?init') ">Documentos por trámite IMMEX</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="# ">Instrumentos</a>
+<ul>
+<li>
+<a href="# ">Certificados de Origen</a>
+<ul>
+<li>
+<a href="# ">Configuraciones</a>
+<ul>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-se-HA/admon/configuracion/instrumentos/certificados/consulta.action','/ventanilla-se-HA/invocarModulo.action?init') ">Consultar</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-se-HA/admon/configuracion/instrumentos/certificados/alta.action','/ventanilla-se-HA/invocarModulo.action?init') ">Registrar</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-se-HA/admon/configuracion/instrumentos/certificados/exportadores/consulta.action','/ventanilla-se-HA/invocarModulo.action?init') ">Consultar y cargar empresas y personas con carácter de exportador autorizado</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-se-HA/admon/configuracion/instrumentos/certificados/normasgp.action','/ventanilla-se-HA/invocarModulo.action?init') ">Normas SGP</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-se-HA/admon/configuracion/instrumentos/certificados/resolucion.action','/ventanilla-se-HA/invocarModulo.action?init') ">Normas y Resoluciones</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-se-HA/admon/configuracion/instrumentos/certificados/generales/consulta.action','/ventanilla-se-HA/invocarModulo.action?init') ">Requisitos Generales</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-se-HA/admon/configuracion/instrumentos/certificados/generaleslista/consulta.action','/ventanilla-se-HA/invocarModulo.action?init') ">Requisitos para Listas</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="# ">Cupos</a>
+<ul>
+<li>
+<a href="# ">Asignar Ganadores</a>
+<ul>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-se-HA/admon/configuracion/common/ganadores/consulta.action','/ventanilla-se-HA/invocarModulo.action?init') ">Consultar</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-se-HA/admon/configuracion/common/ganadores.action','/ventanilla-se-HA/invocarModulo.action?init') ">Registrar</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-se-HA/admon/configuracion/instrumentos/cupos/consulta.action','/ventanilla-se-HA/invocarModulo.action?init') ">Consultar</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-se-HA/admon/configuracion/instrumentos/cupos/alta.action?=&amp;instr=TICU.CF','/ventanilla-se-HA/invocarModulo.action?init') ">Registrar Cupo Frontera</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-se-HA/admon/configuracion/instrumentos/cupos/alta.action?=&amp;instr=TICU.Cm','/ventanilla-se-HA/invocarModulo.action?init') ">Registrar Cupo Mundial</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-se-HA/admon/configuracion/instrumentos/cupos/alta.action?=&amp;instr=TICU.TPL','/ventanilla-se-HA/invocarModulo.action?init') ">Registrar Cupo TPL</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="# ">Drawback</a>
+<ul>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-se-HA/se/devolucion.impuestos/configuradorCatalogosDrawback.action','/ventanilla-se-HA/invocarModulo.action?init') ">Administrador de catálogos</a>
+</li>
+<li>
+<a href="# ">Configurador</a>
+<ul>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-se-HA/se/devolucion.impuestos/configuradorOficiosDrawback.action','/ventanilla-se-HA/invocarModulo.action?init') ">Configurador de oficios</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-se-HA/se/devolucion.impuestos/configuradorParametrosDrawback.action','/ventanilla-se-HA/invocarModulo.action?init') ">Configurador de parametros</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<a href="# ">Pexim</a>
+<ul>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-se-HA/admon/configuracion/instrumentos/pexim/consulta.action','/ventanilla-se-HA/invocarModulo.action?init') ">Consultar</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-se-HA/admon/configuracion/instrumentos/pexim/alta.action','/ventanilla-se-HA/invocarModulo.action?init') ">Registrar</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<a href="# ">Programas</a>
+<ul>
+<li>
+<a href="# ">Immex</a>
+<ul>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-se-HA/admon/configuracion/programas/immex/consulta.action','/ventanilla-se-HA/invocarModulo.action?init') ">Consultar</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-se-HA/admon/configuracion/programas/immex/alta.action','/ventanilla-se-HA/invocarModulo.action?init') ">Registrar</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="# ">Prosec</a>
+<ul>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-se-HA/admon/configuracion/programas/prosec/consulta.action','/ventanilla-se-HA/invocarModulo.action?init') ">Consultar</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-se-HA/admon/configuracion/programas/prosec/alta.action','/ventanilla-se-HA/invocarModulo.action?init') ">Registrar</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+        </ul>
+    </li>
+</ul>
+</div>
+
+
+    </div>
+    <div id="servicios"></div>
+    <script type="text/javascript">      
+        function showSubOptions(id){
+        	//$('#workingArea').empty();
+        	//('#servicios').empty();        	
+        	
+        	$('.mnu').remove();
+            $('#workingArea').html($('#servicios').empty().html($('ul[id=' + id + ']').clone().addClass('mnu')));
+            $('.mnu').accordion({
+                accordion : false,
+                speed : 500,
+                closedSign : '[+]',
+                openedSign : '[-]'
+            });           
+        }       
+    </script>
+                <div id="content_tramite">
+                    <div id="workingArea">
+
+                        <div id="breadcumbs"><a href="/ventanilla-gubernamentales-HA/general.action">Antecesor</a> | Activo</div>
+
+                        <div><h1 id="h1_title">Verificar Dictamen</h1></div>
+<form id="verificar" name="verificar" action="/ventanilla-gubernamentales-HA/inbal/avisoExpImpObraArt/verificarDictamen.action" method="post">
+
+<div id="datossolicitud" align="left">
+	<br>
+	<table>
+    	<tbody><tr>
+        	<td class="campos aizquierda" nowrap="nowrap"><label for="tramite.folio">Folio del trámite</label>:</td>
+            <td>1002700200120251002000021</td>
+        </tr>
+        <tr>
+        	<td valign="top" class="campos aizquierda" nowrap="nowrap"><label for="tramite.tipoTramite">Tipo de solicitud</label>:</td>
+            <td>Aviso de importación y exportación de obra artística de los siglos XX y XXI
+        </td></tr>
+    </tbody></table>
+</div>
+
+
+<div id="acciones">
+   	<input name="generarObservacion" value="Observar" type="submit"><input name="mostrarFirma" value="Firmar" type="submit">
+</div>
+
+<table class="tablaDatosGenerales">
+
+<tbody><tr>
+   	<td class="titulo" colspan="2">Verificar dictamen</td>
+       <td rowspan="4"><table id="obsdictamen"></table></td>
+        
+   </tr>
+<tr>
+   	<td class="campos" style="width:15%"><span class="require">*</span>Sentido del dictamen</td>
+        <td>
+			<span><input name="tramite.dictamen.sentidoDictamen.clave" value="SEDI.AC" type="radio" checked="checked" disabled="disabled">Aceptado</span>
+		
+			<span><input name="tramite.dictamen.sentidoDictamen.clave" value="SEDI.RZ" type="radio" disabled="disabled">Rechazado</span>
+		</td>
+
+        
+    </tr>
+    <tr>
+    	<td class="campos" colspan="2"><span class="require">*</span>Justificación del dictamen</td>
+    </tr>
+    <tr>
+    	<td colspan="2">
+    	<div style="height: 100px; width: 100%; border:1px solid #979797; overflow-y: scroll;">
+    		<p style="word-wrap: break-word;   width: 800px;">
+        		PRUEBAS QA
+        	</p>
+        	</div>
+    	</td>
+    </tr>
+</tbody></table>
+
+ 
+			<!-- Si tiene la necesidad de tener mas codigo, haga un JSP como este y -->
+			<!-- PONGA SU CODIGO AQUI -->
+			<script type="text/javascript">//<![CDATA[
+
+    			$(function(){$.fn.stripesValidation('verificar', {
+		"tramite.dictamen.sentidoDictamen.clave":{typeConverter:"StringTypeConverter"}
+	});});        			
+            
+//]]></script><div style="display: none;"><input type="hidden" name="_sourcePage" value="9SOoDHA7UTatPXZnLUUm0dSbkoRqv9pge5ElLHP_329ZTPx5epV_uwNj_9PzJeyH1B5AQgMEPILn7fldbYXkLw=="><input type="hidden" name="__fp" value="E7ogWDrTEEU="><input type="hidden" name="__token" value="rELeLorRKw4IcRuub4GbUMSsRTZ7LDkQ8QeEb9Dv3WaFpga0r5bm-izKHpXlQXwD"></div></form><form id="consultarSolicitud" name="consultarSolicitud" action="/ventanilla-gubernamentales-HA/inbal/avisoExpImpObraArt/verificarDictamen.action" method="post">
+<script>
+	$(function() {
+		$('#SBK_TABS1').tabs({
+			cache: false,
+			ajaxOptions: {
+				cache: false,
+				type:'POST',
+				error: function( xhr, status, index, anchor ) {
+					$( anchor.hash ).html(
+						"No fue posible obtener el contenido..." );
+				}
+			}
+		});
+		$('#tabsCon').tabs({
+			cache: false,
+			ajaxOptions: {
+				cache: false,
+				type:'POST',
+				error: function( xhr, status, index, anchor ) {
+					$( anchor.hash ).html(
+						"No fue posible obtener el contenido..." );
+				}
+			}
+		});
+	});
+</script>
+
+<script>
+	var postUrlTS= new Date().getTime();
+	var postUrl = "/ventanilla-gubernamentales-HA/consulta/consulta.action?w_x_y_z="+postUrlTS;
+	
+	$.post(
+		postUrl, 
+		null,
+		function(data) {
+			jQuery.globalEval(data);
+		}
+	);
+</script>
+
+<div class="demo">
+	<div id="tabsCon" class="ui-tabs ui-widget ui-widget-content ui-corner-all">
+		<ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all">
+			<li class="ui-state-default ui-corner-top ui-tabs-selected ui-state-active"><a href="#tabsCon-1" id="tabS"><label for="consulta.SOLICITUDES">Solicitud</label></a></li>
+			<li class="ui-state-default ui-corner-top"><a href="#ui-tabs-3"><label for="consulta.DOCUMENTOS">Documentos</label></a></li>
+			<li class="ui-state-default ui-corner-top"><a href="#ui-tabs-4"><label for="consulta.DICTAMEN">Dictamen</label></a></li>
+			<li class="ui-state-default ui-corner-top ui-state-disabled"><a href="#ui-tabs-5"><label for="consulta.REQUERIMIENTO">Requerimientos</label></a></li>
+			<li class="ui-state-default ui-corner-top ui-state-disabled"><a href="#ui-tabs-6"><label for="consulta.OPINIONES">Opiniones</label></a></li>
+			<li class="ui-state-default ui-corner-top"><a href="#ui-tabs-7"><label for="consulta.ACUSES">Acuses y resoluciones</label></a></li>
+			<li class="ui-state-default ui-corner-top"><a href="#ui-tabs-8"><label for="consulta.ESTADO_TRAMITE">Tareas del trámite</label></a></li>
+			<li class="ui-state-default ui-corner-top ui-state-disabled"><a href="#ui-tabs-9"><label for="consulta.ENVIO_DIGITAL">Envío digital</label></a></li>
+		</ul>
+		
+
+		<div id="tabsCon-1" class="ui-tabs-panel ui-widget-content ui-corner-bottom">
+			<div id="SBK_TABS1" class="ui-tabs ui-widget ui-widget-content ui-corner-all">
+				<ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all">
+					<li class="ui-state-default ui-corner-top ui-tabs-selected ui-state-active"><a href="#ui-tabs-1"><label for="captura.tab.solicitante">Solicitante</label></a></li>
+					<li class="ui-state-default ui-corner-top"><a href="#ui-tabs-2" id="tabPer0-3"><label style="font-weight: normal;">Datos generales original</label></a></li>
+				</ul><div id="ui-tabs-1" class="ui-tabs-panel ui-widget-content ui-corner-bottom">
+<div id="tabs-11">
+	<form id="consultarSolicitud1" name="consultarSolicitud1" action="/ventanilla-gubernamentales-HA/consulta/consulta.action" method="post">
+	  <table align="center" id="tablaDatosGenerales">
+	  		<tbody><tr>
+	    		<td colspan="3" class="titulo"><label for="consulta.SOLICITUDES">Solicitud</label></td>
+  		  	</tr>
+	  		<tr>
+	    		<td class="campos"><label for="consultas.requerimiento.folioTramite">Folio del trámite</label></td>
+
+				<td class="campos"><label for="consultas.requerimiento.fecfaIniTramite">Fecha inicio de trámite</label></td>
+  		  		<td class="campos"><label for="bandeja.estado.tramite">Estado del trámite</label></td>
+  		  	</tr>
+  		  	<tr>
+  		  		<td><input type="text" name="folio" value="1002700200120251002000021" readonly="readonly" size="20" class="inputtexto3"></td>
+  		  		<td><input type="text" name="folio" value="17/09/2025 04:24" readonly="readonly" size="15" class="inputtexto5"></td>
+  		  		<td><input type="text" name="folio" value="En Dictamen" readonly="readonly" size="15" class="inputtexto5"></td>
+  		  	</tr>
+  		  	<tr>
+	        	<td valign="top" colspan="3" class="campos"><label for="tramite.tipoTramite">Tipo de solicitud</label></td>
+	        </tr>
+	        <tr>
+	        	<td colspan="3"><textarea name="folio" cols="100" rows="3" readonly="readonly" class="inputtexto6">Aviso de importación y exportación de obra artística de los siglos XX y XXI</textarea></td>
+	        </tr>
+  		</tbody></table>
+		<br>
+		<input name="solicitud.solicitante.domicilio.pais.clave" value="MEX" type="hidden"><input name="solicitud.solicitante.domicilio.entidadFederativa.clave" value="SIN" type="hidden"><input name="solicitud.solicitante.domicilio.delegacionMunicipio.clave" value="25001" type="hidden"><input name="solicitud.solicitante.domicilio.colonia.clave" value="00181210001" type="hidden"><input name="solicitud.solicitante.domicilio.localidad.clave" value="00181210008" type="hidden"><input id="rolCapturista" name="solicitud.cveRolCapturista" value="PersonaMoral" type="hidden"><input name="solicitud.cveUsuarioCapturista" value="AAL0409235E6" type="hidden"><input name="solicitud.solicitante.cveUsuario" value="AAL0409235E6" type="hidden"><input id="puedeCapturarRepresentanteCG" name="puedeCapturarRepresentanteLegalCG" value="false" type="hidden"><input id="numFolioDesistimiento" name="numFolioDesistimiento" value="" type="hidden">
+<table cellpadding="0" cellspacing="0" id="tablaDatosGenerales" title="Solicitante" border="0">
+    <tbody><tr>
+        <td colspan="3" class="titulo"><label for="solicitud.titulo.datosSolicitante">Datos generales del solicitante</label>
+        </td>
+    </tr>
+    
+            <tr>
+                <td class="campos" colspan="4"><label for="solicitud.persona.razonSocial">Denominación o razón social</label></td>
+            </tr>
+            <tr>
+                <td colspan="4"><input id="razonSocialSolicitante" name="solicitud.solicitante.razonSocial" value="INTEGRADORA DE URBANIZACIONES SIGNUM S DE RL DE CV" class="inputtexto6" type="text" readonly="readonly" size="68"></td>
+            </tr>
+            
+                    <tr>
+                        <td class="campos" colspan="3"><label for="solicitud.actividadEconomicaPreponderante">Actividad económica preponderante</label></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3"><input name="solicitud.solicitante.descripcionGiro" value="Siembra, cultivo y cosecha de otros cultivos" class="inputtexto6" type="text" readonly="readonly" size="120"></td>
+                    </tr>
+                    <tr>
+                       <td class="campos"><label for="solicitud.persona.rfc">RFC</label></td>
+                       <td class="campos"><label for="solicitud.persona.correoElectronico">Correo electrónico</label></td>
+                    </tr>
+                    <tr>
+                       <td><input id="rfcSolicitante" name="solicitud.solicitante.rfc" value="AAL0409235E6" class="inputtexto5" type="text" readonly="readonly" size="30"></td>
+                       <td><input name="solicitud.solicitante.correoElectronico" value="ultrasistuat@gmail.com" class="inputtexto5" type="text" readonly="readonly" size="30"></td>
+                    </tr>
+                
+</tbody></table>
+<br>
+<table cellpadding="0" cellspacing="0" id="tablaDatosGenerales" title="Solicitante" border="0">
+    
+                  <tbody><tr>
+                      <td colspan="4" class="titulo"><label for="solicitud.titulo.domicilioFiscalSolicitante">Domicilio fiscal del solicitante</label></td>
+                  </tr>
+              
+    <tr>
+        <td class="campos"><label for="solicitud.solicitante.domicilio.calle">Calle</label></td>
+        <td class="campos"><label for="solicitud.solicitante.domicilio.numeroExterior">Número exterior</label></td>
+        <td class="campos"><label for="solicitud.domicilio.numeroInterior">Número interior</label></td>
+        <td class="campos"><label for="solicitud.solicitante.domicilio.codigoPostal">Código postal</label></td>
+    </tr>
+    <tr>
+        <td><input name="solicitud.solicitante.domicilio.calle" value="CAMINO VIEJO" class="inputtexto3" type="text" readonly="readonly" size="68"></td>
+        <td><input name="solicitud.solicitante.domicilio.numeroExterior" value="1353" class="inputtexto4" type="text" readonly="readonly" size="10"></td>
+        <td><input name="solicitud.solicitante.domicilio.numeroInterior" class="inputtexto4" type="text" readonly="readonly" size="15"></td>
+        <td><input name="solicitud.solicitante.domicilio.codigoPostal" value="81210" class="inputtexto4" type="text" readonly="readonly" size="10"></td>
+    </tr>
+    <tr>
+        <td class="campos"><label for="solicitud.domicilio.coloniaLocalidad">Colonia</label></td>
+        <td class="campos" colspan="3"><label for="solicitud.domicilio.pais">País</label></td>
+    </tr>
+    
+    <tr>
+        <td><input name="solicitud.solicitante.domicilio.colonia.nombre" value="MIGUEL HIDALGO" class="inputtexto3" type="text" readonly="readonly" size="68"></td>
+        <td colspan="3"><input name="solicitud.solicitante.domicilio.pais.nombre" value="MEXICO (ESTADOS UNIDOS MEXICANOS)" class="inputtexto3" type="text" readonly="readonly"></td>
+    </tr>
+    <tr>
+        <td class="campos"><label for="solicitud.domicilio.entidadFederativa">Estado</label></td>
+        <td class="campos" colspan="3"><label for="solicitud.domicilio.localidad">Localidad</label></td>
+    </tr>
+    <tr>
+        <td><input name="solicitud.solicitante.domicilio.entidadFederativa.nombre" value="SINALOA" class="inputtexto3" type="text" readonly="readonly"></td>
+        <td colspan="3"><input name="solicitud.solicitante.domicilio.localidad.nombre" value="LOS MOCHIS" class="inputtexto3" type="text" readonly="readonly" size="68"></td>
+    </tr>
+    <tr>
+        <td class="campos"><label for="solicitud.domicilio.delegacionMunicipio">Municipio o alcaldía</label></td>
+        <td class="campos" colspan="3"><label for="solicitud.telefono">Teléfono</label></td>
+    </tr>
+    <tr>
+        <td><input name="solicitud.solicitante.domicilio.delegacionMunicipio.nombre" value="AHOME" class="inputtexto3" type="text" readonly="readonly"></td>
+        <td colspan="3"><input name="solicitud.solicitante.telefono" value="98764532" class="inputtexto7" type="text" readonly="readonly" size="15"></td>
+    </tr>
+</tbody></table>
+<div id="numFolioDesistimientoDiv" style="display: none;">
+	<br>
+	<table cellpadding="0" cellspacing="0" id="tablaDatosGenerales" title="FolioDesistimiento" border="0">
+		<tbody><tr>
+			<td class="titulo" colspan="4"><label>Número folio de desistimiento</label></td>
+		</tr>
+		<tr>
+			<td colspan="4">
+				<input id="numFolioDesistimientoStext" name="numFolioDesistimiento" class="inputtexto6" type="text" readonly="readonly">
+			</td>
+		</tr>
+	</tbody></table>
+</div>
+
+
+
+
+    
+   <div style="display: none;"><input type="hidden" name="_sourcePage" value="yYKW5JYGSPytPXZnLUUm0dSbkoRqv9pg-KrRmWyq_g2PivHkj2wm7l2Wb3MlTlrlLMoeleVBfAM="><input type="hidden" name="__fp" value="78pPbWKz8zE="><input type="hidden" name="__token" value="rELeLorRKw4IcRuub4GbUMSsRTZ7LDkQ8QeEb9Dv3WaFpga0r5bm-izKHpXlQXwD"></div></form>
+</div></div><div id="ui-tabs-2" class="ui-tabs-panel ui-widget-content ui-corner-bottom ui-tabs-hide"></div>
+				
+			</div>
+		</div><div id="ui-tabs-3" class="ui-tabs-panel ui-widget-content ui-corner-bottom ui-tabs-hide"></div><div id="ui-tabs-4" class="ui-tabs-panel ui-widget-content ui-corner-bottom ui-tabs-hide"></div><div id="ui-tabs-5" class="ui-tabs-panel ui-widget-content ui-corner-bottom ui-tabs-hide"></div><div id="ui-tabs-6" class="ui-tabs-panel ui-widget-content ui-corner-bottom ui-tabs-hide"></div><div id="ui-tabs-7" class="ui-tabs-panel ui-widget-content ui-corner-bottom ui-tabs-hide"></div><div id="ui-tabs-8" class="ui-tabs-panel ui-widget-content ui-corner-bottom ui-tabs-hide"></div><div id="ui-tabs-9" class="ui-tabs-panel ui-widget-content ui-corner-bottom ui-tabs-hide"></div>
+	</div>
+</div>
+<div style="display: none;"><input type="hidden" name="_sourcePage" value="xZg2OCbTRKytPXZnLUUm0dSbkoRqv9pge5ElLHP_329ZTPx5epV_uwNj_9PzJeyH1B5AQgMEPILn7fldbYXkLw=="><input type="hidden" name="__fp" value="0znlC-NtnFw="><input type="hidden" name="__token" value="rELeLorRKw4IcRuub4GbUMSsRTZ7LDkQ8QeEb9Dv3WaFpga0r5bm-izKHpXlQXwD"></div></form><div style="display: none;"><input type="hidden" name="_sourcePage" value="thTJ77KoeFatPXZnLUUm0dSbkoRqv9pge5ElLHP_329ZTPx5epV_uwNj_9PzJeyH1B5AQgMEPILn7fldbYXkLw=="><input type="hidden" name="__fp" value="w626jL9G8k4="><input type="hidden" name="__token" value="rELeLorRKw4IcRuub4GbUMSsRTZ7LDkQ8QeEb9Dv3WaFpga0r5bm-izKHpXlQXwD"></div>
+                    </div>
+                </div>
+            </div>            
+            <div id="footer">
+<p>Av. Hidalgo No. 77, Col. Guerrero, Deleg. Cuauhtémoc, C.P. 06300, México, D.F. <br> Call Center: 800 2863133 desde Mexico &amp; +1 844 549 7885 desde USA y Canada <br>Ventanilla Digital Mexicana de Comercio Exterior · Derechos Reservados © 2011· <a href="javascript:muestraPoliticas();">Políticas de Privacidad</a></p>
+
+<iframe id="iframeaux" class="disNone" frameborder="0"></iframe>
+
+<form id="frmAutenticar" action="" method="post"><input type="hidden" name="urlRedirect" id="urlRedirectSSO"><input type="hidden" name="parametrosBP.idTramite" id="idTramiteSSO"><input type="hidden" name="parametrosBP.mensaje" id="mensajeSSO"><input type="hidden" name="parametrosBP.servicio" id="servicioSSO"><input type="hidden" name="parametrosBP.idSolicitud" id="idSolicitudSSO"><input type="hidden" name="solicitud.idSolicitud" id="idSolSSO"><input type="hidden" name="cd76fEL37pP1prPYNXUAT_ITBm5BP4PVscFjSYt6joA=" value="tkx4bMkzvF_5YiR2Syjjlh18F-GYfeKyD8s_xPWU1SlR0CHEdygyycLTTse2L50aoTOTQq_BZHdxX2MOPgmusZTo4gzD03JOBuVoYqkYfqdwCZtDcihj1R60NJwBRUQ4GNYxo2isC19Bw0KwuA8Z-QlLdQ2MouitU6PCSqscr121-XRDHmhAEfKVxj5G0DmiohF4QPKy1E2l_ukfgF1mqfGUPifTaNu1e8ab803gRo2TlWhZt7CjlOrX9iIVoSusAwa69c4V6GjD_776J9EzdllXnwb3GfTkmn71krLxfhDI2tTihKkt5c3uHI-gDY_t6doE-Gn7DHdZq7MstKRmKF0pkGziMHhorORsxRvFkN8HERpbESTt45ordVijtIQ9n5HQl-Bd988P97fZLOG3pr8WRZu1QVdTN7pUxYW-1ULT5r-bAgJlzy2cUo88EEFwvfPPqT2DH7poK5Jcb93nE0Ji4lKP11vj53RdPiH9Wa8DaYRXH4MNvycayEeq6Rmf2FnLOFUS-sZsySqInf29OzCyTj9bfGGZi8wRahFtEJqnG0Xmj-VHAsv96zLgo7Zfc3zXzvnrULaTIs8z4hbmZZfteJ80Vm9uVSRDylbQwK3fJK2D76lurEMqk1XHRZbMTQcur0h1ogLLE0n0SetLeZwQb6p_09jgoW953jpVE5IhwXiD_aOKraIpgSupXMlgno8GxJZSktmTmUGSH6don-DTOMRsJ6FfTiIG6eGRfsYft7bvqAiUDapRrqoEhCg2eVoqlcnmoZZWAgc2hxYEBqlKNYPHRq4wreiBQSlcmDInD43wQMAELQTItmvOsvHtClF55vcI69P_vmA2-gEjQKaUJhGPxEKFnisCx0OP5DuNh67eY5ZqL9Gcy4dzUaX53IvaOtLfQDdhSDTxYYpH7P0ZopUYt_RAmvK7inWlJwyOzjuGQFlFBR7eYBS8H-zq59vjRttVdT961316wpp0ehDVgmE15YnZ05h9kdOLSAU-3vi7jp6ekWuojNFJj3ZwFpOLvxhUKJahVaIM6-3JYKT59q7Z6QZbed9fKD4BcNmDSzVRXm-pfxE3y9irKueaYorySl7lhlD3xi2nPtGNy72GLWys5Wc7osFSFQIZYI6nCOS21JaqUbeBIuH43OS8ekpJ8cXaAbH3GD2av73Nzg8XmbeRkkxm6cAS5995ATGNarPB_GMi5vPg5dCb-Ejr0G0dLrIiuQam2aS8c8SCcf1fkpjMCi4e4puuoe8g-RpkOUerkTTq2UVsqt7gPPXM2V7sgOJ2AtRZK3abt2S7MSz4gIvxWFq9ZLgJxGL4_fRcwjy8gDLxQFW3I-dorY9y7Y-GCUSOb47WLVKWzKICK7fX8NMVY5xm0flJofkph2XrbDgnhH8DXGuojNFJj3Zwy540WjqUz3-OzjuGQFlFBRi7tmJIJonKdYzE2wAvIykLiHbHhRgTAGxTEbGlrIF641d6avCQCzbWG1tg49X1PeeDb1vRVCU7yRh_KrdHZ0mUm4i3OdWMBKhjkr-fGqJDtQ_xpXBYjs85KcDUY_RFRoNeR5V_tLaIxB1s7G9iUgqdm4nZxSBUqG1e6pjQ_D4XqOhIDqm4taIiAfv1-TQ23WSsflFTWfA0cYt5qhxuUsyxwdcj7IQvu8VgRY5-lk2PirTly82bfHW_lsv7jt48m7RZXlbf8YyfvFRcCvTLUS9HjJfr7hpLDkqxKP1DMqSbXYmv2qQ9FCueOj9cgqxB5qSGOkYC6jwKBq6a24Yy4x0uFscxdEimfQDttzwCfplB0VmVelLG9PnE0vh5RfM8u5-i8vBxCftnnI_ipYOjmTd3Idpt2FGTNSHfkusqWoQUw3NKs1G_FMgjTnoBLojSeO4ZJwLIPJZvWarBpyPurBCIomGXdAOvSZdd0Dm6JSNW4ji-75rdGrNq9FEYvqXVbqatReznOb7Mw8GYWapkmHydsgsbozpZb0_5Uy2VSONtKHU1kQ4X5q8MX0GVj8Tz9J1w-VegI8yjscIEQZAsiJRoenrhXn1A4_N-sJQ9NAYYLUw0mKxb7uzyDod2AV7tQggPGHXnmPrE3jdQbTHuZL4jAsKiifKQ01tAmw3SpBqDZNT-KXgi4llL_iPJvl9zfJv4fjIghN6cdhBnsljv5PUHOIFyKPGl_NizyhUsJvfes1enhehefF-lMts6D4NepwaUyDVV_pnXTZ9qJ6iwIva4UZsi84lr3_iF-HfZRDExqQe0fp77kETwNHnNDNk77TO1M5fBr9Xcb8IR9rfXgBRY8c_6oGeAOAixNY4yBFMo_8Zd4mQHs2zf2MfyO5z0bC-8KbyoCoPRp9elH1wkm3PvzSi1jISpNh9va4mqVJ8KgOEmblTxaaHhLkKsK-qBu1dbFf1TyXK8k7lTSFN37m80hCIGsi6_KRpyow-684Ami_UJ2s76ZT_pQQLRv8eHNLSxjB4z0hi0xNUO2uvZUdVlHX3VLFk734pmLpbhquZQMgunkg366lLB_yxCg3ngJRT24HrjZcVv7NUna_zMOZ5TrksmiTswqV72GyR5xOpu6grAsR94o5XaHMxPZqkTwGuI7_kR-187uX5E2QpNFgf9tJNgLY891wXWqs4hqgQVsHs3pu4LnVMQi7OXAXnwJEz8WR-pcromKL0mWmassgod7HzfumN6VHTMpwjyrfL0gke9NpsGdb7je3xRJnEdLQ_2GmyOS5MzNNZ9rXTwHj2-0Pks2BPsWQkrIk821DG6Gkn3gxzBaB8ngfAoLtkpbCagPmV7ZuVPRNwqJYc8lNh4xD-34Zuxecj2-cMLWlEAdcfnf9koCH1aQA7xYaERQZpDV7DY77QwrUwIcfuy3Qv-cnZwof5yTwUNEqgCQjQtxzhW21pIXAnjmSxvMMutmoae2LDnWW4tZhw06V_-2pvwm9Cr4R3hM3lWkUdc2tXzM-47X9hWmBc0LCH_fLKjhyRMy3tEftJ_dJ7W3ObE7iyx3N8pguBbGLdNwHWlkcCqy8-71n0MQDs3YYWoKGxWiQ7MStAesGu6wBKVokGbjF6q8dWVulywX7aCqYIyHnFZl3m5zao6NpXI0wkgi-xQ6HSKcA_9If6edmYD_69HXiBBMt5HsTV53l-O5JTSX_eYBG4kCagsyLFP_zG--XX8J0YsV_TBfgliNNbNNnmYqxWqYilmPVtRn-mjl_CkSsTqB_jyRyLgoR-KnD4xTy4T78fQk10CSNwRlkbPCPegJKzm7FvVq5FEkUVOS0TVRWHnB_jyRyLgoR-58lje_l1_v7BeObDVRiV2xCJLGenGJTUsjjo6dpVxgtcLHtYFj-_ZODdXi11ZAw5LOw8uazxKfx2jD6AgiMy07Z57BJe1hN5eJCZlKl-jWlcyy2mTDWxsLh8TxjDZrsm5DaHmsTIwpEpLGt4jHsbGzyn6-namYJ9Z9yZ92lOO3d06H9WvUftXSksa3iMexsbYyMsFrrEJNIWHU3OjkRjAsjKumzatBVf4P3SjNldqhfgT_7f7zGhMUqgCyxAOiRB2tD6H4PSLzijW_JLRziMss1id4xEllal6zUC-Kzy-c4gQfslTUebbJFlVVzuNdtsInEZk8-niS-r6MJA1DFdUvLrGfWVvmRyT83RvEEgn9aSs2pRy60zuCVE0PC-bLYbmqj5aeVrgAoMDJVlbkiXjNr8bXOkXCtlqVnRDGKPnhfLBpxm2To4n3dAOKYAooo0HJdvqKVFBao2Hrt5jlmovywRXB_dmQ9u3SlaKQENuPDEJdt_e5K2R1iHoTqFhuwMG5Fjg9GyL9QbiKlnVjSgeY2O5l9R8lUbB9-CHiAKoixr6mzwXxk9rlAZQqROdI41CQChTeXAji4tBgMxTPKY8e67IG0qSnU94tv_bVHW_f4JjG5M30iFAOAwkupzQmWovj7763gnLZieB8Cgu2SlssUPUnRMp9lG3FjqF9LJ2SufEyGNS7uaLK4VVY98Vhj7Gyqr8_uOIJifIxnm8yHBtwY6BY29JXbyANtuf-H9VBJJuUtOFbNRDrBGdsWiCjBRwS74Nvh3Inv_S5qfB5rOfkI42apU46cmy4d6DspNPJ6tFJ4H4IDSg50NkWyy3hLmOz0ax4LI0KBFIpfXq3HXib2Igk1Fp2cghpU-VWytlOFucvzPg7hc-_5qMUz8uR9kPVf0Fqv_3ERSOxszHAnZKPu5Bmi92JbqNa1Ug3YFaBjCV7SE6n3NylAZQqROdI41CQChTeXAji40hwEFD9CCPx3_Cz3GTXAj9tJNgLY891wXWqs4hqgQVsHs3pu4LnVMQi7OXAXnwJABggZMNkW81Mu-5mPt61YfUj-QF90TdU3PJQEgZ6GI072lZP9I-DLMp73ASoMWWL3fjGmIN3N1Qwe5Bo1JcZWdkcje4yVC9prcWOoX0snZK6MAQXySDW3dtipH4Q9xvdgfkzPgmCFgS8mL7EAZT9iTMaoatE42_-jj0bBovd4eggDbbn_h_VQSSblLThWzUQ6wRnbFogowUnhaijsOpZGr38Gw9QlPC9P0bDT8scqIivrmXsG_7rQNbnL8z4O4XPrgEy0cixJ2CD1X9Bar_9xGoIZ9fJ2g4dimqb3IRw3_TSty76lnhuCXfr52LmoKPTnvzDwZ6Egps0ZU4EFUvRclzL5c9V3LKLhsHg97gKx_E3DvffqUVMOAd9f7-2o1_C46CzGSPOTccRRC9-oNhaEmDJVtBJhE63enMObehKNDGK4VVY98Vhj7Gyqr8_uOIJifIxnm8yHBtOg6qyBH65d-BKMkvx6Yi7SrHtECfm1VIrQe6K2cqSR-5AHRmmrdMMmnoHB3PcnfvWCBzaoVikYCcZ1EsbFS-8o8m9GYHyXbVowBhoxM0Ngt_hlOle2EYiivf0QD7GrZVWCBzaoVikYDeTf9GMK6rLzZLYTfwAMeyG0t0jlMac0A4N1eLXVkDDks7Dy5rPEp_HaMPoCCIzLTtnnsEl7WE3l4kJmUqX6NaVzLLaZMNbGxKSMVaut6lyAvYFN8l3NiMi-WeqItqTQUpKPlLQ3apM30_vDL9NTJTzzaRDyQd8hm6pf_bEWHSo2f3c-j-AgYnJXitHULdIYmItUU4SaI7kkrxQ5EhZ4ezGX695Jy9p1yPbFgpKaUnJ3ZmA_-vR14gQTLeR7E1ed5fjuSU0l_3mARuJAmoLMixT_8xvvl1_CdGLFf0wX4JYjTWzTZ5mKsVJ8jGebzIcG34hKACZtuzosRqHotSOUX4rGY35qSPt5QkxfgJoBUNirIlVIkCu-b078g6QHjH-9rJ9W0AMzMGy4ygpa-EKY4NJMX4CaAVDYr5bfYk-6to1fUeCp7YJRHnvrmXsG_7rQNbnL8z4O4XPkBt3hTgHiAc2tlcfsalYJuNdifhqbneIC1PdoR3ukVLkQOlwR5ukQpeJCZlKl-jWm-qxU2Awr3XMt00_DXWl2Ch-2MKCBZdZk_xwAsRTlbkzaqTu9N6K0ttVhPutt4uzdj2D2z39L3CbBXinNkyl64OudNxDL4WT1cNVYZZP3PU0HEXTiQreVc5c4BdR70vCyfIxnm8yHBt3vN-xyNyA5zSadW77lD7yl1oV581tswFnKlW83Y8mhR2tD6H4PSLzijW_JLRziMsQ-1xipbintnBCxxw4eJg87hU5-Ta27E4B_B7vA-Y41QtetTD6RSc8ry6xn1lb5kcg8m2cxpB9JSkzcn4ucGrbB3-P7otVDlKk0Il4cQhsU8J0sT1lRJB--nPRouLoBepM-47X9hWmBfIitkJk98JiEHtrNfxNP6YEj1WiEdrOGn38Gw9QlPC9P0bDT8scqIivrmXsG_7rQNbnL8z4O4XPlFK-DIh9dFub_jaaNzo6u3WSvy4lRIw7ThzUKA0j8r-FsWdnbWZO--DJVtBJhE63SV_G2Si2en4mlZcMgaTTOImwj27jQU0yVRK6C29AuFQUSJhZO6ML6cngfAoLtkpbLFD1J0TKfZRtxY6hfSydkrnxMhjUu7miyuFVWPfFYY-xsqq_P7jiCYnyMZ5vMhwbToOqsgR-uXfgSjJL8emIu2NYzwIVHRloduZUA71opv3gERU3QansvS82xDTC2Sg8qFc23XA_wR7115qzAUnKjANwj5jGJWPPTO7ZrZ8sMezGnfCi5GXcc7Hg9RJVzhwLzQIsukp8ezHEEFS4b2kvGovzAAWM5S3_vXSjYh3IJskLI46OnaVcYLXCx7WBY_v2Tg3V4tdWQMOSzsPLms8Sn8dow-gIIjMtLhUlPkePpgpBdaqziGqBBWwezem7gudUxCLs5cBefAkElDHv75rjCYTX9wEErhwzRQn1kZBKJGMmp8rrywwnYIqhbT0pmQzUBQq0PoVj4t8VJ4j_NvAOxp5f8rtM5aH58nTS7VgTFz_AG6DN2nmfIMPIuIaPYlk6xuXXSSiRx_nRixX9MF-CWI01s02eZirFSfIxnm8yHBtPhYYUFD49oEssNZeYCgZhKafYoRCRAf22J-zBojSusKMe3sMsYcPF6X6T6GWkh4Wjyb0ZgfJdtXrScyCZYZmJQp_xqHz6O5GK9_RAPsatlXDKYrL2DMmlTL2V9GwZ5e2yLvNv2pA4a33VyomHMQZiZL-ZOf3EnMColIBhcuvrZobQBZ9e5H9z9sR7dfobtJ6_RsNPyxyoiK-uZewb_utA3jlsIauN9HcZ1YpEz6esFiJ1A8k7OUJsO2-wt13OPPGQkAoU3lwI4uIOegr0rgD6dZXs-CA7N9hd0OBpBjJSWNKnRzhOYwUO7ntDV5D3rTcLX6T06fHAO-QgexYqsYaLVcW12-m19OlBYzQr-r91j7J00u1YExc_wBugzdp5nyDt_be97AKyP8nyMZ5vMhwbToOqsgR-uXfKRHWjn0VS3SSblLThWzUQ6wRnbFogowUcEu-Db4dyJ7_0uanweazn5CONmqVOOnJsuHeg7KTTyeATnuDsstqFgYET7IurP1bhQwerEKcQtdy5vt9xDyJHa15Dz7dFYo1tDSHDNWS5oQ60pwptXp6DylwbU7Nz6m7daR6auKm2yAegQQlSDomM16rpz5FhEayvL0M5fYf1Cg48RB-ySunWMQ0KGauXZ8h0HEXTiQreVfyc_w02qJbSLql_9sRYdKjZ1YpEz6esFiJ1A8k7OUJsO2-wt13OPPGQkAoU3lwI4uIOegr0rgD6Z4-xo2I3aA0CaSaNRC-5pJHtR_9egzEqI14fBOPcrZRnNDf12KRYB5iWMeZAyGuZjR14OMiN0TJR7Uf_XoMxKh_vkglEphTY59_VnBF6K5U-W32JPuraNWQjjZqlTjpybLh3oOyk08nNgoF8z3GBwAZFYcwHj8pSYEMCwHRqnXZwzcR8Q4DIGH7QUcXNvH_n11ItIJ0apXg6WZr-rJInP-bJQBu8QgrvV6rpz5FhEayQ_CAxrgiWww8_CnQAHlk-UsYe9Toib9jYdSfPXOaelS_eJITNrm4H0ikVBD4ep9_K_vkSqGx1RbpGhN0ZcbGvV1SNDxjA7D2jEDNbFzC9LOzR_qxXhJY43FqNtfn3Y43DA2MmrsHvU3M8mzDAG7mwdBxF04kK3lX8nP8NNqiW0hD56QwMWIcQ2HBPu7_Eks_NXPBtYfSzR7DrDdlKT7UUYgukDXgftaNRuqwaClUPhc2xLO7P95YR1Mc-hQusJtgt3xpmWGRZl2ILpA14H7WjZhG2c5fSvGQkI42apU46cmy4d6DspNPJ0V2IWD2ovykUOygNiXNZP-kx-sTHIsq9DC9iHOyZStlslam0R9_MxlE3ColhzyU2CM3x9chqkHhXqunPkWERrJKdDaZrHG5hLL5K-nZLDZS8Kq4y-OI0nIxCXbf3uStkdYh6E6hYbsDBuRY4PRsi_X7kLsgxHwETxY-tEAsPdBuDIGkv97agP4a-ps8F8ZPa5QGUKkTnSONQkAoU3lwI4uNIcBBQ_Qgj8d_ws9xk1wI_bSTYC2PPdcF1qrOIaoEFbB7N6buC51TEIuzlwF58CTjNv1lt9Min77Q-SzYE-xZCSsiTzbUMboaSfeDHMFoHyeB8Cgu2SlssUPUnRMp9lG3FjqF9LJ2SlRpAIgNuhGiGAopN5fXwiocwL9XcW8JVBTqhGL34ln5BaH27h0bySFQ-3mlpg-xiYj8od9FSMk52WczYedmOk95UlNUCEVbAfU4pUfIUQU4jHt7DLGHDxel-k-hlpIeFsrtH5sthVWw-5C7IMR8BE8WPrRALD3QbtjgrPrcdzxBLI46OnaVcYLXCx7WBY_v2Tg3V4tdWQMO1-7PCxKR7X4zTmAcvMe4Rz2agK6yOegPVhAGhurjNWpMEo4mh4QMkwUKj-OYsT62gyVbQSYROt3wDRur9399P_nnSPawODa81SGLP6RdXocG2Jza92ftf9IQbkROa_-cLvCad-Rg3M23FjqF9LJ2SufEyGNS7uaLK4VVY98Vhj7Gyqr8_uOIJifIxnm8yHBtOg6qyBH65d-BKMkvx6Yi7f86jsu9uN3ZCIJhXjqHlEOu_OjmKRejRe1zDXISsuFvT1VKdnyFrR1GecCaocIHI0PkV14mmNMhkIRn3HIPifmzZ0vHgOrzid-yup64tzgzceDsz7RsJ8uBoAOaT2HIV9cLHtYFj-_ZODdXi11ZAw5LOw8uazxKfx2jD6AgiMy07Z57BJe1hN5eJCZlKl-jWlcyy2mTDWxsSkjFWrrepcgbkMhr6sU7JgXsCCDz7JBpVuDnRXH_wZ-6pf_bEWHSo0RbcIKvfpPcesXtN6O-2WW1ezgAePq5ORr6mzwXxk9rlAZQqROdI41CQChTeXAji40hwEFD9CCPCnIuECRrH76tMRy0Tf8RiCmtCLnmUQmMRk8Gd54Gl68P9hpsjkuTM8SGMozUKD7GkRD_W9SIw2TcS8Kp5yyZMX61nB96mudZOk2IwPQ_DYd99WYJC1BQq_Sm5s7jA-pW9OhycjEFSnWfpvgXVhVC7wnSxPWVEkH7Bc_bEQLED8QssNZeYCgZhKafYoRCRAf22J-zBojSusILHszzn16VfdYh6E6hYbsDxIWAoDuiytMvSV97moxXUrERv00Qlyj2Grk7jjlzWvP5MZfR4SbEGjg3V4tdWQMOl-kCF4_yjeA7C_ZctK857hU5VgbnKjjuHEL027bVdDtFH2IMFJDKNF1SNDxjA7D2jEDNbFzC9LOzR_qxXhJY43FqNtfn3Y43DA2MmrsHvU3M8mzDAG7mwYlhhCxNdZAbNNbNNnmYqxUnyMZ5vMhwbQVqTkLSiRfxRu87rTfkQ5JXyu1Is01wxPEvD04sgaf7YEtuYypQ58MsUGsfYSDzl5waXqc5rpN7fv5-kgUY7kMKnYtsplYZtkHPztAGZCLiby3Di0NvHsSMe3sMsYcPF6X6T6GWkh4W9iHU2QOE_Pax2N4SyVBcfFatwSzvUcJijYglLWyu9tcsjjo6dpVxgtcLHtYFj-_ZODdXi11ZAw6NSjRjEuzFCnWi9j8rjUrD0o_HBzizinpbnL8z4O4XPmH254m-XclxFAIM6KHkwrnjFaoW0IiLg9BxF04kK3lX8nP8NNqiW0i6pf_bEWHSo_Mquqf5RBTrRgGUcKuinEV4tv_bVHW_f1WHHZQ77FTbHC87Ip74HZIuuS7LMXWBsUVdYwqgtB5TNNbNNnmYqxUnyMZ5vMhwbd7zfscjcgOc0mnVu-5Q-8pdaFefNbbMBZypVvN2PJoUdrQ-h-D0i84o1vyS0c4jLLo7Tv4whNgTUnORXevgEYxxU9thIU4DsEgMUOi3GgivYJGYjgbHinLf7WQaCSbWKE7FiwZg33_U-0FHFzbx_59dSLSCdGqV4ETcKiWHPJTYGpUtNBAZrJAdH4TTGC13FY4iTep3zcUJ5kaA4g8Ao_R5VpFHXNrV8zPuO1_YVpgXyIrZCZPfCYhB7azX8TT-mBI9VohHazhp9_BsPUJTwvRt4Knmu1PhtvJz_DTaoltIuqX_2xFh0qMMzd1hvClcr8vPu9Z9DEA79eJ5O4eEU9aDZqC7ifObZ3TJatrHrnadc_nouLMIHNEn6Kl3-gqDlFcW12-m19Ol1m4ULmjChMMNvgt5K7IUP3fhejBcn-zJhvI7ZiipicLvXZm4fQyg1tutBLt8dLQwdmYD_69HXiBBMt5HsTV53tgxTm9lDO37kcRDxKhTffVfVkcogBijl_TocnIxBUp1n6b4F1YVQu8J0sT1lRJB-2_yzrp79my5LsSwpoThfBmFZzK_lcDUAoIWARzM4TABkNw0FA9rScqTKpLPKX6Ptd4L4GtmBsgbLU92hHe6RUuRA6XBHm6RCl4kJmUqX6NaDk3aQv97AewdH4TTGC13FY4iTep3zcUJ-eqvzBjSGYpdUjQ8YwOw9oxAzWxcwvSzs0f6sV4SWONxajbX592ONwwNjJq7B71NzPJswwBu5sHQcRdOJCt5V_Jz_DTaoltIuqX_2xFh0qOEUDkfMwrP2TTohHnuq37z4XlUkRphGeTDrpgnq3mX_XD8vpQMZFfpXSh3eN-B9x-5Emj8uEs_PESH_QbiBxUOdIpwD_0h_p5zArOinuRrWLy6xn1lb5kcuW4fI2GICWuRxEPEqFN99V9WRyiAGKOX9OhycjEFSnWfpvgXVhVC7wnSxPWVEkH7Bc_bEQLED8QssNZeYCgZhHxdoSW3a2cjjRPRAHLA5t4xCXbf3uStkdYh6E6hYbsDamjVxaoWenxjoK_6ha19Z_v7g6pKy2E1hi78DmwPwrstv8kUgojY5M-7o4bZKWMoEnldJah7L6lqYYX1mgrBia_xw0PueQFasHs3pu4LnVMQi7OXAXnwJBmVF4UXfuhCkCihvoVEo2X0tzHH7IKCvmS3mjxL6AIJ39h7QIeVyWKxQ9SdEyn2UbcWOoX0snZK58TIY1Lu5osrhVVj3xWGPsbKqvz-44gmJ8jGebzIcG06DqrIEfrl34EoyS_HpiLt7I16AvFp_F72aVAefFsEJrRpnYYwtzr7hmqklMxr1uk2wqw1i0AUYmv67z9MGjmb-0FHFzbx_59dSLSCdGqV4ETcKiWHPJTYzUikn-ZOJ1_K5zLIYCnrFY4iTep3zcUJ5kaA4g8Ao_R5VpFHXNrV8zPuO1_YVpgXjEraDfhtJ1SYWmgY1KRfbq8vCxM8-84a0dj2kmS-dS9aZE8mNXwwhJQ7nIqzv2tFjkhir3kvyePT_pKTzSZGfyut9bdlQZBpH2Hid-VQt2GIOegr0rgD6dZXs-CA7N9hkbrQLebqdSBieFRrK4z8V0207bKjrfna4UHCTAeh3El0inAP_SH-nnZmA_-vR14gVxbXb6bX06XEN7P9GfYTAgDShmB3F8av2r3O5i0bOoJMKux_0zrl3giLrdKqVN8Yg3PUPZkKrssJIDh3sIt-euT_NiPw4wqTy0as8GcN1S7q-jCQNQxXVLy6xn1lb5kcuW4fI2GICWuRxEPEqFN99V9WRyiAGKOX9OhycjEFSnWp5P3niLsJBkpIxVq63qXINVxbktHvEMBaXSX5Cn7yB7dTRvW3PnEa0dj2kmS-dS9aZE8mNXwwhGW0JX09-RyOEsBKApf1ejjCxnQmsWesKMnkwscFfh1tDam7AwykU_SmVPM6m-NthoxAzWxcwvSzs0f6sV4SWONxajbX592ONwwNjJq7B71NzPJswwBu5sHQcRdOJCt5V78OhzdQBpPeJ8jGebzIcG0Cx0DX1JSIqBUPrizCyOjYAhACCldZNDodVxVQYnmaTJbzIKFBg_I3dr-QamZMrLs94RJPQuFLdCiA08byk-3KJJBFPGy_WOvda4sNjdw25AIkwBSsZocjc_b4eNJjjcql-k-hlpIeFvYh1NkDhPz2sdjeEslQXHxWrcEs71HCYuiXA4vbnQ2KfTcsLMujn43XCx7WBY_v2Tg3V4tdWQMOfN4kPzmtwLC0TUqlJkWoQxezxV3O7_HthsWMl8HkcSF9q2sYnYbYFUg22EGE5kHqpMO853XyU96yTIWa3vTnu_16Rzylqx20H5mWg_uvtVQ8JVX36zZXyZQGUKkTnSONQkAoU3lwI4uNIcBBQ_Qgj8d_ws9xk1wI_bSTYC2PPdcF1qrOIaoEFXYs175FXkcZD_YabI5LkzPT23E6x7vdPLgtZ9dPpTW8UTOH_UsRRX3WkYyz_JEjk5nnI4t9fdDM1nBD99kq0D9towv72zuFCT0U_j1sS3doDCDQRnD3wHKwypFzQIWp3IP3zW_6DgELcZr8RvBuUxbssabMPCuhqoA225_4f1UEkm5S04Vs1EOsEZ2xaIKMFHBLvg2-HcieaR3Un6dQmyf9Gw0_LHKiIr65l7Bv-60DW5y_M-DuFz7bRbMwFfQgQ5rhcOV2FwqbZqAGu3DPvw7yyzFO7wQec5a6zraneP9kXUiIWST1jiKgmVezBREX1Mwmmlnvo-ZhCjRM7Ii-0-zLaA4hhc0LTpX-ZxFiJ4HaxDQoZq5dnyEAsd3hI38svPJz_DTaoltIuqX_2xFh0qPh6X9gNR9JWNJp1bvuUPvKXWhXnzW2zAWcqVbzdjyaFHa0Pofg9IvOKNb8ktHOIywUi6ML7UZO4BDBptgdhzJKaXMlbpP1wStBMt5HsTV53iIwPpwx7eDxz25RR7A9TX9jbdXNjLeKdeNqM12Avo4lsuHeg7KTTyc2CgXzPcYHABkVhzAePylJgQwLAdGqddnDNxHxDgMgYfmDeT_qxSHckQOlwR5ukQpeJCZlKl-jWu2yOCZMA2jT6wYh66UUl9i4VuZimCzRL72O79ujmhFZLoKyXfMG02xdow0T-qy9-sMu0iYYaV3essmtHUG7mk-5EWY4HkkTwmEMjPXrlC7x6iWK5sSSqU3o5YZlpQ8N1H04BvPu3KOl-VlkfD8Sxr6OIgq7STsZORCLs5cBefAkGZUXhRd-6ELYJnpNNIdKCAkrIk821DG6Gkn3gxzBaB8ngfAoLtkpbLFD1J0TKfZRtxY6hfSydkrYCyZjt6z_5PXOR0BX3A2xjKmTZUlo0ZDmcHarMU6rhsFJ3qm2gffOkZ2BclZPVhS5QAKZmYneaezFARt-dPVzAiTAFKxmhyNz9vh40mONyqX6T6GWkh4W9iHU2QOE_Pax2N4SyVBcfHziIQ1E_UCT2OCs-tx3PEEsjjo6dpVxgtcLHtYFj-_ZODdXi11ZAw4MDBfMhv1PCfmeFb3b_TqRIr8vNkj4dfFbnL8z4O4XPlDacY4vxNeJKAsQ4VL5aExe5MkOS-UYdl7KVU8me_9UjiIKu0k7GTkQi7OXAXnwJBmVF4UXfuhCkCihvoVEo2X0tzHH7IKCvmS3mjxL6AIJ39h7QIeVyWKxQ9SdEyn2UbcWOoX0snZKelCwpRlki9SaKdo1p2XJnuWdNBzmoQ90MXxlivLnAyvNwR5SCtnx911iH8MbQQGmHLMwD1jVODW-FXZoA1wAbcfGhEkJjHlnYc05VMdTXPwCJMAUrGaHI3P2-HjSY43KpfpPoZaSHhb2IdTZA4T89rHY3hLJUFx8Vq3BLO9RwmKNiCUtbK721yyOOjp2lXGC1wse1gWP79k4N1eLXVkDDks7Dy5rPEp_HaMPoCCIzLTtnnsEl7WE3l4kJmUqX6NaVzLLaZMNbGxKSMVaut6lyKGoWBAmfxMSKnm0NJfOnnwi43MY5KbPW1VTExjTs13OKXzwgg2hWMDoCSr1OlZsWHW4pvYVnWZ7uqlZ61zWicD2akGp_-GG07AHGDyU7bFJj0Pl_LtgzrQUVNoIZO6majTWzTZ5mKsVJ8jGebzIcG3e837HI3IDnNJp1bvuUPvKXWhXnzW2zAWcqVbzdjyaFHa0Pofg9IvOHzENU-n2uhP2VGOH9-Nvds-nMrkMkEGZ2BvGQwM58QiHYNw0IWLUIuWrwF_5nuoCMqKE3hgMei8BYKIUEicUO7nimwblDZKD9viyeChBiXHdaETMBMp31vm_RrB3uRYdM-47X9hWmBfIitkJk98JiEHtrNfxNP6YEj1WiEdrOGn38Gw9QlPC9P0bDT8scqIivrmXsG_7rQNbnL8z4O4XPkkI11CYj-1EBduGBCZ3jkDlP5yDucL-ztlxmJTUzLyGeW6N2nphYj7V8iw7SDuhLWphhfWaCsGJgAGybLt5RZ4iP-SIo75Twnf-tilUkO3DCTttfvWaoq6u1l8tr25n2CjW_JLRziMss1id4xEllal6zUC-Kzy-c4gQfslTUebbJFlVVzuNdtt0inAP_SH-nnZmA_-vR14ga16ZD88sbXZOvX40DTtm8xHBE_ezMVrxfqjI10jg4yjH2CJGNueO6j3gTDsrUKaSChQRUAAeB53jajNdgL6OJbLh3oOyk08nx4PUSVc4cC9Abd4U4B4gHNrZXH7GpWCbjXYn4am53iAtT3aEd7pFS5EDpcEebpEKXiQmZSpfo1ot9oYTGLOh0rSI3V60HcSMCV9Rdg9MXpn_eVSuBu3_TG4svdBM2GtDYQyM9euULvGw9prubUviEdoCm7a-Z7MRXspVTyZ7_1SOIgq7STsZORCLs5cBefAkGZUXhRd-6EKQKKG-hUSjZcrajRTz6wJdGkn3gxzBaB8ngfAoLtkpbLFD1J0TKfZRtxY6hfSydkrAVBErRJPf3MAK9zSZO4ywfsVHpJ01QJ9EbINIO7jJFNt4K-stYyBuiQFYbzjqmdR99WYJC1BQq2_zEyHKGBp6AiTAFKxmhyNz9vh40mONyqX6T6GWkh4W9iHU2QOE_Pax2N4SyVBcfFatwSzvUcJiTbpp5BbZPAQsjjo6dpVxgtcLHtYFj-_ZODdXi11ZAw47WsDwZhojrEzWNSU89J2_FDsrYGpmr4E4N1eLXVkDDmGoWk6MBZFrOqtL61ykWNLIHQH5zk6S0WKdBdqUeEt60hBuRE5r_5xFEL36g2FoSYMlW0EmETrd7DNkxr6RWP1jY7mX1HyVRsH34IeIAqiLGvqbPBfGT2vdeoGvPKL8I4EoyS_HpiLtsCb8eKChJLEIgmFeOoeUQ4PZFDBldM7Bgz3kxECCJjIT5DvO42BlSjipOZhEl6ZPiEozKxiQR7tYa0j3Nr-7euIPKBsciKF96vowkDUMV1S8usZ9ZW-ZHLluHyNhiAlrkcRDxKhTffVfVkcogBijl_TocnIxBUp1n6b4F1YVQu8J0sT1lRJB-zWpM1cSix_qGWb5inJ28xuR8Ll1ECDTY7r-pVUbdTQFs_MQk5TR1NqlSMIji9Jn4SlkfmUnATDiDXpwQcL8SXB9Ynj2oScn8JfmIjuPo1sdwf1py6PBDs0NqbsDDKRT9KZU8zqb422GjEDNbFzC9LOzR_qxXhJY43FqNtfn3Y43DA2MmrsHvU3M8mzDAG7mwdBxF04kK3lX8nP8NNqiW0jLP9cneTZt2PCLVPB7nmt24LDgQhwYc3MLs3fK2fOjH73dLle8AGzy-KIFqE_BujmREP9b1IjDZCfp0ZENJHEEN7jBS9alu9LZJO71XL8YdeNqM12Avo4lsuHeg7KTTyc2CgXzPcYHABkVhzAePylJgQwLAdGqddnDNxHxDgMgYftBRxc28f-fXUi0gnRqleBE3ColhzyU2BqVLTQQGayQHR-E0xgtdxWOIk3qd83FCeZGgOIPAKP0eVaRR1za1fMz7jtf2FaYF_Gms_Bjdoo2yswwQXALg_w0SGp6OTsT342g4tbeoYp88_4E2yJQ6MXlYoAZ0gW5p3W4pvYVnWZ7yi2x1X8JvR8-lm4g_M9vYCWblC7euWHcF45DmJpXkBoAsd3hI38svPJz_DTaoltIQ-ekMDFiHEPe837HI3IDnNJp1bvuUPvKXWhXnzW2zAWcqVbzdjyaFHa0Pofg9IvOKNb8ktHOIyyzWJ3jESWVqXrNQL4rPL5ziBB-yVNR5tvdq5m-T7yowTZLYTfwAMey6vowkDUMV1S8usZ9ZW-ZHEP7dae9HNYsmgevhZxmN8tJyOtdJ0-knhyWS1tGKW_Z67zatkSyZ-q-voVlMIQB1c3a7yisg_-RkQOlwR5ukQpeJCZlKl-jWg5N2kL_ewHsHR-E0xgtdxWOIk3qd83FCeZGgOIPAKP0eVaRR1za1fMz7jtf2FaYFylAjLqK6niEWmOMORCeShi9Or4vm53LC7BySRsBanXkuqX_2xFh0qNqoyCYoT1DMaATzgesn0kj5L57dbrKmBIbC5nzDvKcqdIQbkROa_-cKFb5TVy5ESO3FjqF9LJ2SufEyGNS7uaLK4VVY98Vhj7Gyqr8_uOIJifIxnm8yHBtOg6qyBH65d-BKMkvx6Yi7ZlLKvy9UIAXnDnMuk6fiAI5NvrX5teI31FBwW59Hv0XTcEPTmDmYQC8usZ9ZW-ZHDszCf-TgtI5S4ZWHijzykj99Pd1T_hUSoUuxtqhWMkFRW5wA9M7leU3iyVxC_r3e765l7Bv-60DW5y_M-DuFz5Abd4U4B4gHNrZXH7GpWCbjXYn4am53iAtT3aEd7pFS5EDpcEebpEKXiQmZSpfo1ofOoDYGIO_DjoHZImIdHNBvYktyapMta-LYLOnQd7karql_9sRYdKjsIvdrJgW7-83hv8LzA-NWBa7gCI6z3fxhCsyhSWIj2QAsd3hI38svL8OhzdQBpPeJ8jGebzIcG3e837HI3IDnNJp1bvuUPvKXWhXnzW2zAWcqVbzdjyaFHa0Pofg9IvOKNb8ktHOIyzud3UUTYLJzSGfdxa4tNMuBC7p7I1-DX4BrA9SERC1flb89D31ZtFqGmeR3nC7J3v7Lj5HaS-ZCmaTgGwqO9JIw2est4vxF0fGi2vrrAFLz-zsN9ddzLCZgaADmk9hyFfXCx7WBY_v2Tg3V4tdWQMOSzsPLms8Sn8dow-gIIjMtO2eewSXtYTeXiQmZSpfo1pXMstpkw1sbEpIxVq63qXIvfXOFT6azjqV_NKzLFodX8tf7Jkn6siIbI3y6zTA_hIIYYeRF3Rn5BPcy9Jlo-l9is9gX7EC4L6_vjHfrWKXXwCx3eEjfyy88nP8NNqiW0i6pf_bEWHSo9pYZVxinBcU0mnVu-5Q-8pdaFefNbbMBZypVvN2PJoUdrQ-h-D0i84o1vyS0c4jLLNYneMRJZWpes1Avis8vnOIEH7JU1Hm2xPhHwGwt_HONkthN_AAx7Lq-jCQNQxXVLy6xn1lb5kcW-mXOzjhNUATPM2QjuCOrvG7iJBzCsJYCN2Qfy-vl0NYLHwRVuNUT_tlDqTY41IV3APuEOPb7AI4PsWLl2P8TqA6iaQXKo-G43KsGb50Ik-mg9c5lVrhxjElW2IJB6i_1wse1gWP79k4N1eLXVkDDks7Dy5rPEp_HaMPoCCIzLRbE-StW9115AXWqs4hqgQVsHs3pu4LnVMQi7OXAXnwJC07EUmn1Kik5T-cg7nC_s7QLzQfqeL5SObPVb5IA9VtBocyXCSSKcItCzNPxikpPG9EjkHs-sKbtE77W6WrhKaaf02CHvBaHwk7bX71mqKurtZfLa9uZ9go1vyS0c4jLLNYneMRJZWpes1Avis8vnOIEH7JU1Hm292rmb5PvKjBNkthN_AAx7Lq-jCQNQxXVLy6xn1lb5kcdHFmP6RyOTnj_zwhwYbVUZRb_dDe3-LtIBnMoL7CbCS8usZ9ZW-ZHPTmnGMx6QE_s2kyfOtie0MADCquJBqYsI-ILDqGfCJDJ__tLO_cK9VXMstpkw1sbEpIxVq63qXIhcnRQv3aF_YEEow-jn30i0nv3jAqzz4-oON42zXLXIyOgsxkjzk3HEUQvfqDYWhJgyVbQSYROt0GihJd2li-D2BUEeFHFjWRfvp-q1vQmJVBsW_KgmswLR9h4nflULdhiDnoK9K4A-mePsaNiN2gNLNYneMRJZWpes1Avis8vnOIEH7JU1Hm2yRZVVc7jXbbdIpwD_0h_p52ZgP_r0deIFcW12-m19Olt4hUPQZr7GtFV57uU9baYq1vbkby-yLFzmzvwO8EBUHEjz-zH3BetW-NK6BeiFUKLVrQnxoETvPKeGY9pglJAHGa_EbwblMW7LGmzDwroaqANtuf-H9VBNoCWtnUZvN3Qe2s1_E0_pgSPVaIR2s4affwbD1CU8L0_RsNPyxyoiK-uZewb_utA1ucvzPg7hc-QG3eFOAeIBza2Vx-xqVgm412J-Gpud4gdceJzhFVO1aIOegr0rgD6dZXs-CA7N9hkbrQLebqdSBieFRrK4z8V0207bKjrfnaxTDdPSz-yLtdUjQ8YwOw9oxAzWxcwvSzDs2Td0qFCFlK1ufpXKXzibmfriP-jy4ni_Vu4KxzaA23FjqF9LJ2Sis0I9R3tTX0xFuuqGx0UqL7GbJWou-u2o1D91GBREq5XxwEpWw5aV6K8FNSgg-mTtc0_FSZDxP3yBYsy43LBTS9LVcWhHRdgaQq_YBWPEoNIdP9yJQOYbBKKu89FHcivBnlsgnRoc__wK5aQjoSUVngPrxZNOAFMYIbn38DqILvCtNCKSjawvPG_Cucod7tUAFA6cIczD4SfCavDzWFBLg9LaroPR2GFcW6Lgmme86in-CVB6fNKant9U7J5ALLJiDba6iYA49g1G8wyDm77GLEsHtlRcaHX874p81ui3dcpMVulMtAWVUoMSYydP9sl25gnDGb1vwxc1-Hz08208wNrMAsGoseHRsuj4Qvi1R1KfJ3Gm48MPgexdJb3X2FUPBjyVQJ9jQ9iNtDTy76boN-k3L7jrXQ5hSVAkF6tZM5-VCxGx9T23EglVn_78HRKxxohWcW0t9CrgcqiXWetJkNwj5jGJWPPUgLynLSnwPeX06HBpqtNpobcVqoxJPzkK7My6gb_4i8pOjlzYCTKIVA6a1_93PlCPJfjM3qdDX0O31MDDheTB2H_FoJWPNgaAWvSBKCQYcDNqRrCTk0yrisdxydSZi9JvRQcgPd31Jv5PUgvYQiQUIQDY-5NuqanazzJ-oxdGXf0Owtxtirc6F4_w-MwEgU0ZouVqYwmFyoLEq25PySmyDTj_GpfMGkJGkBAC2o-MSrgicO-WkEiiLbpS2_qtBkiYhv2JoJLdcMw8pHsJscJEOntbC1hYefncawANK_2gwek5VoWbewo5SUXWTaZC23RwMGuvXOFehow_---ifRM3ZZV58G9xn05Jp-9ZKy8X4QyNrU4oSpLeW8Fi2rd4K7cvfFlZagtaEEPkHX5Io2ABlOb1RagbXU0m3lUtENAYclmIS3EEZPjNzMcB4hV7mNdsWGzr9Vt4hZAyZnB65FcZxzdoHxCeChbcHtkqc27bTdLnnFpZiVebgvYSD2g9xZfffbej4SKH-JQ16PprQ66lcpLTJ5hl8suEh206HwzIwd1AQ4hvasD-VlhVip-FjjyNQEOIb2rA_lf3But5cgRImbBBXpH-1Wi8UA5X6L9O2YyZfuSULJaB-ZSmdR2nugnLLkUh-H3cBp_NUbXvDPFUJBixFWmBuflyQuTexVAVSL-KufINHSCBePm729ZR7-1AawhDLJX1RP7c1lcwgqnvtnnWwnSBnR-5ZtCz91hP8KsTfDs0xIgUZEvA7dVTO3Gb8YKox82fJX392PCFeqv_OPCtWDXbirjnquJoPjGkQfJDh0NVY44rs8qHsZJ_jf_nZh3t3vHoBBaxoj0qEb6kZwvlCRpTUmK8ms61cwFnzYVQK6UJY-zuoCvhG0AE5YXhy2faHByLHRtI_UfBGooWz-3stNGBgLQXmWW7Q4JNP4mnl6dXHy8D-a95hNdAEGqA5aM-EFpK6SwCX5RLWR8DoQsKuLZjfasbiqlp8TA07E2IP9oX0iMWCljG7_NeqHOBcj-BJyr2Mh_KjMrZLYMWbOGaPH1wAUrNCuXMpc7TiT_Czpn5C_l-Hm6WFW603SVHWN6KNij9FNJZiCw2iZVerJ25KQYyHEYWl00LSVNzbmQ6Esi_H6ISHboN9fgxES73ltCc9Pb4iywh_Z8OObhz0dRngFc9zpaCtkxwtGz1bLIN1goHWi5QZs-YZ8-kWZ8ISI0auqC8jhn3ilMuO0tTuY3N12Y7pTuOkZIzgpfZ7xW1PDBHejXziAXy1Tky4ZVQt8b9EjGW6b2_tOUuYZ2i_ASeMjY4dS-1--uIii12N2kWCQ3eK0zaNHGskqjlYdnDXH3C50XY8ZktLgsUyUeGtxi9HhPx5OFxEKRoc5GLwAA47LuL1YjLUJKJljf3zSYSd6u13Dw8mUm5LOm_mYYCkQIjekIYGh0Ob2GVXXhvXNotczK1duqZOhpRztO1iw2eCap1i-qzcgyNkjkAx0wbS-KPS6a7tnx5CAZRdZ3yCoPpXQYPXsuMCv1taElTEjMXotm8xxah6tnqJM4YbkmPx6RKYrItbaxKzgXk5ukJIqmnz2eAnbJ1RP9Pg8zL8n6TMCV7MYbN2qBwJY07Wm1Fr6fT55ivxqb-UVSUvepgTLnX1GsCPB5-bbq3pAHZajPlFKi7rf5Ss7tv_tJzL0oKVvu9_dss7kqT3qE8ke4rJ4ldc74_fd36y_2hrXs555E1MpdqiWzZDuLdOlNuo8fJ06P0yb_TG_Uow6kNU2yfZONTaBZsoIqCeZi7R9yZiUM6J_3WcMTWu6K-70N_9VvMTPOt2QSh6g4Zyc0VleySJdpYGw-3Sql2sKa96gyDAaFvpe52M8fOv-Nz8QCxDlgFyvY0n11Li3-4P7N7IQ5GPfc-ACyxna70mF9vmJ9EG3H84N7P9naBNxDtbHqGMtnBXk7kSWj-riC3zOAC2kJTV0nxPNMpDzpbZrlcucpDX00UU1kFTLl4k3VvCYzIHIIShCEByM4R5ob8cCK8HaZVvhXMiOxZjPCHfCaNTd15t_BdSZTTsa4EnmVOCU3bk3knjUzmW_z_pVPHaf1TYikZKyYvgVY9X2i_7UmU07GuBJ5iegKK5t_G_bksOKeDn0qVO7vMDsdmdrREz4NjSrv_M3SlQnW2Wn3Dq-O_LC4AS44M8I9jveHh0tkn8E1lONYwXZj2Bf33VCmu8vmlkF4FeazK3LnV_olmzC7VXVSJpZZy9IxFR6Hn1S6BJ-OhxTvY5KWhh0vjHUAvShroZbMD_DV8Bi07aw2-tJZfhx1K4R4N7n_95dkZGDIvyk6kIXxly2N8qySX7Vq-BiDCqITvmyUQDcZGf-3YYekdR9Mmc7WQhnm4uQY0a6KB-GCGRH7qvTvak0v3_G0RC4_ZQ6NVxzmtNDonzGxgi0WpqfZnznm8HBoJb-9fSLQNrgvduXHmbywE0J2NCWRTPPui9v1Fb099xaJq-j1KQthOS4-yBlk6VKKYdaNtTSCUZrDj2IqZlcm0KVa3HVLHeMn4lef0-xM6HvDnpRhKqpMrod6O4-A2fktIDjvAPfnOVaeXzeYhDWjt1OT303CeSY8u4PTC32zpeXpgMBL6f0pcMuP5uOAGDBG6wndvuDELCri2Y32rFib4j9FROeBb3z6XK6drglHiY7UvGsFQsZY_0QHdTjSU9myMJ9Nj0B3THl5V_XmIOC79A7tQkTuyyHCq9Zgnmex17FH6pq6e20SdooN_V55CJXVF1DKVmGfG9tyFi_G9YxqDkFdJI9wtgW6T18KIMjeQsxGq6kQzQFAyDp0iikmqZfqGbhfQUl3l8XQp7kBDmDGjm393JbdXKVsr6SdW_r7u-PMNis6jO7V8C_TQKeZTol_BcVJgbvx047XHcE3lJFSSKTpG9h5N732Tj7wiAjP87HMXMgjL0NobSyfqUFIGcjEM7CTNFfInOZjFOI0e9taHmlwgr18OPCTVLFhzK398gbNI8rpnqKmOu-Fav489HuqF0H_lKM-LL6Kwf_Qm_lO3S4MzksiyMc50DL3x-kjszxXqVhofqauPFfRIk5FKlQiCDM_bgVqpYzODk0-YwJcWE7C_Z0dQn6n_NtvK9anjzr3RQr1xKssrVU3onfhqakFi8_YtN4I6nDECQ8iaRDdYNHgqRXbzGG3tUJsmYhx2TS56NLt43OrNP8FENJFhAWRBgw5U-p6_Tb_QKag5k3O-XBfGjqF-Se3DXk-0dBrr3ESqm7AxJ8Jn0BzEHrjz8RV4wsNkGeDAltdj2bILVF4upGLvLo23WaniweblMq7ylZDhU3CWCdR8M3e9dQ0xuKAkGjxVqwrmYzdvnXA3yrWrUG6Q3TMDcvW26Is4ZGCY43KmBsu6LkmVBq1rNdf-WWycp_2ktujvCH2Y8H-jWSuqk6VTLtG1efzEPl_3S_ar5pxMgJtTUzqRvxZkdO1EyFdZSMe0xH-7PzDbvimfq6XyN21n4gb0z6bhEWjBzuEVZIx1kGx0QTYEi_nJ9XzdQ6l285TCY05Tpdjw5SR0DlDWiXLn_wIZ_J3IAwG-PGpsgf_am6Gly2gPZtdI-nLzwpCjxLQZmtl5WiNA8DCIWhvGykkrjElLeZ06cXOC_pJzi-E1Nv3B3t1RMawIleZBDc--05cTUIHxiAVEFZXW8UM_PVE2t_MixDrjJI8MSglyeCbdZrHqsXKNkwx623BcOQZ9wzoY9vn5rUKNH6n-V4UTte0KUX1ntLEUcyHRzCTkUIP-72njMp4zw7-qbKzvr-n5u25wXSkrZTcGgXBKhVtjzXwEnhhvVqwC_51u0dXQBfvpx0npzZfZh9M58FuuqYnCRFOsNmEM1XgbIURINpvkVLUMEvMZ4_7cuTHPw0dY9ZDFCxtVQZmOl_uHYQHZDvyXCSw_2Peh5IbXkpNvQVpZukIhHSdUUjdcz1Zyt0xTpJPnrVmF0LU3Nf5i6sfENKWV-DJdrpot485rj5zCCkDd47OikZ3FhbsaFwhjLRtRKTE-VmMAN9ZzMU5E_636Sw0qFuiFKnP7GrHa-snN4RqiDVxUHTSrsHT2tSjOCh8nUCqP3yQ1iVUPSuH9JcZek1wO38820fRAPQHUNYD5uPx0dWt3aLuSfychBRccBO1CpZou_OXHUtitPee0e8oKMTu5xIzcJzVajFbzw3vwL2dXVKcf9vKYfPNYGQdNqfQJz5VzSGX6Ir1l5quCgpuX9Yr92QuiwUwBq6SV8pREGU7Q-AyPuF2RDuqDioqQVtI94_UmtfHfZQmkz4XNxmVX3yNeQ9zOSwmPbBJMnBlxdqsncJ4iZ9dUGWxYBA9qOtP2gaZfmiWZU_fWXInZVw351_JLWleEB9sSTwThZ1-JWvRQnOQR1Ndzn8N22egC1HmesYDiqAYL0ZV5oG_s57iomBXW09AZhBWLFxAz0QlnxTUnttHCNGeqIu5SH9AZkmP28COTeN-_hmb0WeNsiNH9n5YY6XX61YNiZdoygUj6OqQUdcfFTKYK82S9lv0O0hklWRkrgxbHuA6-OkULETmcZHbqryIrWpERATTbvLyqwEkf7iZfKp6CjBzM1pqUsw60_eHQ1vhVGc8CIXK1eXfX4nd-fB-T3sK7uwpUNmehZxR8m0H8xXWN2exHjnPVWFgWkFThwOXfRxpXVkP_8eXBCe3r0MVU3UfUjusqmeivaUoTSIWwV5HQyFn3_QQm9YEGwK08NrDItDhdSIgJ0mSspP4o4S2WEi1M3RmyWOakaBnz4yf0dIRKGN-Hp0Bz-SOSRoDOk2MWcd5Naa4RuAae4Bm0_fSPb_4-7Qsuw29Ens26Ob0pZ51zz_P67qnP6Nm1l-9GFAglx-mewHYByfYAQz1rX73w2KrsjLWCkzXWypVAPAuIqYCJ228un_OuP03cNjfDxHnY58zgQnPemXu9y-oOurnq1AYa3qOHm78V-yKMlhKFliJ7DgaqsoqiHoe2uL9qy9laHcOypA8TQyuBjaZpDFOpfxr1ByDFP_BZ5AEe2qIYwow_j_uYm5kJoNWc_LUTjewaqMxqV8sER08D4-Sk7j_nhGgSuGyRmfq9f1yFwnzgfK6SMC5n9K292eIL2aJCl-Wi0pLuA38atk3CVPCslWmaK2s2WYEulG-y7ZrUvgN3VYhF8Og9vDGqs1zUPNHWggi7hBHloVhOEgAIqD-XA3MhVOAsDmeTKkALORNsiXafBXcTsryToH83XSWH05dS34FVmwCR_Den5FKQfT-NIpy9tzkOBy4waFcByIeYK8sdjkMiKCDp1kPQG1tSbqpTa60BJjXdTAKKOZtJxYOxb3u0srQ1LXBi2NjM6KNQv3_5H9rdS7lbX7JW3BSWaCtltGetQ11Gf9QANJohOBPC6tCm0eIXJInbtYwmuLZhEveqIkZPKFhKc3-QHY69t_NSCuWRdpNOrXpegwZDLROUytxND5gg-WWAS4pV_aL-g04LIGF-f1YeuOEpIX3xsu8yxTxTP_be40xpllvRac2PTWJ202c-QaBlU-rhjBrdgSg_ZQqhBNwOo2Sg44DUCTlSmqFKRzfNfO-etQtpMizzPiFuZlFTEUnP4UJg51M4Sce6MS9JoBCIZidrXkytpNPvvdycFLms7uTutq2W5ZLeuY0DBsd-MaYg3c3VAjMmP4MgHaaxHRYf7YF3eG63HJtwjgiHQenJC5Paa4PjpS2wiTsJP0qbgSZjD83QKOeQG9wHZFnGyXLLEy3mJjFHDWcPeWLqG4KGciqeH8IWPqoXUNA3T8174u7TXmJ-EV1jTkEflt8qflRWVw5kYNfe2y-UJ51QKYknt6-Bvnmu28SIyQg3jwVOB5FlcM3VYFx5lmPvWRfJt9K0Seg2qemUtifcuLOd0rJCAIEjsXQpTG-IgOqwM-vx0VBho9jyojWO1zdT32VUaZ8SLu9vcsTXGB_8eyJ2Sie3RlgOyM6_IsYQ4fPqf4BYbiOtCQBm9MVzfh8J9ttvw-xP0R7YahMUr3CHLEu7DpSjyohUL96pCnAEU587g7brHm-h420uhF0E2qasm8vKz0d55i4EOVpkVNF8bAWFxwFLUkcIxnvus6cuvFQO3AMoMTFM6LB2YDEiwA8SWnm67urjh2lrA9H5IwEHexsM5Dn-3SJ23-c1Nsu2q4WOUXx9-DqSYO2g0y8sGArc51t_k-QP9sS48vvg1y7GdQ8U5MKlvVH9IGzKAvTiAt_rrOZ3bAj21grfnLvTMIkxu8o6bZpLxzxIJxnhpMAY-N3CmETPefkr1ayLqaZVsNySCoc7XdAcCRfx5PceKUMy9b9d4jtfquhTBLJdAhfn3z3aq5EjXSHYoEWbxQmc_EtpfDVn_P9fZ1G8AYGzbxOzK7y_IsYQ4fPqf4vZlJSMzH0VpMVzfh8J9ttpFYdy3Ty9gbhVI2XgTYWuw5lpvnoYvvZenyF1XX-Bor03aQyxVbKYKAOUQOKdh_8DlODgaZ29mdHTHp8Wro6JPJz9wEE9xPiWVJ3lUlazgGY4_Yq05EOYr3KrK2Hel_hdKBWQkzzNGyUuEAws3H3qUQYMZNSHdfj_3kRJRUoQVpZbT5JRHpRvoDuJA1ch9luENWeYPDAP4RFg38XSbfugMRUVkdllEKbxaGBpuoxy_XNUQzAG7nLSoNbX0TsfIzCRbZOMvTsslJ-Zq_Ggdd_KcYc8otemkUJklFUOx-XZsspS1Q8fxwPzbUssK8w9j-XU86JKAoW_l4pbV6cWfvrdiETPefkr1ayEl8vGXTnZBN3EYlsmz6ZUgRUI6azjiOWIwbP8FZa1BuAq9daiN41OHcU8tqgIhwTZW78-bEkKv_Wl7qu99hxmGyWT9Ovv3WfoShMXILvqQ3TxCo014fLEtZrT1ia5WqDLv97O88YpO6tpiYbG1nRIVFIQ-W7iH7s_9mcz9jvuKUUYdWrzohCyt2H978obz0ohnE6lqwifYal9VKz8mmP7rTBVFeWrQqh6lW9bXDuC4pj9o_D94K-BN-BO1nELWA68jfda1ozJgfgeqiJ642QCPAHomiU4jfC0Hljs_2VDaW62xhF0GYyMsXVR2czANZMikDFrffOvbdU3-DPWfdEnQARKME3coVs42x4IFQXtrmnZ9LaSG9rqDal2h_6ti6P9gyjXJRoBQ8Syb_GfFhF7w6NiI_ZNWlVZk2QJfKb-4uaq7tcRLw-0ecZQuJQawAcfwjbU4huS7aNV8SmKbSzWxqjyCQwFqh1wTK384mDSy_cwTA7PJzKhmToTN4TXi4llpUsVgb53KIqx94JC06nlMYLb69Im-jgSgR_Bd5fOdksgKlmSm7XTtxgyPegNZGahuyTh6TUMrSrtRGUR5Qsse3FjqF9LJ2SsfJs_GrVDwLUK9VkTnpQaLHnGE7NES0N5di4QYIDmhPxaHMa6bT9DPI4DKasFLv4VZySaGwz0zQkcRDxKhTffWs75NPUsF7Lp5RalU0S444bmAg2BvED2LYN07KHKo9ibnaIjX3KKjwoZv1rdb_k3GTw8zDcJOBPtqna5-WN6IPAGtQJRbBcn81qa4tiB1FTZ37w53OuOYUQzpzObaYCtWyG8F1cUYmYkgcldMa4gL5jw_jaYbUjicZTTyOMpr0Bw=="></form>
+</div>
+        </div>
+<script type="text/javascript">
+    reset('es');
+</script>
+    
+
+<div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all ui-helper-hidden-accessible"></div><div class="ui-dialog ui-widget ui-widget-content ui-corner-all " tabindex="-1" role="dialog" aria-labelledby="ui-dialog-title-politicas" style="display: none; z-index: 1000; outline: 0px;"><div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix"><span class="ui-dialog-title" id="ui-dialog-title-politicas">&nbsp;</span><a href="#" class="ui-dialog-titlebar-close ui-corner-all" role="button"><span class="ui-icon ui-icon-closethick">close</span></a></div><div id="politicas" class="ui-dialog-content ui-widget-content">
+<p><strong>Ventanilla  Digital Mexicana de Comercio Exterior </strong></p>
+<p><strong>Política  de privacidad y manejo de datos personales</strong></p>
+    <br>
+  <p style="text-align:justify;">Le informamos que los datos personales suministrados a través de sus  solicitudes, promociones, trámites, consultas y pagos, hechas por medios  electrónicos e impresos serán protegidos, incorporados y tratados en el sistema  de datos personales de la Ventanilla Digital, cuyo objeto es permitir a los  agentes de comercio exterior realizar, a través de un solo punto de entrada  electrónico, todos los trámites de importación, exportación y tránsito de  mercancías, con fundamento en las disposiciones aplicables a cada uno de ellos,  el cual fue registrado en el listado de sistemas de datos personales ante el  Instituto Federal de Acceso a la Información y Protección de Datos (<a href="http://www.ifai.org.mx">www.ifai.org.mx</a>) y podrán ser transmitidos a las autoridades competentes previstas en el  Decreto por el que se establece la Ventanilla Digital Mexicana de Comercio  Exterior publicado en el Diario Oficial de la Federación el 14 de enero de  2011, así como al propio titular de la información, además de las transmisiones  previstas en los ordenamientos legales aplicables. Corresponde al Servicio de  Administración Tributaria, una vez implementada, la administración de la citada  Ventanilla Digital. Se podrá modificar o corregir sus datos personales a través  de la misma Ventanilla.</p>
+<p style="text-align:justify;">Lo  anterior se informa en cumplimiento del Lineamiento Decimoséptimo de los  Lineamientos de Protección de Datos Personales, publicados en el Diario Oficial  de la Federación el 30 de septiembre de 2005.</p></div><div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix"><div class="ui-dialog-buttonset"><button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button" aria-disabled="false"><span class="ui-button-text">Cerrar</span></button></div></div></div><div id="jstree-marker" style="display: none;">»</div><div id="jstree-marker-line" style="display: none;"></div><div id="vakata-contextmenu"></div></body></html>

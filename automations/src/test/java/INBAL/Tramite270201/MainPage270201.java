@@ -54,5 +54,19 @@ public class MainPage270201 {
     public SelenideElement btnCerrar = $x("//*[@id=\"btnCerrar\"]");
     public SelenideElement inputSiguiente = $x("//*[@id=\"siguienteButton\"]");
     public SelenideElement folio = $x("/html/body/main/div/div[4]/div/div[4]/div/div/ul/li");
-
+    //Requerimiento
+    public SelenideElement iniciofun = $x("/html/body/div[1]/div[3]/div[1]/table/tbody/tr[2]/td/a/img");
+    public SelenideElement numfolio = $x("//*[@id=\"idNumFolio\"]");
+    public SelenideElement btnBuscarFolio = $x("//*[@id=\"buscarTareasFuncionario\"]");
+    public SelenideElement capturaRequerimiento = $x("/html/body/div[1]/div[3]/div[3]/div/form[1]/div[4]/ul/li[1]/a");
+    public SelenideElement justificacionRequerimiento = $x("//*[@id=\"valueTA\"]");
+    public SelenideElement seleccionarDocumentos = $x("/html/body/div[1]/div[3]/div[3]/div/form[1]/div[4]/ul/li[2]/a");
+    public SelenideElement primerDecumento = $x("/html/body/div[1]/div[3]/div[3]/div/form[1]/div[4]/div[2]/table/tbody/tr[2]/td[1]/input[5]");
+    public SelenideElement inputDictamenAceptado = $x("//*[@id=\"sentidoDictamen\"]");
+    //Autorización
+    public SelenideElement btnFirmarAutorizacion = $x("/html/body/div[1]/div[3]/div[3]/div/form[1]/div[2]/input[2]");
+    //Firmar
+    public SelenideElement SelecRol = Selenide.$x("//*[@id='claveRol']");
+    public SelenideElement Btnacep = Selenide.$x("//button[@name='ingresar']");
+    public SelenideElement inicioFolio = $x("//*[@id=\"idNumFolio\"]");
 }

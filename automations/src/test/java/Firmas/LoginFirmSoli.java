@@ -12,6 +12,11 @@ public class LoginFirmSoli {
     public SelenideElement btnIngres = $x("/html/body/div[2]/form/div[1]/div/div[2]/div/div[4]/div/button[2]");
     public SelenideElement btnFirmar = $x("//*[@id='btnSubmit']");
 
+    public SelenideElement selecSinFiel = $x("/html/body/div[2]/form/div[1]/ul/li[2]/a");
+    public SelenideElement inputUser = $x("/html/body/div[2]/form/div[1]/div/div[3]/div[1]/div/input");
+    public SelenideElement InputPasww = $x("/html/body/div[2]/form/div[1]/div/div[3]/div[2]/div/input");
+    public SelenideElement btnIngresSinFiel = $x("/html/body/div[2]/form/div[1]/div/div[3]/div[3]/div/button[2]");
+
     // Método que acepta un objeto TramitesFirmasLG y hace uso de sus rutas
 public void login(TramitesFirmasLG tramite) {
     cerS.setValue(tramite.getCer());
@@ -53,6 +58,13 @@ public void login(TramitesFirmasLG tramite) {
         keyS.setValue(tramite.getKey());
         pass.setValue("delfin40");
         btnFirmar.click();
+    }
+
+    public void LoginPerCapPriv() {
+        selecSinFiel.click();
+        inputUser.setValue("ZUXR540125MPLRXC07");
+        InputPasww.setValue("NS56hYnZ");
+        btnIngresSinFiel.click();
     }
 
 
