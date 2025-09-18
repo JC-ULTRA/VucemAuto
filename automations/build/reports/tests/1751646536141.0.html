@@ -1,0 +1,1107 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+        <title>Cargar archivos</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="pragma" content="no-cache">
+        <meta http-equiv="cache-control" content="no-cache">
+        <meta http-equiv="expires" content="-1">
+        
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">                
+        <meta name="description" content="VUCEM">
+        <meta name="keywords" content="VUCEM">
+        <meta name="author" content="Softtek">  
+        <link rel="shortcut icon" type="image/x-icon" media="screen" href="/ventanilla-aga2-HA/images/main/favicon.ico">
+        <link rel="icon" type="image/x-icon" media="screen" href="/ventanilla-aga2-HA/images/main/favicon.ico">         
+        
+        <script type="text/javascript">var contextPath = '/ventanilla-aga2-HA';</script>
+                
+        <link rel="stylesheet" type="text/css" media="screen" href="/ventanilla-aga2-HA/css/main/main.css">
+        <link rel="stylesheet" type="text/css" media="screen" href="/ventanilla-aga2-HA/css/formato_unico/formato_unico.css">
+        
+        <link rel="stylesheet" type="text/css" media="screen" href="/ventanilla-aga2-HA/css/jquery/redmond/jquery-ui-1.8.6.custom.css">
+        <script type="text/javascript" language="javascript" src="/ventanilla-aga2-HA/js/jquery/jquery-1.4.4.min.js"></script>
+        <script type="text/javascript" language="javascript" src="/ventanilla-aga2-HA/js/jquery/jsrsasign-4.7.0-all-min_sat-fix.js"></script>
+        <script type="text/javascript" language="javascript" src="/ventanilla-aga2-HA/js/jquery/jquery.timers-1.2.js"></script>                    
+        <script type="text/javascript" language="javascript" src="/ventanilla-aga2-HA/js/jquery/jquery-ui-1.8.6.custom.min.js"></script>
+        <script type="text/javascript" language="javascript" src="/ventanilla-aga2-HA/js/jquery/ui/i18n/jquery-ui-i18n.js"></script>            
+        <script type="text/javascript" language="javascript" src="/ventanilla-aga2-HA/js/jquery/ui/external/jquery.bgiframe-2.1.2.js"></script>
+        <script type="text/javascript" language="javascript" src="/ventanilla-aga2-HA/js/jquery/ui/external/jquery.cookie.js"></script>
+        <script type="text/javascript" language="javascript" src="/ventanilla-aga2-HA/js/jquery/jquery.filestyle.js"></script>
+        <script type="text/javascript" language="javascript" src="/ventanilla-aga2-HA/js/jquery/jquery-ui-init.js"></script>
+             
+        <script type="text/javascript" language="javascript" src="/ventanilla-aga2-HA/js/main/ajaxfileupload.js"></script>
+        
+        
+        
+        <script type="text/javascript" language="javascript" src="/ventanilla-aga2-HA/js/jquery/combo/jquery.selectbox-0.1.3.js"></script>
+        <link href="/ventanilla-aga2-HA/css/combo/jquery.selectbox.css" type="text/css" rel="stylesheet">
+        
+        <link rel="stylesheet" type="text/css" media="screen" href="/ventanilla-aga2-HA/css/jqgrid/ui.jqgrid.css">            
+        <script type="text/javascript" language="javascript" src="/ventanilla-aga2-HA/js/jqgrid/i18n/grid.locale-es.js"></script>
+        <script type="text/javascript" language="javascript" src="/ventanilla-aga2-HA/js/jqgrid/jquery.jqGrid.min.js"></script>            
+        
+        <script type="text/javascript" language="javascript" src="/ventanilla-aga2-HA/js/jquery/validation/jquery.validate.min.js"></script>
+        <script type="text/javascript" language="javascript" src="/ventanilla-aga2-HA/js/jquery/validation/stripes.jquery.validation.js"></script>
+
+        <script type="text/javascript" language="javascript" src="/ventanilla-aga2-HA/js/jquery/validation/localization/messages_es.js"></script>
+
+        <script type="text/javascript" language="javascript" src="/ventanilla-aga2-HA/js/blockUI/jquery.blockUI.js"></script>
+        
+        <script language="javascript" type="text/javascript" src="/ventanilla-aga2-HA/js/qtip/jquery.qtip-1.0.0-rc3.min.js"></script>
+        
+        <link rel="stylesheet" type="text/css" media="screen" href="/ventanilla-aga2-HA/css/tooltip/jquery.tooltip.css">
+        <link type="text/css" rel="stylesheet" href="/ventanilla-aga2-HA/css/modulos/aga/common/justificaciones.css">
+        
+        <script type="text/javascript" src="/ventanilla-aga2-HA/js/stk/stk-framework.js"></script>
+        <script type="text/javascript" src="/ventanilla-aga2-HA/js/stk/stk-common.js"></script>
+        <script type="text/javascript" src="/ventanilla-aga2-HA/js/stk/catalog.js"></script>
+        <script type="text/javascript" src="/ventanilla-aga2-HA/js/stk/stk-grid.js"></script>
+        
+        <script type="text/javascript" language="javascript" src="/ventanilla-aga2-HA/js/main/adminDocuments.js"></script>
+        <script type="text/javascript" language="javascript" src="/ventanilla-aga2-HA/js/main/fiel.js"></script> 
+		<script type="text/javascript" language="javascript" src="/ventanilla-aga2-HA/js/main/FielUtil-1.5.js"></script>       
+        <script type="text/javascript" language="javascript" src="/ventanilla-aga2-HA/js/main/main.js?version=1.1.1"></script> 
+        <script type="text/javascript" language="javascript" src="/ventanilla-aga2-HA/js/jquery/jstree_pre1.0_fix_1/jquery.jstree.js"></script>
+        <link type="text/css" rel="stylesheet" href="/ventanilla-aga2-HA/css/jquery/jquery.alerts.css">
+        <script type="text/javascript" language="javascript" src="/ventanilla-aga2-HA/js/jquery/jquery.alerts.js"></script>        
+        
+        <link rel="stylesheet" type="text/css" href="/ventanilla-aga2-HA/css/menu/menu_servs.css">
+    	<script type="text/javascript" language="javascript" src="/ventanilla-aga2-HA/js/jquery/scriptbreaker-multiple-accordion-1.js"></script>
+	    
+        
+        
+        
+	<!-- CSS -->
+	
+
+    <style type="text/css" id="vakata-stylesheet">#vakata-dragged { display:block; margin:0 0 0 0; padding:4px 4px 4px 24px; position:absolute; top:-2000px; line-height:16px; z-index:10000; } #vakata-contextmenu { display:block; visibility:hidden; left:0; top:-200px; position:absolute; margin:0; padding:0; min-width:180px; background:#ebebeb; border:1px solid silver; z-index:10000; *width:180px; } #vakata-contextmenu ul { min-width:180px; *width:180px; } #vakata-contextmenu ul, #vakata-contextmenu li { margin:0; padding:0; list-style-type:none; display:block; } #vakata-contextmenu li { line-height:20px; min-height:20px; position:relative; padding:0px; } #vakata-contextmenu li a { padding:1px 6px; line-height:17px; display:block; text-decoration:none; margin:1px 1px 0 1px; } #vakata-contextmenu li ins { float:left; width:16px; height:16px; text-decoration:none; margin-right:2px; } #vakata-contextmenu li a:hover, #vakata-contextmenu li.vakata-hover > a { background:gray; color:white; } #vakata-contextmenu li ul { display:none; position:absolute; top:-2px; left:100%; background:#ebebeb; border:1px solid gray; } #vakata-contextmenu .right { right:100%; left:auto; } #vakata-contextmenu .bottom { bottom:-1px; top:auto; } #vakata-contextmenu li.vakata-separator { min-height:0; height:1px; line-height:1px; font-size:1px; overflow:hidden; margin:0 2px; background:silver; /* border-top:1px solid #fefefe; */ padding:0; } </style><style type="text/css" id="jstree-stylesheet">.jstree ul, .jstree li { display:block; margin:0 0 0 0; padding:0 0 0 0; list-style-type:none; } .jstree li { display:block; min-height:18px; line-height:18px; white-space:nowrap; margin-left:18px; min-width:18px; } .jstree-rtl li { margin-left:0; margin-right:18px; } .jstree > ul > li { margin-left:0px; } .jstree-rtl > ul > li { margin-right:0px; } .jstree ins { display:inline-block; text-decoration:none; width:18px; height:18px; margin:0 0 0 0; padding:0; } .jstree a { display:inline-block; line-height:16px; height:16px; color:black; white-space:nowrap; text-decoration:none; padding:1px 2px; margin:0; } .jstree a:focus { outline: none; } .jstree a > ins { height:16px; width:16px; } .jstree a > .jstree-icon { margin-right:3px; } .jstree-rtl a > .jstree-icon { margin-left:3px; margin-right:0; } li.jstree-open > ul { display:block; } li.jstree-closed > ul { display:none; } #vakata-dragged ins { display:block; text-decoration:none; width:16px; height:16px; margin:0 0 0 0; padding:0; position:absolute; top:4px; left:4px;  -moz-border-radius:4px; border-radius:4px; -webkit-border-radius:4px; } #vakata-dragged .jstree-ok { background:green; } #vakata-dragged .jstree-invalid { background:red; } #jstree-marker { padding:0; margin:0; font-size:12px; overflow:hidden; height:12px; width:8px; position:absolute; top:-30px; z-index:10001; background-repeat:no-repeat; display:none; background-color:transparent; text-shadow:1px 1px 1px white; color:black; line-height:10px; } #jstree-marker-line { padding:0; margin:0; line-height:0%; font-size:1px; overflow:hidden; height:1px; width:100px; position:absolute; top:-30px; z-index:10000; background-repeat:no-repeat; display:none; background-color:#456c43;  cursor:pointer; border:1px solid #eeeeee; border-left:0; -moz-box-shadow: 0px 0px 2px #666; -webkit-box-shadow: 0px 0px 2px #666; box-shadow: 0px 0px 2px #666;  -moz-border-radius:1px; border-radius:1px; -webkit-border-radius:1px; }.jstree .jstree-real-checkbox { display:none; } .jstree-themeroller .ui-icon { overflow:visible; } .jstree-themeroller a { padding:0 2px; } .jstree-themeroller .jstree-no-icon { display:none; }.jstree .jstree-wholerow-real { position:relative; z-index:1; } .jstree .jstree-wholerow-real li { cursor:pointer; } .jstree .jstree-wholerow-real a { border-left-color:transparent !important; border-right-color:transparent !important; } .jstree .jstree-wholerow { position:relative; z-index:0; height:0; } .jstree .jstree-wholerow ul, .jstree .jstree-wholerow li { width:100%; } .jstree .jstree-wholerow, .jstree .jstree-wholerow ul, .jstree .jstree-wholerow li, .jstree .jstree-wholerow a { margin:0 !important; padding:0 !important; } .jstree .jstree-wholerow, .jstree .jstree-wholerow ul, .jstree .jstree-wholerow li { background:transparent !important; }.jstree .jstree-wholerow ins, .jstree .jstree-wholerow span, .jstree .jstree-wholerow input { display:none !important; }.jstree .jstree-wholerow a, .jstree .jstree-wholerow a:hover { text-indent:-9999px; !important; width:100%; padding:0 !important; border-right-width:0px !important; border-left-width:0px !important; } .jstree .jstree-wholerow-span { position:absolute; left:0; margin:0px; padding:0; height:18px; border-width:0; padding:0; z-index:0; }</style></head>
+    <body>
+        <noscript>
+            <div id="main">
+                <br />
+                <div id="noscript">
+                    <div style="margin-left:9em; height:35px;"><h1>Atenci&oacute;n</h1></div>
+                    <p>Para utilizar la Ventana &Uacute;nica de Comercio Exterior, la configuraci&oacute;n del explorador debe permitir la ejecuci&oacute;n de scripts. Para obtener informaci&oacute;n sobre c&oacute;mo permitir scripts, consulte el enlace siguiente. <br /><br />
+                    <a href="http://www.google.com/support/bin/answer.py?answer=23852" target="_blank">http://www.google.com/support/bin/answer.py?answer=23852</a><br /><br />
+                    Si el navegador no admite scripts, puede descargar una versi&oacute;n mas reciente del navegador de su elecci&oacute;n.</p>
+                </div>
+                <br/>
+            </div>
+        </noscript>
+        <div id="main">
+            <div id="sesion2">
+
+                <p class="sesiontext">
+                Usuario:&nbsp;<span class="etiqueta">AAL0409235E6</span><br>
+                INTEGRADORA DE URBANIZACIONES SIGNUM, S DE RL DE CV<br>
+                Rol:&nbsp;<span class="etiqueta">PersonaMoral</span>
+                
+                	<br>Tipo Certificado:&nbsp;<span class="etiqueta">FIEL</span>
+                
+                </p>
+
+            </div>
+            <div id="header">
+<span id="version">???version.label???&nbsp;1.2.0&nbsp;build-${BUILD_NUMBER} - revisión ${SVN_REVISION} - ${BUILD_ID}</span>
+<div id="logoHeader">
+    <div id="sesion">
+		
+		<input type="button" onclick="javascript:logout();" value="Cerrar la sesión" class="logout">
+		
+    </div>    
+</div></div>
+            <div id="mainContent">
+                
+    <div id="menu_lateral" class="notrigger">
+        <table id="tablaMenuLateral" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td>Menú</td>
+        </tr>
+        <tr>
+            <td>
+                <a title="       Inicio" href="javascript:ejecutarOpcion('/ventanilla-HA/bandeja.action?mostrarTareasSolicitanteJQuery=','/ventanilla-HA/invocarModulo.action?init')">
+                    <img alt="       Inicio" border="0" src="/ventanilla-aga2-HA/images/menu/icoInicio.png">
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a title="      Consultas" href="#" onclick="javascript:showSubOptions(50); return false;">
+                    <img alt="      Consultas" border="0" src="/ventanilla-aga2-HA/images/menu/icoConsultas.png">
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a title="     Tablero de seguimiento" href="javascript:ejecutarOpcion('//tableros/tableros/registrarSolicitud.action','//invocarModulo.action?init')">
+                    <img alt="     Tablero de seguimiento" border="0" src="/ventanilla-aga2-HA/images/menu/icoTableros.png">
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a title="    Solicitudes" href="javascript:ejecutarOpcion('/ventanilla-HA/bandejaSolicitudes.action','/ventanilla-HA/invocarModulo.action?init')">
+                    <img alt="    Solicitudes" border="0" src="/ventanilla-aga2-HA/images/menu/icoPendientes.png">
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a title="   Trámites" href="javascript:ejecutarOpcion('/ventanilla-HA/tramitesDisponibles.action','/ventanilla-HA/invocarModulo.action?init')">
+                    <img alt="   Trámites" border="0" src="/ventanilla-aga2-HA/images/menu/IcoTramites.png">
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a title="  Usuarios" href="#" onclick="javascript:showSubOptions(60); return false;">
+                    <img alt="  Usuarios" border="0" src="/ventanilla-aga2-HA/images/menu/icoUsuarios.png">
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a title=" Otras tareas" href="#" onclick="javascript:showSubOptions(70); return false;">
+                    <img alt=" Otras tareas" border="0" src="/ventanilla-aga2-HA/images/menu/icoOtrasTareas.png">
+                </a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<div style="display:none;">
+<ul id="10" class="topnav">
+    <li>
+        <a href="#" id="       Inicio">       Inicio</a>
+        <ul>
+        </ul>
+    </li>
+</ul>
+<ul id="50" class="topnav">
+    <li>
+        <a href="#" id="      Consultas">      Consultas</a>
+        <ul>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-sagarpa-HA/gubernamentales2/publica/calculoAranceles.action','/ventanilla-sagarpa-HA/invocarModulo.action?init') ">Calculadora de contribuciones</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cp-HA/consejoReguladorTequila/consulta.action?mostrarConsultaSolicitante','/ventanilla-cp-HA/invocarModulo.action?init') ">Consulta Certificado de Consejo Regulador del Tequila</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('//declaracionAduanera/consultas/consultaFuncionario.action','//invocarModulo.action?init') ">Consulta Declaración Aduanera</a>
+</li>
+<li>
+<a href="# ">Consulta Importación Temporal de Contenedores</a>
+<ul>
+<li>
+<a href="javascript:ejecutarOpcion('//aga/consultaMasiva/consultaMasivaContenedores.action?','//invocarModulo.action?init') ">Consulta Masiva de Contenedores</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('//aga/consultaConstanciasITC/consultaConstanciasITCHis.action?','//invocarModulo.action?init') ">Consulta de Constancias</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-cove-HA/cove/cove.action?consultarCove','/ventanilla-cove-HA/invocarModulo.action?init') ">Consulta Información de Valor y de Comercialización</a>
+</li>
+<li>
+<a href="# ">Consulta Recintos</a>
+<ul>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-recintos-HA/recintos/consultasRecintos/ConsultasRecintos.action?','/ventanilla-recintos-HA/invocarModulo.action?init') ">Consulta Recintos Fiscalizados</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="# ">Consulta de Información Registro Proveedores</a>
+<ul>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-aviso-HA/AvisoUnico/IndustriaAutomotriz/consultaParaIA.action','/ventanilla-aviso-HA/invocarModulo.action?init') ">Consultar Información Industria Automotriz</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-aviso-HA/AvisoUnico/IndustriaAutomotriz/consultaParaProveedores.action','/ventanilla-aviso-HA/invocarModulo.action?init') ">Consultar Información Proveedores</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-aga2-HA/aga/lugarDistintoAutorizado/consultas/consultaSolicitante.action','/ventanilla-aga2-HA/invocarModulo.action?init') ">Consulta de autorizaciones LDA</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-aga2-HA-Gamma/aga/consultaCopiasCertificadas/consultaSolicitud.action?iniciar','/ventanilla-aga2-HA-Gamma/invocarModulo.action?init') ">Consulta de certificación electrónica de pedimentos</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-sagarpa-HA/gubernamentales2/certInternacional/consultaCertificado.action','/ventanilla-sagarpa-HA/invocarModulo.action?init') ">Consulta de certificados electrónicos</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('//consulta/ConsultaGuia.action?iniciar','//invocarModulo.action?init') ">Consulta de estados de guías aéreas</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-gafetes-HA/aaa/consulta/consultaGafetesVu.action','/ventanilla-gafetes-HA/invocarModulo.action?init') ">Consulta de gafetes</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-aga2-HA/aga/servicios/consultaDetallada/ConsultaServex.action?','/ventanilla-aga2-HA/invocarModulo.action?init') ">Consulta detallada de SERVEX</a>
+</li>
+<li>
+<a href="# ">Consulta información garantías IMMEX</a>
+<ul>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-garantias-HA/agace/garantiasImmex/consultaValidacionSAGI.action','/ventanilla-garantias-HA/invocarModulo.action?init') ">Consulta validación SAGI</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-garantias-HA/agace/garantiasImmex/consultaDatosGarantia.action','/ventanilla-garantias-HA/invocarModulo.action?init') ">Datos generales de la garantía</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-garantias-HA/agace/garantiasImmex/consultaEstadoCuentaGarantia.action','/ventanilla-garantias-HA/invocarModulo.action?init') ">Estado de cuenta</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-garantias-HA/agace/garantiasImmex/consultaOperacionGarantia.action','/ventanilla-garantias-HA/invocarModulo.action?init') ">Garantía específica</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-garantias-HA/agace/garantiasImmex/consultaInformacionUtil.action','/ventanilla-garantias-HA/invocarModulo.action?init') ">Información útil</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-digitalizacion-HA/aga/consultaDigitalizarDocumentosController.action?consultarDocumentosDigitalizados','/ventanilla-digitalizacion-HA/invocarModulo.action?init') ">Consultar  Documentos Digitalizados</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-se-HA/historicoCertificado/consulta.action','/ventanilla-se-HA/invocarModulo.action?init') ">Histórico de certificados NOM's</a>
+</li>
+<li>
+<a href="# ">Manifiesto Aéreo</a>
+<ul>
+<li>
+<a href="javascript:ejecutarOpcion('//aga/consultaTransbordo/registrarSolicitud.action?iniciar','//invocarModulo.action?init') ">Consulta de Transbordo</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('//consulta/consultaProceso06.action?iniciar','//invocarModulo.action?init') ">Consulta de guías aéreas</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="# ">Manifiesto Marítimo</a>
+<ul>
+<li>
+<a href="javascript:ejecutarOpcion('//consulta/ConsultaBitacora.action?iniciar','//invocarModulo.action?init') ">Consulta portal bitácora</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('//comercio-exerior/operacion/bandejaSolicitudReportesOperacionesVu.action','//invocarModulo.action?init') ">Solicitud de Reportes de Operaciones de Comercio Exterior</a>
+</li>
+        </ul>
+    </li>
+</ul>
+<ul id="80" class="topnav">
+    <li>
+        <a href="#" id="     Tablero de seguimiento">     Tablero de seguimiento</a>
+        <ul>
+        </ul>
+    </li>
+</ul>
+<ul id="30" class="topnav">
+    <li>
+        <a href="#" id="    Solicitudes">    Solicitudes</a>
+        <ul>
+        </ul>
+    </li>
+</ul>
+<ul id="20" class="topnav">
+    <li>
+        <a href="#" id="   Trámites">   Trámites</a>
+        <ul>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-HA/innovacion/favoritos/favoritosCommon.action?mostrarFavoritos','/ventanilla-HA/invocarModulo.action?init') ">Favoritos y frecuentes</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-HA/tramitesDisponibles.action?mostrarDependenciasDisponiblesUsuarios','/ventanilla-HA/invocarModulo.action?init') ">Solicitudes nuevas</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-HA/consulta/consulta.action?acuseResolucion','/ventanilla-HA/invocarModulo.action?init') ">Solicitudes subsecuentes</a>
+</li>
+        </ul>
+    </li>
+</ul>
+<ul id="60" class="topnav">
+    <li>
+        <a href="#" id="  Usuarios">  Usuarios</a>
+        <ul>
+<li>
+<a href="# ">Administración de los usuarios</a>
+<ul>
+<li>
+<a href="# ">Datos generales</a>
+<ul>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-HA/admon/usuarios/cambioContrasenia.action','/ventanilla-HA/invocarModulo.action?init') ">Cambiar la contraseña</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-HA/admon/usuarios/cambioCorreo.action','/ventanilla-HA/invocarModulo.action?init') ">Cambiar la cuenta de correo electrónico</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="# ">Personas relacionadas</a>
+<ul>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-HA/admon/usuarios/administrarCapturistasPrivados.action','/ventanilla-HA/invocarModulo.action?init') ">Administrar capturistas privados</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-HA/admon/usuarios/administrarPersonasOirRecibir.action','/ventanilla-HA/invocarModulo.action?init') ">Administrar personas para oír y recibir notificaciones</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-HA/admon/usuarios/administrarAccionistas.action','/ventanilla-HA/invocarModulo.action?init') ">Administrar socios y accionistas</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-HA/innovacion/moviles/auth/desbloqueoDispositivoUsuario.action','/ventanilla-HA/invocarModulo.action?init') ">Desbloqueo de dispositivo móvil</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-HA/innovacion/moviles/auth/dispositivoUsuario.action','/ventanilla-HA/invocarModulo.action?init') ">Gestión de dispositivos móviles</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+        </ul>
+    </li>
+</ul>
+<ul id="70" class="topnav">
+    <li>
+        <a href="#" id=" Otras tareas"> Otras tareas</a>
+        <ul>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-recintos-HA/recintos/anexo29/registrarSolicitud.action?','/ventanilla-recintos-HA/invocarModulo.action?init') ">Anexo 29</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-recintos-HA/recintos/catalogoAdministradorUrlRecinto/CatalogoAdminUrl.action?','/ventanilla-recintos-HA/invocarModulo.action?init') ">Catálogo Administrador Url Recinto</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('/ventanilla-recintos-HA/recintos/catalogoAdministradorUsuarioRecinto/CatalogoAdminUsuario.action?','/ventanilla-recintos-HA/invocarModulo.action?init') ">Catálogo Administrador Usuario Recinto</a>
+</li>
+<li>
+<a href="# ">Descarga Masiva E-Document</a>
+<ul>
+<li>
+<a href="javascript:ejecutarOpcion('//aga/descargarEDocument.action?descargarEDocument.action','//invocarModulo.action?init') ">Descargar archivo de Masiva E-Document</a>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('//aga/solicitudDescargaEDocument.action?solicitudDescargaEDocument.action','//invocarModulo.action?init') ">Solicitar Descarga Masiva E-Document</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="javascript:ejecutarOpcion('//sagarpa/generarVersionesPublicas/generarVersionesPublicas.action?','//invocarModulo.action?init') ">Generar versiones Publicas SADER</a>
+</li>
+<li>
+<a href="# ">Manifiestación de valor</a>
+<ul>
+<li>
+<a href="javascript:ejecutarOpcion('//manifestacion/consultaManifestacion.action','//invocarModulo.action?init') ">Consulta</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="# ">Manifiesto Ferroviario</a>
+<ul>
+<li>
+<a href="javascript:ejecutarOpcion('//privados/ferros/registrarListaIntercambio.action','//invocarModulo.action?init') ">Registro de listas de intercambio</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="# ">Manifiesto Único Aéreo</a>
+<ul>
+<li>
+<a href="javascript:ejecutarOpcion('//manifiestoguias/aereos/registrarSolicitud.action','//invocarModulo.action?init') ">Registro de guías y manifiesto único de Aéreo</a>
+</li>
+</ul>
+</li>
+        </ul>
+    </li>
+</ul>
+</div>
+
+
+    </div>
+    <div id="servicios"></div>
+    <script type="text/javascript">      
+        function showSubOptions(id){
+        	//$('#workingArea').empty();
+        	//('#servicios').empty();        	
+        	
+        	$('.mnu').remove();
+            $('#workingArea').html($('#servicios').empty().html($('ul[id=' + id + ']').clone().addClass('mnu')));
+            $('.mnu').accordion({
+                accordion : false,
+                speed : 500,
+                closedSign : '[+]',
+                openedSign : '[-]'
+            });           
+        }       
+    </script>
+                <div id="content_tramite">
+                    <div id="workingArea">
+
+                        <div id="breadcumbs"><a href="/ventanilla-aga2-HA/general.action">Antecesor</a> | Activo</div>
+
+                        <div><h1 id="h1_title">Cargar archivos</h1></div>
+
+
+<style>
+            .invisible{ visibility: hidden; display: none;}
+        </style>
+<form id="documentosRequeridosId" name="documentosRequeridos" action="/ventanilla-aga2-HA/agace/rubroAIC/registrarSolicitud.action" method="post">
+			<div class="msjdocs" id="informeAjax"></div>
+			<input id="idEsNuevo" name="solicitud.esNuevo" value="S" type="hidden">
+			<div id="wizardsteps" style="width: 100%">
+				
+					<p class="completed_1">
+						<label for="registro.solicitud.titulo.capturarSolciitud">Capturar solicitud</label>
+					</p>
+					<input name="elementosWizard[0].estado" value="completed_" type="hidden"><input name="elementosWizard[0].text" value="registro.solicitud.titulo.capturarSolciitud" type="hidden"><input name="elementosWizard[0].posicionTmp" value="1" type="hidden">
+					<p class="completed_2">
+						<label for="registro.solicitud.titulo.tipoDocto">Requisitos necesarios</label>
+					</p>
+					<input name="elementosWizard[1].estado" value="completed_" type="hidden"><input name="elementosWizard[1].text" value="registro.solicitud.titulo.tipoDocto" type="hidden"><input name="elementosWizard[1].posicionTmp" value="2" type="hidden">
+					<p class="active_3">
+						<label for="registro.solicitud.titulo.anexar">Anexar requisitos</label>
+					</p>
+					<input name="elementosWizard[2].estado" value="active_" type="hidden"><input name="elementosWizard[2].text" value="registro.solicitud.titulo.anexar" type="hidden"><input name="elementosWizard[2].posicionTmp" value="3" type="hidden">
+					<p class="inactive_4">
+						<label for="registro.solicitud.titulo.wizard">Firmar solicitud</label>
+					</p>
+					<input name="elementosWizard[3].estado" value="inactive_" type="hidden"><input name="elementosWizard[3].text" value="registro.solicitud.titulo.wizard" type="hidden"><input name="elementosWizard[3].posicionTmp" value="4" type="hidden">
+			</div>
+			<table border="0" width="95%" align="center">
+				<tbody><tr>
+					<td align="right"><input id="guardarButton" name="" value="Guardar" class="mid" type="button"><input id="paginaAnteriorButton" name="cargarTiposDocumentos" value="Anterior" class="mid" type="button"><input id="siguienteButton" name="guardarArchivos" value="Siguiente" type="button"><input name="elementoWizard.anteriorTmp" value="cargarTiposDocumentos" type="hidden">
+					</td>
+				</tr>
+			</tbody></table>
+
+
+			<input name="solicitud.idSolicitud" value="202777406" type="hidden">
+			<table id="instrucciones">
+				<tbody><tr>
+					<td class="instrucciones"><label>Si deseas adjuntar un nuevo documento, selecciona la opción --Adjuntar nuevo documento-- y presiona el botón "Adjuntar documentos".</label>
+					</td>
+				</tr>
+			</tbody></table>
+			<div id="msgAnexarDocs" class="error" style="display: none"></div><table id="docs" cellspacing="0" cellpadding="0" title="AnexarDocumentos">
+				
+					<tbody><tr>
+						
+					</tr>
+					<tr>
+						<th class="celda1">Tipo de Documentos</th>
+						<th class="celda2">Documento</th>
+						<th class="celda3">Ver documento</th>
+					</tr>
+				
+					<tr class="odd">
+						<td>Contrato de maquila, de compraventa, orden de compra o de servicios, o pedidos en firme vigentes, que acrediten la continuidad del proyecto de exportación.</td>
+						<td><select id="idDoc0" name="solicitud.documentosRequeridos[0].idDocumentoSeleccionado" onchange="selectReset(this)"><option value="-1">-- Adjuntar nuevo documento --</option><option value="214797302">Lorem_ipsum.pdf</option></select><input name="solicitud.documentosRequeridos[0].id" value="220250373" type="hidden"><input name="solicitud.documentosRequeridos[0].nombre" value="Contrato de maquila, de compraventa, orden de compra o de servicios, o pedidos en firme vigentes, que acrediten la continuidad del proyecto de exportación." type="hidden"><input name="solicitud.documentosRequeridos[0].idTipoDocumento" value="9131" type="hidden"><input name="solicitud.documentosRequeridos[0].cvePersona" value="" type="hidden"><input name="solicitud.documentosRequeridos[0].reglaAnexado" value="" type="hidden">
+						</td>
+						<td align="center"><a href="#" onclick="javascript:verDocumento(0)"><img src="/ventanilla-aga2-HA/images/buttons/ver_docs.jpg" title="Ver documento"> </a></td>
+					</tr>
+				
+					<tr class="even">
+						<td>Para acreditar el requisito de inversión en territorio nacional deberás adjuntar títulos de propiedad, contratos de arrendamiento acompañados con sus CFDI que amparen el pago correspondiente, pedimentos de importación de activos fijos, entre otros documentos.</td>
+						<td><select id="idDoc1" name="solicitud.documentosRequeridos[1].idDocumentoSeleccionado" onchange="selectReset(this)"><option value="-1">-- Adjuntar nuevo documento --</option><option value="214797303">Lorem_ipsum.pdf</option></select><input name="solicitud.documentosRequeridos[1].id" value="220250374" type="hidden"><input name="solicitud.documentosRequeridos[1].nombre" value="Para acreditar el requisito de inversión en territorio nacional deberás adjuntar títulos de propiedad, contratos de arrendamiento acompañados con sus CFDI que amparen el pago correspondiente, pedimentos de importación de activos fijos, entre otros documentos." type="hidden"><input name="solicitud.documentosRequeridos[1].idTipoDocumento" value="7253" type="hidden"><input name="solicitud.documentosRequeridos[1].cvePersona" value="" type="hidden"><input name="solicitud.documentosRequeridos[1].reglaAnexado" value="" type="hidden">
+						</td>
+						<td align="center"><a href="#" onclick="javascript:verDocumento(1)"><img src="/ventanilla-aga2-HA/images/buttons/ver_docs.jpg" title="Ver documento"> </a></td>
+					</tr>
+				
+					<tr class="odd">
+						<td>Comprobante de pago de derechos </td>
+						<td><select id="idDoc2" name="solicitud.documentosRequeridos[2].idDocumentoSeleccionado" onchange="selectReset(this)"><option value="-1">-- Adjuntar nuevo documento --</option><option value="214797304">Lorem_ipsum.pdf</option></select><input name="solicitud.documentosRequeridos[2].id" value="220250375" type="hidden"><input name="solicitud.documentosRequeridos[2].nombre" value="Comprobante de pago de derechos " type="hidden"><input name="solicitud.documentosRequeridos[2].idTipoDocumento" value="9130" type="hidden"><input name="solicitud.documentosRequeridos[2].cvePersona" value="" type="hidden"><input name="solicitud.documentosRequeridos[2].reglaAnexado" value="" type="hidden">
+						</td>
+						<td align="center"><a href="#" onclick="javascript:verDocumento(2)"><img src="/ventanilla-aga2-HA/images/buttons/ver_docs.jpg" title="Ver documento"> </a></td>
+					</tr>
+				
+					<tr class="even">
+						<td>Diagrama de flujo con una descripción de manera detallada del principal proceso productivo, en términos de valor o volumen de producción, en el que se muestre el flujo de las mercancías importadas temporalmente, desde el punto de origen, punto de entrada al país, su recepción en la empresa, materiales utilizados con fracción arancelaria, almacenamiento, su integración al proceso productivo, realización de su proceso productivo o servicio, punto de salida y su destino o descargo, así como los procesos complementarios y servicios que le agregan valor a su producto final (procesos de submanufactura).</td>
+						<td><select id="idDoc3" name="solicitud.documentosRequeridos[3].idDocumentoSeleccionado" onchange="selectReset(this)"><option value="-1">-- Adjuntar nuevo documento --</option><option value="214797305">Lorem_ipsum.pdf</option></select><input name="solicitud.documentosRequeridos[3].id" value="220250376" type="hidden"><input name="solicitud.documentosRequeridos[3].nombre" value="Diagrama de flujo con una descripción de manera detallada del principal proceso productivo, en términos de valor o volumen de producción, en el que se muestre el flujo de las mercancías importadas temporalmente, desde el punto de origen, punto de entrada al país, su recepción en la empresa, materiales utilizados con fracción arancelaria, almacenamiento, su integración al proceso productivo, realización de su proceso productivo o servicio, punto de salida y su destino o descargo, así como los procesos complementarios y servicios que le agregan valor a su producto final (procesos de submanufactura)." type="hidden"><input name="solicitud.documentosRequeridos[3].idTipoDocumento" value="7964" type="hidden"><input name="solicitud.documentosRequeridos[3].cvePersona" value="" type="hidden"><input name="solicitud.documentosRequeridos[3].reglaAnexado" value="" type="hidden">
+						</td>
+						<td align="center"><a href="#" onclick="javascript:verDocumento(3)"><img src="/ventanilla-aga2-HA/images/buttons/ver_docs.jpg" title="Ver documento"> </a></td>
+					</tr>
+				
+					<tr class="odd">
+						<td>Anexe el soporte documental del pago de cuotas obrero patronales del último bimestre anterior a la solicitud, el cual deberá ser acorde al SUA presentado</td>
+						<td><select id="idDoc4" name="solicitud.documentosRequeridos[4].idDocumentoSeleccionado" onchange="selectReset(this)"><option value="-1">-- Adjuntar nuevo documento --</option><option value="214797306">Lorem_ipsum.pdf</option></select><input name="solicitud.documentosRequeridos[4].id" value="220250377" type="hidden"><input name="solicitud.documentosRequeridos[4].nombre" value="Anexe el soporte documental del pago de cuotas obrero patronales del último bimestre anterior a la solicitud, el cual deberá ser acorde al SUA presentado" type="hidden"><input name="solicitud.documentosRequeridos[4].idTipoDocumento" value="9051" type="hidden"><input name="solicitud.documentosRequeridos[4].cvePersona" value="" type="hidden"><input name="solicitud.documentosRequeridos[4].reglaAnexado" value="" type="hidden">
+						</td>
+						<td align="center"><a href="#" onclick="javascript:verDocumento(4)"><img src="/ventanilla-aga2-HA/images/buttons/ver_docs.jpg" title="Ver documento"> </a></td>
+					</tr>
+				
+					<tr class="even">
+						<td>Anexe de todos los registros patronales, las constancias de la totalidad de personal registrado ante el IMSS del último bimestre anterior a la fecha de presentación de la solicitud, así como estar al corriente en el cumplimiento de sus obligaciones de retener y enterar el ISR de los trabajadores</td>
+						<td><select id="idDoc5" name="solicitud.documentosRequeridos[5].idDocumentoSeleccionado" onchange="selectReset(this)"><option value="-1">-- Adjuntar nuevo documento --</option><option value="214797307">Lorem_ipsum.pdf</option></select><input name="solicitud.documentosRequeridos[5].id" value="220250378" type="hidden"><input name="solicitud.documentosRequeridos[5].nombre" value="Anexe de todos los registros patronales, las constancias de la totalidad de personal registrado ante el IMSS del último bimestre anterior a la fecha de presentación de la solicitud, así como estar al corriente en el cumplimiento de sus obligaciones de retener y enterar el ISR de los trabajadores" type="hidden"><input name="solicitud.documentosRequeridos[5].idTipoDocumento" value="9050" type="hidden"><input name="solicitud.documentosRequeridos[5].cvePersona" value="" type="hidden"><input name="solicitud.documentosRequeridos[5].reglaAnexado" value="" type="hidden">
+						</td>
+						<td align="center"><a href="#" onclick="javascript:verDocumento(5)"><img src="/ventanilla-aga2-HA/images/buttons/ver_docs.jpg" title="Ver documento"> </a></td>
+					</tr>
+				
+					<tr class="odd">
+						<td>Anexe copia de los comprobantes fiscales por concepto de pago de salarios de los trabajadores con los que le hayan proporcionado el servicio o ejecutado la obra correspondiente</td>
+						<td><select id="idDoc6" name="solicitud.documentosRequeridos[6].idDocumentoSeleccionado" onchange="selectReset(this)"><option value="-1">-- Adjuntar nuevo documento --</option><option value="214797308">Lorem_ipsum.pdf</option></select><input name="solicitud.documentosRequeridos[6].id" value="220250379" type="hidden"><input name="solicitud.documentosRequeridos[6].nombre" value="Anexe copia de los comprobantes fiscales por concepto de pago de salarios de los trabajadores con los que le hayan proporcionado el servicio o ejecutado la obra correspondiente" type="hidden"><input name="solicitud.documentosRequeridos[6].idTipoDocumento" value="9053" type="hidden"><input name="solicitud.documentosRequeridos[6].cvePersona" value="" type="hidden"><input name="solicitud.documentosRequeridos[6].reglaAnexado" value="" type="hidden">
+						</td>
+						<td align="center"><a href="#" onclick="javascript:verDocumento(6)"><img src="/ventanilla-aga2-HA/images/buttons/ver_docs.jpg" title="Ver documento"> </a></td>
+					</tr>
+				
+					<tr class="even">
+						<td>Anexar una copia con su autorización vigente.</td>
+						<td><select id="idDoc7" name="solicitud.documentosRequeridos[7].idDocumentoSeleccionado" onchange="selectReset(this)"><option value="-1">-- Adjuntar nuevo documento --</option><option value="214797309">Lorem_ipsum.pdf</option></select><input name="solicitud.documentosRequeridos[7].id" value="220250380" type="hidden"><input name="solicitud.documentosRequeridos[7].nombre" value="Anexar una copia con su autorización vigente." type="hidden"><input name="solicitud.documentosRequeridos[7].idTipoDocumento" value="9125" type="hidden"><input name="solicitud.documentosRequeridos[7].cvePersona" value="" type="hidden"><input name="solicitud.documentosRequeridos[7].reglaAnexado" value="" type="hidden">
+						</td>
+						<td align="center"><a href="#" onclick="javascript:verDocumento(7)"><img src="/ventanilla-aga2-HA/images/buttons/ver_docs.jpg" title="Ver documento"> </a></td>
+					</tr>
+				
+					<tr class="odd">
+						<td>Documento denominado "Forma oficial 96" (para socio o accionistas), o en su caso, documento que acredite que&nbsp; no se encuentra obligado a tributar en México (tratándose de representante legal, administrador único y/o miembros del consejo de administración).</td>
+						<td><select id="idDoc8" name="solicitud.documentosRequeridos[8].idDocumentoSeleccionado" onchange="selectReset(this)"><option value="-1">-- Adjuntar nuevo documento --</option><option value="214797310">Lorem_ipsum.pdf</option></select><input name="solicitud.documentosRequeridos[8].id" value="220250381" type="hidden"><input name="solicitud.documentosRequeridos[8].nombre" value="Documento denominado &quot;Forma oficial 96&quot; (para socio o accionistas), o en su caso, documento que acredite que&nbsp; no se encuentra obligado a tributar en México (tratándose de representante legal, administrador único y/o miembros del consejo de administración)." type="hidden"><input name="solicitud.documentosRequeridos[8].idTipoDocumento" value="7557" type="hidden"><input name="solicitud.documentosRequeridos[8].cvePersona" value="" type="hidden"><input name="solicitud.documentosRequeridos[8].reglaAnexado" value="" type="hidden">
+						</td>
+						<td align="center"><a href="#" onclick="javascript:verDocumento(8)"><img src="/ventanilla-aga2-HA/images/buttons/ver_docs.jpg" title="Ver documento"> </a></td>
+					</tr>
+				
+					<tr class="even">
+						<td>Adjunta la opinión del cumplimiento de obligaciones fiscales con la leyenda ?Sin obligaciones fiscales?, la constancia de residencia para efectos fiscales del país donde tributa o bien las declaraciones fiscales del país donde se encuentre obligado a tributar, el representante legal con facultades para actos de dominio, el administrador único o el miembro del consejo de administración,  que  no se encuentra obligado a tributar en México.</td>
+						<td><select id="idDoc9" name="solicitud.documentosRequeridos[9].idDocumentoSeleccionado" onchange="selectReset(this)"><option value="-1">-- Adjuntar nuevo documento --</option><option value="214797311">Lorem_ipsum.pdf</option></select><input name="solicitud.documentosRequeridos[9].id" value="220250382" type="hidden"><input name="solicitud.documentosRequeridos[9].nombre" value="Adjunta la opinión del cumplimiento de obligaciones fiscales con la leyenda ?Sin obligaciones fiscales?, la constancia de residencia para efectos fiscales del país donde tributa o bien las declaraciones fiscales del país donde se encuentre obligado a tributar, el representante legal con facultades para actos de dominio, el administrador único o el miembro del consejo de administración,  que  no se encuentra obligado a tributar en México." type="hidden"><input name="solicitud.documentosRequeridos[9].idTipoDocumento" value="9127" type="hidden"><input name="solicitud.documentosRequeridos[9].cvePersona" value="" type="hidden"><input name="solicitud.documentosRequeridos[9].reglaAnexado" value="" type="hidden">
+						</td>
+						<td align="center"><a href="#" onclick="javascript:verDocumento(9)"><img src="/ventanilla-aga2-HA/images/buttons/ver_docs.jpg" title="Ver documento"> </a></td>
+					</tr>
+				
+					<tr class="odd">
+						<td>Adjuntar únicamente  la opinión positiva del cumplimiento de obligaciones fiscales de aquellos  socios, accionistas, representantes legales con facultad para actos de dominio, administradores únicos o miembros del consejo de administración, que se encuentran obligados a tributar en México.</td>
+						<td><select id="idDoc10" name="solicitud.documentosRequeridos[10].idDocumentoSeleccionado" onchange="selectReset(this)"><option value="-1">-- Adjuntar nuevo documento --</option><option value="214797312">Lorem_ipsum.pdf</option></select><input name="solicitud.documentosRequeridos[10].id" value="220250383" type="hidden"><input name="solicitud.documentosRequeridos[10].nombre" value="Adjuntar únicamente  la opinión positiva del cumplimiento de obligaciones fiscales de aquellos  socios, accionistas, representantes legales con facultad para actos de dominio, administradores únicos o miembros del consejo de administración, que se encuentran obligados a tributar en México." type="hidden"><input name="solicitud.documentosRequeridos[10].idTipoDocumento" value="9128" type="hidden"><input name="solicitud.documentosRequeridos[10].cvePersona" value="" type="hidden"><input name="solicitud.documentosRequeridos[10].reglaAnexado" value="" type="hidden">
+						</td>
+						<td align="center"><a href="#" onclick="javascript:verDocumento(10)"><img src="/ventanilla-aga2-HA/images/buttons/ver_docs.jpg" title="Ver documento"> </a></td>
+					</tr>
+				
+					<tr class="even">
+						<td>Reporte de saldos de mercancía de importación temporal o de mercancías objeto de operaciones de comercio exterior, de un periodo de un mes, que se encuentre dentro de los tres meses anteriores a la presentación de la solicitud.</td>
+						<td><select id="idDoc11" name="solicitud.documentosRequeridos[11].idDocumentoSeleccionado" onchange="selectReset(this)"><option value="-1">-- Adjuntar nuevo documento --</option><option value="214797313">Lorem_ipsum.pdf</option></select><input name="solicitud.documentosRequeridos[11].id" value="220250384" type="hidden"><input name="solicitud.documentosRequeridos[11].nombre" value="Reporte de saldos de mercancía de importación temporal o de mercancías objeto de operaciones de comercio exterior, de un periodo de un mes, que se encuentre dentro de los tres meses anteriores a la presentación de la solicitud." type="hidden"><input name="solicitud.documentosRequeridos[11].idTipoDocumento" value="7556" type="hidden"><input name="solicitud.documentosRequeridos[11].cvePersona" value="" type="hidden"><input name="solicitud.documentosRequeridos[11].reglaAnexado" value="" type="hidden">
+						</td>
+						<td align="center"><a href="#" onclick="javascript:verDocumento(11)"><img src="/ventanilla-aga2-HA/images/buttons/ver_docs.jpg" title="Ver documento"> </a></td>
+					</tr>
+				
+				<tr>
+					<td><div id="nuevosCampos"><input type="hidden" name="solicitud.documentosRequeridos[0].documentosDisponibles[0].id" value="214797302"><input type="hidden" name="solicitud.documentosRequeridos[0].documentosDisponibles[0].nombre" value="Lorem_ipsum.pdf"><input type="hidden" name="solicitud.documentosRequeridos[0].documentosDisponibles[0].idTipoDocumento" value="9131"><input type="hidden" name="solicitud.documentosRequeridos[1].documentosDisponibles[0].id" value="214797303"><input type="hidden" name="solicitud.documentosRequeridos[1].documentosDisponibles[0].nombre" value="Lorem_ipsum.pdf"><input type="hidden" name="solicitud.documentosRequeridos[1].documentosDisponibles[0].idTipoDocumento" value="7253"><input type="hidden" name="solicitud.documentosRequeridos[2].documentosDisponibles[0].id" value="214797304"><input type="hidden" name="solicitud.documentosRequeridos[2].documentosDisponibles[0].nombre" value="Lorem_ipsum.pdf"><input type="hidden" name="solicitud.documentosRequeridos[2].documentosDisponibles[0].idTipoDocumento" value="9130"><input type="hidden" name="solicitud.documentosRequeridos[3].documentosDisponibles[0].id" value="214797305"><input type="hidden" name="solicitud.documentosRequeridos[3].documentosDisponibles[0].nombre" value="Lorem_ipsum.pdf"><input type="hidden" name="solicitud.documentosRequeridos[3].documentosDisponibles[0].idTipoDocumento" value="7964"><input type="hidden" name="solicitud.documentosRequeridos[4].documentosDisponibles[0].id" value="214797306"><input type="hidden" name="solicitud.documentosRequeridos[4].documentosDisponibles[0].nombre" value="Lorem_ipsum.pdf"><input type="hidden" name="solicitud.documentosRequeridos[4].documentosDisponibles[0].idTipoDocumento" value="9051"><input type="hidden" name="solicitud.documentosRequeridos[5].documentosDisponibles[0].id" value="214797307"><input type="hidden" name="solicitud.documentosRequeridos[5].documentosDisponibles[0].nombre" value="Lorem_ipsum.pdf"><input type="hidden" name="solicitud.documentosRequeridos[5].documentosDisponibles[0].idTipoDocumento" value="9050"><input type="hidden" name="solicitud.documentosRequeridos[6].documentosDisponibles[0].id" value="214797308"><input type="hidden" name="solicitud.documentosRequeridos[6].documentosDisponibles[0].nombre" value="Lorem_ipsum.pdf"><input type="hidden" name="solicitud.documentosRequeridos[6].documentosDisponibles[0].idTipoDocumento" value="9053"><input type="hidden" name="solicitud.documentosRequeridos[7].documentosDisponibles[0].id" value="214797309"><input type="hidden" name="solicitud.documentosRequeridos[7].documentosDisponibles[0].nombre" value="Lorem_ipsum.pdf"><input type="hidden" name="solicitud.documentosRequeridos[7].documentosDisponibles[0].idTipoDocumento" value="9125"><input type="hidden" name="solicitud.documentosRequeridos[8].documentosDisponibles[0].id" value="214797310"><input type="hidden" name="solicitud.documentosRequeridos[8].documentosDisponibles[0].nombre" value="Lorem_ipsum.pdf"><input type="hidden" name="solicitud.documentosRequeridos[8].documentosDisponibles[0].idTipoDocumento" value="7557"><input type="hidden" name="solicitud.documentosRequeridos[9].documentosDisponibles[0].id" value="214797311"><input type="hidden" name="solicitud.documentosRequeridos[9].documentosDisponibles[0].nombre" value="Lorem_ipsum.pdf"><input type="hidden" name="solicitud.documentosRequeridos[9].documentosDisponibles[0].idTipoDocumento" value="9127"><input type="hidden" name="solicitud.documentosRequeridos[10].documentosDisponibles[0].id" value="214797312"><input type="hidden" name="solicitud.documentosRequeridos[10].documentosDisponibles[0].nombre" value="Lorem_ipsum.pdf"><input type="hidden" name="solicitud.documentosRequeridos[10].documentosDisponibles[0].idTipoDocumento" value="9128"><input type="hidden" name="solicitud.documentosRequeridos[11].documentosDisponibles[0].id" value="214797313"><input type="hidden" name="solicitud.documentosRequeridos[11].documentosDisponibles[0].nombre" value="Lorem_ipsum.pdf"><input type="hidden" name="solicitud.documentosRequeridos[11].documentosDisponibles[0].idTipoDocumento" value="7556"></div>
+					</td>
+					<td colspan="3" align="right">
+								<input type="button" onclick="documentos.upload()" value="Adjuntar documentos" class="largemid">
+							
+					</td>
+				</tr>
+			</tbody></table>
+			<input name="nombre_0" value="Contrato de maquila, de compraventa, orden de compra o de servicios, o pedidos en firme vigentes, que acrediten la continuidad del proyecto de exportación." type="hidden"><input name="nombre_1" value="Para acreditar el requisito de inversión en territorio nacional deberás adjuntar títulos de propiedad, contratos de arrendamiento acompañados con sus CFDI que amparen el pago correspondiente, pedimentos de importación de activos fijos, entre otros documentos." type="hidden"><input name="nombre_2" value="Comprobante de pago de derechos " type="hidden"><input name="nombre_3" value="Diagrama de flujo con una descripción de manera detallada del principal proceso productivo, en términos de valor o volumen de producción, en el que se muestre el flujo de las mercancías importadas temporalmente, desde el punto de origen, punto de entrada al país, su recepción en la empresa, materiales utilizados con fracción arancelaria, almacenamiento, su integración al proceso productivo, realización de su proceso productivo o servicio, punto de salida y su destino o descargo, así como los procesos complementarios y servicios que le agregan valor a su producto final (procesos de submanufactura)." type="hidden"><input name="nombre_4" value="Anexe el soporte documental del pago de cuotas obrero patronales del último bimestre anterior a la solicitud, el cual deberá ser acorde al SUA presentado" type="hidden"><input name="nombre_5" value="Anexe de todos los registros patronales, las constancias de la totalidad de personal registrado ante el IMSS del último bimestre anterior a la fecha de presentación de la solicitud, así como estar al corriente en el cumplimiento de sus obligaciones de retener y enterar el ISR de los trabajadores" type="hidden"><input name="nombre_6" value="Anexe copia de los comprobantes fiscales por concepto de pago de salarios de los trabajadores con los que le hayan proporcionado el servicio o ejecutado la obra correspondiente" type="hidden"><input name="nombre_7" value="Anexar una copia con su autorización vigente." type="hidden"><input name="nombre_8" value="Documento denominado &quot;Forma oficial 96&quot; (para socio o accionistas), o en su caso, documento que acredite que&nbsp; no se encuentra obligado a tributar en México (tratándose de representante legal, administrador único y/o miembros del consejo de administración)." type="hidden"><input name="nombre_9" value="Adjunta la opinión del cumplimiento de obligaciones fiscales con la leyenda ?Sin obligaciones fiscales?, la constancia de residencia para efectos fiscales del país donde tributa o bien las declaraciones fiscales del país donde se encuentre obligado a tributar, el representante legal con facultades para actos de dominio, el administrador único o el miembro del consejo de administración,  que  no se encuentra obligado a tributar en México." type="hidden"><input name="nombre_10" value="Adjuntar únicamente  la opinión positiva del cumplimiento de obligaciones fiscales de aquellos  socios, accionistas, representantes legales con facultad para actos de dominio, administradores únicos o miembros del consejo de administración, que se encuentran obligados a tributar en México." type="hidden"><input name="nombre_11" value="Reporte de saldos de mercancía de importación temporal o de mercancías objeto de operaciones de comercio exterior, de un periodo de un mes, que se encuentre dentro de los tres meses anteriores a la presentación de la solicitud." type="hidden"><div style="display: none;"><input type="hidden" name="_sourcePage" value="TZaGmzAXVn1NLhxiDxlyp63zsmqDN9ISYRnY90a11hCSPfsAed2UeGZqJrz2VVmePWeglvtHkF6KEYiyDP-Y2w=="><input name="solicitud.importacionSenDTO.lstImportacions[1].porcentaje" value="" type="hidden"><input name="solicitud.datosSolicitudIC.tipoModalidadImmex" value="" type="hidden"><input name="solicitud.importacionDTO.lstImportaciones[0].valor" value="" type="hidden"><input name="manifiestos.manifiesto40.declaracion.clave" value="¿Cuenta con empleados subcontratados?" type="hidden"><input name="nombre.inventario" value="" type="hidden"><input name="mapDeclaracionSolicitud['2023'].acepto" value="0" type="hidden"><input name="solicitud.solicitante.domicilio.numeroExterior" value="1353" type="hidden"><input name="solicitud.importacionDTO.lstImportaciones[0].porcentaje" value="" type="hidden"><input name="solicitud.solicitante.descripcionGiro" value="Siembra, cultivo y cosecha de otros cultivos" type="hidden"><input name="puedeCapturarRepresentanteLegalCG" value="false" type="hidden"><input name="solicitud.listaCatalogoSolicitud[0].catalogo" value="SEPRO.SP21" type="hidden"><input name="mapDeclaracionSolicitud['3030'].acepto" value="1" type="hidden"><input name="solicitud.solicitante.razonSocial" value="INTEGRADORA DE URBANIZACIONES SIGNUM S DE RL DE CV" type="hidden"><input name="declaracion.declaracion243.declaracion.clave" value="243" type="hidden"><input name="IMMEX" value="0" type="hidden"><input name="mapDeclaracionSolicitud['712'].acepto" value="1" type="hidden"><input name="mapDeclaracionSolicitud['3029'].acepto" value="0" type="hidden"><input name="solicitud.solicitante.domicilio.pais.clave" value="MEX" type="hidden"><input name="solicitud.importacionSenDTO.lstImportacions[0].valor" value="" type="hidden"><input name="mapDeclaracionSolicitud['249'].acepto" value="1" type="hidden"><input name="solicitud.solicitante.domicilio.calle" value="CAMINO VIEJO" type="hidden"><input name="genericoConstanciasSensibles.idDatosGenericosSol" value="" type="hidden"><input name="genericoRetornos.idDatosGenericosSol" value="" type="hidden"><input name="solicitud.tercerosRelacionados.terceroRepresentanteLegal.apellidoMaterno" value="RUIZ" type="hidden"><input name="mapDeclaracionSolicitud['238'].acepto" value="0" type="hidden"><input name="solicitud.cveRolCapturista" value="PersonaMoral" type="hidden"><input name="declaracion.declaracion238.declaracion.clave" value="238" type="hidden"><input name="mapDeclaracionSolicitud['702'].acepto" value="0" type="hidden"><input name="mapDeclaracionSolicitud['2022'].acepto" value="0" type="hidden"><input name="solicitud.modalidadIvaIepsAIC.blnPreoperativo" value="false" type="hidden"><input name="solicitud.empleadosPropios.empleados" value="10" type="hidden"><input name="declaracion.declaracion239.declaracion.clave" value="239" type="hidden"><input name="mapDeclaracionSolicitud['72'].acepto" value="0" type="hidden"><input name="solicitud.importacionSenDTO.lstImportacions[2].valor" value="" type="hidden"><input name="solicitud.pago.impPago" value="" type="hidden"><input name="solicitud.importacionDTO.lstImportaciones[1].valor" value="" type="hidden"><input name="solicitud.cveUsuarioCapturista" value="AAL0409235E6" type="hidden"><input name="solicitud.tercerosRelacionados.terceroRepresentanteLegal.telefono" value="618-813-6670" type="hidden"><input name="mapDeclaracionSolicitud['79'].acepto" value="0" type="hidden"><input name="mapDeclaracionSolicitud['703'].acepto" value="1" type="hidden"><input name="mapDeclaracionSolicitud['3027'].acepto" value="0" type="hidden"><input name="solicitud.listaCatalogoSolicitud[1].catalogo" value="" type="hidden"><input name="desc.inversionA" value="" type="hidden"><input name="solicitud.solicitante.domicilio.delegacionMunicipio.nombre" value="AHOME" type="hidden"><input name="solicitud.empleadosPropiosSen[1].bimestre" value="" type="hidden"><input name="manifiestos.manifiesto14.declaracion.clave" value="Indique si se encuentra sujeto a un procedimiento de cancelación" type="hidden"><input name="genericoRetornosSensibles.idDatosGenericosSol" value="" type="hidden"><input name="mapDeclaracionSolicitud['705'].acepto" value="0" type="hidden"><input name="solicitud.pago.cadenaPagoDependencia" value="" type="hidden"><input name="mapDeclaracionSolicitud['88'].acepto" value="0" type="hidden"><input name="declaracion.declaracion240.declaracion.clave" value="240" type="hidden"><input name="manifiestos.manifiesto9.declaracion.clave" value="Indique si cuenta con infraestructura necesaria para realizar la operación del programa IMMEX al proceso industrial o de servicio de conformidad con la modalidad de su programa" type="hidden"><input name="manifiestos.manifiesto9.declaracion.clave" value="Indique si cuenta con infraestructura necesaria para realizar la operación del programa IMMEX al proceso industrial o de servicio de conformidad con la modalidad de su programa" type="hidden"><input name="solicitud.datosSolicitudIC.descripcionImmex" value="" type="hidden"><input name="mapDeclaracionSolicitud['244'].acepto" value="0" type="hidden"><input name="solicitud.empleadosPropiosSen[1].empleados" value="" type="hidden"><input name="solicitud.importacionDTO.lstImportaciones[1].porcentaje" value="" type="hidden"><input name="solicitud.pago.fecPago" value="" type="hidden"><input name="solicitud.solicitante.rfc" value="AAL0409235E6" type="hidden"><input name="solicitud.tercerosRelacionados.terceroRepresentanteLegal.rfc" value="LEQI8101314S7" type="hidden"><input name="declaracion.declaracion244.declaracion.clave" value="244" type="hidden"><input name="mapDeclaracionSolicitud['2033'].acepto" value="1" type="hidden"><input name="solicitud.idProgramaAutorizado" value="" type="hidden"><input name="solicitud.importacionSenDTO.solicituds.totalValor" value="0" type="hidden"><input name="solicitud.pago.claveDeReferencia" value="" type="hidden"><input name="mapDeclaracionSolicitud['252'].acepto" value="1" type="hidden"><input name="solicitud.importacionDTO.lstImportaciones[2].valor" value="" type="hidden"><input name="solicitud.solicitante.cveUsuario" value="AAL0409235E6" type="hidden"><input name="solicitud.solicitante.domicilio.colonia.clave" value="00181210001" type="hidden"><input name="solicitud.importacionSenDTO.lstImportacions[1].valor" value="" type="hidden"><input name="genericoImportaciones.idDatosGenericosSol" value="" type="hidden"><input name="solicitud.pago.banco.clave" value="" type="hidden"><input name="solicitud.solicitante.domicilio.pais.nombre" value="ESTADOS UNIDOS MEXICANOS" type="hidden"><input name="solicitud.pago.referenciaBancaria" value="" type="hidden"><input name="mapDeclaracionSolicitud['3028'].acepto" value="0" type="hidden"><input name="manifiestos.manifiesto11.declaracion.clave" value="Indique si durante los últimos doce meses, el valor de la mercancía transformada y retornada, retornada en su mismo estado, o a la que se le prestó un servicio, durante dicho periodo representa al menos el 80% del valor de las importaciones temporales de insumos durante el mismo periodo. (Declare solo aquellos conceptos que le apliquen)." type="hidden"><input name="manifiestos.manifiesto11.declaracion.clave" value="¿La empresa solicitante ha realizado operaciones al amparo del Programa IMMEX en al menos los 12 meses previos a la solicitud?" type="hidden"><input name="manifiestos.manifiesto11.declaracion.clave" value="Señale si las empresas proveedoras de personal subcontratado en los términos y condiciones que establezcan los artículos 15-A al 15-D de la Ley Federal de Trabajo, se encuentran al corriente en el cumplimiento de sus obligaciones fiscales." type="hidden"><input name="solicitud.tercerosRelacionados.terceroRepresentanteLegal.correoElectronico" value="vucem2.5@hotmail.com" type="hidden"><input name="solicitud.pago.llaveDePago" value="" type="hidden"><input name="declaracion.declaracion704.declaracion.clave" value="704" type="hidden"><input name="manifiestos.manifiesto15.declaracion.clave" value="Indique si ha cumplido adecuadamente con los requisitos de las reglas 4.5.30 y 4.5.32." type="hidden"><input name="lugarR.inventario" value="" type="hidden"><input name="solicitud.empleadosPropiosSen[2].bimestre" value="" type="hidden"><input name="manifiestos.manifiesto13.declaracion.clave" value="Indique si los socios y accionistas, representante legal, administrador único o miembros del consejo de administración de la empresa declararon ingresos acumulables en la declaración anual de los dos ejercicios previos ante la autoridad fiscal para los fines del ISR" type="hidden"><input name="mapDeclaracionSolicitud['707'].acepto" value="0" type="hidden"><input name="maxTipoDocs" value="50" type="hidden"><input name="manifiestos.manifiesto12.declaracion.clave" value="Señale si la empresa cuenta con empleados propios" type="hidden"><input name="existProveedores" value="1" type="hidden"><input name="solicitud.solicitante.domicilio.entidadFederativa.nombre" value="SINALOA" type="hidden"><input name="solicitud.solicitante.domicilio.colonia.nombre" value="MIGUEL HIDALGO" type="hidden"><input name="solicitud.empleadosPropios.bimestre" value="3" type="hidden"><input name="solicitud.catseleccionados" value="" type="hidden"><input name="mapDeclaracionSolicitud['706'].acepto" value="0" type="hidden"><input name="solicitud.tercerosRelacionados.terceroRepresentanteLegal.apellidoPaterno" value="BARRAGAN" type="hidden"><input name="solicitud.solicitante.domicilio.numeroInterior" value="" type="hidden"><input name="mapDeclaracionSolicitud['2034'].acepto" value="0" type="hidden"><input name="mapDeclaracionSolicitud['2020'].acepto" value="0" type="hidden"><input name="solicitud.solicitante.domicilio.delegacionMunicipio.clave" value="25001" type="hidden"><input name="mapDeclaracionSolicitud['708'].acepto" value="0" type="hidden"><input name="mapDeclaracionSolicitud['253'].acepto" value="1" type="hidden"><input name="mapDeclaracionSolicitud['2021'].acepto" value="0" type="hidden"><input name="mapDeclaracionSolicitud['190'].acepto" value="1" type="hidden"><input name="depositoFiscalEnabled" value="" type="hidden"><input name="solicitud.empleadosPropiosSen[2].empleados" value="" type="hidden"><input name="mapDeclaracionSolicitud['199'].acepto" value="1" type="hidden"><input name="mapDeclaracionSolicitud['243'].acepto" value="1" type="hidden"><input name="solicitud.solicitante.domicilio.entidadFederativa.clave" value="SIN" type="hidden"><input name="tipo.inversionA" value="" type="hidden"><input name="mapDeclaracionSolicitud['89'].acepto" value="1" type="hidden"><input name="genericoTransferenciasVirtuales.idDatosGenericosSol" value="" type="hidden"><input name="tercerosRelacionados.terceroRepresentanteLegal.idPersonaSolicitud" value="" type="hidden"><input name="solicitud.importacionDTO.solicitudm.monto" value="" type="hidden"><input name="solicitud.tercerosRelacionados.terceroRepresentanteLegal.nombre" value="MISAEL" type="hidden"><input name="rfeEnabled" value="true" type="hidden"><input name="solicitud.datosSolicitudIC.numeroImmex" value="" type="hidden"><input name="solicitud.importacionSenDTO.lstImportacions[0].porcentaje" value="" type="hidden"><input name="solicitud.empleadosPropiosSen[0].empleados" value="" type="hidden"><input name="solicitud.importacionDTO.lstImportaciones[2].porcentaje" value="" type="hidden"><input name="mapDeclaracionSolicitud['240'].acepto" value="0" type="hidden"><input name="mapDeclaracionSolicitud['191'].acepto" value="1" type="hidden"><input name="solicitud.importacionSenDTO.solicituds.totalPorcentaje" value="0" type="hidden"><input name="declaracion.declaracion237.declaracion.clave" value="237" type="hidden"><input name="cantidad.inversionA" value="" type="hidden"><input name="solicitud.solicitante.telefono" value="55-98764532" type="hidden"><input name="registrosProveedores" value="1" type="hidden"><input name="mapDeclaracionSolicitud['239'].acepto" value="1" type="hidden"><input name="mapDeclaracionSolicitud['237'].acepto" value="0" type="hidden"><input name="solicitud.importacionSenDTO.lstImportacions[2].porcentaje" value="" type="hidden"><input name="solicitud.solicitante.domicilio.localidad.clave" value="00181210008" type="hidden"><input name="recintoFiscalEnabled" value="" type="hidden"><input name="solicitud.solicitante.domicilio.localidad.nombre" value="LOS MOCHIS" type="hidden"><input name="solicitud.importacionDTO.solicitudm.totalValor" value="0" type="hidden"><input name="solicitud.importacionSenDTO.solicituds.monto" value="" type="hidden"><input name="rfcTercero" value="LEQI8101314S7" type="hidden"><input name="solicitud.solicitante.correoElectronico" value="vucem2.5@hotmail.com" type="hidden"><input name="solicitud.empleadosPropiosSen[0].bimestre" value="" type="hidden"><input name="solicitud.solicitante.domicilio.codigoPostal" value="81210" type="hidden"><input name="solicitud.importacionDTO.solicitudm.totalPorcentaje" value="0" type="hidden"><input type="hidden" name="__fp" value="Irf64P2mXrs7DZh3bWq72NimqeUNaxDOs9CiAVIb3aduI-Otom4SYEiQsrdHXduuu1S4Z7C1YxQ_nDvkL8DTlpiNbvvvDcf0ovsZPZxM1VcZkkuiKzKHH3eMfnXYq_XXXI1VwQGNmYSbCMfdd9L4tXaKIKE1XZQD1ezkR8oI39h8M4PUNDnwGZyaDqSyJRXlBpQMsiSi2p9E2U99W_l0bGHWVQL318kQSFt8dExYW0cQv2o7xLOA-GpxwmovFPQqPMqiq5ysdlP_sscpu12r1y3STD8Lzrr_ECt5MGVJDy2Z-Vad2fZ7-O3RUOLrOzig2TCdr1GaNcjxTO1VpKf8oJ56A1oUNYCTIIsc4q34xoq8PzcRKO6Bzx9NDuBlAPQ2ICyL7QhbW-hPzjyy9Tp9U8u8cXwQGyvNDptNx1UYswSoSjnddfv9upiNbvvvDcf0HZF-9WlaUL0l6icfEM1yzeh0doLqTY0Paoa-Chj_k6VeWgZjuAO62SCLHOKt-MaKn-iTdFyz0UjPSwjZDirYMAykEpZ2d6bQFc0c2eNwY57mXnxKsuIs1Du_T4r9aLjuOOH_NR5eFnMI1Z4Mdf3LTgMKqXO437PARHAo1r01cWUvBTFclY8G4gdwmpR3kRbqpk2_-eLIGxZrSO7f3v69E9iERlWPAu7CSUwApuINghq4qh_W3uTISkVycYrC9g8AvouTI6y1oNI5gpZ9IHEDmIbjXZqrdvIvOnFaEgLmYNscsUYudN2axDzKoqucrHZT_7LHKbtdq9cg82BtHyxb6hyAeoyldBCjOw2Yd21qu9jYpqnlDWsQzrPQogFSG92nH-ZsvUnABFvB7PR-8AlQzofYwKCXZpFSQm0N5U55lcHER2dcuIFjQgfSPFiaxpKj0QtYA6jB0bzCWx2IS9oy3Q7M4tfcUgSHhuNdmqt28i9-5KYG0Vi-5wjSkN2ZTYE3x6MundW3GVYKoXGdf0B2cQRxB1SaxcJkviA7eI-hUixdWcPTMNaIr4GVCuMZCcnnUOp9jaDmJGBmCj7AMMDyQt6inUnlm4qIA-Rdy6VjRVYzY9XIUKIt1lvPAieh5IoQiAq3yizsxfEGteqMC1tQ2RsyInuLyuaz9hlu28V9-x7OPbYX-Br5yj5jZphmjS-2a32XavB5ty8Qv2o7xLOA-GpxwmovFPQqcAamqGOJWVjL-blEpKYYu-kIi5KkvDApG3lqKWCgJV2YjW777w3H9LBq89sYdLZTDXubp9xBejeYjW777w3H9KL7GT2cTNVXGZJLoisyhx93jH512Kv118UcpD7V5xUChuNdmqt28i9-5KYG0Vi-5wjSkN2ZTYE33qnMPZnq_V4KoXGdf0B2cQRxB1SaxcJkviA7eI-hUixdWcPTMNaIr8R3dvxuaDnmShXWmfVHxuqmUKnNVJvSz4LZ6YcM4DnVNaMUSJfWpYp8hRwCmzQmskRHrG3C6DPBWjTtvuOLnrFbvuO_4t1GDDPZ7sSM4t4eaTBOhJ7vWDUgixzirfjGisXmf3pKIC5RnnoDWhQ1gJMgixzirfjGip_ok3Rcs9FIz0sI2Q4q2DBJWF__rRKTO76Xtnw9MLRONpTIJowPY7tdWcPTMNaIr7VtCRU6klOXENIPeJQbArVQM4rLa76C6-NjlKvy9wH5dcmLMZlRt2qJOSOk9g-iuPtR9TLVpVaAIIsc4q34xoqT7pwDz7m8GLomMrFQroTqIcAMFPzyQQqoraMLYorQ7mCZzsL3P4H8HmnQdJ_rpX8x9RqZNqLTcHtIazqPL0qFeQYx85vBOBfmXnxKsuIs1Bpdyl3GeTNW5q3YD1wSM887DZh3bWq72NimqeUNaxDOs9CiAVIb3aduI-Otom4SYFHxKQcVRfxs6UEW08fX9mVR1ZSsREvk0Rmo_0lESBc6bgkY0N86HQX31enZARnwODaUyCaMD2O7s3LlBi0EXmFSadyZ1y4i1CCLHOKt-MaKRjHZvd4xobAjkTfkaIADlxqNeo-9L473OulQihso0JJOKH7JDWegDOZefEqy4izU3hHKkVjwbcmjeWUlPPvn4xVZbrfDnaAneZS2ZQdXXShOKH7JDWegDOZefEqy4izU3hHKkVjwbck4ymZkH0T4NGN2WCjaV1yLyIkLdrNCLwBqjCkiDaTsD_ARJvRqbsMwc7m8emJg8YfLLsaRzYQ70T-FN7iyK09_WZ7UBUTu9ksjdktmn9G6lDOtuQmafmRgB2IIxYXQvxtc99EstewZLJZLyWTZB66jmI1u--8Nx_Si-xk9nEzVVxmSS6IrMocfd4x-ddir9dcIHEFGk2DDX7D4d9--wn38PBZxoVrBNIB7qNMtKEU_oobjXZqrdvIvz7tnZg8-Q_QtHbzrkE_aqEWutF60Zc76k-6cA8-5vBihlaiXZ1BmxlHVlKxES-TRGaj_SURIFzpuCRjQ3zodBY9FNJiq9bZDScETyF4aT8s7DZh3bWq72EbTGMtjYNgaE1RmUqB5xzk7DZh3bWq72NimqeUNaxDOs9CiAVIb3ac91RVcZnoX0ayaDT6_L9PUT-QbLkwH0DzU_H5v-3opG9ODBGXF2Bz65imni_9JDr7odHaC6k2ND4vqKFHJt2gnZrZxjCE7_ixgmc7C9z-B_B5p0HSf66V_MfUamTai03B7SGs6jy9KhZQhoFNdoHN9huNdmqt28i86cVoSAuZg2xyxRi503ZrEkGAk1uKvDrrFGNq_lvmi7d25APFJLkl6lJ2984amero1oxRIl9alinyFHAKbNCayREesbcLoM8GyzivyToPoluZefEqy4izUGl3KXcZ5M1YJo8S-1wdUTl6MQwxyHxMiKqPAVt-xn1wjl-W6m9yAAHt5ycneo4grZBv7S5EVGrTLMgSqbhp-O7-a4jyR8cQSO2APeIilcJsz6VAJ3jzwDBR1CDmchIrDe9C0XNDsJEBJTACm4g2CGriqH9be5MhKeLB9_WgMqbH43jjhoFZWOzsNmHdtarvYPbFXQBIqgtlLtJcS1Kw9mvHeBGAcCw36anHCai8U9Cq6JGrFrNbJVTkSl-zFso51edimHr6rIGj9WGmwQNz9gjmCln0gcQOYIZxaTkT2orOGzomO7hJcnuqJVNj0oFPHAuKIOm4IFWABWHmhlbGJgmv9A_A73ChrKtj37BuvKeGEnCbSsJ7ytUruN4GdyURU2F6wuC47qcl70LRc0OwkQFHVlKxES-TRGaj_SURIFzpuCRjQ3zodBflvvSLftwigKVGdTPZKNpJgmc7C9z-B_Cl9wYs6AsYCJP75tn-E4AZaS_PXkXtzIiN2S2af0bqUM625CZp-ZGAFlOUwbRLCny8FMVyVjwbiNiOJ5k7u6Vdgmc7C9z-B_B5p0HSf66V_MfUamTai03B7SGs6jy9KhdVh_3d8y_sL_omWI8hUJL_hItm6aDy-iI90tRpL8_Ld3kYLRpt0-cbL6rJHhrG84ALCLrFMnpdMaowpIg2k7A8tI_PfdgwCaKCwMDwPkBAjXPfRLLXsGSyzhF5MY42LcQ2VMB-E9bkFZrZxjCE7_izGUfWCqlaw1fcu3PCWvjCO3kYLRpt0-cbL6rJHhrG84DamyAhPca3eaowpIg2k7A8tI_PfdgwCaCcxtFIEqRMorgkVWuo3mjRTQeBz-xtOessyBKpuGn47v5riPJHxxBI7YA94iKVwmzPpUAnePPAMD7ts9TwSfJZWez99lbicM8syBKpuGn47v5riPJHxxBI7YA94iKVwm1N7y8Z08ooQ69vUvd4zF8-P-42mKZLQt_tR9TLVpVaAIIsc4q34xoqj0DHLN5xuHdT8fm_7eikb2njkozpjXhpc99EstewZLLOEXkxjjYtxMZH6wjW2Xs5mtnGMITv-LGCZzsL3P4H8eBZhHkwLWC817L7MewLYGUlj6YXvKx-LvzhuRqStrVEpplOforpkwsUPDSEyUxzfxmg5hYIH_QwpCxJql0c-a9igUgDpULOaSUwApuINghq4qh_W3uTISkVycYrC9g8AhEvfkDaGZDT80S6rxr9MiI9mWkJ9SKdxLwUxXJWPBuIHcJqUd5EW6gVd4TOvxk5LRwjel66Q22gLvbIFBRk-qC8FMVyVjwbiB3CalHeRFuq_6BV2hZJYv2xVRCL9ZWZK-4i9ZgmTyWlc99EstewZLLOEXkxjjYtxwzF1AYUUnJlmtnGMITv-LGCZzsL3P4H8HmnQdJ_rpX8x9RqZNqLTcHtIazqPL0qFdobyOF-LLfpWez99lbicM04ofskNZ6AM5l58SrLiLNTeEcqRWPBtyf5D5PD30wcwY3ZYKNpXXIvIiQt2s0IvAIbjXZqrdvIvfuSmBtFYvucI0pDdmU2BNxPArLUWKAjyNZzTfaeORsbS747pD5wcr16MQwxyHxMiKqPAVt-xn1zDYkRt3zigJPHTk8M80GgZWdExfYbxVGfsL7TLza32foGGKbMNfB2KSrJug3oiT3BR1ZSsREvk0Rmo_0lESBc6bgkY0N86HQWD4rJKqX18r2CZzsL3P4H8tJa_fzu0yZdu6ExtCMexsHbz8-RaOGu6ohfpKxzA5kPBSxIApgIIPNp5XKRofHzQEQp5tnJhhxI1oxRIl9alinyFHAKbNCayREesbcLoM8Gl928EK5tmJuZefEqy4izUGl3KXcZ5M1bmrdgPXBIzzzsNmHdtarvY2Kap5Q1rEM6z0KIBUhvdp4tkZOkRwbqlwez0fvAJUM6jQm84TeYOyzsNmHdtarvY2Kap5Q1rEM6z0KIBUhvdp4tkZOkRwbqlUfEpBxVF_GzpQRbTx9f2ZVHVlKxES-TRGaj_SURIFzpuCRjQ3zodBYxpFpE7qJzNA6AI3NthM0RFwlI82J13jC8FMVyVjwbiB3CalHeRFurx_5Cg1g3rUGa2cYwhO_4sOvAd73Ig-cgT4rP5isuI3fmfT5w_0TWIxyxtNrGtSe1AWW_2gGgBOlP8zPQncSZHDWCuY2lMhRMgixzirfjGihw8WP7LucZNHnNSxy6jDvmG412aq3byL1XSO50CdEIrYJnOwvc_gfweadB0n-ulfzH1Gpk2otNwe0hrOo8vSoXlT7FkfxZNTvOrfjTKZPAQhuNdmqt28i9-5KYG0Vi-5wjSkN2ZTYE3fDuaOzvf3c8dx3EqcRNlTP0XNt7Y_S-CIy2Avn-jru6FQYzLalw_uE4ofskNZ6AM-lsDlpdnsB83J_LaP876lZU4fPNG8uhTLV02s2j-V79OKH7JDWegDOZefEqy4izU3hHKkVjwbcn4yXQld_sgt2N2WCjaV1yLyIkLdrNCLwCG412aq3byL37kpgbRWL7nCNKQ3ZlNgTd8O5o7O9_dz1ro5gxQs80N_Rc23tj9L4KYjW777w3H9PSyjrGK8OfXWImAzyH2YBDx3gRgHAsN-mpxwmovFPQq-RdTS5-ZaqTo4IYmPIcYr2CZzsL3P4H8HmnQdJ_rpX8x9RqZNqLTcHtIazqPL0qFCstulhMoeQprsVHt9SNkAVHVlKxES-TRGaj_SURIFzpuCRjQ3zodBcjAgcw_c0irYJnOwvc_gfweadB0n-ulfzH1Gpk2otNwe0hrOo8vSoWQgpRV6eOjZ4bjXZqrdvIvfuSmBtFYvucI0pDdmU2BN53oaLRhxsLvNZzTfaeORsaGfgD9BW6mbjsNmHdtarvYl3MDdi1EX9_l3Ym5kZa2AH0i6JzsHiN-bPKFylbVuRUNv9bXo5X_jtUulbfXzZBSLwUxXJWPBuIHcJqUd5EW6mRrYA8iOBmYbFVEIv1lZkpdWcPTMNaIrzWjFEiX1qWKfIUcAps0JrJER6xtwugzwe6OzF4NdYCiVns_fZW4nDNOKH7JDWegDOZefEqy4izU3hHKkVjwbckMu-r3dsHkOBVZbrfDnaAneZS2ZQdXXSgd2bi5EOatJf-yxym7XavXUhiVzFbbwKR3_IqZ20qQ3fpk6RrU3PXUgZVqYd26pxwagqancnNjZ4bjXZqrdvIvfuSmBtFYvucI0pDdmU2BNy1qZL2Ttjtv8RDAM4YtCnCegjLU1zBeUIbjXZqrdvIvcI0w95PY0ncP7vxIXfoS06c7X4pQGb4zHuAx9gZ1m0UdfHYY4Dh3KQu8eTSiMaIdEKyDI7bQRxB9iNvLF50UPSCLHOKt-MaKHDxY_su5xk0ec1LHLqMO-YbjXZqrdvIvXpGFsf60PZEChjJIq9DhgiCLHOKt-MaKBYDuqGxT55xaagc3w-93GzsNmHdtarvYPmNmmGaNL7beigieFN4TnF_Y-iNcGmD2XLeFKW1Uq7eYjW777w3H9KL7GT2cTNVXGZJLoisyhx93jH512Kv1127IsVbgXZwlEQp5tnJhhxIQv2o7xLOA-GpxwmovFPQqkGAk1uKvDrqXe6R4NAN83l_nzA8Sg_wXGoKmp3JzY2eG412aq3byLzpxWhIC5mDbHLFGLnTdmsQ8yqKrnKx2U_-yxym7XavX-tLol4nBt_xM3Vs8zrsnR3C3KYN1YnEZejPKIVQk37C_B2Qhi7_huzmCiZH8LqypUdWUrERL5NEZqP9JREgXOm4JGNDfOh0FPL1yKK2QnQoDoAjc22EzRNXs5EfKCN_YUdWUrERL5NEZqP9JREgXOm4JGNDfOh0FNOj2UHZ9XRsmoidkD0816FS5lNhhLGW73kYLRpt0-cbL6rJHhrG84L6hCemPnR4VaowpIg2k7A8tI_PfdgwCaPNnaJVSfBxRh2LS92xeFEP43jjhoFZWOzsNmHdtarvY2Kap5Q1rEM6z0KIBUhvdpz3VFVxmehfRynx36cEDHIgJaQMt9vRfhcxzKhFkkySmtW0JFTqSU5cQ0g94lBsCtVAzistrvoLrHIWGMUYVvKI39QaBfV8TJnNsmDrIxbX4JjL6kAsDKpYBgwQxs5iI2gN9a0Ap6y6AmI1u--8Nx_T0so6xivDn11iJgM8h9mAQ8d4EYBwLDfpqccJqLxT0Kv_96ccBa4NZ6OCGJjyHGK_YzsEE1AGedT8p-6xcn-Mq3XsPGk9BcrWXxnLthg5zp5e7xOUPNjleMCHQw3hS2zQEJcS8lfGoqJiNbvvvDcf0ovsZPZxM1VcZkkuiKzKHH3eMfnXYq_XXlW7OEW4TRX6bCMfdd9L4tXaKIKE1XZQDRcJSPNidd4wvBTFclY8G4gdwmpR3kRbqnGiqLJ-rJRY_2lIuwGxiTNiERlWPAu7CUdWUrERL5NEZqP9JREgXOm4JGNDfOh0F-ZsxKnSwRbZgmc7C9z-B_B5p0HSf66V_MfUamTai03B7SGs6jy9KhbbVPrXRNm-da7FR7fUjZAFJTACm4g2CGriqH9be5MhKWN3gnZXRKuWS75duF_Dpsy8FMVyVjwbiqSkOan5NNdWcOVxX59sITgoiCfrj0vrbmIkpUtUC0EOWpWhKNXYdDiklUb6I3lAzmp8YpjfAD5F8LjAtX0QXVgTkFAlI6AuEC72yBQUZPqgvBTFclY8G4gdwmpR3kRbq6h4kfQxPv1FsVUQi_WVmSl1Zw9Mw1oivtW0JFTqSU5cQ0g94lBsCtVAzistrvoLrSHZl1uT7Zm068B3vciD5yKArRUkJkHeDLafUp_ZycQ7CWx2IS9oy3Q7M4tfcUgSHpzBVMBk2myjUHeyuSFvjH-WPrn5bbMbris8qlF2YMzwhnFpORPais4bOiY7uElye6olU2PSgU8dduhkE4kRN0p56A1oUNYCTIIsc4q34xoq8VAEy_Mdw0KZQqc1Um9LPgtnphwzgOdVO02SRVrNbr54_Cr71IhAXXPfRLLXsGSw4eOU6ZV2i08REStwII4bOSu43gZ3JRFTYXrC4LjupyVHeaI1IuuEYLwUxXJWPBuIHcJqUd5EW6kxE_lcKhA0qbFVEIv1lZkr7iL1mCZPJaVz30Sy17Bkss4ReTGONi3GXY2mSwLJ96WxVRCL9ZWZKXVnD0zDWiK9xn6VlEmnez9gl2LGnaqPxNAzj_TyQNT9PSe3Xmvaq95sMxGfGwiA2YJnOwvc_gfweadB0n-ulfzH1Gpk2otNwe0hrOo8vSoWJRu3ipxG68Xg2qqBP8E3-FV8NAd8Umj_H234HC-nQb1z30Sy17Bks8-FpcsGvVxDmKaeL_0kOvjmCln0gcQOYIZxaTkT2orOGzomO7hJcnuqJVNj0oFPHbSz3hGZJeC_6D7vqHN2scTsNmHdtarvYPbFXQBIqgtnIZs4EiXoJu8v5uUSkphi7YF9lD_hlerafQhQ6nM6HCWCZzsL3P4H8eBZhHkwLWC817L7MewLYGUlj6YXvKx-LvzhuRqStrVEpplOforpkwsUPDSEyUxzfTiL7e3-ZhjwM-qO2Aaq88k4ofskNZ6AM5l58SrLiLNTeEcqRWPBtyeZ_yKrhTH5IBGTQqtd0SImYIKa6bb4te1z30Sy17Bkss4ReTGONi3F0Z_a2zfinAWa2cYwhO_4sYJnOwvc_gfweadB0n-ulfzH1Gpk2otNwe0hrOo8vSoUEOSAmbxFOKlu-47_i3UYMM9nuxIzi3h5pME6Enu9YNSCLHOKt-MaKlpG1-fo6mwavvUJhwAuZXpiNbvvvDcf0HZF-9WlaUL0l6icfEM1yzeh0doLqTY0P52_YjlUNVvteWgZjuAO62SCLHOKt-MaKn-iTdFyz0UjPSwjZDirYMElYX_-tEpM7lfM0XwVqpMk78q4DscoXi0qFwlcw9Eu23kYLRpt0-cbL6rJHhrG84KQjGSz__0QaaowpIg2k7A8tI_PfdgwCaHC3KYN1YnEZejPKIVQk37BnyGW-GCp93zgDvQYO6ERniW-R52ztTOXoLbdhWetMVkvyy345xfiJOHvFbubCLFEpuMelhtqlbqE2Som62BLpNaMUSJfWpYp8hRwCmzQmskRHrG3C6DPB8PEVC-J8vkUpUZ1M9ko2ktjOwQTUAZ51Zy6_oIzYbbsvBTFclY8G4gdwmpR3kRbqOXOnmwRoarRsVUQi_WVmSu5_P2aMzmJYnLOxbNiQ9GZHAni3XffBn8i1zR9airEaM9nuxIzi3h5pME6Enu9YNSCLHOKt-MaK2jblTzQ7sQKeegNaFDWAkyCLHOKt-MaKn-iTdFyz0UjPSwjZDirYMBxgzgpK3-ZOAwUXRxfYuzgUCGbDq0Qb104ofskNZ6AM-lsDlpdnsB83J_LaP876ldqrgHTn3lLZPZauW4Xi1JzTgwRlxdgc-uYpp4v_SQ6-6HR2gupNjQ8AM04v-jKVo6-9QmHAC5lemI1u--8Nx_T0so6xivDn11iJgM8h9mAQ8d4EYBwLDfpqccJqLxT0KlVBQcebMh1o6OCGJjyHGK9gmc7C9z-B_B5p0HSf66V_MfUamTai03B7SGs6jy9KhX-KT6OeiMaBbR36BNJVxY3vA2RwGqN0mDsNmHdtarvY2Kap5Q1rEM6z0KIBUhvdpx_mbL1JwARbSJCyt0dd2667VLhnsLVjFD-cO-QvwNOWmI1u--8Nx_RwTUUpVFi8sx8AZEdBQefGmnQdUczPoZRYtk90m8RoVKSeXC7Ll2ih8_HWMC1z_CDm4IrkVrNa38iUg8cvYkiKU3sgjLoTpyUMdE_DL4Ze3xVfDQHfFJo_x9t-Bwvp0G9c99EstewZLIONP5RYscEU5imni_9JDr45gpZ9IHEDmIbjXZqrdvIvMX2YVINy_YzA5_hOxzpDnBawPdUwZ7b7huNdmqt28i_SW3cj3Y--kCkodGSrqx9cE3vOcP7TUR1gmc7C9z-B_B5p0HSf66V_MfUamTai03B7SGs6jy9KhS_L-ZZ36TGGRU1Dx93dgYN65Dy3gxkHY3mUtmUHV10oTih-yQ1noAzmXnxKsuIs1N4RypFY8G3JrPPiKxszb5AVWW63w52gJ1nMw_uzukcMvW9mXThzYUel5wJTzcEPykdjr1dQwdh5zYFPbIzG1c1GYVi8k5u5cql-n8G9skY8huNdmqt28i86cVoSAuZg25gLt1Coh4kNd_yKmdtKkN0N72uDLwP1_fYuR8ejJgZOfZNu8fY2TDBFMDCK0xKKIw3va4MvA_X9QFlv9oBoATpT_Mz0J3EmR3rOagjPEFCazOei2R7RvzfYzsEE1AGeda-4d04938I9yzIEqm4afju_muI8kfHEEjtgD3iIpXCbXKpIOSEPnA9mgHgqzCNZJ2CZzsL3P4H8KX3BizoCxgIAWdHzlxBHH0s788wWgk--ag3bLL6TxuBOKH7JDWegDOZefEqy4izU3hHKkVjwbcnGUJmwu_hNawRk0KrXdEiJgtnphwzgOdWBlQrjGQnJ51DqfY2g5iRgZgo-wDDA8kLeop1J5ZuKiAPkXculY0VWM2PVyFCiLdYR9E-q1PyEdfx6DYz1iD2RS6Kt8DBCiv-w-HffvsJ9_DwWcaFawTSAOFEJec-A2UkoIpg5aXOHbSCLHOKt-MaKn-iTdFyz0UjPSwjZDirYMD1_EvEIeb0gKUVFzL62MFPmKaeL_0kOvkruN4GdyURUJopn6-pbA_ZqjCkiDaTsDy0j8992DAJoEQp5tnJhhxI1oxRIl9alinyFHAKbNCayREesbcLoM8FBgRK2l8Bb05iNbvvvDcf0qKPQ5wZajzNaVE8lN6yslvYJsDcaIarvUZzUrZcB-aFqWsXNrgG9cWy4obzDZHS45wgzP3wMrxSIthQGkSyGwHC-j0ejFTziUdWUrERL5NEZqP9JREgXOm4JGNDfOh0FSq5kL8-DLYFJwRPIXhpPyzsNmHdtarvYPmNmmGaNL7beigieFN4TnGBgwezX-U4vEQp5tnJhhxI1oxRIl9alinyFHAKbNCayREesbcLoM8Gl8ycu3HBTdG0d-gTSVcWN7wNkcBqjdJg7DZh3bWq72NimqeUNaxDOs9CiAVIb3aeEnmnw_W8Sb7XnQtxVRQLmIZxaTkT2orOGzomO7hJcnuqJVNj0oFPHqwE7zLtvD90BWHmhlbGJgobjXZqrdvIvfuSmBtFYvucI0pDdmU2BN53oaLRhxsLvvpe2fD0wtE42lMgmjA9ju11Zw9Mw1oivNaMUSJfWpYp8hRwCmzQmskRHrG3C6DPBNvWIWFVkRl91Lk8fSJk1ZDhNzBr4RkbMejPKIVQk37AcKdu82RrieTmCiZH8LqypSUwApuINghq4qh_W3uTISkVycYrC9g8A0P4jgZ2O5Y3A0HiSjRYUgHvMii4PK1mTzyPN_YhIr_ggixzirfjGip_ok3Rcs9FIz0sI2Q4q2DDc_tzWv_qFp8p8d-nBAxyIM9nuxIzi3h5pME6Enu9YNSCLHOKt-MaK1GAIRvOt3B2vvUJhwAuZXnDEazoYm-u2lNCwe8WvDbVgmc7C9z-B_AAotppEtozBarVViUsE_WuSAbzhFQhSQWQwOnSzf0UDlTyRnbEILpBejEMMch8TIiqjwFbfsZ9cw2JEbd84oCReCnKCcizh4WQb-0uRFRq0Tih-yQ1noAzmXnxKsuIs1N4RypFY8G3JEgHWv4EBZaljdlgo2ldci8iJC3azQi8AIZxaTkT2orOGzomO7hJcnuqJVNj0oFPHk1dYrM4R1xKeegNaFDWAkyCLHOKt-MaKn-iTdFyz0UjPSwjZDirYMFLMas3vhF5_ynx36cEDHIhHxiNTJlhLKDVBjQHTBczm-wiA-cYmlqKjHmaJ3VrAszugLhTrvqK5JhGMSfJNMmK3gJBUgg6HU86R0Jr2qe_O7X-DeUECG6X_q-8UK4mlOobeS2Rrtf2TH1npO-KBy_vmaaONJYqfoz4WgJhQlzCihuNdmqt28i9Q81mhQiIkWaMeZondWsCzO6AuFOu-orkmEYxJ8k0yYreAkFSCDodTzpHQmvap787KfHfpwQMciJiNbvvvDcf0ovsZPZxM1VcZkkuiKzKHH3eMfnXYq_XXg49FByySaDPyQwt7i0tAnNiERlWPAu7ChbG93OxVhZrwX7I7aoWe7YewOzAD_hVveW-K5GDF4lGoO3bHBnrep1_By9NGiGHr6C4WePgp55MgixzirfjGipPunAPPubwYuiYysVCuhOrXW6EUXKa3zD5jZphmjS-22njkozpjXhpc99EstewZLLOEXkxjjYtxwRwa3DB3pF9mtnGMITv-LNODBGXF2Bz65imni_9JDr7odHaC6k2ND_MAqHrV0eBQr71CYcALmV6YjW777w3H9PSyjrGK8OfXw7aVC-LOdPGkFIOusNxOTy2APYkgovEPl6CJ_XCqwhp5KkeGNZjqFrwYrL6ELaJy-4IgkMLKUvLmKaeL_0kOvnlqQqdTQ4XvdK9kqv_YrdUgB0PQ4PTqKLD4d9--wn38PBZxoVrBNIArtlxRXGv98zu_T4r9aLjuOOH_NR5eFnMZN_8d8I8AdyCueUDGZsKVgDEhpOXngHo8o0l6idIGlTzGa7woGu-AIIsc4q34xoqf6JN0XLPRSM9LCNkOKtgw3P7c1r_6hac5LlTXhIK5XU4ofskNZ6AM5l58SrLiLNTeEcqRWPBtyfomJYNRUXRnY3ZYKNpXXIvIiQt2s0IvAIbjXZqrdvIvfuSmBtFYvucI0pDdmU2BN3w7mjs7393P-Ft5gGgyM89ejEMMch8TIiqjwFbfsZ9cI5flupvcgABPlR0yQbSK42Qb-0uRFRq0yzIEqm4afju_muI8kfHEEjtgD3iIpXCb3d88lfAUcfrm0jBRWK2FlPtR9TLVpVaAIIsc4q34xoocPFj-y7nGTajCBeKgBFPc4DvuP72xKVJ1tyTTOWCQJ9FK2igz2n5eMuxo9lUPEVKYjW777w3H9HBNRSlUWLyz24_LQf1osYpnBpJuiqVxwKlSU5WAHn_tYJnOwvc_gfy0lr9_O7TJl27oTG0Ix7GwdvPz5Fo4a7p5e-NMjjwlE8oxSegQ37gHLMoeleVBfAM="><input type="hidden" name="__token" value="HlarIpyN5wUBLk0uvq4Jm6T7m9Wf1rNiO1OweBwRVaEQqkX6OPlNFSzKHpXlQXwD"></div></form><form id="formaDoc" action="/ventanilla-aga2-HA/agace/rubroAIC/registrarSolicitud.action" method="POST">
+				
+					<input name="solicitud.idSolicitud" value="202777406" type="hidden"><input name="solicitud.documentosRequeridos[0].id" value="220250373" type="hidden"><input name="solicitud.documentosRequeridos[0].idTipoDocumento" value="9131" type="hidden"><input id="idDocSel0" name="solicitud.documentosRequeridos[0].idDocumentoSeleccionado" value="" type="hidden"><input name="solicitud.documentosRequeridos[0].cvePersona" value="" type="hidden">
+					
+				
+			
+				
+					<input name="solicitud.idSolicitud" value="202777406" type="hidden"><input name="solicitud.documentosRequeridos[1].id" value="220250374" type="hidden"><input name="solicitud.documentosRequeridos[1].idTipoDocumento" value="7253" type="hidden"><input id="idDocSel1" name="solicitud.documentosRequeridos[1].idDocumentoSeleccionado" value="" type="hidden"><input name="solicitud.documentosRequeridos[1].cvePersona" value="" type="hidden">
+					
+				
+			
+				
+					<input name="solicitud.idSolicitud" value="202777406" type="hidden"><input name="solicitud.documentosRequeridos[2].id" value="220250375" type="hidden"><input name="solicitud.documentosRequeridos[2].idTipoDocumento" value="9130" type="hidden"><input id="idDocSel2" name="solicitud.documentosRequeridos[2].idDocumentoSeleccionado" value="" type="hidden"><input name="solicitud.documentosRequeridos[2].cvePersona" value="" type="hidden">
+					
+				
+			
+				
+					<input name="solicitud.idSolicitud" value="202777406" type="hidden"><input name="solicitud.documentosRequeridos[3].id" value="220250376" type="hidden"><input name="solicitud.documentosRequeridos[3].idTipoDocumento" value="7964" type="hidden"><input id="idDocSel3" name="solicitud.documentosRequeridos[3].idDocumentoSeleccionado" value="" type="hidden"><input name="solicitud.documentosRequeridos[3].cvePersona" value="" type="hidden">
+					
+				
+			
+				
+					<input name="solicitud.idSolicitud" value="202777406" type="hidden"><input name="solicitud.documentosRequeridos[4].id" value="220250377" type="hidden"><input name="solicitud.documentosRequeridos[4].idTipoDocumento" value="9051" type="hidden"><input id="idDocSel4" name="solicitud.documentosRequeridos[4].idDocumentoSeleccionado" value="" type="hidden"><input name="solicitud.documentosRequeridos[4].cvePersona" value="" type="hidden">
+					
+				
+			
+				
+					<input name="solicitud.idSolicitud" value="202777406" type="hidden"><input name="solicitud.documentosRequeridos[5].id" value="220250378" type="hidden"><input name="solicitud.documentosRequeridos[5].idTipoDocumento" value="9050" type="hidden"><input id="idDocSel5" name="solicitud.documentosRequeridos[5].idDocumentoSeleccionado" value="" type="hidden"><input name="solicitud.documentosRequeridos[5].cvePersona" value="" type="hidden">
+					
+				
+			
+				
+					<input name="solicitud.idSolicitud" value="202777406" type="hidden"><input name="solicitud.documentosRequeridos[6].id" value="220250379" type="hidden"><input name="solicitud.documentosRequeridos[6].idTipoDocumento" value="9053" type="hidden"><input id="idDocSel6" name="solicitud.documentosRequeridos[6].idDocumentoSeleccionado" value="" type="hidden"><input name="solicitud.documentosRequeridos[6].cvePersona" value="" type="hidden">
+					
+				
+			
+				
+					<input name="solicitud.idSolicitud" value="202777406" type="hidden"><input name="solicitud.documentosRequeridos[7].id" value="220250380" type="hidden"><input name="solicitud.documentosRequeridos[7].idTipoDocumento" value="9125" type="hidden"><input id="idDocSel7" name="solicitud.documentosRequeridos[7].idDocumentoSeleccionado" value="" type="hidden"><input name="solicitud.documentosRequeridos[7].cvePersona" value="" type="hidden">
+					
+				
+			
+				
+					<input name="solicitud.idSolicitud" value="202777406" type="hidden"><input name="solicitud.documentosRequeridos[8].id" value="220250381" type="hidden"><input name="solicitud.documentosRequeridos[8].idTipoDocumento" value="7557" type="hidden"><input id="idDocSel8" name="solicitud.documentosRequeridos[8].idDocumentoSeleccionado" value="" type="hidden"><input name="solicitud.documentosRequeridos[8].cvePersona" value="" type="hidden">
+					
+				
+			
+				
+					<input name="solicitud.idSolicitud" value="202777406" type="hidden"><input name="solicitud.documentosRequeridos[9].id" value="220250382" type="hidden"><input name="solicitud.documentosRequeridos[9].idTipoDocumento" value="9127" type="hidden"><input id="idDocSel9" name="solicitud.documentosRequeridos[9].idDocumentoSeleccionado" value="" type="hidden"><input name="solicitud.documentosRequeridos[9].cvePersona" value="" type="hidden">
+					
+				
+			
+				
+					<input name="solicitud.idSolicitud" value="202777406" type="hidden"><input name="solicitud.documentosRequeridos[10].id" value="220250383" type="hidden"><input name="solicitud.documentosRequeridos[10].idTipoDocumento" value="9128" type="hidden"><input id="idDocSel10" name="solicitud.documentosRequeridos[10].idDocumentoSeleccionado" value="" type="hidden"><input name="solicitud.documentosRequeridos[10].cvePersona" value="" type="hidden">
+					
+				
+			
+				
+					<input name="solicitud.idSolicitud" value="202777406" type="hidden"><input name="solicitud.documentosRequeridos[11].id" value="220250384" type="hidden"><input name="solicitud.documentosRequeridos[11].idTipoDocumento" value="7556" type="hidden"><input id="idDocSel11" name="solicitud.documentosRequeridos[11].idDocumentoSeleccionado" value="" type="hidden"><input name="solicitud.documentosRequeridos[11].cvePersona" value="" type="hidden">
+					
+				
+			
+			<input type="hidden" name="" disabled="disabled" id="guardarArchivosButton">
+		<div style="display: none;"><input type="hidden" name="_sourcePage" value="U8YIcfgYKNZNLhxiDxlyp63zsmqDN9ISYRnY90a11hCSPfsAed2UeGZqJrz2VVmePWeglvtHkF6KEYiyDP-Y2w=="><input name="" value="mx.gob.ventanillaunica.www.agace.rubroAIC.controller.RegistroSolicitudRubroAController@46260de3" type="hidden"><input name="solicitud.importacionSenDTO.lstImportacions[1].porcentaje" value="" type="hidden"><input name="elementosWizard[2].text" value="registro.solicitud.titulo.anexar" type="hidden"><input name="solicitud.datosSolicitudIC.tipoModalidadImmex" value="" type="hidden"><input name="solicitud.importacionDTO.lstImportaciones[0].valor" value="" type="hidden"><input name="manifiestos.manifiesto40.declaracion.clave" value="¿Cuenta con empleados subcontratados?" type="hidden"><input name="nombre.inventario" value="" type="hidden"><input name="mapDeclaracionSolicitud['2023'].acepto" value="0" type="hidden"><input name="solicitud.solicitante.domicilio.numeroExterior" value="1353" type="hidden"><input name="solicitud.importacionDTO.lstImportaciones[0].porcentaje" value="" type="hidden"><input name="solicitud.solicitante.descripcionGiro" value="Siembra, cultivo y cosecha de otros cultivos" type="hidden"><input name="puedeCapturarRepresentanteLegalCG" value="false" type="hidden"><input name="solicitud.listaCatalogoSolicitud[0].catalogo" value="SEPRO.SP21" type="hidden"><input name="elementosWizard[3].estado" value="inactive_" type="hidden"><input name="mapDeclaracionSolicitud['3030'].acepto" value="1" type="hidden"><input name="solicitud.solicitante.razonSocial" value="INTEGRADORA DE URBANIZACIONES SIGNUM S DE RL DE CV" type="hidden"><input name="declaracion.declaracion243.declaracion.clave" value="243" type="hidden"><input name="IMMEX" value="0" type="hidden"><input name="elementosWizard[2].estado" value="active_" type="hidden"><input name="mapDeclaracionSolicitud['712'].acepto" value="1" type="hidden"><input name="mapDeclaracionSolicitud['3029'].acepto" value="0" type="hidden"><input name="solicitud.solicitante.domicilio.pais.clave" value="MEX" type="hidden"><input name="solicitud.importacionSenDTO.lstImportacions[0].valor" value="" type="hidden"><input name="mapDeclaracionSolicitud['249'].acepto" value="1" type="hidden"><input name="solicitud.solicitante.domicilio.calle" value="CAMINO VIEJO" type="hidden"><input name="genericoConstanciasSensibles.idDatosGenericosSol" value="" type="hidden"><input name="genericoRetornos.idDatosGenericosSol" value="" type="hidden"><input name="elementosWizard[2].posicionTmp" value="3" type="hidden"><input name="solicitud.tercerosRelacionados.terceroRepresentanteLegal.apellidoMaterno" value="RUIZ" type="hidden"><input name="mapDeclaracionSolicitud['238'].acepto" value="0" type="hidden"><input name="solicitud.cveRolCapturista" value="PersonaMoral" type="hidden"><input name="declaracion.declaracion238.declaracion.clave" value="238" type="hidden"><input name="solicitud.esNuevo" value="S" type="hidden"><input name="mapDeclaracionSolicitud['702'].acepto" value="0" type="hidden"><input name="mapDeclaracionSolicitud['2022'].acepto" value="0" type="hidden"><input name="solicitud.modalidadIvaIepsAIC.blnPreoperativo" value="false" type="hidden"><input name="solicitud.empleadosPropios.empleados" value="10" type="hidden"><input name="declaracion.declaracion239.declaracion.clave" value="239" type="hidden"><input name="mapDeclaracionSolicitud['72'].acepto" value="0" type="hidden"><input name="solicitud.importacionSenDTO.lstImportacions[2].valor" value="" type="hidden"><input name="solicitud.pago.impPago" value="" type="hidden"><input name="solicitud.importacionDTO.lstImportaciones[1].valor" value="" type="hidden"><input name="solicitud.cveUsuarioCapturista" value="AAL0409235E6" type="hidden"><input name="solicitud.tercerosRelacionados.terceroRepresentanteLegal.telefono" value="618-813-6670" type="hidden"><input name="mapDeclaracionSolicitud['79'].acepto" value="0" type="hidden"><input name="mapDeclaracionSolicitud['703'].acepto" value="1" type="hidden"><input name="mapDeclaracionSolicitud['3027'].acepto" value="0" type="hidden"><input name="solicitud.listaCatalogoSolicitud[1].catalogo" value="" type="hidden"><input name="desc.inversionA" value="" type="hidden"><input name="solicitud.solicitante.domicilio.delegacionMunicipio.nombre" value="AHOME" type="hidden"><input name="solicitud.empleadosPropiosSen[1].bimestre" value="" type="hidden"><input name="manifiestos.manifiesto14.declaracion.clave" value="Indique si se encuentra sujeto a un procedimiento de cancelación" type="hidden"><input name="genericoRetornosSensibles.idDatosGenericosSol" value="" type="hidden"><input name="elementosWizard[3].text" value="registro.solicitud.titulo.wizard" type="hidden"><input name="mapDeclaracionSolicitud['705'].acepto" value="0" type="hidden"><input name="solicitud.pago.cadenaPagoDependencia" value="" type="hidden"><input name="mapDeclaracionSolicitud['88'].acepto" value="0" type="hidden"><input name="declaracion.declaracion240.declaracion.clave" value="240" type="hidden"><input name="manifiestos.manifiesto9.declaracion.clave" value="Indique si cuenta con infraestructura necesaria para realizar la operación del programa IMMEX al proceso industrial o de servicio de conformidad con la modalidad de su programa" type="hidden"><input name="manifiestos.manifiesto9.declaracion.clave" value="Indique si cuenta con infraestructura necesaria para realizar la operación del programa IMMEX al proceso industrial o de servicio de conformidad con la modalidad de su programa" type="hidden"><input name="solicitud.datosSolicitudIC.descripcionImmex" value="" type="hidden"><input name="mapDeclaracionSolicitud['244'].acepto" value="0" type="hidden"><input name="solicitud.empleadosPropiosSen[1].empleados" value="" type="hidden"><input name="elementosWizard[1].text" value="registro.solicitud.titulo.tipoDocto" type="hidden"><input name="solicitud.importacionDTO.lstImportaciones[1].porcentaje" value="" type="hidden"><input name="solicitud.pago.fecPago" value="" type="hidden"><input name="solicitud.solicitante.rfc" value="AAL0409235E6" type="hidden"><input name="solicitud.tercerosRelacionados.terceroRepresentanteLegal.rfc" value="LEQI8101314S7" type="hidden"><input name="declaracion.declaracion244.declaracion.clave" value="244" type="hidden"><input name="mapDeclaracionSolicitud['2033'].acepto" value="1" type="hidden"><input name="solicitud.idProgramaAutorizado" value="" type="hidden"><input name="solicitud.importacionSenDTO.solicituds.totalValor" value="0" type="hidden"><input name="solicitud.pago.claveDeReferencia" value="" type="hidden"><input name="mapDeclaracionSolicitud['252'].acepto" value="1" type="hidden"><input name="solicitud.importacionDTO.lstImportaciones[2].valor" value="" type="hidden"><input name="solicitud.solicitante.cveUsuario" value="AAL0409235E6" type="hidden"><input name="elementoWizard.anteriorTmp" value="cargarTiposDocumentos" type="hidden"><input name="solicitud.solicitante.domicilio.colonia.clave" value="00181210001" type="hidden"><input name="solicitud.importacionSenDTO.lstImportacions[1].valor" value="" type="hidden"><input name="genericoImportaciones.idDatosGenericosSol" value="" type="hidden"><input name="solicitud.pago.banco.clave" value="" type="hidden"><input name="solicitud.solicitante.domicilio.pais.nombre" value="ESTADOS UNIDOS MEXICANOS" type="hidden"><input name="solicitud.pago.referenciaBancaria" value="" type="hidden"><input name="mapDeclaracionSolicitud['3028'].acepto" value="0" type="hidden"><input name="manifiestos.manifiesto11.declaracion.clave" value="Indique si durante los últimos doce meses, el valor de la mercancía transformada y retornada, retornada en su mismo estado, o a la que se le prestó un servicio, durante dicho periodo representa al menos el 80% del valor de las importaciones temporales de insumos durante el mismo periodo. (Declare solo aquellos conceptos que le apliquen)." type="hidden"><input name="manifiestos.manifiesto11.declaracion.clave" value="¿La empresa solicitante ha realizado operaciones al amparo del Programa IMMEX en al menos los 12 meses previos a la solicitud?" type="hidden"><input name="manifiestos.manifiesto11.declaracion.clave" value="Señale si las empresas proveedoras de personal subcontratado en los términos y condiciones que establezcan los artículos 15-A al 15-D de la Ley Federal de Trabajo, se encuentran al corriente en el cumplimiento de sus obligaciones fiscales." type="hidden"><input name="solicitud.tercerosRelacionados.terceroRepresentanteLegal.correoElectronico" value="vucem2.5@hotmail.com" type="hidden"><input name="elementosWizard[1].posicionTmp" value="2" type="hidden"><input name="solicitud.pago.llaveDePago" value="" type="hidden"><input name="declaracion.declaracion704.declaracion.clave" value="704" type="hidden"><input name="manifiestos.manifiesto15.declaracion.clave" value="Indique si ha cumplido adecuadamente con los requisitos de las reglas 4.5.30 y 4.5.32." type="hidden"><input name="lugarR.inventario" value="" type="hidden"><input name="solicitud.empleadosPropiosSen[2].bimestre" value="" type="hidden"><input name="manifiestos.manifiesto13.declaracion.clave" value="Indique si los socios y accionistas, representante legal, administrador único o miembros del consejo de administración de la empresa declararon ingresos acumulables en la declaración anual de los dos ejercicios previos ante la autoridad fiscal para los fines del ISR" type="hidden"><input name="mapDeclaracionSolicitud['707'].acepto" value="0" type="hidden"><input name="elementosWizard[3].posicionTmp" value="4" type="hidden"><input name="maxTipoDocs" value="50" type="hidden"><input name="manifiestos.manifiesto12.declaracion.clave" value="Señale si la empresa cuenta con empleados propios" type="hidden"><input name="existProveedores" value="1" type="hidden"><input name="solicitud.solicitante.domicilio.entidadFederativa.nombre" value="SINALOA" type="hidden"><input name="solicitud.solicitante.domicilio.colonia.nombre" value="MIGUEL HIDALGO" type="hidden"><input name="solicitud.empleadosPropios.bimestre" value="3" type="hidden"><input name="solicitud.catseleccionados" value="" type="hidden"><input name="mapDeclaracionSolicitud['706'].acepto" value="0" type="hidden"><input name="solicitud.tercerosRelacionados.terceroRepresentanteLegal.apellidoPaterno" value="BARRAGAN" type="hidden"><input name="solicitud.solicitante.domicilio.numeroInterior" value="" type="hidden"><input name="mapDeclaracionSolicitud['2034'].acepto" value="0" type="hidden"><input name="mapDeclaracionSolicitud['2020'].acepto" value="0" type="hidden"><input name="solicitud.solicitante.domicilio.delegacionMunicipio.clave" value="25001" type="hidden"><input name="elementosWizard[0].text" value="registro.solicitud.titulo.capturarSolciitud" type="hidden"><input name="mapDeclaracionSolicitud['708'].acepto" value="0" type="hidden"><input name="mapDeclaracionSolicitud['253'].acepto" value="1" type="hidden"><input name="mapDeclaracionSolicitud['2021'].acepto" value="0" type="hidden"><input name="mapDeclaracionSolicitud['190'].acepto" value="1" type="hidden"><input name="depositoFiscalEnabled" value="" type="hidden"><input name="solicitud.empleadosPropiosSen[2].empleados" value="" type="hidden"><input name="mapDeclaracionSolicitud['199'].acepto" value="1" type="hidden"><input name="mapDeclaracionSolicitud['243'].acepto" value="1" type="hidden"><input name="solicitud.solicitante.domicilio.entidadFederativa.clave" value="SIN" type="hidden"><input name="tipo.inversionA" value="" type="hidden"><input name="mapDeclaracionSolicitud['89'].acepto" value="1" type="hidden"><input name="genericoTransferenciasVirtuales.idDatosGenericosSol" value="" type="hidden"><input name="tercerosRelacionados.terceroRepresentanteLegal.idPersonaSolicitud" value="" type="hidden"><input name="solicitud.importacionDTO.solicitudm.monto" value="" type="hidden"><input name="elementosWizard[0].estado" value="completed_" type="hidden"><input name="solicitud.tercerosRelacionados.terceroRepresentanteLegal.nombre" value="MISAEL" type="hidden"><input name="rfeEnabled" value="true" type="hidden"><input name="solicitud.datosSolicitudIC.numeroImmex" value="" type="hidden"><input name="solicitud.importacionSenDTO.lstImportacions[0].porcentaje" value="" type="hidden"><input name="solicitud.empleadosPropiosSen[0].empleados" value="" type="hidden"><input name="solicitud.importacionDTO.lstImportaciones[2].porcentaje" value="" type="hidden"><input name="mapDeclaracionSolicitud['240'].acepto" value="0" type="hidden"><input name="mapDeclaracionSolicitud['191'].acepto" value="1" type="hidden"><input name="solicitud.importacionSenDTO.solicituds.totalPorcentaje" value="0" type="hidden"><input name="declaracion.declaracion237.declaracion.clave" value="237" type="hidden"><input name="elementosWizard[1].estado" value="completed_" type="hidden"><input name="elementosWizard[0].posicionTmp" value="1" type="hidden"><input name="cantidad.inversionA" value="" type="hidden"><input name="solicitud.solicitante.telefono" value="55-98764532" type="hidden"><input name="registrosProveedores" value="1" type="hidden"><input name="mapDeclaracionSolicitud['239'].acepto" value="1" type="hidden"><input name="mapDeclaracionSolicitud['237'].acepto" value="0" type="hidden"><input name="solicitud.importacionSenDTO.lstImportacions[2].porcentaje" value="" type="hidden"><input name="solicitud.solicitante.domicilio.localidad.clave" value="00181210008" type="hidden"><input name="recintoFiscalEnabled" value="" type="hidden"><input name="solicitud.solicitante.domicilio.localidad.nombre" value="LOS MOCHIS" type="hidden"><input name="solicitud.importacionDTO.solicitudm.totalValor" value="0" type="hidden"><input name="solicitud.importacionSenDTO.solicituds.monto" value="" type="hidden"><input name="rfcTercero" value="LEQI8101314S7" type="hidden"><input name="solicitud.solicitante.correoElectronico" value="vucem2.5@hotmail.com" type="hidden"><input name="solicitud.empleadosPropiosSen[0].bimestre" value="" type="hidden"><input name="solicitud.solicitante.domicilio.codigoPostal" value="81210" type="hidden"><input name="solicitud.importacionDTO.solicitudm.totalPorcentaje" value="0" type="hidden"><input type="hidden" name="__fp" value="iKqo2SZQG5s7DZh3bWq72NimqeUNaxDOs9CiAVIb3aepZGnI-0-b5EiQsrdHXduuu1S4Z7C1YxQ_nDvkL8DTlpiNbvvvDcf0ovsZPZxM1VcZkkuiKzKHH3eMfnXYq_XXU2-OMVa-SXmbCMfdd9L4tXaKIKE1XZQD1ezkR8oI39h8M4PUNDnwGZyaDqSyJRXlBpQMsiSi2p9E2U99W_l0bGHWVQL318kQSFt8dExYW0cQv2o7xLOA-GpxwmovFPQqPMqiq5ysdlP_sscpu12r1y3STD8Lzrr_ECt5MGVJDy2Z-Vad2fZ7-O3RUOLrOzig2TCdr1GaNcjxTO1VpKf8oJ56A1oUNYCTIIsc4q34xoq8PzcRKO6Bzx9NDuBlAPQ2ICyL7QhbW-hPzjyy9Tp9U8u8cXwQGyvNDptNx1UYswSoSjnddfv9upiNbvvvDcf0HZF-9WlaUL0l6icfEM1yzeh0doLqTY0Paoa-Chj_k6VeWgZjuAO62SCLHOKt-MaKn-iTdFyz0UjPSwjZDirYMAykEpZ2d6bQFc0c2eNwY57mXnxKsuIs1Du_T4r9aLjuOOH_NR5eFnMI1Z4Mdf3LTgMKqXO437PARHAo1r01cWUvBTFclY8G4gdwmpR3kRbqpk2_-eLIGxZrSO7f3v69E9iERlWPAu7CSUwApuINghq4qh_W3uTISkVycYrC9g8AvouTI6y1oNI5gpZ9IHEDmIbjXZqrdvIvOnFaEgLmYNscsUYudN2axDzKoqucrHZT_7LHKbtdq9cg82BtHyxb6lncYB6b3XoTQm0N5U55lcHER2dcuIFjQgfSPFiaxpKj0QtYA6jB0bzCWx2IS9oy3Q7M4tfcUgSHhuNdmqt28i9-5KYG0Vi-5wjSkN2ZTYE3x6MundW3GVYKoXGdf0B2cQRxB1SaxcJkviA7eI-hUixdWcPTMNaIr4GVCuMZCcnnUOp9jaDmJGBmCj7AMMDyQt6inUnlm4qIA-Rdy6VjRVYzY9XIUKIt1lvPAieh5IoQiAq3yizsxfEGteqMC1tQ2RsyInuLyuaz9hlu28V9-x7OPbYX-Br5yj5jZphmjS-2a32XavB5ty8Qv2o7xLOA-GpxwmovFPQqcAamqGOJWVjL-blEpKYYu-kIi5KkvDApG3lqKWCgJV2YjW777w3H9KL7GT2cTNVXGZJLoisyhx93jH512Kv118UcpD7V5xUChuNdmqt28i8xTAWy-vfnKhwjDFOpV5S4huNdmqt28i9-5KYG0Vi-5wjSkN2ZTYE33qnMPZnq_V4KoXGdf0B2cQRxB1SaxcJkviA7eI-hUixdWcPTMNaIr8R3dvxuaDnmShXWmfVHxuqmUKnNVJvSz4LZ6YcM4DnVNaMUSJfWpYp8hRwCmzQmskRHrG3C6DPBWjTtvuOLnrFbvuO_4t1GDDPZ7sSM4t4eaTBOhJ7vWDUgixzirfjGisXmf3pKIC5RnnoDWhQ1gJMgixzirfjGip_ok3Rcs9FIz0sI2Q4q2DBJWF__rRKTO76Xtnw9MLRONpTIJowPY7tdWcPTMNaIr7VtCRU6klOXENIPeJQbArVQM4rLa76C6-NjlKvy9wH5dcmLMZlRt2qJOSOk9g-iuPtR9TLVpVaAIIsc4q34xoqT7pwDz7m8GLomMrFQroTqIcAMFPzyQQqoraMLYorQ7mCZzsL3P4H8HmnQdJ_rpX8x9RqZNqLTcHtIazqPL0qFeQYx85vBOBfmXnxKsuIs1Bpdyl3GeTNW5q3YD1wSM887DZh3bWq72NimqeUNaxDOs9CiAVIb3aduI-Otom4SYFHxKQcVRfxs6UEW08fX9mVR1ZSsREvk0Rmo_0lESBc6bgkY0N86HQX31enZARnwODaUyCaMD2O7s3LlBi0EXmFSadyZ1y4i1CCLHOKt-MaKRjHZvd4xobAjkTfkaIADlxqNeo-9L473OulQihso0JJOKH7JDWegDOZefEqy4izU3hHKkVjwbck4ymZkH0T4NGN2WCjaV1yLyIkLdrNCLwBqjCkiDaTsD_ARJvRqbsMwc7m8emJg8YfLLsaRzYQ70T-FN7iyK09_WZ7UBUTu9ksjdktmn9G6lDOtuQmafmRgB2IIxYXQvxtc99EstewZLJZLyWTZB66jmI1u--8Nx_Si-xk9nEzVVxmSS6IrMocfd4x-ddir9dc3LQ_wvFjCpSCLHOKt-MaKk-6cA8-5vBi6JjKxUK6E6iHADBT88kEKPmNmmGaNL7aLqL-AXZLtJ3ozyiFUJN-wbPiIWiRyEZ05gomR_C6sqXnYph6-qyBoI-QcHPFH-NsMAR4JdNGoklHVlKxES-TRGaj_SURIFzpuCRjQ3zodBfZYTAS_3l6WbkATxyTCsWpUbcST-gn1tYrEbkpHRyYiIZxaTkT2orOGzomO7hJcnuqJVNj0oFPHW85cgMJvzGkBWHmhlbGJgobjXZqrdvIvfuSmBtFYvucI0pDdmU2BN53oaLRhxsLvrK37ekfBeHI7DZh3bWq72D2xV0ASKoLZS7SXEtSsPZo-8C-6XqAUw_YgWpMggZLHNeUUA8KE9OKYjW777w3H9KL7GT2cTNVXGZJLoisyhx93jH512Kv119KTLbYsv-kLmwjH3XfS-LV2iiChNV2UA0XCUjzYnXeMLwUxXJWPBuIHcJqUd5EW6hjy3HmNj5B7bFVEIv1lZkpdWcPTMNaIr7VtCRU6klOXENIPeJQbArUWuogJqrVo6mRWHmyP3c2uyzIEqm4afju_muI8kfHEEjtgD3iIpXCbM-lQCd488AwUdQg5nISKw3vQtFzQ7CRAhbG93OxVhZrwX7I7aoWe7YewOzAD_hVveW-K5GDF4lGoO3bHBnrep59CFDqczocJYJnOwvc_gfwpfcGLOgLGAjwKBu_auFkIWZ7UBUTu9ktejEMMch8TIiqjwFbfsZ9cjY3DaEfysOWzMdc3ClQFhM4-SpD0QQrmI3ZLZp_RupQzrbkJmn5kYDyPs6QMT1M7LwUxXJWPBuI2I4nmTu7pV2CZzsL3P4H8HmnQdJ_rpX8x9RqZNqLTcHtIazqPL0qFk609yP66gq_zq340ymTwEIbjXZqrdvIvv2GEx00m5JjP60bKh4NZU780n1mqhNWHjHQmWxsEVaBr_QPwO9woa9DZ0yF20nnS5imni_9JDr45gpZ9IHEDmFMuFNm_0Js-AXKqA41yR6DlQWNSon2XcCrC4Ejo76__3kYLRpt0-catgYClcPrXJnSvZKr_2K3Vb4JqvA1SGgKZ-Vad2fZ7-O3RUOLrOzig2TCdr1GaNcikjdmJNVa82c4-SpD0QQrm6W79NYfxUeudn5as7MskRirC4Ejo76__3kYLRpt0-cYpvws_KPLe3HSvZKr_2K3VIAdD0OD06iiJbtfldpA2VnWCXoM4JoOxmI1u--8Nx_RwTUUpVFi8s-c9ZugycY0bltzFfeQab5IfWaQESXwtJsp8d-nBAxyImI1u--8Nx_RwTUUpVFi8s-c9ZugycY0bltzFfeQab5IN8oN5ZhFBamMu_cIWKbyriIuUvI1_RRYRCnm2cmGHEm9ygnT3jBu2YwjyjsjAaIvwWBoQ29BbqCCLHOKt-MaKvzhuRqStrVE3MzQyqfj_4XRd8GGT4r3KC7BuoBmO48thMSb78XOpnNvYT-rS53_-9n5SQlb_43BTD0B4c-N9FzPZ7sSM4t4eaTBOhJ7vWDUgixzirfjGinygyvFi6cMLAVh5oZWxiYKG412aq3byL3CNMPeT2NJ3D-78SF36EtOnO1-KUBm-M5wb8obtDe6iyESWkWGb8nwhnFpORPais4bOiY7uElye6olU2PSgU8fS7xLLo6Ji8QFYeaGVsYmCIZxaTkT2orOGzomO7hJcnuqJVNj0oFPHLTqWl7H5_gwXl-iB4MK0PJn5Vp3Z9nv47dFQ4us7OKDZMJ2vUZo1yFMrzd9lXjCG-g-76hzdrHE7DZh3bWq72NimqeUNaxDOs9CiAVIb3aduI-Otom4SYMJLBNwDxvAHXZBb-0HVCz2YjW777w3H9KL7GT2cTNVXGZJLoisyhx93jH512Kv112VL-76Y0AONz4CNB727jGCZ-Vad2fZ7-O3RUOLrOzig2TCdr1GaNcjT1pr35s9fMlx8TgE5JXhoCVe_CsUYguPJ2OdulFFHdIVBjMtqXD-4yzIEqm4afju_muI8kfHEEjtgD3iIpXCbU3vLxnTyihDr29S93jMXz5MPkq529OFAZd3vJeUHJtg7DZh3bWq72NimqeUNaxDOs9CiAVIb3acpx65riLanQtXn4KiRB7_jUdWUrERL5NEZqP9JREgXOm4JGNDfOh0FfGfZdWtU7Zw2lMgmjA9ju7Ny5QYtBF5hUmncmdcuItQgixzirfjGip_ok3Rcs9FIz0sI2Q4q2DDc_tzWv_qFpwMFF0cX2Ls4FAhmw6tEG9cd2bi5EOatJf-yxym7XavXO4DCHMCfMZI12CK4ssTV9_m4WQud4b2OaK9_oyBhEteMP8Z1UWb-KOSIkfMoSTBcbxAVnwM-qfwyrfHdzitjM5oDUQxXYR7Y9QVRRG_tYj4pJVG-iN5QM5qfGKY3wA-RUZvkO3zG66tsVUQi_WVmStC5cWZJZKtefYjbyxedFD0gixzirfjGip_ok3Rcs9FIz0sI2Q4q2DBSzGrN74RefwMFF0cX2Ls4FAhmw6tEG9dOKH7JDWegDPpbA5aXZ7AfNyfy2j_O-pWVOHzzRvLoUy1dNrNo_le_Tih-yQ1noAzmXnxKsuIs1N4RypFY8G3J-Ml0JXf7ILdjdlgo2ldci8iJC3azQi8AhuNdmqt28i86cVoSAuZg25gLt1Coh4kNd_yKmdtKkN0N72uDLwP1_SIFI_xNPgRteSpHhjWY6haYjW777w3H9KL7GT2cTNVXGZJLoisyhx93jH512Kv1199JSWAUr84hIIsc4q34xoqf6JN0XLPRSM9LCNkOKtgwDKQSlnZ3ptA5LlTXhIK5XU4ofskNZ6AM5l58SrLiLNTeEcqRWPBtyZlvlNFGdtQ4BGTQqtd0SImC2emHDOA51bVtCRU6klOXENIPeJQbArWS4Rn-8ACzb4wkWK8rHYht-aQ_yY9-tNZ1gl6DOCaDsTPZ7sSM4t4eaTBOhJ7vWDUgixzirfjGigMusss6bPmVAVh5oZWxiYKG412aq3byLzpxWhIC5mDbHLFGLnTdmsQ8yqKrnKx2U_-yxym7XavXU91oztitLntM3Vs8zrsnRxEKebZyYYcStW0JFTqSU5cQ0g94lBsCtVAzistrvoLrnIFdQVagdKJNYw4nV6vD5K-SfwhGvfVHbDLOG6dDLufCjExpa6Sp9WCZzsL3P4H8brrJ1V1VhXNbR1U7swKS_OA77j-9sSlSUfinGggEVQlGH_71LiB7LWCZzsL3P4H83y9C3wFDuD8iw8JfYVcE_5iNbvvvDcf0qKPQ5wZajzNaVE8lN6yslhGvnPW180N2UZzUrZcB-aFrsVHt9SNkAYWxvdzsVYWa8F-yO2qFnu2kFIOusNxOT7-OndXWRsKll6CJ_XCqwhp5KkeGNZjqFpiNbvvvDcf09LKOsYrw59fDtpUL4s508dDp5JKF6C1TFK_V1VveZ-Ct4VWon7IGLbGu_9inBmUfvjl7xv0cFIhsuKG8w2R0uAuB9ku3u5chLRURIeVo0rBOKH7JDWegDOZefEqy4izU3hHKkVjwbcl-ftuYD8L63WN2WCjaV1yLyIkLdrNCLwBr_QPwO9woayrY9-wbrynh2KxJOYlrC2pK7jeBnclEVNhesLguO6nJAr6FvRFLjVhWQVsx1jJHPkJ46tbP2sAMIIsc4q34xoq8PzcRKO6Bz8JfyD3HOofAD1NtK598S3uZi2ttb8ZUQiYMkqbuQwfxIIsc4q34xoocPFj-y7nGTR5zUscuow75eW-K5GDF4lH82_WP74kekFFs7kGKtab7GoKmp3JzY2e8O6UKVAIcs2XEoosUL1R-YTEm-_FzqZyfTO83BYYcOyLdtOm2JpENXPfRLLXsGSyzhF5MY42LcS30VlVPf5VRbFVEIv1lZkpdWcPTMNaIrzWjFEiX1qWKfIUcAps0JrJER6xtwugzwaOcru-t49gW5l58SrLiLNQaXcpdxnkzVuat2A9cEjPPOw2Yd21qu9jYpqnlDWsQzrPQogFSG92nbiPjraJuEmDV5-CokQe_40lMAKbiDYIauKof1t7kyEpY3eCdldEq5ZLvl24X8OmzLwUxXJWPBuKpKQ5qfk011Zw5XFfn2whOCiIJ-uPS-tuYiSlS1QLQQ5alaEo1dh0OKSVRvojeUDOanximN8APkXwuMC1fRBdWBOQUCUjoC4TYhEZVjwLuwklMAKbiDYIauKof1t7kyEpFcnGKwvYPANDk1rCoMhx1oLAwPA-QECNc99EstewZLLOEXkxjjYtx6_DS-DPBUEVmtnGMITv-LDrwHe9yIPnIoCtFSQmQd4Mtp9Sn9nJxDsJbHYhL2jLdDszi19xSBIenMFUwGTabKNQd7K5IW-Mf5Y-ufltsxuuKzyqUXZgzPIbjXZqrdvIvPiwEHjkF7SNFF6r5XHVyekLK7c9IGIVeLwUxXJWPBuIHcJqUd5EW6rfNW33F09LXbFVEIv1lZkpdWcPTMNaIr07TZJFWs1uvnj8KvvUiEBdc99EstewZLDh45TplXaLTxERK3Agjhs5K7jeBnclEVNhesLguO6nJe9C0XNDsJED5ApmNUnrggOkQVfFOYNOXusMlpzZNi-ijYaNz3mgqhVZ1VMnZEayK-4i9ZgmTyWlc99EstewZLLOEXkxjjYtxl2NpksCyfelsVUQi_WVmSvuIvWYJk8lpXPfRLLXsGSyzhF5MY42LcSNsMb2SHONtZrZxjCE7_izTgwRlxdgc-uYpp4v_SQ6-6HR2gupNjQ8lRvavhefp4AFYeaGVsYmCaowpIg2k7A_wESb0am7DMHO5vHpiYPGHHqRB3dz_mK8_hTe4sitPf2Xd7yXlBybYOw2Yd21qu9g9sVdAEiqC2chmzgSJegm7y_m5RKSmGLtgX2UP-GV6tp9CFDqczocJYJnOwvc_gfx4FmEeTAtYLzXsvsx7AtgZSWPphe8rH4u_OG5GpK2tUSmmU5-iumTCxQ8NITJTHN9OIvt7f5mGPAz6o7YBqrzyTih-yQ1noAzmXnxKsuIs1N4RypFY8G3J5n_IquFMfkgEZNCq13RIiZggprptvi17XPfRLLXsGSyzhF5MY42LcXRn9rbN-KcBZrZxjCE7_ixgmc7C9z-B_DPJf9jfnQhUZJ6CaLprVi91mlt8LhAg45E35lK-7aCxD9XqeTU9GbchnFpORPais4bOiY7uElye6olU2PSgU8diUP5F79GNFAFYeaGVsYmChuNdmqt28i9-5KYG0Vi-5wjSkN2ZTYE3fDuaOzvf3c8KosGahzgMnRkwjZyF4Pq1IIsc4q34xoqf6JN0XLPRSM9LCNkOKtgwSVhf_60SkzuV8zRfBWqkyTvyrgOxyheLSoXCVzD0S7beRgtGm3T5xsvqskeGsbzgpCMZLP__RBpqjCkiDaTsDy0j8992DAJo01N4ym_qOQR1WT2Y12vAsDrrkXJWwF3b3Z2h525CwybZHMQ6sOvYMYpvNYEnlXikO79Piv1ouO444f81Hl4Wc0gIcNalFYcxKQvXcsU5YaA1oxRIl9alinyFHAKbNCayREesbcLoM8Hw8RUL4ny-RSlRnUz2SjaS04MEZcXYHPrmKaeL_0kOvuh0doLqTY0P0KKh8DZglkCvvUJhwAuZXjPZ7sSM4t4eaTBOhJ7vWDUgixzirfjGito25U80O7ECnnoDWhQ1gJMgixzirfjGip_ok3Rcs9FIz0sI2Q4q2DAcYM4KSt_mTgMFF0cX2Ls4FAhmw6tEG9dOKH7JDWegDPpbA5aXZ7AfNyfy2j_O-pXaq4B0595S2T2WrluF4tSc04MEZcXYHPrmKaeL_0kOvuh0doLqTY0PADNOL_oylaOvvUJhwAuZXpiNbvvvDcf09LKOsYrw59dYiYDPIfZgEPHeBGAcCw36anHCai8U9CpVQUHHmzIdaOjghiY8hxivYJnOwvc_gfweadB0n-ulfzH1Gpk2otNwe0hrOo8vSoV_ik-jnojGgW0d-gTSVcWN7wNkcBqjdJg7DZh3bWq72NimqeUNaxDOs9CiAVIb3acf5my9ScAEW0iQsrdHXduuu1S4Z7C1YxQ_nDvkL8DTlpiNbvvvDcf0cE1FKVRYvLMfAGRHQUHnxpp0HVHMz6GUWLZPdJvEaFSknlwuy5doofPx1jAtc_wg5uCK5FazWt_IlIPHL2JIilN7IIy6E6clDHRPwy-GXt8VXw0B3xSaP8fbfgcL6dBvXPfRLLXsGSyDjT-UWLHBFOYpp4v_SQ6-OYKWfSBxA5iG412aq3byLzF9mFSDcv2MwOf4Tsc6Q5wWsD3VMGe2-4bjXZqrdvIv0lt3I92PvpApKHRkq6sfXBN7znD-01EdYJnOwvc_gfweadB0n-ulfzH1Gpk2otNwe0hrOo8vSoUvy_mWd-kxhkVNQ8fd3YGDeuQ8t4MZB2N5lLZlB1ddKB3ZuLkQ5q0l_7LHKbtdq9df4B8rV8EhJvvJqJ1FgCjCaQt35GGAo0kbeWopYKAlXYmXcBCDX4v6gYwLOcrP-2K6GY38WpTYKKPHmnA9RgdrhIJ9gLhOFR5qccJqLxT0KtELWAOowdG8wlsdiEvaMt0OzOLX3FIEh4bjXZqrdvIvcI0w95PY0ncP7vxIXfoS06c7X4pQGb4zQ-aKq7XW2lxWez99lbicM_W2OGnLPiO9sWc_gyuAKRojQoRlWwOIl0Hdq6aGFmhhhuNdmqt28i9-5KYG0Vi-5wjSkN2ZTYE33qnMPZnq_V41nNN9p45GxoZ-AP0FbqZuOw2Yd21qu9jp2Ga7q9gEZVZvg6LVtjiCQf3DTBe8CLCzBLCZ1OQA4sYifDeDs6gZqfWRVDcI26BnBpJuiqVxwKlSU5WAHn_tYJnOwvc_gfweadB0n-ulfzH1Gpk2otNwe0hrOo8vSoVv0jNIpwWQLqcwVTAZNpso1B3srkhb4x9XG7wfiHWUcorPKpRdmDM8aowpIg2k7A_wESb0am7DMDzVpuga-d0EvkFRjVkFmf8_hTe4sitPf2Xd7yXlBybYOw2Yd21qu9jYpqnlDWsQzrPQogFSG92nehUQC0YiWV7V5-CokQe_48QpZ8rNJslhDlTt9_W4jj-mGrYG9Os2CIewS9_SZL_A8f874IbBnKiw-HffvsJ9_Aempi5n3b7kOFEJec-A2UkoIpg5aXOHbSCLHOKt-MaKk-6cA8-5vBi6JjKxUK6E6nurOVlVlA7ka7FR7fUjZAFR1ZSsREvk0Rmo_0lESBc6bgkY0N86HQXIwIHMP3NIqyaiJ2QPTzXoVLmU2GEsZbuZ-Vad2fZ7-O3RUOLrOzig2TCdr1GaNchxRnsG6UVul556A1oUNYCTIIsc4q34xoqf6JN0XLPRSM9LCNkOKtgwdiYkiFLrDvwVzRzZ43BjnuZefEqy4izUYJnOwvc_gfy0lr9_O7TJl27oTG0Ix7GwdvPz5Fo4a7rXHo26_tp_HrziyKqRjExPhrMYU-bgufvawaC55eaV-h9Z6Tvigcv75mmjjSWKn6NwlL6Zkgx7YV6MQwxyHxMiKqPAVt-xn1wjl-W6m9yAABEY7HXk9fw--g-76hzdrHE7DZh3bWq72D5jZphmjS-23ooInhTeE5wFWlE_1kIfFPYZbtvFffse04MEZcXYHPrmKaeL_0kOvuh0doLqTY0P40J-5xsOw1avvUJhwAuZXpiNbvvvDcf0ovsZPZxM1VcZkkuiKzKHH3eMfnXYq_XXWtph6Nv-amnyQwt7i0tAnAu9sgUFGT6oLwUxXJWPBuIHcJqUd5EW6g3hPRiqcGpHbFVEIv1lZkooNroCYIq0rkvKce16hJDT7wwtWMcpsfU17L7MewLYGUlj6YXvKx-LvzhuRqStrVEpplOforpkwsUPDSEyUxzfJgTKPMCM1ryC81ZPG1nY-vmQVQU21KyYsPh3377CffznCt-VwQ9kwyu2XFFca_3zYJnOwvc_gfx4FmEeTAtYLzXsvsx7AtgZSWPphe8rH4u_OG5GpK2tUSmmU5-iumTCxQ8NITJTHN_DCthQBCvxpREKebZyYYcSNaMUSJfWpYp8hRwCmzQmskRHrG3C6DPB1zU9xw4sCjZtHfoE0lXFje8DZHAao3SYOw2Yd21qu9g9sVdAEiqC2Uu0lxLUrD2a8d4EYBwLDfpqccJqLxT0Kq22AhbHhMyYeSpHhjWY6haYjW777w3H9Kij0OcGWo8zWlRPJTesrJYRr5z1tfNDdkTiKgkxwdJzSdSHzCNaAIMpJVG-iN5QM5qfGKY3wA-RwfBvTMl3Aio_2lIuwGxiTAu9sgUFGT6oLwUxXJWPBuIHcJqUd5EW6nGQ6XDICqZMbFVEIv1lZkpdWcPTMNaIrxC_ajvEs4D4anHCai8U9CqKuq_g0dTLnSCLHOKt-MaK15HCyY-d5K9M3Vs8zrsnR-iiR8ZugwzMWOtoGs56jE4vBTFclY8G4n6fQTU6_hhUXPfRLLXsGSyWS8lk2Qeuo4mXcBCDX4v6osKEcV2sDRkj9Lqbc_fXGlg3S_hVLYj_bLihvMNkdLh_WFcEuFmbi4i2FAaRLIbAzUwOTtxelc7M7ISeiQY9PONQVHELY2bvmI1u--8Nx_Si-xk9nEzVVxmSS6IrMocfd4x-ddir9dcTFJ2FavfFkyCLHOKt-MaKn-iTdFyz0UjPSwjZDirYMFLMas3vhF5_Fc0c2eNwY57mXnxKsuIs1GCZzsL3P4H8HmnQdJ_rpX8x9RqZNqLTcHtIazqPL0qFPq5Qx6CAsWghnFpORPais4bOiY7uElye6olU2PSgU8ew6xAsqO-Vbp56A1oUNYCTIIsc4q34xoq8PzcRKO6Bz8JfyD3HOofARgxXxYUnOYn_1OeDfoBqYcp8d-nBAxyImI1u--8Nx_T0so6xivDn18O2lQviznTxpBSDrrDcTk8tgD2JIKLxD9TvQdsEdG-vMwaTKnFwwJxdWcPTMNaIr7VtCRU6klOXENIPeJQbArVtK2y1CubDxKUis3FYe-4Sm1GC6oRfoDBJTACm4g2CGriqH9be5MhKRXJxisL2DwDFxIb4FKqzABXi1btINpt1WgIA0_gM8vo="><input type="hidden" name="__token" value="HlarIpyN5wUBLk0uvq4Jm6T7m9Wf1rNiO1OweBwRVaEQqkX6OPlNFSzKHpXlQXwD"></div></form>
+
+
+
+
+
+
+
+
+		<script type="text/javascript">
+			function selectReset(selector){
+	            if ($(selector).val() != "-1"){
+	                $(selector).removeClass("error");
+	            }
+	        }
+			
+            function verDocumento(idDocumento) {
+                idDocumento = $('#idDoc'+ idDocumento ).val();          
+                if(idDocumento != -1) {
+                    window.open('/ventanilla-aga2-HA/consulta/consulta.action?showBDoc=&idDocumento=' + idDocumento,'Visor',"status=0,location=0,toolbar=0,resizable=0,scrollbars=0,width=820,height=720,left=100,top=1,screenX=100,screenY=1");
+                }
+            }
+            var documentos = new AdminDocumentos( document.documentosRequeridos );
+            
+                documentos.addFile( new Mapa('220250373',
+                        'solicitud.documentosRequeridos[0].idDocumentoSeleccionado',
+                        document.documentosRequeridos.elements["nombre_0"].value,                       
+                        '9131' ) );
+            
+                documentos.addFile( new Mapa('220250374',
+                        'solicitud.documentosRequeridos[1].idDocumentoSeleccionado',
+                        document.documentosRequeridos.elements["nombre_1"].value,                       
+                        '7253' ) );
+            
+                documentos.addFile( new Mapa('220250375',
+                        'solicitud.documentosRequeridos[2].idDocumentoSeleccionado',
+                        document.documentosRequeridos.elements["nombre_2"].value,                       
+                        '9130' ) );
+            
+                documentos.addFile( new Mapa('220250376',
+                        'solicitud.documentosRequeridos[3].idDocumentoSeleccionado',
+                        document.documentosRequeridos.elements["nombre_3"].value,                       
+                        '7964' ) );
+            
+                documentos.addFile( new Mapa('220250377',
+                        'solicitud.documentosRequeridos[4].idDocumentoSeleccionado',
+                        document.documentosRequeridos.elements["nombre_4"].value,                       
+                        '9051' ) );
+            
+                documentos.addFile( new Mapa('220250378',
+                        'solicitud.documentosRequeridos[5].idDocumentoSeleccionado',
+                        document.documentosRequeridos.elements["nombre_5"].value,                       
+                        '9050' ) );
+            
+                documentos.addFile( new Mapa('220250379',
+                        'solicitud.documentosRequeridos[6].idDocumentoSeleccionado',
+                        document.documentosRequeridos.elements["nombre_6"].value,                       
+                        '9053' ) );
+            
+                documentos.addFile( new Mapa('220250380',
+                        'solicitud.documentosRequeridos[7].idDocumentoSeleccionado',
+                        document.documentosRequeridos.elements["nombre_7"].value,                       
+                        '9125' ) );
+            
+                documentos.addFile( new Mapa('220250381',
+                        'solicitud.documentosRequeridos[8].idDocumentoSeleccionado',
+                        document.documentosRequeridos.elements["nombre_8"].value,                       
+                        '7557' ) );
+            
+                documentos.addFile( new Mapa('220250382',
+                        'solicitud.documentosRequeridos[9].idDocumentoSeleccionado',
+                        document.documentosRequeridos.elements["nombre_9"].value,                       
+                        '9127' ) );
+            
+                documentos.addFile( new Mapa('220250383',
+                        'solicitud.documentosRequeridos[10].idDocumentoSeleccionado',
+                        document.documentosRequeridos.elements["nombre_10"].value,                       
+                        '9128' ) );
+            
+                documentos.addFile( new Mapa('220250384',
+                        'solicitud.documentosRequeridos[11].idDocumentoSeleccionado',
+                        document.documentosRequeridos.elements["nombre_11"].value,                       
+                        '7556' ) );
+                        
+        </script>
+		
+		<iframe class="invisible" id="iframeOculto" name="iframeOculto"></iframe>
+	
+                    </div>
+                </div>
+            </div>            
+            <div id="footer">
+<p>Av. Hidalgo No. 77, Col. Guerrero, Deleg. Cuauhtémoc, C.P. 06300, México, D.F. <br> Call Center: 800 2863133 desde Mexico &amp; +1 844 549 7885 desde USA y Canada <br>Ventanilla Digital Mexicana de Comercio Exterior · Derechos Reservados © 2011· <a href="javascript:muestraPoliticas();">Políticas de Privacidad</a></p>
+
+<iframe id="iframeaux" class="disNone" frameborder="0"></iframe>
+
+<form id="frmAutenticar" action="" method="post"><input type="hidden" name="urlRedirect" id="urlRedirectSSO"><input type="hidden" name="parametrosBP.idTramite" id="idTramiteSSO"><input type="hidden" name="parametrosBP.mensaje" id="mensajeSSO"><input type="hidden" name="parametrosBP.servicio" id="servicioSSO"><input type="hidden" name="parametrosBP.idSolicitud" id="idSolicitudSSO"><input type="hidden" name="solicitud.idSolicitud" id="idSolSSO"><input type="hidden" name="0IAeglriaVz1prPYNXUAT_ITBm5BP4PVscFjSYt6joA=" value="7aEpAqdSE3X5YiR2Syjjlh18F-GYfeKyD8s_xPWU1SlR0CHEdygyycLTTse2L50aoTOTQq_BZHdxX2MOPgmusZTo4gzD03JOBuVoYqkYfqdwCZtDcihj1R60NJwBRUQ4GNYxo2isC19Bw0KwuA8Z-QlLdQ2MouitU6PCSqscr121-XRDHmhAEfKVxj5G0DmiohF4QPKy1E2l_ukfgF1mqfGUPifTaNu1e8ab803gRo2TlWhZt7CjlOrX9iIVoSusAwa69c4V6GjD_776J9EzdllXnwb3GfTkmn71krLxfhDI2tTihKkt5c3uHI-gDY_t6doE-Gn7DHdZq7MstKRmKF0pkGziMHhorORsxRvFkN8HERpbESTt45ordVijtIQ9n5HQl-Bd988P97fZLOG3pr8WRZu1QVdTN7pUxYW-1ULT5r-bAgJlzy2cUo88EEFwvfPPqT2DH7poK5Jcb93nE0Ji4lKP11vj53RdPiH9Wa8DaYRXH4MNvycayEeq6Rmf2FnLOFUS-sZsySqInf29OzCyTj9bfGGZi8wRahFtEJqnG0Xmj-VHAsv96zLgo7Zfc3zXzvnrULaTIs8z4hbmZZfteJ80Vm9uVSRDylbQwK3fJK2D76lurEMqk1XHRZbMTQcur0h1ogLLE0n0SetLeZwQb6p_09jgoW953jpVE5IhwXiD_aOKraIpgSupXMlgno8GxJZSktmTmUGSH6don-DTOMRsJ6FfTiIG6eGRfsYft7bvqAiUDapRrqoEhCg2eVoqlcnmoZZWAgc2hxYEBqlKNYPHRq4wreiBQSlcmDInD43wQMAELQTItmvOsvHtClF55vcI69P_vmA2-gEjQKaUJhGPxEKFnisCx0OP5DuNh67eY5ZqL9Gcy4dzUaX53IvaOtLfQDdhSDTxYYpH7P0ZopUYt_RAmvK7inWlJwyOzjuGQFlFBR7eYBS8H-zq59vjRttVdT961316wpp0ehDVgmE15YnZ05h9kdOLSAU-3vi7jp6ekWuojNFJj3ZwFpOLvxhUKJahVaIM6-3JYKT59q7Z6QZbed9fKD4BcNmDSzVRXm-pfxE3y9irKueaYorySl7lhlD3xi2nPtGNy72GLWys5Wc7osFSFQIZYI6nCOS21JaqUbeBIuH43OS8ekpJ8cXaAbH3GD2av73Nzg8XmbeRkkxm6cAS5995ATGNarPB_GMi5vPg5dCb-Ejr0G0dLrIiuQam2aS8c8SCcf1fkpjMCi4e4puuoe8g-RpkOUerkTTq2UVsqt7gPPXM2V7sgOJ2AtRZK3abt2S7MSz4gIvxWFq9ZLgJxGL4_fRcwjy8gDLxQFW3I-dorY9y7Y-GCUSOb47WLVKWzKICK7fX8NMVY5xm0flJofkph2XrbDgnhH8DXGuojNFJj3Zwy540WjqUz3-OzjuGQFlFBRi7tmJIJonKdYzE2wAvIykLiHbHhRgTAGxTEbGlrIF641d6avCQCzbWG1tg49X1PeeDb1vRVCU7yRh_KrdHZ0mUm4i3OdWMBKhjkr-fGqJDtQ_xpXBYjs85KcDUY_RFRoNeR5V_tLaIxB1s7G9iUgqdm4nZxSBUqG1e6pjQ_D4XqOhIDqm4taIiAfv1-TQ23WSsflFTWfA0cYt5qhxuUsyxwdcj7IQvu8VgRY5-lk2PirTly82bfHW_lsv7jt48m7RZXlbf8YyfvFRcCvTLUS9HjJfr7hpLDkqxKP1DMqSbXYmv2qQ9FCueOj9cgqxB5qSGOkYC6jwKBq6a24Yy4x0uFscxdEimfQDttzwCfplB0VmVelLG9PnE0vh5RfM8u5-i8vBxCftnnI_ipYOjmTd3Idpt2FGTNSHfkusqWoQUw3NKs1G_FMgjTnoBLojSeO4ZJwLIPJZvWarBpyPurBCIomGXdAOvSZdd0Dm6JSNW4ji-75rdGrNq9FEYvqXVbqatReznOb7Mw8GYWapkmHydsgsbozpZb0_5Uy2VSONtKHU1kQ4X5q8MX0GVj8Tz9J1w-VegI8yjscIEQZAsiJRoenrhXn1A4_N-sJQ9NAYYLUw0mKxb7uzyDod2AV7tQggPGHXnmPrE3jdQbTHuZL4jAsKiifKQ01tAmw3SpBqDZNT-KXgi4llL_iPJvl9zfHFvRA5i-TTzJ2kGpMLkkOoHOIFyKPGl_NizyhUsJvfes1enhehefF-lMts6D4NepwaUyDVV_pnXTZ9qJ6iwIva4UZsi84lr3_iF-HfZRDExqQe0fp77kETwNHnNDNk77TO1M5fBr9Xcb8IR9rfXgBRY8c_6oGeAOAixNY4yBFMo_8Zd4mQHs2zf2MfyO5z0bC-8KbyoCoPRp9elH1wkm3PvzSi1jISpNh9va4mqVJ8KgOEmblTxaaHhLkKsK-qBu1dbFf1TyXK8k7lTSFN37m80hCIGsi6_KRpyow-684Ami_UJ2s76ZT_pQQLRv8eHNLSxjB4z0hi0xNUO2uvZUdVlHX3VLFk734pmLpbhquZQMgunkg366lLB_yxCg3ngJRT24HrjZcVv7NUna_zMOZ5TrksmiTswqV72GyR5xOpu6grAsR94o5XaHMxPZqkTwFNoDNpv1SYCuCLXwg-13BTC_Ivbfvniy-HlJK1zQTLQV57Vv_hKntX5OaQVOO4USkJAKFN5cCOLiDnoK9K4A-kqy7AVi8d3sbNYneMRJZWpes1Avis8vnOIEH7JU1Hm2yRZVVc7jXbbdIpwD_0h_p52ZgP_r0deIEEy3kexNXneX47klNJf95gEbiQJqCzIsbPo516kJiOY9OhycjEFSnWfpvgXVhVC7wnSxPWVEkH7Bc_bEQLED8QssNZeYCgZhKafYoRCRAf22J-zBojSusKMe3sMsYcPF4vCg42uVpU9BuRY4PRsi_X7kLsgxHwETxY-tEAsPdBu2OCs-tx3PEEsjjo6dpVxgtcLHtYFj-_ZODdXi11ZAw5LOw8uazxKfx2jD6AgiMy0uFSU-R4-mCkF1qrOIaoEFbB7N6buC51TEIuzlwF58CQZlReFF37oQpAoob6FRKNl9Lcxx-yCgr5kt5o8S-gCCY6CzGSPOTccRRC9-oNhaEloBdvdCa_H2ufEyGNS7uaLK4VVY98Vhj7Gyqr8_uOIJifIxnm8yHBt2Z7urnJIvx62PPb0-JSQXiFDm_iDlr26HT0YRd-145rPS4oKwI9n6fCuo14xVb5F70qDQkQxtDNldHVTo59eW_FFdO-hUfLkubyRk2jNSpBRZtbD-5PR8qpRrqoEhCg2X0f1QRh5DYxz-fAyoFuSwV1A1KzRO9gUS4ImdKdA79Mr8N3j9WGN0ZBixWWuZQ4jsTwwxu_-MES39T7MFhCzNRiyD1iRRpw2Dnj1Mr8QB-9zpvn0Ca8I7GE7cvG224m-WluY0m74rlSRU2JACrbTE58ojNwwF7KHQ_TEL3ACKtHDHcUzjyuN4qahpEE6307SyNKJo-2MzzkL0C0_y5baQhM9lE4rUpsagqsUXkL7J43uosSvXOykrlnumLEqtvfrCEXdBgrtQ7zJyZ7oPfsrtxnjNWg0NdHad-MaYg3c3VB80TniTc8x6C8DAshSlE-MCKJq1K-_qrAo1FxognWkDS1UF-tGewTo1eVuK0u-OQLd5eGO-M6b8IU4DY_o07agmHAVGPCGAxsNwj5jGJWPPclGFxvpSrm8W3twGmjYyPSm5m6__iKB8gIeX_6W0_mwTvQ6fbc9W2rrX1PEXO-LHNPdlIp2ZOVujcGVzsZG9ehN8aE7zjDoG-tfU8Rc74sc3wEa0NfEIhaNwZXOxkb16IdHJySfp1_9lapicJCSOTxxyDV-RP-GqcjyW7kiUuIQqQxXT28hZPRjn7vrYdLj4L3swWHB52lWfvVZOCKCj_llC4LDGYfm-J7J9qAy_t_hNqWxQEGJudRgzQYMXi8J5GtM10WFOK8tcopVE8ye2mcY2CTQTLsyF1DkfkNIuo6U2SUtRaX0XDq2im2ZBBCIlIbyO2YoqYnC92R3sNKK4dAg-unpUY3JDUkOwu54QVs7kS_lvVnF_0B3M_s5gKTOMQA5lEi3h7wGQDDgoKhva6-hXBdWNCn1IKp5LRIcaIVRKtyE2uc6lQmIJCGc84cH2k2yOQVWKE7vf3But5cgRInUBDiG9qwP5YqfsQoPzN2E1AQ4hvasD-UFUtuazbhaw110VM8pbMea6F4q_xgrsfVAi8rY-IYTED1GHCOQ05yYeYouNJdsrFWJSJDjzH4Sw3ZhMPFi-uvnGuprY0yeTFEtVlHnHkO1Ym6E2uiApMVjF0tv5c10_c7n8EVE1WNa7XjVCcn4fWbgWaR1iyPsCYmHMDEeqYVAN0Qr1vhIDGF3NG3cIjUdFCiwGetM7lTnye3AqqbE7BbvisCkT-ZSt65eL1HaPY0S5RqikyTHoJMlhbxy1aCOZbRLLfcG0esWWkVVhlW_sOKd45G7swOWs0myRXhZERfasmu_mgQyI3B8xniTwRFEXHNHOMk9rhawgD_aApYCZEa2oZPKrjc8HfvYzBqhoodmaHXiQSEodBh7jDqQ1TbJ9k6BaifKSlWYkdlzppgW4MTwAVanKb0l95FbKHgfO7zQOj4__UBOo3FCOG3Sb16V7TTGuzJf_UVrvYoxfyu4PkeejWh06Pd7Vx6WdxBZy-176Aha_UIDG8_pOIH4Xl7l1QiVwRYfsRS75cIpgfxwTJBrWsw7aqvTN5r8qMytktgxZkHtTt9zitkx-BMh4BUXTtMFr3531dMQtkTvmtN3wu1Q8w9KiLpt4v5r1EtrtVBOScGMdZji5iKXa7orze6S1lfCaIait-l3o6_kXwbpbamSp3vqNwUiht1Q7NGBWJ-gIBm-skvQj3UtUnP3vG9OBpWi4aiTu1unPG2NQubOcw89VXpCuRHgQcPGH4NKJFQ9OHbIDtV7jvNS8wzTo4KMngapP5lZFWD6PJ_h1tjjkzCdyGJYNDuSM9Z4bjMqh_kVeucDwKCwY8LZnZprn9NndXXVkcR61UGmmwUjcIiP-3dD3_Y0Mor8HSZYDqVI2WhNB2tr0IMQNhXacenNgv7Azkew5R6Ue9MSqRwXB_MFRIWxJ2j_rOIB0mTHadziA0Gc5yL8pOpCF8ZcHm8bwmVI0XagxQND6GV5CEvEYBp7f5NyKQP3lg3QSyEVkIjR_R12ryeo2FTHNRkSUy48CO731giLfJu1u9JpD1GmVmOkmf3Z2sn0em5QBAhI2mH15lMLSxR8lKcmdW855mmiaokIM2hbv7vIGZmteKQVG89zWTDLVCRabEoT-mMaBMbkoSE024QaEfDISwTT1R3ucaLiGnlCAu2tSnTXEmSWU2I9O0k4u613usGDd-81-lUse8j4Hsc-DhICTXTJU2Yvhzmo3lMGTxzIKK9gJso-c0QFSsLkM84Rb8lFFBhpk5WlHRTeoqy4kk4Fch5ttrsSaMu8rx7yxK_uBf_zpE1eQIa0ZZqS2ADTtZYO8e0kIdQDgYcJohxPXth7P4W7TGvBq2AzG874BqlKpW74CpkFYySX79YOXZphEtdOQvjh54hKOlLarYqOScxdvdxaNX0x9et8w1mE2HuJ96irhkCwXyAZH-Xk2BbpPXwogyPHLAijWY9AAPdKvXSRDwpP9KPPRq20jewgphs_liIIQ7BdOSc6vmTmI0GMJTbgDT8_oEgChcRMtVGAc9wgEwigv4OfeFpcWMG8EZ_EfXReEu-0bh1HSeqPE6gA2HIJEtxuGumxP80axKRkWt-C-2z0mQTdwm0JhAwivtVYh3w7V6sFKI4N2EbR1wGo_H41uto0bFQuP_QpOsupG3MDTvuzNGxULj_0KTpv5uP6HkwbEA6g4vKzLT46CJ2Kapr-QlL0AnvszjRYFkX57_XfCqoCRbwULATBKZQKCjAGwqWXJI77qtBiWGNXfkSk0-9-JHZ1_D0591SXnEEMxgIx9SgnONRweJrmI8bLyA0dK6BqaFaqrzcrxEHUVEb04FJj2zVP9Pg8zL8n6Xv-g8KoTLWObEJAG4rtMy0l36bcoWEF6sQLBAn84_iXEgWKaI9g6n76X4MP-WxqCwSxEvrVR-4lwUjTo6rhKO_jyRSj-9229Aj1OF4aD5mqnUeiN2-AErz03oQpbIq-rPfcWiavo9Sk9BISBIgZBJrkjHHySHWotpyqJppu1YBZG5jvZudFoTiJJ-J5lzVtUGtNHXEhm4-OPwM6ApeiMlS6OCAsRRIV82RW6-jndMGkiNb8TZV4fyk3NDLA-CSmWmZfUM3skX8wVch3qL5FpD6FnArUl1hShAzaXtS7QW9MQ5eLG0gy8JDfg34m8u6gpRhAJUtJW-JZEclgzVFM5oIa6n-QrAMkEfKVbrQNUxAcbGcORwKE3wHYFuk9fCiDIygnFYBfsn-aK9mWBRtpuw571MNfmc_EktM27s6OQnJUAqhyVVoXL05E75rTd8LtUPMPSoi6beL-d5P_rwQfHiDRQyeuul9Q34vV990rsN0s1x1vCYddVaxd9RoYF-K8wOzmGGHBAhod7lb73fGEV3LlQ4rBK4UVynLr7goKWXqBEVzzsufXvrMLCBJtfWKx93EE7tDzx4zbO39PhUDUYb6PuzArzsESs5By2Q6k1CfON6JLEhUCT8DGNtRXJdRUcKDbxNvekWJWN-0Dm43DA04avrMlyGZgZSlHQJV0gkOhSs7Nhr3-t97V2Xnhph_9QwaO3G1kmHzRgVzVYYBu9jcstB4ipNdTbeAuqCWq9fun4r-S0RPFK8vvbHhAd0xPXUXxPWWu2dfjkGOForVAq7Jt6KbqAWW7aUn02bga3UoQ72keiUZyp8qc6YjjDZ8rxueamjhv58hoDA9GbRyZ8eWn4_zdMpMU6XJ6pKVsenMgodH3ehybtfkM3twOQMYcpekPSrdudWsjPyIX03iiuPzC6sO1MatlosOHaX44r-7-x_X6c3FNXX0gaCgzru-H_8bAdQpBL2tWSjrJhcmT5SJjLLRmwVvsEOwAAZQqaFR_KVFwrA6mfC3CDVBy__RcBmp4fw8lykyVbSX0CcwxvLiIAIdI5AlI4upAtqRG7sbPN09mVac9J1LVX4aqoFEw7dOEPA4v2jtmblOpjyLq2qFhjuP7M7V3uv29Wiotvr4jE4EFVohyGrEMnYQPALZ3BmMF2QJ8reEMK_RLGZZqpkt6qEaJRgttBw5B4TFN3uHMWLFxAz0QlnwrYycIclgwG7BZOfemFKMa17qOaU8sdUJ3UPCwbqMvh1pmIGO_ujssduoR2kemphjL8gGI3aiWANcPh-1zbwB9V9EyqngRIkfl995dzbdlCcYfg0okVD044Aa9ub-EKu3iS5XmAdVs44BKLFaPZhEVwhy-iGl81ZOQID57MtRYI7nXtSQTs3WfhCsZXN3QPswZuonSC0IH4KfAY-PCjlvDKdruMNNbHbBB7q6vmQTZCQVCWZgX8myxlks1jQ3TTVyi7MervUAka3N0xauNRdxdcz5BBTNiaqpk-A3zm7TOvFz85gr3X6bavNO7taiPGoI2eKg63eEZDIrryzi3XIMbGk9EStgQtWcn_UYQLsXQMWzMBCLxvpIXyuuUVHWlc2FhpUo44QSsmW54fCSwTzozuNm_qBQ7ec9S_fPVQvK9tavSoWmwW_NAWFuxoXCGMtG1EpMT5WYwAznMM6suWwu9T_T4PMy_J-l4Hot-bJp-4jW3sBLo_LDKt-Bw4WaYY3LDIfYpqREW0K6AvFN75_J48JS-HwZnuKldr1ml0GVC7eK3SHmcXy_6tkiYKP-dZZ62iTle3cSOwHpUM7fKEHiKoT0jvZSqIDsiqnCd5RCvyzGMvq_eKpT7z_bu2Hu-g_hVeHkp3SHWSKCGrMRSUHzJuodvbLHMfQ4IciIfnvSReZVH4SOfrhAKHz_FgELiCG_NuLbZxvICVPFn5JVDcU2f_ovI3mEQp1ak3JiC8a3OYtNWNQyW3EjvQSfx-kJ3QKcKa96gyDAaFvpe52M8fOv-eq6pmTurmmpjrNssMIL0moEprMFf6jhU1wNnM5og46MXJVnu7N-MwhLRHytukhZIWAnC_Bctb--tErH1TN41SZEwKpZyVL97BTeK9NNL3Cgp9LWGqTcCOn9MiYGJwtcgjGleRZnFJmjBfe8a2i8cEwmPPsIX1p5fx15eUOUNWAS_wfyqzJf68qcbqJcv8Csb4dKgxjwm0briUoeYNzONb3il4WZ8hEYeYXj6ZYKanEo3YPGBqaoVMHx_P3HmXE6t5_kpCjvSP49ud9e9_epEJXWXts8UIfQwml0O7MaW9Zf9m2xdXZCwYR5oM-7R6Y7m4r-IL6TjqhvGbxB82PZ8VXVHU33AeMroNVpSMEO0qalYIoYXw8tz4fARHlYnvcatMW1VFSqCI8Fc-iHcOZWv44bmSlDEVNnIrHi4DpbndjOtFuvnQ2qe_RFzW2Kwo9Fn1kDdLRxc_REOeD3A9we4kQIiSZ35uM1FPTVrqmmpWCghVBbDy6TbVJinjLr9S3UK0W5ccmxZyht900xX0iYtfHwEsZgtfeXlfVmcEmQ6q2B70iYfeMp-9NL2C-EzXSU0tGcfQul5y8yhlRR1IAKjJcZ0hua3tfOg9uYNPQIC2P9GkFUZDkg7psMYkCbSccUgflouJXvz6wyqjF9gdhrlQGYadEASJMybJTMTs3cEZq_qr3HZ65P6WMGYT826jUQprYT-oQJbiplf4j7RuMS4mp3g9tCgoj3SwJ-IiO4AUHBCDYKFvDrLTQgLcD8Y1T_6BsWh0IdZPu8wUJWr_hwPOyi1yfxGPlBfuNuqatvH03WOkRmSDBnlVVq9e_hExdD-dEFmbv571BWCQ5x7PurJelFzr5VCW9dWaK1DvsKVnuRs5J8tm7NLNe9gDUUJkaD_58LueDTKCxO6mJic8Gkf9lE86icC4sxiXl1yyJAjlej0dc60jEg5iqpCDgX37N5_ut_HsImgh6r-FRfctnDO90JsSjomwUMMgwMlWVuSJePnkjdX3bi2kZ04BM3Gwn2Ysg4tst5ja6BEnjHT2vTIWB-65kvj7JSC3gZie-od_4xOi_IgapBxTUcoPzy9kFSu95Z4jkkfrloKffCUtMnYyYYvN7PRFbl8UEKZInv3JjXQiSMTH23lRaDYyvwcna-6wO4EezN1E4BFIi07GanQcwKFd2B-unRMN4zHDIlW0RpDl1AL_TDHK6eib45P9VWrWG6DFTglktUra8YgY8MlD1-1Kbdyu5Q_YM0GDF4vCeTkNym8XU1vM3KKVRPMntpne4IQQKKEDxUC4pjxnSndJ3Eb3LyYvFh4qkKkj93WZ_OX7s45YuUgDufP0b1F0_6o3UJfd800Tcf2n_n_Fk7Az_YK9s5qOr1Ec6iWC4rv31jJEZzuQVctxohxXBRaSqkiIM8EjJyyT7k3pOhT3RzxNARRDt4Cs3ZkvtZXDUdqWlKDSzVRXm-pf7atPduj3A7ZxwKYtjY5OZlJqfc3NpB0ixic8LWL2bokhEz3n5K9WshX8JKNcnNPMOjwLD-Yvw-DVupFq0Wpma7leXXweEziDOnMn-21304YdI4ZIL33fqVYU3fDTB3hRdxTy2qAiHBNMF5ERs8pz9WaV9BSk4DJv--jsnMc0VX3ioaPnbstGnISxsI-lLwsJWqExdOJk3WXZIB6rqlVjD42PstjUIHMW1eYmI4DKPwVeV0vlCrLl74v-deu4QIGIsn23VJVdWdMyc_cBBPcT4kShVjzktt4W9fB1h8qukq5gWjlb0hTrYyiQ8CUwR0WP9qzk9dkJp6bc6iWC4rv31jEzdU9hIK2lWXBb1dv0MNoTHfwdXbvMTGi8h93GAl0aWDg88kw7OqyGIDbALgx0sub1g7lUHRFQhJLWapblz3W5uiV9-tpHb9EjzR2_xVxiszODywAeM2GSnAfleSNCgazlhPTF7tBBKmzZxW4wvab87HaFUrjHErP8JHlevSKKeZlfotADAlRYqIMyrVVOU8WoXv82INo5Lliag7R4K2qV57Vv_hKntWvhtR7yupplK5ZpUAJOI1LMQi_LGdZVlvxajEJnh13cIL_D0mF1bJrMBL9a8qSVz5ixJCkBpoEYdsMfYwMGjSeRSEPlu4h-7MJn_kMC9DzsQa1pq8vlrAr7-iC0z89ocb-_UedpNGv-WPuzHyfdbCSa9lpCd4S-SYaAy4F1cUIqmGKNLd4hxEWVo71ls6luttqXDni9Vb_Hr5BAqlGsnGTVI9JMvoQbR6IuOQWersoOYAeL2udN2u0XIG_pgGdQVf93K-jTl-60orbJhDd6PJ8B6hmTTFMaAkMEEOCouzaDecHvlIxuw6pXd6nNOLmVV0ewcqo9NRQWRhzyi16aRQmil8-qJNv071UuTCMHcVR69N6E08qeo4En3AztjEuJ4mSsdkdmV4y3zDbzeNz3PutZRruhd5O4trpe6xagJuqK4aCTxZEa0C_jPWQ1HCeh_yh2L-XD7DPSpPSu4PDZ5HLtxkGUdr-yAfijVMOS7AQeJedh2nDRQ67duwRI3KyjGLOHXYQEUZpwnFk30_KQQtmyy8g6wdbUd7XzUh8R2koibJ4rmg3jXTE0d6ZALmEJCM_NH0WAwhBXjpyq7rUemUEYrUQAAQgKSg4onCW7SMcRziGtihbZhErT4Q3rnwp0dXLlA2NKFKjBw9MT3IzsYhzSrEo_UMypJucK49Ywjkxe83a7yisg_-RSnih5JLC09aznQEY-9vulVDucoA6pakGa4WCyKexXolJZua49hEoMCRekTwUjLKoGYLGtENw3PV4_YXsCdZaHyqclG41ZSoApaTrysYxbwtjY7mX1HyVRnMp1vgIuTD6gdXZxlbAmZuOhOCbye_8kEHy-0ArpnNH1FcqwWxksCY-SG_GcF3mnWx29xyUzV7nRbHVpaH1wNUEbeR82ITiIaQZLxn83EPD"></form>
+</div>
+        </div>
+<script type="text/javascript">
+    reset('es');
+</script>
+    
+
+
+<script>
+
+$("#guardarButton").click(function(){     
+    
+    $('#informeAjax').html('');
+    var action = contextPath +'/agace/rubroAIC/registrarSolicitud.action' + '?guardarArchivosParcial=';
+    $("#guardarArchivosButton").attr("disabled","disabled");
+    actualizaIdDocumentoSeleccionado();
+    var params = $("#formaDoc").serialize();
+    var xhr = $.post(action, params, function(data) {
+        informe = xhr.getResponseHeader('msgInformativo');
+        if(informe != '' && informe != null) {
+            $('#informeAjax').html(getMessageFromFieldsBundle(informe));
+        }
+    });
+});
+function actualizaIdDocumentoSeleccionadoGuardarArchivo(){
+     var docCompletos= true;
+         
+                $('#idDocSel'+ 0 ).val($('select[name*="documentosRequeridos[0]"]').find("option:selected").val());
+                var documento =$('#idDocSel'+ 0 ).val();
+                if(documento=='-1' ){
+                    $('#idDoc'+0).attr("class", "error");
+                    docCompletos=false;
+                }else{
+             $('#idDoc'+0).removeAttr("class");
+        }
+
+         
+                $('#idDocSel'+ 1 ).val($('select[name*="documentosRequeridos[1]"]').find("option:selected").val());
+                var documento =$('#idDocSel'+ 1 ).val();
+                if(documento=='-1' ){
+                    $('#idDoc'+1).attr("class", "error");
+                    docCompletos=false;
+                }else{
+             $('#idDoc'+1).removeAttr("class");
+        }
+
+         
+                $('#idDocSel'+ 2 ).val($('select[name*="documentosRequeridos[2]"]').find("option:selected").val());
+                var documento =$('#idDocSel'+ 2 ).val();
+                if(documento=='-1' ){
+                    $('#idDoc'+2).attr("class", "error");
+                    docCompletos=false;
+                }else{
+             $('#idDoc'+2).removeAttr("class");
+        }
+
+         
+                $('#idDocSel'+ 3 ).val($('select[name*="documentosRequeridos[3]"]').find("option:selected").val());
+                var documento =$('#idDocSel'+ 3 ).val();
+                if(documento=='-1' ){
+                    $('#idDoc'+3).attr("class", "error");
+                    docCompletos=false;
+                }else{
+             $('#idDoc'+3).removeAttr("class");
+        }
+
+         
+                $('#idDocSel'+ 4 ).val($('select[name*="documentosRequeridos[4]"]').find("option:selected").val());
+                var documento =$('#idDocSel'+ 4 ).val();
+                if(documento=='-1' ){
+                    $('#idDoc'+4).attr("class", "error");
+                    docCompletos=false;
+                }else{
+             $('#idDoc'+4).removeAttr("class");
+        }
+
+         
+                $('#idDocSel'+ 5 ).val($('select[name*="documentosRequeridos[5]"]').find("option:selected").val());
+                var documento =$('#idDocSel'+ 5 ).val();
+                if(documento=='-1' ){
+                    $('#idDoc'+5).attr("class", "error");
+                    docCompletos=false;
+                }else{
+             $('#idDoc'+5).removeAttr("class");
+        }
+
+         
+                $('#idDocSel'+ 6 ).val($('select[name*="documentosRequeridos[6]"]').find("option:selected").val());
+                var documento =$('#idDocSel'+ 6 ).val();
+                if(documento=='-1' ){
+                    $('#idDoc'+6).attr("class", "error");
+                    docCompletos=false;
+                }else{
+             $('#idDoc'+6).removeAttr("class");
+        }
+
+         
+                $('#idDocSel'+ 7 ).val($('select[name*="documentosRequeridos[7]"]').find("option:selected").val());
+                var documento =$('#idDocSel'+ 7 ).val();
+                if(documento=='-1' ){
+                    $('#idDoc'+7).attr("class", "error");
+                    docCompletos=false;
+                }else{
+             $('#idDoc'+7).removeAttr("class");
+        }
+
+         
+                $('#idDocSel'+ 8 ).val($('select[name*="documentosRequeridos[8]"]').find("option:selected").val());
+                var documento =$('#idDocSel'+ 8 ).val();
+                if(documento=='-1' ){
+                    $('#idDoc'+8).attr("class", "error");
+                    docCompletos=false;
+                }else{
+             $('#idDoc'+8).removeAttr("class");
+        }
+
+         
+                $('#idDocSel'+ 9 ).val($('select[name*="documentosRequeridos[9]"]').find("option:selected").val());
+                var documento =$('#idDocSel'+ 9 ).val();
+                if(documento=='-1' ){
+                    $('#idDoc'+9).attr("class", "error");
+                    docCompletos=false;
+                }else{
+             $('#idDoc'+9).removeAttr("class");
+        }
+
+         
+                $('#idDocSel'+ 10 ).val($('select[name*="documentosRequeridos[10]"]').find("option:selected").val());
+                var documento =$('#idDocSel'+ 10 ).val();
+                if(documento=='-1' ){
+                    $('#idDoc'+10).attr("class", "error");
+                    docCompletos=false;
+                }else{
+             $('#idDoc'+10).removeAttr("class");
+        }
+
+         
+                $('#idDocSel'+ 11 ).val($('select[name*="documentosRequeridos[11]"]').find("option:selected").val());
+                var documento =$('#idDocSel'+ 11 ).val();
+                if(documento=='-1' ){
+                    $('#idDoc'+11).attr("class", "error");
+                    docCompletos=false;
+                }else{
+             $('#idDoc'+11).removeAttr("class");
+        }
+
+         
+                return docCompletos;
+    }
+function actualizaIdDocumentoSeleccionado(){
+    var div = document.getElementById("msgAnexarDocs");
+	
+        div.style.display = "none";
+	
+                $('#idDocSel'+ 0 ).val($('select[name*="documentosRequeridos[0]"]').find("option:selected").val());
+                $('#idDoc'+0).removeAttr("class");
+         
+                $('#idDocSel'+ 1 ).val($('select[name*="documentosRequeridos[1]"]').find("option:selected").val());
+                $('#idDoc'+1).removeAttr("class");
+         
+                $('#idDocSel'+ 2 ).val($('select[name*="documentosRequeridos[2]"]').find("option:selected").val());
+                $('#idDoc'+2).removeAttr("class");
+         
+                $('#idDocSel'+ 3 ).val($('select[name*="documentosRequeridos[3]"]').find("option:selected").val());
+                $('#idDoc'+3).removeAttr("class");
+         
+                $('#idDocSel'+ 4 ).val($('select[name*="documentosRequeridos[4]"]').find("option:selected").val());
+                $('#idDoc'+4).removeAttr("class");
+         
+                $('#idDocSel'+ 5 ).val($('select[name*="documentosRequeridos[5]"]').find("option:selected").val());
+                $('#idDoc'+5).removeAttr("class");
+         
+                $('#idDocSel'+ 6 ).val($('select[name*="documentosRequeridos[6]"]').find("option:selected").val());
+                $('#idDoc'+6).removeAttr("class");
+         
+                $('#idDocSel'+ 7 ).val($('select[name*="documentosRequeridos[7]"]').find("option:selected").val());
+                $('#idDoc'+7).removeAttr("class");
+         
+                $('#idDocSel'+ 8 ).val($('select[name*="documentosRequeridos[8]"]').find("option:selected").val());
+                $('#idDoc'+8).removeAttr("class");
+         
+                $('#idDocSel'+ 9 ).val($('select[name*="documentosRequeridos[9]"]').find("option:selected").val());
+                $('#idDoc'+9).removeAttr("class");
+         
+                $('#idDocSel'+ 10 ).val($('select[name*="documentosRequeridos[10]"]').find("option:selected").val());
+                $('#idDoc'+10).removeAttr("class");
+         
+                $('#idDocSel'+ 11 ).val($('select[name*="documentosRequeridos[11]"]').find("option:selected").val());
+                $('#idDoc'+11).removeAttr("class");
+               
+    }
+
+$("#siguienteButton").click(function(){
+    var docCompletos = true;
+    var div = document.getElementById("msgAnexarDocs");
+    $("#guardarArchivosButton").attr("name","guardarArchivos");
+    $("#guardarArchivosButton").removeAttr("disabled");
+    docCompletos = actualizaIdDocumentoSeleccionadoGuardarArchivo();
+    if(docCompletos){
+        $("#formaDoc").submit();
+        div.style.display = "none";
+    }else{
+        div.innerHTML = getMessageFromFieldsBundle("atenderRequerimiento.documentoRequeridos");
+        div.style.display = "block";
+    }
+});
+$("#paginaAnteriorButton").click(function(){
+    var nombre =  $("#paginaAnteriorButton").attr("name");
+    $("#guardarArchivosButton").attr("name",nombre);
+    $("#guardarArchivosButton").removeAttr("disabled");
+    actualizaIdDocumentoSeleccionado();
+    $("#formaDoc").submit();
+});
+
+
+</script><div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all ui-helper-hidden-accessible"></div><div class="ui-dialog ui-widget ui-widget-content ui-corner-all " tabindex="-1" role="dialog" aria-labelledby="ui-dialog-title-politicas" style="display: none; z-index: 1000; outline: 0px;"><div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix"><span class="ui-dialog-title" id="ui-dialog-title-politicas">&nbsp;</span></div><div id="politicas" class="ui-dialog-content ui-widget-content">
+<p><strong>Ventanilla  Digital Mexicana de Comercio Exterior </strong></p>
+<p><strong>Política  de privacidad y manejo de datos personales</strong></p>
+    <br>
+  <p style="text-align:justify;">Le informamos que los datos personales suministrados a través de sus  solicitudes, promociones, trámites, consultas y pagos, hechas por medios  electrónicos e impresos serán protegidos, incorporados y tratados en el sistema  de datos personales de la Ventanilla Digital, cuyo objeto es permitir a los  agentes de comercio exterior realizar, a través de un solo punto de entrada  electrónico, todos los trámites de importación, exportación y tránsito de  mercancías, con fundamento en las disposiciones aplicables a cada uno de ellos,  el cual fue registrado en el listado de sistemas de datos personales ante el  Instituto Federal de Acceso a la Información y Protección de Datos (<a href="http://www.ifai.org.mx">www.ifai.org.mx</a>) y podrán ser transmitidos a las autoridades competentes previstas en el  Decreto por el que se establece la Ventanilla Digital Mexicana de Comercio  Exterior publicado en el Diario Oficial de la Federación el 14 de enero de  2011, así como al propio titular de la información, además de las transmisiones  previstas en los ordenamientos legales aplicables. Corresponde al Servicio de  Administración Tributaria, una vez implementada, la administración de la citada  Ventanilla Digital. Se podrá modificar o corregir sus datos personales a través  de la misma Ventanilla.</p>
+<p style="text-align:justify;">Lo  anterior se informa en cumplimiento del Lineamiento Decimoséptimo de los  Lineamientos de Protección de Datos Personales, publicados en el Diario Oficial  de la Federación el 30 de septiembre de 2005.</p></div><div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix"><div class="ui-dialog-buttonset"><button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button" aria-disabled="false"><span class="ui-button-text">Cerrar</span></button></div></div></div><div id="jstree-marker" style="display: none;">»</div><div id="jstree-marker-line" style="display: none;"></div><div id="vakata-contextmenu"></div><div class="ui-dialog ui-widget ui-widget-content ui-corner-all  ui-draggable" tabindex="-1" role="dialog" aria-labelledby="ui-dialog-title-uploadDocumentos" style="display: block; z-index: 1006; outline: 0px; height: auto; width: 680px; top: 602px; left: 334px;"><div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix"><span class="ui-dialog-title" id="ui-dialog-title-uploadDocumentos">Adjuntar nuevo documento</span></div><div id="uploadDocumentos" class="ui-dialog-content ui-widget-content" style="width: auto; min-height: 0px; height: 312.4px;">
+    <form name="solicitud" action="/ventanilla-aga2-HA/patron/upload.action" method="post">
+			<h1>Documentos Anexos</h1>
+            <table id="docs" cellspacing="0" cellpadding="4">
+                <tbody><tr>
+                    <th width="45%" style="text-align:center;">Documento</th>                    
+                    <th width="15%" style="text-align:center;">Status</th>
+                    <th width="40%" style="text-align:center;">Mensajes</th>
+                </tr>
+                
+	                	<tr class="odd">
+	                        <td class="campos" valign="top" style="text-align:center;">C:\fakepath\Lorem_ipsum.pdf</td>                        
+	                        <td class="campos" valign="top" style="text-align:center;">
+	                        	OK
+							</td>
+	                        <td class="campos" style="text-align:center;">
+	                        	OK
+	                        </td>
+	                    </tr>
+                	
+	                	<tr class="even">
+	                        <td class="campos" valign="top" style="text-align:center;">C:\fakepath\Lorem_ipsum.pdf</td>                        
+	                        <td class="campos" valign="top" style="text-align:center;">
+	                        	OK
+							</td>
+	                        <td class="campos" style="text-align:center;">
+	                        	OK
+	                        </td>
+	                    </tr>
+                	
+	                	<tr class="odd">
+	                        <td class="campos" valign="top" style="text-align:center;">C:\fakepath\Lorem_ipsum.pdf</td>                        
+	                        <td class="campos" valign="top" style="text-align:center;">
+	                        	OK
+							</td>
+	                        <td class="campos" style="text-align:center;">
+	                        	OK
+	                        </td>
+	                    </tr>
+                	
+	                	<tr class="even">
+	                        <td class="campos" valign="top" style="text-align:center;">C:\fakepath\Lorem_ipsum.pdf</td>                        
+	                        <td class="campos" valign="top" style="text-align:center;">
+	                        	OK
+							</td>
+	                        <td class="campos" style="text-align:center;">
+	                        	OK
+	                        </td>
+	                    </tr>
+                	
+	                	<tr class="odd">
+	                        <td class="campos" valign="top" style="text-align:center;">C:\fakepath\Lorem_ipsum.pdf</td>                        
+	                        <td class="campos" valign="top" style="text-align:center;">
+	                        	OK
+							</td>
+	                        <td class="campos" style="text-align:center;">
+	                        	OK
+	                        </td>
+	                    </tr>
+                	
+	                	<tr class="even">
+	                        <td class="campos" valign="top" style="text-align:center;">C:\fakepath\Lorem_ipsum.pdf</td>                        
+	                        <td class="campos" valign="top" style="text-align:center;">
+	                        	OK
+							</td>
+	                        <td class="campos" style="text-align:center;">
+	                        	OK
+	                        </td>
+	                    </tr>
+                	
+	                	<tr class="odd">
+	                        <td class="campos" valign="top" style="text-align:center;">C:\fakepath\Lorem_ipsum.pdf</td>                        
+	                        <td class="campos" valign="top" style="text-align:center;">
+	                        	OK
+							</td>
+	                        <td class="campos" style="text-align:center;">
+	                        	OK
+	                        </td>
+	                    </tr>
+                	
+	                	<tr class="even">
+	                        <td class="campos" valign="top" style="text-align:center;">C:\fakepath\Lorem_ipsum.pdf</td>                        
+	                        <td class="campos" valign="top" style="text-align:center;">
+	                        	OK
+							</td>
+	                        <td class="campos" style="text-align:center;">
+	                        	OK
+	                        </td>
+	                    </tr>
+                	
+	                	<tr class="odd">
+	                        <td class="campos" valign="top" style="text-align:center;">C:\fakepath\Lorem_ipsum.pdf</td>                        
+	                        <td class="campos" valign="top" style="text-align:center;">
+	                        	OK
+							</td>
+	                        <td class="campos" style="text-align:center;">
+	                        	OK
+	                        </td>
+	                    </tr>
+                	
+	                	<tr class="even">
+	                        <td class="campos" valign="top" style="text-align:center;">C:\fakepath\Lorem_ipsum.pdf</td>                        
+	                        <td class="campos" valign="top" style="text-align:center;">
+	                        	OK
+							</td>
+	                        <td class="campos" style="text-align:center;">
+	                        	OK
+	                        </td>
+	                    </tr>
+                	
+	                	<tr class="odd">
+	                        <td class="campos" valign="top" style="text-align:center;">C:\fakepath\Lorem_ipsum.pdf</td>                        
+	                        <td class="campos" valign="top" style="text-align:center;">
+	                        	OK
+							</td>
+	                        <td class="campos" style="text-align:center;">
+	                        	OK
+	                        </td>
+	                    </tr>
+                	
+	                	<tr class="even">
+	                        <td class="campos" valign="top" style="text-align:center;">C:\fakepath\Lorem_ipsum.pdf</td>                        
+	                        <td class="campos" valign="top" style="text-align:center;">
+	                        	OK
+							</td>
+	                        <td class="campos" style="text-align:center;">
+	                        	OK
+	                        </td>
+	                    </tr>
+                	
+                
+            </tbody></table>
+    <div style="display: none;"><input type="hidden" name="_sourcePage" value="uImXjVmvlJpNLhxiDxlyp63zsmqDN9ISo3U5qnMy20iAcR_IFrIPCUdEbzuDstCMn95CU0rcWsE="><input type="hidden" name="__fp" value="GZ91ngFjUyA="><input type="hidden" name="__token" value="90JaR9QcHQYjEdzMJL0Da6IVUt330TsxrTwQZbUbyn9HBCoONtjJuCzKHpXlQXwD"></div></form>
+	<input type="hidden" id="bandera" value="1">
+</div><div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix"><div class="ui-dialog-buttonset"><button type="button" id="btnAnexar" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button" aria-disabled="false" style="display: none;"><span class="ui-button-text">Adjuntar</span></button><button type="button" id="btnCerrar" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button" aria-disabled="false"><span class="ui-button-text">Cerrar</span></button></div></div></div><div class="ui-dialog ui-widget ui-widget-content ui-corner-all  ui-draggable" tabindex="-1" role="dialog" aria-labelledby="ui-dialog-title-divMsgModal" style="display: none; z-index: 1004; outline: 0px; height: auto; width: 200px; top: 764px; left: 574px;"><div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix"><span class="ui-dialog-title" id="ui-dialog-title-divMsgModal">Cargando...</span></div><div id="divMsgModal" class="ui-dialog-content ui-widget-content" style="width: auto; min-height: 0px; height: 37.4px;"><div id="progressBar" class="ui-progressbar ui-widget ui-widget-content ui-corner-all" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="100"><div class="ui-progressbar-value ui-widget-header ui-corner-left ui-corner-right" style="width: 100%;"></div></div><div name="porcentajeDocumento" id="idPorcentajeDocumento" class="instrucciones" align="center">100%</div></div></div><div class="ui-widget-overlay" style="width: 1355px; height: 1245px; z-index: 1005;"></div></body></html>

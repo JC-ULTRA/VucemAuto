@@ -1,38 +1,54 @@
 package INBAL.Tramite270201;
 
+import DBYFOLIO.ConDBReasigSolFun;
 import DBYFOLIO.ObtenerFolio;
 import Firmas.LoginFirmSoli;
 import Firmas.TramitesFirmasLG;
+import Metodos.Metodos;
 import com.codeborne.selenide.Browsers;
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.WebDriverRunner;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
+import org.apache.xmlbeans.impl.xb.xsdschema.Public;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeOptions;
+import Metodos.Metodos;
 
 import javax.swing.*;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-import static com.codeborne.selenide.Selenide.open;
-import static com.codeborne.selenide.Selenide.sleep;
+import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 public class Tramite270201Test {
     MainPage270201 mainPage270201 = new MainPage270201();
     LoginFirmSoli loginFirmSoli = new LoginFirmSoli();
-
+    Metodos metodos = new Metodos();
     ObtenerFolio obtenerFolio = new ObtenerFolio();
     //VARIABLES
     String FunRFC = "MAVL621207C95";
     String SoliRFC = "AAL0409235E6";
 
-    TramitesFirmasLG tramite270201  = new TramitesFirmasLG(
+    TramitesFirmasLG tramite270201 = new TramitesFirmasLG(
             "C:\\VucemAuto\\automations\\src\\test\\resources\\CredSoli\\aal0409235e6.cer",
             "C:\\VucemAuto\\automations\\src\\test\\resources\\CredSoli\\AAL0409235E6_1012231310.key"
+    );
+    TramitesFirmasLG tramite270201fun = new TramitesFirmasLG(
+            "C:\\Vucem3.1\\automations\\src\\test\\resources\\CredFunc\\mavl621207c95.cer",
+            "C:\\Vucem3.1\\automations\\src\\test\\resources\\CredFunc\\MAVL621207C95_1012241424.key"
     );
 
     @BeforeAll
@@ -42,11 +58,12 @@ public class Tramite270201Test {
         iniDriver();
     }
 
-    public static void iniDriver(){
+    public static void iniDriver() {
         Configuration.browser = Browsers.CHROME;
         open();
         getWebDriver().manage().window().maximize();
-        getWebDriver().manage().timeouts().pageLoadTimeout(90, TimeUnit.SECONDS);
+        getWebDriver().manage().timeouts().pageLoadTimeout(80000, TimeUnit.SECONDS);
+        Configuration.timeout = 80000;
     }
 
     @BeforeEach
@@ -79,10 +96,11 @@ public class Tramite270201Test {
 
         //Crear checkboxes para seleccionar los métodos
         JCheckBox dictamenCheckBox = new JCheckBox("ProcesoDictamen270201");
-        JCheckBox autorizacionCheckBox = new JCheckBox("ProcesoAutorizacion270201");
-        JCheckBox confirmacionCheckBox = new JCheckBox("ProcesoConfirmarNotificaciónResolucion270201");
+        JCheckBox verificaCheckBox = new JCheckBox("Procesoverifica270201");
+        JCheckBox autorizaCheckBox = new JCheckBox("Procesoautoriza270201");
+        JCheckBox confirmacionCheckBox = new JCheckBox("ProcesoConfirmar270201");
 
-        Object[] params = {"Seleccione los métodos a ejecutar:", dictamenCheckBox, autorizacionCheckBox, confirmacionCheckBox};
+        Object[] params = {"Seleccione los métodos a ejecutar:", dictamenCheckBox, verificaCheckBox, autorizaCheckBox, confirmacionCheckBox};
         int option = JOptionPane.showConfirmDialog(null, params, "Opciones de Métodos", JOptionPane.OK_CANCEL_OPTION);
 
         // Si el usuario selecciona Cancelar, termina el metodo
@@ -94,12 +112,13 @@ public class Tramite270201Test {
         // Recopilar los métodos seleccionados
         List<String> selectedMethods = new ArrayList<>();
         if (dictamenCheckBox.isSelected()) selectedMethods.add("ProcesoDictamen270201");
-        if (autorizacionCheckBox.isSelected()) selectedMethods.add("ProcesoAutorizacion270201");
-        if (confirmacionCheckBox.isSelected()) selectedMethods.add("ProcesoConfirmarNotificaciónResolucion270201");
+        if (verificaCheckBox.isSelected()) selectedMethods.add("Procesoverifica270201");
+        if (autorizaCheckBox.isSelected()) selectedMethods.add("Procesoautoriza270201");
+        if (confirmacionCheckBox.isSelected()) selectedMethods.add("ProcesoConfirmar270201");
 
         // Ejecutar el proceso con las repeticiones y los métodos seleccionados
         ejecutarProcesoNRunnable(() -> {
-//            // Ingreso y selección de trámite
+            WebDriverRunner.getWebDriver().manage().deleteAllCookies();
             loginFirmSoli.login(tramite270201);
             mainPage270201.selecRol.sendKeys("Persona Moral");
             mainPage270201.btnacep.click();
@@ -143,17 +162,91 @@ public class Tramite270201Test {
             mainPage270201.InputDeclaracion.click();
             mainPage270201.InputGuardarSolicitud.click();
             mainPage270201.btnContinuar.click();
-            mainPage270201.btnAdjuntarDocument.click();
-            mainPage270201.inputDocument.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
-            mainPage270201.btmAnexar.click();
+            metodos.cargarDocumentos();
+            mainPage270201.btmAnexar.click();sleep(5000);
             mainPage270201.btnCerrar.click();sleep(2000);
-            mainPage270201.inputSiguiente.click();sleep(3000);
+            $("input[id='siguienteButton'][value='Continuar']").click();
             //FIRMAR SOLICITUD
             loginFirmSoli.firma(tramite270201);
             String folioText = mainPage270201.folio.getText();sleep(5000);
             String folioNumber = obtenerFolio.obtenerFolio(folioText);
+            ConDBReasigSolFun.processFolio(folioNumber, FunRFC);
+
+            if (selectedMethods.contains("ProcesoDictamen270201")) {
+                EvaluarSolicitud(folioNumber);
+            }
+            if (selectedMethods.contains("Procesoverifica270201")) {
+                VerificaDictamen(folioNumber);
+            }
+            if (selectedMethods.contains("Procesoautoriza270201")) {
+                AutorizarDictamen(folioNumber);
+            }
+            if (selectedMethods.contains("ProcesoConfirmar270201")) {
+                ProcesoConfirmar(folioNumber);
+            } guardarFolioEnArchivo(folioNumber);
+
         }, repeticiones);
     }
+
+    public void EvaluarSolicitud(String folioNumber) {
+        open("https://wwwqa.ventanillaunica.gob.mx/ventanilla-HA/authentication.action?showLoginFuncionarios=");
+        String folioGenerado = folioNumber;
+        String rfcEmpleado = "MAVL621207C95";
+        ConDBReasigSolFun.processFolio(folioGenerado, rfcEmpleado);
+        WebDriverRunner.getWebDriver().manage().deleteAllCookies();
+        loginFirmSoli.loginFun(tramite270201fun);sleep(4000);
+        ConDBReasigSolFun.processFolio(folioNumber, FunRFC);sleep(4000);
+        mainPage270201.iniciofun.click();
+        mainPage270201.numfolio.sendKeys(folioNumber);sleep(1500);
+        mainPage270201.btnBuscarFolio.click();sleep(4500);
+        $$(By.cssSelector("td[role='gridcell']")).findBy(Condition.text(folioNumber)).doubleClick();sleep(5000);
+        $("input[name='mostrar'][value='Continuar']").click();sleep(4000);
+        mainPage270201.inputDictamenAceptado.click();
+        mainPage270201.justificacionRequerimiento.setValue("PRUEBAS QA");sleep(2000);
+        $("input[name='mostrarFirma'][value='Guardar y Firmar']").click();sleep(5000);
+        loginFirmSoli.firmaFun(tramite270201fun);sleep(4000);
+    }
+
+    public void VerificaDictamen(String folioNumber) {
+        String folioGenerado = folioNumber;
+        String rfcEmpleado = "MAVL621207C95";
+        ConDBReasigSolFun.processFolio(folioGenerado, rfcEmpleado);
+        WebDriverRunner.getWebDriver().manage().deleteAllCookies();
+        ConDBReasigSolFun.processFolio(folioNumber, FunRFC);sleep(4000);
+        mainPage270201.iniciofun.click();
+        mainPage270201.numfolio.sendKeys(folioNumber);sleep(1500);
+        mainPage270201.btnBuscarFolio.click();sleep(4500);
+        $$(By.cssSelector("td[role='gridcell']")).findBy(Condition.text(folioNumber)).doubleClick();sleep(5000);
+        mainPage270201.btnFirmarAutorizacion.click();sleep(5000);
+        loginFirmSoli.firmaFun(tramite270201fun);sleep(4000);
+}
+
+    public void AutorizarDictamen(String folioNumber) {
+        String folioGenerado = folioNumber;
+        String rfcEmpleado = "MAVL621207C95";
+        ConDBReasigSolFun.processFolio(folioGenerado, rfcEmpleado);
+        WebDriverRunner.getWebDriver().manage().deleteAllCookies();
+        ConDBReasigSolFun.processFolio(folioNumber, FunRFC);sleep(4000);
+        mainPage270201.iniciofun.click();
+        mainPage270201.numfolio.sendKeys(folioNumber);sleep(1500);
+        mainPage270201.btnBuscarFolio.click();sleep(4500);
+        $$(By.cssSelector("td[role='gridcell']")).findBy(Condition.text(folioNumber)).doubleClick();sleep(5000);
+        mainPage270201.btnFirmarAutorizacion.click();sleep(5000);
+        loginFirmSoli.firmaFun(tramite270201fun);sleep(4000);
+    }
+
+public void ProcesoConfirmar(String folioNumber){
+    open("https://wwwqa.ventanillaunica.gob.mx/ventanilla-HA/authentication.action?showLogin=%22;");
+    WebDriverRunner.getWebDriver().manage().deleteAllCookies();
+    loginFirmSoli.login(tramite270201);sleep(3000);
+    mainPage270201.SelecRol.sendKeys("Persona Moral");sleep(1000);
+    mainPage270201.Btnacep.click();
+    mainPage270201.inicioFolio.sendKeys(folioNumber);sleep(15000);
+    $("input[type='button'][value='Buscar']").doubleClick();sleep(3000);
+    $$(By.cssSelector("td[role='gridcell']")).findBy(Condition.text(folioNumber)).doubleClick();sleep(3000);
+    $("input[name='mostrarFirma'][value='Continuar']").click();sleep(5000);
+    loginFirmSoli.firma(tramite270201);sleep(1000);sleep(4000);
+}
 
     //Metodo que ejecuta n veces una clase que implementa Runnable
     public void ejecutarProcesoNRunnable(Runnable proceso, int n) {
@@ -161,6 +254,21 @@ public class Tramite270201Test {
             System.out.println("Ejecución del Proceso: " + (i + 1));
             open("https://wwwqa.ventanillaunica.gob.mx/ventanilla-HA/authentication.action?showLogin=%22;");
             proceso.run();  // Ejecuta el proceso de la clase
+        }
+    }
+    public void guardarFolioEnArchivo(String folioNumber) {
+        String rutaArchivo = "C:\\VucemAuto\\automations\\folios_generados270201.txt";
+
+        // Formato de fecha y hora: 2025-07-02 18:45:00
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        String timestamp = LocalDateTime.now().format(formatter);
+
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(rutaArchivo, true))) {
+            writer.write(timestamp + " - " + folioNumber);
+            writer.newLine();
+            System.out.println("Folio guardado correctamente: " + folioNumber);
+        } catch (IOException e) {
+            System.err.println("Error al guardar el folio: " + e.getMessage());
         }
     }
 }
