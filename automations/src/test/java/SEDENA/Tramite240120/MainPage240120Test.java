@@ -1,25 +1,30 @@
 package SEDENA.Tramite240120;
 
+import DBYFOLIO.ConDBReasigSolFun;
 import DBYFOLIO.ObtenerFolio;
 import Firmas.LoginFirmSoli;
 import Firmas.TramitesFirmasLG;
 import Metodos.Metodos;
-import com.codeborne.selenide.Browsers;
-import com.codeborne.selenide.Configuration;
-import com.codeborne.selenide.Selenide;
+import com.codeborne.selenide.*;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeOptions;
 import javax.swing.*;
+import java.time.Duration;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
-import static com.codeborne.selenide.Selenide.open;
-import static com.codeborne.selenide.Selenide.sleep;
+
+import static com.codeborne.selenide.Condition.visible;
+import static com.codeborne.selenide.Selectors.withText;
+import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 public class MainPage240120Test {
@@ -31,30 +36,31 @@ public class MainPage240120Test {
     String FunRFC = "MAVL621207C95";
     String SoliRFC = "AAL0409235E6";
 
-    TramitesFirmasLG tramite240120  = new TramitesFirmasLG(
+    TramitesFirmasLG tramiteM = new TramitesFirmasLG(
             "C:\\VucemAuto\\automations\\src\\test\\resources\\CredSoli\\aal0409235e6.cer",
-            "C:\\VucemAuto\\automations\\src\\test\\resources\\CredSoli\\AAL0409235E6_1012231310.key"
+            "C:\\VucemAuto\\automations\\src\\test\\resources\\CredSoli\\AAL0409235E6_1012231310.key");
+
+    TramitesFirmasLG tramiteFun = new TramitesFirmasLG(
+            "C:\\Vucem3.0\\automations\\src\\test\\resources\\CredFunc\\mavl621207c95.cer",
+            "C:\\Vucem3.0\\automations\\src\\test\\resources\\CredFunc\\MAVL621207C95_1012241424.key"
     );
 
     @BeforeAll
-    public static void setUpAll() {
-        Configuration.browserSize = "1920x1080";
-        SelenideLogger.addListener("allure", new AllureSelenide());
-        iniDriver();
-    }
-
-    public static void iniDriver(){
-        Configuration.browser = Browsers.CHROME;
+    public static void initDriver() {
+        Configuration.browser = Browsers.CHROME;   //FIREFOX;
         open();
         getWebDriver().manage().window().maximize();
-        getWebDriver().manage().timeouts().pageLoadTimeout(90, TimeUnit.SECONDS);
+        getWebDriver().manage().timeouts().pageLoadTimeout(150, TimeUnit.SECONDS);
+        Configuration.timeout = 15000;
     }
 
     @BeforeEach
     public void setUp() {
         Configuration.browserCapabilities = new ChromeOptions().addArguments("--remote-allow-origins=*");
+        //Configuration.holdBrowserOpen = true;
     }
-
+    
+    
     @Test
     public void Proceso240120() {
         /////////////////////////////////////////////////////////////////////////////////////////////////////////-
@@ -80,10 +86,12 @@ public class MainPage240120Test {
 
         //Crear checkboxes para seleccionar los métodos
         JCheckBox dictamenCheckBox = new JCheckBox("ProcesoDictamen240120");
+        JCheckBox verificarCheckBox = new JCheckBox("ProcesoVerificarDictamen240120");
         JCheckBox autorizacionCheckBox = new JCheckBox("ProcesoAutorizacion240120");
         JCheckBox confirmacionCheckBox = new JCheckBox("ProcesoConfirmarNotificaciónResolucion240120");
 
-        Object[] params = {"Seleccione los métodos a ejecutar:", dictamenCheckBox, autorizacionCheckBox, confirmacionCheckBox};
+
+        Object[] params = {"Seleccione los métodos a ejecutar:", dictamenCheckBox,verificarCheckBox, autorizacionCheckBox, confirmacionCheckBox};
         int option = JOptionPane.showConfirmDialog(null, params, "Opciones de Métodos", JOptionPane.OK_CANCEL_OPTION);
 
         // Si el usuario selecciona Cancelar, termina el metodo
@@ -95,20 +103,21 @@ public class MainPage240120Test {
         // Recopilar los métodos seleccionados
         List<String> selectedMethods = new ArrayList<>();
         if (dictamenCheckBox.isSelected()) selectedMethods.add("ProcesoDictamen240120");
+        if (verificarCheckBox.isSelected()) selectedMethods.add("ProcesoVerificarDictamen240120");
         if (autorizacionCheckBox.isSelected()) selectedMethods.add("ProcesoAutorizacion240120");
         if (confirmacionCheckBox.isSelected()) selectedMethods.add("ProcesoConfirmarNotificaciónResolucion240120");
 
         // Ejecutar el proceso con las repeticiones y los métodos seleccionados
         ejecutarProcesoNRunnable(() -> {
 //            // Ingreso y selección de trámite
-            loginFirmSoli.login(tramite240120);
+            loginFirmSoli.login(tramiteM);
             mainPage240120.selecRol.sendKeys("Persona Moral");
             mainPage240120.btnacep.click();
             mainPage240120.Tramites.sendKeys("Solicitudes nuevas");
-            mainPage240120.SoliNew.click();
-            mainPage240120.SEDENA.click();
-            mainPage240120.linkCerLicPer.click();
-            mainPage240120.linkPermisoAduanalSEDENA.click();
+            $(withText("Solicitudes nuevas")).click();
+            $("[alt='Secretaría de la Defensa Nacional']").click();
+            $x("//a[contains(text(),'Certificados, Licencias y Permisos')]//span[text()='[+]']").click();
+            $x("//a[contains(text(),'Permiso Aduanal SEDENA')]//span[text()='[+]']").click();
             mainPage240120.linkPermisoExtExpArtPir.click();
             //DATOS SOLICITANTE
             try {
@@ -190,21 +199,114 @@ public class MainPage240120Test {
             mainPage240120.inputImportePago.sendKeys("5000");
             mainPage240120.InputGuardarSolicitud.click();
             mainPage240120.btnContinuar.click();sleep(5000);
-            Selenide.sleep(5000);
+            //Paso 3 ANEXAR REQUISITOS
             metodos.cargarDocumentos();
-            mainPage240120.btmAnexar.click();sleep(4000);
-            Selenide.sleep(4000);
+            mainPage240120.btnAnexar.click();
+            mainPage240120.MensajeCarga.shouldNotBe(Condition.visible, Duration.ofSeconds(120));sleep(1000);
             mainPage240120.btnCerrar.click();
             Selenide.sleep(2000);
-            mainPage240120.inputSiguiente.click();sleep(3000);
+            mainPage240120.inputSiguienteButton.click();sleep(3000);
             //FIRMAR SOLICITUD
-            loginFirmSoli.firma(tramite240120);
+            loginFirmSoli.firma(tramiteM);
             Selenide.sleep(2000);
             String folioText = mainPage240120.folio.getText();sleep(5000);
             String folioNumber = obtenerFolio.obtenerFolio(folioText);
+
+
+
+            for (String methodName : selectedMethods) {
+                switch (methodName) {
+                    case "ProcesoDictamen240120":
+                        ProcesoDictamen(folioNumber, "Autorizado"); // O 'Rechazado'
+                        break;
+                    case "ProcesoVerificarDictamen240120":
+                        ProcesoVerificarDictamen(folioNumber);
+                        break;
+                    case "ProcesoAutorizacion240120":
+                        ProcesoAutorizacion(folioNumber);
+                        break;
+                    case "ProcesoConfirmarNotificaciónResolucion240120":
+                        ProcesoConfirmarNotificaciónResolucion(folioNumber, "Moral");
+                        break;
+                }
+            }
         }, repeticiones);
     }
 
+
+    public void ProcesoDictamen(String folioNumber, String sentidoDict) {
+
+        //WebDriverRunner.getWebDriver().manage().deleteAllCookies();
+        open("https://wwwqa.ventanillaunica.gob.mx/ventanilla-HA/authentication.action?showLoginFuncionarios=");
+        // Obtener la fecha de (hoy+Meses) formateada
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        String fechaInicioVigenciaGenerado = LocalDate.now().format(formatter);
+        String fechaFinVigenciaGenerado = LocalDate.now().plusDays(15).format(formatter);
+
+        loginFirmSoli.loginFun(tramiteFun);sleep(5000);
+        // Búsqueda de Folio
+        mainPage240120.iniciofun.click();
+        mainPage240120.numfolio.sendKeys(folioNumber);sleep(1500);
+        ConDBReasigSolFun.processFolio(folioNumber, FunRFC);sleep(2000);
+        mainPage240120.inputBuscarTareasFuncionario.click();sleep(6500);
+        $x("//td[@role='gridcell' and contains(text(), '" + folioNumber + "')]").shouldBe(visible).doubleClick();
+        mainPage240120.generaDict.click();
+        mainPage240120.btmContinuarDict.click();
+        if (sentidoDict.equals("Autorizado")) {
+            $("input[name='sentidoDictamen'][value='SEDI.AC']").click();
+        } else if (sentidoDict.equals("Rechazado")) {
+            $("input[name='sentidoDictamen'][value='SEDI.RZ']").click();
+        }
+        mainPage240120.antecedentesDict.sendKeys("PRUEBAS QA");
+        executeJavaScript("arguments[0].value = arguments[1];", mainPage240120.fechaFinVigencia,fechaFinVigenciaGenerado);
+        $("input[type='submit'][value='Guardar y Firmar']").click(); sleep(1000);
+
+        loginFirmSoli.firmaFun(tramiteFun);sleep(1000); sleep(4000);
+    }
+
+    public void ProcesoVerificarDictamen (String folioNumber) {
+
+        open("https://wwwqa.ventanillaunica.gob.mx/ventanilla-HA/authentication.action?showLoginFuncionarios=");
+        sleep(3000);
+        $(By.cssSelector("img[src*='icoInicio.png']")).shouldBe(visible).click();
+        mainPage240120.numfolio.sendKeys(folioNumber);sleep(1500);
+        ConDBReasigSolFun.processFolio(folioNumber, FunRFC);sleep(4000);
+        mainPage240120.inputBuscarTareasFuncionario.click();sleep(2000);
+        $x("//td[@role='gridcell' and contains(text(), '" + folioNumber + "')]").shouldBe(visible).doubleClick(); sleep(3000);
+        $("input[type='submit'][value='Firmar']").click();
+        loginFirmSoli.firmaFun(tramiteFun);sleep(4000);
+    }
+
+    public void ProcesoAutorizacion(String folioNumber) {
+
+        mainPage240120.iniciofun.click();
+        mainPage240120.numfolio.sendKeys(folioNumber);sleep(1500);
+        ConDBReasigSolFun.processFolio(folioNumber, FunRFC);sleep(4000);
+        mainPage240120.inputBuscarTareasFuncionario.click();sleep(4500);
+        $x("//td[@role='gridcell' and contains(text(), '" + folioNumber + "')]").shouldBe(visible).doubleClick();
+        $("input[type='submit'][value='Autorizar']").click();
+        loginFirmSoli.firmaFun(tramiteFun);sleep(1000); sleep(4000);
+    }
+
+    public void ProcesoConfirmarNotificaciónResolucion(String folioNumber, String usuario) {
+
+        if (usuario.equals("Moral")) {
+            open("https://wwwqa.ventanillaunica.gob.mx/ventanilla-HA/authentication.action?showLogin=%22;");
+            WebDriverRunner.getWebDriver().manage().deleteAllCookies();
+            loginFirmSoli.login(tramiteM); sleep(1000);
+            mainPage240120.selecRol.sendKeys("Persona Moral");sleep(1000);
+            mainPage240120.btnacep.click();
+            mainPage240120.inputNumFolio.sendKeys(folioNumber);sleep(1500);
+            $("input[type='button'][value='Buscar']").click();
+            metodos.scrollIncremento(1);
+            $$(By.cssSelector("td[role='gridcell']")).findBy(Condition.partialText(folioNumber)).shouldBe(visible).doubleClick();
+            mainPage240120.btnFirmarNotificacion.click();sleep(1000);
+            loginFirmSoli.firma(tramiteM);sleep(1000);sleep(4000);
+        }
+
+    }
+    
+    
     //Metodo que ejecuta n veces una clase que implementa Runnable
     public void ejecutarProcesoNRunnable(Runnable proceso, int n) {
         for (int i = 0; i < n; i++) {
