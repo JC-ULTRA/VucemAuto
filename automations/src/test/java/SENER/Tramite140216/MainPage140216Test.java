@@ -16,11 +16,16 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 import javax.swing.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 
-import static com.codeborne.selenide.Selenide.open;
-import static com.codeborne.selenide.Selenide.sleep;
+import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 public class MainPage140216Test {
@@ -94,11 +99,13 @@ public class MainPage140216Test {
             mainPage140216.labeOtrasTareas.click();
             mainPage140216.labelSENER.click();
             mainPage140216.labelSuspencsionPF.click();
-            mainPage140216.inputFolioTramite.sendKeys("1701300100820251701000034");
+            mainPage140216.inputFolioTramite.sendKeys(obtenerNumFolioTramite("130121", "ESTSOL.AU"));
             mainPage140216.btnBuscarFolio.click();
             mainPage140216.inputMotivoSuspension.sendKeys("TEST");sleep(1000);
             mainPage140216.inputNumeroOficio.sendKeys("123456");
-            Selenide.executeJavaScript("arguments[0].value = '29/04/2025';", mainPage140216.inputFechaSuspension);sleep(100);
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+            String fechaHoy = LocalDate.now().format(formatter);
+            executeJavaScript("arguments[0].value = arguments[1];", mainPage140216.inputFechaSuspension, fechaHoy);sleep(100);
             mainPage140216.inputGuarda.click();sleep(5000);
             mainPage140216.inputContinuar.click();
             Selenide.sleep(5000);
@@ -139,4 +146,49 @@ public class MainPage140216Test {
             sleep(500);
         }
     }
+
+    //Método para traer el folio mas actual según el id tipo trámite y el estatus en que lo quieres,
+    //Ejemplo: id tipo trámite 130121 y estatus ESTSOL.AU para generar un subsecuente.
+    public String obtenerNumFolioTramite(String idTipoTramite, String ideEstSolicitud) {
+        String numFolioTramite = null;
+
+        String sql =
+                "SELECT NUM_FOLIO_TRAMITE " +
+                        "FROM VUC_TRAMITE vt " +
+                        "WHERE ID_SOLICITUD = (" +
+                        "    SELECT ID_SOLICITUD " +
+                        "    FROM (" +
+                        "        SELECT * " +
+                        "        FROM VUC_SOLICITUD vs " +
+                        "        WHERE ID_TIPO_TRAMITE = ? " +
+                        "          AND IDE_EST_SOLICITUD = ? " +
+                        "        ORDER BY FEC_CREACION DESC" +
+                        "    ) " +
+                        "    WHERE ROWNUM = 1" +
+                        ")";
+
+        // Conexión incluida en el método
+        try (Connection conn = DriverManager.getConnection(
+                "jdbc:oracle:thin:@10.181.233.245:1521/vucprod1",
+                "vucem_app_p01",
+                "Mfk22nvW6na71DgBXi5R");                                 // <-- tu contraseña
+             PreparedStatement ps = conn.prepareStatement(sql)) {
+
+            // Seteamos los parámetros dinámicos
+            ps.setString(1, idTipoTramite);
+            ps.setString(2, ideEstSolicitud);
+
+            try (ResultSet rs = ps.executeQuery()) {
+                if (rs.next()) {
+                    numFolioTramite = rs.getString("NUM_FOLIO_TRAMITE");
+                }
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return numFolioTramite;
+    }
 }
+
