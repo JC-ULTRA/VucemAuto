@@ -96,6 +96,7 @@ public class MainPage130302 {
     public SelenideElement inputBuscarTareasFuncionario = $x("//*[@id='buscarTareasFuncionario']");
     public SelenideElement tdEvaluarSolicitud = $x("//td[@title='Evaluar Solicitud']");
 
+
     //Continuar Generar Dictamen
     public SelenideElement GenerarDic = $x("//input[@type='submit']");
     //Sentido AC

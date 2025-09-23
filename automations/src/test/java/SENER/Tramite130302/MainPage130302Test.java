@@ -168,6 +168,7 @@ public class MainPage130302Test {
                         ProcesoConfirmarNotificaciónResolucion(folioNumber, "Moral");
                         break;
                 }
+
             }
 
         }, repeticiones);
