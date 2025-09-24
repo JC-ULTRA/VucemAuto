@@ -21,7 +21,17 @@ public class MainPage120202 {
     public SelenideElement btnBuscarOficioAsig = $x("/html/body/main/div/div[4]/div/form/div[2]/div/div[2]/div[3]/div/div/input");
     public SelenideElement Monto = $x("//*[@id=\"montoExpedir\"]");
     public SelenideElement btnAgregarMonto = $x("/html/body/main/div/div[4]/div/form/div[2]/div/div[2]/div[22]/div/div/input");
-
+    public SelenideElement btnBuscarFolio = $x("//*[@id=\"buscarTareasFuncionario\"]");
+    public SelenideElement otrasTareas = $x("//*[@id=\" Otras tareas\"]");
+    public SelenideElement CUPOS = $x("/html/body/div[1]/div[3]/div[2]/div/div/ul/li/ul/li[4]/a");
+    public SelenideElement generarCertificado = $x("/html/body/div[1]/div[3]/div[2]/div/div/ul/li/ul/li[4]/ul/li[4]/a");
+    public SelenideElement consultaFolio = $x("//*[@id=\"radioTodos\"]");
+    public SelenideElement numFolioCert = $x("//*[@id=\"numeroFolioTramite\"]");
+    public SelenideElement btnBuscarFolioConsilta = $x("/html/body/div[1]/div[3]/div[3]/div/form/table/tbody/tr[11]/td/input");
+    public SelenideElement folioTabla = $x("/html/body/div[1]/div[3]/div[3]/div/form/table/tbody/tr[13]/td/div/div[3]/div[3]/div/table/tbody/tr[2]/td[2]");
+    public SelenideElement btnGenerar = $x("/html/body/div[1]/div[3]/div[3]/div/form/div[1]/table/tbody/tr[2]/td[8]/input");
+    public SelenideElement btnEntregado = $x("/html/body/div[1]/div[3]/div[3]/div/form/div[1]/table/tbody/tr[2]/td[8]/input");
+    public SelenideElement celdaCertificado = $x("/html/body/div[1]/div[3]/div[3]/div/form/div[1]/table/tbody/tr[2]/td[5]");
 
     public SelenideElement btnContinuarFirma = $x("/html/body/main/div/div[4]/div/form/div[3]/div/div/div[2]/input[1]");
 }
