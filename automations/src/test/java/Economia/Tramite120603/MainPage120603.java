@@ -36,6 +36,7 @@ public class MainPage120603 {
     public SelenideElement btnCerrar = $x("//*[@id=\"btnCerrar\"]");
     public SelenideElement btnSiguiente = $x("//*[@id=\"siguienteButton\"]");
     public SelenideElement folio = $x("/html/body/main/div/div[4]/div/div[4]/div/div/ul/li");
+    public SelenideElement MensajeCarga = $x("//*[@id=\"divMsgModal\"]");
 
     public SelenideElement numfolio = $x("//*[@id=\"idNumFolio\"]");
     public SelenideElement btnBuscarFolio = $x("//*[@id=\"buscarTareasFuncionario\"]");
