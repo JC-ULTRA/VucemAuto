@@ -94,7 +94,6 @@ public class MainPage120204Test {
         //Crear checkboxes para seleccionar los métodos
         JCheckBox dictamenCheckBox = new JCheckBox("ProcesoDictamen120204");
         JCheckBox verificaCheckBox = new JCheckBox("ProcesoVerifica120204");
-//        JCheckBox autorizaCheckBox = new JCheckBox("ProcesoAutoriza120204");
         JCheckBox confirmacionCheckBox = new JCheckBox("ProcesoConfirmar120204");
 
         Object[] params = {"Seleccione los métodos a ejecutar:", dictamenCheckBox, verificaCheckBox, confirmacionCheckBox};
@@ -110,7 +109,6 @@ public class MainPage120204Test {
         List<String> selectedMethods = new ArrayList<>();
         if (dictamenCheckBox.isSelected()) selectedMethods.add("ProcesoDictamen120204");
         if (verificaCheckBox.isSelected()) selectedMethods.add("ProcesoVerifica120204");
-//        if (autorizaCheckBox.isSelected()) selectedMethods.add("ProcesoAutoriza120204");
         if (confirmacionCheckBox.isSelected()) selectedMethods.add("ProcesoConfirmar120204");
         // Ejecutar el proceso con las repeticiones
         ejecutarProcesoNRunnable(() -> {
@@ -152,13 +150,9 @@ public class MainPage120204Test {
             if (selectedMethods.contains("ProcesoVerifica120204")) {
                 VerificaDictamen(folioNumber);
             }
-//            if (selectedMethods.contains("Procesoautoriza120204")) {
-//                AutorizarDictamen(folioNumber);
-//            }
             if (selectedMethods.contains("ProcesoConfirmar120204")) {
                 ProcesoConfirmar(folioNumber);
             } guardarFolioEnArchivo(folioNumber);
-
         }, repeticiones);
     }
 
@@ -194,20 +188,6 @@ public class MainPage120204Test {
         $$(By.cssSelector("td[role='gridcell']")).findBy(Condition.text(folioNumber)).doubleClick();sleep(5000);
         mainPage120204.btnFirmarAutorizacion.click();sleep(5000);
         loginFirmSoli.firmaFun(tramite120204fun);sleep(8000);
-    }
-
-    public void AutorizarDictamen(String folioNumber) {
-        String folioGenerado = folioNumber;
-        String rfcEmpleado = "MAVL621207C95";
-        ConDBReasigSolFun.processFolio(folioGenerado, rfcEmpleado);
-        WebDriverRunner.getWebDriver().manage().deleteAllCookies();
-        ConDBReasigSolFun.processFolio(folioNumber, FunRFC);sleep(4000);
-        mainPage120204.iniciofun.click();
-        mainPage120204.numfolio.sendKeys(folioNumber);sleep(1500);
-        mainPage120204.btnBuscarFolio.click();sleep(4500);
-        $$(By.cssSelector("td[role='gridcell']")).findBy(Condition.text(folioNumber)).doubleClick();sleep(5000);
-        mainPage120204.btnFirmarAutorizacion.click();sleep(5000);
-        loginFirmSoli.firmaFun(tramite120204fun);sleep(4000);
     }
 
     public void ProcesoConfirmar(String folioNumber){
