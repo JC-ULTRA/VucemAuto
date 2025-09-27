@@ -170,7 +170,6 @@ public class MainPage90202Test {
             mainPage90202.inputLicitacion.doubleClick();sleep(1000);
             $(withText("Sectores y mercancías")).click();
             Selenide.executeJavaScript(script2, mainPage90202.inputSectorProsecConfirmado);sleep(2000);
-//            mainPage90202.inputSectorProsecConfirmado.sendKeys("IV-De la Industria del Juguete y Juegos de recreo");sleep(2000);
             $("input[name='agregar_sectores'][value='Agregar sector']").click();sleep(5000);
             mainPage90202.inputFraccionArancelaria.sendKeys("61130002");sleep(2000);
             mainPage90202.InputGuardarSolicitud.click();sleep(3000);
@@ -197,7 +196,6 @@ public class MainPage90202Test {
             if (selectedMethods.contains("ProcesoConfirmar90202")) {
                 ProcesoConfirmar(folioNumber);
             } guardarFolioEnArchivo(folioNumber);
-
         }, repeticiones);
     }
 

@@ -1,14 +1,13 @@
-package HACIENDA.Tramite420102;
+package Economia.Tramite90304;
 
 import DBYFOLIO.ConDBReasigSolFun;
 import DBYFOLIO.ObtenerFolio;
+import Economia.Tramite90304.MainPage90304;
 import Firmas.LoginFirmSoli;
 import Firmas.TramitesFirmasLG;
 import Metodos.Metodos;
 import com.codeborne.selenide.Browsers;
-import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
-import com.codeborne.selenide.WebDriverRunner;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.BeforeAll;
@@ -30,20 +29,19 @@ import static com.codeborne.selenide.Selectors.withText;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
-public class MainPage420102Test {
-    MainPage420102 mainPage420102 = new MainPage420102();
+public class MainPage90304Test {
+    MainPage90304 mainPage90304 = new MainPage90304();
     LoginFirmSoli loginFirmSoli = new LoginFirmSoli();
-    Metodos metodos = new Metodos();
     ObtenerFolio obtenerFolio = new ObtenerFolio();
-    //VARIABLES
+    Metodos metodos = new Metodos();
     String FunRFC = "MAVL621207C95";
     String SoliRFC = "AAL0409235E6";
 
-    TramitesFirmasLG tramite420102 = new TramitesFirmasLG(
+    TramitesFirmasLG tramite90304  = new TramitesFirmasLG(
             "C:\\VucemAuto\\automations\\src\\test\\resources\\CredSoli\\aal0409235e6.cer",
             "C:\\VucemAuto\\automations\\src\\test\\resources\\CredSoli\\AAL0409235E6_1012231310.key"
     );
-    TramitesFirmasLG tramite420102fun = new TramitesFirmasLG(
+    TramitesFirmasLG tramite90304fun = new TramitesFirmasLG(
             "C:\\Vucem3.1\\automations\\src\\test\\resources\\CredFunc\\mavl621207c95.cer",
             "C:\\Vucem3.1\\automations\\src\\test\\resources\\CredFunc\\MAVL621207C95_1012241424.key"
     );
@@ -69,7 +67,7 @@ public class MainPage420102Test {
     }
 
     @Test
-    public void Proceso420102() {
+    public void Proceso90304() throws IOException {
         /////////////////////////////////////////////////////////////////////////////////////////////////////////-
         // Solicitar el número de repeticiones al usuario a través de un JOptionPane con opción de Cancelar
         String repeticionesStr = JOptionPane.showInputDialog(null, "Ingrese el número de repeticiones:", "Repeticiones", JOptionPane.QUESTION_MESSAGE);
@@ -90,34 +88,41 @@ public class MainPage420102Test {
             JOptionPane.showMessageDialog(null, "Valor no válido, se utilizará 1 repetición por defecto.");
         }
         /////////////////////////////////////////////////////////////////////////////////////////////////////////-
-        // Ejecutar el proceso con las repeticiones y los métodos seleccionados
+
+        // Ejecutar el proceso con las repeticiones
         ejecutarProcesoNRunnable(() -> {
-            WebDriverRunner.getWebDriver().manage().deleteAllCookies();
-            loginFirmSoli.login(tramite420102);
-            mainPage420102.selecRol.sendKeys("Persona Moral");
-            mainPage420102.btnacep.click();
+            // Ingreso y selección de trámite
+
+            loginFirmSoli.login(tramite90304); sleep(1000);
+            mainPage90304.selecRol.sendKeys("Persona Moral");
+            mainPage90304.btnacep.click();
             $$(By.cssSelector("a[role='button']")).findBy(text("Trámites")).click();
             $(withText("Solicitudes nuevas")).click();
-            $("[alt='Administración General de Aduanas']").click();
-            $(withText("Aviso Único")).click();
-            $(withText("Registro de Proveedores")).click();
-            $(withText("Concluir relación Industria Automotriz - Proveedor")).click();
-            //DATOS SOLICITUD
+            mainPage90304.Economia.click(); sleep(1000);
+            $(withText("PROSEC")).click();
+            mainPage90304.linkModificacion.click();
+            mainPage90304.linkModificacionBajaProductorI.click();sleep(1000);
             try {
                 Thread.sleep(2000);
-                mainPage420102.Scrol.scrollIntoView(true);
+                mainPage90304.Scrol.scrollIntoView(true);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            $(withText("Concluir Relacion")).click();
-            mainPage420102.inputRFC.sendKeys("TSD931210493");
-            mainPage420102.btnBuscar.click();
-            mainPage420102.radioContibuyente.click();
-            mainPage420102.InputGuardarSolicitud.click();sleep(3000);
-            mainPage420102.btnAceptar.click();
+            $(withText("Prosec productor directo")).doubleClick();
+//            mainPage90304.inpuFolioPrograma.doubleClick();
+            metodos.scrollDecremento(2);
+            $(withText("Modificación")).click();
+            metodos.scrollIncremento(2);
+            $("input[id='btnBajaEmpresas3'][value='Baja']").click();sleep(5000);
+            mainPage90304.InputGuardarSolicitud.click();sleep(3000);
+            mainPage90304.btnContinuar.click();sleep(5000);
+            metodos.cargarDocumentos();
+            $("input[id='btnAnexar'][value='Adjuntar']").click();sleep(2000);
+            $("input[id='btnCerrar'][value='Cerrar']").click();sleep(5000);
+            mainPage90304.btnSiguienteBoton.click();sleep(5000);
             //FIRMAR SOLICITUD
-            loginFirmSoli.firma(tramite420102);
-            String folioText = mainPage420102.folio.getText();sleep(5000);
+            loginFirmSoli.firma(tramite90304);sleep(4000);
+            String folioText = mainPage90304.folio.getText();sleep(5000);
             String folioNumber = obtenerFolio.obtenerFolio(folioText);
             ConDBReasigSolFun.processFolio(folioNumber, FunRFC);
             guardarFolioEnArchivo(folioNumber);
@@ -133,7 +138,7 @@ public class MainPage420102Test {
         }
     }
     public void guardarFolioEnArchivo(String folioNumber) {
-        String rutaArchivo = "C:\\VucemAuto\\automations\\folios_generados420102.txt";
+        String rutaArchivo = "C:\\VucemAuto\\automations\\folios_generados90304.txt";
 
         // Formato de fecha y hora: 2025-07-02 18:45:00
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
