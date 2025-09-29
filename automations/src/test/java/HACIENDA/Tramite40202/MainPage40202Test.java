@@ -111,7 +111,7 @@ public class MainPage40202Test {
             $("[for='modificarCaat.maritimo']").click();sleep(1000);
             $("[id='checkBuscaExtranjero']").click();sleep(1000);
           //  $("[id='folioCaatBusquedaNa']").sendKeys("3LMH");sleep(1000);
-            $("[id='folioCaatBusquedaNa']").sendKeys("3LMH");sleep(1000);
+            $("[id='folioCaatBusquedaNa']").sendKeys("3LMK");sleep(1000);
             $("[id='buscaCandidato1']").click();sleep(1000);
             $("[id='jqg_PersonaBuscadaCAAT_3']").click();sleep(1000);
             $("[id='guardarBuscado2']").click();sleep(1000);
@@ -131,6 +131,7 @@ public class MainPage40202Test {
             $("[value='Guardar']").click();sleep(1000);
             $("[name='guardar']").click();sleep(2000);
 
+            //Esta linea esta bien JC
             String numeroTemporal = obtenerFolioTemp(mainPage40202.folio.getText());sleep(1000);
 
             String unidadAdmin = "1500301";sleep(1000);
