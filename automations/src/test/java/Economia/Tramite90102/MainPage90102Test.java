@@ -9,11 +9,16 @@ import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
 import java.awt.Component;
 import java.io.File;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.time.Duration;
 import java.time.LocalDate;
 import java.time.DayOfWeek;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.TimeUnit;
@@ -141,6 +146,9 @@ public class MainPage90102Test {
             ProcesoVerificarDictamen("0200900100220252235000001");
             ProcesoAutorizacion("0200900100220252235000001");
             */
+
+            BajaProgramasRFC( "TICPSE.PROSEC" , "TSD931210493", "MOVPSE.AT");
+
             //Ingreso y Rol
             loginFirmSoli.login(tramiteM);
             //mainPage90102.selecRol.sendKeys(new CharSequence[]{"Persona Moral"});
@@ -434,6 +442,84 @@ public class MainPage90102Test {
             $$(By.cssSelector("td[role='gridcell']")).findBy(Condition.partialText(folioNumber)).shouldBe(visible).doubleClick();
             mainPage90102.btnFirmarNotificacion.click();sleep(1000);
             loginFirmSoli.firma(tramiteM);sleep(1000);sleep(4000);
+        }
+
+    }
+
+    //Metodo para traer el folio mas actual según el id tipo trámite y el estatus en que lo quieres,
+    //Ejemplo: id tipo trámite 130121 y estatus ESTSOL.AU para generar un subsecuente.
+    public void BajaProgramasRFC(String tipoConfPrograma ,String RFC, String estatusPrograma) {
+
+        // 1. CONSTRUIR LA SENTENCIA SQL PARA CONSULTA
+        String sql =
+                "SELECT pa.NUM_FOLIO_PROGRAMA_SE , pa.RFC " +
+                        "FROM VUC_PROGRAMA_AUTORIZADO_SE pa " +
+                        "WHERE pa.IDE_TIPO_CONF_PROGRAMA_SE = ? " + // IDs de Trámite (dinámico)
+                        "  AND pa.RFC = ? " +
+                        "  AND pa.IDE_MOVIMIENTO_PROG_SE = ? " + // RFC Capturista (parámetro)
+                        "ORDER BY pa.ID_PROGRAMA_AUTORIZADO_SE DESC";
+
+        // 2.CONSTRUIR EL UPDATE
+        String sqlUpdate = "UPDATE VUC_PROGRAMA_AUTORIZADO_SE pa SET IDE_MOVIMIENTO_PROG_SE = ? WHERE pa.IDE_TIPO_CONF_PROGRAMA_SE = ?  AND pa.RFC = ? AND pa.IDE_MOVIMIENTO_PROG_SE = ? ";
+
+
+        try (Connection conn = DriverManager.getConnection(
+                "jdbc:oracle:thin:@10.181.233.245:1521/vucprod1",
+                "vucem_app_p01",
+                "Mfk22nvW6na71DgBXi5R");
+             PreparedStatement ps = conn.prepareStatement(sql)) {
+
+            ps.setString(1, tipoConfPrograma); // Tipo de programa
+            ps.setString(2, RFC); // Capturista
+            ps.setString(3, estatusPrograma); //Estatus del programa
+
+            try (ResultSet rs = ps.executeQuery()) {
+
+                //Declarar variables para mostrar valores de la consulta
+                int index = 0;
+                String numFolio = null;
+                String rfcPrograma = null;
+
+                while  (rs.next()) {
+
+                    numFolio = rs.getString("NUM_FOLIO_PROGRAMA_SE");
+                    rfcPrograma = rs.getString("RFC");
+
+                    // --- INICIO: CÓDIGO AÑADIDO PARA DESPLEGAR ---
+                    System.out.println("FOLIO " + (index + 1) + ": " + numFolio + " (Capturista: " + rfcPrograma + ")");
+                    index++;
+                    System.out.println("------------------------------------");
+                    // --- FIN: CÓDIGO AÑADIDO PARA DESPLEGAR ---
+                }
+                System.out.println("TOTAL DE PROGRAMAS ENCONTRADOS: " + index);
+                System.out.println("------------------------------------");
+
+                if (index > 0) {
+
+                    try (PreparedStatement psUpdate = conn.prepareStatement(sqlUpdate)) {
+
+                        psUpdate.setString(1, "MOVPSE.C");
+                        psUpdate.setString(2, tipoConfPrograma);
+                        psUpdate.setString(3, RFC);
+                        psUpdate.setString(4, estatusPrograma);
+
+                        // Ejecuta la actualización
+                        int filasAfectadas = psUpdate.executeUpdate();
+
+                        System.out.println("------------------------------------");
+                        System.out.println("UPDATE VUC_PROGRAMA_AUTORIZADO_SE:");
+                        //System.out.println("Folio actualizado: " + numFolioTramite);
+                        //System.out.println("Nueva FEC_FIN_VIGENCIA: " + nuevaFechaFinVigencia);
+                        System.out.println("Filas afectadas: " + filasAfectadas);
+                        System.out.println("------------------------------------");
+                    }
+                } else {
+                    System.out.println("ADVERTENCIA: No se encontró ningún programa autorizado.");
+                }
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
         }
 
     }
