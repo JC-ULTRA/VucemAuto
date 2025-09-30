@@ -14,12 +14,14 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeOptions;
 import javax.swing.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.time.Duration;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 import java.util.concurrent.TimeUnit;
 
 import static com.codeborne.selenide.Condition.text;
@@ -112,6 +114,7 @@ public class MainPage130302Test {
         /////////////////////////////////////////////////////////////////////////////////////////////////////////-
         ejecutarProcesoNRunnable(() -> {
 
+            /*
             // Solicitar el folio al usuario
             String FolioTramiteN = JOptionPane.showInputDialog(null, "Ingrese el número de folio de 25 dígitos:", "Número de Folio", JOptionPane.QUESTION_MESSAGE);
             // Validar que el usuario haya ingresado un folio válido de 25 dígitos
@@ -119,6 +122,12 @@ public class MainPage130302Test {
                 JOptionPane.showMessageDialog(null, "El número de folio ingresado no es válido. La operación será cancelada.");
                 return; // Cancelar la operación
             }
+*/
+            // Lista de IDs de trámite que quieres buscar
+            List<String> idsABuscar = Arrays.asList("130108", "130121", "130201", "130204");
+
+            String FolioTramiteN = obtenerNumFolioTramite(idsABuscar, "AAL0409235E6","ESTTR.CN" ,"ESTSOL.AU");
+
 
 //          Ingreso y selección de trámite
             loginFirmSoli.login(tramiteM);
@@ -246,6 +255,80 @@ public class MainPage130302Test {
             loginFirmSoli.firma(tramiteM);sleep(1000);sleep(4000);
         }
 
+    }
+
+
+    //Metodo para traer el folio mas actual según el id tipo trámite y el estatus en que lo quieres,
+    //Ejemplo: id tipo trámite 130121 y estatus ESTSOL.AU para generar un subsecuente.
+    public String obtenerNumFolioTramite(List<String> idTiposTramite,String RFC, String ideEstTramite, String ideEstSolicitud) {
+
+        LocalDate fechaInicioBusqueda = LocalDate.now().plusDays(1);
+        LocalDate fechaFinBusqueda = LocalDate.now().plusDays(30);
+        String numFolioTramite = null;
+
+        // Convertimos a java.sql.Date para el PreparedStatement
+        java.sql.Date sqlFechaInicio = java.sql.Date.valueOf(fechaInicioBusqueda);
+        java.sql.Date sqlFechaFin = java.sql.Date.valueOf(fechaFinBusqueda);
+
+        // 1. CONSTRUIR PLACEHOLDERS DINÁMICOS
+        // Genera una cadena como '?, ?, ?' basada en el tamaño de la lista
+        String placeholders = String.join(", ", Collections.nCopies(idTiposTramite.size(), "?"));
+
+        // 2. CONSTRUIR LA SENTENCIA SQL
+        String sql =
+                "SELECT vt.NUM_FOLIO_TRAMITE, vs.ID_TIPO_TRAMITE " +
+                        "FROM VUC_SOLICITUD vs " +
+                        "INNER JOIN VUC_TRAMITE vt ON vs.ID_SOLICITUD = vt.ID_SOLICITUD " +
+                        "JOIN VUC_RESOLUCION vr ON vt.NUM_FOLIO_TRAMITE = vr.NUM_FOLIO_TRAMITE " +
+                        "WHERE vs.ID_TIPO_TRAMITE IN (" + placeholders + ") " + // IDs de Trámite (dinámico)
+                        "  AND vs.NUM_FOLIO_TRAMITE_ORIGINAL IS NULL " +
+                        "  AND vs.CVE_USUARIO_CAPTURISTA = ? " + // RFC Capturista (parámetro)
+                        "  AND vt.IDE_EST_TRAMITE = ? " + // Estado de Trámite (parámetro)
+                        "  AND vs.IDE_EST_SOLICITUD = ? " + // Estado de Solicitud (parámetro)
+                        "  AND vr.FEC_FIN_VIGENCIA BETWEEN ? AND ? " + // <--- NUEVOS PLACEHOLDERS PARA LAS FECHAS
+                        "ORDER BY vs.FEC_CREACION DESC";
+
+        try (Connection conn = DriverManager.getConnection(
+                "jdbc:oracle:thin:@10.181.233.245:1521/vucprod1",
+                "vucem_app_p01",
+                "Mfk22nvW6na71DgBXi5R");
+             PreparedStatement ps = conn.prepareStatement(sql)) {
+
+            int index = 1;
+
+            // 1. ASIGNAR LOS PARÁMETROS DE LA LISTA UNO POR UNO
+            for (String idTramite : idTiposTramite) {
+                ps.setString(index++, idTramite);
+            }
+            // 2. ASIGNAR EL ÚLTIMO PARÁMETRO FIJO (IDE_EST_SOLICITUD)
+
+            ps.setString(index++, RFC); // CVE_USUARIO_CAPTURISTA
+            ps.setString(index++, ideEstTramite); // IDE_EST_TRAMITE
+            ps.setString(index++, ideEstSolicitud);
+
+            // 3. ASIGNAR EL RANGO DE FECHAS (Calculado previamente)
+            ps.setDate(index++, sqlFechaInicio); // FEC_FIN_VIGENCIA (Fecha de inicio del rango: Mañana)
+            ps.setDate(index, sqlFechaFin); // FEC_FIN_VIGENCIA (Fecha de fin del rango: Dentro de 30 días)
+
+            try (ResultSet rs = ps.executeQuery()) {
+                if (rs.next()) {
+                    numFolioTramite = rs.getString("NUM_FOLIO_TRAMITE");
+                    // --- INICIO: CÓDIGO AÑADIDO PARA DESPLEGAR ---
+                    String tipoTramite = rs.getString("ID_TIPO_TRAMITE");
+                    System.out.println("------------------------------------");
+                    System.out.println("FOLIO ENCONTRADO: " + numFolioTramite);
+                    System.out.println("TIPO DE TRÁMITE: " + tipoTramite);
+                    System.out.println("------------------------------------");
+                    // --- FIN: CÓDIGO AÑADIDO PARA DESPLEGAR ---
+                }
+
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return numFolioTramite;
     }
 
 

@@ -117,7 +117,69 @@ public class MainPage261401 {
     public SelenideElement selectDoc2 = $x("/html/body/main/div/div[4]/div[2]/div/form[3]/table/tbody/tr[1]/td[4]/input");
     //public SelenideElement selectDoc3 = $x("/html/body/main/div/div[4]/div[2]/div/form[4]/table/tbody/tr[1]/td[4]/input");
     public SelenideElement btnAnexar = $x("//*[@id=\"btnAnexar\"]");
-    public SelenideElement btnCerrar = $x("/html/body/main/div/div[4]/div[2]/form/div[3]/div/input");
-    public SelenideElement inputSiguiente = $x("/html/body/main/div/div[4]/div[1]/form[2]/div[2]/div/input[2]");
-    public SelenideElement folio = $x("/html/body/main/div/div[4]/div/div[4]/div/div/ul/li");
+    public SelenideElement MensajeCarga = $x("//*[@id=\"divMsgModal\"]");
+    public SelenideElement btnCerrar = $x("//*[@id=\"btnCerrar\"]");
+    public SelenideElement inputSiguiente = $x("//*[@id=\"siguienteButton\"]");
+
+
+    //INICIO
+    public SelenideElement Inicio = $x("//a[contains(text(),'Inicio')]");
+    public SelenideElement folio = $x("//*[@id=\"notification\"]/div/ul/li");
+    public SelenideElement inputBuscarTareasFuncionario = $x("//*[@id='buscarTareasFuncionario']");
+    public SelenideElement tdEvaluarSolicitud = $x("//td[@title='Evaluar Solicitud']");
+
+
+    //Continuar Generar Dictamen
+    public SelenideElement GenerarDic = $x("//input[@type='submit']");
+    //Sentido AC
+    public SelenideElement SentidoDictamen = $x("//input[@value='SEDI.AC']");
+    //Justificación Dic
+    public SelenideElement JustificacionDic = $x("//*[@id='justificacionDictamen']");
+    public SelenideElement AntecendentesTextoDictamen = $x("//*[@id='textoDictamen']");
+    //Guardar y Firmar
+    public SelenideElement inputMostrarFirma = $x("//input[@value='Firmar']");
+
+
+    //OBSERVAR REQUERIMIENTO
+    public SelenideElement JustificacionObservacionReq = $x("//*[@id=\"requerimientoSolicitud\"]/table/tbody/tr[5]/td/textarea");
+
+    //ATENDER/MODIFICAR REQUERIMIENTO
+    public SelenideElement tabCapRequerimiento = $x("//*[@id=\"tabs\"]/ul/li[1]/a/label");
+    public SelenideElement justificaRequerimiento  = $x("//*[@id=\"justId\"]");
+    public SelenideElement selecDocumentos = $x("//*[@id=\"alcanceRequerimientoId\"]");
+    public SelenideElement tabSeleccionarDocumentos = $x("//*[@id=\"tabs\"]/ul/li[2]/a/label");
+    public SelenideElement selectVerificacionDictamenDoc = $x("//a[text()='Dictamen de Verificación o Inspección']");
+    public SelenideElement btnAgregarNuevoDocumento = $x("//*[@id=\"addDoctoEspecificoId\"]");
+    public SelenideElement gridDocumento1 = $x("//td[text()='Dictamen de Verificación o inspección']/parent::tr//input[@type='checkbox']");
+    public SelenideElement btnContinuar1Requerimiento = $x("//*[@id=\"mostrarFirmaId\"]");
+
+
+    //Dictamen
+    public SelenideElement iniciofun = $x("/html/body/div[1]/div[3]/div[1]/table/tbody/tr[2]/td/a/img");
+    public SelenideElement numfolio = $x("//*[@id=\"idNumFolio\"]");
+    //public SelenideElement btnBuscarFolio = $x("//*[@id=\"buscarTareasFuncionario\"]");
+    public SelenideElement tablatarea = $x("//*[@id=\"1\"]/td[1]");
+    public SelenideElement generaDict = $x("//*[@id=\"opcion\"]");
+    public SelenideElement btmContinuarDict = $x("/html/body/div[1]/div[3]/div[3]/div/form/div[1]/input");
+    public SelenideElement sentidoAceptado = $x("/html/body/div[1]/div[3]/div[3]/div/form[1]/table[1]/tbody/tr[2]/td[2]/input[1]");
+    public SelenideElement RestriccionesDictamen = $x("//*[@id=\"textAreaRestriccion\"]");
+    public SelenideElement JustificacionVigencia = $x("//*[@id=\"justificacion\"]");
+    public SelenideElement DestinoPara = $x("//*[@id=\"usoAutorizadoDictamen\"]");
+    public SelenideElement SiglasDictaminador = $x("//*[@id=\"siglasDictaminador\"]");
+    public SelenideElement selectAsignarAutorizador = $x("//*[@id=\"tramite.dictamen.numeroGenerico1\"]");
+    public SelenideElement AntecedentesDictamen = $x("//*[@id=\"textoDictamen\"]");
+    public SelenideElement antecedentesDict = $x("//*[@id=\"valueTA\"]");
+    public SelenideElement fechaVigencia = $x("//*[@id=\"fechaVigencia\"]");
+    public SelenideElement fechaFinVigencia = $x("//*[@id=\"fechaFinVig\"]");
+
+    //OBSERVAR DICTAMEN
+    public SelenideElement JustificacionObservacionDictamen = $x("//*[@id=\"observacionId\"]");
+    public SelenideElement btnGenerarObservacionDictamen = $x("//*[@id=\"acciones\"]/input[2]");
+
+    //Confirmación
+    public SelenideElement linkInicio = $x("//*[@id=\"bandejaSol\"]");//*[@id="Inicio"]
+    public SelenideElement inputNumFolio = $x("//*[@id=\"idNumFolio\"]");
+    public SelenideElement btnBuscarFolioTarea= $x("//*[@id=\"buscarTareasSolicitante\"]");
+    public SelenideElement gridFolio = $x("//*[@id=\"0\"]/td[1]");
+    public SelenideElement btnFirmarNotificacion = $x("//*[@id=\"acuse\"]");
 }
