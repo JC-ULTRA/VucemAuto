@@ -33,13 +33,9 @@ public class MainPage231001 {
     public SelenideElement AduanaEntrada = $x("//*[@id=\"aduanas\"]");
     public SelenideElement TBNContinuar = $x("//*[@id=\"guardarSolicitud\"]");
     public SelenideElement folio = $x("/html/body/main/div/div[4]/div/div[4]/div/div/ul/li");
-
     //solo para el logueo la firma es diferente
     public SelenideElement cers = $x("//*[@id='certificate']");
     public SelenideElement keys = $x("//*[@id='privateKey']");
     public SelenideElement passS = $x("//*[@id='privateKeyPassword']");
     public SelenideElement getBtnIngresS = $x("//*[@id='btnSubmit']");
-
-
-
 }
