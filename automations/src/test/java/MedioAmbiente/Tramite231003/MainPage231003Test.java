@@ -1,5 +1,6 @@
 package MedioAmbiente.Tramite231003;
 
+import DBYFOLIO.ConDBReasigSolFun;
 import DBYFOLIO.ObtenerFolio;
 import Firmas.LoginFirmSoli;
 import Firmas.TramitesFirmasLG;
@@ -13,25 +14,38 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.chrome.ChromeOptions;
 import javax.swing.*;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
-import static com.codeborne.selenide.Selenide.open;
-import static com.codeborne.selenide.Selenide.sleep;
+
+import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Condition.visible;
+import static com.codeborne.selenide.Selectors.byText;
+import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 public class MainPage231003Test {
     MainPage231003 mainPage231003 = new MainPage231003();
     LoginFirmSoli loginFirmSoli = new LoginFirmSoli();
-    Metodos metodos = new Metodos();
     ObtenerFolio obtenerFolio = new ObtenerFolio();
-    //VARIABLES
+    Metodos metodos = new Metodos();
     String FunRFC = "MAVL621207C95";
-    String SoliRFC = "AAL0409235E6";
-
-    TramitesFirmasLG tramite231003  = new TramitesFirmasLG(
+    TramitesFirmasLG tramite231003 = new TramitesFirmasLG(
             "C:\\VucemAuto\\automations\\src\\test\\resources\\CredSoli\\aal0409235e6.cer",
             "C:\\VucemAuto\\automations\\src\\test\\resources\\CredSoli\\AAL0409235E6_1012231310.key"
+    );
+    TramitesFirmasLG tramite231003F  = new TramitesFirmasLG(
+            "C:\\VucemAuto\\automations\\src\\test\\resources\\CredFunc\\mavl621207c95.cer",
+            "C:\\VucemAuto\\automations\\src\\test\\resources\\CredFunc\\MAVL621207C95_1012241424.key"
+    );
+    TramitesFirmasLG tramite231003Afc  = new TramitesFirmasLG(
+            "C:\\VucemAuto\\automations\\src\\test\\resources\\CredSoli\\afc000526bj2.cer",
+            "C:\\VucemAuto\\automations\\src\\test\\resources\\CredSoli\\AFC000526BJ2_1012280944.key"
     );
 
     @BeforeAll
@@ -41,7 +55,7 @@ public class MainPage231003Test {
         iniDriver();
     }
 
-    public static void iniDriver(){
+    public static void iniDriver() {
         Configuration.browser = Browsers.CHROME;
         open();
         getWebDriver().manage().window().maximize();
@@ -75,30 +89,8 @@ public class MainPage231003Test {
             JOptionPane.showMessageDialog(null, "Valor no válido, se utilizará 1 repetición por defecto.");
         }
         /////////////////////////////////////////////////////////////////////////////////////////////////////////-
-
-        //Crear checkboxes para seleccionar los métodos
-        JCheckBox dictamenCheckBox = new JCheckBox("ProcesoDictamen231003");
-        JCheckBox autorizacionCheckBox = new JCheckBox("ProcesoAutorizacion231003");
-        JCheckBox confirmacionCheckBox = new JCheckBox("ProcesoConfirmarNotificaciónResolucion231003");
-
-        Object[] params = {"Seleccione los métodos a ejecutar:", dictamenCheckBox, autorizacionCheckBox, confirmacionCheckBox};
-        int option = JOptionPane.showConfirmDialog(null, params, "Opciones de Métodos", JOptionPane.OK_CANCEL_OPTION);
-
-        // Si el usuario selecciona Cancelar, termina el metodo
-        if (option != JOptionPane.OK_OPTION) {
-            JOptionPane.showMessageDialog(null, "Operación cancelada por el usuario.");
-            return;
-        }
-
-        // Recopilar los métodos seleccionados
-        List<String> selectedMethods = new ArrayList<>();
-        if (dictamenCheckBox.isSelected()) selectedMethods.add("ProcesoDictamen231003");
-        if (autorizacionCheckBox.isSelected()) selectedMethods.add("ProcesoAutorizacion231003");
-        if (confirmacionCheckBox.isSelected()) selectedMethods.add("ProcesoConfirmarNotificaciónResolucion231003");
-
-        // Ejecutar el proceso con las repeticiones y los métodos seleccionados
         ejecutarProcesoNRunnable(() -> {
-//            // Ingreso y selección de trámite
+            // Ingreso y selección de trámite
             loginFirmSoli.login(tramite231003);
             mainPage231003.selecRol.sendKeys("Persona Moral"); sleep(1000);
             mainPage231003.btnacep.click(); sleep(1000);
@@ -109,7 +101,6 @@ public class MainPage231003Test {
             mainPage231003.Semart721.click(); sleep(1000);
             mainPage231003.labelAvisoReciclaje.click(); sleep(1000);
             mainPage231003.DatosSoli.click(); sleep(1000);
-            //mainPage231003.retornoPrimeraVez.click();
             mainPage231003.numRegistroAmbiental.sendKeys("8646516546512");
             mainPage231003.giroImportador.sendKeys("PRUEBAS QA ULTARASIST");
             mainPage231003.numIMMEX.sendKeys("0200800100120252540000001");
@@ -130,11 +121,9 @@ public class MainPage231003Test {
             mainPage231003.claveResiduo.sendKeys("E1044");
             mainPage231003.creti.sendKeys("Corrosivo");
             mainPage231003.estadoFisico.sendKeys("Semisolido");
-            //mainPage231003.numManifiesto.sendKeys("982167732");
             mainPage231003.tipoContenedor.sendKeys("Bidón");
             mainPage231003.capacidad.sendKeys("10");
             mainPage231003.btnAgregarMercancia.click();sleep(1000);
-
             mainPage231003.transportista.sendKeys("Transportista Pruebas");
             mainPage231003.numAutorizacionSemarnat.sendKeys("66513757");
             mainPage231003.requiereOtraEmpreza.click();
@@ -143,39 +132,14 @@ public class MainPage231003Test {
             mainPage231003.telefonoRetorno.sendKeys("0123456789");
             mainPage231003.correoRetorno.sendKeys("pruebas@pruebas.qa");
             mainPage231003.precausionesRegistro.sendKeys("Elemento corrosivo manejese con cuidado");
-//
-//            mainPage231003.aduanaSalida.sendKeys("ADUANA DE PATANCO");
-//            mainPage231003.nombreDestintario.sendKeys("DESTINATARIO PRUEBAS");
-//            mainPage231003.paisDestino.sendKeys("ANGUILA");
-//            mainPage231003.domicilioDestino.sendKeys("DOMICILIO DESTINO");
-//            mainPage231003.codigoPostalDestino.sendKeys("00000");
             mainPage231003.btnGuardarSoli.click();
-
-
-            loginFirmSoli.firma(tramite231003);
-
-            // Obtener el texto del folio desde mainPageB8
+            loginFirmSoli.firma(tramite231003);sleep(4000);
             String folioText = mainPage231003.folio.getText();
-
-//            Llamar al método para obtener el folio
             String folioNumber = obtenerFolio.obtenerFolio(folioText);
-//
-//            ConDBReasigSolFun.processFolio(folioNumber, FunRFC);
-//
-//            // Ejecutar métodos seleccionados
-//            if (selectedMethods.contains("ProcesoDictamen6001")) {
-//                ProcesoDictamenB8(folioNumber);
-//            }
-//            if (selectedMethods.contains("ProcesoAutorizacion6001")) {
-//                ProcesoAutorizacionB8(folioNumber);
-//            }
-//            if (selectedMethods.contains("ProcesoConfirmarNotificaciónResolucion6001")) {
-//                ProcesoConfirmarNotificaciónResolucionB8(folioNumber);
-//            }
-//
+            ConDBReasigSolFun.processFolio(folioNumber, FunRFC);
+            guardarFolioEnArchivo(folioNumber);
         }, repeticiones);
     }
-
 
     //Metodo que ejecuta n veces una clase que implementa Runnable
     public void ejecutarProcesoNRunnable(Runnable proceso, int n) {
@@ -186,4 +150,24 @@ public class MainPage231003Test {
         }
     }
 
+    public void clickOkButton() {
+        // Localiza el botón "Ok" por el texto dentro del <span> y realiza el click
+        $(byText("Ok")).shouldBe(visible).shouldHave(text("Ok")).click();
+    }
+
+    public void guardarFolioEnArchivo(String folioNumber) {
+        String rutaArchivo = "C:\\VucemAuto\\automations\\folios_generados231003.txt";
+
+        // Formato de fecha y hora: 2025-07-02 18:45:00
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        String timestamp = LocalDateTime.now().format(formatter);
+
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(rutaArchivo, true))) {
+            writer.write(timestamp + " - " + folioNumber);
+            writer.newLine();
+            System.out.println("Folio guardado correctamente: " + folioNumber);
+        } catch (IOException e) {
+            System.err.println("Error al guardar el folio: " + e.getMessage());
+        }
+    }
 }
