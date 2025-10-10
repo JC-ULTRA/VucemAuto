@@ -17,6 +17,7 @@ public class MainPage33201 {
     public SelenideElement soliSubsecuente = $x("/html/body/main/div/div[2]/div[1]/div[1]/div/nav/div/div[2]/ul/li[5]/ul/li[4]/a");
     public SelenideElement folioTramite = $x("//*[@id=\"idFolio\"]");
     public SelenideElement btnBuscarFolio = $x("//*[@id=\"buscarButton\"]");
+    public SelenideElement btnBuscarFolio2 = $x("//*[@id=\"buscarTareasFuncionario\"]");
     public SelenideElement tablaFolios = $x("/html/body/main/div/div[3]/div/form[1]/div[6]/div[3]/div[3]/div/table/tbody/tr[2]");
     public SelenideElement avisoAnexo = $x("//*[@id=\"autorizacionAnexoVeintiochoEsquemaIC2Button\"]");
     public SelenideElement tipoAviso = $x("/html/body/main/div/div[4]/div/form/div[2]/ul/li[2]/a/label");
@@ -57,5 +58,10 @@ public class MainPage33201 {
     public SelenideElement btnSiguiente = $x("//*[@id=\"siguienteButton\"]");
     public SelenideElement btnAdjuntar1Doc = $x("/html/body/main/div/div[4]/div/form[1]/table/tbody/tr[4]/td[2]/div/input[2]");
     public SelenideElement archivoUnico = $x("/html/body/main/div/div[4]/div[2]/div/form[2]/table/tbody/tr[1]/td[4]/input");
+    public SelenideElement numfolio = $x("//*[@id=\"idNumFolio\"]");
+    public SelenideElement justificacionDictamen = $x("//*[@id=\"valueTA\"]");
+    public SelenideElement antecedentesDictamen = $x("//*[@id=\"textoDictamen\"]");
+    public SelenideElement inicioFolio = $x("//*[@id=\"idNumFolio\"]");
+    public SelenideElement btnContinuarConfirmacion = $x("//*[@id=\"acuse\"]");
 
 }
