@@ -40,5 +40,19 @@ public class MainPage202 {
     public SelenideElement btnCerrar = $x("//*[@id=\"btnCerrar\"]/span");
     public SelenideElement btnContinuarPaso3 = $x("//*[@id=\"siguienteButton\"]");
 
+    //genDict
+    public SelenideElement Inicio = $x("//img[@alt='       Inicio']");
+    public SelenideElement Folio = $x("//*[@id='idNumFolio']");
+    public SelenideElement inputBuscarTareasFuncionario = $x("//*[@id='buscarTareasFuncionario']");
+    public SelenideElement tdEvaluarSolicitud = $x("//td[@title='Evaluar Solicitud']");
+    public SelenideElement GenerarOp = $x("/html/body/div[1]/div[3]/div[3]/div/form[1]/div[2]/span[2]/input");
+    public SelenideElement SentidoDictamen = $x("//input[@value='SEDI.AC']");
+    public SelenideElement JustificacionDic = $x("//*[@id='justificacionDictamen']");
+    public SelenideElement inputMostrarFirma = $x("//input[@name='mostrarFirma']");
+    public SelenideElement ShBuscar = $x("/html/body/main/div/div[3]/div/form/div[2]/div[1]/div[2]/input");
+    public SelenideElement fechaVis = $x("/html/body/div[1]/div[3]/div[3]/div/form[1]/div[1]/div/table/tbody/tr[3]/td/input");
+    public SelenideElement justiOBS = $x("/html/body/div[1]/div[3]/div[3]/div/form[1]/div[3]/table/tbody/tr[2]/td/textarea");
+    public SelenideElement tdConfirmarNotificaciResoluci = $x("//td[@aria-describedby='gridTareasSolicitante_actionName']");
+
 
 }
