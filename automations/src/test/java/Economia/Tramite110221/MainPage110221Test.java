@@ -190,13 +190,22 @@ public class MainPage110221Test {
         mainPage110221.HproductoresPest.click(); sleep(1000);
         mainPage110221.CheckProductorConfidenciales.click(); sleep(1000);
         mainPage110221.CheckProductorMismaPersona.click(); sleep(4000);
-        mainPage110221.CheckInfoProdExport.click(); sleep(1000);
-        mainPage110221.btnSeleccionar.click(); sleep(2000);
+//        mainPage110221.CheckInfoProdExport.click(); sleep(1000);
+//        mainPage110221.btnSeleccionar.click(); sleep(2000);
+        mainPage110221.nuevoProductor.click();
+        mainPage110221.rfcProductor.sendKeys("LEQI8101314S7");
+        mainPage110221.faxProductor.sendKeys("1234567890");
+        mainPage110221.btnAgregarProductor.click();sleep(1000);
+        mainPage110221.selecMercancia.click();
+        mainPage110221.asignarProductor.click();sleep(1000);
+        mainPage110221.numRegistroFed.sendKeys("LEQI8101314S7");
+        mainPage110221.asignarMercancia.click();
         executeJavaScript("window.scrollTo(0, 0);");
     }
 
     public void ejecutarDestinatario(){
         executeJavaScript("window.scrollTo(0, 0);");
+        mainPage110221.detinatarioTab.click();
         mainPage110221.NombreDesti.sendKeys("EUROFOODS DE MEXICO");
         mainPage110221.NRFiscalDesi.sendKeys("12323424");
         mainPage110221.CalleDesti.sendKeys("Calle1");

@@ -49,32 +49,21 @@ public class MainPage130121 {
     public SelenideElement inputGuarda = $x("//*[@id=\"workingArea\"]/form/div[4]/div/div/input[2]");
     public SelenideElement inputAdjuntar = $x("/html/body/main/div/div[4]/div/form[1]/table/tbody/tr[27]/td[2]/div/input[2]");
     public SelenideElement selectDoc = $x("/html/body/main/div/div[4]/div[2]/div/form[2]/table/tbody/tr[1]/td[4]/input");
-    public SelenideElement selectDoc2 = $x("/html/body/main/div/div[4]/div[2]/div/form[3]/table/tbody/tr[1]/td[4]/input");
-    public SelenideElement selectDoc3 = $x("/html/body/main/div/div[4]/div[2]/div/form[4]/table/tbody/tr[1]/td[4]/input");
-    public SelenideElement selectDoc4 = $x("/html/body/main/div/div[4]/div[2]/div/form[5]/table/tbody/tr[1]/td[4]/input");
-    public SelenideElement selectDoc5 = $x("/html/body/main/div/div[4]/div[2]/div/form[6]/table/tbody/tr[1]/td[4]/input");
-    public SelenideElement selectDoc6 = $x("/html/body/main/div/div[4]/div[2]/div/form[7]/table/tbody/tr[1]/td[4]/input");
-    public SelenideElement selectDoc7 = $x("/html/body/main/div/div[4]/div[2]/div/form[8]/table/tbody/tr[1]/td[4]/input");
-    public SelenideElement selectDoc8 = $x("/html/body/main/div/div[4]/div[2]/div/form[9]/table/tbody/tr[1]/td[4]/input");
-    public SelenideElement selectDoc9 = $x("/html/body/main/div/div[4]/div[2]/div/form[10]/table/tbody/tr[1]/td[4]/input");
-    public SelenideElement selectDoc10 = $x("/html/body/main/div/div[4]/div[2]/div/form[11]/table/tbody/tr[1]/td[4]/input");
-    public SelenideElement selectDoc11 = $x("/html/body/main/div/div[4]/div[2]/div/form[12]/table/tbody/tr[1]/td[4]/input");
-    public SelenideElement selectDoc12 = $x("/html/body/main/div/div[4]/div[2]/div/form[13]/table/tbody/tr[1]/td[4]/input");
-    public SelenideElement selectDoc13 = $x("/html/body/main/div/div[4]/div[2]/div/form[14]/table/tbody/tr[1]/td[4]/input");
-    public SelenideElement selectDoc14 = $x("/html/body/main/div/div[4]/div[2]/div/form[15]/table/tbody/tr[1]/td[4]/input");
-    public SelenideElement selectDoc15 = $x("/html/body/main/div/div[4]/div[2]/div/form[16]/table/tbody/tr[1]/td[4]/input");
-    public SelenideElement selectDoc16 = $x("/html/body/main/div/div[4]/div[2]/div/form[17]/table/tbody/tr[1]/td[4]/input");
-    public SelenideElement selectDoc17 = $x("/html/body/main/div/div[4]/div[2]/div/form[18]/table/tbody/tr[1]/td[4]/input");
-    public SelenideElement selectDoc18 = $x("/html/body/main/div/div[4]/div[2]/div/form[19]/table/tbody/tr[1]/td[4]/input");
-    public SelenideElement selectDoc19 = $x("/html/body/main/div/div[4]/div[2]/div/form[20]/table/tbody/tr[1]/td[4]/input");
-    public SelenideElement selectDoc20 = $x("/html/body/main/div/div[4]/div[2]/div/form[21]/table/tbody/tr[1]/td[4]/input");
-    public SelenideElement selectDoc21 = $x("/html/body/main/div/div[4]/div[2]/div/form[22]/table/tbody/tr[1]/td[4]/input");
-    public SelenideElement selectDoc22 = $x("/html/body/main/div/div[4]/div[2]/div/form[23]/table/tbody/tr[1]/td[4]/input");
-    public SelenideElement selectDoc23 = $x("/html/body/main/div/div[4]/div[2]/div/form[24]/table/tbody/tr[1]/td[4]/input");
-    public SelenideElement selectDoc24 = $x("/html/body/main/div/div[4]/div[2]/div/form[25]/table/tbody/tr[1]/td[4]/input");
+
 
     public SelenideElement btnAnexar = $x("//*[@id=\"btnAnexar\"]");
     public SelenideElement btnCerrar = $x("//*[@id=\"btnCerrar\"]");
     public SelenideElement inputSiguiente = $x("//*[@id=\"siguienteButton\"]");
     public SelenideElement folio = $x("/html/body/main/div/div[4]/div/div[4]/div/div/ul/li");
+    public SelenideElement iniciofun = $x("/html/body/div[1]/div[3]/div[1]/table/tbody/tr[2]/td/a/img");
+    public SelenideElement numfolio = $x("//*[@id=\"idNumFolio\"]");
+    public SelenideElement btnBuscarFolio = $x("//*[@id=\"buscarTareasFuncionario\"]");
+    public SelenideElement tablatarea = $x("/html/body/div[1]/div[3]/div[3]/div/div[3]/div[3]/div[3]/div/table/tbody/tr[2]");
+    public SelenideElement generaDict = $x("//*[@id=\"opcion\"]");
+    public SelenideElement btmContinuarDict = $x("/html/body/div[1]/div[3]/div[3]/div/form/div[1]/input");
+    public SelenideElement justificacionDictamen = $x("//*[@id=\"justificacionDictamen\"]");
+    public SelenideElement antecedentesDictamen = $x("//*[@id=\"textoDictamen\"]");
+    public SelenideElement inicioFolio = $x("//*[@id=\"idNumFolio\"]");
+    public SelenideElement btnContinuarConfirmacion = $x("//*[@id=\"acuse\"]");
+
 }
