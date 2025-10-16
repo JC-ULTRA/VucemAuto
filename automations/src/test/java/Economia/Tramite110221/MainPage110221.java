@@ -3,7 +3,7 @@ import com.codeborne.selenide.SelenideElement;
 import static com.codeborne.selenide.Selenide.$x;
 public class MainPage110221 {
     //Tramite Aviso 110217
-    public SelenideElement folio = $x("/html/body/main/div/div[4]/div/div[4]/div/div/ul/li[2]");
+    public SelenideElement folio = $x("/html/body/main/div/div[4]/div/div[4]/div/div/ul/li");
     public SelenideElement selecRol = $x("//*[@id='claveRol']");
     public SelenideElement btnacep = $x("//button[@name='ingresar']");
     public SelenideElement Tramites = $x("//*[@id='Trámites']");
@@ -53,14 +53,23 @@ public class MainPage110221 {
     public SelenideElement HproductoresPest = $x("//*[@id=\"ui-id-3\"]");
     public SelenideElement CheckProductorConfidenciales = $x("//*[@id=\"idConfidencialesProductores\"]");
     public SelenideElement CheckProductorMismaPersona = $x("//*[@id=\"idProductorMismoExportador\"]");
+    public SelenideElement nuevoProductor = $x("/html/body/main/div/div[4]/div[1]/form/div[2]/div/div[3]/div/div[3]/div/div/div/div[3]/div/div/div/div[2]/div/div/div/input[1]");
+    public SelenideElement rfcProductor = $x("//*[@id=\"idRfcProductor\"]");
+    public SelenideElement faxProductor = $x("//*[@id=\"idFax\"]");
+    public SelenideElement btnAgregarProductor = $x("/html/body/main/div/div[4]/div[2]/form/div[3]/div/div[2]/div/input[2]");
     public SelenideElement CheckInfoProdExport = $x("/html/body/main/div/div[4]/div[1]/form/div[2]/div[5]/div/div[3]/div/div/div/div[3]/div/div/div/div[1]/div/div[1]/div[1]/div[3]/div[3]/div/table/tbody/tr[2]/td[1]/input");
     public SelenideElement btnSeleccionar = $x("/html/body/main/div/div[4]/div[1]/form/div[2]/div[5]/div/div[3]/div/div/div/div[3]/div/div/div/div[2]/div/div/div/input[2]");
+    public SelenideElement selecMercancia = $x("/html/body/main/div/div[4]/div[1]/form/div[2]/div/div[3]/div/div[3]/div/div/div/div[3]/div/div/div/div[3]/div[3]/div[1]/div[1]/div[1]/div[3]/div[3]/div/table/tbody/tr[2]/td[1]/input");
+    public SelenideElement asignarProductor = $x("/html/body/main/div/div[4]/div[1]/form/div[2]/div/div[3]/div/div[3]/div/div/div/div[3]/div/div/div/div[3]/div[3]/div[2]/div/div/div/input");
+    public SelenideElement asignarMercancia = $x("/html/body/main/div/div[4]/div[2]/form/div[4]/div[1]/div[2]/div/input[2]");
+    public SelenideElement numRegistroFed = $x("//*[@id=\"idRfcProductorProd\"]");
 
     ///Destinatario
+    public SelenideElement detinatarioTab = $x("/html/body/main/div/div[4]/div[1]/form/div[2]/ul/li[4]");
     public SelenideElement NombreDesti = $x("//*[@id=\"solicitud.destinatario.nombre\"]");
     public SelenideElement NRFiscalDesi = $x("//*[@id=\"solicitud.destinatario.rfc\"]");
     public SelenideElement CalleDesti = $x("//*[@id=\"solicitud.destinatario.domicilio.calle\"]");
-    public SelenideElement NumeroLetraDesti = $x("//*[@id=\"solicitud.destinatario.nombre\"]");
+    public SelenideElement NumeroLetraDesti = $x("//*[@id=\"solicitud.destinatario.domicilio.numeroExterior\"]");
     public SelenideElement PaisDesti = $x("//*[@id=\"solicitud.destinatario.paisOrigen.clave\"]");
     public SelenideElement CiudadDestin = $x("//*[@id=\"tabs-4\"]/div/div[3]/div[3]/div[2]/div/input");
     public SelenideElement CorreoDesti = $x("//*[@id=\"solicitud.destinatario.correoElectronico\"]");

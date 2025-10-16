@@ -5,6 +5,7 @@ import Firmas.LoginFirmSoli;
 import Firmas.TramitesFirmasLG;
 import Metodos.Metodos;
 import com.codeborne.selenide.Browsers;
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
@@ -18,8 +19,7 @@ import java.util.concurrent.TimeUnit;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 public class MainPage140103Test {
@@ -29,8 +29,8 @@ public class MainPage140103Test {
     Metodos metodos = new Metodos();
 
     TramitesFirmasLG tramite140103  = new TramitesFirmasLG(
-            "C:\\VucemAuto\\automations\\src\\test\\resources\\CredSoli\\aal0409235e6.cer",
-            "C:\\VucemAuto\\automations\\src\\test\\resources\\CredSoli\\AAL0409235E6_1012231310.key"
+            "C:\\VucemAuto\\automations\\src\\test\\resources\\CredSoli\\afc000526bj2.cer",
+            "C:\\VucemAuto\\automations\\src\\test\\resources\\CredSoli\\AFC000526BJ2_1012280944.key"
     );
 
     @BeforeAll
@@ -80,8 +80,8 @@ public class MainPage140103Test {
 
             // Ingreso y selección de trámite
             loginFirmSoli.login(tramite140103);
-            mainPage140103.selecRol.sendKeys("Persona Moral");
-            mainPage140103.btnacep.click();
+//            mainPage140103.selecRol.sendKeys("Persona Moral");
+//            mainPage140103.btnacep.click();
             mainPage140103.Tramites.sendKeys("Solicitudes nuevas");
             mainPage140103.SoliNew.click();
             mainPage140103.Economia.click();
@@ -95,10 +95,21 @@ public class MainPage140103Test {
                 e.printStackTrace();
             }
             mainPage140103.labeCancelacionAutorizacion.click();
-            mainPage140103.selectRegimenAduanero.sendKeys("Importación");
-            mainPage140103.selectMecanismoAsignacion.sendKeys("Asignación directa");
+            mainPage140103.selectRegimenAduanero.sendKeys("Exportación");
+            mainPage140103.selectMecanismoAsignacion.sendKeys("Primero en tiempo primero en derecho");
             mainPage140103.btnBuscarCupo.click();
-            mainPage140103.inputCupo.doubleClick();
+            metodos.scrollIncremento(1);
+            $x("//td[@aria-describedby='gridSeleccionCupo_nombreProducto'][normalize-space(text())='Tejidos']").shouldBe(Condition.visible).doubleClick();
+            $x("//table[@id='gridCertificadosDisponibles']/tbody/tr[2]//input[@type='checkbox']").shouldBe(Condition.visible).click();
+            mainPage140103.agregarCupo.click();
+            mainPage140103.montoCancelar.sendKeys("0.1");
+            mainPage140103.agregarSaldo.click();
+            mainPage140103.seleccionarCancelado.click();
+            mainPage140103.devolverFacturas.click();
+            mainPage140103.selectFactura.click();
+            mainPage140103.cantidadDevolver.sendKeys("10");
+            mainPage140103.devolverMontoFactura.click();
+            mainPage140103.btnCerrarFactura.click();
             mainPage140103.InputGuardarSolicitud.click();
             //FIRMAR SOLICITUD
             loginFirmSoli.firma(tramite140103);

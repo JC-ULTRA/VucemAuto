@@ -160,7 +160,9 @@ public class MainPage110201Test {
             mainPage110201.selectRepresentacionFederal.sendKeys("CENTRAL CDMX");
             mainPage110201.inputGuardarSolicitud.click();
             //Facturacion
-            //loginSoli.firma(tramite110201);
+            loginSoli.firma(tramite110201);
+            String folioText = mainPage110201.folio.getText();
+            String folioNumber = obtenerFolio.obtenerFolio(folioText);
         }, repeticiones);
     }
 
