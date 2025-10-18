@@ -19,6 +19,7 @@ public class MainPage260215 {
     public SelenideElement linkCertificadosLicenciasPermisos = $x("/html/body/main/div/div[3]/div/div[6]/ul/li/a");
     public SelenideElement linkPermisoSanitarioImportacionInsumoSalud = $x("/html/body/main/div/div[3]/div/div[6]/ul/li/ul/li[2]/a");
     public SelenideElement linkInvestigacionHumanos = $x("/html/body/main/div/div[3]/div/div[6]/ul/li/ul/li[2]/ul/li[15]/a");
+    public SelenideElement folio = $x("/html/body/main/div/div[4]/div/div[4]/div/div/ul/li");
     //DATOS SOLICITUD
     public SelenideElement labelDatosSolicitud = $x("/html/body/main/div[1]/div[4]/div[1]/div[6]/form/div[1]/ul/li[2]/a/label");
     public SelenideElement inputEstablecimiento = $x("//*[@id='btnEstablecimiento']");
@@ -166,6 +167,26 @@ public class MainPage260215 {
     public SelenideElement btnCerrar = $x("//*[@id=\"btnCerrar\"]");
     public SelenideElement inputSiguiente = $x("//*[@id=\"siguienteButton\"]");
 
-
+    //Funcionario
+    public SelenideElement numfolio = $x("//*[@id=\"idNumFolio\"]");
+    public SelenideElement btnBuscarFolio = $x("//*[@id=\"buscarTareasFuncionario\"]");
+    public SelenideElement justificacionObservacion = $x("//*[@id=\"justificacionId\"]");
+    public SelenideElement btnGuardarJust = $x("//*[@id=\"btnAgregar\"]");
+    public SelenideElement btnEnviar = $x("//*[@id=\"btnGuardar\"]");
+    public SelenideElement sentidoOpinion = $x("//*[@id=\"idAceptada\"]");
+    public SelenideElement opinion = $x("//*[@id=\"idDescripcionOpinion\"]");
+    public SelenideElement anexarInfoDigitalizada = $x("/html/body/div[1]/div[3]/div[3]/div/form[1]/div/div/table[2]/tbody/tr[1]/td[2]/input");
+    public SelenideElement archivoAnexar = $x("//*[@id=\"archivoAdjuntar\"]");
+    public SelenideElement enviarArchivo = $x("//*[@id=\"btnCargaArchivo\"]");
+    public SelenideElement destinadoPara = $x("//*[@id=\"tramite.dictamen.usoAutorizadoDictamen\"]");
+    public SelenideElement restricciones = $x("//*[@id=\"tramite.dictamen.restriccionesDictamen[0].restriccionTipoTramite.idRestriccionTipoTramite\"]");
+    public SelenideElement observaciones = $x("//*[@id=\"observacion\"]");
+    public SelenideElement plazo = $x("//*[@id=\"tramite.dictamen.plazoVigencia\"]");
+    public SelenideElement siglasDictaminador = $x("//*[@id=\"siglasDictaminador\"]");
+    public SelenideElement firmarDictamen = $x("/html/body/div[1]/div[3]/div[3]/div/form/div[2]/input[3]");
+    public SelenideElement darVoBo = $x("/html/body/div[1]/div[3]/div[3]/div/form[1]/div[2]/input[2]");
+    public SelenideElement firmarAutorizacion = $x("/html/body/div[1]/div[3]/div[3]/div/form[1]/table[1]/tbody/tr/td/input[1]");
+    public SelenideElement inicioFolio = $x("//*[@id=\"idNumFolio\"]");
+    public SelenideElement btnContinuarConfirmacion = $x("//*[@id=\"acuse\"]");
 
 }
