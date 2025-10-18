@@ -126,4 +126,25 @@ public class MainPage260202 {
     public SelenideElement btnCerrar = $x("//*[@id=\"btnCerrar\"]");
     public SelenideElement inputSiguiente = $x("/html/body/main/div/div[4]/div[1]/form[2]/div[2]/div/input[2]");
     public SelenideElement folio = $x("/html/body/main/div/div[4]/div/div[4]/div/div/ul/li");
+    //Funcionario
+    public SelenideElement numfolio = $x("//*[@id=\"idNumFolio\"]");
+    public SelenideElement btnBuscarFolio = $x("//*[@id=\"buscarTareasFuncionario\"]");
+    public SelenideElement justificacionObservacion = $x("//*[@id=\"justificacionId\"]");
+    public SelenideElement btnGuardarJust = $x("//*[@id=\"btnAgregar\"]");
+    public SelenideElement btnEnviar = $x("//*[@id=\"btnGuardar\"]");
+    public SelenideElement sentidoOpinion = $x("//*[@id=\"idAceptada\"]");
+    public SelenideElement opinion = $x("//*[@id=\"idDescripcionOpinion\"]");
+    public SelenideElement anexarInfoDigitalizada = $x("/html/body/div[1]/div[3]/div[3]/div/form[1]/div/div/table[2]/tbody/tr[1]/td[2]/input");
+    public SelenideElement archivoAnexar = $x("//*[@id=\"archivoAdjuntar\"]");
+    public SelenideElement enviarArchivo = $x("//*[@id=\"btnCargaArchivo\"]");
+    public SelenideElement destinadoPara = $x("//*[@id=\"tramite.dictamen.usoAutorizadoDictamen\"]");
+    public SelenideElement restricciones = $x("//*[@id=\"tramite.dictamen.restriccionesDictamen[0].restriccionTipoTramite.idRestriccionTipoTramite\"]");
+    public SelenideElement observaciones = $x("//*[@id=\"observacion\"]");
+    public SelenideElement plazo = $x("//*[@id=\"tramite.dictamen.plazoVigencia\"]");
+    public SelenideElement siglasDictaminador = $x("//*[@id=\"siglasDictaminador\"]");
+    public SelenideElement firmarDictamen = $x("/html/body/div[1]/div[3]/div[3]/div/form/div[2]/input[3]");
+    public SelenideElement darVoBo = $x("/html/body/div[1]/div[3]/div[3]/div/form[1]/div[2]/input[2]");
+    public SelenideElement firmarAutorizacion = $x("/html/body/div[1]/div[3]/div[3]/div/form[1]/table[1]/tbody/tr/td/input[1]");
+    public SelenideElement inicioFolio = $x("//*[@id=\"idNumFolio\"]");
+    public SelenideElement btnContinuarConfirmacion = $x("//*[@id=\"acuse\"]");
 }
