@@ -1,5 +1,6 @@
 package Economia.Tramite130105;
 
+import DBYFOLIO.ConDBReasigSolFun;
 import DBYFOLIO.ObtenerFolio;
 import Economia.Tramite130105.MainPage130105;
 import Firmas.LoginFirmSoli;
@@ -14,6 +15,7 @@ import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
@@ -26,8 +28,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-import static com.codeborne.selenide.Selenide.open;
-import static com.codeborne.selenide.Selenide.sleep;
+import static com.codeborne.selenide.Condition.attribute;
+import static com.codeborne.selenide.Condition.visible;
+import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 public class MainPage130105Test {
@@ -44,6 +47,10 @@ public class MainPage130105Test {
     TramitesFirmasLG tramite130105  = new TramitesFirmasLG(
             "C:\\VucemAuto\\automations\\src\\test\\resources\\CredSoli\\aal0409235e6.cer",
             "C:\\VucemAuto\\automations\\src\\test\\resources\\CredSoli\\AAL0409235E6_1012231310.key"
+    );
+    TramitesFirmasLG tramite130103fun  = new TramitesFirmasLG(
+            "C:\\VucemAuto\\automations\\src\\test\\resources\\CredFunc\\mavl621207c95.cer",
+            "C:\\VucemAuto\\automations\\src\\test\\resources\\CredFunc\\MAVL621207C95_1012241424.key"
     );
 
     @BeforeAll
@@ -63,7 +70,6 @@ public class MainPage130105Test {
     @BeforeEach
     public void setUp() {
         Configuration.browserCapabilities = new ChromeOptions().addArguments("--remote-allow-origins=*");
-        Configuration.holdBrowserOpen = true;
     }
 
     @Test
@@ -88,7 +94,7 @@ public class MainPage130105Test {
             JOptionPane.showMessageDialog(null, "Valor no válido, se utilizará 1 repetición por defecto.");
         }
         /////////////////////////////////////////////////////////////////////////////////////////////////////////-
-/*
+
         //Crear checkboxes para seleccionar los métodos
         JCheckBox dictamenCheckBox = new JCheckBox("ProcesoDictamen130105");
         JCheckBox autorizacionCheckBox = new JCheckBox("ProcesoAutorizacion130105");
@@ -105,10 +111,10 @@ public class MainPage130105Test {
 
         // Recopilar los métodos seleccionados
         List<String> selectedMethods = new ArrayList<>();
-        if (dictamenCheckBox.isSelected()) selectedMethods.add("ProcesoDictamen130105");
-        if (autorizacionCheckBox.isSelected()) selectedMethods.add("ProcesoAutorizacion130105");
-        if (confirmacionCheckBox.isSelected()) selectedMethods.add("ProcesoConfirmarNotificaciónResolucion130105");
-*/
+        if (dictamenCheckBox.isSelected()) selectedMethods.add("ProcesoDictamen");
+        if (autorizacionCheckBox.isSelected()) selectedMethods.add("ProcesoAutorizacion");
+        if (confirmacionCheckBox.isSelected()) selectedMethods.add("ProcesoConfirmarNotificaciónResolucion");
+
 
         // Ejecutar el proceso con las repeticiones y los métodos seleccionados
         ejecutarProcesoNRunnable(() -> {
@@ -122,15 +128,17 @@ public class MainPage130105Test {
             mainPage130105.economia.click();
             mainPage130105.PermisosImporExpor.click();
             mainPage130105.importacion.click();
-            mainPage130105.elementoTramite130105.click();
+            mainPage130105.elementoTramite130105.click(); sleep(500);
+            // Hacer scroll hasta el elemento
+            mainPage130105.Scrol.scrollIntoView(true);
 
-            try {
-                Thread.sleep(1000); // Pausa de 3 segundos
-                // Hacer scroll hasta el elemento
-                mainPage130105.Scrol.scrollIntoView(true);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+//            try {
+//                Thread.sleep(1000); // Pausa de 3 segundos
+//                // Hacer scroll hasta el elemento
+//                mainPage130105.Scrol.scrollIntoView(true);
+//            } catch (InterruptedException e) {
+//                e.printStackTrace();
+//            }
 
             //Pestaña Datos de la solicitud
             //Datos del trámite a realizar
@@ -166,8 +174,8 @@ public class MainPage130105Test {
             //Paso 3 Anexar Requisitos
             metodos.cargarDocumentos();
             mainPage130105.btnAnexar.click();
-            mainPage130105.MensajeCarga.shouldNotBe(Condition.visible, Duration.ofSeconds(30));
-            mainPage130105.btnCerrar.click();
+            mainPage130105.MensajeCarga.shouldNotBe(Condition.visible, Duration.ofSeconds(120));sleep(1000);
+            mainPage130105.btnCerrar.click();sleep(1000);
             mainPage130105.btnContinuarPaso3.click();
 
             //Paso 4 Firmar Solicitud
@@ -177,7 +185,27 @@ public class MainPage130105Test {
             //LLamar Metodo para obtener folio
             String folioText = mainPage130105.folio.getText();
             String folioNumber = obtenerFolio.obtenerFolio(folioText);
+            if (selectedMethods.contains("ProcesoDictamen")){
+                try {
+                    setUpAll();
+                    System.out.println("Iniciando ProcesoDictamen...");
+                    ProcesoDictamen(folioNumber);
+                    System.out.println("ProcesoDictamen completado. Pasando a Autorización...");
 
+                    if (selectedMethods.contains("ProcesoAutorizacion")) {
+                        ProcesoAutorizarDictamen(folioNumber);
+                        System.out.println("ProcesoAutorizacion completado. Pasando a Confirmación...");
+
+                        if (selectedMethods.contains("ProcesoConfirmarNotificaciónResolucion")) {
+                            ProcesoConfirmarNotificacion(folioNumber);
+                            System.out.println("ProcesoConfirmarNotificaciónResolucion completado.");
+                        }
+                    }
+                } catch (Exception e) {
+                    System.err.println("❌ ERROR: Falló un proceso en la secuencia. Deteniendo pasos subsiguientes para el folio " + folioNumber);
+                    e.printStackTrace();
+                }
+            }
         }, repeticiones);
     }
 
@@ -189,12 +217,47 @@ public class MainPage130105Test {
             proceso.run();  // Ejecuta el proceso de la clase
         }
     }
+    public void ProcesoDictamen(String folioNumber) {
+        //se asigna el login a ocupar
+        open("https://wwwqa.ventanillaunica.gob.mx/ventanilla-HA/authentication.action?showLoginFuncionarios=");
+        loginFirmSoli.loginFun(tramite130103fun);
 
-    public void presionarEscYSpace() {
-        // Utilizamos WebDriverRunner para obtener el WebDriver actual
-        new Actions(WebDriverRunner.getWebDriver())
-                .sendKeys(Keys.ESCAPE) // Presiona la tecla Esc
-                .sendKeys(Keys.SPACE)   // Luego presiona la barra espaciadora (Space)
-                .perform();             // Ejecuta las acciones
+        // Búsqueda de Folio
+        mainPage130105.iniciofun.click();
+        mainPage130105.numfolio.sendKeys(folioNumber);sleep(1000);
+        ConDBReasigSolFun.processFolio(folioNumber, FunRFC);
+        mainPage130105.btnBuscarFolio.click();sleep(4500);
+        $$("td[role='gridcell']").findBy(attribute("title", "Evaluar Solicitud")).doubleClick();
+        $("input[name='opcion'][value='?mostrarDictamen=']").click();
+        $("input[name='mostrar'][value='Continuar']").click();sleep(2000);
+        $("input[name='sentidoDictamen'][value='SEDI.AC']").click();
+        mainPage130105.JustificacionDictamen.sendKeys("PRUEBASQA ULTRASIST");
+        mainPage130105.AntecedentesDictamen.sendKeys("PRUEBASQA ULTRASIST");
+        mainPage130105.btnFirmarDictamen.click();
+//        $("input[type='submit'][value='Firmar']").shouldBe(Condition.visible).click();
+        loginFirmSoli.firmaFun(tramite130103fun);sleep(1000); sleep(4000);
+    }
+    public void ProcesoAutorizarDictamen(String folioNumber){
+        $(By.cssSelector("img[src*='icoInicio.png']")).click();
+        ConDBReasigSolFun.processFolio(folioNumber, FunRFC);
+        mainPage130105.numfolio.sendKeys(folioNumber);sleep(5000);
+        mainPage130105.btnBuscarFolio.doubleClick();sleep(10000);
+        $$("td[role='gridcell']").findBy(attribute("title", "Autorizar Dictamen")).doubleClick();
+        $("[name='mostrarFirma'][type='submit']").shouldBe(visible).click();
+        loginFirmSoli.firmaFun(tramite130103fun);sleep(4000);
+    }
+    public void ProcesoConfirmarNotificacion(String folioNumber){
+        WebDriverRunner.getWebDriver().manage().deleteAllCookies();
+        open("https://wwwqa.ventanillaunica.gob.mx/ventanilla-HA/authentication.action?showLogin=%22;");
+        loginFirmSoli.login(tramite130105);
+        mainPage130105.selecRol.sendKeys("Persona Moral");
+        mainPage130105.btnacep.click();
+        mainPage130105.inicioFolio.sendKeys(folioNumber);sleep(2500);
+        $("input[type='button'][value='Buscar']").click();
+        metodos.scrollIncremento(1);
+        $$(By.cssSelector("td[role='gridcell']")).findBy(Condition.text(folioNumber)).doubleClick();
+        mainPage130105.btnContinuarConfirmacion.click();sleep(1000);
+        loginFirmSoli.firma(tramite130105
+        );sleep(1000);sleep(4000);
     }
 }
