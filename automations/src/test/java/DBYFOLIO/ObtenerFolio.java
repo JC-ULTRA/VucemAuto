@@ -61,17 +61,26 @@ public class ObtenerFolio {
         return folioNumber;
     }
 
-    public static void obtenerFolioTemp(String texto) {
-        // Expresión regular para encontrar un número de exactamente 9 dígitos
-        Pattern pattern = Pattern.compile("\\b\\d{9}\\b");
-        Matcher matcher = pattern.matcher(texto);
-
+    public static String obtenerFolioTemp(String folioText) {
+        Pattern pattern = Pattern.compile("\\b(\\d{9})\\b");
+        Matcher matcher = pattern.matcher(folioText);
+        String folioNumber = null;
         if (matcher.find()) {
-            String folio = matcher.group();
-            System.out.println("Folio extraído: " + folio);
-            // Aquí puedes hacer algo más con el folio si necesitas
+            folioNumber = matcher.group(1);
+            String mensaje = "Folio Temporal Generado: " + folioNumber;
+            // Imprimir solo en consola
+            System.out.println(mensaje);
+            // Cerrar el navegador
+//            Selenide.closeWebDriver();
+
         } else {
-            System.out.println("No se encontró un folio en el texto.");
+            String mensajeError = "No se encontró el número de folio de 9 dígitos. Texto original: " + folioText;
+            // Imprimir en consola
+            System.err.println(mensajeError);
+//            Selenide.closeWebDriver();
         }
+
+        return folioNumber;
     }
+
 }

@@ -2,12 +2,7 @@ package HACIENDA.Tramite40103;
 import DBYFOLIO.ObtenerFolio;
 import Firmas.LoginFirmSoli;
 import Firmas.TramitesFirmasLG;
-import com.codeborne.selenide.Condition;
-import com.codeborne.selenide.Configuration;
-import com.codeborne.selenide.Selectors;
-import com.codeborne.selenide.Selenide;
-import com.codeborne.selenide.WebDriverRunner;
-import com.codeborne.selenide.WebElementCondition;
+import com.codeborne.selenide.*;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
 import java.awt.Component;
@@ -18,15 +13,22 @@ import javax.swing.JOptionPane;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeOptions;
+
+import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Selectors.withText;
+import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.Selenide.sleep;
+
 public class MainPage40103Test {
     MainPage40103 mainPage40103 = new MainPage40103();
     LoginFirmSoli loginFirmSoli = new LoginFirmSoli();
     ObtenerFolio obtenerFolio = new ObtenerFolio();
 
     TramitesFirmasLG tramite40103 = new TramitesFirmasLG(
-            "C:\\VucemAuto\\automations\\src\\test\\resources\\CredSoli\\aal0409235e6.cer",
-            "C:\\VucemAuto\\automations\\src\\test\\resources\\CredSoli\\AAL0409235E6_1012231310.key"
+            "C:\\VucemAuto\\automations\\src\\test\\resources\\CredSoli\\afc000526bj2.cer",
+            "C:\\VucemAuto\\automations\\src\\test\\resources\\CredSoli\\AFC000526BJ2_1012280944.key"
     );
 
 
@@ -75,57 +77,67 @@ public class MainPage40103Test {
                     int longitudDeseada = 16;
                     String llavePago = uuid.replace("-", "").substring(0, longitudDeseada);
                     loginFirmSoli.login(tramite40103);
-                    mainPage40103.Tramites.sendKeys(new CharSequence[]{"Solicitudes nuevas"});
-                    Selenide.sleep(1000L);
-                    mainPage40103.SoliNew.click();
-                    mainPage40103.hacienda.click();
-                    mainPage40103.registroCodigoAlfanumerico.click();
-                    mainPage40103.transporteTerrestre.click();
-                    mainPage40103.atencionModificacion.click();
-                    mainPage40103.choferes.click();
-                    mainPage40103.nuevoChofer.click();
-                    mainPage40103.curpChofer.sendKeys(new CharSequence[]{"LEQI810131HDGSXG05"});
-                    mainPage40103.rfcChofer.sendKeys(new CharSequence[]{"LEQI8101314S7"});
-                    mainPage40103.buscarChofer.click();
-                    mainPage40103.entidadChofer.sendKeys(new CharSequence[]{"DURANGO"});
-                    mainPage40103.municipioChofer.sendKeys(new CharSequence[]{"DURANGO"});
-                    mainPage40103.coloniaChofer.sendKeys(new CharSequence[]{"PORFIRIO DIAZ"});
-                    mainPage40103.paisChofer.sendKeys(new CharSequence[]{"MEXICO"});
+//                    mainPage40103.selecRol.sendKeys("Persona Moral");sleep(1500);
+//                    mainPage40103.btnacep.click();sleep(1500);
+                    $$(By.cssSelector("a[role='button']")).findBy(text("Trámites")).click();sleep(1500);
+                    $(withText("Solicitudes nuevas")).click();sleep(1500);
+                    $("[alt='Administración General de Aduanas']").click();sleep(1500);
+                    $$(By.cssSelector("a[href='#']")).findBy(text("Registro del Código Alfanumérico Armonizado del Transportista")).click();sleep(1500);
+                    $$(By.cssSelector("a[href='#']")).findBy(text("Registro del Código Alfanumérico Armonizado del Transportista (Transportista Terrestre)")).click();sleep(1500);
+                    mainPage40103.Tramite40103.click();sleep(1500);
+                    mainPage40103.choferes.click();sleep(1500);
+                    mainPage40103.nuevoChofer.click();sleep(1500);
+                    mainPage40103.curpChofer.sendKeys(new CharSequence[]{"LEQI810131HDGSXG05"});sleep(1500);
+                    mainPage40103.rfcChofer.sendKeys(new CharSequence[]{"LEQI8101314S7"});sleep(1500);
+                    mainPage40103.buscarChofer.click();sleep(1500);
+                    mainPage40103.entidadChofer.sendKeys(new CharSequence[]{"DURANGO"});sleep(1500);
+                    mainPage40103.municipioChofer.sendKeys(new CharSequence[]{"DURANGO"});sleep(1500);
+                    mainPage40103.coloniaChofer.sendKeys(new CharSequence[]{"PORFIRIO DIAZ"});sleep(1500);
+                    mainPage40103.paisChofer.sendKeys(new CharSequence[]{"MEXICO"});sleep(1500);
                     Selenide.sleep(500L);
-                    mainPage40103.ciudadChofer.sendKeys(new CharSequence[]{"PORFIRIO DIAZ"});
-                    mainPage40103.localidadChofer.sendKeys(new CharSequence[]{"DURANGO"});
-                    mainPage40103.cpChofer.sendKeys(new CharSequence[]{"34260"});
-                    mainPage40103.correoChofer.sendKeys(new CharSequence[]{"prueba@prue.ba"});
-                    mainPage40103.telefonoChofer.sendKeys(new CharSequence[]{"5512345678"});
-                    mainPage40103.guardarChofer.click();
-                    mainPage40103.vehiculos.click();
-                    mainPage40103.nuevoVehiculoP.click();
-                    mainPage40103.vinVehiculo.sendKeys(new CharSequence[]{"12345678901234567"});
-                    mainPage40103.tipoVehiculo.sendKeys(new CharSequence[]{"TANQUE 20"});
-                    mainPage40103.numPlaca.sendKeys(new CharSequence[]{"123FGH"});
-                    mainPage40103.paisEmisor.sendKeys(new CharSequence[]{"MEXICO (ESTADOS UNIDOS MEXICANOS"});
-                    mainPage40103.estadoVehiculo.sendKeys(new CharSequence[]{"CIUDAD DE MEXICO"});
-                    mainPage40103.marcaVehiculo.sendKeys(new CharSequence[]{"SUSUKI"});
-                    mainPage40103.modeloVehiculo.sendKeys(new CharSequence[]{"IGNIS"});
-                    mainPage40103.añoVehiculo.sendKeys(new CharSequence[]{"2023"});
-                    mainPage40103.transponderVehiculo.sendKeys(new CharSequence[]{"n/a"});
-                    mainPage40103.colorVehiculo.sendKeys(new CharSequence[]{"ROSA"});
-                    mainPage40103.numEconomico.sendKeys(new CharSequence[]{"23456789"});
-                    mainPage40103.guardarVehiculo.click();
-                    mainPage40103.vehiculoArrastre.click();
-                    mainPage40103.nuevoVehiculoA.click();
-                    mainPage40103.vinVehiculoA.sendKeys(new CharSequence[]{"12345678901234567"});
-                    mainPage40103.tipoVehiculoA.sendKeys(new CharSequence[]{"FLAT 20'"});
-                    mainPage40103.numPlacaA.sendKeys(new CharSequence[]{"456JKL"});
-                    mainPage40103.paisEmisorA.sendKeys(new CharSequence[]{"MEXICO (ESTADOS UNIDOS MEXICANOS"});
-                    mainPage40103.estadoVehiculoA.sendKeys(new CharSequence[]{"CIUDAD DE MEXICO"});
-                    mainPage40103.colorVehiculoA.sendKeys(new CharSequence[]{"AMARILLO"});
-                    mainPage40103.numEconomicoA.sendKeys(new CharSequence[]{"23467"});
-                    mainPage40103.guardarVehiculo.click();
-                    mainPage40103.guardarSoli.click();
-                    loginFirmSoli.firma(tramite40103);
-                    String folioText = mainPage40103.folio.getText();
-                    ObtenerFolio var10000 = obtenerFolio;
+                    mainPage40103.ciudadChofer.sendKeys(new CharSequence[]{"PORFIRIO DIAZ"});sleep(1500);
+                    mainPage40103.localidadChofer.sendKeys(new CharSequence[]{"DURANGO"});sleep(1500);
+                    mainPage40103.cpChofer.sendKeys(new CharSequence[]{"34260"});sleep(1500);
+//
+                    SelenideElement botonGuardar = $("#guardarChofer");
+                    try {
+                        botonGuardar.shouldBe(Condition.enabled, Duration.ofSeconds(5)).click();
+                    } catch (Exception e) {
+                        executeJavaScript("arguments[0].click();", botonGuardar);
+                    }
+                    mainPage40103.vehiculos.click();sleep(1500);
+                    mainPage40103.nuevoVehiculoP.click();sleep(1500);
+                    mainPage40103.vinVehiculo.sendKeys(new CharSequence[]{"12345678901234567"});sleep(1500);
+                    mainPage40103.tipoVehiculo.sendKeys(new CharSequence[]{"TANQUE 20"});sleep(1500);
+                    mainPage40103.numPlaca.sendKeys(new CharSequence[]{"123FGH"});sleep(1500);
+                    mainPage40103.paisEmisor.sendKeys(new CharSequence[]{"MEXICO (ESTADOS UNIDOS MEXICANOS"});sleep(1500);
+                    mainPage40103.estadoVehiculo.sendKeys(new CharSequence[]{"CIUDAD DE MEXICO"});sleep(1500);
+                    mainPage40103.marcaVehiculo.sendKeys(new CharSequence[]{"SUSUKI"});sleep(1500);
+                    mainPage40103.modeloVehiculo.sendKeys(new CharSequence[]{"IGNIS"});sleep(1500);
+                    mainPage40103.añoVehiculo.sendKeys(new CharSequence[]{"2023"});sleep(1500);
+                    mainPage40103.transponderVehiculo.sendKeys(new CharSequence[]{"n/a"});sleep(1500);
+                    mainPage40103.colorVehiculo.sendKeys(new CharSequence[]{"ROSA"});sleep(1500);
+                    mainPage40103.numEconomico.sendKeys(new CharSequence[]{"23456789"});sleep(1500);
+                    SelenideElement botonVehiculo = $("#guardarVehiculo");
+                    try {
+                        botonVehiculo.shouldBe(Condition.enabled, Duration.ofSeconds(5)).click();
+                    } catch (Exception e) {
+                        executeJavaScript("arguments[0].click();", botonVehiculo);
+                    }
+                    mainPage40103.vehiculoArrastre.click();sleep(1500);
+                    mainPage40103.nuevoVehiculoA.click();sleep(1500);
+                    mainPage40103.vinVehiculoA.sendKeys(new CharSequence[]{"12345678901234567"});sleep(1500);
+                    mainPage40103.tipoVehiculoA.sendKeys(new CharSequence[]{"FLAT 20'"});sleep(1500);
+                    mainPage40103.numPlacaA.sendKeys(new CharSequence[]{"456JKL"});sleep(1500);
+                    mainPage40103.paisEmisorA.sendKeys(new CharSequence[]{"MEXICO (ESTADOS UNIDOS MEXICANOS"});sleep(1500);
+                    mainPage40103.estadoVehiculoA.sendKeys(new CharSequence[]{"CIUDAD DE MEXICO"});sleep(1500);
+                    mainPage40103.colorVehiculoA.sendKeys(new CharSequence[]{"AMARILLO"});sleep(1500);
+                    mainPage40103.numEconomicoA.sendKeys(new CharSequence[]{"23467"});sleep(1500);
+                    mainPage40103.guardarVehiculo.click();sleep(1500);
+                    mainPage40103.guardarSoli.click();sleep(1500);
+                    loginFirmSoli.firma(tramite40103);sleep(1500);
+                    String folioText = mainPage40103.folio.getText();sleep(1500);
+                    ObtenerFolio var15000 = obtenerFolio;
                     String folioNumber = ObtenerFolio.obtenerFolio(folioText);
                 }, repeticiones);
             }

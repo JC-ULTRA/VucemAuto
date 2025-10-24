@@ -17,6 +17,7 @@ public class MainPage40103 {
     public SelenideElement registroCodigoAlfanumerico = Selenide.$x("/html/body/main/div/div[3]/div/div[6]/ul/li[5]/a");
     public SelenideElement transporteTerrestre = Selenide.$x("/html/body/main/div/div[3]/div/div[6]/ul/li[5]/ul/li[1]/a");
     public SelenideElement atencionModificacion = Selenide.$x("/html/body/main/div/div[3]/div/div[6]/ul/li[5]/ul/li[1]/ul/li[3]/a");
+    public SelenideElement Tramite40103 = Selenide.$x("/html/body/main/div/div[3]/div/div[6]/ul/li[5]/ul/li[1]/ul/li[3]/a");
     public SelenideElement choferes = Selenide.$x("/html/body/main/div/div[4]/div/form/div[2]/ul/li[3]/a/label");
     public SelenideElement nuevoChofer = Selenide.$x("/html/body/main/div/div[4]/div/form/div[2]/div/div[3]/div/div/div[1]/div[3]/div/div/input[3]");
     public SelenideElement curpChofer = Selenide.$x("//*[@id='curpCHN']");
@@ -37,7 +38,7 @@ public class MainPage40103 {
     public SelenideElement vinVehiculo = Selenide.$x("//*[@id='vinVEH']");
     public SelenideElement tipoVehiculo = Selenide.$x("//*[@id='solicitudVehiculoTipoVehiculo']");
     public SelenideElement numPlaca = Selenide.$x("//*[@id='placasVEH']");
-    public SelenideElement paisEmisor = Selenide.$x("//*[@id='solicitudVehiculoPaisEmisor']");
+    public SelenideElement paisEmisor = Selenide.$x("/html/body/main/div/div[4]/div[3]/form/div[1]/div[3]/div[2]/div[2]/select");
     public SelenideElement estadoVehiculo = Selenide.$x("//*[@id='estadoVEH']");
     public SelenideElement marcaVehiculo = Selenide.$x("//*[@id='marcaVEH']");
     public SelenideElement modeloVehiculo = Selenide.$x("//*[@id='modeloVEH']");
@@ -45,7 +46,7 @@ public class MainPage40103 {
     public SelenideElement transponderVehiculo = Selenide.$x("//*[@id='transponderVEH']");
     public SelenideElement colorVehiculo = Selenide.$x("//*[@id='solicitudVehiculoColor']");
     public SelenideElement numEconomico = Selenide.$x("//*[@id='numeroEconomicoVEH']");
-    public SelenideElement guardarVehiculo = Selenide.$x("//*[@id='guardarVehiculo']");
+    public SelenideElement guardarVehiculo = Selenide.$x("/html/body/main/div/div[4]/div[4]/form/div[1]/div[7]/div[2]/div/input[3]");
     public SelenideElement vehiculoArrastre = Selenide.$x("/html/body/main/div/div[4]/div[1]/form/div[2]/div/div[4]/div/ul/li[2]/a/label");
     public SelenideElement nuevoVehiculoA = Selenide.$x("/html/body/main/div/div[4]/div[1]/form/div[2]/div/div[4]/div/div/div[2]/div[3]/div/div/input[3]");
     public SelenideElement vinVehiculoA = Selenide.$x("//*[@id='vinVEHARR']");
