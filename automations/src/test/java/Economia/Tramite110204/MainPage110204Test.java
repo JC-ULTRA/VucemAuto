@@ -4,27 +4,33 @@ import DBYFOLIO.ObtenerFolio;
 import Economia.Tramite110204.MainPage110204;
 import Firmas.LoginFirmSoli;
 import Firmas.TramitesFirmasLG;
+import Metodos.Metodos;
 import com.codeborne.selenide.Browsers;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 import javax.swing.*;
 import java.io.IOException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.UUID;
 
+import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
-import static com.codeborne.selenide.Selenide.open;
-import static com.codeborne.selenide.Selenide.sleep;
+import static com.codeborne.selenide.Selectors.withText;
+import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 public class MainPage110204Test {
     MainPage110204 mainPage110204 = new MainPage110204();
     LoginFirmSoli loginFirmSoli = new LoginFirmSoli();
     ObtenerFolio obtenerFolio = new ObtenerFolio();
+    Metodos metodos = new Metodos();
     TramitesFirmasLG tramite110204  = new TramitesFirmasLG(
             "C:\\VucemAuto\\automations\\src\\test\\resources\\CredSoli\\aal0409235e6.cer",
             "C:\\VucemAuto\\automations\\src\\test\\resources\\CredSoli\\AAL0409235E6_1012231310.key"
@@ -65,38 +71,24 @@ public class MainPage110204Test {
         }
         /////////////////////////////////////////////////////////////////////////////////////////////////////////-
 
-
-
         // Ejecutar el proceso con las repeticiones
         ejecutarProcesoNRunnable(() -> {
-
             // Ingreso y selección de trámite
-
             String uuid = UUID.randomUUID().toString();
             int longitudDeseada = 7;
             String FacturaGenerada = uuid.replace("-", "").substring(0, longitudDeseada);
-
-
             loginFirmSoli.login(tramite110204); sleep(1000);
-            mainPage110204.selecRol.sendKeys("Persona Moral"); sleep(1000);
-            mainPage110204.btnacep.click(); sleep(1000);
-            mainPage110204.Tramites.sendKeys("Solicitudes nuevas"); sleep(1000);
-            mainPage110204.SoliNew.click(); sleep(1000);
-            mainPage110204.Economia.click(); sleep(1000);
-            mainPage110204.CertOrigen.click(); sleep(1000);
-            mainPage110204.ValidacionCertificado.click(); sleep(1000);
-            mainPage110204.ExportacionAladi.click(); sleep(1000);
+            mainPage110204.selecRol.sendKeys("Persona Moral");sleep(1000);
+            mainPage110204.btnacep.click();sleep(1000);
+            $$(By.cssSelector("a[role='button']")).findBy(text("Trámites")).click();sleep(1000);
+            $(withText("Solicitudes nuevas")).click();sleep(1000);
+            $("[alt='Secretaría de Economía']").click();sleep(1000);
+            $$(By.cssSelector("a[href='#']")).findBy(text("Certificados de Origen")).click();sleep(1000);
+            $$(By.cssSelector("a[href='#']")).findBy(text("Validación de Certificados de Origen")).click();sleep(1000);
+            $$(By.cssSelector("a[href='#']")).findBy(text("Validar inicialmente el certificado de origen para la exportación de mercancías a los países miembros de la ALADI")).click();sleep(15000);
 
             //Datos de la mercancia
-            // Usar Actions para desplazar hacia el elemento (scroll)
-            // Agregar un retraso de 3 segundos antes de hacer el scroll (3000 ms = 3 segundos)
-            try {
-                Thread.sleep(2000); // Pausa de 3 segundos
-                // Hacer scroll hasta el elemento
-                mainPage110204.Scrol.scrollIntoView(true);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+            metodos.scrollDecremento(2);
             mainPage110204.tabCertificadoOrigen.click();
             mainPage110204.TratadoAcuerdo.sendKeys("Acuerdo de Complementación Económica No. 6 México-Argentina");
             mainPage110204.PaisBloque.sendKeys("argentina (REPUBLICA)");
@@ -109,7 +101,12 @@ public class MainPage110204Test {
             mainPage110204.selectUMC.sendKeys("Kilogramo");
             mainPage110204.ValorMercancia.sendKeys("1000");
             mainPage110204.ComplementoDescripcion.sendKeys("QA Descripcion");
-            Selenide.executeJavaScript("arguments[0].value = '01/04/2025';", mainPage110204.fechaFactura);
+
+            // Obtener la fecha de (hoy+Meses) formateada
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+            String fechaHoy = LocalDate.now().format(formatter);
+            executeJavaScript("arguments[0].value = arguments[1];", mainPage110204.fechaFactura, fechaHoy);
+
             mainPage110204.NumeroFactura.sendKeys(FacturaGenerada);
             mainPage110204.selectTipoFactura.sendKeys("Manual");
             mainPage110204.btnAgregarDatosMercancia.click();
@@ -124,12 +121,9 @@ public class MainPage110204Test {
             mainPage110204.selectEstado.sendKeys("SINALOA");
 
             mainPage110204.btnContinuar.click();
-
-            loginFirmSoli.firma(tramite110204);
-
+            loginFirmSoli.firma(tramite110204);sleep(3000);
             // Obtener el texto del folio desde mainPageB8
             String folioText = mainPage110204.folio.getText();
-
             // Llamar al método para obtener el folio
             String folioNumber = obtenerFolio.obtenerFolio(folioText);
 
