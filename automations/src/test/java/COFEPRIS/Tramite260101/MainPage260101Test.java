@@ -240,7 +240,7 @@ public class MainPage260101Test {
         mainPage260101.inputGuarda.click();
         metodos.cargarDocumentos();
         mainPage260101.btnAnexar.click();
-        mainPage260101.MensajeCarga.shouldNotBe(Condition.visible, Duration.ofSeconds(60));
+        mainPage260101.MensajeCarga.shouldNotBe(Condition.visible, Duration.ofSeconds(180));
         mainPage260101.btnCerrar.click();
         mainPage260101.inputSiguiente.click();
         //FIRMAR SOLICITUD

@@ -71,13 +71,13 @@ public class ObtenerFolio {
             // Imprimir solo en consola
             System.out.println(mensaje);
             // Cerrar el navegador
-//            Selenide.closeWebDriver();
+            Selenide.closeWebDriver();
 
         } else {
             String mensajeError = "No se encontró el número de folio de 9 dígitos. Texto original: " + folioText;
             // Imprimir en consola
             System.err.println(mensajeError);
-//            Selenide.closeWebDriver();
+            Selenide.closeWebDriver();
         }
 
         return folioNumber;

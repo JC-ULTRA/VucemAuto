@@ -164,4 +164,18 @@ public class MainPage260701 {
     public SelenideElement btnAdjuntar2 = $x("//*[@id=\"btnAnexar\"]");
     public SelenideElement MensajeCarga = $x("//*[@id=\"divMsgModal\"]");
     public SelenideElement btnCerrar3 = $x("//*[@id=\"btnCerrar\"]");
+    public SelenideElement btnPasarFirma = $x("//*[@id=\"siguienteButton\"]");
+
+    public SelenideElement numfolio = $x("//*[@id=\"idNumFolio\"]");
+    public SelenideElement btnBuscarFolioFun = $x("//*[@id=\"buscarTareasFuncionario\"]");
+    public SelenideElement justificacionDictamen = $x("//*[@id=\"observaciones\"]");
+    public SelenideElement requisito = $x("//*[@id=\"tramite.dictamen.restriccionesDictamen[0].restriccionTipoTramite.idRestriccionTipoTramite\"]");
+    public SelenideElement tipoAnalisis = $x("//*[@id=\"valueTO\"]");
+    public SelenideElement numMuestras = $x("//*[@id=\"idNoMuestras\"]");
+    public SelenideElement siglasDictaminador = $x("//*[@id=\"siglasDictaminador\"]");
+    public SelenideElement firmarDictamen = $x("/html/body/div[1]/div[3]/div[3]/div/form/div[2]/input[3]");
+    public SelenideElement darVoBo = $x("/html/body/div[1]/div[3]/div[3]/div/form[1]/div[2]/input[2]");
+    public SelenideElement firmarAutorizacion = $x("/html/body/div[1]/div[3]/div[3]/div/form/table[2]/tbody/tr/td/input[1]");
+    public SelenideElement inicioFolio = $x("//*[@id=\"idNumFolio\"]");
+    public SelenideElement btnContinuarConfirmacion = $x("//*[@id=\"acuse\"]");
 }
