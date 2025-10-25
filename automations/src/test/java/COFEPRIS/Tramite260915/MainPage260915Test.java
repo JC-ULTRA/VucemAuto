@@ -1,15 +1,21 @@
 package COFEPRIS.Tramite260915;
 
+import COFEPRIS.Tramite260215.MainPage260215Test;
+import DBYFOLIO.ConDBReasigSolFun;
 import DBYFOLIO.ObtenerFolio;
 import Firmas.LoginFirmSoli;
 import Firmas.TramitesFirmasLG;
+import Metodos.Metodos;
 import com.codeborne.selenide.Browsers;
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.WebDriverRunner;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedCondition;
@@ -25,20 +31,26 @@ import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 
-import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Condition.visible;
+import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Selenide.sleep;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 public class MainPage260915Test {
+    Metodos metodos = new Metodos();
     MainPage260915 mainPage260915 = new MainPage260915();
+    MainPage260215Test mainPage260215Test = new MainPage260215Test();
     LoginFirmSoli loginFirmSoli = new LoginFirmSoli();
     ObtenerFolio obtenerFolio = new ObtenerFolio();
+    String FunRFC = "MAVL621207C95";
     TramitesFirmasLG tramite260915  = new TramitesFirmasLG(
             "C:\\VucemAuto\\automations\\src\\test\\resources\\CredSoli\\aal0409235e6.cer",
             "C:\\VucemAuto\\automations\\src\\test\\resources\\CredSoli\\AAL0409235E6_1012231310.key"
+    );
+    TramitesFirmasLG tramite260915Fun  = new TramitesFirmasLG(
+            "C:\\VucemAuto\\automations\\src\\test\\resources\\CredFunc\\mavl621207c95.cer",
+            "C:\\VucemAuto\\automations\\src\\test\\resources\\CredFunc\\MAVL621207C95_1012241424.key"
     );
 
 
@@ -86,20 +98,32 @@ public class MainPage260915Test {
             JOptionPane.showMessageDialog(null, "Valor no válido, se utilizará 1 repetición por defecto.");
         }
         /////////////////////////////////////////////////////////////////////////////////////////////////////////-
-        // Solicitar el folio al usuario
-        String FolioRubro = JOptionPane.showInputDialog(null, "Ingrese el número de folio de 25 dígitos:", "Número de Folio", JOptionPane.QUESTION_MESSAGE);
 
-        // Validar que el usuario haya ingresado un folio válido de 25 dígitos
-        if (FolioRubro == null || FolioRubro.length() != 25 || !FolioRubro.matches("\\d+")) {
-            JOptionPane.showMessageDialog(null, "El número de folio ingresado no es válido. La operación será cancelada.");
-            return; // Cancelar la operación
+        //Crear checkboxes para seleccionar los métodos
+        JCheckBox dictamenCheckBox = new JCheckBox("ProcesoDictamen260915");
+        JCheckBox autorizacionCheckBox = new JCheckBox("ProcesoAutorizacion260915");
+        JCheckBox confirmacionCheckBox = new JCheckBox("ProcesoConfirmarNotificaciónResolucion260915");
+
+        Object[] params = {"Seleccione los métodos a ejecutar:", dictamenCheckBox, autorizacionCheckBox, confirmacionCheckBox};
+        int option = JOptionPane.showConfirmDialog(null, params, "Opciones de Métodos", JOptionPane.OK_CANCEL_OPTION);
+
+        // Si el usuario selecciona Cancelar, termina el metodo
+        if (option != JOptionPane.OK_OPTION) {
+            JOptionPane.showMessageDialog(null, "Operación cancelada por el usuario.");
+            return;
         }
 
-        // Confirmar el folio ingresado
-        JOptionPane.showMessageDialog(null, "Folio válido ingresado: " + FolioRubro);
+        // Recopilar los métodos seleccionados
+        List<String> selectedMethods = new ArrayList<>();
+        if (dictamenCheckBox.isSelected()) selectedMethods.add("ProcesoDictamen");
+        if (autorizacionCheckBox.isSelected()) selectedMethods.add("ProcesoAutorizacion");
+        if (confirmacionCheckBox.isSelected()) selectedMethods.add("ProcesoConfirmarNotificaciónResolucion");
 
         // Ejecutar el proceso con el folio válido
         ejecutarProcesoNRunnable(() -> {
+            String FolioRubro = mainPage260215Test.RetornoFolio();
+            setUpAll();
+            open("https://wwwqa.ventanillaunica.gob.mx/ventanilla-HA/authentication.action?showLogin=%22;");
             /// Fecha del dia
             LocalDate hoy = LocalDate.now();
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
@@ -157,14 +181,14 @@ public class MainPage260915Test {
             mainPage260915.selecFabricante.click();
             mainPage260915.modFabricante.click();
             mainPage260915.modRSocial.setValue("FABRICANTE PRUEBAS");
-            mainPage260915.codigoPostalMod.sendKeys("8");
+            mainPage260915.codigoPostalMod.sendKeys("16000");
             mainPage260915.coloniaEquivalente.sendKeys("COLONIA");
             mainPage260915.calleMod.setValue("CALLE DE PRUEBA");
             mainPage260915.guardarMod.click();
             mainPage260915.selecDestinatarioFinal.click();
             mainPage260915.modDestinatario.click();
             mainPage260915.modRSocial.setValue("DESTINATARIO PRUEBAS");
-            mainPage260915.codigoPostalMod.sendKeys("7");
+            mainPage260915.codigoPostalMod.sendKeys("06101");
             mainPage260915.calleMod.setValue("CALLE PRUEBA");
             mainPage260915.guardarMod.click();
             mainPage260915.selecProveedor.click();
@@ -199,8 +223,75 @@ public class MainPage260915Test {
             // Obtener el texto del folio desde mainPage260915
             String folioText = mainPage260915.folio.getText();
             String folioNumber = obtenerFolio.obtenerFolio(folioText);
+            if (selectedMethods.contains("ProcesoDictamen")){
+                try {
+                    setUpAll();
+                    ProcesoGenerarDictamen(folioNumber);
+                    ProcesoVerificarDictamen(folioNumber);
+                    System.out.println("ProcesoDictamen completado. Pasando a Autorización...");
+
+                    if (selectedMethods.contains("ProcesoAutorizacion")) {
+                        ProcesoAutorizarDictamen(folioNumber);
+                        System.out.println("ProcesoAutorizacion completado. Pasando a Confirmación...");
+
+                        if (selectedMethods.contains("ProcesoConfirmarNotificaciónResolucion")) {
+                            ProcesoConfirmarNotificacion(folioNumber);
+                            System.out.println("ProcesoConfirmarNotificaciónResolucion completado.");
+                        }
+                    }
+                } catch (Exception e) {
+                    System.err.println("❌ ERROR: Falló un proceso en la secuencia. Deteniendo pasos subsiguientes para el folio " + folioNumber);
+                    e.printStackTrace();
+                }
+            }
 
         }, repeticiones);
+    }
+    public void ProcesoGenerarDictamen(String folioNumber){
+        open("https://wwwqa.ventanillaunica.gob.mx/ventanilla-HA/authentication.action?showLoginFuncionarios=");
+        loginFirmSoli.loginFun(tramite260915Fun);sleep(5000);
+        ConDBReasigSolFun.processFolio(folioNumber, FunRFC);
+        $(By.cssSelector("img[src*='icoInicio.png']")).click();
+        mainPage260915.numfolio.sendKeys(folioNumber);sleep(5000);
+        mainPage260915.btnBuscarFolioFun.doubleClick();sleep(10500);
+        $$("td[role='gridcell']").findBy(attribute("title", "Evaluar Solicitud")).doubleClick();
+        $("input[name='opcion'][value='?mostrarDictamen=']").click();
+        $("input[name='mostrar'][value='Continuar']").click();sleep(2000);
+        $("input[name='sentidoDictamen'][value='SEDI.AC']").click();
+        $("#tramite\\.dictamen\\.numeroGenerico1").selectOption(1);
+        mainPage260915.firmarDictamen.click();
+        loginFirmSoli.firmaFun(tramite260915Fun);sleep(5000);
+    }
+    public void ProcesoVerificarDictamen(String folioNumber){
+        $(By.cssSelector("img[src*='icoInicio.png']")).click();
+        ConDBReasigSolFun.processFolio(folioNumber, FunRFC);
+        mainPage260915.numfolio.sendKeys(folioNumber);sleep(5000);
+        mainPage260915.btnBuscarFolioFun.doubleClick();sleep(10500);
+        $$("td[role='gridcell']").findBy(attribute("title", "Verificar Dictamen")).doubleClick();
+        mainPage260915.darVoBo.click();
+        loginFirmSoli.firmaFun(tramite260915Fun);sleep(5000);
+    }
+    public void ProcesoAutorizarDictamen(String folioNumber){
+        $(By.cssSelector("img[src*='icoInicio.png']")).click();
+        ConDBReasigSolFun.processFolio(folioNumber, FunRFC);
+        mainPage260915.numfolio.sendKeys(folioNumber);sleep(5000);
+        mainPage260915.btnBuscarFolioFun.doubleClick();sleep(10500);
+        $$("td[role='gridcell']").findBy(attribute("title", "Autorizar Dictamen")).doubleClick();
+        mainPage260915.firmarAutorizacion.click();
+        loginFirmSoli.firmaFun(tramite260915Fun);sleep(5000);
+    }
+    public void ProcesoConfirmarNotificacion(String folioNumber){
+        WebDriverRunner.getWebDriver().manage().deleteAllCookies();
+        open("https://wwwqa.ventanillaunica.gob.mx/ventanilla-HA/authentication.action?showLogin=%22;");
+        loginFirmSoli.login(tramite260915);
+        mainPage260915.selecRol.sendKeys("Persona Moral");
+        mainPage260915.btnacep.click();
+        mainPage260915.inicioFolio.sendKeys(folioNumber);sleep(2500);
+        $("input[type='button'][value='Buscar']").click();
+        metodos.scrollIncremento(1);
+        $$(By.cssSelector("td[role='gridcell']")).findBy(Condition.text(folioNumber)).doubleClick();
+        mainPage260915.btnContinuarConfirmacion.click();sleep(1000);
+        loginFirmSoli.firma(tramite260915);sleep(1000);sleep(4000);
     }
 
     public void ejecutarProcesoNRunnable(Runnable proceso, int n) {

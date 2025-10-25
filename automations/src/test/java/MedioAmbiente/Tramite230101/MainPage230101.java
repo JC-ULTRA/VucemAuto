@@ -61,7 +61,12 @@ public class MainPage230101 {
     public SelenideElement inputCalendar = $x("//*[@id='calendarTo']");
 
     public SelenideElement inputGuardarSolicitud = $x("//*[@id='guardarSolicitud']");
-    
+    public SelenideElement pasarDocs = $x("/html/body/main/div/div[4]/div/form/div[4]/div/div/input[2]");
+    public SelenideElement btnAdjuntar = $x("//*[@id=\"btnAnexar\"]");
+    public SelenideElement btnCerrar = $x("//*[@id=\"btnCerrar\"]");
+    public SelenideElement btnPasarFirma = $x("//*[@id=\"siguienteButton\"]");
+    public SelenideElement MensajeCarga = $x("//*[@id=\"divMsgModal\"]");
+
     
     
     
