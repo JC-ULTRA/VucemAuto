@@ -2,7 +2,9 @@ package MedioAmbiente.Tramite230101;
 import DBYFOLIO.ObtenerFolio;
 import Firmas.LoginFirmSoli;
 import Firmas.TramitesFirmasLG;
+import Metodos.Metodos;
 import com.codeborne.selenide.Browsers;
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -10,13 +12,14 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.chrome.ChromeOptions;
 import javax.swing.*;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.UUID;
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.Selenide.sleep;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 public class MainPage230101Test {
-
+    Metodos metodos = new Metodos();
     String uuid = UUID.randomUUID().toString();
     int longitudDeseada = 16;
     String llavePago = uuid.replace("-", "").substring(0, longitudDeseada);
@@ -116,7 +119,7 @@ public class MainPage230101Test {
             mainPage230101.selectMercanciaEspecie.sendKeys("montana");
             mainPage230101.NombreComun.sendKeys("Maguey verde");
             mainPage230101.AgregarDetalleMercancias.click();
-            mainPage230101.inputAgregarMercancia.click();
+            mainPage230101.inputAgregarMercancia.click();sleep(1000);
             mainPage230101.selectDescripcionProducto.sendKeys("ESTERILLAS, ESTERAS Y CAÑIZOS, DE MATERIA VEGETAL, NUEVOS SIN RECUBRIMIENTO");
             mainPage230101.optionKilogramo.click();
             mainPage230101.inputDeclaracion.click();
@@ -136,8 +139,12 @@ public class MainPage230101Test {
             mainPage230101.inputPagoLlave.sendKeys(llavePago);
             mainPage230101.inputCalendar.sendKeys("06/03/2025");
             mainPage230101.inputGuardarSolicitud.click(); sleep(1000);
-
-
+            mainPage230101.pasarDocs.click();
+            metodos.cargarDocumentos();
+            mainPage230101.btnAdjuntar.click();
+            mainPage230101.MensajeCarga.shouldNotBe(Condition.visible, Duration.ofSeconds(180));
+            mainPage230101.btnCerrar.click();
+            mainPage230101.btnPasarFirma.click();
             loginSoli.firma(tramite230101);
 
             // Obtener el texto del folio desde mainPageB8
