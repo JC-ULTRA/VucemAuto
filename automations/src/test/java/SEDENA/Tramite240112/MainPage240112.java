@@ -1,8 +1,10 @@
 package SEDENA.Tramite240112;
 
+import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 
+import static com.codeborne.selenide.Selenide.$$;
 import static com.codeborne.selenide.Selenide.$x;
 
 public class MainPage240112 {
@@ -66,7 +68,7 @@ public class MainPage240112 {
     public SelenideElement inputTercerosTelefono = $x("//*[@id=\"terceros_telefono\"]");
     public SelenideElement inputTercerosCorreoElec = $x("//*[@id=\"terceros_correoElec\"]");
     public SelenideElement btnGuardarTerceros = $x("//*[@id=\"btnGuardarFrmDatosTercero\"]");
-    //PAGO DERECHOS
+    //PAGO DERECHOS S
     public SelenideElement labelPagoDerechos = $x("/html/body/main/div/div[4]/div[1]/form/div[2]/ul/li[4]/a/label");
     public SelenideElement inputClaveReferencia = $x("//*[@id=\"solicitud.pago.claveDeReferencia\"]");
     public SelenideElement inputCadenaDependencia = $x("//*[@id=\"solicitud.pago.cadenaPagoDependencia\"]");
@@ -79,4 +81,29 @@ public class MainPage240112 {
     public SelenideElement btmAnexar = $x("//*[@id=\"btnAnexar\"]");
     public SelenideElement btnCerrar = $x("//*[@id=\"btnCerrar\"]");
     public SelenideElement inputSiguiente = $x("//*[@id=\"siguienteButton\"]");
+
+    //Requerimiento
+    public SelenideElement iniciofun = $x("/html/body/div[1]/div[3]/div[1]/table/tbody/tr[2]/td/a/img");
+    public SelenideElement numfolio = $x("//*[@id=\"idNumFolio\"]");
+    public SelenideElement btnBuscarFolio = $x("//*[@id=\"buscarTareasFuncionario\"]");
+    public SelenideElement inputDictamenAceptado = $x("/html/body/div[1]/div[3]/div[3]/div/form[1]/table/tbody/tr[2]/td[2]/input[1]");
+    public SelenideElement justificacionRequerimiento = $x("//*[@id=\"valueTA\"]");
+    public SelenideElement inputFechaFinVig = $x("//*[@id=\"dFechaFinVigencia\"]");
+    //Proceso Confirmar
+    public SelenideElement SelecRol = Selenide.$x("//*[@id='claveRol']");
+    public SelenideElement Btnacep = Selenide.$x("//button[@name='ingresar']");
+    public SelenideElement inicioFolio = $x("//*[@id=\"idNumFolio\"]");
+    public void seleccionarFacturaPorAño(String año) {
+        ElementsCollection filas = $$("tr[role='row'].jqgrow"); // todas las filas de datos
+
+        for (SelenideElement fila : filas) {
+            if (fila.getText().contains(año)) {
+                // Dentro de la fila, busca el checkbox (2da columna)
+                SelenideElement checkbox = fila.$("input[type='checkbox']");
+                checkbox.click(); // hace clic en el checkbox
+                System.out.println("Seleccionada la fila con fecha del año: " + año);
+                break; // detener después de encontrar la primera coincidencia
+            }
+        }
+    }
 }
