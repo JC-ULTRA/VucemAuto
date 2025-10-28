@@ -88,4 +88,13 @@ public class MainPage240105 {
     public SelenideElement MensajeCarga = $x("//*[@id=\"divMsgModal\"]");
     public SelenideElement btnCerrar = $x("//*[@id=\"btnCerrar\"]");
     public SelenideElement inputSiguiente = $x("//*[@id=\"siguienteButton\"]");
+    public SelenideElement iniciofun = $x("/html/body/div[1]/div[3]/div[1]/table/tbody/tr[2]/td/a/img");
+    public SelenideElement numfolio = $x("//*[@id=\"idNumFolio\"]");
+    public SelenideElement btnBuscarFolio = $x("//*[@id=\"buscarTareasFuncionario\"]");
+    public SelenideElement JustificacionDictamen = $x("//*[@id=\"justificacionDictamen\"]");
+    public SelenideElement btnGuardarFirmarDictamen = $x("/html/body/main/div/div[4]/div/form[1]/div[1]/input[1]");
+    public SelenideElement btnAutorizarDictamen = $x("/html/body/div[1]/div[3]/div[3]/div/form[1]/table/tbody/tr/td/input[3]");
+    public SelenideElement inicioFolio = $x("//*[@id=\"idNumFolio\"]");
+    public SelenideElement btnFirmar = $x("/html/body/main/div/div[4]/div/form[1]/div[2]/input[2]");
+    public SelenideElement btnFirmarDictamen = $x("/html/body/main/div/div[4]/div/form[1]/div[2]/input[2]");
 }
