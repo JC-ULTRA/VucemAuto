@@ -1,26 +1,33 @@
 package COFEPRIS.Tramite260512;
 
+import DBYFOLIO.ConDBReasigSolFun;
 import DBYFOLIO.ObtenerFolio;
 import Firmas.LoginFirmSoli;
 import Firmas.TramitesFirmasLG;
-import com.codeborne.selenide.Browsers;
-import com.codeborne.selenide.Configuration;
-import com.codeborne.selenide.Selenide;
+import Metodos.Metodos;
+import com.codeborne.selenide.*;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 import javax.swing.*;
+import java.time.Duration;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
-import static com.codeborne.selenide.Selenide.open;
-import static com.codeborne.selenide.Selenide.sleep;
+import static com.codeborne.selenide.Condition.*;
+import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 public class MainPage260512Test {
@@ -28,34 +35,41 @@ public class MainPage260512Test {
     LoginFirmSoli loginFirmSoli = new LoginFirmSoli();
 
     ObtenerFolio obtenerFolio = new ObtenerFolio();
-    //VARIABLES
+    Metodos metodos = new Metodos();
     String FunRFC = "MAVL621207C95";
-    String SoliRFC = "AAL0409235E6";
-
-    TramitesFirmasLG tramite260512  = new TramitesFirmasLG(
+    TramitesFirmasLG tramite260512 = new TramitesFirmasLG(
             "C:\\VucemAuto\\automations\\src\\test\\resources\\CredSoli\\aal0409235e6.cer",
             "C:\\VucemAuto\\automations\\src\\test\\resources\\CredSoli\\AAL0409235E6_1012231310.key"
+    );
+    TramitesFirmasLG tramite260512Fun = new TramitesFirmasLG(
+            "C:\\VucemAuto\\automations\\src\\test\\resources\\CredFunc\\mavl621207c95.cer",
+            "C:\\VucemAuto\\automations\\src\\test\\resources\\CredFunc\\MAVL621207C95_1012241424.key"
     );
 
     @BeforeAll
     public static void setUpAll() {
-        Configuration.browserSize = "1920x1080";
-        SelenideLogger.addListener("allure", new AllureSelenide());
-        iniDriver();
-    }
-
-    public static void iniDriver(){
-        Configuration.browser = Browsers.CHROME;
+        Configuration.browser = Browsers.CHROME; //FIREFOX;
+        Configuration.browserCapabilities = new ChromeOptions().addArguments("--incognito").addArguments("--remote-allow-origins=*").addArguments("--force-device-scale-factor=1.25");
         open();
         getWebDriver().manage().window().maximize();
+        Configuration.timeout = 200000; // tiempo de espera
         getWebDriver().manage().timeouts().pageLoadTimeout(90, TimeUnit.SECONDS);
+        getWebDriver().manage().timeouts().scriptTimeout(Duration.ofSeconds(90));
+        SelenideLogger.addListener("allure", new AllureSelenide());
     }
 
     @BeforeEach
     public void setUp() {
-        Configuration.browserCapabilities = new ChromeOptions().addArguments("--remote-allow-origins=*");
-    }
+//        Configuration.browserCapabilities = new ChromeOptions().addArguments("--remote-allow-origins=*");
+        ChromeOptions options = new ChromeOptions();
 
+        // Configura las opciones para Chrome: incognito y permitir orígenes remotos
+        options.addArguments("--remote-allow-origins=*");
+        options.addArguments("--incognito");  // Abre el navegador en modo incognito
+
+        // Asignar las capacidades de navegador
+        Configuration.browserCapabilities = options;
+    }
     @Test
     public void Proceso260512() {
         /////////////////////////////////////////////////////////////////////////////////////////////////////////-
@@ -95,9 +109,9 @@ public class MainPage260512Test {
 
         // Recopilar los métodos seleccionados
         List<String> selectedMethods = new ArrayList<>();
-        if (dictamenCheckBox.isSelected()) selectedMethods.add("ProcesoDictamen260512");
-        if (autorizacionCheckBox.isSelected()) selectedMethods.add("ProcesoAutorizacion260512");
-        if (confirmacionCheckBox.isSelected()) selectedMethods.add("ProcesoConfirmarNotificaciónResolucion260512");
+        if (dictamenCheckBox.isSelected()) selectedMethods.add("ProcesoDictamen");
+        if (autorizacionCheckBox.isSelected()) selectedMethods.add("ProcesoAutorizacion");
+        if (confirmacionCheckBox.isSelected()) selectedMethods.add("ProcesoConfirmarNotificaciónResolucion");
 
         // Ejecutar el proceso con las repeticiones y los métodos seleccionados
         ejecutarProcesoNRunnable(() -> {
@@ -184,23 +198,95 @@ public class MainPage260512Test {
             mainPage260512.inputGuardarSolicitud.click();
             //GUARDAR
             mainPage260512.inputGuarda.click();
-            mainPage260512.inputAdjuntar.click();
-            mainPage260512.selectDoc.sendKeys("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
-            mainPage260512.selectDoc2.sendKeys("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
-            mainPage260512.selectDoc3.sendKeys("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
-            mainPage260512.selectDoc4.sendKeys("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
-            mainPage260512.selectDoc5.sendKeys("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
-            //mainPage260512.selectDoc6.sendKeys("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
-            //mainPage260512.selectDoc7.sendKeys("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
+            metodos.cargarDocumentos();
             mainPage260512.btnAnexar.click();sleep(20000);
+            mainPage260512.MensajeCarga.shouldNotBe(Condition.visible, Duration.ofSeconds(180));sleep(1000);
             mainPage260512.btnCerrar.click();
             mainPage260512.inputSiguiente.click();
             //FIRMAR SOLICITUD
             loginFirmSoli.firma(tramite260512);
             String folioText = mainPage260512.folio.getText();sleep(5000);
             String folioNumber = obtenerFolio.obtenerFolio(folioText);
+            if (selectedMethods.contains("ProcesoDictamen")) {
+                try {
+                    setUpAll();
+                    ProcesoGenerarDictamen(folioNumber);
+                    ProcesoVerificarDictamen(folioNumber);
+                    System.out.println("ProcesoDictamen completado. Pasando a Autorización...");
+
+                    if (selectedMethods.contains("ProcesoAutorizacion")) {
+                        ProcesoAutorizarDictamen(folioNumber);
+                        System.out.println("ProcesoAutorizacion completado. Pasando a Confirmación...");
+
+                        if (selectedMethods.contains("ProcesoConfirmarNotificaciónResolucion")) {
+                            ProcesoConfirmarNotificacion(folioNumber);
+                            System.out.println("ProcesoConfirmarNotificaciónResolucion completado.");
+                        }
+                    }
+                } catch (Exception e) {
+                    System.err.println("❌ ERROR: Falló un proceso en la secuencia. Deteniendo pasos subsiguientes para el folio " + folioNumber);
+                    e.printStackTrace();
+                }
+            }
         }, repeticiones);
     }
+
+    public void ProcesoGenerarDictamen(String folioNumber) {
+        open("https://wwwqa.ventanillaunica.gob.mx/ventanilla-HA/authentication.action?showLoginFuncionarios=");
+        loginFirmSoli.loginFun(tramite260512Fun);sleep(5000);
+        ConDBReasigSolFun.processFolio(folioNumber, FunRFC);
+        $(By.cssSelector("img[src*='icoInicio.png']")).click();
+        mainPage260512.numfolio.sendKeys(folioNumber);sleep(2500);
+        mainPage260512.btnBuscarFolio.doubleClick();sleep(4500);
+        $$("td[role='gridcell']").findBy(attribute("title", "Evaluar Solicitud")).doubleClick();
+        $("input[name='opcion'][value='?mostrarDictamen=']").click();
+        $("input[name='mostrar'][value='Continuar']").click();sleep(2000);
+        $("input[name='sentidoDictamen'][value='SEDI.AC']").click();
+        mainPage260512.objetoImportacion.sendKeys("PRUEBAS QA");
+        mainPage260512.restricciones.sendKeys("ASEGURAMIENTO DESTINO");
+        mainPage260512.componentes.sendKeys("Na");
+        mainPage260512.clasificacionToxicologica.sendKeys("I");
+        mainPage260512.usoEspecificoMercancia.sendKeys("PRUEBAS");
+        mainPage260512.siglasDictaminador.sendKeys("MAVL");
+        $("#tramite\\.dictamen\\.numeroGenerico1").selectOption(1);
+        mainPage260512.firmarDictamen.click();
+        loginFirmSoli.firmaFun(tramite260512Fun);sleep(5000);
+    }
+
+    public void ProcesoVerificarDictamen(String folioNumber) {
+        $(By.cssSelector("img[src*='icoInicio.png']")).click();
+        ConDBReasigSolFun.processFolio(folioNumber, FunRFC);
+        mainPage260512.numfolio.sendKeys(folioNumber);sleep(2500);
+        mainPage260512.btnBuscarFolio.doubleClick();sleep(4500);
+        $$("td[role='gridcell']").findBy(attribute("title", "Verificar Dictamen")).doubleClick();
+        mainPage260512.darVoBo.click();
+        loginFirmSoli.firmaFun(tramite260512Fun);sleep(5000);
+    }
+
+    public void ProcesoAutorizarDictamen(String folioNumber) {
+        $(By.cssSelector("img[src*='icoInicio.png']")).click();
+        ConDBReasigSolFun.processFolio(folioNumber, FunRFC);
+        mainPage260512.numfolio.sendKeys(folioNumber);sleep(2500);
+        mainPage260512.btnBuscarFolio.doubleClick();sleep(4500);
+        $$("td[role='gridcell']").findBy(attribute("title", "Autorizar Dictamen")).doubleClick();
+        mainPage260512.firmarAutorizacion.click();
+        loginFirmSoli.firmaFun(tramite260512Fun);sleep(5000);
+    }
+
+    public void ProcesoConfirmarNotificacion(String folioNumber) {
+        WebDriverRunner.getWebDriver().manage().deleteAllCookies();
+        open("https://wwwqa.ventanillaunica.gob.mx/ventanilla-HA/authentication.action?showLogin=%22;");
+        loginFirmSoli.login(tramite260512);
+        mainPage260512.selecRol.sendKeys("Persona Moral");
+        mainPage260512.btnacep.click();
+        mainPage260512.inicioFolio.sendKeys(folioNumber);sleep(2500);
+        $("input[type='button'][value='Buscar']").click();
+        metodos.scrollIncremento(1);
+        $$(By.cssSelector("td[role='gridcell']")).findBy(Condition.text(folioNumber)).doubleClick();
+        mainPage260512.btnContinuarConfirmacion.click();sleep(1000);
+        loginFirmSoli.firma(tramite260512);sleep(4000);
+    }
+
 
     //Metodo que ejecuta n veces una clase que implementa Runnable
     public void ejecutarProcesoNRunnable(Runnable proceso, int n) {
@@ -208,6 +294,13 @@ public class MainPage260512Test {
             System.out.println("Ejecución del Proceso: " + (i + 1));
             open("https://wwwqa.ventanillaunica.gob.mx/ventanilla-HA/authentication.action?showLogin=%22;");
             proceso.run();  // Ejecuta el proceso de la clase
+        }
+    }
+    public void scrollDecremento() {
+        JavascriptExecutor js = (JavascriptExecutor) getWebDriver();
+        for (int i = 0; i < 5; i++){
+            js.executeScript("window.scrollBy(0,-500);");
+            sleep(500);
         }
     }
 }
