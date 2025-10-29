@@ -111,135 +111,7 @@ public class MainPage260211Test {
 
         // Ejecutar el proceso con las repeticiones y los métodos seleccionados
         ejecutarProcesoNRunnable(() -> {
-            String uuid = UUID.randomUUID().toString();
-            int longitudDeseada = 16;
-            String llavePago = uuid.replace("-", "").substring(0, longitudDeseada);
-
-//          Ingreso y selección de trámite
-            loginFirmSoli.login(tramite260211);
-            mainPage260211.selecRol.sendKeys("Persona Moral");
-            mainPage260211.btnacep.click();
-            mainPage260211.Tramites.sendKeys("Solicitudes nuevas");
-            mainPage260211.SoliNew.click();
-            mainPage260211.Cofepris.click();
-            mainPage260211.linkCertificadosLicenciasPermisos.click();
-            mainPage260211.linkPermisoSanitarioImportacionInsumoSalud.click();
-            mainPage260211.linkPermisoFuentesRadiacion.click();
-            //DATOS SOLICITUD
-            mainPage260211.labelDatosSolicitud.click();
-            mainPage260211.inputEstablecimiento.click();
-            mainPage260211.btnAceptar.click();
-            mainPage260211.inputSolicitudEstablecimientoResponsableSanitario.sendKeys("AAL0409235E6");
-            mainPage260211.inputSolicitudEstablecimientoRazonSocial.sendKeys("PRUEBA SA DE CV");
-            mainPage260211.inputSolicitudEstablecimientoCorreoElectronico.sendKeys("correo@ejemplo.com");
-            mainPage260211.inputSolicitudEstablecimientoDomicilioCodigo.sendKeys("01234");
-            mainPage260211.selectSolicitudEstablecimientoDomicilioEntidad.sendKeys("CIUDAD DE MÉXICO");
-            mainPage260211.inputSolicitudEstablecimientoDomicilioDescripcion.sendKeys("Benito Juárez");
-            mainPage260211.inputSolicitudEstablecimientoDomicilioInformacion.sendKeys("Cerca del parque");
-            mainPage260211.inputSolicitudEstablecimientoDomicilioDescripcion2.sendKeys("Del Valle");
-            mainPage260211.inputSolicitudEstablecimientoDomicilioCalle.sendKeys("Insurgentes Sur");
-            mainPage260211.inputSolicitudEstablecimientoDomicilioTelefono.sendKeys("5555555555");
-            mainPage260211.inputScianAgregar.click();
-            mainPage260211.comboSCIAN.selectOption("614074");
-            mainPage260211.inputAgregar.click();
-            mainPage260211.inputAvisoFuncionamiento.click();
-            mainPage260211.solicitudRegimen.sendKeys("Definitivos");
-            mainPage260211.aduanaEntrada.selectOption("AEROPUERTO INT. DE LA CD DE MEXICO");
-            mainPage260211.inputAgregarAduana.click();
-            mainPage260211.selectClasificacionProducto.sendKeys("DISPOSITIVOS MEDICOS");
-            mainPage260211.selectSubClasificacionProducto.sendKeys("I) Equipo o instrumental médico.");
-            mainPage260211.inputDenominacionEspecifica.sendKeys("Denominación específica de prueba");
-            mainPage260211.inputDenominacionDistintiva.sendKeys("Distintiva123");
-            mainPage260211.inputDenominacionComunInternacional.sendKeys("DCI-TEST");
-            mainPage260211.selectTipoProductoTipoTramite.sendKeys("Materia prima");
-            //mainPage260211.selectFormaFarmaceutica.sendKeys("");
-            mainPage260211.selectEstadoFisico.sendKeys("Granulado o polvo");
-            mainPage260211.inputFraccionArancelaria.sendKeys("33061001");
-            mainPage260211.inputCantidadUMT.sendKeys("100");
-            mainPage260211.inputCantidadUMC.sendKeys("10");
-            mainPage260211.selectUnidadMedidaComercial.sendKeys("Kilogramos");
-            mainPage260211.textareaPresentacion.sendKeys("Presentación del producto");
-            mainPage260211.inputRgistroSanitario.sendKeys("1234535");
-            Selenide.executeJavaScript("arguments[0].value = '20/04/2025';", mainPage260211.inputCaducidad);
-            sleep(100);
-            mainPage260211.buttonAbrirPanelPaisesOrigen.click();
-            mainPage260211.PaisOrigen.selectOptionContainingText("ANGOLA (REPUBLICA DE)");
-            mainPage260211.inputAgregarSeleccion.click();
-            mainPage260211.inputAbrirPanelPaisesProcedencia.click();
-            mainPage260211.PaisProcedencia.selectOptionContainingText("ARGENTINA (REPUBLICA)");
-            mainPage260211.inputAgregarSeleccion2.click();
-            mainPage260211.botonAbrirPanelUsosEspecificos.click();
-            mainPage260211.UsoEspecifico.sendKeys("VENTA O COMERCIALIZACIÓN");
-            mainPage260211.botonAgregarSeleccion.click();
-            mainPage260211.inputAgregarMercancia.click();
-            mainPage260211.inputDeclaracion.click();
-            mainPage260211.inputInformacionConfidencialNo.click();
-            mainPage260211.inputRepresentanteLegalRFC.sendKeys("HEUE780514BVA");
-            mainPage260211.inputConsultarIDC.click();
-            //TERCEROS RELACIONADOS
-            try {
-                Thread.sleep(2000); // Pausa de 3 segundos
-                // Hacer scroll hasta el elemento
-                mainPage260211.Scrol.scrollIntoView(true);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-            mainPage260211.labelTerceroRElacionado.click();
-            mainPage260211.inputAgregarFabricante.click();
-            mainPage260211.inputNacionalidadextranjera.click();
-            mainPage260211.inputPErsonaMoral.click();
-            mainPage260211.inputTerceroRazonSocial.sendKeys("PRUEBAS SA DE CV");
-            mainPage260211.inputPais.sendKeys("LUXEMBURGO (GRAN DUCADO DE)");
-            mainPage260211.terceroEstadoLocalidad.sendKeys("LUXEMBURGO");
-            mainPage260211.terceroCodigoPostal.sendKeys("00000");
-            mainPage260211.terceroColoniaEquiv.sendKeys("10 DE ABRIL");
-            mainPage260211.terceroCalle.sendKeys("Eje Central Lázaro Cárdenas");
-            mainPage260211.terceroNumExterior.sendKeys("123");
-            mainPage260211.terceroNumInterior.sendKeys("4B");
-            mainPage260211.terceroTelefono.sendKeys("5555555555");
-            mainPage260211.terceroCorreo.sendKeys("contacto@fabricante.com");
-            mainPage260211.btnGuardarDatosTerceros.click();
-            mainPage260211.inputAgregarDestinatario.click();
-            mainPage260211.inputTipoPeronaMoral.click();
-            mainPage260211.inputTerceroRFC2.sendKeys("AAL0409235E6");
-            mainPage260211.inputTerceroRazonSocial2.sendKeys("AGRICOLA ALPE, S DE RL DE CV");
-            mainPage260211.terceroEstado2.sendKeys("CIUDAD DE MÉXICO");
-            mainPage260211.terceroMunicipio2.sendKeys("CUAUHTEMOC");
-            mainPage260211.terceroLocalidad2.sendKeys("CUAUHTEMOC");
-            mainPage260211.terceroCodigoPostal2.sendKeys("06278");
-            mainPage260211.terceroColonia2.sendKeys("BUENAVISTA");
-            mainPage260211.terceroCalle2.sendKeys("Eje Central Lázaro Cárdenas");
-            mainPage260211.terceroNumExterior2.sendKeys("123");
-            mainPage260211.terceroNumInterior2.sendKeys("4B");
-            mainPage260211.terceroTelefono2.sendKeys("5555555555");
-            mainPage260211.terceroCorreo2.sendKeys("contacto@fabricante.com");
-            mainPage260211.btnGuardarDatosTercero2.click();
-            //PAGO DE DERECHOS
-            try {
-                Thread.sleep(2000); // Pausa de 3 segundos
-                // Hacer scroll hasta el elemento
-                mainPage260211.Scrol.scrollIntoView(true);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-            mainPage260211.labelPagoDerechos.click();
-            mainPage260211.inputSolicitudPagoClaveReferencia.sendKeys("85434563");
-            mainPage260211.inputSolicitudPagoCadenaDependencia.sendKeys("uaiusjjsdga");
-            mainPage260211.selectSolicitudPagoBancoClave.sendKeys("BANAMEX");
-            mainPage260211.inputSolicitudPagoLlave.sendKeys(llavePago);
-            mainPage260211.inputSolicitudPagoImp.sendKeys("2000");
-            Selenide.executeJavaScript("arguments[0].value = '08/04/2025';", mainPage260211.inputCalendar);
-            sleep(100);
-            mainPage260211.inputGuardarSolicitud.click();
-            //GUARDAR
-            mainPage260211.inputGuarda.click();sleep(1000);
-            metodos.cargarDocumentos();
-            mainPage260211.btnAnexar.click();sleep(3000);
-            mainPage260211.MensajeCarga.shouldNotBe(Condition.visible, Duration.ofSeconds(180));sleep(1000);
-            mainPage260211.btnCerrar.click();
-            mainPage260211.inputSiguiente.click();
-            //FIRMAR SOLICITUD
-            loginFirmSoli.firma(tramite260211);sleep(4000);
+            tramitePrincipal();
             String folioText = mainPage260211.folio.getText();
             String folioNumber = obtenerFolio.obtenerFolio(folioText);
             if (selectedMethods.contains("ProcesoDictamen")) {
@@ -265,6 +137,137 @@ public class MainPage260211Test {
             }
         }, repeticiones);
     }
+    public void tramitePrincipal(){
+        String uuid = UUID.randomUUID().toString();
+        int longitudDeseada = 16;
+        String llavePago = uuid.replace("-", "").substring(0, longitudDeseada);
+
+//          Ingreso y selección de trámite
+        loginFirmSoli.login(tramite260211);
+        mainPage260211.selecRol.sendKeys("Persona Moral");
+        mainPage260211.btnacep.click();
+        mainPage260211.Tramites.sendKeys("Solicitudes nuevas");
+        mainPage260211.SoliNew.click();
+        mainPage260211.Cofepris.click();
+        mainPage260211.linkCertificadosLicenciasPermisos.click();
+        mainPage260211.linkPermisoSanitarioImportacionInsumoSalud.click();
+        mainPage260211.linkPermisoFuentesRadiacion.click();
+        //DATOS SOLICITUD
+        mainPage260211.labelDatosSolicitud.click();
+        mainPage260211.inputEstablecimiento.click();
+        mainPage260211.btnAceptar.click();
+        mainPage260211.inputSolicitudEstablecimientoResponsableSanitario.sendKeys("AAL0409235E6");
+        mainPage260211.inputSolicitudEstablecimientoRazonSocial.sendKeys("PRUEBA SA DE CV");
+        mainPage260211.inputSolicitudEstablecimientoCorreoElectronico.sendKeys("correo@ejemplo.com");
+        mainPage260211.inputSolicitudEstablecimientoDomicilioCodigo.sendKeys("01234");
+        mainPage260211.selectSolicitudEstablecimientoDomicilioEntidad.sendKeys("CIUDAD DE MÉXICO");
+        mainPage260211.inputSolicitudEstablecimientoDomicilioDescripcion.sendKeys("Benito Juárez");
+        mainPage260211.inputSolicitudEstablecimientoDomicilioInformacion.sendKeys("Cerca del parque");
+        mainPage260211.inputSolicitudEstablecimientoDomicilioDescripcion2.sendKeys("Del Valle");
+        mainPage260211.inputSolicitudEstablecimientoDomicilioCalle.sendKeys("Insurgentes Sur");
+        mainPage260211.inputSolicitudEstablecimientoDomicilioTelefono.sendKeys("5555555555");
+        mainPage260211.inputScianAgregar.click();
+        mainPage260211.comboSCIAN.selectOption("614074");
+        mainPage260211.inputAgregar.click();
+        mainPage260211.inputAvisoFuncionamiento.click();
+        mainPage260211.solicitudRegimen.sendKeys("Definitivos");
+        mainPage260211.aduanaEntrada.selectOption("AEROPUERTO INT. DE LA CD DE MEXICO");
+        mainPage260211.inputAgregarAduana.click();
+        mainPage260211.selectClasificacionProducto.sendKeys("DISPOSITIVOS MEDICOS");
+        mainPage260211.selectSubClasificacionProducto.sendKeys("I) Equipo o instrumental médico.");
+        mainPage260211.inputDenominacionEspecifica.sendKeys("Denominación específica de prueba");
+        mainPage260211.inputDenominacionDistintiva.sendKeys("Distintiva123");
+        mainPage260211.inputDenominacionComunInternacional.sendKeys("DCI-TEST");
+        mainPage260211.selectTipoProductoTipoTramite.sendKeys("Materia prima");
+        //mainPage260211.selectFormaFarmaceutica.sendKeys("");
+        mainPage260211.selectEstadoFisico.sendKeys("Granulado o polvo");
+        mainPage260211.inputFraccionArancelaria.sendKeys("33061001");
+        mainPage260211.inputCantidadUMT.sendKeys("100");
+        mainPage260211.inputCantidadUMC.sendKeys("10");
+        mainPage260211.selectUnidadMedidaComercial.sendKeys("Kilogramos");
+        mainPage260211.textareaPresentacion.sendKeys("Presentación del producto");
+        mainPage260211.inputRgistroSanitario.sendKeys("1234535");
+        Selenide.executeJavaScript("arguments[0].value = '20/04/2025';", mainPage260211.inputCaducidad);
+        sleep(100);
+        mainPage260211.buttonAbrirPanelPaisesOrigen.click();
+        mainPage260211.PaisOrigen.selectOptionContainingText("ANGOLA (REPUBLICA DE)");
+        mainPage260211.inputAgregarSeleccion.click();
+        mainPage260211.inputAbrirPanelPaisesProcedencia.click();
+        mainPage260211.PaisProcedencia.selectOptionContainingText("ARGENTINA (REPUBLICA)");
+        mainPage260211.inputAgregarSeleccion2.click();
+        mainPage260211.botonAbrirPanelUsosEspecificos.click();
+        mainPage260211.UsoEspecifico.sendKeys("VENTA O COMERCIALIZACIÓN");
+        mainPage260211.botonAgregarSeleccion.click();
+        mainPage260211.inputAgregarMercancia.click();
+        mainPage260211.inputDeclaracion.click();
+        mainPage260211.inputInformacionConfidencialNo.click();
+        mainPage260211.inputRepresentanteLegalRFC.sendKeys("HEUE780514BVA");
+        mainPage260211.inputConsultarIDC.click();
+        //TERCEROS RELACIONADOS
+        try {
+            Thread.sleep(2000); // Pausa de 3 segundos
+            // Hacer scroll hasta el elemento
+            mainPage260211.Scrol.scrollIntoView(true);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        mainPage260211.labelTerceroRElacionado.click();
+        mainPage260211.inputAgregarFabricante.click();
+        mainPage260211.inputNacionalidadextranjera.click();
+        mainPage260211.inputPErsonaMoral.click();
+        mainPage260211.inputTerceroRazonSocial.sendKeys("PRUEBAS SA DE CV");
+        mainPage260211.inputPais.sendKeys("LUXEMBURGO (GRAN DUCADO DE)");
+        mainPage260211.terceroEstadoLocalidad.sendKeys("LUXEMBURGO");
+        mainPage260211.terceroCodigoPostal.sendKeys("00000");
+        mainPage260211.terceroColoniaEquiv.sendKeys("10 DE ABRIL");
+        mainPage260211.terceroCalle.sendKeys("Eje Central Lázaro Cárdenas");
+        mainPage260211.terceroNumExterior.sendKeys("123");
+        mainPage260211.terceroNumInterior.sendKeys("4B");
+        mainPage260211.terceroTelefono.sendKeys("5555555555");
+        mainPage260211.terceroCorreo.sendKeys("contacto@fabricante.com");
+        mainPage260211.btnGuardarDatosTerceros.click();
+        mainPage260211.inputAgregarDestinatario.click();
+        mainPage260211.inputTipoPeronaMoral.click();
+        mainPage260211.inputTerceroRFC2.sendKeys("AAL0409235E6");
+        mainPage260211.inputTerceroRazonSocial2.sendKeys("AGRICOLA ALPE, S DE RL DE CV");
+        mainPage260211.terceroEstado2.sendKeys("CIUDAD DE MÉXICO");
+        mainPage260211.terceroMunicipio2.sendKeys("CUAUHTEMOC");
+        mainPage260211.terceroLocalidad2.sendKeys("CUAUHTEMOC");
+        mainPage260211.terceroCodigoPostal2.sendKeys("06278");
+        mainPage260211.terceroColonia2.sendKeys("BUENAVISTA");
+        mainPage260211.terceroCalle2.sendKeys("Eje Central Lázaro Cárdenas");
+        mainPage260211.terceroNumExterior2.sendKeys("123");
+        mainPage260211.terceroNumInterior2.sendKeys("4B");
+        mainPage260211.terceroTelefono2.sendKeys("5555555555");
+        mainPage260211.terceroCorreo2.sendKeys("contacto@fabricante.com");
+        mainPage260211.btnGuardarDatosTercero2.click();
+        //PAGO DE DERECHOS
+        try {
+            Thread.sleep(2000); // Pausa de 3 segundos
+            // Hacer scroll hasta el elemento
+            mainPage260211.Scrol.scrollIntoView(true);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        mainPage260211.labelPagoDerechos.click();
+        mainPage260211.inputSolicitudPagoClaveReferencia.sendKeys("85434563");
+        mainPage260211.inputSolicitudPagoCadenaDependencia.sendKeys("uaiusjjsdga");
+        mainPage260211.selectSolicitudPagoBancoClave.sendKeys("BANAMEX");
+        mainPage260211.inputSolicitudPagoLlave.sendKeys(llavePago);
+        mainPage260211.inputSolicitudPagoImp.sendKeys("2000");
+        Selenide.executeJavaScript("arguments[0].value = '08/04/2025';", mainPage260211.inputCalendar);
+        sleep(100);
+        mainPage260211.inputGuardarSolicitud.click();
+        //GUARDAR
+        mainPage260211.inputGuarda.click();sleep(1000);
+        metodos.cargarDocumentos();
+        mainPage260211.btnAnexar.click();sleep(3000);
+        mainPage260211.MensajeCarga.shouldNotBe(Condition.visible, Duration.ofSeconds(180));sleep(1000);
+        mainPage260211.btnCerrar.click();
+        mainPage260211.inputSiguiente.click();
+        //FIRMAR SOLICITUD
+        loginFirmSoli.firma(tramite260211);sleep(4000);
+    }
 
     public void ProcesoGenerarDictamen(String folioNumber) {
         open("https://wwwqa.ventanillaunica.gob.mx/ventanilla-HA/authentication.action?showLoginFuncionarios=");
@@ -273,9 +276,9 @@ public class MainPage260211Test {
         ConDBReasigSolFun.processFolio(folioNumber, FunRFC);
         $(By.cssSelector("img[src*='icoInicio.png']")).click();
         mainPage260211.numfolio.sendKeys(folioNumber);
-        sleep(5000);
+        sleep(2500);
         mainPage260211.btnBuscarFolio.doubleClick();
-        sleep(10500);
+        sleep(5500);
         $$("td[role='gridcell']").findBy(attribute("title", "Evaluar Solicitud")).doubleClick();
         $("input[name='opcion'][value='?mostrarDictamen=']").click();
         $("input[name='mostrar'][value='Continuar']").click();
@@ -296,9 +299,9 @@ public class MainPage260211Test {
         $(By.cssSelector("img[src*='icoInicio.png']")).click();
         ConDBReasigSolFun.processFolio(folioNumber, FunRFC);
         mainPage260211.numfolio.sendKeys(folioNumber);
-        sleep(5000);
+        sleep(2500);
         mainPage260211.btnBuscarFolio.doubleClick();
-        sleep(10500);
+        sleep(5500);
         $$("td[role='gridcell']").findBy(attribute("title", "Verificar Dictamen")).doubleClick();
         mainPage260211.darVoBo.click();
         loginFirmSoli.firmaFun(tramite260211Fun);
@@ -309,9 +312,9 @@ public class MainPage260211Test {
         $(By.cssSelector("img[src*='icoInicio.png']")).click();
         ConDBReasigSolFun.processFolio(folioNumber, FunRFC);
         mainPage260211.numfolio.sendKeys(folioNumber);
-        sleep(5000);
+        sleep(2500);
         mainPage260211.btnBuscarFolio.doubleClick();
-        sleep(10500);
+        sleep(5500);
         $$("td[role='gridcell']").findBy(attribute("title", "Autorizar Dictamen")).doubleClick();
         mainPage260211.firmarAutorizacion.click();
         loginFirmSoli.firmaFun(tramite260211Fun);
@@ -335,7 +338,36 @@ public class MainPage260211Test {
         sleep(1000);
         sleep(4000);
     }
-
+    public String retornoFolio(){
+        tramitePrincipal();
+        String folioText = mainPage260211.folio.getText();
+        String folioNumber = obtenerFolio.obtenerFolio(folioText);
+        try {
+            setUpAll();
+            ProcesoGenerarDictamen(folioNumber);
+            ProcesoVerificarDictamen(folioNumber);
+            System.out.println("ProcesoDictamen completado. Pasando a Autorización...");
+            try {
+                ProcesoAutorizarDictamen(folioNumber);
+                System.out.println("ProcesoAutorizacion completado. Pasando a Confirmación...");
+                try {
+                    ProcesoConfirmarNotificacion(folioNumber);
+                    System.out.println("ProcesoConfirmarNotificaciónResolucion completado.");
+                } catch (Exception e) {
+                    System.err.println("❌ ERROR: Falló un proceso en la secuencia. Deteniendo pasos subsiguientes para el folio " + folioNumber);
+                    e.printStackTrace();
+                }
+            } catch (Exception e) {
+                System.err.println("❌ ERROR: Falló un proceso en la secuencia. Deteniendo pasos subsiguientes para el folio " + folioNumber);
+                e.printStackTrace();
+            }
+        } catch (Exception e) {
+            System.err.println("❌ ERROR: Falló un proceso en la secuencia. Deteniendo pasos subsiguientes para el folio " + folioNumber);
+            e.printStackTrace();
+        }
+        closeWebDriver();
+        return folioNumber;
+    }
 
     //Metodo que ejecuta n veces una clase que implementa Runnable
     public void ejecutarProcesoNRunnable(Runnable proceso, int n) {
