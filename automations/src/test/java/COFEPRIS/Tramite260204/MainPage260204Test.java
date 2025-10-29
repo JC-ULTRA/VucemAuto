@@ -120,209 +120,7 @@ public class MainPage260204Test {
 
 
         ejecutarProcesoNRunnable(() -> {
-
-            //llave de pago
-            String uuid = UUID.randomUUID().toString();
-            int longitudDeseada = 16;
-            String llavePago = uuid.replace("-", "").substring(0, longitudDeseada);
-
-
-            //Loging y Seleccion Rol
-            loginFirmSoli.login(tramite260204);
-            mainPage260204.selecRol.sendKeys("Persona Moral"); sleep(1000);
-            mainPage260204.btnacep.click();sleep(1000);
-
-            //Busqueda de tramite
-            mainPage260204.Tramites.sendKeys("Solicitudes nuevas");//sleep(1000);
-            mainPage260204.SoliNew.click();//sleep(1000);
-            mainPage260204.Cofepris.click();//sleep(1000);
-            mainPage260204.CertificadosLicenciasPermisos.click();//sleep(1000);
-            mainPage260204.PermisoSanitarioImportaciInsumosSalud.click();//sleep(1000);
-            mainPage260204.Tramite260204.click();sleep(10000);
-
-            //Datos de solicitud
-            mainPage260204.LogoVuc.scrollTo().shouldBe(visible);
-            mainPage260204.DatosSolicitud.click();
-
-            mainPage260204.btnEstablecimiento.click();
-            mainPage260204.buttonAceptar.click();
-
-            //LLenado de datos
-            mainPage260204.ResponsableSanitarioRFC.sendKeys("VLIO230414MC5");
-            mainPage260204.inputSolicitudEstablecimientoRazonSocial.sendKeys("RazonTest");
-            mainPage260204.inputSolicitudEstablecimientoCorreoElectronico.sendKeys("Test@gmail.com");
-
-            //Domicilio del establecimiento
-            mainPage260204.inputSolicitudEstablecimientoDomicilioCodigo.sendKeys("607059");
-            mainPage260204.selectSolicitudEstablecimientoDomicilioEntidad.sendKeys("AGUASCALIENTES");
-            mainPage260204.inputSolicitudEstablecimientoDomicilioMunicipioAlcadia.sendKeys("El Llano");
-            mainPage260204.inputSolicitudEstablecimientoDomicilioLocalidad.sendKeys("Llano Localidad Test");
-            mainPage260204.getInputSolicitudEstablecimientoDomicilioColonia.sendKeys("Colonia");
-            mainPage260204.inputSolicitudEstablecimientoDomicilioCalle.sendKeys("Ignacio Zaragoza");
-            mainPage260204.inputSolicitudEstablecimientoDomicilioLada.sendKeys("449");
-            mainPage260204.inputSolicitudEstablecimientoDomicilioTelefono.sendKeys("5091222233");sleep(1000);
-
-            //Agregar SCIAN
-            mainPage260204.btnAgregarScian.click();
-            mainPage260204.selectComboScian.sendKeys("3111239");
-            mainPage260204.btnAgregar2Scian.click();sleep(1000);
-            //
-
-            mainPage260204.checkAvisoFuncionamiento.click();
-            mainPage260204.selectSolicitudRegimenClave.sendKeys("Temporales");
-            mainPage260204.selectAduanasEntrada.sendKeys("LA PAZ");
-
-            //Agregar Mercancia
-            mainPage260204.btnAgregarAduana.click();
-            mainPage260204.selectMercanciaGridClasificacionProducto.sendKeys("MEDICAMENTOS/FARMACO");
-            mainPage260204.selectMercanciaGridEspecificaClasProd.sendKeys("I) Aloáticos");
-            mainPage260204.inputDenominacionEspecifica.sendKeys("Denominacion Especifica Test");
-            mainPage260204.inputDenominacionDistintiva.sendKeys("Denominacion Distintiva test");
-            mainPage260204.inputDenominacionNombreCientif.sendKeys("Hemorivados Test Nombre Cientifico");
-            mainPage260204.selectMercanciaGridTipoProducto.sendKeys("Producto terminado");
-            mainPage260204.comboFormaFarmaceutica.sendKeys("Tabletas");
-            mainPage260204.comboEstadoFisico.sendKeys("Solido");
-            //mainPage260204.Especifique.sendKeys("Liquido Especificado");
-            mainPage260204.inputFraccionArancelaria.sendKeys("30049099");
-            mainPage260204.inputCantidadUmt.sendKeys("100");
-            mainPage260204.inputCantidadUmc.sendKeys("100");
-            mainPage260204.selectMercanciaGridUnidadMedida.sendKeys("Kilogramo");
-            mainPage260204.PresentacionFarmaTipoEnvase.sendKeys("QA");
-
-            //Pais de origen
-            mainPage260204.btnDesplegarInfoPaisOrigen.click();
-            mainPage260204.btnDesplegarInfoPaisOrigen.scrollTo().shouldBe(visible);
-            mainPage260204.optionAntartida.click();
-            mainPage260204.inputAdd.click();
-
-            //Pais de procedencia
-            mainPage260204.btnDesplegarInfoPaisProcedencia.click();
-            mainPage260204.btnDesplegarInfoPaisProcedencia.scrollTo().shouldBe(visible);
-            mainPage260204.MenuPaisesProcedencia.selectOptionByValue("CYM");
-            mainPage260204.inputAdd2.click();
-
-            //Uso especifico
-            mainPage260204.btnDesplegarInfoUsoEspecifico.click();
-            mainPage260204.btnDesplegarInfoUsoEspecifico.scrollTo().shouldBe(visible);
-            mainPage260204.MenuUsoEspecifico.selectOptionByValue("94");
-            mainPage260204.inputAdd3.click();
-
-            //Agregar la mercancia
-            mainPage260204.btnAgregarMercanciaTotalInfo.click();
-
-            //manifiesto y declaraciones
-            mainPage260204.checkCumploRequisitosYNormativas.click();
-            mainPage260204.radNoHacerPublicoInformacion.click();
-            //Repesentante legal
-            mainPage260204.RepresentanteRFC.sendKeys("MAVL621207C95");
-            mainPage260204.btnBuscarRepresentante.click();
-
-            //TERCEROS RELACIONADOS
-            //Datos Generales
-            mainPage260204.pestañaPaso1.scrollTo().shouldBe(visible);
-            mainPage260204.tabTercerosRelacionados.click();
-            mainPage260204.btnAgregarFabricante.click();
-            mainPage260204.radNacionalTerceros.click();
-            mainPage260204.radPersonaFisica.click();
-            mainPage260204.FabricanteRFC.sendKeys("LEQI8101314S7");
-
-            //Datos personales
-            mainPage260204.inputTercerosNombre.sendKeys("MISAEL");
-            mainPage260204.inputTercerosApellidoPaterno.sendKeys("BARRAGAN");
-            mainPage260204.inputTercerosApellidoMaterno.sendKeys("RUIZ");
-            mainPage260204.selectTercerosEstado.sendKeys("DURANGO");
-            mainPage260204.selectTercerosMunicipio.sendKeys("DURANGO");
-            mainPage260204.selectTercerosLocalidad.sendKeys("15 DE MAYO");
-            mainPage260204.selectTercerosCodPostal.selectOptionByValue("34001");
-            mainPage260204.selectTercerosColonia.sendKeys("12 DE DICIEMBRE");
-            mainPage260204.inputTercerosCalle.sendKeys("Calle Durango QA");
-            mainPage260204.inputTercerosNumExterior.sendKeys("10");
-            mainPage260204.inputTercerosNumInterior.sendKeys("5");
-            mainPage260204.inputTerceroLada.sendKeys("618");
-            mainPage260204.inputTercerosTelefono.sendKeys("618-813-6670");
-            mainPage260204.inputTercerosCorreoElec.sendKeys("vucem2.5@hotmail.com");
-            mainPage260204.buttonGuardarDatosTercero.click();
-
-            //Agregar Destinatario (Destino Final)
-            mainPage260204.btnAgregarDestinatario.click();
-            mainPage260204.radPersonaFisica.click();
-            mainPage260204.FabricanteRFC.sendKeys("LEQI8101314S7");
-            //Datos personales
-            mainPage260204.inputTercerosNombre.sendKeys("MISAEL");
-            mainPage260204.inputTercerosApellidoPaterno.sendKeys("BARRAGAN");
-            mainPage260204.inputTercerosApellidoMaterno.sendKeys("RUIZ");
-            mainPage260204.selectTercerosEstado.sendKeys("DURANGO");
-            mainPage260204.selectTercerosMunicipio.sendKeys("DURANGO");
-            mainPage260204.selectTercerosLocalidad.sendKeys("15 DE MAYO");
-            mainPage260204.selectTercerosCodPostal.selectOptionByValue("34001");
-            mainPage260204.selectTercerosColonia.sendKeys("12 DE DICIEMBRE");
-            mainPage260204.inputTercerosCalle.sendKeys("Calle Durango QA");
-            mainPage260204.inputTercerosNumExterior.sendKeys("10");
-            mainPage260204.inputTercerosNumInterior.sendKeys("5");
-            mainPage260204.inputTerceroLada.sendKeys("618");
-            mainPage260204.inputTercerosTelefono.sendKeys("618-813-6670");
-            mainPage260204.inputTercerosCorreoElec.sendKeys("vucem2.5@hotmail.com");
-            mainPage260204.buttonGuardarDatosTercero.click();
-
-
-            //Agregar Proveedor
-            mainPage260204.btnAgregarProveedor.click();
-            mainPage260204.radPersonaFisica.click();
-            //Datos personales
-            mainPage260204.inputTercerosNombre.sendKeys("MISAEL");
-            mainPage260204.inputTercerosApellidoPaterno.sendKeys("BARRAGAN");
-            mainPage260204.inputTercerosApellidoMaterno.sendKeys("RUIZ");
-            mainPage260204.listTercerosPais.selectOptionByValue("CAN");
-            mainPage260204.TercerosEstadotxt.sendKeys("DURANGO");
-            mainPage260204.CodigoPostaltxt.sendKeys("34001");
-            mainPage260204.TercerosColoniatxt.sendKeys("12 DE DICIEMBRE");
-            mainPage260204.inputTercerosCalle.sendKeys("Calle Durango QA");
-            mainPage260204.inputTercerosNumExterior.sendKeys("10");
-            mainPage260204.inputTercerosNumInterior.sendKeys("5");
-            mainPage260204.inputTerceroLada.sendKeys("618");
-            mainPage260204.inputTercerosTelefono.sendKeys("618-813-6670");
-            mainPage260204.inputTercerosCorreoElec.sendKeys("vucem2.5@hotmail.com");
-            mainPage260204.buttonGuardarDatosTercero.click();
-
-            //Agregar facturador
-            mainPage260204.btnAgregarFacturador.click();
-            mainPage260204.radPersonaFisica.click();
-            //Datos personales
-            mainPage260204.inputTercerosNombre.sendKeys("MISAEL");
-            mainPage260204.inputTercerosApellidoPaterno.sendKeys("BARRAGAN");
-            mainPage260204.inputTercerosApellidoMaterno.sendKeys("RUIZ");
-            mainPage260204.listTercerosPais.selectOptionByValue("CAN");
-            mainPage260204.TercerosEstadotxt.sendKeys("DURANGO");
-            mainPage260204.CodigoPostaltxt.sendKeys("34001");
-            mainPage260204.TercerosColoniatxt.sendKeys("12 DE DICIEMBRE");
-            mainPage260204.inputTercerosCalle.sendKeys("Calle Durango QA");
-            mainPage260204.inputTercerosNumExterior.sendKeys("10");
-            mainPage260204.inputTercerosNumInterior.sendKeys("5");
-            mainPage260204.inputTerceroLada.sendKeys("618");
-            mainPage260204.inputTercerosTelefono.sendKeys("618-813-6670");
-            mainPage260204.inputTercerosCorreoElec.sendKeys("vucem2.5@hotmail.com");
-            mainPage260204.buttonGuardarDatosTercero.click();
-
-            //PAGO DERECHOS
-            mainPage260204.pestañaPaso1.scrollTo().shouldBe(visible);
-            mainPage260204.tabPagoDerechos.click();
-            mainPage260204.ClaveReferencia.sendKeys("284000255");sleep(1000);
-            mainPage260204.CadenaDependencia.sendKeys("0111514EC10303");
-            mainPage260204.listBanco.sendKeys("BANCA MIFEL");sleep(1000);
-            mainPage260204.inpLLavePago.sendKeys(llavePago);sleep(1000);
-            Selenide.executeJavaScript("arguments[0].value = '01/04/2025';", mainPage260204.FechaPago); sleep(1000);
-            mainPage260204.ImportePago.sendKeys("100");
-            mainPage260204.btnContinuarDatosCompletos.click();
-
-            sleep(1000);
-            //Paso2
-            mainPage260204.btnContinuarPaso2.click();
-            metodos.cargarDocumentos();
-            mainPage260204.btnAdjuntar2.click();
-            mainPage260204.MensajeCarga.shouldNotBe(Condition.visible, Duration.ofSeconds(180));sleep(1000);
-            mainPage260204.btnCerrar3.doubleClick();sleep(1000);
-            mainPage260204.btnContinuar3.click();sleep(1000);
-            loginFirmSoli.firma(tramite260204);sleep(4000);
+            tramitePrincipal();
             String folioText = mainPage260204.folio.getText();
             String folioNumber = obtenerFolio.obtenerFolio(folioText);
             if (selectedMethods.contains("ProcesoDictamen")){
@@ -348,7 +146,210 @@ public class MainPage260204Test {
             }
         }, repeticiones);
     }
+    public void tramitePrincipal(){
+        //llave de pago
+        String uuid = UUID.randomUUID().toString();
+        int longitudDeseada = 16;
+        String llavePago = uuid.replace("-", "").substring(0, longitudDeseada);
 
+
+        //Loging y Seleccion Rol
+        loginFirmSoli.login(tramite260204);
+        mainPage260204.selecRol.sendKeys("Persona Moral"); sleep(1000);
+        mainPage260204.btnacep.click();sleep(1000);
+
+        //Busqueda de tramite
+        mainPage260204.Tramites.sendKeys("Solicitudes nuevas");//sleep(1000);
+        mainPage260204.SoliNew.click();//sleep(1000);
+        mainPage260204.Cofepris.click();//sleep(1000);
+        mainPage260204.CertificadosLicenciasPermisos.click();//sleep(1000);
+        mainPage260204.PermisoSanitarioImportaciInsumosSalud.click();//sleep(1000);
+        mainPage260204.Tramite260204.click();sleep(10000);
+
+        //Datos de solicitud
+        mainPage260204.LogoVuc.scrollTo().shouldBe(visible);
+        mainPage260204.DatosSolicitud.click();
+
+        mainPage260204.btnEstablecimiento.click();
+        mainPage260204.buttonAceptar.click();
+
+        //LLenado de datos
+        mainPage260204.ResponsableSanitarioRFC.sendKeys("VLIO230414MC5");
+        mainPage260204.inputSolicitudEstablecimientoRazonSocial.sendKeys("RazonTest");
+        mainPage260204.inputSolicitudEstablecimientoCorreoElectronico.sendKeys("Test@gmail.com");
+
+        //Domicilio del establecimiento
+        mainPage260204.inputSolicitudEstablecimientoDomicilioCodigo.sendKeys("607059");
+        mainPage260204.selectSolicitudEstablecimientoDomicilioEntidad.sendKeys("AGUASCALIENTES");
+        mainPage260204.inputSolicitudEstablecimientoDomicilioMunicipioAlcadia.sendKeys("El Llano");
+        mainPage260204.inputSolicitudEstablecimientoDomicilioLocalidad.sendKeys("Llano Localidad Test");
+        mainPage260204.getInputSolicitudEstablecimientoDomicilioColonia.sendKeys("Colonia");
+        mainPage260204.inputSolicitudEstablecimientoDomicilioCalle.sendKeys("Ignacio Zaragoza");
+        mainPage260204.inputSolicitudEstablecimientoDomicilioLada.sendKeys("449");
+        mainPage260204.inputSolicitudEstablecimientoDomicilioTelefono.sendKeys("5091222233");sleep(1000);
+
+        //Agregar SCIAN
+        mainPage260204.btnAgregarScian.click();
+        mainPage260204.selectComboScian.sendKeys("3111239");
+        mainPage260204.btnAgregar2Scian.click();sleep(1000);
+        //
+
+        mainPage260204.checkAvisoFuncionamiento.click();
+        mainPage260204.selectSolicitudRegimenClave.sendKeys("Temporales");
+        mainPage260204.selectAduanasEntrada.sendKeys("LA PAZ");
+
+        //Agregar Mercancia
+        mainPage260204.btnAgregarAduana.click();
+        mainPage260204.selectMercanciaGridClasificacionProducto.sendKeys("MEDICAMENTOS/FARMACO");sleep(1000);
+        mainPage260204.selectMercanciaGridEspecificaClasProd.sendKeys("I) Aloáticos");
+        mainPage260204.inputDenominacionEspecifica.sendKeys("Denominacion Especifica Test");
+        mainPage260204.inputDenominacionDistintiva.sendKeys("Denominacion Distintiva test");
+        mainPage260204.inputDenominacionNombreCientif.sendKeys("Hemorivados Test Nombre Cientifico");
+        mainPage260204.selectMercanciaGridTipoProducto.sendKeys("Producto terminado");
+        mainPage260204.comboFormaFarmaceutica.sendKeys("Tabletas");
+        mainPage260204.comboEstadoFisico.sendKeys("Solido");
+        //mainPage260204.Especifique.sendKeys("Liquido Especificado");
+        mainPage260204.inputFraccionArancelaria.sendKeys("30049099");
+        mainPage260204.inputCantidadUmt.sendKeys("100");
+        mainPage260204.inputCantidadUmc.sendKeys("100");
+        mainPage260204.selectMercanciaGridUnidadMedida.sendKeys("Kilogramo");
+        mainPage260204.PresentacionFarmaTipoEnvase.sendKeys("QA");
+
+        //Pais de origen
+        mainPage260204.btnDesplegarInfoPaisOrigen.click();
+        mainPage260204.btnDesplegarInfoPaisOrigen.scrollTo().shouldBe(visible);
+        mainPage260204.optionAntartida.click();
+        mainPage260204.inputAdd.click();
+
+        //Pais de procedencia
+        mainPage260204.btnDesplegarInfoPaisProcedencia.click();
+        mainPage260204.btnDesplegarInfoPaisProcedencia.scrollTo().shouldBe(visible);
+        mainPage260204.MenuPaisesProcedencia.selectOptionByValue("CYM");
+        mainPage260204.inputAdd2.click();
+
+        //Uso especifico
+        mainPage260204.btnDesplegarInfoUsoEspecifico.click();
+        mainPage260204.btnDesplegarInfoUsoEspecifico.scrollTo().shouldBe(visible);
+        mainPage260204.MenuUsoEspecifico.selectOptionByValue("94");
+        mainPage260204.inputAdd3.click();
+
+        //Agregar la mercancia
+        mainPage260204.btnAgregarMercanciaTotalInfo.click();
+
+        //manifiesto y declaraciones
+        mainPage260204.checkCumploRequisitosYNormativas.click();
+        mainPage260204.radNoHacerPublicoInformacion.click();
+        //Repesentante legal
+        mainPage260204.RepresentanteRFC.sendKeys("MAVL621207C95");
+        mainPage260204.btnBuscarRepresentante.click();
+
+        //TERCEROS RELACIONADOS
+        //Datos Generales
+        mainPage260204.pestañaPaso1.scrollTo().shouldBe(visible);
+        mainPage260204.tabTercerosRelacionados.click();
+        mainPage260204.btnAgregarFabricante.click();
+        mainPage260204.radNacionalTerceros.click();
+        mainPage260204.radPersonaFisica.click();
+        mainPage260204.FabricanteRFC.sendKeys("LEQI8101314S7");
+
+        //Datos personales
+        mainPage260204.inputTercerosNombre.sendKeys("MISAEL");
+        mainPage260204.inputTercerosApellidoPaterno.sendKeys("BARRAGAN");
+        mainPage260204.inputTercerosApellidoMaterno.sendKeys("RUIZ");
+        mainPage260204.selectTercerosEstado.sendKeys("DURANGO");
+        mainPage260204.selectTercerosMunicipio.sendKeys("DURANGO");
+        mainPage260204.selectTercerosLocalidad.sendKeys("15 DE MAYO");
+        mainPage260204.selectTercerosCodPostal.selectOptionByValue("34001");
+        mainPage260204.selectTercerosColonia.sendKeys("12 DE DICIEMBRE");
+        mainPage260204.inputTercerosCalle.sendKeys("Calle Durango QA");
+        mainPage260204.inputTercerosNumExterior.sendKeys("10");
+        mainPage260204.inputTercerosNumInterior.sendKeys("5");
+        mainPage260204.inputTerceroLada.sendKeys("618");
+        mainPage260204.inputTercerosTelefono.sendKeys("618-813-6670");
+        mainPage260204.inputTercerosCorreoElec.sendKeys("vucem2.5@hotmail.com");
+        mainPage260204.buttonGuardarDatosTercero.click();
+
+        //Agregar Destinatario (Destino Final)
+        mainPage260204.btnAgregarDestinatario.click();
+        mainPage260204.radPersonaFisica.click();
+        mainPage260204.FabricanteRFC.sendKeys("LEQI8101314S7");
+        //Datos personales
+        mainPage260204.inputTercerosNombre.sendKeys("MISAEL");
+        mainPage260204.inputTercerosApellidoPaterno.sendKeys("BARRAGAN");
+        mainPage260204.inputTercerosApellidoMaterno.sendKeys("RUIZ");
+        mainPage260204.selectTercerosEstado.sendKeys("DURANGO");
+        mainPage260204.selectTercerosMunicipio.sendKeys("DURANGO");
+        mainPage260204.selectTercerosLocalidad.sendKeys("15 DE MAYO");
+        mainPage260204.selectTercerosCodPostal.selectOptionByValue("34001");
+        mainPage260204.selectTercerosColonia.sendKeys("12 DE DICIEMBRE");
+        mainPage260204.inputTercerosCalle.sendKeys("Calle Durango QA");
+        mainPage260204.inputTercerosNumExterior.sendKeys("10");
+        mainPage260204.inputTercerosNumInterior.sendKeys("5");
+        mainPage260204.inputTerceroLada.sendKeys("618");
+        mainPage260204.inputTercerosTelefono.sendKeys("618-813-6670");
+        mainPage260204.inputTercerosCorreoElec.sendKeys("vucem2.5@hotmail.com");
+        mainPage260204.buttonGuardarDatosTercero.click();
+
+
+        //Agregar Proveedor
+        mainPage260204.btnAgregarProveedor.click();
+        mainPage260204.radPersonaFisica.click();
+        //Datos personales
+        mainPage260204.inputTercerosNombre.sendKeys("MISAEL");
+        mainPage260204.inputTercerosApellidoPaterno.sendKeys("BARRAGAN");
+        mainPage260204.inputTercerosApellidoMaterno.sendKeys("RUIZ");
+        mainPage260204.listTercerosPais.selectOptionByValue("CAN");
+        mainPage260204.TercerosEstadotxt.sendKeys("DURANGO");
+        mainPage260204.CodigoPostaltxt.sendKeys("34001");
+        mainPage260204.TercerosColoniatxt.sendKeys("12 DE DICIEMBRE");
+        mainPage260204.inputTercerosCalle.sendKeys("Calle Durango QA");
+        mainPage260204.inputTercerosNumExterior.sendKeys("10");
+        mainPage260204.inputTercerosNumInterior.sendKeys("5");
+        mainPage260204.inputTerceroLada.sendKeys("618");
+        mainPage260204.inputTercerosTelefono.sendKeys("618-813-6670");
+        mainPage260204.inputTercerosCorreoElec.sendKeys("vucem2.5@hotmail.com");
+        mainPage260204.buttonGuardarDatosTercero.click();
+
+        //Agregar facturador
+        mainPage260204.btnAgregarFacturador.click();
+        mainPage260204.radPersonaFisica.click();
+        //Datos personales
+        mainPage260204.inputTercerosNombre.sendKeys("MISAEL");
+        mainPage260204.inputTercerosApellidoPaterno.sendKeys("BARRAGAN");
+        mainPage260204.inputTercerosApellidoMaterno.sendKeys("RUIZ");
+        mainPage260204.listTercerosPais.selectOptionByValue("CAN");
+        mainPage260204.TercerosEstadotxt.sendKeys("DURANGO");
+        mainPage260204.CodigoPostaltxt.sendKeys("34001");
+        mainPage260204.TercerosColoniatxt.sendKeys("12 DE DICIEMBRE");
+        mainPage260204.inputTercerosCalle.sendKeys("Calle Durango QA");
+        mainPage260204.inputTercerosNumExterior.sendKeys("10");
+        mainPage260204.inputTercerosNumInterior.sendKeys("5");
+        mainPage260204.inputTerceroLada.sendKeys("618");
+        mainPage260204.inputTercerosTelefono.sendKeys("618-813-6670");
+        mainPage260204.inputTercerosCorreoElec.sendKeys("vucem2.5@hotmail.com");
+        mainPage260204.buttonGuardarDatosTercero.click();
+
+        //PAGO DERECHOS
+        mainPage260204.pestañaPaso1.scrollTo().shouldBe(visible);
+        mainPage260204.tabPagoDerechos.click();
+        mainPage260204.ClaveReferencia.sendKeys("284000255");sleep(1000);
+        mainPage260204.CadenaDependencia.sendKeys("0111514EC10303");
+        mainPage260204.listBanco.sendKeys("BANCA MIFEL");sleep(1000);
+        mainPage260204.inpLLavePago.sendKeys(llavePago);sleep(1000);
+        Selenide.executeJavaScript("arguments[0].value = '01/04/2025';", mainPage260204.FechaPago); sleep(1000);
+        mainPage260204.ImportePago.sendKeys("100");
+        mainPage260204.btnContinuarDatosCompletos.click();
+
+        sleep(1000);
+        //Paso2
+        mainPage260204.btnContinuarPaso2.click();
+        metodos.cargarDocumentos();
+        mainPage260204.btnAdjuntar2.click();
+        mainPage260204.MensajeCarga.shouldNotBe(Condition.visible, Duration.ofSeconds(180));sleep(1000);
+        mainPage260204.btnCerrar3.doubleClick();sleep(1000);
+        mainPage260204.btnContinuar3.click();sleep(1000);
+        loginFirmSoli.firma(tramite260204);sleep(4000);
+    }
 
     public void ProcesoGenerarDictamen(String folioNumber){
         open("https://wwwqa.ventanillaunica.gob.mx/ventanilla-HA/authentication.action?showLoginFuncionarios=");
@@ -439,7 +440,36 @@ public class MainPage260204Test {
 
         }
 
-
+        public String retornoFolio(){
+            tramitePrincipal();
+            String folioText = mainPage260204.folio.getText();
+            String folioNumber = obtenerFolio.obtenerFolio(folioText);
+            try {
+                setUpAll();
+                ProcesoGenerarDictamen(folioNumber);
+                ProcesoVerificarDictamen(folioNumber);
+                System.out.println("ProcesoDictamen completado. Pasando a Autorización...");
+                try {
+                    ProcesoAutorizarDictamen(folioNumber);
+                    System.out.println("ProcesoAutorizacion completado. Pasando a Confirmación...");
+                    try {
+                        ProcesoConfirmarNotificacion(folioNumber);
+                        System.out.println("ProcesoConfirmarNotificaciónResolucion completado.");
+                    } catch (Exception e) {
+                        System.err.println("❌ ERROR: Falló un proceso en la secuencia. Deteniendo pasos subsiguientes para el folio " + folioNumber);
+                        e.printStackTrace();
+                    }
+                } catch (Exception e) {
+                    System.err.println("❌ ERROR: Falló un proceso en la secuencia. Deteniendo pasos subsiguientes para el folio " + folioNumber);
+                    e.printStackTrace();
+                }
+            } catch (Exception e) {
+                System.err.println("❌ ERROR: Falló un proceso en la secuencia. Deteniendo pasos subsiguientes para el folio " + folioNumber);
+                e.printStackTrace();
+            }
+            closeWebDriver();
+            return folioNumber;
+        }
 
 
     }

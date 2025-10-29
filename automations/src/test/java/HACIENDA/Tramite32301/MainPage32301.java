@@ -133,7 +133,29 @@ public class MainPage32301 {
     public SelenideElement btnAdjuntar1Doc = $x("/html/body/main/div/div[4]/div/form[1]/table/tbody/tr[4]/td[2]/div/input[2]");
     public SelenideElement archivoUnico = $x("/html/body/main/div/div[4]/div[2]/div/form[2]/table/tbody/tr[1]/td[4]/input");
 
-
+    //Funcionario
+    public SelenideElement MensajeCarga = $x("//*[@id=\"divMsgModal\"]");
+    public SelenideElement numfolio = $x("//*[@id=\"idNumFolio\"]");
+    public SelenideElement btnBuscarFolioFun = $x("//*[@id=\"buscarTareasFuncionario\"]");
+    public SelenideElement opinion = $x("//*[@id=\"idDescripcionOpinion\"]");
+    public SelenideElement anexarInfoDigitalizada = $x("/html/body/div[1]/div[3]/div[3]/div/form[1]/div/div/table[2]/tbody/tr[1]/td[2]/input");
+    public SelenideElement archivoAnexar = $x("//*[@id=\"archivoAdjuntar\"]");
+    public SelenideElement enviarArchivo = $x("//*[@id=\"btnCargaArchivo\"]");
+    public SelenideElement destinadoPara = $x("//*[@id=\"tramite.dictamen.usoAutorizadoDictamen\"]");
+    public SelenideElement observaciones = $x("//*[@id=\"observacion\"]");
+    public SelenideElement plazo = $x("//*[@id=\"tramite.dictamen.plazoVigencia\"]");
+    public SelenideElement firmarDictamen = $x("/html/body/div[1]/div[3]/div[3]/div/form/div[2]/input[3]");
+    public SelenideElement darVoBo = $x("/html/body/div[1]/div[3]/div[3]/div/form[1]/div[2]/input[2]");
+    public SelenideElement firmarAutorizacion = $x("/html/body/div[1]/div[3]/div[3]/div/form[1]/table[1]/tbody/tr/td/input[1]");
+    public SelenideElement inicioFolio = $x("//*[@id=\"idNumFolio\"]");
+    public SelenideElement btnContinuarConfirmacion = $x("//*[@id=\"acuse\"]");
+    public SelenideElement objetoImportacion = $x("//*[@id=\"objetoImportacion\"]");
+    public SelenideElement restricciones = $x("//*[@id=\"tramite.dictamen.restriccionesDictamen[0].restriccionTipoTramite.idRestriccionTipoTramite\"]");
+    public SelenideElement componentes = $x("//*[@id=\"descripcionDetalladaMercancia\"]");
+    public SelenideElement clasificacionToxicologica = $x("//*[@id=\"tramite.dictamen.clasificacionToxicologica.idClasificacionToxicologicaTipoTramite\"]");
+    public SelenideElement usoEspecificoMercancia = $x("//*[@id=\"descripcionUsoAutorizado\"]");
+    public SelenideElement siglasDictaminador = $x("//*[@id=\"siglasDictaminador\"]");
+    public SelenideElement deseaEstablecerFecha = $x("//*[@id=\"blnGenerico1\"]");
 
 
 
