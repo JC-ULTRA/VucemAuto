@@ -3,6 +3,8 @@ package HACIENDA.Tramite10301;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 
+import static com.codeborne.selenide.Selenide.$x;
+
 public class MainPage10301 {
     public SelenideElement cerS = Selenide.$x("//*[@id='certificate']");
     public SelenideElement keyS = Selenide.$x("//*[@id='privateKey']");
@@ -38,7 +40,6 @@ public class MainPage10301 {
     public SelenideElement opcionNo = Selenide.$x("/html/body/main/div/div[4]/div/form/div[2]/div/div[2]/div[3]/div[2]/input[2]");
     public SelenideElement continuar = Selenide.$x("//*[@id='guardarSolicitud']");
     public SelenideElement btnSig = Selenide.$x("/html/body/main/div/div[4]/div/form/div[4]/div/div/input[2]");
-    public SelenideElement adjuntaDocs = Selenide.$x("/html/body/main/div/div[4]/div/form[1]/table/tbody/tr[8]/td[2]/div/input[2]");
     public SelenideElement archivo1 = Selenide.$x("/html/body/main/div/div[4]/div[2]/div/form[2]/table/tbody/tr[1]/td[4]/input");
     public SelenideElement archivo2 = Selenide.$x("/html/body/main/div/div[4]/div[2]/div/form[3]/table/tbody/tr[1]/td[4]/input");
     public SelenideElement archivo3 = Selenide.$x("/html/body/main/div/div[4]/div[2]/div/form[4]/table/tbody/tr[1]/td[4]/input");
@@ -49,6 +50,33 @@ public class MainPage10301 {
     public SelenideElement btnContinuarArchivos = Selenide.$x("//*[@id='siguienteButton']");
     public SelenideElement cer = Selenide.$x("//*[@id='certificate']");
     public SelenideElement key = Selenide.$x("//*[@id='privateKey']");
-    public SelenideElement passw = Selenide.$x("//*[@id='privateKeyPassword']");
     public SelenideElement btnFirmar = Selenide.$x("//*[@id='btnSubmit']");
+    public SelenideElement folio = Selenide.$x("/html/body/main/div/div[4]/div/div[4]/div/div/ul/li");
+
+    //Pasar a la firma
+    public SelenideElement tdConfirmarNotificaciResoluci = $x("//td[@aria-describedby='gridTareasSolicitante_actionName']");
+    public SelenideElement inputAcuse = $x("//*[@id='acuse']");
+    public SelenideElement notification = $x("//*[@id='notification']/div/ul/li");
+    public SelenideElement iniciofun = $x("/html/body/div[1]/div[3]/div[1]/table/tbody/tr[2]/td/a/img");
+    public SelenideElement numfolio = $x("//*[@id=\"idNumFolio\"]");
+    public SelenideElement btnBuscarFolio = $x("//*[@id=\"buscarTareasFuncionario\"]");
+    public SelenideElement tablatarea = $x("/html/body/div[1]/div[3]/div[3]/div/div[3]/div[3]/div[3]/div/table/tbody/tr[2]");
+    public SelenideElement generaDict = $x("//*[@id=\"opcion\"]");
+    public SelenideElement btmContinuarDict = $x("/html/body/div[1]/div[3]/div[3]/div/form/div[1]/input");
+    public SelenideElement sentidoAceptado = $x("/html/body/div[1]/div[3]/div[3]/div/form[1]/table/tbody/tr[2]/td[2]/input[1]");
+    public SelenideElement justificacionRequerimiento = $x("/html/body/div[1]/div[3]/div[3]/div/form[1]/table[1]/tbody/tr[4]/td/textarea");
+    public SelenideElement inputDictamenAceptado = $x("/html/body/div[1]/div[3]/div[3]/div/form[1]/table[1]/tbody/tr[2]/td[2]/input[1]");
+    //Autorización
+    public SelenideElement btnFirmarAutorizacion = $x("/html/body/div[1]/div[3]/div[3]/div/form[1]/div[2]/input[2]");
+    //Firmar
+    public SelenideElement SelecRol = Selenide.$x("//*[@id='claveRol']");
+    public SelenideElement Btnacep = Selenide.$x("//button[@name='ingresar']");
+    public SelenideElement inicioFolio = $x("//*[@id=\"idNumFolio\"]");
+    public SelenideElement fechIni = $x("//*[@id=\"idFechaInicioVigenciaDictamen\"]");
+    public SelenideElement fechFin = $x("/html/body/div[1]/div[3]/div[3]/div/form[1]/div[3]/table/tbody/tr[2]/td[4]/input");
+    public SelenideElement scrollEv = $x("/html/body/div[1]/div[3]/div[3]/div/table/tbody/tr[2]/td/div/div[3]/div[3]/div/table/tbody/tr[2]/td[23]");
+    public SelenideElement scrollEv2 = $x("/html/body/div[1]/div[3]/div[3]/div/table/tbody/tr[2]/td/div/div[3]/div[3]/div/table/tbody/tr[2]/td[23]/select/option[2]");
+    public SelenideElement btnContinuarConfirmacion = $x("//*[@id=\"acuse\"]");
 }
+
+

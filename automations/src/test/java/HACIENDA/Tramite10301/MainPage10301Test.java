@@ -1,43 +1,59 @@
 package HACIENDA.Tramite10301;
 
+import DBYFOLIO.ConDBReasigSolFun;
+import DBYFOLIO.ObtenerFolio;
 import Firmas.LoginFirmSoli;
 import Firmas.TramitesFirmasLG;
-import com.codeborne.selenide.Condition;
-import com.codeborne.selenide.Configuration;
-import com.codeborne.selenide.Selectors;
-import com.codeborne.selenide.Selenide;
-import com.codeborne.selenide.WebDriverRunner;
-import com.codeborne.selenide.WebElementCondition;
+import Metodos.Metodos;
+import com.codeborne.selenide.*;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
 import java.awt.Component;
 import java.time.Duration;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
-import javax.swing.JCheckBox;
-import javax.swing.JOptionPane;
+import java.util.concurrent.TimeUnit;
+import javax.swing.*;
+
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.chrome.ChromeOptions;
+
+import static com.codeborne.selenide.Condition.attribute;
+import static com.codeborne.selenide.Condition.visible;
+import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 public class MainPage10301Test {
     MainPage10301 mainPage10301 = new MainPage10301();
     LoginFirmSoli loginFirmSoli = new LoginFirmSoli();
+    Metodos metodos = new Metodos();
+    String FunRFC = "MAVL621207C95";
 
     TramitesFirmasLG tramite10301 = new TramitesFirmasLG(
             "C:\\VucemAuto\\automations\\src\\test\\resources\\CredSoli\\aal0409235e6.cer",
             "C:\\VucemAuto\\automations\\src\\test\\resources\\CredSoli\\AAL0409235E6_1012231310.key"
+    );
+    TramitesFirmasLG tramite10301Fun = new TramitesFirmasLG(
+            "C:\\VucemAuto\\automations\\src\\test\\resources\\CredFunc\\mavl621207c95.cer",
+            "C:\\VucemAuto\\automations\\src\\test\\resources\\CredFunc\\MAVL621207C95_1012241424.key"
     );
 
     @BeforeAll
     public static void setUpAll() {
         Configuration.browser = "chrome";
         Selenide.open();
-        WebDriverRunner.getWebDriver().manage().window().maximize();
-        Configuration.timeout = 120000L;
-        WebDriverRunner.getWebDriver().manage().timeouts().scriptTimeout(Duration.ofSeconds(10L));
+        getWebDriver().manage().window().maximize();
         SelenideLogger.addListener("allure", new AllureSelenide());
+        Configuration.timeout = 200000;
+        getWebDriver().manage().timeouts().pageLoadTimeout(90, TimeUnit.SECONDS);
+        getWebDriver().manage().timeouts().scriptTimeout(Duration.ofSeconds(90));
     }
 
     @BeforeEach
@@ -61,16 +77,37 @@ public class MainPage10301Test {
                 repeticiones = 1;
                 JOptionPane.showMessageDialog((Component)null, "Valor no válido, se utilizará 1 repetición por defecto.");
             }
+            
+            /////////////////////////////////////////////////////////////////////////////////////////////////////////-
+            // Crear checkboxes
+            JCheckBox dictamenCheckBox = new JCheckBox("ProcesoDictamen10301");
+            JCheckBox autorizacionCheckBox = new JCheckBox("ProcesoAutorizacion10301");
+            JCheckBox confirmacionCheckBox = new JCheckBox("ProcesoConfirmarNotificaciónResolucion10301");
 
-            JCheckBox dictamenCheckBox = new JCheckBox("ProcesoDictamen31602");
-            JCheckBox autorizacionCheckBox = new JCheckBox("ProcesoAutorizacion31602");
-            JCheckBox confirmacionCheckBox = new JCheckBox("ProcesoConfirmarNotificaciónResolucion31602");
-            Object[] params = new Object[]{"Seleccione los métodos a ejecutar:", dictamenCheckBox, autorizacionCheckBox, confirmacionCheckBox};
-            int option = JOptionPane.showConfirmDialog((Component)null, params, "Opciones de Métodos", 2);
-            if (option != 0) {
-                JOptionPane.showMessageDialog((Component)null, "Operación cancelada por el usuario.");
-            } else {
-                ejecutarProcesoNRunnable(() -> {
+            // Panel vertical para presentación
+            JPanel panel = new JPanel();
+            panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
+            panel.add(new JLabel("Seleccione los métodos a ejecutar:"));
+            panel.add(dictamenCheckBox);
+            panel.add(autorizacionCheckBox);
+            panel.add(confirmacionCheckBox);
+
+            // Mostrar diálogo
+            int option = JOptionPane.showConfirmDialog(null, panel, "Opciones de Métodos", JOptionPane.OK_CANCEL_OPTION);
+
+            // Validar opción
+            if (option != JOptionPane.OK_OPTION) {
+                JOptionPane.showMessageDialog(null, "Operación cancelada por el usuario.");
+                return;
+            }
+
+            // Recopilar los métodos seleccionados
+            List<String> selectedMethods = new ArrayList<>();
+            if (dictamenCheckBox.isSelected()) selectedMethods.add("ProcesoDictamen10301");
+            if (autorizacionCheckBox.isSelected()) selectedMethods.add("ProcesoAutorizacion10301");
+            if (confirmacionCheckBox.isSelected()) selectedMethods.add("ProcesoConfirmarNotificaciónResolucion10301");
+
+            ejecutarProcesoNRunnable(() -> {
                     String uuid = UUID.randomUUID().toString();
                     int longitudDeseada = 16;
                     String llavePago = uuid.replace("-", "").substring(0, longitudDeseada);
@@ -89,6 +126,8 @@ public class MainPage10301Test {
                     JavascriptExecutor js = (JavascriptExecutor)WebDriverRunner.getWebDriver();
                     js.executeScript("function clickEnPosicion(x, y) {const evento = new MouseEvent('click', {view: window,bubbles: true,cancelable: true,clientX: x,clientY: y});const elemento = document.elementFromPoint(x, y);if (elemento) {elemento.dispatchEvent(evento);}}clickEnPosicion(755.9000358581543, 450.5874996185303);", new Object[0]);
                     Selenide.sleep(1000L);
+                    metodos.scrollIncremento(1);
+                    $$("button").findBy(Condition.exactText("Aceptar")).click();
                     mainPage10301.datosTramite.click();
                     Selenide.sleep(1000L);
                     mainPage10301.manifiesto0.click();
@@ -124,17 +163,7 @@ public class MainPage10301Test {
                     Selenide.sleep(1000L);
                     mainPage10301.btnSig.click();
                     Selenide.sleep(1000L);
-                    mainPage10301.adjuntaDocs.click();
-                    Selenide.sleep(1000L);
-                    mainPage10301.archivo1.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
-                    Selenide.sleep(100L);
-                    mainPage10301.archivo2.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
-                    Selenide.sleep(100L);
-                    mainPage10301.archivo3.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
-                    Selenide.sleep(100L);
-                    mainPage10301.archivo4.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
-                    Selenide.sleep(100L);
-                    mainPage10301.archivo5.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
+                    metodos.cargarDocumentos();
                     Selenide.sleep(100L);
                     mainPage10301.btnAdjuntar.click();
                     Selenide.sleep(10000L);
@@ -142,10 +171,26 @@ public class MainPage10301Test {
                     Selenide.sleep(1000L);
                     mainPage10301.btnContinuarArchivos.click();
                     Selenide.sleep(1000L);
-                    loginFirmSoli.firma(tramite10301);
-                    Selenide.sleep(1000L);
-                }, repeticiones);
-            }
+                    loginFirmSoli.firma(tramite10301); sleep(1500);
+                    String folioText = mainPage10301.folio.getText();sleep(1000);
+                    String folioNumber = ObtenerFolio.obtenerFolio(folioText);
+                    ConDBReasigSolFun.processFolio(folioNumber, FunRFC);
+
+                //            Ejecutar métodos seleccionados
+                if (selectedMethods.contains("ProcesoDictamen10301")) {
+                    ProcesoDictamen10301(folioNumber);
+                    ConDBReasigSolFun.processFolio(folioNumber, FunRFC);
+
+                    if (selectedMethods.contains("ProcesoAutorizacion10301")) {
+                        ProcesoAutorizarDictamen(folioNumber);
+
+                        if (selectedMethods.contains("ProcesoConfirmarNotificaciónResolucion10301")) {
+                            ProcesoConfirmarNotificacion(folioNumber);
+                        }
+                    }
+                }
+
+            }, repeticiones);
         }
     }
 
@@ -158,7 +203,60 @@ public class MainPage10301Test {
 
     }
 
+    //Proceso Dictamen
+    public void ProcesoDictamen10301(String folioNumber) {
+        //se asigna el login a ocupar
+        open("https://wwwqa.ventanillaunica.gob.mx/ventanilla-HA/authentication.action?showLoginFuncionarios=");
+        setUpAll();
+        loginFirmSoli.loginFun(tramite10301Fun);sleep(1500);
+        mainPage10301.iniciofun.click();
+        mainPage10301.numfolio.sendKeys(folioNumber);sleep(1500);
+        mainPage10301.btnBuscarFolio.click();sleep(1500);
+        $$(By.cssSelector("td[role='gridcell']")).findBy(Condition.text(folioNumber)).doubleClick();sleep(5000);
+        $("input[name='mostrar'][value='Continuar']").click();sleep(6000);
+        mainPage10301.inputDictamenAceptado.click();
+        $("textarea[name='tramite.dictamen.justificacion'][id='valueTA']").sendKeys("PRUEBAS QA");sleep(6000);
+
+        mainPage10301.scrollEv.scrollIntoView(true);sleep(1000);
+        mainPage10301.scrollEv.click();
+        mainPage10301.scrollEv2.click();
+        metodos.scrollDecremento(1);
+
+        executeJavaScript("arguments[0].value = '" + LocalDate.now().plusDays(13).plusMonths(1).format(DateTimeFormatter.ofPattern("dd/MM/yyyy")) + "';",mainPage10301.fechIni);sleep(1000);
+        executeJavaScript("arguments[0].value = '" + LocalDate.now().plusDays(14).plusMonths(1).format(DateTimeFormatter.ofPattern("dd/MM/yyyy")) + "';",mainPage10301.fechFin);sleep(1000);
+
+        $("input[name='mostrarReporte'][value='Continuar']").click();sleep(1000);
+        SelenideElement boton = $(By.xpath("/html/body/div[1]/div[3]/div[3]/div/form/div[1]/input[1]"));
+        executeJavaScript("arguments[0].click();", boton);
+        loginFirmSoli.firmaFun(tramite10301Fun);sleep(1500);
+        ConDBReasigSolFun.processFolio(folioNumber, FunRFC);
+    }
+
+    public void ProcesoAutorizarDictamen(String folioNumber){
+        $(By.cssSelector("img[src*='icoInicio.png']")).click();
+        ConDBReasigSolFun.processFolio(folioNumber, FunRFC);
+        mainPage10301.numfolio.sendKeys(folioNumber);sleep(5000);
+        mainPage10301.btnBuscarFolio.doubleClick();sleep(10500);
+        $$("td[role='gridcell']").findBy(attribute("title", "Autorizar Dictamen")).doubleClick();
+        $("input[name='mostrarFirma']").click();
+        loginFirmSoli.firmaFun(tramite10301Fun);sleep(5000);
+    }
+
+    public void ProcesoConfirmarNotificacion(String folioNumber){
+        WebDriverRunner.getWebDriver().manage().deleteAllCookies();
+        open("https://wwwqa.ventanillaunica.gob.mx/ventanilla-HA/authentication.action?showLogin=%22;");
+        loginFirmSoli.login(tramite10301);
+        mainPage10301.selecRol.sendKeys("Persona Moral");
+        mainPage10301.btnacep.click();
+        mainPage10301.inicioFolio.sendKeys(folioNumber);sleep(2500);
+        $("input[type='button'][value='Buscar']").click();
+        metodos.scrollIncremento(1);
+        $$(By.cssSelector("td[role='gridcell']")).findBy(Condition.text(folioNumber)).doubleClick();
+        mainPage10301.btnContinuarConfirmacion.click();sleep(1000);
+        loginFirmSoli.firma(tramite10301);sleep(1000);sleep(4000);
+    }
+    
     public void clickOkButton() {
-        Selenide.$(Selectors.byText("Ok")).shouldBe(new WebElementCondition[]{Condition.visible}).shouldHave(new WebElementCondition[]{Condition.text("Ok")}).click();
+        Selenide.$(Selectors.byText("Ok")).shouldBe(new WebElementCondition[]{visible}).shouldHave(new WebElementCondition[]{Condition.text("Ok")}).click();
     }
 }
