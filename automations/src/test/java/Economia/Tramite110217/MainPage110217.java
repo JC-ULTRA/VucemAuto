@@ -38,6 +38,16 @@ public class MainPage110217 {
     public SelenideElement CheckProductorMismaPersona = $x("//*[@id=\"idProductorMismoExportador\"]");
     public SelenideElement CheckInfoProdExport = $x("/html/body/main/div/div[4]/div[1]/form/div[2]/div[5]/div/div[3]/div/div/div/div[3]/div/div/div/div[1]/div/div[1]/div[1]/div[3]/div[3]/div/table/tbody/tr[2]/td[1]/input");
     public SelenideElement btnSeleccionar = $x("/html/body/main/div/div[4]/div[1]/form/div[2]/div[5]/div/div[3]/div/div/div/div[3]/div/div/div/div[2]/div/div/div/input[2]");
+    //Grid Productores por exportador
+    public SelenideElement productorNuevo = $x("/html/body/main/div/div[4]/div[1]/form/div[2]/div[5]/div/div[3]/div/div/div/div[3]/div/div/div/div[2]/div/div/div/input[1]");
+    public SelenideElement rfcProduductor = $x("//*[@id=\"idRfcProductor\"]");
+    public SelenideElement btnAgregarProductor = $x("/html/body/main/div/div[4]/div[2]/form/div[3]/div/div[2]/div/input[2]");
+    public SelenideElement fila1Productor = $x("//*[@id=\"jqg_gridProductoresPorExportador_3\"]");
+    public SelenideElement btnSeleccionarAgrProductor = $x("//*[@id=\"acciones\"]/input[2]");
+    public SelenideElement fila1ProductorSeleccionado = $x("//*[@id=\"jqg_gridProductoresPorExportadorSeleccionados_3\"]");
+    public SelenideElement btnProductorNuevo = $x("//*[@id=\"acciones\"]/input[1]");
+    public SelenideElement fila1MercanciasSeleccionada = $x("//*[@id=\"jqg_gridMercanciasProductor_3\"]");
+    public SelenideElement btnAsignarProductor = $x("/html/body/main/div/div[4]/div[1]/form/div[2]/div/div[5]/div[3]/div/div/div/div[3]/div/div/div/div[6]/div/div/div/input");
 
     ///Destinatario
     public SelenideElement Destinatario = $x("//*[@id=\"ui-id-4\"]");

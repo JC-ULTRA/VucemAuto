@@ -4,9 +4,12 @@ import DBYFOLIO.ObtenerFolio;
 import Economia.Tramite110204.MainPage110204;
 import Firmas.LoginFirmSoli;
 import Firmas.TramitesFirmasLG;
+import Metodos.Metodos;
 import com.codeborne.selenide.Browsers;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
+import com.codeborne.selenide.logevents.SelenideLogger;
+import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -18,6 +21,7 @@ import java.time.Duration;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.UUID;
+import java.util.concurrent.TimeUnit;
 
 import static com.codeborne.selenide.Condition.enabled;
 import static com.codeborne.selenide.Condition.visible;
@@ -26,6 +30,7 @@ import static com.codeborne.selenide.Selenide.sleep;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 public class MainPage110205Test {
+    Metodos metodos = new Metodos();
     MainPage110205 mainPage110205 = new MainPage110205();
     LoginFirmSoli loginFirmSoli = new LoginFirmSoli();
     ObtenerFolio obtenerFolio = new ObtenerFolio();
@@ -35,15 +40,28 @@ public class MainPage110205Test {
     );
 
     @BeforeAll
-    public static void initDriver() {
-        Configuration.browser = Browsers.CHROME;   //FIREFOX;
+    public static void setUpAll() {
+        Configuration.browser = Browsers.CHROME; //FIREFOX;
+        Configuration.browserCapabilities = new ChromeOptions().addArguments("--incognito").addArguments("--remote-allow-origins=*").addArguments("--force-device-scale-factor=1.25");
         open();
         getWebDriver().manage().window().maximize();
+        Configuration.timeout = 200000; // tiempo de espera
+        getWebDriver().manage().timeouts().pageLoadTimeout(90, TimeUnit.SECONDS);
+        getWebDriver().manage().timeouts().scriptTimeout(Duration.ofSeconds(90));
+        SelenideLogger.addListener("allure", new AllureSelenide());
     }
 
     @BeforeEach
     public void setUp() {
-        Configuration.browserCapabilities = new ChromeOptions().addArguments("--remote-allow-origins=*");
+//        Configuration.browserCapabilities = new ChromeOptions().addArguments("--remote-allow-origins=*");
+        ChromeOptions options = new ChromeOptions();
+
+        // Configura las opciones para Chrome: incognito y permitir orígenes remotos
+        options.addArguments("--remote-allow-origins=*");
+        options.addArguments("--incognito");  // Abre el navegador en modo incognito
+
+        // Asignar las capacidades de navegador
+        Configuration.browserCapabilities = options;
     }
 
     @Test
@@ -108,7 +126,8 @@ public class MainPage110205Test {
 
             mainPage110205.TratadoAcuerdo.sendKeys("Acuerdo Mexico-Perú");
             mainPage110205.PaisBloque.selectOption("PERU (REPUBLICA DEL)");
-            mainPage110205.btnBuscarmercancia.click();
+            mainPage110205.btnBuscarmercancia.click();sleep(1000);
+            metodos.scrollIncremento(1);
             mainPage110205.filaMercanciaDisponible.doubleClick();
 
             //Agregar datos Mercancia
@@ -128,8 +147,9 @@ public class MainPage110205Test {
             mainPage110205.checkDatosProductorNoConfidencial.click();
             mainPage110205.checkExpImpNoMismaPersona.click();
             //Grid Productores por exportador
-            mainPage110205.fila1Productor.click();
-            mainPage110205.btnSeleccionarAgrProductor.click();
+            mainPage110205.productorNuevo.click();
+            mainPage110205.rfcProduductor.sendKeys("LEQI8101314S7");
+            mainPage110205.btnAgregarProductor.click();
             mainPage110205.fila1ProductorSeleccionado.click();
             mainPage110205.fila1MercanciasSeleccionada.click();
             mainPage110205.fila1ProductorSeleccionado.scrollTo().shouldBe(visible);
@@ -185,6 +205,7 @@ public class MainPage110205Test {
     // Metodo que ejecuta n veces una clase que implementa Runnable
     public void ejecutarProcesoNRunnable(Runnable proceso, int n) {
         for (int i = 0; i < n; i++) {
+            setUpAll();
             System.out.println("Ejecución del Proceso: " + (i + 1));
             open("https://wwwqa.ventanillaunica.gob.mx/ventanilla-HA/authentication.action?showLogin=%22;");
             proceso.run();  // Ejecuta el proceso de la clase

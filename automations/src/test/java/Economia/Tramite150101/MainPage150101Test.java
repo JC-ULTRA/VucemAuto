@@ -79,27 +79,6 @@ public class MainPage150101Test {
             repeticiones = 1;
             JOptionPane.showMessageDialog(null, "Valor no válido, se utilizará 1 repetición por defecto.");
         }
-        /////////////////////////////////////////////////////////////////////////////////////////////////////////-
-
-        // Crear checkboxes para seleccionar los métodos
-        JCheckBox dictamenCheckBox = new JCheckBox("ProcesoDictamen31602");
-        JCheckBox autorizacionCheckBox = new JCheckBox("ProcesoAutorizacion31602");
-        JCheckBox confirmacionCheckBox = new JCheckBox("ProcesoConfirmarNotificaciónResolucion31602");
-
-        Object[] params = {"Seleccione los métodos a ejecutar:", dictamenCheckBox, autorizacionCheckBox, confirmacionCheckBox};
-        int option = JOptionPane.showConfirmDialog(null, params, "Opciones de Métodos", JOptionPane.OK_CANCEL_OPTION);
-
-        // Si el usuario selecciona Cancelar, termina el método
-        if (option != JOptionPane.OK_OPTION) {
-            JOptionPane.showMessageDialog(null, "Operación cancelada por el usuario.");
-            return;
-        }
-
-        // Recopilar los métodos seleccionados
-//        List<String> selectedMethods = new ArrayList<>();
-//        if (dictamenCheckBox.isSelected()) selectedMethods.add("ProcesoDictamenB8");
-//        if (autorizacionCheckBox.isSelected()) selectedMethods.add("ProcesoAutorizacionB8");
-//        if (confirmacionCheckBox.isSelected()) selectedMethods.add("ProcesoConfirmarNotificaciónResolucionB8");
 
 
         // Ejecutar el proceso con las repeticiones y los métodos seleccionados
@@ -127,26 +106,8 @@ public class MainPage150101Test {
             mainPage150101.btnGuardarSoli.click();
 
             loginFirmSoli.firma(tramite150101);
-
-            // Obtener el texto del folio desde mainPageB8
             String folioText = mainPage150101.folio.getText();
-
-            // Llamar al metodo para obtener el folio
             String folioNumber = obtenerFolio.obtenerFolio(folioText);
-
-//            ConDBReasigSolFun.processFolio(folioNumber, FunRFC);
-//
-//            // Ejecutar métodos seleccionados
-//            if (selectedMethods.contains("ProcesoDictamen6001")) {
-//                ProcesoDictamenB8(folioNumber);
-//            }
-//            if (selectedMethods.contains("ProcesoAutorizacion6001")) {
-//                ProcesoAutorizacionB8(folioNumber);
-//            }
-//            if (selectedMethods.contains("ProcesoConfirmarNotificaciónResolucion6001")) {
-//                ProcesoConfirmarNotificaciónResolucionB8(folioNumber);
-//            }
-//
         }, repeticiones);
     }
 
