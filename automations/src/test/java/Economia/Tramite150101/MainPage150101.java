@@ -11,7 +11,7 @@ public class MainPage150101 {
     public SelenideElement pass = $x("//*[@id='privateKeyPassword']");
     public SelenideElement btnIngresFs = $x("//button[@onclick='ejecutarProcesoFirma(1)']");
     public SelenideElement btnFirmar = $x("//*[@id='btnSubmit']");
-    public SelenideElement folio = $x("/html/body/div[1]/div[3]/div[3]/div/div[3]/div/ul/li");
+    public SelenideElement folio = $x("//*[@id=\"notification\"]/div/ul/li");
     public SelenideElement selecRol = $x("//*[@id='claveRol']");
     public SelenideElement btnacep = $x("//button[@name='ingresar']");
     public SelenideElement Tramites = $x("//*[@id='Trámites']");
@@ -25,6 +25,4 @@ public class MainPage150101 {
     public SelenideElement ventasTotales = $x("//*[@id=\"ventasTotales\"]");
     public SelenideElement totalExportaciones = $x("//*[@id=\"totalExportaciones\"]");
     public SelenideElement btnGuardarSoli = $x("//*[@id=\"guardarSolicitud\"]");
-
-
 }

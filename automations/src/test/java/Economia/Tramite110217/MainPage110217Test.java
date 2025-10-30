@@ -7,6 +7,8 @@ import com.codeborne.selenide.Browsers;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
+import com.codeborne.selenide.logevents.SelenideLogger;
+import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -14,8 +16,11 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.chrome.ChromeOptions;
 import javax.swing.*;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.Random;
+import java.util.concurrent.TimeUnit;
 
+import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
@@ -29,16 +34,28 @@ public class MainPage110217Test {
     );
 
     @BeforeAll
-    public static void initDriver() {
-        Configuration.browser = Browsers.CHROME;   //FIREFOX;
+    public static void setUpAll() {
+        Configuration.browser = Browsers.CHROME; //FIREFOX;
+        Configuration.browserCapabilities = new ChromeOptions().addArguments("--incognito").addArguments("--remote-allow-origins=*").addArguments("--force-device-scale-factor=1.25");
         open();
         getWebDriver().manage().window().maximize();
+        Configuration.timeout = 200000; // tiempo de espera
+        getWebDriver().manage().timeouts().pageLoadTimeout(90, TimeUnit.SECONDS);
+        getWebDriver().manage().timeouts().scriptTimeout(Duration.ofSeconds(90));
+        SelenideLogger.addListener("allure", new AllureSelenide());
     }
 
     @BeforeEach
     public void setUp() {
-        Configuration.browserCapabilities = new ChromeOptions().addArguments("--remote-allow-origins=*");
-        Configuration.holdBrowserOpen = true;
+//        Configuration.browserCapabilities = new ChromeOptions().addArguments("--remote-allow-origins=*");
+        ChromeOptions options = new ChromeOptions();
+
+        // Configura las opciones para Chrome: incognito y permitir orígenes remotos
+        options.addArguments("--remote-allow-origins=*");
+        options.addArguments("--incognito");  // Abre el navegador en modo incognito
+
+        // Asignar las capacidades de navegador
+        Configuration.browserCapabilities = options;
     }
 
     @Test
@@ -133,8 +150,13 @@ public class MainPage110217Test {
         mainPage110217.HproductoresPest.click(); sleep(1000);
         mainPage110217.CheckProductorConfidenciales.click(); sleep(1000);
         mainPage110217.CheckProductorMismaPersona.click(); sleep(1000);
-        mainPage110217.CheckInfoProdExport.click(); sleep(1000);
-        mainPage110217.btnSeleccionar.click(); sleep(2000);
+        mainPage110217.productorNuevo.click();
+        mainPage110217.rfcProduductor.sendKeys("LEQI8101314S7");
+        mainPage110217.btnAgregarProductor.click();
+        mainPage110217.fila1ProductorSeleccionado.click();
+//        mainPage110217.fila1MercanciasSeleccionada.click();
+//        mainPage110217.fila1ProductorSeleccionado.scrollTo().shouldBe(visible);
+//        mainPage110217.btnAsignarProductor.click();
     }
     public void ejecutarDestinatario(){
         executeJavaScript("window.scrollTo(0, 0);");
