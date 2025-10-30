@@ -1,6 +1,8 @@
 package Economia.Tramite130118;
+import DBYFOLIO.ConDBReasigSolFun;
 import DBYFOLIO.ObtenerFolio;
 import Firmas.*;
+import com.codeborne.selenide.Browsers;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
@@ -9,12 +11,16 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.chrome.ChromeOptions;
 import javax.swing.*;
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
+
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 public class MainPage130118Test {
     MainPage130118 mainPage130118 = new MainPage130118();
@@ -28,16 +34,34 @@ public class MainPage130118Test {
             "C:\\VucemAuto\\automations\\src\\test\\resources\\CredSoli\\aal0409235e6.cer",
             "C:\\VucemAuto\\automations\\src\\test\\resources\\CredSoli\\AAL0409235E6_1012231310.key"
     );
+    TramitesFirmasLG tramite130118fun  = new TramitesFirmasLG(
+            "C:\\VucemAuto\\automations\\src\\test\\resources\\CredFunc\\mavl621207c95.cer",
+            "C:\\VucemAuto\\automations\\src\\test\\resources\\CredFunc\\MAVL621207C95_1012241424.key"
+    );
 
     @BeforeAll
     public static void setUpAll() {
-        Configuration.browserSize = "1920x1080";
+        Configuration.browser = Browsers.CHROME; //FIREFOX;
+        Configuration.browserCapabilities = new ChromeOptions().addArguments("--incognito").addArguments("--remote-allow-origins=*").addArguments("--force-device-scale-factor=1.25");
+        open();
+        getWebDriver().manage().window().maximize();
+        Configuration.timeout = 200000; // tiempo de espera
+        getWebDriver().manage().timeouts().pageLoadTimeout(90, TimeUnit.SECONDS);
+        getWebDriver().manage().timeouts().scriptTimeout(Duration.ofSeconds(90));
         SelenideLogger.addListener("allure", new AllureSelenide());
     }
 
     @BeforeEach
     public void setUp() {
-        Configuration.browserCapabilities = new ChromeOptions().addArguments("--remote-allow-origins=*");
+//        Configuration.browserCapabilities = new ChromeOptions().addArguments("--remote-allow-origins=*");
+        ChromeOptions options = new ChromeOptions();
+
+        // Configura las opciones para Chrome: incognito y permitir orígenes remotos
+        options.addArguments("--remote-allow-origins=*");
+        options.addArguments("--incognito");  // Abre el navegador en modo incognito
+
+        // Asignar las capacidades de navegador
+        Configuration.browserCapabilities = options;
     }
 
     @Test
@@ -149,126 +173,129 @@ public class MainPage130118Test {
             // Llamar al metodo para obtener el folio
             String folioNumber = obtenerFolio.obtenerFolio(folioText);
 
-//           ConDBReasigSolFun.processFolio(folioNumber, FunRFC);
+           ConDBReasigSolFun.processFolio(folioNumber, FunRFC);
 
-////             Ejecutar métodos seleccionados
-//            if (selectedMethods.contains("ProcesoDictamen130118")) {
-//                ProcesoDictamen130118(folioNumber);
-//            }
-//            if (selectedMethods.contains("ProcesoAutorizacion130118")) {
-//                ProcesoAutorizacion130118(folioNumber);
-//            }
-//            if (selectedMethods.contains("ProcesoConfirmarNotificaciónResolucion130118")) {
-//                ProcesoConfirmarNotificaciónResolucion130118(folioNumber);
-//            }
+//             Ejecutar métodos seleccionados
+            if (selectedMethods.contains("ProcesoDictamen130118")) {
+                setUpAll();
+                ProcesoDictamen130118(folioNumber);
+            }
+            if (selectedMethods.contains("ProcesoAutorizacion130118")) {
+                ProcesoAutorizacion130118(folioNumber);
+            }
+            if (selectedMethods.contains("ProcesoConfirmarNotificaciónResolucion130118")) {
+                ProcesoConfirmarNotificaciónResolucion130118(folioNumber);
+            }
 
         }, repeticiones);
 
     }
     //Proceso Dictamen
-//    public void ProcesoDictamen130118(String folioNumber) {
-//        //se asigna el login a ocupar
-//        open("https://wwwqa.ventanillaunica.gob.mx/ventanilla-HA/authentication.action?showLoginFuncionarios=");
-//
-//        //flujo de entrar y flujo completo
-//        //Ingreso Y Selección de tramite
-//        loginFun.loginFun130118();
-//        //Busqueda de Folio
-//        mainPage130118.Inicio.click();
-//        mainPage130118.Folio.sendKeys(folioNumber); //se lo quite porque no tengo BD
-//        mainPage130118.inputBuscarTareasFuncionario.click();
-//        mainPage130118.tdEvaluarSolicitud.doubleClick();
-//        //Generar Dictamen
-//        mainPage130118.GenerarDic.click();
-//        mainPage130118.SentidoDictamen.click();
-//        mainPage130118.JustificacionDic.sendKeys("PRUEBAS QA AUTOMATIZACIÓN");
-//        sleep(2000);
-//        mainPage130118.inputMostrarFirma.click();
-//        //Firma Funcionario
-//        firmaFun.firmarFun130118();
-//
-//        //despues de firmar se crea una variable de folioNumber +  numero consecutivo para reasignar
-//        try {
-//            System.out.println("Entrando al timer");
-//            Thread.sleep(1000);
-//            String folioNumber2 = folioNumber;
-//            //se usa el campo folioNumber + numero consecutivo para pasarle el rfc que corresponga para reasignar
-//            ConDBReasigSolFun.processFolio(folioNumber2, FunRFC);
-//            //se cierra el web para empezar otro proceso
-//            closeWebDriver();
-//            System.out.println("Saliendo del timer");
-//        } catch (InterruptedException e) {
-//            System.out.println("no entro");
-//            throw new RuntimeException(e);
-//        }
-//    }
-//
-//    //Proceso Autorización
-//    public void ProcesoAutorizacion130118(String folioNumber) {
-//        open("https://wwwqa.ventanillaunica.gob.mx/ventanilla-HA/authentication.action?showLoginFuncionarios=");
-//        // Ingreso y Selección de trámite
-//        loginFun.loginFun130118();
-//        // Búsqueda de Folio
-//        mainPage130118.InicioA.click();
-//        mainPage130118.FolioA.sendKeys(folioNumber);//se comento porque no tenemos acceso a la BD
-//        mainPage130118.inputBuscarTareasFuncionarioA.click();
-//        mainPage130118.tdAutorizarDictamen.doubleClick();
-//        // Generar Dictamen
-//        mainPage130118.inputMostrarFirma2.click();
-//        // Firma Funcionario
-//        firmaFun.firmarFun130118();
-//
-//        //despues de firmar se crea una variable de folioNumber +  numero consecutivo para reasignar
-//        try {
-//            System.out.println("Entrando al timer");
-//            Thread.sleep(10000);
-//            String folioNumber3 = folioNumber;
-//            //se usa el campo folioNumber + numero consecutivo para pasarle el rfc que corresponga para reasignar
-//            ConDBReasigSolFun.processFolio(folioNumber3, SoliRFC);
-//            //se cierra el web para empezar otro proceso
-//            closeWebDriver();
-//            System.out.println("Saliendo del timer");
-//        } catch (InterruptedException e) {
-//            System.out.println("no entro");
-//            throw new RuntimeException(e);
-//        }
-//
-//    }
-//
-//    //Proceso Confirmar Notificación Resolución
-//    public void ProcesoConfirmarNotificaciónResolucion130118(String folioNumber) {
-//        open("https://wwwqa.ventanillaunica.gob.mx/ventanilla-HA/authentication.action?showLogin=%22;");
-//        //Ingreso Y Selección de tramite
-////        loginFirmSoli.loginSolicitante130118();
-//        mainPage130118.selecRol2.sendKeys("Persona Moral");
-//        mainPage130118.btnacep2.click();
-//
-//        //Busqueda de Folio
-//        mainPage130118.linkInicio.click();
-//        try {
-//            Thread.sleep(5000);
-//            mainPage130118.inputNumFolio.sendKeys(folioNumber);//se comento porque no tenemos acceso a la BD
-//            mainPage130118.inputBuscarTareasSolicitanteB.click();
-//        } catch (InterruptedException e) {
-//            throw new RuntimeException(e);
-//        }
-//        mainPage130118.tdConfirmarNotificaciResoluci.doubleClick();
-//        //Confirmar Notificación
-//        mainPage130118.inputAcuse.click();
-//        //Firma Funcionario
-//        firmaSoli.firmarsolicitante130118();
-//
-//        try {
-//            System.out.println("Entrando al timer");
-//            Thread.sleep(3000);
-//            System.out.println(mainPage130118.notification.getText());
-//            //se cierra el web para empezar otro proceso
-//            closeWebDriver();
-//            System.out.println("Saliendo del timer");
-//        } catch (InterruptedException e) {
-//            System.out.println("no entro");
-//            throw new RuntimeException(e);
-//        }
+    public void ProcesoDictamen130118(String folioNumber) {
+        //se asigna el login a ocupar
+        open("https://wwwqa.ventanillaunica.gob.mx/ventanilla-HA/authentication.action?showLoginFuncionarios=");
+
+        //flujo de entrar y flujo completo
+        //Ingreso Y Selección de tramite
+        loginFirmSoli.loginFun(tramite130118fun);
+        //Busqueda de Folio
+        mainPage130118.Inicio.click();
+        mainPage130118.Folio.sendKeys(folioNumber);sleep(3000); //se lo quite porque no tengo BD
+        mainPage130118.inputBuscarTareasFuncionario.click(); sleep(4000);
+        mainPage130118.tdEvaluarSolicitud.doubleClick();
+        //Generar Dictamen
+        mainPage130118.GenerarDic.click();
+        mainPage130118.SentidoDictamen.click();
+        mainPage130118.JustificacionDic.sendKeys("PRUEBAS QA AUTOMATIZACIÓN");
+        sleep(2000);
+        mainPage130118.inputMostrarFirma.click();
+        //Firma Funcionario
+        loginFirmSoli.firmaFun(tramite130118fun);
+
+        //despues de firmar se crea una variable de folioNumber +  numero consecutivo para reasignar
+        try {
+            System.out.println("Entrando al timer");
+            Thread.sleep(1000);
+            String folioNumber2 = folioNumber;
+            //se usa el campo folioNumber + numero consecutivo para pasarle el rfc que corresponga para reasignar
+            ConDBReasigSolFun.processFolio(folioNumber2, FunRFC);
+            //se cierra el web para empezar otro proceso
+            closeWebDriver();
+            System.out.println("Saliendo del timer");
+        } catch (InterruptedException e) {
+            System.out.println("no entro");
+            throw new RuntimeException(e);
+        }
+    }
+
+    //Proceso Autorización
+    public void ProcesoAutorizacion130118(String folioNumber) {
+        open("https://wwwqa.ventanillaunica.gob.mx/ventanilla-HA/authentication.action?showLoginFuncionarios=");
+        // Ingreso y Selección de trámite
+        loginFirmSoli.loginFun(tramite130118fun);
+        // Búsqueda de Folio
+        mainPage130118.InicioA.click();
+        mainPage130118.FolioA.sendKeys(folioNumber); sleep(2000);//se comento porque no tenemos acceso a la BD
+        mainPage130118.inputBuscarTareasFuncionarioA.click(); sleep(4000);
+        mainPage130118.tdAutorizarDictamen.doubleClick();
+        // Generar Dictamen
+        mainPage130118.inputMostrarFirma2.click();
+        // Firma Funcionario
+        loginFirmSoli.firmaFun(tramite130118fun);
+
+        //despues de firmar se crea una variable de folioNumber +  numero consecutivo para reasignar
+        try {
+            System.out.println("Entrando al timer");
+            Thread.sleep(10000);
+            String folioNumber3 = folioNumber;
+            //se usa el campo folioNumber + numero consecutivo para pasarle el rfc que corresponga para reasignar
+            ConDBReasigSolFun.processFolio(folioNumber3, SoliRFC);
+            //se cierra el web para empezar otro proceso
+            closeWebDriver();
+            System.out.println("Saliendo del timer");
+        } catch (InterruptedException e) {
+            System.out.println("no entro");
+            throw new RuntimeException(e);
+        }
+
+    }
+
+    //Proceso Confirmar Notificación Resolución
+    public void ProcesoConfirmarNotificaciónResolucion130118(String folioNumber) {
+
+        open("https://wwwqa.ventanillaunica.gob.mx/ventanilla-HA/authentication.action?showLogin=%22;");
+        //Ingreso Y Selección de tramite
+        loginFirmSoli.login(tramite130118);
+        mainPage130118.selecRol2.sendKeys("Persona Moral");
+        mainPage130118.btnacep2.click();
+
+        //Busqueda de Folio
+        mainPage130118.linkInicio.click();
+        try {
+            Thread.sleep(5000);
+            mainPage130118.inputNumFolio.sendKeys(folioNumber); sleep(2000);//se comento porque no tenemos acceso a la BD
+            mainPage130118.inputBuscarTareasSolicitanteB.click(); sleep(4000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        mainPage130118.tdConfirmarNotificaciResoluci.doubleClick();
+        //Confirmar Notificación
+        mainPage130118.inputAcuse.click();
+        //Firma Funcionario
+        loginFirmSoli.firma(tramite130118);
+
+        try {
+            System.out.println("Entrando al timer");
+            Thread.sleep(3000);
+            System.out.println(mainPage130118.notification.getText());
+            //se cierra el web para empezar otro proceso
+            closeWebDriver();
+            System.out.println("Saliendo del timer");
+        } catch (InterruptedException e) {
+            System.out.println("no entro");
+            throw new RuntimeException(e);
+        }
+    }
 
 
 
@@ -276,6 +303,7 @@ public class MainPage130118Test {
     public void ejecutarProcesoNRunnable(Runnable proceso, int n) {
         for (int i = 0; i < n; i++) {
             System.out.println("Ejecución del Proceso: " + (i + 1));
+            setUpAll();
             open("https://wwwqa.ventanillaunica.gob.mx/ventanilla-HA/authentication.action?showLogin=%22;");
             proceso.run();  // Ejecuta el proceso de la clase
         }
