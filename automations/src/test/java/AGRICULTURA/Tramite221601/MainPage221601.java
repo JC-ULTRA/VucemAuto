@@ -50,4 +50,29 @@ public SelenideElement labelPAgoDerechos = $x("/html/body/main/div[1]/div[4]/div
     public SelenideElement inputAnexar = $x("//*[@id='btnAnexar']");
     public SelenideElement btnCerrar = $x("//*[@id=\"btnCerrar\"]");
     public SelenideElement btnContinuar = $x("//*[@id=\"siguienteButton\"]");
+    public SelenideElement folio = $x("//*[@id=\"notification\"]/div/ul/li");
+
+    public SelenideElement numfolio = $x("//*[@id=\"idNumFolio\"]");
+    public SelenideElement btnBuscarFolioFun = $x("//*[@id=\"buscarTareasFuncionario\"]");
+    public SelenideElement firmarDictamen = $x("/html/body/div[1]/div[3]/div[3]/div/form/div[2]/input[3]");
+    public SelenideElement darVoBo = $x("/html/body/div[1]/div[3]/div[3]/div/form[1]/div[2]/input[2]");
+    public SelenideElement firmarAutorizacion = $x("/html/body/div[1]/div[3]/div[3]/div/form[1]/table[1]/tbody/tr/td/input[1]");
+    public SelenideElement inicioFolio = $x("//*[@id=\"idNumFolio\"]");
+    public SelenideElement btnContinuarConfirmacion = $x("//*[@id=\"acuse\"]");
+    public SelenideElement justificacionDictamen = $x("//*[@id=\"valueTA\"]");
+    public SelenideElement condicionesDictamen = $x("//*[@id=\"valueTD\"]");
+    public SelenideElement selectMercanciaDict = $x("//*[@id=\"jqg_gridMercanciaCITES_1\"]");
+    public SelenideElement btnModificarMercanciaDict = $x("/html/body/div[1]/div[3]/div[3]/div/form/div[8]/table/tbody/tr[3]/td/input");
+    public SelenideElement numPermisoOrigen = $x("//*[@id=\"numPermisoOrigen\"]");
+    public SelenideElement numCertificadoOrigen = $x("//*[@id=\"numCertificadoProcedenciaCITES\"]");
+    public SelenideElement fechaPermisoOrigen = $x("//*[@id=\"fechaPermisoOrigenText\"]");
+    public SelenideElement fechaCertificadoOrigen = $x("//*[@id=\"fechaCertificadoProcedenciaCites\"]");
+    public SelenideElement apendiceCodigoProcedencia = $x("//*[@id=\"codigoProcedencia\"]");
+    public SelenideElement marcas = $x("//*[@id=\"idMarcasCites\"]");
+    public SelenideElement btnAgregarMercanciaDict = $x("/html/body/div[1]/div[3]/div[3]/div/form/div[9]/table/tbody/tr[3]/td/div/table/tbody/tr[2]/td[2]/table/tbody/tr[1]/td/a/input");
+    public SelenideElement btnGuardarMercancia = $x("/html/body/div[9]/div[3]/div/button[1]");
+    public SelenideElement btnAgregarFinalidad = $x("/html/body/div[1]/div[3]/div[3]/div/form/div[9]/table/tbody/tr[3]/td/div/table/tbody/tr[2]/td[2]/table/tbody/tr[1]/td/a/input");
+    public SelenideElement agregarMovimiento = $x("/html/body/div[1]/div[3]/div[3]/div/form/div[9]/table/tbody/tr[3]/td/div/table/tbody/tr[2]/td[2]/table/tbody/tr[1]/td/a/input");
+    public SelenideElement finalidadMovimientosTodos = $x("/html/body/div[1]/div[3]/div[3]/div/form/div[9]/table/tbody/tr[3]/td/div/table/tbody/tr[2]/td[2]/table/tbody/tr[2]/td/a/input");
+    public SelenideElement numCites = $x("//*[@id=\"valueTA2\"]");
 }

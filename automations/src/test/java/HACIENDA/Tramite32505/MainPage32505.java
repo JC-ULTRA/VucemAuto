@@ -26,6 +26,7 @@ public class MainPage32505 {
     //Datos del periodo del aviso
     public SelenideElement MesAviso = $x("//*[@id=\"solicitud.ideGenerica1\"]");
     public SelenideElement AñoAviso = $x("//*[@id=\"solicitud.descripcionGenerica1\"]");
+    public SelenideElement articulo8 = $x("//*[@id=\"declaraSi\"]");
     //Tipo de carga
     public SelenideElement radbtnManualCarga = $x("/html/body/main/div/div[4]/div/form/div[2]/div[3]/div[2]/div[2]/div/input[1]");
     public SelenideElement radbtnMasivaCarga = $x("/html/body/main/div/div[4]/div/form/div[2]/div[3]/div[2]/div[2]/div/input[2]");
