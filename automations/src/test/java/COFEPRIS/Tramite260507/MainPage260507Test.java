@@ -1,22 +1,32 @@
 package COFEPRIS.Tramite260507;
 
+import DBYFOLIO.ConDBReasigSolFun;
 import DBYFOLIO.ObtenerFolio;
 import Firmas.LoginFirmSoli;
 import Firmas.TramitesFirmasLG;
 import Metodos.Metodos;
-import com.codeborne.selenide.Browsers;
-import com.codeborne.selenide.Condition;
-import com.codeborne.selenide.Configuration;
-import com.codeborne.selenide.Selenide;
+import com.codeborne.selenide.*;
+import com.codeborne.selenide.logevents.SelenideLogger;
+import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeOptions;
 import javax.swing.*;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.time.Duration;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 import static com.codeborne.selenide.Condition.visible;
@@ -29,31 +39,42 @@ public class MainPage260507Test {
     LoginFirmSoli loginFirmSoli = new LoginFirmSoli();
     ObtenerFolio obtenerFolio = new ObtenerFolio();
     Metodos metodos = new Metodos();
-
-    TramitesFirmasLG tramite260507  = new TramitesFirmasLG(
+    //VARIABLES
+    String FunRFC = "MAVL621207C95";
+    String SoliRFC = "AAL0409235E6";
+    String folioNumber = "0402600901920254006000003";
+    TramitesFirmasLG tramite260507 = new TramitesFirmasLG(
             "C:\\VucemAuto\\automations\\src\\test\\resources\\CredSoli\\aal0409235e6.cer",
             "C:\\VucemAuto\\automations\\src\\test\\resources\\CredSoli\\AAL0409235E6_1012231310.key"
+    );
+    TramitesFirmasLG tramite260507F = new TramitesFirmasLG(
+            "C:\\VucemAuto\\automations\\src\\test\\resources\\CredFunc\\mavl621207c95.cer",
+            "C:\\VucemAuto\\automations\\src\\test\\resources\\CredFunc\\MAVL621207C95_1012241424.key"
     );
 
 
     @BeforeAll
-    public static void initDriver() {
-        Configuration.browser = Browsers.CHROME;   //FIREFOX;CHROME
-        open();
-        getWebDriver().manage().window().maximize();
-        //evitar timer de selenium en webdriver
-        getWebDriver().manage().timeouts().pageLoadTimeout(90, TimeUnit.SECONDS);
+    public static void setUpAll() {
+        Configuration.browserSize = "1920x1080";
+        SelenideLogger.addListener("allure", new AllureSelenide());
+        iniDriver();
     }
 
+    public static void iniDriver() {
+        Configuration.browser = Browsers.CHROME;
+        open();
+        getWebDriver().manage().window().maximize();
+        getWebDriver().manage().timeouts().pageLoadTimeout(180000, TimeUnit.SECONDS);
+        Configuration.timeout = 180000;
+    }
 
     @BeforeEach
     public void setUp() {
         Configuration.browserCapabilities = new ChromeOptions().addArguments("--remote-allow-origins=*");
-        Configuration.holdBrowserOpen = true;
     }
 
     @Test
-    public void Proceso260507() throws IOException {
+    public void Proceso260507() {
         /////////////////////////////////////////////////////////////////////////////////////////////////////////-
         // Solicitar el número de repeticiones al usuario a través de un JOptionPane con opción de Cancelar
         String repeticionesStr = JOptionPane.showInputDialog(null, "Ingrese el número de repeticiones:", "Repeticiones", JOptionPane.QUESTION_MESSAGE);
@@ -61,7 +82,7 @@ public class MainPage260507Test {
         // Si el usuario cancela o cierra el cuadro de diálogo, repeticionesStr será null
         if (repeticionesStr == null) {
             JOptionPane.showMessageDialog(null, "Operación cancelada por el usuario.");
-            return; // Termina el método si se selecciona cancelar
+            return; // Termina el metodo si se selecciona cancelar
         }
 
         // Convertir el valor ingresado a entero, manejando posibles excepciones si el usuario no ingresa un número válido
@@ -73,8 +94,28 @@ public class MainPage260507Test {
             repeticiones = 1;
             JOptionPane.showMessageDialog(null, "Valor no válido, se utilizará 1 repetición por defecto.");
         }
-        /////////////////////////////////////////////////////////////////////////////////////////////////////////-
 
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////-
+        //Crear checkboxes para seleccionar los métodos
+        JCheckBox dictamenCheckBox = new JCheckBox("ProcesoDictamen260507");
+        JCheckBox verificarCheckBox = new JCheckBox("ProcesoVerifica260507");
+        JCheckBox autorizarCheckBox = new JCheckBox("AutorizarDictamen260507");
+        JCheckBox confirmarCheckBox = new JCheckBox("ConfirmarNotificacion260507");
+
+        Object[] params = {"Seleccione los métodos a ejecutar:", dictamenCheckBox, verificarCheckBox, autorizarCheckBox,confirmarCheckBox};
+        int option = JOptionPane.showConfirmDialog(null, params, "Opciones de Métodos", JOptionPane.OK_CANCEL_OPTION);
+
+        // Si el usuario selecciona Cancelar, termina el metodo
+        if (option != JOptionPane.OK_OPTION) {
+            JOptionPane.showMessageDialog(null, "Operación cancelada por el usuario.");
+            return;
+        }
+        // Recopilar los métodos seleccionados
+        List<String> selectedMethods = new ArrayList<>();
+        if (dictamenCheckBox.isSelected()) selectedMethods.add("ProcesoDictamen260507");
+        if (dictamenCheckBox.isSelected()) selectedMethods.add("ProcesoVerifica260507");
+        if (dictamenCheckBox.isSelected()) selectedMethods.add("AutorizarDictamen260507");
+        if (dictamenCheckBox.isSelected()) selectedMethods.add("ConfirmarNotificacion260507");
 
         ejecutarProcesoNRunnable(() -> {
 
@@ -235,23 +276,95 @@ public class MainPage260507Test {
 
             //Paso 3
             metodos.cargarDocumentos();
-            mainPage260507.btnAdjuntar2.click();
-            mainPage260507.MensajeCarga.shouldNotBe(Condition.visible, Duration.ofSeconds(60));
-            Selenide.sleep(3000);
-            mainPage260507.btnCerrar3.click();
-            Selenide.sleep(1000);
-            //Paso 3 (Continuacion)
-            mainPage260507.btnContinuar3.click();
+            mainPage260507.btnAnexar.click();sleep(2000);
+            mainPage260507.btnCerrar.click();sleep(100);
+            mainPage260507.inputSiguiente.click();
+            //FIRMAR SOLICITUD
+            loginFirmSoli.firma(tramite260507);
+            Selenide.sleep(2000);
+            String folioText = mainPage260507.folio.getText();sleep(5000);
+            String folioNumber = obtenerFolio.obtenerFolio(folioText);sleep(2000);
+            ConDBReasigSolFun.processFolio(folioNumber, FunRFC);sleep(2000);
 
-            //Firma
-            loginFirmSoli.firma(tramite260507);sleep(3000);
-
-            // Obtener el texto del folio desde mainPageB8
-            String folioText = mainPage260507.folio.getText();
-
-            // Llamar al metodo para obtener el folio
-            String folioNumber = obtenerFolio.obtenerFolio(folioText);
+            if (selectedMethods.contains("ProcesoDictamen260507")) {
+                setUpAll();
+                EvaluarSolicitud(folioNumber);
+            }
+            if (selectedMethods.contains("ProcesoVerifica260507")) {
+                VerificaDictamen(folioNumber);
+            }
+            if (selectedMethods.contains("AutorizarDictamen260507")) {
+                AutorizarDictamen(folioNumber);
+            }
+            if (selectedMethods.contains("ConfirmarNotificacion260507")) {
+                ConfirmarNotificacion(folioNumber);
+            }guardarFolioEnArchivo(folioNumber);
         }, repeticiones);
+    }
+
+    public void EvaluarSolicitud(String folioNumber) {
+        open("https://wwwqa.ventanillaunica.gob.mx/ventanilla-HA/authentication.action?showLoginFuncionarios=");
+        String folioGenerado = folioNumber;
+        String rfcEmpleado = "MAVL621207C95";
+        ConDBReasigSolFun.processFolio(folioGenerado, rfcEmpleado);
+        WebDriverRunner.getWebDriver().manage().deleteAllCookies();
+        loginFirmSoli.loginFun(tramite260507F);sleep(4000);
+        ConDBReasigSolFun.processFolio(folioNumber, FunRFC);sleep(4000);
+        mainPage260507.iniciofun.click();
+        mainPage260507.numfolio.sendKeys(folioNumber);sleep(1500);
+        mainPage260507.btnBuscarFolio.click();sleep(4500);
+        $$(By.cssSelector("td[role='gridcell']")).findBy(Condition.text(folioNumber)).doubleClick();sleep(5000);
+        $("input[name='mostrar'][value='Continuar']").click();sleep(4000);
+        mainPage260507.inputDictamenAceptado.click();
+        mainPage260507.justificacionRequerimiento.setValue("PRUEBAS QA");sleep(2000);
+        mainPage260507.inputRestriccion.sendKeys("IMPORTACIÓN SIN RESTRICCIÓN");
+        mainPage260507.inputSiglas.sendKeys("RAK");
+//        Selenide.executeJavaScript("arguments[0].value = '10/04/2026';",mainPage260507.inputFechaFinVig);sleep(100);
+        mainPage260507.inputAutorizador.sendKeys("GONZALEZ PINAL EUROFOODS DE MEXICO  LUIS AMBROSIO MARTINEZ VALENZUELA");
+        $("input[name='mostrarFirma'][value='Guardar y Firmar']").click();sleep(5000);
+        loginFirmSoli.firmaFun(tramite260507F);sleep(2000);
+        ConDBReasigSolFun.processFolio(folioNumber, FunRFC);sleep(5000);
+    }
+
+    public void VerificaDictamen(String folioNumber) {
+        WebDriverRunner.getWebDriver().manage().deleteAllCookies();
+        String folioGenerado = folioNumber;sleep(2000);
+        String rfcEmpleado = "MAVL621207C95";sleep(2000);
+        ConDBReasigSolFun.processFolio(folioGenerado, rfcEmpleado);
+        ConDBReasigSolFun.processFolio(folioNumber, FunRFC);sleep(5000);
+        mainPage260507.iniciofun.click();sleep(3000);
+        mainPage260507.numfolio.sendKeys(folioNumber);sleep(1500);
+        mainPage260507.btnBuscarFolio.click();sleep(4500);
+        $$(By.cssSelector("td[role='gridcell']")).findBy(Condition.text(folioNumber)).doubleClick();sleep(5000);
+        $("input[type='submit'][value='Dar Vo. Bo.']").click();
+        loginFirmSoli.firmaFun(tramite260507F);sleep(8000);
+    }
+
+    public void AutorizarDictamen(String folioNumber) {
+        WebDriverRunner.getWebDriver().manage().deleteAllCookies();
+        String folioGenerado = folioNumber;
+        String rfcEmpleado = "MAVL621207C95";
+        ConDBReasigSolFun.processFolio(folioGenerado, rfcEmpleado);
+        ConDBReasigSolFun.processFolio(folioNumber, FunRFC);sleep(5000);
+        mainPage260507.iniciofun.click();sleep(3000);
+        mainPage260507.numfolio.sendKeys(folioNumber);sleep(1500);
+        mainPage260507.btnBuscarFolio.click();sleep(4500);
+        $$(By.cssSelector("td[role='gridcell']")).findBy(Condition.text(folioNumber)).doubleClick();sleep(5000);
+        $("input[name='mostrarFirma'][value='Autorizar']").click();
+        loginFirmSoli.firmaFun(tramite260507F);sleep(8000);
+    }
+
+    public void ConfirmarNotificacion(String folioNumber) {
+        WebDriverRunner.getWebDriver().manage().deleteAllCookies();sleep(2000);
+        open("https://wwwqa.ventanillaunica.gob.mx/ventanilla-HA/authentication.action?showLogin=%22;");sleep(5000);
+        loginFirmSoli.login(tramite260507);sleep(3000);
+        mainPage260507.SelecRol.sendKeys("Persona Moral");sleep(1000);
+        mainPage260507.Btnacep.click();
+        mainPage260507.inicioFolio.sendKeys(folioNumber);sleep(15000);
+        $("input[type='button'][value='Buscar']").doubleClick();sleep(3000);
+        $$(By.cssSelector("td[role='gridcell']")).findBy(Condition.text(folioNumber)).doubleClick();sleep(3000);
+        $("input[name='mostrarFirma'][value='Continuar']").click();sleep(3000);
+        loginFirmSoli.firma(tramite260507);sleep(1000);sleep(4000);
     }
 
     //Metodo que ejecuta n veces una clase que implementa Runnable
@@ -260,6 +373,62 @@ public class MainPage260507Test {
             System.out.println("Ejecución del Proceso: " + (i + 1));
             open("https://wwwqa.ventanillaunica.gob.mx/ventanilla-HA/authentication.action?showLogin=%22;");
             proceso.run();  // Ejecuta el proceso de la clase
+        }
+    }
+    public String obtenerNumFolioTramite(String idTipoTramite, String ideEstSolicitud) {
+        String numFolioTramite = null;
+
+        String sql =
+                "SELECT NUM_FOLIO_TRAMITE " +
+                        "FROM VUC_TRAMITE vt " +
+                        "WHERE ID_SOLICITUD = (" +
+                        "    SELECT ID_SOLICITUD " +
+                        "    FROM (" +
+                        "        SELECT * " +
+                        "        FROM VUC_SOLICITUD vs " +
+                        "        WHERE ID_TIPO_TRAMITE = ? " +
+                        "          AND IDE_EST_SOLICITUD = ? " +
+                        "        ORDER BY FEC_CREACION DESC" +
+                        "    ) " +
+                        "    WHERE ROWNUM = 1" +
+                        ")";
+
+        // Conexión incluida en el método
+        try (Connection conn = DriverManager.getConnection(
+                "jdbc:oracle:thin:@10.181.233.245:1521/vucprod1",
+                "vucem_app_p01",
+                "Mfk22nvW6na71DgBXi5R");                                 // <-- tu contraseña
+             PreparedStatement ps = conn.prepareStatement(sql)) {
+
+            // Seteamos los parámetros dinámicos
+            ps.setString(1, idTipoTramite);
+            ps.setString(2, ideEstSolicitud);
+
+            try (ResultSet rs = ps.executeQuery()) {
+                if (rs.next()) {
+                    numFolioTramite = rs.getString("NUM_FOLIO_TRAMITE");
+                }
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return numFolioTramite;
+    }
+    public void guardarFolioEnArchivo(String folioNumber) {
+        String rutaArchivo = "C:\\VucemAuto\\automations\\folios_generados260507.txt";
+
+        // Formato de fecha y hora: 2025-07-02 18:45:00
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        String timestamp = LocalDateTime.now().format(formatter);
+
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(rutaArchivo, true))) {
+            writer.write(timestamp + " - " + folioNumber);
+            writer.newLine();
+            System.out.println("Folio guardado correctamente: " + folioNumber);
+        } catch (IOException e) {
+            System.err.println("Error al guardar el folio: " + e.getMessage());
         }
     }
 }

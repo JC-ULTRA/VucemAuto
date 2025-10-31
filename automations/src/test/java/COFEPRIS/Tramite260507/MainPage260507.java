@@ -1,8 +1,10 @@
 package COFEPRIS.Tramite260507;
 
+import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 
+import static com.codeborne.selenide.Selenide.$$;
 import static com.codeborne.selenide.Selenide.$x;
 
 public class MainPage260507 {
@@ -151,7 +153,10 @@ public class MainPage260507 {
 
     //Paso 2 REQUISITOS NECESARIOS
     public SelenideElement btnContinuarPaso2= $x("//*[@id=\"workingArea\"]/form/div[4]/div/div/input[2]");
-
+//
+public SelenideElement btnAnexar = $x("//*[@id=\"btnAnexar\"]");
+    public SelenideElement btnCerrar = $x("/html/body/main/div/div[4]/div[2]/form/div[3]/div/input");
+    public SelenideElement inputSiguiente = $x("/html/body/main/div/div[4]/div[1]/form[2]/div[2]/div/input[2]");
     //Paso 3 ANEXAR REQUISITOS
     public SelenideElement listDocumento1Grid = $x("//*[@id=\"idDoc0\"]");
     public SelenideElement listDocumento2Grid = $x("//*[@id=\"idDoc1\"]");
@@ -176,5 +181,30 @@ public class MainPage260507 {
     public SelenideElement btnAdjuntar2 = $x("//*[@id=\"btnAnexar\"]");
     public SelenideElement MensajeCarga = $x("//*[@id=\"divMsgModal\"]");
     public SelenideElement btnCerrar3 = $x("//*[@id=\"btnCerrar\"]");
+    //Requerimiento
+    public SelenideElement iniciofun = $x("/html/body/div[1]/div[3]/div[1]/table/tbody/tr[2]/td/a/img");
+    public SelenideElement numfolio = $x("//*[@id=\"idNumFolio\"]");
+    public SelenideElement btnBuscarFolio = $x("//*[@id=\"buscarTareasFuncionario\"]");
+    public SelenideElement inputDictamenAceptado = $x("//*[@id=\"sentidoDictamen\"]");
+    public SelenideElement justificacionRequerimiento = $x("//*[@id=\"objetoImportacion\"]");
+    public SelenideElement inputRestriccion = $x("//*[@id=\"tramite.dictamen.restriccionesDictamen[0].restriccionTipoTramite.idRestriccionTipoTramite\"]");
+    public SelenideElement inputSiglas = $x("//*[@id=\"siglasDictaminador\"]");
+    public SelenideElement inputAutorizador = $x("//*[@id=\"tramite.dictamen.numeroGenerico1\"]");
+    //Proceso Confirmar
+    public SelenideElement SelecRol = Selenide.$x("//*[@id='claveRol']");
+    public SelenideElement Btnacep = Selenide.$x("//button[@name='ingresar']");
+    public SelenideElement inicioFolio = $x("//*[@id=\"idNumFolio\"]");
+    public void seleccionarFacturaPorAño(String año) {
+        ElementsCollection filas = $$("tr[role='row'].jqgrow"); // todas las filas de datos
 
+        for (SelenideElement fila : filas) {
+            if (fila.getText().contains(año)) {
+                // Dentro de la fila, busca el checkbox (2da columna)
+                SelenideElement checkbox = fila.$("input[type='checkbox']");
+                checkbox.click(); // hace clic en el checkbox
+                System.out.println("Seleccionada la fila con fecha del año: " + año);
+                break; // detener después de encontrar la primera coincidencia
+            }
+        }
+    }
 }
