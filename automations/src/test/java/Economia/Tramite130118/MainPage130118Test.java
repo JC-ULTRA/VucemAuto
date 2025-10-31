@@ -2,6 +2,7 @@ package Economia.Tramite130118;
 import DBYFOLIO.ConDBReasigSolFun;
 import DBYFOLIO.ObtenerFolio;
 import Firmas.*;
+import Metodos.Metodos;
 import com.codeborne.selenide.Browsers;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
@@ -26,6 +27,7 @@ public class MainPage130118Test {
     MainPage130118 mainPage130118 = new MainPage130118();
     LoginFirmSoli loginFirmSoli = new LoginFirmSoli();
     ObtenerFolio obtenerFolio = new ObtenerFolio();
+    Metodos metodos = new Metodos();
     //VARIABLES
     String FunRFC = "MAVL621207C95";
     String SoliRFC = "AAL0409235E6";
@@ -111,66 +113,8 @@ public class MainPage130118Test {
 
         // Ejecutar el proceso con las repeticiones y los métodos seleccionados
         ejecutarProcesoNRunnable(() -> {
-//            // Ingreso y selección de trámite
-            loginFirmSoli.login(tramite130118);
-            mainPage130118.selecRol.sendKeys("Persona Moral");
-            mainPage130118.btnacep.click();
-            mainPage130118.Tramites.sendKeys("Solicitudes nuevas");
-            mainPage130118.SoliNew.click();
-            mainPage130118.Econom.click();
-            mainPage130118.linkPermisosImportaciExportaci.click();
-            mainPage130118.linkImportaci.click();
-            mainPage130118.linkAvisoAutomTicoImportaci.click();
-
-            mainPage130118.labelDatosSolicitud.click();
-            //Datos del trámite a realizar
-            mainPage130118.selectSolicitudRegimenClave.sendKeys("Definitivos");
-            mainPage130118.selectSolicitudClaveClasificacionRegimen.sendKeys("De importacíon");
-            sleep(100);
-            //Descripción de la mercancía * :
-            mainPage130118.textareaValue.setValue("Prueba QA");
-            //Descripción de la mercancía * :
-            mainPage130118.selectFraccionArancelaria.sendKeys("72071101 - De seccion transversal cuadrada o rectangular, cuya anchura sea inferior al doble del espesor.");
-            mainPage130118.selectSubdivision.sendKeys("00 - De sección transversal cuadrada o rectangular, cuya anchura sea inferior al doble del espesor.");
-            mainPage130118.selectUnidadTarifariaCombo.sendKeys("kilogramo");
-            mainPage130118.inputSolicitudMercanciaCantidadTarifaria.setValue("12");
-            //Valor factura USD
-            mainPage130118.inputSolicitudMercanciaValorFactura.setValue("23453");
-            //País origen del acero/País origen de la mercancía * :
-            mainPage130118.selectSolicitudMercanciaPaisOrigen.sendKeys("ARMENIA (REPUBLICA DEMOCRATICA Y POPULAR DE)");
-            //País exportador * :
-            mainPage130118.selectSolicitudMercanciaPaisDestino.sendKeys("ARUBA (TERRITORIO HOLANDES DE ULTRAMAR)");
-            //Número de certificado de molino o de calidad *
-            mainPage130118.inputSolicitudMercanciaLote.setValue("12212121");
-            //Fecha de expedición de certificado de molino o de calidad
-            mainPage130118.inputFecSalida.shouldBe(visible).click();
-            $(byText("2")).shouldBe(visible).click();
-            sleep(200);
-            mainPage130118.textareaValueObs.setValue("Prueba QA");
-            //Datos del productor
-            //Nombre del molino
-            mainPage130118.selectMolinoSeleccion.sendKeys("SE00006 - ARCELORMITTAL BREMEN STEEL PLANT (ARCELORMITTAL BREMEN GMBH)");
-            //Domicilio
-            mainPage130118.textareaSolicitudProductorDomicilioDescripcion.setValue("andadero28");
-            //Representación federal
-            //ESTADO
-            mainPage130118.selectSolicitudEntidadFederativaClave.sendKeys("SINALOA");
-            mainPage130118.selectRepresentacionFederal.sendKeys("CULIACAN");
-            mainPage130118.inputGuardarSolicitud.click();
-            mainPage130118.inputContinuar.click();
-            mainPage130118.inputAdjuntarDocumentos.click();
-            mainPage130118.inputDocumentosFile.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
-            mainPage130118.inputAnexar.click();sleep(3000);
-            mainPage130118.inputCerrar.click();sleep(2000);
-            mainPage130118.inputSiguienteButton.click(); sleep(1000);
-            sleep(1);
-            //firmas
-            loginFirmSoli.firma(tramite130118);
-
-            // Obtener el texto del folio desde mainPage130118
+            tramitePrincipal();
             String folioText = mainPage130118.folio.getText();
-
-            // Llamar al metodo para obtener el folio
             String folioNumber = obtenerFolio.obtenerFolio(folioText);
 
            ConDBReasigSolFun.processFolio(folioNumber, FunRFC);
@@ -189,6 +133,61 @@ public class MainPage130118Test {
 
         }, repeticiones);
 
+    }
+    public void tramitePrincipal(){
+        loginFirmSoli.login(tramite130118);
+        mainPage130118.selecRol.sendKeys("Persona Moral");
+        mainPage130118.btnacep.click();
+        mainPage130118.Tramites.sendKeys("Solicitudes nuevas");
+        mainPage130118.SoliNew.click();
+        mainPage130118.Econom.click();
+        mainPage130118.linkPermisosImportaciExportaci.click();
+        mainPage130118.linkImportaci.click();
+        mainPage130118.linkAvisoAutomTicoImportaci.click();
+
+        mainPage130118.labelDatosSolicitud.click();
+        //Datos del trámite a realizar
+        mainPage130118.selectSolicitudRegimenClave.sendKeys("Definitivos");
+        mainPage130118.selectSolicitudClaveClasificacionRegimen.sendKeys("De importacíon");
+        sleep(100);
+        //Descripción de la mercancía * :
+        mainPage130118.textareaValue.setValue("Prueba QA");
+        //Descripción de la mercancía * :
+        mainPage130118.selectFraccionArancelaria.sendKeys("72071101 - De seccion transversal cuadrada o rectangular, cuya anchura sea inferior al doble del espesor.");
+        mainPage130118.selectSubdivision.sendKeys("00 - De sección transversal cuadrada o rectangular, cuya anchura sea inferior al doble del espesor.");
+        mainPage130118.selectUnidadTarifariaCombo.sendKeys("kilogramo");
+        mainPage130118.inputSolicitudMercanciaCantidadTarifaria.setValue("12");
+        //Valor factura USD
+        mainPage130118.inputSolicitudMercanciaValorFactura.setValue("23453");
+        //País origen del acero/País origen de la mercancía * :
+        mainPage130118.selectSolicitudMercanciaPaisOrigen.sendKeys("ARMENIA (REPUBLICA DEMOCRATICA Y POPULAR DE)");
+        //País exportador * :
+        mainPage130118.selectSolicitudMercanciaPaisDestino.sendKeys("ARUBA (TERRITORIO HOLANDES DE ULTRAMAR)");
+        //Número de certificado de molino o de calidad *
+        mainPage130118.inputSolicitudMercanciaLote.setValue("12212121");
+        //Fecha de expedición de certificado de molino o de calidad
+        mainPage130118.inputFecSalida.shouldBe(visible).click();
+        $(byText("2")).shouldBe(visible).click();
+        sleep(200);
+        mainPage130118.textareaValueObs.setValue("Prueba QA");
+        //Datos del productor
+        //Nombre del molino
+        mainPage130118.selectMolinoSeleccion.sendKeys("SE00006 - ARCELORMITTAL BREMEN STEEL PLANT (ARCELORMITTAL BREMEN GMBH)");
+        //Domicilio
+        mainPage130118.textareaSolicitudProductorDomicilioDescripcion.setValue("andadero28");
+        //Representación federal
+        //ESTADO
+        mainPage130118.selectSolicitudEntidadFederativaClave.sendKeys("SINALOA");
+        mainPage130118.selectRepresentacionFederal.sendKeys("CULIACAN");
+        mainPage130118.inputGuardarSolicitud.click();
+        mainPage130118.inputContinuar.click();
+        metodos.cargarDocumentos();
+        mainPage130118.inputAnexar.click();sleep(3000);
+        mainPage130118.inputCerrar.click();sleep(2000);
+        mainPage130118.inputSiguienteButton.click(); sleep(1000);
+        sleep(1);
+        //firmas
+        loginFirmSoli.firma(tramite130118);
     }
     //Proceso Dictamen
     public void ProcesoDictamen130118(String folioNumber) {

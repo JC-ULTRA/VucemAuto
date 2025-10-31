@@ -11,6 +11,10 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.chrome.ChromeOptions;
 import javax.swing.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.time.Duration;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
@@ -72,32 +76,10 @@ public class MainPage11201Test {
             repeticiones = 1;
             JOptionPane.showMessageDialog(null, "Valor no válido, se utilizará 1 repetición por defecto.");
         }
-        /////////////////////////////////////////////////////////////////////////////////////////////////////////-
-
-        // Crear checkboxes para seleccionar los métodos
-        JCheckBox dictamenCheckBox = new JCheckBox("ProcesoDictamen31602");
-        JCheckBox autorizacionCheckBox = new JCheckBox("ProcesoAutorizacion31602");
-        JCheckBox confirmacionCheckBox = new JCheckBox("ProcesoConfirmarNotificaciónResolucion31602");
-
-        Object[] params = {"Seleccione los métodos a ejecutar:", dictamenCheckBox, autorizacionCheckBox, confirmacionCheckBox};
-        int option = JOptionPane.showConfirmDialog(null, params, "Opciones de Métodos", JOptionPane.OK_CANCEL_OPTION);
-
-        // Si el usuario selecciona Cancelar, termina el método
-        if (option != JOptionPane.OK_OPTION) {
-            JOptionPane.showMessageDialog(null, "Operación cancelada por el usuario.");
-            return;
-        }
-
-        // Recopilar los métodos seleccionados
-//        List<String> selectedMethods = new ArrayList<>();
-//        if (dictamenCheckBox.isSelected()) selectedMethods.add("ProcesoDictamenB8");
-//        if (autorizacionCheckBox.isSelected()) selectedMethods.add("ProcesoAutorizacionB8");
-//        if (confirmacionCheckBox.isSelected()) selectedMethods.add("ProcesoConfirmarNotificaciónResolucionB8");
-
 
         // Ejecutar el proceso con las repeticiones y los métodos seleccionados
         ejecutarProcesoNRunnable(() -> {
-
+            desactivarPago();
             // Ingreso y selección de trámite
             loginFirmSoli.login(tramite11201);
             mainPage11201.selecRol.sendKeys("Persona Moral"); sleep(1000);
@@ -126,26 +108,6 @@ public class MainPage11201Test {
             mainPage11201.continuarPago.click();
 
             loginFirmSoli.firma(tramite11201);
-
-//            // Obtener el texto del folio desde mainPageB8
-//            String folioText = mainPage11201.folio.getText();
-//
-//            // Llamar al metodo para obtener el folio
-//            String folioNumber = obtenerFolio.obtenerFolio(folioText);
-//
-//            ConDBReasigSolFun.processFolio(folioNumber, FunRFC);
-//
-//            // Ejecutar métodos seleccionados
-//            if (selectedMethods.contains("ProcesoDictamen6001")) {
-//                ProcesoDictamenB8(folioNumber);
-//            }
-//            if (selectedMethods.contains("ProcesoAutorizacion6001")) {
-//                ProcesoAutorizacionB8(folioNumber);
-//            }
-//            if (selectedMethods.contains("ProcesoConfirmarNotificaciónResolucion6001")) {
-//                ProcesoConfirmarNotificaciónResolucionB8(folioNumber);
-//            }
-//
         }, repeticiones);
     }
 
@@ -153,6 +115,7 @@ public class MainPage11201Test {
     //Metodo que ejecuta n veces una clase que implementa Runnable
     public void ejecutarProcesoNRunnable(Runnable proceso, int n) {
         for (int i = 0; i < n; i++) {
+            setUpAll();
             System.out.println("Ejecución del Proceso: " + (i + 1));
             open("https://wwwqa.ventanillaunica.gob.mx/ventanilla-HA/authentication.action?showLogin=%22;");
             proceso.run();  // Ejecuta el proceso de la clase
@@ -162,6 +125,27 @@ public class MainPage11201Test {
     public void clickOkButton() {
         // Localiza el botón "Ok" por el texto dentro del <span> y realiza el click
         $(byText("Ok")).shouldBe(visible).shouldHave(text("Ok")).click();
+    }
+    public void desactivarPago() {
+        String url = "jdbc:oracle:thin:@10.181.233.245:1521/vucprod1";
+        String user = "vucem_app_p01";
+        String password = "Mfk22nvW6na71DgBXi5R";
+        String query = "UPDATE vuc_pago_sea SET BLN_ACTIVO = 0 WHERE linea_de_captura = '032000Q0GHM128445291'";
+
+        try (
+                Connection connection = DriverManager.getConnection(url, user, password);
+                PreparedStatement statement = connection.prepareStatement(query);
+        ) {
+            int filasActualizadas = statement.executeUpdate();
+            if (filasActualizadas > 0) {
+                System.out.println("El registro ha sido actualizado correctamente.");
+            } else {
+                System.out.println("No se encontró el registro con la línea de captura proporcionada.");
+            }
+        } catch (SQLException e) {
+            System.err.println("Error al ejecutar el query: " + e.getMessage());
+        }
+
     }
 
 }

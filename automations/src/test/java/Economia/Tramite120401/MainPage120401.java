@@ -35,4 +35,15 @@ public class MainPage120401 {
     public SelenideElement btmAnexar = $x("//*[@id=\"btnAnexar\"]");
     public SelenideElement btnCerrar = $x("//*[@id=\"btnCerrar\"]");
     public SelenideElement inputSiguiente = $x("//*[@id=\"siguienteButton\"]");
+
+    public SelenideElement numfolio = $x("//*[@id=\"idNumFolio\"]");
+    public SelenideElement btnBuscarFolioFun = $x("//*[@id=\"buscarTareasFuncionario\"]");
+    public SelenideElement firmarDictamen = $x("/html/body/div[1]/div[3]/div[3]/div/form/div[2]/input[3]");
+    public SelenideElement darVoBo = $x("/html/body/div[1]/div[3]/div[3]/div/form[1]/div[2]/input[2]");
+    public SelenideElement firmarAutorizacion = $x("/html/body/div[1]/div[3]/div[3]/div/form[1]/table[1]/tbody/tr/td/input[1]");
+    public SelenideElement inicioFolio = $x("//*[@id=\"idNumFolio\"]");
+    public SelenideElement btnContinuarConfirmacion = $x("//*[@id=\"acuse\"]");
+    public SelenideElement justificacionDictamen = $x("//*[@id=\"valueTA\"]");
+    public SelenideElement criterioDictamen = $x("/html/body/div[1]/div[3]/div[3]/div/form[1]/center/div/div[3]/div[3]/div/table/tbody/tr[2]/td[1]/input");
+    public SelenideElement cantidadDictaminada = $x("/html/body/div[1]/div[3]/div[3]/div/form[1]/table[3]/tbody/tr[6]/td/input");
 }

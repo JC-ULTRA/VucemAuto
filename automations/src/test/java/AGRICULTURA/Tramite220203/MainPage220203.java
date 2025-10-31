@@ -3,7 +3,9 @@ package AGRICULTURA.Tramite220203;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 
-    public class MainPage220203 {
+import static com.codeborne.selenide.Selenide.$x;
+
+public class MainPage220203 {
         public SelenideElement cerS = Selenide.$x("//*[@id='certificate']");
         public SelenideElement keyS = Selenide.$x("//*[@id='privateKey']");
         public SelenideElement pass = Selenide.$x("//*[@id='privateKeyPassword']");
@@ -72,4 +74,14 @@ import com.codeborne.selenide.SelenideElement;
         public SelenideElement fechaPago = Selenide.$x("//*[@id='calendarTo']");
         public SelenideElement btnGuardarSoli = Selenide.$x("//*[@id='guardarSolicitud']");
         public SelenideElement btnSiguiente = Selenide.$x("/html/body/main/div/div[4]/div/form/div[4]/div/div/input[2]");
+
+    public SelenideElement numfolio = $x("//*[@id=\"idNumFolio\"]");
+    public SelenideElement btnBuscarFolioFun = $x("//*[@id=\"buscarTareasFuncionario\"]");
+    public SelenideElement firmarDictamen = $x("/html/body/div[1]/div[3]/div[3]/div/form/div[2]/input[3]");
+    public SelenideElement darVoBo = $x("/html/body/div[1]/div[3]/div[3]/div/form[1]/div[2]/input[2]");
+    public SelenideElement firmarAutorizacion = $x("/html/body/div[1]/div[3]/div[3]/div/form[1]/table[1]/tbody/tr/td/input[1]");
+    public SelenideElement inicioFolio = $x("//*[@id=\"idNumFolio\"]");
+    public SelenideElement btnContinuarConfirmacion = $x("//*[@id=\"acuse\"]");
+    public SelenideElement justificacionDictamen = $x("//*[@id=\"valueTA\"]");
+
 }

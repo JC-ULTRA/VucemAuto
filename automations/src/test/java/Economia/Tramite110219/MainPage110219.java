@@ -6,7 +6,7 @@ import static com.codeborne.selenide.Selenide.$x;
 
 public class MainPage110219 {
     //Tramite Aviso 110219
-    public SelenideElement folio = $x("/html/body/main/div/div[4]/div/div[4]/div/div/ul/li[2]");
+    public SelenideElement folio = $x("//*[@id=\"notification\"]/div/ul/li");
     public SelenideElement selecRol = $x("//*[@id='claveRol']");
     public SelenideElement btnacep = $x("//button[@name='ingresar']");
     public SelenideElement Tramites = $x("//*[@id='Trámites']");
@@ -18,10 +18,12 @@ public class MainPage110219 {
 
     ///Cancelación de certificado de origen
     public SelenideElement CancelCertiOrgPest = $x("/html/body/main/div/div[4]/div/form/div[2]/ul/li[2]/a");
+    public SelenideElement numCertificadoOrigen = $x("//*[@id=\"datosMercancia.numeroCertificado\"]");
+    public SelenideElement btnBuscarCertificado = $x("//*[@id=\"buscarCertificadosPorNumero\"]");
     public SelenideElement PaisBloque = $x("//*[@id=\"solicitud.clavePaisSeleccionado\"]");
     public SelenideElement TratadoAcuerdo = $x("//*[@id=\"solicitud.idTratadoAcuerdoSeleccionado\"]");
     public SelenideElement btnBuscarCerti = $x("//*[@id=\"buscarListaCertificados\"]");
-    public SelenideElement Certific = $x("//*[@id=\"28\"]/td[5]");
+    public SelenideElement Certific = $x("//*[@id=\"3\"]");
 
     ///Certificado de OrigenPest
     public SelenideElement CertOrigenPest = $x("//*[@id=\"ui-id-3\"]");
