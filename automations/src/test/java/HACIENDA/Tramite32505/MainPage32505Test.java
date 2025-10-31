@@ -29,29 +29,35 @@ public class MainPage32505Test {
     ObtenerFolio obtenerFolio = new ObtenerFolio();
 
     TramitesFirmasLG tramite32505 = new TramitesFirmasLG(
-            "C:\\VucemAuto\\automations\\src\\test\\resources\\CredSoli\\aal0409235e6.cer",
-            "C:\\VucemAuto\\automations\\src\\test\\resources\\CredSoli\\AAL0409235E6_1012231310.key"
+            "C:\\VucemAuto\\automations\\src\\test\\resources\\CredSoli\\pcs900731mc5.cer",
+            "C:\\VucemAuto\\automations\\src\\test\\resources\\CredSoli\\PCS900731MC5_1012231345.key"
     );
 
     @BeforeAll
     public static void setUpAll() {
-        Configuration.browserSize = "1920x1080";
-        SelenideLogger.addListener("allure", new AllureSelenide());
-        iniDriver();
-    }
-
-    public static void iniDriver(){
-        Configuration.browser = Browsers.CHROME;
+        Configuration.browser = Browsers.CHROME; //FIREFOX;
+        Configuration.browserCapabilities = new ChromeOptions().addArguments("--incognito").addArguments("--remote-allow-origins=*").addArguments("--force-device-scale-factor=1.25");
         open();
         getWebDriver().manage().window().maximize();
+        Configuration.timeout = 200000; // tiempo de espera
         getWebDriver().manage().timeouts().pageLoadTimeout(90, TimeUnit.SECONDS);
+        getWebDriver().manage().timeouts().scriptTimeout(Duration.ofSeconds(90));
+        SelenideLogger.addListener("allure", new AllureSelenide());
     }
 
     @BeforeEach
     public void setUp() {
-        Configuration.browserCapabilities = new ChromeOptions().addArguments("--remote-allow-origins=*");
-        Configuration.holdBrowserOpen = true;
+//        Configuration.browserCapabilities = new ChromeOptions().addArguments("--remote-allow-origins=*");
+        ChromeOptions options = new ChromeOptions();
+
+        // Configura las opciones para Chrome: incognito y permitir orígenes remotos
+        options.addArguments("--remote-allow-origins=*");
+        options.addArguments("--incognito");  // Abre el navegador en modo incognito
+
+        // Asignar las capacidades de navegador
+        Configuration.browserCapabilities = options;
     }
+
 
     @Test
     public void Proceso32505() {
@@ -82,16 +88,15 @@ public class MainPage32505Test {
             // Ingreso y selección de trámite
 
             loginFirmSoli.login(tramite32505);
-            mainPage32505.selecRol.sendKeys("Persona Moral");
-            mainPage32505.btnacep.click();
+//            mainPage32505.selecRol.sendKeys("Persona Moral");
+//            mainPage32505.btnacep.click();
             mainPage32505.Tramites.click();
             mainPage32505.SoliNew.click();
             mainPage32505.Hacienda.click();
             mainPage32505.RegisCE.click();
             mainPage32505.RegisCE.scrollTo();
-            mainPage32505.EnvioAviso.click();
-            mainPage32505.elementoTramite32505.click();
-
+            $x("//a[contains(normalize-space(.), 'Envío de Avisos')]").shouldBe(Condition.visible).click();
+            $x("//a[contains(text(), 'Aviso mensual sobre importación y venta de vehículos usados')]").shouldBe(Condition.visible).click();
             //Tab Aviso
             try {
                 Thread.sleep(2000); // Pausa de 3 segundos
@@ -105,6 +110,7 @@ public class MainPage32505Test {
             //Datos del periodo de aviso
             mainPage32505.MesAviso.selectOption("Enero");
             mainPage32505.AñoAviso.selectOption("2025");
+            mainPage32505.articulo8.click();
 
             //Tipo de carga
             mainPage32505.radbtnManualCarga.click();
