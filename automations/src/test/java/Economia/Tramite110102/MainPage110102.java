@@ -36,6 +36,9 @@ public class MainPage110102 {
     public SelenideElement DeclaracionesManifiestoDeclaracion = $x("//*[@id='chkman']");
     public SelenideElement inputContinuarSoli = $x("//*[@id='guardarSolicitud']");
 
-
+    //Proceso Confirmar
+    public SelenideElement SelecRol = Selenide.$x("//*[@id='claveRol']");
+    public SelenideElement Btnacep = Selenide.$x("//button[@name='ingresar']");
+    public SelenideElement inicioFolio = $x("//*[@id=\"idNumFolio\"]");
 
 }

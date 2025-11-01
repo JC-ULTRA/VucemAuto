@@ -3,7 +3,9 @@ package AGRICULTURA.Tramite220203;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 
-    public class MainPage220203 {
+import static com.codeborne.selenide.Selenide.$x;
+
+public class MainPage220203 {
         public SelenideElement cerS = Selenide.$x("//*[@id='certificate']");
         public SelenideElement keyS = Selenide.$x("//*[@id='privateKey']");
         public SelenideElement pass = Selenide.$x("//*[@id='privateKeyPassword']");
@@ -72,4 +74,47 @@ import com.codeborne.selenide.SelenideElement;
         public SelenideElement fechaPago = Selenide.$x("//*[@id='calendarTo']");
         public SelenideElement btnGuardarSoli = Selenide.$x("//*[@id='guardarSolicitud']");
         public SelenideElement btnSiguiente = Selenide.$x("/html/body/main/div/div[4]/div/form/div[4]/div/div/input[2]");
+
+    public SelenideElement selectRepresentacionFederal = Selenide.$x("//*[@id='representacionFederalSelect']");
+    //GUARDAR SOLICITUD
+    public SelenideElement btnContinuarGuardarSolicitud = Selenide.$x("//*[@id='guardarSolicitud']");
+    public SelenideElement inputSiguienteButton = Selenide.$x("//*[@id='siguienteButton']");
+
+    //Paso 2 Requisitos Necesarios
+    public SelenideElement btnContinuarPaso2 = $x("//*[@id=\"workingArea\"]/form/div[4]/div/div/input[2]");
+
+    //Paso 3
+    public SelenideElement listDocumento1Grid = $x("//*[@id=\"idDoc0\"]");
+    public SelenideElement listDocumento2Grid = $x("//*[@id=\"idDoc1\"]");
+    public SelenideElement btnAdjuntarDoc = $x("//*[@id=\"docs\"]/tbody/tr[5]/td[2]/div/input[2]");
+    public SelenideElement btnContinuar3 = $x("//*[@id=\"siguienteButton\"]");
+    public SelenideElement IconoVerDocumento = $x("//*[@id=\"docs\"]/tbody/tr[3]/td[3]/a/span");
+    public SelenideElement btnGuardar = $x("//*[@id=\"guardarButton\"]");
+
+    //Sub paso 3 Pantalla Adjuntar Documentos
+    public SelenideElement btnSelectArchivo1 = $x("//*[@id=\"solicitud_0\"]/table/tbody/tr[1]/td[4]/input");
+    public SelenideElement btnAdjuntar2 = $x("//*[@id=\"btnAnexar\"]");
+    public SelenideElement MensajeCarga = $x("//*[@id=\"divMsgModal\"]");
+    public SelenideElement btnCerrar3 = $x("//*[@id=\"btnCerrar\"]");
+    public SelenideElement iniciofun = $x("/html/body/div[1]/div[3]/div[1]/table/tbody/tr[2]/td/a/img");
+    public SelenideElement numfolio = $x("//*[@id=\"idNumFolio\"]");
+    public SelenideElement btnBuscarFolio = $x("//*[@id=\"buscarTareasFuncionario\"]");
+    public SelenideElement btnFirmarDictamen = $x("/html/body/div[1]/div[3]/div[3]/div/form[1]/table[1]/tbody/tr/td/input[3]");
+    public SelenideElement inicioFolio = $x("//*[@id=\"idNumFolio\"]");
+    public SelenideElement btnContinuarConfirmacion = $x("//*[@id=\"acuse\"]");
+    public SelenideElement btnAutorizar = $x("/html/body/main/div/div[4]/div/form/div[2]/input[2]");
+
+    public SelenideElement Scrol = Selenide.$x("//*[@id=\"logoHeader\"]");
+    public SelenideElement DatosMercanc = $x("//label[contains(@for, 'ertificado')]");
+    public SelenideElement RegistroProductor = $x("//*[@id='cveRegistroProductor']");
+    public SelenideElement BuscarProductos = $x("//input[@type='button']");
+
+    public SelenideElement EntidadFede = $x("//*[@id='solicitud.entidadFederativa.entidad.clave']");
+    public SelenideElement RepresentacionFederal = $x("//*[@id='representacionFederalSelect']");
+    public SelenideElement DeclaracionesManifiestoDeclaracion = $x("//*[@id='chkman']");
+    public SelenideElement inputContinuarSoli = $x("//*[@id='guardarSolicitud']");
+
+    //Proceso Confirmar
+    public SelenideElement SelecRol = Selenide.$x("//*[@id='claveRol']");
+    public SelenideElement Btnacep = Selenide.$x("//button[@name='ingresar']");
 }
