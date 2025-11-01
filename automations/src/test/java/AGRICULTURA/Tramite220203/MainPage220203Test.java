@@ -42,6 +42,11 @@ public class MainPage220203Test {
             "C:\\VucemAuto\\automations\\src\\test\\resources\\CredFunc\\MAVL621207C95_1012241424.key"
     );
 
+    TramitesFirmasLG tramite220203fun  = new TramitesFirmasLG(
+            "C:\\VucemAuto\\automations\\src\\test\\resources\\CredFunc\\mavl621207c95.cer",
+            "C:\\VucemAuto\\automations\\src\\test\\resources\\CredFunc\\MAVL621207C95_1012241424.key"
+    );
+
     @BeforeAll
     public static void setUpAll() {
         Configuration.browser = Browsers.CHROME; //FIREFOX;
@@ -170,8 +175,7 @@ public class MainPage220203Test {
                     mainPage220203.banco.sendKeys("BANAMEX");
                     mainPage220203.llaveBanco.sendKeys(llavePago);
                     mainPage220203.fechaPago.shouldBe(new WebElementCondition[]{Condition.visible}).click();
-                    Selenide.$(Selectors.byText("20")).shouldBe(new WebElementCondition[]{Condition.visible}).click();
-                    Selenide.sleep(200L);
+                    Selenide.$(Selectors.byText("20")).shouldBe(new WebElementCondition[]{Condition.visible}).click();Selenide.sleep(200L);
                     mainPage220203.btnGuardarSoli.click();
                     mainPage220203.btnSiguiente.click();
                     loginFirmSoli.firma(tramite220203);
