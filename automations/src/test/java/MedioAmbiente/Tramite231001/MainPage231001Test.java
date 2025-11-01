@@ -18,6 +18,7 @@ import javax.swing.*;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.concurrent.TimeUnit;
@@ -50,21 +51,27 @@ public class MainPage231001Test {
 
     @BeforeAll
     public static void setUpAll() {
-        Configuration.browserSize = "1920x1080";
-        SelenideLogger.addListener("allure", new AllureSelenide());
-        iniDriver();
-    }
-
-    public static void iniDriver() {
-        Configuration.browser = Browsers.CHROME;
+        Configuration.browser = Browsers.CHROME; //FIREFOX;
+        Configuration.browserCapabilities = new ChromeOptions().addArguments("--incognito").addArguments("--remote-allow-origins=*").addArguments("--force-device-scale-factor=1.25");
         open();
         getWebDriver().manage().window().maximize();
+        Configuration.timeout = 200000; // tiempo de espera
         getWebDriver().manage().timeouts().pageLoadTimeout(90, TimeUnit.SECONDS);
+        getWebDriver().manage().timeouts().scriptTimeout(Duration.ofSeconds(90));
+        SelenideLogger.addListener("allure", new AllureSelenide());
     }
 
     @BeforeEach
     public void setUp() {
-        Configuration.browserCapabilities = new ChromeOptions().addArguments("--remote-allow-origins=*");
+//        Configuration.browserCapabilities = new ChromeOptions().addArguments("--remote-allow-origins=*");
+        ChromeOptions options = new ChromeOptions();
+
+        // Configura las opciones para Chrome: incognito y permitir orígenes remotos
+        options.addArguments("--remote-allow-origins=*");
+        options.addArguments("--incognito");  // Abre el navegador en modo incognito
+
+        // Asignar las capacidades de navegador
+        Configuration.browserCapabilities = options;
     }
 
     @Test
@@ -118,7 +125,6 @@ public class MainPage231001Test {
             loginFirmSoli.firma(tramite231001);sleep(4000);
             String folioText = mainPage231001.folio.getText();
             String folioNumber = obtenerFolio.obtenerFolio(folioText);
-            ConDBReasigSolFun.processFolio(folioNumber, FunRFC);
             guardarFolioEnArchivo(folioNumber);
         }, repeticiones);
     }
@@ -127,6 +133,7 @@ public class MainPage231001Test {
     public void ejecutarProcesoNRunnable(Runnable proceso, int n) {
         for (int i = 0; i < n; i++) {
             System.out.println("Ejecución del Proceso: " + (i + 1));
+            setUpAll();
             open("https://wwwqa.ventanillaunica.gob.mx/ventanilla-HA/authentication.action?showLogin=%22;");
             proceso.run();  // Ejecuta el proceso de la clase
         }

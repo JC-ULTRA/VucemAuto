@@ -4,9 +4,12 @@ import DBYFOLIO.ObtenerFolio;
 import Economia.Tramite110211.MainPage110211;
 import Firmas.LoginFirmSoli;
 import Firmas.TramitesFirmasLG;
+import Metodos.Metodos;
 import com.codeborne.selenide.Browsers;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
+import com.codeborne.selenide.logevents.SelenideLogger;
+import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -14,7 +17,9 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 import javax.swing.*;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.UUID;
+import java.util.concurrent.TimeUnit;
 
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.open;
@@ -25,21 +30,35 @@ public class MainPage110211Test {
     MainPage110211 mainPage110211 = new MainPage110211();
     LoginFirmSoli loginFirmSoli = new LoginFirmSoli();
     ObtenerFolio obtenerFolio = new ObtenerFolio();
+    Metodos metodos = new Metodos();
     TramitesFirmasLG tramite110211  = new TramitesFirmasLG(
             "C:\\VucemAuto\\automations\\src\\test\\resources\\CredSoli\\aal0409235e6.cer",
             "C:\\VucemAuto\\automations\\src\\test\\resources\\CredSoli\\AAL0409235E6_1012231310.key"
     );
 
     @BeforeAll
-    public static void initDriver() {
-        Configuration.browser = Browsers.CHROME;   //FIREFOX;
+    public static void setUpAll() {
+        Configuration.browser = Browsers.CHROME; //FIREFOX;
+        Configuration.browserCapabilities = new ChromeOptions().addArguments("--incognito").addArguments("--remote-allow-origins=*").addArguments("--force-device-scale-factor=1.25");
         open();
         getWebDriver().manage().window().maximize();
+        Configuration.timeout = 200000; // tiempo de espera
+        getWebDriver().manage().timeouts().pageLoadTimeout(90, TimeUnit.SECONDS);
+        getWebDriver().manage().timeouts().scriptTimeout(Duration.ofSeconds(90));
+        SelenideLogger.addListener("allure", new AllureSelenide());
     }
 
     @BeforeEach
     public void setUp() {
-        Configuration.browserCapabilities = new ChromeOptions().addArguments("--remote-allow-origins=*");
+//        Configuration.browserCapabilities = new ChromeOptions().addArguments("--remote-allow-origins=*");
+        ChromeOptions options = new ChromeOptions();
+
+        // Configura las opciones para Chrome: incognito y permitir orígenes remotos
+        options.addArguments("--remote-allow-origins=*");
+        options.addArguments("--incognito");  // Abre el navegador en modo incognito
+
+        // Asignar las capacidades de navegador
+        Configuration.browserCapabilities = options;
     }
 
     @Test
@@ -66,11 +85,7 @@ public class MainPage110211Test {
         /////////////////////////////////////////////////////////////////////////////////////////////////////////-
 
 
-
-        // Ejecutar el proceso con las repeticiones
         ejecutarProcesoNRunnable(() -> {
-
-            // Ingreso y selección de trámite
 
             String uuid = UUID.randomUUID().toString();
             int longitudDeseada = 7;
@@ -156,14 +171,8 @@ public class MainPage110211Test {
             mainPage110211.selectEstado.sendKeys("SINALOA");
             mainPage110211.btnContinuar.click();
 
-            //Metodo Firma
             loginFirmSoli.firma(tramite110211);
-
-            // Obtener el texto del folio desde mainPageB8
-
             String folioText = mainPage110211.folio.getText();
-
-            // Llamar al método para obtener el folio
             String folioNumber = obtenerFolio.obtenerFolio(folioText);
         }, repeticiones);
     }
@@ -172,6 +181,7 @@ public class MainPage110211Test {
     public void ejecutarProcesoNRunnable(Runnable proceso, int n) {
         for (int i = 0; i < n; i++) {
             System.out.println("Ejecución del Proceso: " + (i + 1));
+            setUpAll();
             open("https://wwwqa.ventanillaunica.gob.mx/ventanilla-HA/authentication.action?showLogin=%22;");
             proceso.run();  // Ejecuta el proceso de la clase
         }

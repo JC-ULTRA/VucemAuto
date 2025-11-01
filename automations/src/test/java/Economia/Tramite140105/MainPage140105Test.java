@@ -2,9 +2,13 @@ package Economia.Tramite140105;
 
 import DBYFOLIO.ConDBReasigSolFun;
 import DBYFOLIO.ObtenerFolio;
+import Economia.Tramite130118.MainPage130118Test;
 import Firmas.LoginFirmSoli;
 import Firmas.TramitesFirmasLG;
+import Metodos.Metodos;
+import com.codeborne.selenide.Browsers;
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.WebDriverRunner;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.BeforeAll;
@@ -13,16 +17,21 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 import javax.swing.*;
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.Selenide.sleep;
+import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 public class MainPage140105Test {
     MainPage140105 mainPage140105 = new MainPage140105();
+    MainPage130118Test mainPage130118Test = new MainPage130118Test();
     LoginFirmSoli loginFirmSoli = new LoginFirmSoli();
     ObtenerFolio obtenerFolio = new ObtenerFolio();
+    Metodos metodos = new Metodos();
     //VARIABLES
     String FunRFC = "MAVL621207C95";
     String SoliRFC = "AAL0409235E6";
@@ -34,13 +43,27 @@ public class MainPage140105Test {
 
     @BeforeAll
     public static void setUpAll() {
-        Configuration.browserSize = "1920x1080";
+        Configuration.browser = Browsers.CHROME; //FIREFOX;
+        Configuration.browserCapabilities = new ChromeOptions().addArguments("--incognito").addArguments("--remote-allow-origins=*").addArguments("--force-device-scale-factor=1.25");
+        open();
+        getWebDriver().manage().window().maximize();
+        Configuration.timeout = 200000; // tiempo de espera
+        getWebDriver().manage().timeouts().pageLoadTimeout(90, TimeUnit.SECONDS);
+        getWebDriver().manage().timeouts().scriptTimeout(Duration.ofSeconds(90));
         SelenideLogger.addListener("allure", new AllureSelenide());
     }
 
     @BeforeEach
     public void setUp() {
-        Configuration.browserCapabilities = new ChromeOptions().addArguments("--remote-allow-origins=*");
+//        Configuration.browserCapabilities = new ChromeOptions().addArguments("--remote-allow-origins=*");
+        ChromeOptions options = new ChromeOptions();
+
+        // Configura las opciones para Chrome: incognito y permitir orígenes remotos
+        options.addArguments("--remote-allow-origins=*");
+        options.addArguments("--incognito");  // Abre el navegador en modo incognito
+
+        // Asignar las capacidades de navegador
+        Configuration.browserCapabilities = options;
     }
 
     @Test
@@ -88,6 +111,11 @@ public class MainPage140105Test {
 
         // Ejecutar el proceso con las repeticiones y los métodos seleccionados
         ejecutarProcesoNRunnable(() -> {
+            mainPage130118Test.tramitePrincipal();
+            String folioTextCancelar = mainPage140105.folio.getText();
+            String folioCancelar = obtenerFolio.obtenerFolio(folioTextCancelar);
+            setUpAll();
+            open("https://wwwqa.ventanillaunica.gob.mx/ventanilla-HA/authentication.action?showLogin=%22;");
 //            // Ingreso y selección de trámite
             loginFirmSoli.login(tramite140105);
             mainPage140105.selecRol.sendKeys("Persona Moral");
@@ -110,25 +138,24 @@ public class MainPage140105Test {
             //CANCELACIÓN DE SOLICITUDES
             mainPage140105.labelCancelacinoSolicitud.click();
             mainPage140105.inputBusquedaFolio.click();
-            mainPage140105.inputNumFolioTramite.sendKeys("0201300101820252540000055");
+            mainPage140105.inputNumFolioTramite.sendKeys(folioCancelar);
             mainPage140105.inputValidaFolioResolucionCancelacion.click();
             mainPage140105.inputAgregarRegistro.click();
             mainPage140105.textareaMotivoCancelacion.sendKeys("PRUEBA QA");
             mainPage140105.inputGuardaSolicitud.click();
             mainPage140105.inputContinuar.click();
-            mainPage140105.inputAdjuntarDocumentos.click();
-            mainPage140105.inputDocumento.setValue("C:\\VucemAuto\\automations\\src\\test\\resources\\Lorem_ipsum.pdf");
+            metodos.cargarDocumentos();
             mainPage140105.btnAdjuntar.click();
             mainPage140105.btnCerrar.click();
             //Firmas
             mainPage140105.inputSiguienteButton.click();
-//            loginFirmSoli.firma(tramite140105);
-//
-//            // Obtener el texto del folio desde mainPage140105
-//            String folioText = mainPage140105.folio.getText();
-//
-//            // Llamar al mtodo para obtener el folio
-//            String folioNumber = obtenerFolio.obtenerFolio(folioText);
+            loginFirmSoli.firma(tramite140105);
+
+            // Obtener el texto del folio desde mainPage140105
+            String folioText = mainPage140105.folio.getText();
+
+            // Llamar al mtodo para obtener el folio
+            String folioNumber = obtenerFolio.obtenerFolio(folioText);
 //
 //            ConDBReasigSolFun.processFolio(folioNumber, FunRFC);
 
@@ -141,6 +168,7 @@ public class MainPage140105Test {
     //Metodo que ejecuta n veces una clase que implementa Runnable
     public void ejecutarProcesoNRunnable(Runnable proceso, int n) {
         for (int i = 0; i < n; i++) {
+            setUpAll();
             System.out.println("Ejecución del Proceso: " + (i + 1));
             open("https://wwwqa.ventanillaunica.gob.mx/ventanilla-HA/authentication.action?showLogin=%22;");
             proceso.run();  // Ejecuta el proceso de la clase
