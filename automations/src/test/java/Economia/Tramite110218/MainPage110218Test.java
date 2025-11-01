@@ -8,13 +8,22 @@ import Metodos.Metodos;
 import com.codeborne.selenide.Browsers;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.SelenideElement;
+import com.codeborne.selenide.logevents.SelenideLogger;
+import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 import javax.swing.*;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.time.Duration;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Random;
+import java.util.concurrent.TimeUnit;
 
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Selenide.open;
@@ -31,16 +40,28 @@ public class MainPage110218Test {
     );
 
     @BeforeAll
-    public static void initDriver() {
-        Configuration.browser = Browsers.CHROME;   //FIREFOX;
+    public static void setUpAll() {
+        Configuration.browser = Browsers.CHROME; //FIREFOX;
+        Configuration.browserCapabilities = new ChromeOptions().addArguments("--incognito").addArguments("--remote-allow-origins=*").addArguments("--force-device-scale-factor=1.25");
         open();
         getWebDriver().manage().window().maximize();
+        Configuration.timeout = 200000; // tiempo de espera
+        getWebDriver().manage().timeouts().pageLoadTimeout(90, TimeUnit.SECONDS);
+        getWebDriver().manage().timeouts().scriptTimeout(Duration.ofSeconds(90));
+        SelenideLogger.addListener("allure", new AllureSelenide());
     }
 
     @BeforeEach
     public void setUp() {
-        Configuration.browserCapabilities = new ChromeOptions().addArguments("--remote-allow-origins=*");
-        Configuration.holdBrowserOpen = true;
+//        Configuration.browserCapabilities = new ChromeOptions().addArguments("--remote-allow-origins=*");
+        ChromeOptions options = new ChromeOptions();
+
+        // Configura las opciones para Chrome: incognito y permitir orígenes remotos
+        options.addArguments("--remote-allow-origins=*");
+        options.addArguments("--incognito");  // Abre el navegador en modo incognito
+
+        // Asignar las capacidades de navegador
+        Configuration.browserCapabilities = options;
     }
 
     @Test
@@ -86,7 +107,7 @@ public class MainPage110218Test {
             String folioText = mainPage110218.folio.getText();
             // Llamar al método para obtener el folio
             String folioNumber = obtenerFolio.obtenerFolio(folioText);
-
+            guardarFolioEnArchivo(folioNumber);
         }, repeticiones);
     }
 
@@ -108,8 +129,14 @@ public class MainPage110218Test {
         mainPage110218.btnBuscar.click();sleep(1000);
         mainPage110218.radio1.click();sleep(1000);
         mainPage110218.btnConsultar.click();
+        metodos.scrollDecremento(4);
     }
     public void ejecutarValidacion(){
+        Random random = new Random();
+        long rango = 900000000L;
+        long min = 100000000L;
+        long randomNum = random.nextLong(rango) + min;
+        String factura = String.valueOf(randomNum);
         mainPage110218.tratados.click();
         mainPage110218.destinatario.click();sleep(1000);
         mainPage110218.nombreDestinatario.sendKeys("QA");
@@ -146,7 +173,7 @@ public class MainPage110218Test {
         mainPage110218.marcaMercancia.sendKeys("Marca de prueba");
         mainPage110218.valorMercancia.setValue("1000.0000");
         mainPage110218.unidadMedidaComercializacion.sendKeys("Caja");
-        mainPage110218.numeroFactura.setValue("1234567890");
+        mainPage110218.numeroFactura.setValue(factura);
         mainPage110218.tipoFactura.sendKeys("Manual");
         mainPage110218.btnHacerModificacion.click();
         mainPage110218.btnGuardarSoli.click();sleep(1000);
@@ -155,9 +182,26 @@ public class MainPage110218Test {
     // Metodo que ejecuta n veces una clase que implementa Runnable
     public void ejecutarProcesoNRunnable(Runnable proceso, int n) {
         for (int i = 0; i < n; i++) {
+            setUpAll();
             System.out.println("Ejecución del Proceso: " + (i + 1));
             open("https://wwwqa.ventanillaunica.gob.mx/ventanilla-HA/authentication.action?showLogin=%22;");
             proceso.run();  // Ejecuta el proceso de la clase
+        }
+    }
+
+    public void guardarFolioEnArchivo(String folioNumber) {
+        String rutaArchivo = "C:\\VucemAuto\\automations\\folios_generados110218.txt";
+
+        // Formato de fecha y hora: 2025-07-02 18:45:00
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        String timestamp = LocalDateTime.now().format(formatter);
+
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(rutaArchivo, true))) {
+            writer.write(timestamp + " - " + folioNumber);
+            writer.newLine();
+            System.out.println("Folio guardado correctamente: " + folioNumber);
+        } catch (IOException e) {
+            System.err.println("Error al guardar el folio: " + e.getMessage());
         }
     }
 }

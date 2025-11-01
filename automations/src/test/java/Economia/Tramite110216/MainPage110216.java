@@ -15,7 +15,7 @@ public class MainPage110216 {
     public SelenideElement pass = $x("//*[@id='privateKeyPassword']");
     public SelenideElement btnIngres = $x("//button[@onclick='ejecutarProcesoFirma(1)']");
     public SelenideElement btnFirmar = $x("//*[@id='btnSubmit']");
-    public SelenideElement folio = $x("//*[@id=\"notification\"]/div/ul/li");//*[@id="notification"]/div/ul/li
+    public SelenideElement folio = $x("//*[@id=\"notification\"]/div/ul/li[2]");
     public SelenideElement Scrol = Selenide.$x("//*[@id=\"logoHeader\"]");
 
     public SelenideElement selecRol = $x("//*[@id='claveRol']");
@@ -74,10 +74,13 @@ public class MainPage110216 {
     public SelenideElement checkDatosProductorNoConfidencial = $x("//*[@id=\"idConfidencialesProductores\"]");
     public SelenideElement checkExpImpNoMismaPersona = $x("//*[@id=\"idProductorMismoExportador\"]");
     //Grid Productores por exportador
+    public SelenideElement btnProductorNuevo = $x("/html/body/main/div/div[4]/div[1]/form/div[2]/div[5]/div/div[3]/div/div/div/div[3]/div/div/div/div[2]/div/div/div/input[1]");
+    public SelenideElement rfcProductorNuevo = $x("//*[@id=\"idRfcProductor\"]");
+    public SelenideElement btnAgregarProductor = $x("/html/body/main/div/div[4]/div[2]/form/div[3]/div/div[2]/div/input[2]");
     public SelenideElement fila1Productor = $x("//*[@id=\"jqg_gridProductoresPorExportador_3\"]");
     public SelenideElement btnSeleccionarAgrProductor = $x("//*[@id=\"acciones\"]/input[2]");
     public SelenideElement fila1ProductorSeleccionado = $x("//*[@id=\"jqg_gridProductoresPorExportadorSeleccionados_3\"]");
-    public SelenideElement btnProductorNuevo = $x("//*[@id=\"acciones\"]/input[1]");
+    public SelenideElement btnProductorNuevo2 = $x("//*[@id=\"acciones\"]/input[1]");
     //grid Mercancias seleccionadas
     public SelenideElement fila1MercanciasSeleccionada = $x("//*[@id=\"jqg_gridMercanciasProductor_3\"]");
     public SelenideElement btnAsignarProductor = $x("/html/body/main/div/div[4]/div[1]/form/div[2]/div/div[5]/div[3]/div/div/div/div[3]/div/div/div/div[6]/div/div/div/input");
